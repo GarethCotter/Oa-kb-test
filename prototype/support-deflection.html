@@ -4,268 +4,430 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>Prototype — answering the question before the ticket sends</title>
+<title>Support | Contact Us | Oxford Abstracts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <style>
-/* Tokens read off the live contact-support page on 29 July 2026, so the prototype
-   sits in the real design rather than an approximation of it. */
+/* Every value here was read off https://oxfordabstracts.com/resources/contact-support/
+   on 29 July 2026 - fonts, colours, sizes, borders, radii - so the demo sits inside the
+   real design rather than an approximation of it. */
 :root{
   --bg:#EAECE1; --ink:#0A1B3E; --red:#C54538; --white:#fff;
-  --muted:#4A5468; --line:#D1D5DB; --radius:6px;
+  --hair:#E5E7EB;      /* role rows */
+  --field:#D1D5DB;     /* form inputs */
   --ok:#1F6F5C;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Outfit',ui-sans-serif,system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--ink);background:var(--bg)}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-.page{padding:40px 0 80px}
-a{color:var(--red)}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',ui-sans-serif,system-ui,sans-serif;font-size:18px;line-height:1.6;
+     color:var(--ink);background:var(--bg)}
+.display{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+svg{display:block}
 
-/* demo chrome — not part of the design being proposed */
-.demobar{background:var(--ink);color:#fff;font-size:14px;padding:10px 0}
-.demobar .wrap{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;max-width:900px}
-.demobar strong{font-weight:600;letter-spacing:.02em}
-.demobar label{display:flex;align-items:center;gap:6px;color:#cbd2e0;cursor:pointer}
-.demobar select{font:inherit;font-size:13px;padding:3px 8px;border-radius:4px;border:1px solid #33436b;background:#1b2a4d;color:#fff}
-.demobar .mode{margin-left:auto;font-size:13px;color:#9fb0cd}
+/* ---- header ---- */
+header{height:92px;display:flex;align-items:center;background:var(--bg)}
+header .wrap{display:flex;align-items:center;gap:40px;width:100%}
+.logo img{width:156px;height:37px;display:block}
+nav.main{display:flex;align-items:center;gap:30px;margin:0 auto}
+nav.main a,nav.main button{font:inherit;font-size:18px;color:var(--ink);background:none;border:none;
+  cursor:pointer;display:flex;align-items:center;gap:5px;padding:0}
+nav.main a:hover,nav.main button:hover{color:var(--red)}
+.caret{width:11px;height:11px;opacity:.75}
+.actions{display:flex;align-items:center;gap:24px}
+.pill{background:var(--red);color:#fff;border:none;cursor:pointer;font:inherit;font-size:18px;
+  padding:12px 24px;border-radius:9999px;display:inline-flex;align-items:center;gap:9px;line-height:1}
+.pill:hover{background:#ab3a2f}
+.pill[disabled]{opacity:.6;cursor:not-allowed}
 
-h1{font-size:34px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
-.lede{color:var(--muted);margin-bottom:32px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px}
-.step-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
-h2{font-size:24px;font-weight:600;margin-bottom:6px}
-.hint{color:var(--muted);font-size:16px;margin-bottom:20px}
+/* ---- page ---- */
+main{padding:32px 0 90px}
+.cols{display:grid;grid-template-columns:1fr 503px;gap:80px;align-items:start}
+h1.display{font-size:60px;line-height:1.05;margin-bottom:14px}
+.lede{font-size:18px;max-width:430px;margin-bottom:44px}
+.helpitem{display:flex;gap:14px;margin-bottom:30px;max-width:560px}
+.helpitem .ico{color:var(--red);flex-shrink:0;margin-top:5px}
+.helpitem p{margin-bottom:6px}
+.helpitem a{display:inline-flex;align-items:center;gap:8px;font-weight:400;
+  text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.helpitem a:hover{color:var(--red)}
 
-.roles{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
-.role{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:inherit;font-size:16px;cursor:pointer;color:var(--ink)}
-.role[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* ---- the card ---- */
+.card{background:var(--white);border:1px solid var(--ink);border-radius:8px;padding:32px}
+.card h2.display{font-size:30px;margin-bottom:16px}
+.card .sub{margin-bottom:22px}
+.card .q{font-size:16px;margin-bottom:10px}
+.roles{border:0;margin-bottom:26px}
+.role{display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  border:1px solid var(--hair);padding:16px;font:inherit;font-size:18px;color:var(--ink);
+  background:#fff;cursor:pointer}
+.role + .role{border-top:0}
+.dot{width:17px;height:17px;border:1px solid #b9bfc9;border-radius:50%;flex-shrink:0;position:relative}
+.role[aria-pressed="true"] .dot{border-color:var(--red)}
+.role[aria-pressed="true"] .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--red)}
+.role:hover{background:#fafaf8}
+
+.faqs{border-top:1px solid var(--hair);margin-top:26px;padding-top:22px}
+.faqs h3{font-size:16px;font-weight:600;margin-bottom:12px}
+.faqs a.faq{display:block;padding:9px 0;text-decoration:underline;text-underline-offset:4px;font-size:17px}
+.faqs a.faq:hover{color:var(--red)}
 
 label.field{display:block;margin-bottom:18px}
-label.field span{display:block;font-size:16px;font-weight:500;margin-bottom:6px}
-label.field em{font-style:normal;color:var(--muted);font-size:14px;font-weight:400}
+label.field .lab{display:block;font-size:16px;margin-bottom:6px}
+label.field em{font-style:normal;color:#5a6377;font-size:14px}
 input[type=text],input[type=email],input[type=number],textarea{
   width:100%;font:inherit;font-size:17px;padding:12px;background:#fff;
-  border:1px solid var(--line);border-radius:var(--radius);color:var(--ink)}
-textarea{min-height:130px;resize:vertical}
-:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+  border:1px solid var(--field);border-radius:6px;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+.filebox{border:1px dashed var(--field);border-radius:6px;padding:14px;font-size:15px;color:#5a6377}
 
-.btn{display:inline-block;background:var(--red);color:#fff;border:none;cursor:pointer;
-  font:inherit;font-weight:500;font-size:17px;padding:12px 44px;border-radius:999px}
-.btn:hover{background:#a83a2e}
-.btn[disabled]{opacity:.55;cursor:not-allowed}
-.btn-quiet{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:12px 26px}
-.btn-quiet:hover{background:rgba(10,27,62,.06)}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
-
-/* the deflection step */
-.checking{display:flex;align-items:center;gap:12px;color:var(--muted);padding:8px 0}
-.spinner{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite}
+/* ---- deflection ---- */
+.checking{display:flex;align-items:center;gap:12px;color:#5a6377;padding:14px 0}
+.spinner{width:18px;height:18px;border:2px solid var(--hair);border-top-color:var(--red);
+  border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.spinner{animation:none}}
 
-.answer{border:1px solid var(--line);border-left:5px solid var(--ok);border-radius:12px;background:#fff;padding:24px;margin-top:6px}
-.answer h3{font-size:19px;font-weight:600;margin-bottom:10px}
-.answer p.body{margin-bottom:16px}
-.sources{border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
-.sources p{font-size:14px;color:var(--muted);margin-bottom:8px}
-.sources a{display:block;font-size:16px;margin-bottom:6px;text-decoration:none}
-.sources a:hover{text-decoration:underline}
-.followups{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:15px;cursor:pointer;color:var(--ink)}
+.answer{border:1px solid var(--hair);border-left:4px solid var(--ok);border-radius:6px;
+  background:#fbfcfa;padding:22px;margin-bottom:20px}
+.answer h3{font-size:18px;font-weight:600;margin-bottom:12px}
+.answer .body{margin-bottom:16px}
+.sources{border-top:1px solid var(--hair);padding-top:14px}
+.sources .cap{font-size:14px;color:#5a6377;margin-bottom:8px}
+.sources a{display:block;font-size:17px;margin-bottom:6px;text-decoration:underline;text-underline-offset:4px}
+.sources a:hover{color:var(--red)}
+.followups{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--hair);background:#fff;border-radius:9999px;padding:7px 14px;
+  font:inherit;font-size:15px;cursor:pointer;color:var(--ink)}
 .chip:hover{border-color:var(--ink)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.ghost:hover{background:rgba(10,27,62,.05)}
 
-.sent{border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:12px;background:#fff;padding:24px}
-.sent h3{font-size:20px;font-weight:600;margin-bottom:8px}
-.payload{background:#f6f7f4;border:1px solid var(--line);border-radius:8px;padding:14px;margin-top:16px;
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.55;white-space:pre-wrap;color:#2b3550}
-.solved{border-left-color:var(--ok)}
-.note{font-size:14px;color:var(--muted);margin-top:14px}
-.hidden{display:none}
+.outcome{border:1px solid var(--hair);border-left:4px solid var(--ink);border-radius:6px;padding:22px}
+.outcome.good{border-left-color:var(--ok)}
+.outcome h3{font-size:20px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.payload{background:#f4f5f1;border:1px solid var(--hair);border-radius:6px;padding:14px;margin-top:16px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.6;
+  white-space:pre-wrap;color:#2b3550}
+.note{font-size:14px;color:#5a6377;margin-top:14px}
+.hidden{display:none!important}
 
-.explain{margin-top:34px;border-top:1px solid var(--line);padding-top:24px}
-.explain h3{font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
-.explain li{margin-bottom:10px;font-size:16px;color:var(--muted);margin-left:20px}
-.explain b{color:var(--ink);font-weight:600}
-@media (max-width:600px){h1{font-size:27px}.card{padding:20px}.btn{padding:12px 28px}}
+/* ---- footer ---- */
+footer{background:var(--ink);color:#EAECE1;padding:70px 0}
+footer .inner{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between}
+footer h2{font-size:30px;max-width:520px;color:#fff}
+footer .cols2{display:grid;grid-template-columns:repeat(4,auto);gap:14px 70px;margin-top:56px;
+  padding-top:36px;border-top:1px solid rgba(234,236,225,.22);font-size:16px}
+footer .cols2 b{display:block;font-weight:600;margin-bottom:10px;color:#fff}
+footer .cols2 a{display:block;padding:4px 0;color:#cfd6c8}
+footer .cols2 a:hover{color:#fff}
+footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
+
+/* ---- demo controls (hideable so the page can look untouched) ---- */
+.demo{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--ink);color:#fff;
+  border-radius:10px;padding:12px 14px;font-size:13px;box-shadow:0 8px 30px rgba(0,0,0,.25);
+  display:flex;flex-direction:column;gap:9px;max-width:270px}
+.demo strong{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#93a3c4}
+.demo select{font:inherit;font-size:13px;padding:5px 8px;border-radius:5px;border:1px solid #33436b;
+  background:#16254a;color:#fff;width:100%}
+.demo .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.demo button{font:inherit;font-size:12px;background:none;border:1px solid #33436b;color:#cbd5e6;
+  border-radius:5px;padding:4px 9px;cursor:pointer}
+.demo button:hover{background:#16254a}
+.demo .hintline{color:#93a3c4;font-size:12px;line-height:1.45}
+#showDemo{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--ink);color:#fff;
+  border:none;border-radius:9999px;padding:8px 14px;font:inherit;font-size:12px;cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+@media (max-width:1080px){
+  .cols{grid-template-columns:1fr;gap:44px}
+  nav.main{display:none}
+  h1.display{font-size:42px}
+  footer .cols2{grid-template-columns:repeat(2,auto);gap:14px 40px}
+}
 </style>
 </head>
 <body>
 
-<div class="demobar"><div class="wrap">
-  <strong>DEMO CONTROLS</strong>
-  <label>Scenario
-    <select id="scenario">
-      <option value="live">Ask the real KB (live)</option>
-      <option value="strong">Strong answer</option>
-      <option value="weak">Weak answer — do not interrupt</option>
-      <option value="down">API unavailable</option>
-    </select>
-  </label>
-  <span class="mode" id="modeNote">answers come from the live /api/search</span>
-</div></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Oxford Abstracts home">
+      <img src="assets/oa-logo.svg" alt="Oxford Abstracts" width="192" height="46">
+    </a>
+    <nav class="main">
+      <button type="button">Products
+        <svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </button>
+      <a href="#">Pricing</a>
+      <button type="button">Company
+        <svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </button>
+      <button type="button">Resources
+        <svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </button>
+    </nav>
+    <div class="actions">
+      <a href="#">Sign in</a>
+      <a class="pill" href="#">Book a demo</a>
+    </div>
+  </div>
+</header>
 
-<div class="page"><div class="wrap">
+<main><div class="wrap"><div class="cols">
 
-  <h1>Before your ticket sends</h1>
-  <p class="lede">A prototype of the support-form check. Same fields as the live HubSpot
-  form; the difference is what happens when you press Submit.</p>
+  <!-- left column -->
+  <div>
+    <h1 class="display">Contact support</h1>
+    <p class="lede">Find answers to common questions or get in touch with our team.</p>
 
+    <div class="helpitem">
+      <span class="ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg></span>
+      <div>
+        <p>Questions about our plans, pricing or want to request a demo?</p>
+        <a href="#">Talk to sales
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="helpitem">
+      <span class="ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+      <div>
+        <p>Need a fast answer? Our Knowledge Base is where you will find answers to many queries.</p>
+        <a href="#">Visit knowledge base
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="helpitem">
+      <span class="ico"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></span>
+      <div>
+        <p>Our video tutorials have step-by-step guides on everything from getting started to mastering advanced features.</p>
+        <a href="#">See video tutorials
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- right column: the card -->
   <div class="card">
-    <p class="step-label">Step 1</p>
-    <h2>Tell us about your role</h2>
-    <p class="hint">We’ll use this to fast-track your enquiry to the right place.</p>
-    <div class="roles" id="roles" role="group" aria-label="What is your role in the conference?">
-      <button class="role" type="button" aria-pressed="true"  data-aud="organisers">Event Administrator</button>
-      <button class="role" type="button" aria-pressed="false" data-aud="participants">Submitter</button>
-      <button class="role" type="button" aria-pressed="false" data-aud="participants">Reviewer</button>
-      <button class="role" type="button" aria-pressed="false" data-aud="participants">Attendee</button>
-      <button class="role" type="button" aria-pressed="false" data-aud="">Other</button>
-    </div>
 
-    <p class="step-label">Step 2</p>
-    <h2>Tell us about your query</h2>
-    <p class="hint">Support form</p>
-
-    <form id="ticket" novalidate>
-      <label class="field"><span>First name*</span>
-        <input type="text" id="firstname" value="Alex" required></label>
-      <label class="field"><span>Email*</span>
-        <input type="email" id="email" value="alex@example.ac.uk" required></label>
-      <label class="field"><span>Ticket name*</span>
-        <input type="text" id="subject" required
-               value="Reviewers cannot see their assigned reviews"></label>
-      <label class="field"><span>Ticket description* <em>Add links to the page if appropriate</em></span>
-        <textarea id="content" required>My reviewers say they log in but cannot see any of the abstracts I have assigned to them. How do I check what has gone wrong?</textarea></label>
-      <label class="field"><span>Event ID <em>This can be found in the URL admin/events/{event_id}/…</em></span>
-        <input type="number" id="eventid"></label>
-      <label class="field"><span>OR Event name</span>
-        <input type="text" id="eventname"></label>
-
-      <div class="btn-row">
-        <button class="btn" type="submit" id="submitBtn">Submit</button>
+    <!-- step 1 -->
+    <section id="step1">
+      <h2 class="display">Tell us about your role</h2>
+      <p class="sub">We’ll use this to fast-track your enquiry to the right place.</p>
+      <p class="q">What is your role in the conference?</p>
+      <div class="roles" id="roles" role="group" aria-label="What is your role in the conference?">
+        <button class="role" type="button" aria-pressed="true"  data-aud="organisers"><span class="dot"></span>Event Administrator</button>
+        <button class="role" type="button" aria-pressed="false" data-aud="participants"><span class="dot"></span>Submitter</button>
+        <button class="role" type="button" aria-pressed="false" data-aud="participants"><span class="dot"></span>Reviewer</button>
+        <button class="role" type="button" aria-pressed="false" data-aud="participants"><span class="dot"></span>Attendee</button>
+        <button class="role" type="button" aria-pressed="false" data-aud=""><span class="dot"></span>Other</button>
       </div>
-    </form>
+      <button class="pill" type="button" id="nextBtn">Next</button>
+    </section>
 
-    <div id="checking" class="checking hidden">
-      <div class="spinner" aria-hidden="true"></div>
-      <span>Checking the help centre first…</span>
-    </div>
-
-    <div id="deflect" class="hidden">
-      <div class="answer">
-        <h3>This might be what you’re after —</h3>
-        <p class="body" id="answerText"></p>
-        <div class="sources" id="sourcesBox">
-          <p>Where this came from</p>
-          <div id="sources"></div>
+    <!-- step 2 -->
+    <section id="step2" class="hidden">
+      <div class="faqs" style="border-top:0;margin-top:0;padding-top:0">
+        <h3 id="faqTitle">FAQs for event administrators</h3>
+        <div id="faqList">
+          <a class="faq" href="#">How can I change my email address?</a>
+          <a class="faq" href="#">Why I can’t verify my email address?</a>
         </div>
-        <div class="followups" id="followups"></div>
+        <a class="faq" href="#" style="font-weight:500">Go to knowledge base</a>
       </div>
-      <div class="btn-row">
-        <button class="btn" type="button" id="solvedBtn">That’s solved it</button>
-        <button class="btn btn-quiet" type="button" id="anywayBtn">Send my ticket anyway</button>
+
+      <div class="faqs">
+        <h2 class="display" style="font-size:30px;margin-bottom:6px">Tell us about your query</h2>
+        <p class="sub" style="margin-bottom:20px">Support form</p>
+
+        <form id="ticket" novalidate>
+          <label class="field"><span class="lab">First name*</span>
+            <input type="text" id="firstname" value="Alex" required></label>
+          <label class="field"><span class="lab">Email*</span>
+            <input type="email" id="email" value="a.mitchell@example.ac.uk" required></label>
+          <label class="field"><span class="lab">Ticket name*</span>
+            <input type="text" id="subject" required value="Reviewers cannot see their assigned reviews"></label>
+          <label class="field"><span class="lab">Ticket description* <em>Add links to the page if appropriate</em></span>
+            <textarea id="content" required>My reviewers say they log in but cannot see any of the abstracts I have assigned to them. How do I check what has gone wrong?</textarea></label>
+          <label class="field"><span class="lab">Event ID <em>This can be found in the URL admin/events/{event_id}/…</em></span>
+            <input type="number" id="eventid" value="48213"></label>
+          <label class="field"><span class="lab">OR Event name</span>
+            <input type="text" id="eventname"></label>
+          <label class="field"><span class="lab">File upload <em>Please upload screenshot if reporting a bug</em></span>
+            <div class="filebox">Choose a file or drag it here</div></label>
+          <div class="btn-row"><button class="pill" type="submit" id="submitBtn">Submit</button></div>
+        </form>
+
+        <div id="checking" class="checking hidden">
+          <div class="spinner" aria-hidden="true"></div>
+          <span>Checking the help centre first…</span>
+        </div>
+
+        <div id="deflect" class="hidden">
+          <div class="answer">
+            <h3>We think this might solve your query:</h3>
+            <p class="body" id="answerText"></p>
+            <div class="sources" id="sourcesBox">
+              <p class="cap">Where this came from</p>
+              <div id="sources"></div>
+            </div>
+            <div class="followups" id="followups"></div>
+          </div>
+          <div class="btn-row">
+            <button class="pill" type="button" id="solvedBtn">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+              That’s solved it</button>
+            <button class="pill ghost" type="button" id="anywayBtn">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Send my ticket</button>
+          </div>
+        </div>
+
+        <div id="result" class="hidden"></div>
       </div>
+    </section>
+  </div>
+
+</div></div></main>
+
+<footer>
+  <div class="wrap">
+    <div class="inner">
+      <h2 class="display">Why wait for the stars to align, get in touch.</h2>
+      <a class="pill" href="#">Book a demo</a>
     </div>
-
-    <div id="result" class="hidden"></div>
+    <div class="cols2">
+      <div><b>Product</b><a href="#">Abstract management</a><a href="#">Conference programme</a><a href="#">Delegate registration</a><a href="#">Integrations</a></div>
+      <div><b>Company</b><a href="#">About us</a><a href="#">Careers</a><a href="#">Contact</a><a href="#">Blog</a></div>
+      <div><b>Resources</b><a href="#">Knowledge base</a><a href="#">Video tutorials</a><a href="#">Case studies</a><a href="#">Webinars</a></div>
+      <div><b>Legal</b><a href="#">Privacy policy</a><a href="#">Cookie policy</a><a href="#">Terms of service</a><a href="#">Accessibility</a></div>
+    </div>
+    <p class="base">© 2026 Oxford Abstracts Ltd. All rights reserved.</p>
   </div>
+</footer>
 
-  <div class="explain">
-    <h3>What this is demonstrating</h3>
-    <ul>
-      <li><b>No confidence percentage.</b> “We’re 90% sure” is false precision, and the one
-      time it is confidently wrong, trust is gone. The wording carries the doubt instead.</li>
-      <li><b>The send is never blocked.</b> <i>Send my ticket anyway</i> is visible from the
-      first moment, one click, never hidden behind the answer. Someone filling in a support
-      form is already frustrated; making them fight past a robot is the moment that costs
-      loyalty.</li>
-      <li><b>It only interrupts when the answer is strong.</b> Try the <i>weak answer</i>
-      scenario — the ticket goes straight through with no interruption at all.</li>
-      <li><b>Failure is silent.</b> Try <i>API unavailable</i> — the reader sees the normal
-      form, never an error.</li>
-      <li><b>The ticket carries what was tried.</b> Send anyway and look at what reaches
-      support: the suggested articles travel with it.</li>
-    </ul>
-  </div>
-
-</div></div>
+<button id="showDemo" class="hidden" type="button">Demo controls</button>
+<div class="demo" id="demoPanel">
+  <div class="row"><strong>Demo controls</strong><button type="button" id="hideDemo">Hide</button></div>
+  <select id="scenario">
+    <option value="live">Ask the real knowledge base (live)</option>
+    <option value="strong" selected>Strong answer</option>
+    <option value="weak">Weak answer — do not interrupt</option>
+    <option value="down">Knowledge base unavailable</option>
+  </select>
+  <div class="hintline" id="modeNote">Canned answer. No network call, so it cannot fail mid-demo.</div>
+  <div class="row"><button type="button" id="resetBtn">Start again</button></div>
+</div>
 
 <script>
 const $ = s => document.querySelector(s);
-const state = { audience: 'organisers', suggested: [], shown: false };
+const state = { audience: 'organisers', role: 'Event Administrator', suggested: [], shown: false };
 
-// ---- role selection -------------------------------------------------------
+const FAQ = {
+  'Event Administrator': ['How can I change my email address?', 'Why I can’t verify my email address?'],
+  'Submitter': ['How do I edit my submission?', 'Why does my submission say incomplete?'],
+  'Reviewer': ['Why can’t I see my assigned reviews?', 'Can I change a review I have submitted?'],
+  'Attendee': ['How do I download my receipt?', 'How do I join a session?'],
+  'Other': ['How do I contact the event administrator?', 'Where do I find my event?']
+};
+
 $('#roles').addEventListener('click', e => {
   const b = e.target.closest('.role');
   if (!b) return;
   [...$('#roles').children].forEach(x => x.setAttribute('aria-pressed', String(x === b)));
   state.audience = b.dataset.aud;
+  state.role = b.textContent.trim();
 });
 
-$('#scenario').addEventListener('change', e => {
-  const m = { live: 'answers come from the live /api/search',
-              strong: 'canned strong answer — no network call',
-              weak: 'canned weak answer — no network call',
-              down: 'simulated outage — no network call' };
-  $('#modeNote').textContent = m[e.target.value];
+$('#nextBtn').addEventListener('click', () => {
+  $('#step1').classList.add('hidden');
+  $('#step2').classList.remove('hidden');
+  const plural = state.role === 'Event Administrator' ? 'event administrators'
+               : state.role === 'Other' ? 'everyone else' : state.role.toLowerCase() + 's';
+  $('#faqTitle').textContent = 'FAQs for ' + plural;
+  $('#faqList').innerHTML = '';
+  (FAQ[state.role] || []).forEach(q => {
+    const a = document.createElement('a');
+    a.className = 'faq'; a.href = '#'; a.textContent = q;
+    $('#faqList').appendChild(a);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ---- canned answers, so a demo never depends on the network ---------------
+// ---- demo controls -------------------------------------------------------
+const NOTES = {
+  live:   'Real call to /api/search. Only works on the deployed URL.',
+  strong: 'Canned answer. No network call, so it cannot fail mid-demo.',
+  weak:   'Canned weak answer — the ticket should go straight through.',
+  down:   'Simulated outage — the reader should never see an error.'
+};
+$('#scenario').addEventListener('change', e => { $('#modeNote').textContent = NOTES[e.target.value]; });
+$('#hideDemo').addEventListener('click', () => {
+  $('#demoPanel').classList.add('hidden'); $('#showDemo').classList.remove('hidden');
+});
+$('#showDemo').addEventListener('click', () => {
+  $('#demoPanel').classList.remove('hidden'); $('#showDemo').classList.add('hidden');
+});
+$('#resetBtn').addEventListener('click', () => location.reload());
+
+// ---- canned answers ------------------------------------------------------
 const CANNED = {
   strong: {
-    answer: 'Reviewers only see submissions once three things are true: reviewing is open, ' +
-            'the submissions have been assigned to them, and their reviewer account uses the ' +
-            'same email address you assigned. Check Event dashboard → Reviewing → Assign, ' +
-            'then confirm reviewing is open for the current stage.',
+    answer: 'Reviewers only see submissions once three things are true: reviewing is open for ' +
+            'the current stage, the submissions have actually been assigned to them, and the ' +
+            'reviewer signed in with the same email address you assigned. Check Event dashboard ' +
+            '→ Reviewing → Assign to confirm the assignments landed, then check reviewing is open.',
     sources: [
       { title: 'Assigning and unassigning a submission to a reviewer', path: '03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html' },
       { title: 'Opening and closing reviewing', path: '03-reviewing/opening-and-closing-reviewing.html' }
     ],
-    followups: ['How do I check reviewing is open?', 'How do I change a reviewer’s email?']
+    followups: ['How do I check reviewing is open?', 'How do I change a reviewer’s email address?']
   },
   weak: { answer: null, sources: [], followups: [] }
 };
 
-// ---- confidence -----------------------------------------------------------
-// Stand-in for the signal /api/search does not return yet. It currently answers
-// found: true/false, which is not enough to decide whether to interrupt someone.
-// Until the endpoint returns one, this approximates it client-side: an answer of
-// reasonable length, at least one cited article, and no hedging language.
+// Stand-in for the signal /api/search does not return yet. It answers found: true/false,
+// which is not enough to decide whether to interrupt someone. Until the endpoint returns
+// one, this approximates it: a reasonable-length answer, at least one cited article, and
+// no hedging language.
 const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
 function isStrong(r) {
   if (!r || !r.answer) return false;
   const a = r.answer.trim();
-  if (a.length < 60) return false;
-  if (HEDGES.test(a)) return false;
-  return (r.sources || []).length >= 1;
+  return a.length >= 60 && !HEDGES.test(a) && (r.sources || []).length >= 1;
 }
 
 async function ask(question, scenario) {
   if (scenario === 'down') throw new Error('simulated outage');
   if (scenario === 'strong' || scenario === 'weak') {
-    await new Promise(r => setTimeout(r, 700));
+    await new Promise(r => setTimeout(r, 900));
     return CANNED[scenario];
   }
   const res = await fetch('/api/search', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question })
   });
   if (!res.ok) throw new Error('bad status ' + res.status);
   return res.json();
 }
 
-// ---- the flow -------------------------------------------------------------
+// ---- the flow ------------------------------------------------------------
 $('#ticket').addEventListener('submit', async e => {
   e.preventDefault();
-  const subject = $('#subject').value.trim();
-  const content = $('#content').value.trim();
+  const subject = $('#subject').value.trim(), content = $('#content').value.trim();
   if (!subject || !content) { alert('Add a ticket name and description first.'); return; }
 
-  // The question we route on is the subject plus the description — exactly the two
-  // required fields the HubSpot form already collects (TICKET.subject, TICKET.content).
+  // The routed question is TICKET.subject plus TICKET.content — the two fields the real
+  // HubSpot form already requires, so nothing new is asked of the reader.
   const question = (subject + '. ' + content).slice(0, 500);
 
   $('#submitBtn').disabled = true;
@@ -273,44 +435,46 @@ $('#ticket').addEventListener('submit', async e => {
 
   let result = null;
   try { result = await ask(question, $('#scenario').value); }
-  catch { result = null; }          // an outage must look like no answer, never an error
+  catch { result = null; }               // an outage must look like no answer, never an error
 
   $('#checking').classList.add('hidden');
-
-  if (!isStrong(result)) { sendTicket([]); return; }   // weak or broken: do not interrupt
+  if (!isStrong(result)) { sendTicket([]); return; }   // weak or broken: never interrupt
 
   state.suggested = result.sources || [];
   state.shown = true;
   $('#answerText').textContent = result.answer;
-  // Built through the DOM rather than an HTML string: a literal href in a template
-  // literal reads as a real link to the repo's link checker and would sit there as a
-  // permanent false positive.
+
   const box = $('#sources');
   box.textContent = '';
   state.suggested.forEach(s => {
     const a = document.createElement('a');
-    a.href = '/' + s.path;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.textContent = s.title;
+    a.href = 'https://oa-kb-test.vercel.app/' + s.path;
+    a.target = '_blank'; a.rel = 'noopener'; a.textContent = s.title;
     box.appendChild(a);
   });
   $('#sourcesBox').style.display = state.suggested.length ? '' : 'none';
-  $('#followups').innerHTML = (result.followups || [])
-    .map(f => `<button class="chip" type="button">${f}</button>`).join('');
-  $('#deflect').classList.remove('hidden');
+
+  const fu = $('#followups');
+  fu.textContent = '';
+  (result.followups || []).forEach(f => {
+    const b = document.createElement('button');
+    b.className = 'chip'; b.type = 'button'; b.textContent = f;
+    fu.appendChild(b);
+  });
+
   $('#ticket').classList.add('hidden');
+  $('#deflect').classList.remove('hidden');
 });
 
 $('#solvedBtn').addEventListener('click', () => {
   $('#deflect').classList.add('hidden');
   const r = $('#result');
-  r.className = 'sent solved';
-  r.innerHTML = `<h3>Glad that sorted it</h3>
-    <p>No ticket was sent. Nothing else for you to do.</p>
-    <p class="note">Logged for the gap report: question asked, article suggested,
-    outcome <b>solved</b>. This is the labelled outcome that tells you which articles
-    actually work — not just which ones get found.</p>`;
+  r.className = 'outcome good';
+  r.innerHTML = '<h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F6F5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Glad that sorted it</h3>' +
+    '<p>No ticket was sent — there is nothing else for you to do.</p>' +
+    '<p class="note">Logged for the gap report: question asked, article suggested, outcome ' +
+    '<b>solved</b>. This is the labelled outcome that shows which articles actually work, ' +
+    'not just which ones get found.</p>';
 });
 
 $('#anywayBtn').addEventListener('click', () => sendTicket(state.suggested));
@@ -318,8 +482,6 @@ $('#anywayBtn').addEventListener('click', () => sendTicket(state.suggested));
 function sendTicket(suggested) {
   $('#deflect').classList.add('hidden');
   $('#ticket').classList.add('hidden');
-  const r = $('#result');
-  r.className = 'sent';
   const payload = {
     firstname: $('#firstname').value,
     email: $('#email').value,
@@ -327,23 +489,23 @@ function sendTicket(suggested) {
     'TICKET.content': $('#content').value,
     'TICKET.event_id': $('#eventid').value || null,
     'TICKET.event_name': $('#eventname').value || null,
-    role: [...$('#roles').children].find(b => b.getAttribute('aria-pressed') === 'true').textContent,
+    role: state.role,
     suggested_articles: suggested.map(s => s.title),
     deflection_shown: state.shown,
     outcome: state.shown ? 'sent anyway' : 'not interrupted'
   };
-  r.innerHTML = `<h3>Your ticket is on its way</h3>
-    <p>Someone who knows the software will pick it up. ${state.shown
-      ? 'We’ve attached what we suggested so they can see what you have already tried.'
-      : 'We had nothing confident to offer, so we did not get in your way.'}</p>
-    <div class="payload">${escapeHtml(JSON.stringify(payload, null, 2))}</div>
-    <p class="note">Nothing is actually sent from this prototype — the block above is what
-    would reach HubSpot.</p>`;
+  const r = $('#result');
+  r.className = 'outcome';
+  r.innerHTML = '<h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A1B3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Your ticket is on its way</h3>' +
+    '<p>Someone who knows the software will pick it up. ' +
+    (state.shown ? 'We’ve attached what we suggested so they can see what you have already tried.'
+                 : 'We had nothing confident to offer, so we did not get in your way.') + '</p>' +
+    '<div class="payload">' + esc(JSON.stringify(payload, null, 2)) + '</div>' +
+    '<p class="note">Nothing is actually sent from this prototype — the block above is what ' +
+    'would reach HubSpot.</p>';
 }
 
-function escapeHtml(s) {
-  return s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-}
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 </script>
 </body>
 </html>
