@@ -73,6 +73,13 @@ button{font:inherit}
 .msg{max-width:88%;border-radius:12px;padding:12px 15px;font-size:15.5px;animation:rise .25s ease-out}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .msg.bot{background:var(--white);border:1px solid var(--hair);align-self:flex-start;border-bottom-left-radius:4px}
+/* OA mark beside every bot message, so whose words are whose is legible at a glance */
+.bot-row{display:flex;align-items:flex-end;gap:8px;max-width:88%;align-self:flex-start;animation:rise .25s ease-out}
+.bot-row .msg.bot{max-width:100%;animation:none}
+.bot-row .typing{animation:none}
+.avatar{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--hair);
+  display:grid;place-items:center;flex-shrink:0}
+.avatar svg{width:15px;height:13px;display:block}
 .msg.you{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .msg p{margin-bottom:10px}.msg p:last-child{margin-bottom:0}
 /* 600 is the heaviest Outfit weight this page loads - without this, <strong> asks for a
@@ -309,6 +316,24 @@ function boldify(text) {
   const esc = text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
   return esc.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
+
+/* The OA mark from the brand favicon, inlined with an explicit navy fill: the favicon
+   file itself flips white under prefers-color-scheme:dark, which on a white avatar
+   circle would vanish. */
+const AVATAR_SVG =
+  '<svg viewBox="0 0 50 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+  '<path fill="#0A1B3E" d="M44.4549 11.7562L37.8931 15.5549C40.8961 17.6207 42.8754 21.0864 42.8822 25.0006C42.8822 31.2933 37.7643 36.451 31.4601 36.4442C25.4677 36.4442 20.5124 31.7757 20.0514 25.8772L13.4761 29.6827C15.5707 37.6471 22.8917 43.6339 31.4601 43.6271C41.6892 43.6203 50.0406 35.2279 49.9999 24.987C49.9796 19.7953 47.8646 15.1132 44.4617 11.7494L44.4549 11.7562Z"/>' +
+  '<path fill="#0A1B3E" d="M34.1716 6.61202L45.6005 0H31.6296L0 18.3071H13.971L14.1201 18.2187C13.2931 20.3186 12.8321 22.595 12.8254 24.9871C12.8254 25.0822 12.8254 25.1705 12.8321 25.2657L40.8961 9.01763C38.876 7.80803 36.5984 6.97898 34.1716 6.61202Z"/>' +
+  '<path fill="#0A1B3E" d="M3.77575 20.2642C1.6879 20.2642 0 21.9631 0 24.0493V27.4403H7.15834V23.6552C7.15834 21.7796 5.64668 20.2642 3.77575 20.2642Z"/>' +
+  '</svg>';
+
+function botRow() {
+  const row = el('div', 'bot-row');
+  const av = el('span', 'avatar');
+  av.innerHTML = AVATAR_SVG;
+  row.appendChild(av);
+  return row;
+}
 function scrollDown() { const b = $('#body'); b.scrollTop = b.scrollHeight; }
 
 function addYou(text) {
@@ -341,7 +366,9 @@ function addBot(text, sources, followups) {
     });
     m.appendChild(from);
   }
-  $('#body').appendChild(m);
+  const row = botRow();
+  row.appendChild(m);
+  $('#body').appendChild(row);
   if (followups && followups.length) addChips(followups);
   scrollDown();
 }
@@ -358,10 +385,12 @@ function addChips(list) {
 }
 function addTyping() {
   const t = el('div', 'typing');
-  t.id = 'typing';
   t.setAttribute('aria-label', 'Looking that up');
   t.append(el('i'), el('i'), el('i'));
-  $('#body').appendChild(t);
+  const row = botRow();
+  row.id = 'typing';
+  row.appendChild(t);
+  $('#body').appendChild(row);
   scrollDown();
 }
 function removeTyping() { const t = $('#typing'); if (t) t.remove(); }
