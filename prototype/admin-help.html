@@ -180,6 +180,14 @@ table.subs .m{color:var(--muted);font-size:13.5px}
   cursor:pointer;flex-shrink:0;display:grid;place-items:center}
 .ask button:hover{background:#ab3a2f}
 .ask button[disabled]{opacity:.5;cursor:not-allowed}
+/* Voice input. The transcript lands in the box to be read and edited, never auto-sent -
+   same trust rule as never showing a confidence percentage. */
+.ask .mic{background:#fff;border:1px solid rgba(10,27,62,.3);color:var(--ink)}
+.ask .mic:hover{background:#fff;border-color:var(--ink)}
+.ask .mic.listening{background:var(--red);border-color:var(--red);color:#fff;
+  animation:micpulse 1.2s ease-in-out infinite}
+@keyframes micpulse{0%,100%{box-shadow:0 0 0 0 rgba(197,69,56,.35)}50%{box-shadow:0 0 0 9px rgba(197,69,56,0)}}
+@media (prefers-reduced-motion:reduce){.ask .mic.listening{animation:none}}
 /* Escalation must be unmissable without shouting: a real button, full width, always
    in view - not a line of small print. */
 .ticket-btn{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:10px;
@@ -379,6 +387,13 @@ table.subs .m{color:var(--muted);font-size:13.5px}
   <div class="p-foot">
     <form class="ask" id="askForm">
       <input type="text" id="askInput" placeholder="Ask in your own words…" aria-label="Ask a question" autocomplete="off">
+      <button type="button" class="mic" id="micBtn" aria-label="Ask by voice" aria-pressed="false"
+              title="Ask by voice — the words appear in the box for you to check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3z"/>
+          <path d="M19 10v1a7 7 0 01-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/>
+        </svg>
+      </button>
       <button type="submit" id="sendBtn" aria-label="Send">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
       </button>
@@ -691,6 +706,49 @@ $('#askForm').addEventListener('submit', e => {
   $('#askInput').value = '';
   send(q);
 });
+
+/* ---- voice input ----
+   Web Speech API: free, no backend, streams the transcript live. The words go into
+   the input for the reader to check and edit - never auto-sent, because acting on a
+   silent mishearing costs more trust than two seconds of review. Where the browser
+   does not support it the button simply is not there, and typing always works. If it
+   ever disappoints on accents, the swap is Whisper behind an /api/transcribe function:
+   the button and this UX stay, only where the text comes from changes. */
+(function voice() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const btn = $('#micBtn'), input = $('#askInput');
+  if (!SR) { btn.classList.add('hidden'); return; }
+  let rec = null, listening = false;
+
+  btn.addEventListener('click', () => {
+    if (listening) { try { rec.stop(); } catch {} return; }
+    rec = new SR();
+    rec.lang = 'en-GB';
+    rec.interimResults = true;     // words appear as they are spoken
+    rec.continuous = false;        // one question, stops itself on silence
+    rec.onstart = () => {
+      listening = true;
+      btn.classList.add('listening');
+      btn.setAttribute('aria-pressed', 'true');
+      input.placeholder = 'Listening…';
+    };
+    rec.onresult = e => {
+      let t = '';
+      for (const r of e.results) t += r[0].transcript;
+      input.value = t.trim();
+    };
+    // Denied permission or no mic must never block the box - typing is always there.
+    rec.onerror = () => {};
+    rec.onend = () => {
+      listening = false;
+      btn.classList.remove('listening');
+      btn.setAttribute('aria-pressed', 'false');
+      input.placeholder = 'Ask in your own words…';
+      input.focus();
+    };
+    try { rec.start(); } catch {}
+  });
+})();
 
 /* ---- demo controls ---- */
 const NOTES = {

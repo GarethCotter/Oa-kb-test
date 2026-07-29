@@ -85,6 +85,14 @@ context, in-panel article reading, ticket escalation. What remains is plumbing.
 7. **Before cancelling Amplitude/command.ai:** confirm what else it does (tours,
    nudges, checklists) — this replaces the chat and resource centre only. The 45
    usable command.ai answers are already in `corpus-internal/`.
+8. **Voice input** is in the prototype via the Web Speech API — free, no backend,
+   button hidden where unsupported, transcript lands in the box for review and is
+   never auto-sent. If real-world accuracy across accents disappoints, the swap is
+   Whisper (or Deepgram) behind a small `/api/transcribe` function — roughly
+   $0.001 per spoken question, single-digit dollars a month at any plausible
+   volume; the button and UX stay identical, only where the text comes from
+   changes. The real costs are a second vendor key in Vercel and a privacy line
+   saying audio is transcribed, not stored.
 
 What this costs to run: pennies per question on Haiku, plus the uptime obligation —
 which the silent-fallback contract is specifically designed to soften.
