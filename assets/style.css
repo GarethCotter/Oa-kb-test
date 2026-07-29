@@ -104,6 +104,13 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .sec-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;padding-bottom:40px}
 .sec-list a{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;text-decoration:none;font-weight:500;font-size:17.5px;transition:transform .15s ease,box-shadow .15s ease}
 .sec-list a:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,28,56,.10)}
+.search-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid rgba(208,67,44,.35);border-radius:999px;padding:7px 16px 7px 12px;margin-bottom:20px;font-size:14.5px;font-weight:600;color:var(--red);letter-spacing:.01em}
+.search-badge .spark{width:16px;height:16px;flex:none;animation:sparkle 2.8s ease-in-out infinite}
+.search-badge .sep{color:rgba(208,67,44,.4);font-weight:400}
+.search-badge .plain{color:var(--muted);font-weight:500}
+@keyframes sparkle{0%,100%{opacity:.55;transform:scale(.9) rotate(0deg)}50%{opacity:1;transform:scale(1.08) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.search-badge .spark{animation:none;opacity:1}}
+@media (max-width:520px){.search-badge{font-size:13.5px;padding:6px 13px 6px 10px}.search-badge .sep,.search-badge .plain{display:none}}
 .standfirst{font-size:20px;color:var(--muted);margin:0 0 22px;line-height:1.55}
 .toc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;margin-bottom:22px;font-size:16.5px}
 .toc span{display:block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
