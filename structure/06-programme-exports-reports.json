@@ -1,0 +1,37 @@
+{
+  "intro": "Turn accepted submissions into a programme, and your event data into the books, exports and reports you need \u2014 from session planning to the final abstract book.",
+  "start": {
+    "slug": "viewing-the-mobile-version-of-the-program-builder",
+    "why": "The program builder is where sessions come together \u2014 start with the tour."
+  },
+  "groups": [
+    {
+      "title": "Building and publishing the programme",
+      "blurb": "Sessions, timezones and going live.",
+      "slugs": [
+        "program-sessions-table",
+        "adding-chair-s-email-addresses",
+        "adding-a-session-less-submission-to-the-title-listing",
+        "locking-and-change-the-timezone-for-your-conference",
+        "publishing-your-program",
+        "public-vs-full-access-programme"
+      ]
+    },
+    {
+      "title": "Books, exports and reports",
+      "blurb": "Getting your data out.",
+      "slugs": [
+        "abstract-books",
+        "downloading-your-program-and-session-books",
+        "export-table-data-to-excel",
+        "downloading-data-on-presenters-only",
+        "other-reports",
+        "creating-a-backup-of-your-conference-data"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "07-delegate-registration",
+    "label": "Next stage: Delegate registration"
+  }
+}

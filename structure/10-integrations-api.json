@@ -1,0 +1,19 @@
+{
+  "intro": "Connect Oxford Abstracts to the rest of your event stack \u2014 or build your own connection with the API.",
+  "start": {
+    "slug": "application-programming-interface-api",
+    "why": "What the API can do and how to get access."
+  },
+  "groups": [
+    {
+      "title": "Integrations",
+      "blurb": "Partner platforms, one page each.",
+      "slugs": [
+        "integrating-oxford-abstracts-and-cvent",
+        "integrating-eventsair-to-oxford-abstracts",
+        "integrating-oxford-abstracts-and-idloom",
+        "integrating-oxford-abstracts-and-swapcard"
+      ]
+    }
+  ]
+}

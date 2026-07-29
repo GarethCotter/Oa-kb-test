@@ -1,0 +1,36 @@
+{
+  "intro": "You've been asked to submit an abstract to a conference that runs on Oxford Abstracts. Everything you need is here \u2014 and if you get stuck, the person to ask is the event's organising team.",
+  "start": {
+    "slug": "making-a-submission",
+    "why": "Start to finish: creating your account and submitting your abstract."
+  },
+  "groups": [
+    {
+      "title": "Your submission",
+      "blurb": "Making it, changing it, paying for it.",
+      "slugs": [
+        "editing-an-abstract-or-submission",
+        "making-a-second-additional-submission",
+        "paying-for-your-submission"
+      ]
+    },
+    {
+      "title": "After you submit",
+      "blurb": "Reviews, feedback and comments.",
+      "slugs": [
+        "accessing-your-reviews",
+        "viewing-comments-left-by-reviewers"
+      ]
+    },
+    {
+      "title": "Symposia",
+      "blurb": "If your conference groups abstracts into symposia.",
+      "slugs": [
+        "submit-a-symposium",
+        "attaching-your-submission-to-a-symposium",
+        "editing-a-symposium",
+        "withdrawing-or-removing-your-submission-from-a-symposium"
+      ]
+    }
+  ]
+}

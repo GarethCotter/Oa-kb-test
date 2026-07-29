@@ -1,0 +1,34 @@
+{
+  "intro": "Every stage sends emails \u2014 templates for the routine ones, custom emails for everything else. This section covers writing them, sending them, and making sure they actually arrive.",
+  "start": {
+    "slug": "sending-and-scheduling-emails",
+    "why": "The tour of the email tool \u2014 where everything lives and how sending works."
+  },
+  "groups": [
+    {
+      "title": "Writing and sending",
+      "blurb": "Templates, custom emails, and targeted sends.",
+      "slugs": [
+        "editing-the-template-emails",
+        "creating-custom-emails",
+        "sending-emails-from-tables",
+        "emailing-presenters-and-authors-directly",
+        "emailing-session-chairs-from-the-dashboard"
+      ]
+    },
+    {
+      "title": "Making sure they arrive",
+      "blurb": "Deliverability, sender identity, and checking what was sent.",
+      "slugs": [
+        "using-the-email-sent-log",
+        "sending-emails-from-your-chosen-email-address",
+        "why-does-my-email-need-to-be-dkim-validated",
+        "what-domains-will-emails-from-oxford-abstracts-originate-from"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "06-programme-exports-reports",
+    "label": "Next stage: Programme, exports & reports"
+  }
+}

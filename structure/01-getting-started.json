@@ -1,0 +1,55 @@
+{
+  "intro": "Everything you need before your event takes shape: your account, the event itself, your team, and the handful of platform basics that every other stage relies on.",
+  "start": {
+    "slug": "abstract-management-checklist",
+    "why": "A walk through the whole journey, start to finish \u2014 keep it open in a tab for your first event."
+  },
+  "groups": [
+    {
+      "title": "Your account and your event",
+      "blurb": "Getting set up.",
+      "slugs": [
+        "creating-an-account-with-oxford-abstracts-and-logging-in",
+        "updating-your-profile",
+        "your-personal-dashboard",
+        "creating-and-paying-for-a-new-event",
+        "what-are-the-differences-between-the-free-package-and-paid-packages",
+        "event-details",
+        "event-theme"
+      ]
+    },
+    {
+      "title": "Your team and your users",
+      "blurb": "Who does what in the system.",
+      "slugs": [
+        "different-types-of-users-in-the-system",
+        "manage-users",
+        "helping-your-submitters-reviewers-and-committee-with-problems"
+      ]
+    },
+    {
+      "title": "Platform basics",
+      "blurb": "The tools you'll use in every stage.",
+      "slugs": [
+        "event-dashboard",
+        "the-essential-abstract-management-tools",
+        "working-with-tables",
+        "using-the-search-bars",
+        "recommended-dimensions-for-picture-uploads"
+      ]
+    },
+    {
+      "title": "Fixing problems",
+      "blurb": "The common early snags.",
+      "slugs": [
+        "if-your-verification-email-hasn-t-arrived",
+        "fixing-a-network-failure-error",
+        "testing-the-accessibility-of-oxford-abstracts-web-pages"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "02-submissions",
+    "label": "Set up? Next stage: Submissions"
+  }
+}

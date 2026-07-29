@@ -1,0 +1,27 @@
+{
+  "intro": "Optional products you can buy alongside your plan. Symposia lets submitters group abstracts under a single heading, with its own forms, reviewing and decisions; Certificates lets you issue attendance certificates (included with Professional).",
+  "start": {
+    "slug": "symposia-overview-dashboard",
+    "why": "What symposia are, the three ways to run them, and a tour of the dashboard."
+  },
+  "groups": [
+    {
+      "title": "Symposia, step by step",
+      "blurb": "The full lifecycle, in order.",
+      "slugs": [
+        "designing-the-symposia-forms",
+        "collecting-symposia",
+        "symposia-reviewing",
+        "managing-symposia",
+        "symposia-decisions-emails"
+      ]
+    },
+    {
+      "title": "Certificates",
+      "blurb": "A separate add-on, included with Professional.",
+      "slugs": [
+        "creating-a-certificate"
+      ]
+    }
+  ]
+}

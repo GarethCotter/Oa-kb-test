@@ -1,0 +1,49 @@
+{
+  "intro": "Registration is where attendees buy their tickets. Build the form and tickets, connect payments, publish \u2014 then manage orders, invoices and refunds as they come in.",
+  "start": {
+    "slug": "creating-your-delegate-registration-form",
+    "why": "The registration form is the front door \u2014 build it before tickets and payments."
+  },
+  "groups": [
+    {
+      "title": "Setting up",
+      "blurb": "Form, tickets, payments and publishing.",
+      "slugs": [
+        "creating-your-delegate-registration-tickets-for-your-event",
+        "adding-add-ons-to-an-existing-order",
+        "dependency-questions-on-the-delegate-registration-form",
+        "setting-up-payment-providers-for-delegate-registration",
+        "configuring-invoices-and-receipts-for-delegate-registration",
+        "creating-coupon-codes-for-delegate-registration",
+        "editing-automated-emails-for-delegate-registration",
+        "editing-your-delegate-registration-ticket-details-page",
+        "previewing-and-publish-your-event-registration"
+      ]
+    },
+    {
+      "title": "Managing orders",
+      "blurb": "Once registrations start arriving.",
+      "slugs": [
+        "managing-orders-and-edit-the-attendee-table",
+        "viewing-transactions-on-the-attendee-table",
+        "how-admins-can-amend-existing-delegate-registration-orders",
+        "registering-on-the-behalf-of-someone-else",
+        "using-registration-analytics"
+      ]
+    },
+    {
+      "title": "Fixing problems",
+      "blurb": "Refunds, receipts and registration snags.",
+      "slugs": [
+        "refunding-an-attendee-through-delegate-registration",
+        "downloading-invoices-and-receipts",
+        "changing-the-email-address-on-a-registration",
+        "completing-registration-when-someone-bought-your-ticket"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "08-conference-platform",
+    "label": "Next stage: Conference platform"
+  }
+}

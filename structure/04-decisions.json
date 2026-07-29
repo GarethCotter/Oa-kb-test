@@ -1,0 +1,31 @@
+{
+  "intro": "Decisions is where reviews turn into outcomes. Design the decision form, open decision-making to your committee, record the results, then let your submitters know.",
+  "start": {
+    "slug": "design-the-decision-form",
+    "why": "Set your acceptance types and criteria before the committee starts deciding."
+  },
+  "groups": [
+    {
+      "title": "Setting up",
+      "blurb": "The form and your committee.",
+      "slugs": [
+        "assigning-categories-to-committee-members",
+        "opening-and-closing-decision-making"
+      ]
+    },
+    {
+      "title": "Recording outcomes",
+      "blurb": "Making decisions and telling people.",
+      "slugs": [
+        "recording-decisions-accept-reject-or-withdraw",
+        "the-decisions-table",
+        "assigning-program-codes-in-the-decisions-table",
+        "notifying-submitters-of-their-outcomes"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "05-emails",
+    "label": "Decisions made? Next stage: Emails"
+  }
+}

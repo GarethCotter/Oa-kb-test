@@ -1,0 +1,42 @@
+{
+  "intro": "Reviewing is where your reviewers score submissions before you make decisions. You'll design a review form, recruit and assign reviewers, open reviewing, then keep an eye on progress \u2014 stepping in where a review needs chasing or finishing.",
+  "start": {
+    "slug": "designing-the-review-form",
+    "why": "Everything else in this stage hangs off the review form, so build it first."
+  },
+  "groups": [
+    {
+      "title": "Setting up",
+      "blurb": "Before your reviewers see anything.",
+      "slugs": [
+        "review-question-types",
+        "tips-on-designing-your-reviewing-form",
+        "creating-the-reviewer-recruitment-form-and-assign-categories",
+        "controlling-what-the-reviewer-can-see"
+      ]
+    },
+    {
+      "title": "While reviewing is open",
+      "blurb": "Assigning work and keeping it moving.",
+      "slugs": [
+        "assigning-and-unassigning-a-submission-to-a-reviewer",
+        "opening-and-closing-reviewing",
+        "notifying-reviewers-that-they-have-been-assigned-submissions-to-review",
+        "the-review-tables"
+      ]
+    },
+    {
+      "title": "Fixing problems",
+      "blurb": "The things that go wrong, and what to do about them.",
+      "slugs": [
+        "chasing-up-late-reviews",
+        "editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer",
+        "showing-reviews-to-submitters"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "04-decisions",
+    "label": "Reviews done? Next stage: Decisions"
+  }
+}

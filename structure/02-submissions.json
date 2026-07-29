@@ -1,0 +1,63 @@
+{
+  "intro": "Submissions is where you design your form and collect abstracts. Build the form first, open the call, then manage what comes in \u2014 with multi-stage tools if your event runs in rounds.",
+  "start": {
+    "slug": "designing-the-submission-form",
+    "why": "The form shapes everything you collect, so design it before opening the call."
+  },
+  "groups": [
+    {
+      "title": "Designing your form",
+      "blurb": "Questions, authors, limits and rules.",
+      "slugs": [
+        "submission-question-types",
+        "question-setting-tags",
+        "the-authors-and-affiliations-question",
+        "text-editor-types",
+        "dependency-questions",
+        "word-and-character-count",
+        "combined-word-count",
+        "creating-questions-for-individual-authors-and-presenters",
+        "creating-a-multi-language-submission-form"
+      ]
+    },
+    {
+      "title": "Collecting submissions",
+      "blurb": "Opening the call and controlling who can submit.",
+      "slugs": [
+        "opening-and-closing-submissions-deadlines",
+        "restricting-who-can-submit-by-email",
+        "charging-a-fee-for-submission",
+        "making-a-submission-on-behalf-of-someone-else",
+        "bulk-upload-and-automatically-assign-files"
+      ]
+    },
+    {
+      "title": "Managing what comes in",
+      "blurb": "The submissions table and everyday admin.",
+      "slugs": [
+        "the-submissions-table-including-incomplete-submissions",
+        "editing-a-user-s-submission",
+        "changing-the-owner-of-a-submission",
+        "deleting-restoring-or-withdrawing-a-submission",
+        "turning-inline-comments-on-and-off",
+        "using-submission-analytics"
+      ]
+    },
+    {
+      "title": "Multi-stage events (add-on)",
+      "blurb": "For events that run in rounds \u2014 abstract then full paper.",
+      "slugs": [
+        "setting-up-a-multi-stage-event",
+        "creating-multi-stage-submission-forms",
+        "running-a-sequential-multi-stage-event",
+        "multi-stage-the-decision-stage",
+        "multi-stage-reviews",
+        "accessing-reviews-from-previous-stages"
+      ]
+    }
+  ],
+  "next": {
+    "folder": "03-reviewing",
+    "label": "Submissions in? Next stage: Reviewing"
+  }
+}

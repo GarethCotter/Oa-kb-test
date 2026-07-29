@@ -1,0 +1,58 @@
+{
+  "intro": "Your event site itself: sessions, the online programme, and the live and on-demand experience your attendees see. Set the programme up, add your sessions, then layer on the features your plan includes.",
+  "start": {
+    "slug": "setting-up-your-program-configuration",
+    "why": "Programme configuration sets the foundations everything else here builds on."
+  },
+  "groups": [
+    {
+      "title": "Setting up the platform",
+      "blurb": "Foundations before your sessions go in.",
+      "slugs": [
+        "setting-up-your-program-display",
+        "setting-up-your-program-timezones",
+        "creating-your-event-website",
+        "setting-up-the-homepage-for-your-conference",
+        "professional-conference-branding",
+        "setting-up-your-zoom-integration",
+        "which-zoom-package-do-i-need"
+      ]
+    },
+    {
+      "title": "Sessions and the programme",
+      "blurb": "Building what attendees actually see.",
+      "slugs": [
+        "creating-a-session",
+        "attaching-content-to-sessions",
+        "amending-deleting-and-copying-a-session",
+        "assigning-program-codes",
+        "making-a-session-cross-columns-in-the-program-timetable",
+        "using-speaker-management",
+        "bookmarking-sessions-on-the-event-schedule",
+        "creating-announcements-on-conference"
+      ]
+    },
+    {
+      "title": "Programme features",
+      "blurb": "Colour coding, bookings, comments and visibility.",
+      "slugs": [
+        "colour-coding-your-programme",
+        "session-bookings",
+        "comments-on-sessions-and-abstracts",
+        "letting-submitters-hide-their-abstract-from-the-programme"
+      ]
+    },
+    {
+      "title": "Professional Conference features",
+      "blurb": "Included with the Professional plan.",
+      "slugs": [
+        "controlling-access-to-the-programme",
+        "networking-for-attendees",
+        "the-chat-feature",
+        "professional-conference-the-poster-gallery",
+        "professional-conference-exhibitor-space-admin-set-up",
+        "professional-conference-sponsors"
+      ]
+    }
+  ]
+}

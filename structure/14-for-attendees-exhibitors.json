@@ -1,0 +1,35 @@
+{
+  "intro": "You're attending \u2014 or exhibiting at \u2014 a conference that runs on Oxford Abstracts. Here's how to get in, find your way around, and fix the common snags. For anything about your ticket or the event itself, contact the event's organising team.",
+  "start": {
+    "slug": "setting-up-your-conference-program-account",
+    "why": "Getting into the conference platform for the first time."
+  },
+  "groups": [
+    {
+      "title": "Finding your way around",
+      "blurb": "The programme, sessions and posters.",
+      "slugs": [
+        "exploring-the-conference-platform",
+        "viewing-sessions-and-content-in-the-conference-program",
+        "how-attendees-can-download-event-schedules",
+        "exploring-the-poster-gallery",
+        "using-the-chat-and-controlling-notifications"
+      ]
+    },
+    {
+      "title": "Exhibitors",
+      "blurb": "Setting up and running your booth.",
+      "slugs": [
+        "exhibitor-space-setting-up-and-managing-your-booth"
+      ]
+    },
+    {
+      "title": "Fixing problems",
+      "blurb": "When something goes wrong.",
+      "slugs": [
+        "payment-error",
+        "how-do-i-contact-the-event-administrator"
+      ]
+    }
+  ]
+}

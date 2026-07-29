@@ -1,0 +1,25 @@
+{
+  "intro": "You've been asked to review submissions, or to make decisions on them as a committee member. Short guides for everything you'll be asked to do \u2014 and if anything looks wrong, your event's organising team can fix it.",
+  "start": {
+    "slug": "completing-a-review",
+    "why": "Finding your assigned submissions and completing your reviews."
+  },
+  "groups": [
+    {
+      "title": "Reviewing",
+      "blurb": "Your reviews and comments.",
+      "slugs": [
+        "completing-a-symposium-review",
+        "leaving-comments-on-submissions-you-review"
+      ]
+    },
+    {
+      "title": "Committee members",
+      "blurb": "Assigning work and recording decisions.",
+      "slugs": [
+        "assigning-submissions-to-reviewers-as-a-committee-member",
+        "viewing-and-making-decisions"
+      ]
+    }
+  ]
+}
