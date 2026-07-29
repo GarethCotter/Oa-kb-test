@@ -1,0 +1,1394 @@
+[
+ {
+  "title": "Abstract management checklist",
+  "path": "01-getting-started/abstract-management-checklist.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "It is recommended that administrators go through the following checklist to set up the event # # Event details Click Event details in the Event Dashboard then check/update all the event details and add a logo if desired."
+ },
+ {
+  "title": "Creating an account with Oxford Abstracts and logging in",
+  "path": "01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "It's a very simple process to get you started with using Oxford Abstracts. # Skip to: How to create an account with your email address Forgotten password How do I know which account I am logged in with? How does it work "
+ },
+ {
+  "title": "Creating and paying for a new event",
+  "path": "01-getting-started/creating-and-paying-for-a-new-event.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In most cases, client /account admins can create, set up and pay for a new event, without needing to contact Oxford Abstracts. The guidance below shows you how to do this. # The guidance below is for event administrators"
+ },
+ {
+  "title": "Different types of users in the system",
+  "path": "01-getting-started/different-types-of-users-in-the-system.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn more about the various types of users who will need access to your event, from admin through to reviewers and other personnel. # # The guidance below is for event administrators/ organisers. If you are an end user "
+ },
+ {
+  "title": "Event dashboard",
+  "path": "01-getting-started/event-dashboard.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The event dashboard is the portal where you access the tools you'll need for all aspects of your event. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, deleg"
+ },
+ {
+  "title": "Event details",
+  "path": "01-getting-started/event-details.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Clicking the Event details option in the menu on the event dashboard allows you to add/view/edit key information relating to the event, including title, venue, date(s), logo, email address, phone number etc. # The guidan"
+ },
+ {
+  "title": "Event theme",
+  "path": "01-getting-started/event-theme.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you have the Standard Conference Package, you can add colours and logos to your event set up if you wish. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, "
+ },
+ {
+  "title": "Fixing a 'network failure' error",
+  "path": "01-getting-started/fixing-a-network-failure-error.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This article will advise what to do if you see a \"Network Failure\" error message, when trying to access the website. # If you go onto our website and you are greeted with the following message: It usually means the webma"
+ },
+ {
+  "title": "Helping your submitters, reviewers and committee with problems",
+  "path": "01-getting-started/helping-your-submitters-reviewers-and-committee-with-problems.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If one of your users reports a technical issue, it is important to collect as much detail as you can about the problem in order to resolve it as quickly as possible. # If your users contact you regarding guidance, see: G"
+ },
+ {
+  "title": "If your verification email hasn't arrived",
+  "path": "01-getting-started/if-your-verification-email-hasn-t-arrived.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Once you have set up your account, a verification email will be sent to your email address. If you do not receive this, here are the reasons why and how to solve them. # NB: If you are looking to create your account and "
+ },
+ {
+  "title": "Manage users",
+  "path": "01-getting-started/manage-users.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Clicking on the Users option in the menu in the event dashboard allows you to view, add and remove reviewers, committee members, event administrators, and API users. # The guidance below is for event administrators/ orga"
+ },
+ {
+  "title": "Recommended dimensions for picture uploads",
+  "path": "01-getting-started/recommended-dimensions-for-picture-uploads.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out the dimensions your images need to be for your event and certificates with Oxford Abstracts. # This article is for Admins ONLY! Below you will find the recommended picture dimensions for uploading images to your"
+ },
+ {
+  "title": "Testing the accessibility of Oxford Abstracts web pages",
+  "path": "01-getting-started/testing-the-accessibility-of-oxford-abstracts-web-pages.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article you can find instructions on how to test the accessibility of Oxford Abstracts web pages with Google Lighthouse # Providing accessibility to webpages are incredibly important as it helps to enable those w"
+ },
+ {
+  "title": "The essential abstract management tools",
+  "path": "01-getting-started/the-essential-abstract-management-tools.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "A brief introduction to the features of the abstract management toolbox, designed to help you manage the submission, review and decision process for your academic or research conference. # The guidance below is for event"
+ },
+ {
+  "title": "Updating your profile",
+  "path": "01-getting-started/updating-your-profile.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Changing your name, email address or password is a simple process that can be done at any time, whilst logged in to the Oxford Abstracts app. # Skip to: Updating your profile if you have logged in with a third party acco"
+ },
+ {
+  "title": "Using the search bars",
+  "path": "01-getting-started/using-the-search-bars.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to use the program &amp; session search bars. # Please note: This information is for Admins Only! Skip to: The Program Search Bar The Session Search Bar The Program Search Bar can help you search for: Submis"
+ },
+ {
+  "title": "What are the differences between the free package and paid packages?",
+  "path": "01-getting-started/what-are-the-differences-between-the-free-package-and-paid-packages.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Below, you will find how the free package differs from our paid versions. # This information is for admins only. We\u2019ve put together a little five-minute video for you to watch, or if you would prefer, you can read the di"
+ },
+ {
+  "title": "Working with tables",
+  "path": "01-getting-started/working-with-tables.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The tables appear in several of the different stages within the Oxford Abstracts system - eg submissions, reviews, delegates etc. Before you work with any of the tables, it's advisable to become familar with their layout"
+ },
+ {
+  "title": "Your personal dashboard",
+  "path": "01-getting-started/your-personal-dashboard.html",
+  "section": "Getting started",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "When you log into the Oxford Abstracts app, the first screen you see is your personal dashboard, which will provide a list of all the activity your registered email is associated with. # Skip to guidance for: Account adm"
+ },
+ {
+  "title": "Accessing reviews from previous stages",
+  "path": "02-submissions/accessing-reviews-from-previous-stages.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you have set up a multi stage sequential event, you may wish to access reviews from a previous stage. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, dele"
+ },
+ {
+  "title": "Bulk upload and automatically assign files",
+  "path": "02-submissions/bulk-upload-and-automatically-assign-files.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This article will provide instructions on how to bulk upload files (for example, posters) and automatically assign them to the correct submission/abstract. # This information is for Admins ONLY! Please note: To be able t"
+ },
+ {
+  "title": "Changing the owner of a submission",
+  "path": "02-submissions/changing-the-owner-of-a-submission.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to change the submission owner by following the instructions below # This article is for Admins ONLY. Please note: You cannot add a new submitters name. This can only be added by the user when they register wit"
+ },
+ {
+  "title": "Charging a fee for submission",
+  "path": "02-submissions/charging-a-fee-for-submission.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This feature allows you to charge and collect fees from submitters. It is not available in the FREE package. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, "
+ },
+ {
+  "title": "Combined word count",
+  "path": "02-submissions/combined-word-count.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You can set a combined word count over multiple questions (short text and text editor questions). This works well for questions that work as separate elements of an abstract, e.g. background, objective, method, results, "
+ },
+ {
+  "title": "Creating a multi-language submission form",
+  "path": "02-submissions/creating-a-multi-language-submission-form.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "Learn how to create dual submission forms for any language. # To enable a multi-language submission form, you will need to have the Multi-Stage add-on. To purchase this, please contact our sales team - sales@oxfordabstra"
+ },
+ {
+  "title": "Creating Multi-stage submission forms",
+  "path": "02-submissions/creating-multi-stage-submission-forms.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "Creating forms for a multi-stage event is very similar to a single stage event, but there are a few differences that you should be aware of before you set up your submission forms. # The guidance below is for event admin"
+ },
+ {
+  "title": "Creating questions for individual authors and presenters",
+  "path": "02-submissions/creating-questions-for-individual-authors-and-presenters.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "All the fields on the Authors and affiliations questions are completed by the submitter, on behalf of their co-authors, but you add custom fields to be completed individually by the co-authors (or just presenter, if requ"
+ },
+ {
+  "title": "Deleting, restoring or withdrawing a submission",
+  "path": "02-submissions/deleting-restoring-or-withdrawing-a-submission.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "An account or event administrator can delete or withdraw any unwanted submissions. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please clic"
+ },
+ {
+  "title": "Dependency questions",
+  "path": "02-submissions/dependency-questions.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "There may be a requirement for you to set up dependency questions, eg. a new question is revealed when a submitter selects an option from a 'choice' type question. Read on to find out how to add this to your form. # The "
+ },
+ {
+  "title": "Designing the submission form",
+  "path": "02-submissions/designing-the-submission-form.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to design the submission form so you can collect the information and data you need. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), "
+ },
+ {
+  "title": "Editing a user's submission",
+  "path": "02-submissions/editing-a-user-s-submission.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You may find you are required to edit a user's submission. It's a straightforward process and any updates will be recorded in the 'last updated by' column in the submission tables. # The guidance below is for event admin"
+ },
+ {
+  "title": "Making a submission on behalf of someone else",
+  "path": "02-submissions/making-a-submission-on-behalf-of-someone-else.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "An account administrator or event administrator can make a submission on behalf of a submitter. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc)"
+ },
+ {
+  "title": "Multi-stage reviews",
+  "path": "02-submissions/multi-stage-reviews.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "The reviews in multi-stage work in the same way as a standard set-up, but you can create separate review forms for each stage. # The guidance below is for event administrators/ organisers. If you are an end user (eg. sub"
+ },
+ {
+  "title": "Multi-stage - the decision stage",
+  "path": "02-submissions/multi-stage-the-decision-stage.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "As well as recording a decision (accepting/ rejecting/ withdrawing a submission) you can also move a submission to another stage. # The guidance below is for event administrators/ organisers. If you are an end user (eg. "
+ },
+ {
+  "title": "Opening and closing submissions (deadlines)",
+  "path": "02-submissions/opening-and-closing-submissions-deadlines.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In order to make the submission system live, you must open submissions. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here . NB"
+ },
+ {
+  "title": "Question setting tags",
+  "path": "02-submissions/question-setting-tags.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Various tags can be applied to your questions to determine how responses will be treated and viewed within the system. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, "
+ },
+ {
+  "title": "Restricting who can submit by email",
+  "path": "02-submissions/restricting-who-can-submit-by-email.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you wish, you can restrict submission to your event to a specific group of people by adding their email addresses. It is not available in the FREE package. # The guidance below is for event administrators/ organisers."
+ },
+ {
+  "title": "Running a sequential Multi-stage event",
+  "path": "02-submissions/running-a-sequential-multi-stage-event.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "Multi -stage abstract submission can be used for parallel stages (eg. Clinical and Practice) or sequential. This article provides guidance on how to manage the sequential type of multi-stage submission. # The guidance be"
+ },
+ {
+  "title": "Setting up a Multi-stage event",
+  "path": "02-submissions/setting-up-a-multi-stage-event.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "add-on: multi-stage",
+  "summary": "There is no limit to the number of stages you can have in an event and these can work independently ( ie - two separate submission processes) or can work together (ie - users submit to the first stage, and then may advan"
+ },
+ {
+  "title": "Submission question types",
+  "path": "02-submissions/submission-question-types.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements # The guidance below is for event administrators/ organisers. If you are an end user (eg. "
+ },
+ {
+  "title": "Text editor types",
+  "path": "02-submissions/text-editor-types.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements. # The guidance below is for event admi"
+ },
+ {
+  "title": "The authors and affiliations question",
+  "path": "02-submissions/the-authors-and-affiliations-question.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need. # The guidance below is for event administrat"
+ },
+ {
+  "title": "The submissions table (including incomplete submissions)",
+  "path": "02-submissions/the-submissions-table-including-incomplete-submissions.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The submissions table is a very useful tool as an overview of submission info, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports. You can also send emails"
+ },
+ {
+  "title": "Turning inline comments on and off",
+  "path": "02-submissions/turning-inline-comments-on-and-off.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to enable and disable Inline Comments with our step by step guide. # This information is for Admins ONLY . If you are a submitter and would like to know more about Inline Comments please read this article . If "
+ },
+ {
+  "title": "Using submission analytics",
+  "path": "02-submissions/using-submission-analytics.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to use submission analytics, and what they can do to help elevate your event. # Please note: This information is for Admins only! Submission Analytics allows Admins to track links to get a better overview of"
+ },
+ {
+  "title": "Word and character count",
+  "path": "02-submissions/word-and-character-count.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "On text questions, you can add a word or character limit, if you wish. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here . Ski"
+ },
+ {
+  "title": "Assigning and unassigning a submission to a reviewer",
+  "path": "03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to automatically assign, manually assign and un-assign submissions to reviewers."
+ },
+ {
+  "title": "Chasing up late reviews",
+  "path": "03-reviewing/chasing-up-late-reviews.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You may want to chase up reviewers if their reviews are incomplete and the deadline is approaching. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate "
+ },
+ {
+  "title": "Controlling what the reviewer can see",
+  "path": "03-reviewing/controlling-what-the-reviewer-can-see.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You can determine which questions' responses will be visible to the reviewer, along with the submitters' individual information (eg. name and email address). # The guidance below is for event administrators/ organisers. "
+ },
+ {
+  "title": "Creating the reviewer recruitment form and assign categories",
+  "path": "03-reviewing/creating-the-reviewer-recruitment-form-and-assign-categories.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to create your reviewer form, either manually or bulk upload reviewers, how to use the reviewer table and assign categories to reviewers. # Skip to: How To Add Reviewers How To Create The Reviewer Recruitment F"
+ },
+ {
+  "title": "Designing the review form",
+  "path": "03-reviewing/designing-the-review-form.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Explore the settings and tools that will help you design the review form for your requirements. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc)"
+ },
+ {
+  "title": "Editing a review or completing a review on behalf of a reviewer",
+  "path": "03-reviewing/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You can edit or complete a review on behalf of an assigned reviewer, should you require. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), pleas"
+ },
+ {
+  "title": "Notifying reviewers that they have been assigned submissions to review",
+  "path": "03-reviewing/notifying-reviewers-that-they-have-been-assigned-submissions-to-review.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "After adding reviewers and assigning submissions to them, you will need to notify them via the notifying reviewers email template. # The guidance below is for event administrators/ organisers. If you are an end user (eg."
+ },
+ {
+  "title": "Opening and closing reviewing",
+  "path": "03-reviewing/opening-and-closing-reviewing.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In order to make the review system live, you will need to open reviews. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here . Sk"
+ },
+ {
+  "title": "Review question types",
+  "path": "03-reviewing/review-question-types.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "As well as the default questions, you can add supplementary questions, should you require. They are split into various types. # The guidance below is for event administrators/ organisers. If you are an end user (eg. subm"
+ },
+ {
+  "title": "Showing reviews to submitters",
+  "path": "03-reviewing/showing-reviews-to-submitters.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "By default, reviews are not made available to submitters (just their acceptance status). If you would like submitters to view their reviews, follow the guidance below. It is not available in the FREE package. # The guida"
+ },
+ {
+  "title": "The review tables",
+  "path": "03-reviewing/the-review-tables.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The review tables are very useful tools for having an overview of review information, and to manipulate and extract data. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitte"
+ },
+ {
+  "title": "Tips on designing your reviewing form",
+  "path": "03-reviewing/tips-on-designing-your-reviewing-form.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The review form templates are designed to be very flexible but in order to collect the information you need and to make the reviewing process simple, there are a few things that you should consider when designing your fo"
+ },
+ {
+  "title": "Assigning categories to committee members",
+  "path": "04-decisions/assigning-categories-to-committee-members.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you need to assign categories to specific committee members, follow the guidance below. This feature is not available in the FREE package. # The guidance below is for event administrators/ organisers. If you are an en"
+ },
+ {
+  "title": "Assigning program codes in the decisions table",
+  "path": "04-decisions/assigning-program-codes-in-the-decisions-table.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require. # The guidance be"
+ },
+ {
+  "title": "Design the decision form",
+  "path": "04-decisions/design-the-decision-form.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The decision form questions create the columns in the decision table. As well as key data, there will be fields where data can be entered by the administrators or committee members. # The guidance below is for event admi"
+ },
+ {
+  "title": "Notifying submitters of their outcomes",
+  "path": "04-decisions/notifying-submitters-of-their-outcomes.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "When you and your committee have made your decisions, you can then notify your submitters # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), plea"
+ },
+ {
+  "title": "Opening and closing decision making",
+  "path": "04-decisions/opening-and-closing-decision-making.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In order to make the decision system live, you will need to open decisions. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here "
+ },
+ {
+  "title": "Recording decisions: accept, reject or withdraw",
+  "path": "04-decisions/recording-decisions-accept-reject-or-withdraw.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below. # The guidance below is for event "
+ },
+ {
+  "title": "The decisions table",
+  "path": "04-decisions/the-decisions-table.html",
+  "section": "Decisions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The decisions table gives an overview of submissions data relating to outcome status and is used for making decisions on submissions. # The guidance below is for event administrators/ organisers. If you are an end user ("
+ },
+ {
+  "title": "Creating custom emails",
+  "path": "05-emails/creating-custom-emails.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, "
+ },
+ {
+  "title": "Editing the template emails",
+  "path": "05-emails/editing-the-template-emails.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # The guidance below is for event administrators/ organisers. "
+ },
+ {
+  "title": "Emailing presenters and authors directly",
+  "path": "05-emails/emailing-presenters-and-authors-directly.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "It is possible to create new templates to send out messages to presenters and authors. This article will show you how. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, "
+ },
+ {
+  "title": "Emailing session chairs from the dashboard",
+  "path": "05-emails/emailing-session-chairs-from-the-dashboard.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to email Session Chairs of your event either in bulk or individually. # If you would like to send Session Chair\u2019s emails you can do so via your event dashboard. Please ensure you have added the Chair's email ad"
+ },
+ {
+  "title": "Sending and scheduling emails",
+  "path": "05-emails/sending-and-scheduling-emails.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Once you have edited the template emails, or created your own custom ones, you can send or schedule your emails - send individually, in groups, or all at once. # The guidance below is for event administrators/ organisers"
+ },
+ {
+  "title": "Sending emails from tables",
+  "path": "05-emails/sending-emails-from-tables.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "If you would like to send emails from your tables instead of the email tool, follow the guidance below. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, deleg"
+ },
+ {
+  "title": "Sending emails from your chosen email address",
+  "path": "05-emails/sending-emails-from-your-chosen-email-address.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "By default, all emails are from no-reply@oxfordabstracts.com but you can change this so that the emails come from your chosen email address. The reply-to address will always be the notification email you enter into the s"
+ },
+ {
+  "title": "Using the email sent log",
+  "path": "05-emails/using-the-email-sent-log.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "You can learn how to use the email sent log, to view details, and resend emails. # This information is for Event Admins ONLY! To access the Email Log, on the left-hand menu click on Emails \u2192 Sent Logs. The email log allo"
+ },
+ {
+  "title": "What domains will emails from Oxford Abstracts originate from?",
+  "path": "05-emails/what-domains-will-emails-from-oxford-abstracts-originate-from.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "The below article will provide you with details of what domain Oxford Abstracts emails will originate from. # Emails will originate from the oxfordabstacts.com domain unless you choose to register a verified sender email"
+ },
+ {
+  "title": "Why does my email need to be DKIM validated?",
+  "path": "05-emails/why-does-my-email-need-to-be-dkim-validated.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Understand what DKIM is, how to get DKIM validated and how it affects your Oxford Abstract event. # Please note: this Knowledge Base article is for Admins ONLY Google &amp; Yahoo have implemented that all email senders m"
+ },
+ {
+  "title": "Abstract books",
+  "path": "06-programme-exports-reports/abstract-books.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # The guidance below is for event administrators/ organisers. If you are an end user (eg. "
+ },
+ {
+  "title": "Adding a session-less submission to the title listing",
+  "path": "06-programme-exports-reports/adding-a-session-less-submission-to-the-title-listing.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Learn how to add submission titles into a session without having them included in the program builder, by following the guidance below. # This guide is for admins ONLY. Skip to: How to see what the In Titles listing will"
+ },
+ {
+  "title": "Adding chair's email addresses",
+  "path": "06-programme-exports-reports/adding-chair-s-email-addresses.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Find out how to add chair email addresses for your event. # NB: This article is for ADMINS ONLY. Skip to adding multiple chair email address in one go. How to manually add chair email addresses, individually. # From your"
+ },
+ {
+  "title": "Creating a backup of your conference data",
+  "path": "06-programme-exports-reports/creating-a-backup-of-your-conference-data.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "If you would like to create a backup of all the data in your conference, follow the guidance below. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate "
+ },
+ {
+  "title": "Downloading data on presenters only",
+  "path": "06-programme-exports-reports/downloading-data-on-presenters-only.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "There may be occasions where you only require presenters' data, as opposed to all authors. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), ple"
+ },
+ {
+  "title": "Downloading your program and session books",
+  "path": "06-programme-exports-reports/downloading-your-program-and-session-books.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "You can download a range of reports from your program builder dashboard, if you require. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), pleas"
+ },
+ {
+  "title": "Export table data to Excel",
+  "path": "06-programme-exports-reports/export-table-data-to-excel.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need. # The guidance below is for event administrators/ organis"
+ },
+ {
+  "title": "Locking and change the timezone for your conference",
+  "path": "06-programme-exports-reports/locking-and-change-the-timezone-for-your-conference.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "In this article You can learn how to lock a timezone to their event, and Attendees can learn how to change their timezone. # Skip to: Locking Timezones - Admins How to change timezones - Attendees Admins - Lock Timezones"
+ },
+ {
+  "title": "Other reports",
+  "path": "06-programme-exports-reports/other-reports.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management",
+  "summary": "In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question. # The gui"
+ },
+ {
+  "title": "Program sessions table",
+  "path": "06-programme-exports-reports/program-sessions-table.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "The program sessions table is a very useful tool for an overview of program session information, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports. # The "
+ },
+ {
+  "title": "Public vs full-access programme",
+  "path": "06-programme-exports-reports/public-vs-full-access-programme.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "If you have the Professional Conference package, you will have a feature that allows you to control access to the premium features of the platform. # The guidance below is for event administrators/ organisers. If you are"
+ },
+ {
+  "title": "Publishing your program",
+  "path": "06-programme-exports-reports/publishing-your-program.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Publishing your program is simple, and any changes you make after publishing will be reflected in the live program. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, rev"
+ },
+ {
+  "title": "Viewing the mobile version of the program builder",
+  "path": "06-programme-exports-reports/viewing-the-mobile-version-of-the-program-builder.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "One great aspect when using Oxford Abstracts is that you do not need a separate app to use our software on mobile. We are 100% mobile-friendly. # This information is for Admins ONLY. To view what your program builder wil"
+ },
+ {
+  "title": "Adding add-ons to an existing order",
+  "path": "07-delegate-registration/adding-add-ons-to-an-existing-order.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Please note: this information is for attendees of events only. For a walk through demonstration on how to purchase an add-on to an existin"
+ },
+ {
+  "title": "Changing the email address on a registration",
+  "path": "07-delegate-registration/changing-the-email-address-on-a-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Here you can find instructions on how to change a registration email address for delegate registration. # Please note this information is for Admins ONLY! You can either watch the video below for a step-by-step walkthrou"
+ },
+ {
+  "title": "Completing registration when someone bought your ticket",
+  "path": "07-delegate-registration/completing-registration-when-someone-bought-your-ticket.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to complete you form when attendee and the ticket has been bought on your behalf. # This information is for attendees only. Firstly, you will have received an email to your email address the ticket is registere"
+ },
+ {
+  "title": "Configuring invoices and receipts for delegate registration",
+  "path": "07-delegate-registration/configuring-invoices-and-receipts-for-delegate-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This article will show you how to configure invoices and receipts for delegates of your event. # Please Note: This information is for Admins only! Skip to: General Content Delayed Content How To Resend Invoices &amp; Rec"
+ },
+ {
+  "title": "Creating coupon codes for delegate registration",
+  "path": "07-delegate-registration/creating-coupon-codes-for-delegate-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to create coupon codes (discount codes) for tickets for delegate registration. # This information is for Admins ONLY! You can either watch the video below for a step-by-step walkthrough or scroll down to follow"
+ },
+ {
+  "title": "Creating your delegate registration form",
+  "path": "07-delegate-registration/creating-your-delegate-registration-form.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This article provides instructions on how to add questions to the delegate registration form and for Add-On tickets also. (For example - attending a gala dinner). # This information is for admins ONLY. You can either wat"
+ },
+ {
+  "title": "Creating your delegate registration tickets for your event",
+  "path": "07-delegate-registration/creating-your-delegate-registration-tickets-for-your-event.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Plus You can learn how to purchase tickets on behalf of attendees."
+ },
+ {
+  "title": "Dependency questions on the delegate registration form",
+  "path": "07-delegate-registration/dependency-questions-on-the-delegate-registration-form.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article, we\u2019ll talk you through how to create dependency questions on the delegate registration form. # Please Note: This article is for Admins ONLY! From your dashboard, click on Registration \u2192 Tickets \u2192 Form. N"
+ },
+ {
+  "title": "Downloading invoices and receipts",
+  "path": "07-delegate-registration/downloading-invoices-and-receipts.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how attendees can download their invoices or receipts when they have purchased a ticket through delegate registration. # For a walk through demonstration on how to download invoices and receipts, please watch the b"
+ },
+ {
+  "title": "Editing automated emails for delegate registration",
+  "path": "07-delegate-registration/editing-automated-emails-for-delegate-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to edit automated emails in the delegate registration feature. # Please note this information is for Admins only! If you are on the free package you are unable to edit automated delegate registration emails. Fr"
+ },
+ {
+  "title": "Editing your delegate registration ticket details page",
+  "path": "07-delegate-registration/editing-your-delegate-registration-ticket-details-page.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article event admins can learn how to create and edit their delegate registration ticket event details page. # This information is for Event Admins ONLY! You can either watch the video below for a step-by-step wa"
+ },
+ {
+  "title": "How admins can amend existing delegate registration orders",
+  "path": "07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In the below article, you\u2019ll find out how admins can amend existing orders on the attendee table of delegate registration. # Please Note: This article is for Administrators only! You either watch the below video for a wa"
+ },
+ {
+  "title": "Managing orders and edit the attendee table",
+  "path": "07-delegate-registration/managing-orders-and-edit-the-attendee-table.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this knowledge base article, you\u2019ll discover how to view the attendee table including: seeing and editing all attendees information. How to delete/reinstate an attendee, email attendees, how to download the attendee t"
+ },
+ {
+  "title": "Previewing and publish your event registration",
+  "path": "07-delegate-registration/previewing-and-publish-your-event-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "This article will provide instructions on how to preview and publish your event registration. # This information is for Admins ONLY. You can either watch the video below for a step-by-step walkthrough or scroll down to f"
+ },
+ {
+  "title": "Refunding an attendee through delegate registration",
+  "path": "07-delegate-registration/refunding-an-attendee-through-delegate-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to provide attendees with a refund. # Please note: This information is for Admins ONLY! You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions. Fro"
+ },
+ {
+  "title": "Registering on the behalf of someone else",
+  "path": "07-delegate-registration/registering-on-the-behalf-of-someone-else.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article, you\u2019ll learn how to buy tickets to an event for someone else. # You can either watch the video below, or scroll down to follow the written instructions. # Go to the ticket page for your event. Select the"
+ },
+ {
+  "title": "Setting up payment providers for delegate registration",
+  "path": "07-delegate-registration/setting-up-payment-providers-for-delegate-registration.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to quickly add your chosen payment providers for delegate registration. # Please note: This information is for Admins ONLY! You can either watch the video below for a step-by-step walkthrough or scroll down to "
+ },
+ {
+  "title": "Using registration analytics",
+  "path": "07-delegate-registration/using-registration-analytics.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to use Delegate Registration analytics, and what they can do to help elevate your event. # Please Note: This information is for Admins ONLY! Registration Analytics allows Admins to track links to get a bette"
+ },
+ {
+  "title": "Viewing transactions on the attendee table",
+  "path": "07-delegate-registration/viewing-transactions-on-the-attendee-table.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to view and download all transaction information from the transaction table. # This information is for Admins ONLY! You can either watch the video below for a step by step walkthrough, or scroll down to follow "
+ },
+ {
+  "title": "Amending, deleting and copying a session",
+  "path": "08-conference-platform/amending-deleting-and-copying-a-session.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "If you wish to edit a session, click on your chosen session and continue as with creating a session. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate"
+ },
+ {
+  "title": "Assigning program codes",
+  "path": "08-conference-platform/assigning-program-codes.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "When submissions are displayed in the program, the default is to include the submission ID but you can assign program codes within the program builder, if you require. # The guidance below is for event administrators/ or"
+ },
+ {
+  "title": "Attaching content to sessions",
+  "path": "08-conference-platform/attaching-content-to-sessions.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Attach content that you have collected in the submission form, eg. posters, abstracts or links to live (Zoom, Google Meet etc.) or on-demand (Youtube or Vimeo etc.) content. You can also add activities such as Q&amp;A se"
+ },
+ {
+  "title": "Bookmarking sessions on the event schedule",
+  "path": "08-conference-platform/bookmarking-sessions-on-the-event-schedule.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Learn how to bookmark your favourite sessions on the event schedule. # Attendees can now bookmark their favourite sessions they wish to attend on an events schedule (timetable) for quick access to these sessions. To book"
+ },
+ {
+  "title": "Colour-coding your programme",
+  "path": "08-conference-platform/colour-coding-your-programme.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Colour by session, track or presentation type"
+ },
+ {
+  "title": "Comments on sessions and abstracts",
+  "path": "08-conference-platform/comments-on-sessions-and-abstracts.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "This feature allows delegates to add comments to sessions, submissions and posters. This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organisers. If "
+ },
+ {
+  "title": "Controlling access to the programme",
+  "path": "08-conference-platform/controlling-access-to-the-programme.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "There are several access options that will allow you to choose who can view program content. This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organi"
+ },
+ {
+  "title": "Creating a session",
+  "path": "08-conference-platform/creating-a-session.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "After you have set up your online program settings, you can create a session. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click her"
+ },
+ {
+  "title": "Creating announcements on conference",
+  "path": "08-conference-platform/creating-announcements-on-conference.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Follow the instructions below to create announcements for your attendees of your event to see. # Please note, this information is for Admins Only! This feature is only available for the Professional Conference Package . "
+ },
+ {
+  "title": "Creating your event website",
+  "path": "08-conference-platform/creating-your-event-website.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "Learn how to create your own website for your academic event, in this simple guide. # What is the website builder feature? Oxford Abstract\u2019s new website builder allows event admins to create their own custom website usin"
+ },
+ {
+  "title": "Letting submitters hide their abstract from the programme",
+  "path": "08-conference-platform/letting-submitters-hide-their-abstract-from-the-programme.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "This option lets submitters choose whether or not their abstract / poster is displayed in the program. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delega"
+ },
+ {
+  "title": "Making a session cross columns in the program timetable",
+  "path": "08-conference-platform/making-a-session-cross-columns-in-the-program-timetable.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Learn how to make a session cross several columns in the program builder. # Please note: This information is for Admins Only! From your Event Dashboard, click on Conference \u2192 Program \u2192 Builder On the next screen, find th"
+ },
+ {
+  "title": "Networking for attendees",
+  "path": "08-conference-platform/networking-for-attendees.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "Networking allows attendees to create name tags so that they can connect and chat with each other. This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ "
+ },
+ {
+  "title": "Professional Conference - branding",
+  "path": "08-conference-platform/professional-conference-branding.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here . Go "
+ },
+ {
+  "title": "Professional Conference - exhibitor space - admin set up",
+  "path": "08-conference-platform/professional-conference-exhibitor-space-admin-set-up.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "In this article learn how, as an event admin, you can add exhibitors and give them access to set up their booth."
+ },
+ {
+  "title": "Professional Conference - sponsors",
+  "path": "08-conference-platform/professional-conference-sponsors.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click here . Go "
+ },
+ {
+  "title": "Professional Conference - the poster gallery",
+  "path": "08-conference-platform/professional-conference-the-poster-gallery.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organise"
+ },
+ {
+  "title": "Session bookings",
+  "path": "08-conference-platform/session-bookings.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Monitor bookings through the Program Bookings table, which provides a list of Chairs, Presenters and Authors - the latter which is optional - and the slots assigned to them in the program, and whether any potential clash"
+ },
+ {
+  "title": "Setting up the homepage for your conference",
+  "path": "08-conference-platform/setting-up-the-homepage-for-your-conference.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "Learn how to set up the homepage for your virtual conference, enabling attendees to find out all the information about your event. # Please Note: This information is for Admins only! The Homepage for your Conference is t"
+ },
+ {
+  "title": "Setting up your program - configuration",
+  "path": "08-conference-platform/setting-up-your-program-configuration.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "The conference program is a great tool for publishing a conference program or schedule. This article will help you get set up and shows you how to add content, dates, columns, locations, chairs, presentation types and tr"
+ },
+ {
+  "title": "Setting up your program - display",
+  "path": "08-conference-platform/setting-up-your-program-display.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "This article shows you how to set up how some features are displayed and formatted, eg. column headers, dates, time display, menu etc. # The guidance below is for event administrators/ organisers. If you are an end user "
+ },
+ {
+  "title": "Setting up your program - timezones",
+  "path": "08-conference-platform/setting-up-your-program-timezones.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "Follow the guidance below to set up your timezone. # Go to Event dashboard \u2192 Conference \u2192 Builder \u2192 Settings \u279e Timezone** The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter,"
+ },
+ {
+  "title": "Setting up your Zoom integration",
+  "path": "08-conference-platform/setting-up-your-zoom-integration.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "You can integrate your Zoom account with Oxford Abstracts to easily set up video calls in your program. This article will help you understand what you can do with the integration and how to set it up. # # The guidance be"
+ },
+ {
+  "title": "The chat feature",
+  "path": "08-conference-platform/the-chat-feature.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "This feature allows attendees to message each other, and engage in event-wide chat. This feature is only available in the Professional Conference package. # The guidance below is for event administrators/ organisers. If "
+ },
+ {
+  "title": "Using speaker management",
+  "path": "08-conference-platform/using-speaker-management.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "In this article, you\u2019ll learn what Speaker Management is, how to set it up and use it for your event. # What is Speaker Management? Speaker Management allows event admins to collect, manage and display invited speakers a"
+ },
+ {
+  "title": "Which Zoom package do i need?",
+  "path": "08-conference-platform/which-zoom-package-do-i-need.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "standard conference",
+  "summary": "# Skip to: Zoom Meetings Zoom Webinars Which is the better zoom system for you? What Zoom package can integrate with Oxford Abstracts software? There are various different plans and licenses Zoom offer that cover most co"
+ },
+ {
+  "title": "Collecting Symposia",
+  "path": "09-add-ons/collecting-symposia.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "Once your symposia forms are ready, open submissions so people can propose symposia \u2014 and attach abstracts to them yourself where you need to."
+ },
+ {
+  "title": "Creating a certificate",
+  "path": "09-add-ons/creating-a-certificate.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: certificates (included in Professional)",
+  "summary": "Learn how to create, edit, and send certificates. Plus, learn how to create recipient lists and custom recipients lists for your certifciates. # Please note: This information is for Admins only! For an overview of the ce"
+ },
+ {
+  "title": "Designing the Symposia forms",
+  "path": "09-add-ons/designing-the-symposia-forms.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "Symposia have two forms of their own: the submission form people fill in to\npropose a symposium, and the review form your reviewers score them with. Both\nwork like their abstract equivalents, with different default quest"
+ },
+ {
+  "title": "Managing Symposia",
+  "path": "09-add-ons/managing-symposia.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "Everything you need once symposia are coming in: reading the table, editing a\nsymposium, and deleting, restoring or withdrawing one."
+ },
+ {
+  "title": "Symposia decisions & emails",
+  "path": "09-add-ons/symposia-decisions-emails.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "The last stage: recording outcomes for your symposia and telling people about them. Both work like their abstract equivalents, with templates written for symposia."
+ },
+ {
+  "title": "Symposia overview & dashboard",
+  "path": "09-add-ons/symposia-overview-dashboard.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "Symposia is an optional add-on. It lets submitters group abstracts together under a single heading, with its own submission form, reviewing and decisions, run alongside your normal abstract collection."
+ },
+ {
+  "title": "Symposia reviewing",
+  "path": "09-add-ons/symposia-reviewing.html",
+  "section": "Add-ons: Symposia & Certificates",
+  "audience": "organisers",
+  "plan": "add-on: symposia",
+  "summary": "Reviewing symposia works much like reviewing abstracts , with one difference worth knowing up front: you cannot assign symposia by category."
+ },
+ {
+  "title": "Application programming interface (API)",
+  "path": "10-integrations-api/application-programming-interface-api.html",
+  "section": "Integrations & API",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Application Programming Interface (API) allows applications to communicate with one another. This means you can extract/share data from your event with third party applications or vice versa. # The guidance below is for "
+ },
+ {
+  "title": "Integrating EventsAir to Oxford Abstracts",
+  "path": "10-integrations-api/integrating-eventsair-to-oxford-abstracts.html",
+  "section": "Integrations & API",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to pull through registration information from EventsAir into Oxford Abstracts. # On the left-hand menu , click on Advanced &gt; Integrations &gt; click on the connect button under EventsAir. You\u2019ll need your Ev"
+ },
+ {
+  "title": "Integrating Oxford Abstracts and Cvent",
+  "path": "10-integrations-api/integrating-oxford-abstracts-and-cvent.html",
+  "section": "Integrations & API",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to export registration data from Cvent and import it into Oxford Abstracts. # On the left-hand menu , click on Advanced &gt; Integrations &gt; click on the connect button under Cvent. You\u2019ll need to add your Cv"
+ },
+ {
+  "title": "Integrating Oxford Abstracts and idloom",
+  "path": "10-integrations-api/integrating-oxford-abstracts-and-idloom.html",
+  "section": "Integrations & API",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Pull through registration information from idloom into Oxford Abstracts. # On the left-hand menu, click on Advanced &gt; Integrations &gt; click on the connect button under IdLoom. How to generate your idloom API Key. Lo"
+ },
+ {
+  "title": "Integrating Oxford Abstracts and Swapcard",
+  "path": "10-integrations-api/integrating-oxford-abstracts-and-swapcard.html",
+  "section": "Integrations & API",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to export your Oxford Abstract session information and insert it into Swapcard. # On the left-hand menu , click on Advanced &gt; Integrations &gt; click on the connect button under Swapcard. You\u2019ll need to add "
+ },
+ {
+  "title": "Account administration dashboard",
+  "path": "11-account-administration/account-administration-dashboard.html",
+  "section": "Account administration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to access all the tools available to you as an account administrator. # Skip to written instructions Register for an Oxford Abstracts account or log in if you already have an account. When you log into the O"
+ },
+ {
+  "title": "Deleting your Oxford Abstracts account",
+  "path": "11-account-administration/deleting-your-oxford-abstracts-account.html",
+  "section": "Account administration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Easily delete your Oxford Abstracts Account by following the simple steps below. # If you no longer wish to have your Oxford Abstracts account you can now delete it from your account settings. Please note: All content yo"
+ },
+ {
+  "title": "Managing your account",
+  "path": "11-account-administration/managing-your-account.html",
+  "section": "Account administration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to see an overview of your events, and add and remove event, account and API admins. # The guidance below is for account administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc"
+ },
+ {
+  "title": "Permanently delete or archive your event",
+  "path": "11-account-administration/permanently-delete-or-archive-your-event.html",
+  "section": "Account administration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article you will learn how to permanently delete, archive your event and unarchive your event. # Please note: This information is for event admins ONLY! Watch how to permanently delete your event in this short vi"
+ },
+ {
+  "title": "Using the customer portal",
+  "path": "11-account-administration/using-the-customer-portal.html",
+  "section": "Account administration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Learn how to get set up on our Customer Portal, and how to create and keep track of your help desk tickets. # Please note: You are still able to respond to help desk enquiries using email as before. This service will hel"
+ },
+ {
+  "title": "Accessing your reviews",
+  "path": "12-for-submitters/accessing-your-reviews.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "This guide explains how to view reviewer feedback on your submission. Review access depends on your conference's settings, if you can't see reviews, the conference administrator may not have enabled this feature. # NB: T"
+ },
+ {
+  "title": "Attaching your submission to a Symposium",
+  "path": "12-for-submitters/attaching-your-submission-to-a-symposium.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "If symposia are available for you to attach your submission to, you will see a list of available symposia after submitting your abstract and in your personal dashboard. # NB: The guidance below is for users who are submi"
+ },
+ {
+  "title": "Editing a Symposium",
+  "path": "12-for-submitters/editing-a-symposium.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "# NB: The guidance below is for submitters of a symposium. If you are the administrator of an event please see Symposia. Skip to written instructions To edit a symposium you have already created, log into https://app.oxf"
+ },
+ {
+  "title": "Editing an abstract or submission",
+  "path": "12-for-submitters/editing-an-abstract-or-submission.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "If the event settings allow, you can edit your submission, subject to deadlines. # # NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see The submiss"
+ },
+ {
+  "title": "Making a second/additional submission",
+  "path": "12-for-submitters/making-a-second-additional-submission.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "If the event settings allow, you can make additional submissions to the same event, if you require. # NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event pleas"
+ },
+ {
+  "title": "Making a submission",
+  "path": "12-for-submitters/making-a-submission.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "After clicking the link you have been supplied by your conference organiser - usually in an email or via the event website - you can begin to make a submission. # NB: The guidance below is for users who are submitting a "
+ },
+ {
+  "title": "Paying for your submission",
+  "path": "12-for-submitters/paying-for-your-submission.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "Sometimes, conference organisers ask for a fee to be paid when submitting your abstract. The guidance below shows you how to do this. # NB: The guidance below is for users who are submitting to a conference. If you are t"
+ },
+ {
+  "title": "Submit a Symposium",
+  "path": "12-for-submitters/submit-a-symposium.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "# # NB: The guidance below is for those wishing to submit a symposium. If you are the administrator of an event please see Symposia. Skip to written instructions Skip to Attaching abstracts to a symposium Follow the link"
+ },
+ {
+  "title": "Viewing comments left by reviewers",
+  "path": "12-for-submitters/viewing-comments-left-by-reviewers.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article we will take you through how to view the reviewers comments left on your submission, and how to edit your abstract (if required). # NB: The below guidance is for submitters only. If you are a reviewer, pl"
+ },
+ {
+  "title": "Withdrawing or removing your submission from a Symposium",
+  "path": "12-for-submitters/withdrawing-or-removing-your-submission-from-a-symposium.html",
+  "section": "Submitting",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "If settings allow, you can withdraw your submission from a symposium. # # NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see The submission stage ."
+ },
+ {
+  "title": "Assigning submissions to reviewers as a committee member",
+  "path": "13-for-reviewers-committee/assigning-submissions-to-reviewers-as-a-committee-member.html",
+  "section": "Reviewing",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "If permissions allow, committee members can assign submissions to reviewers. # It is advisable to read Viewing and making decisions first. Skip to written instructions. After logging in to your personal dashboard, click "
+ },
+ {
+  "title": "Completing a review",
+  "path": "13-for-reviewers-committee/completing-a-review.html",
+  "section": "Reviewing",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to complete your review in the Oxford Abstracts reviewing space. # NB: The guidance below is for reviewers. If you experience any issues or have any questions, please contact your event administrator in the "
+ },
+ {
+  "title": "Completing a Symposium review",
+  "path": "13-for-reviewers-committee/completing-a-symposium-review.html",
+  "section": "Reviewing",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "Find out how to complete your symposium review in the Oxford Abstracts reviewing space. # NB: The guidance below is for reviewers. If you experience any issues or have any questions, please contact your event administrat"
+ },
+ {
+  "title": "Leaving comments on submissions you review",
+  "path": "13-for-reviewers-committee/leaving-comments-on-submissions-you-review.html",
+  "section": "Reviewing",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "In this article we will take you through how to leave in-line comments on any submissions that you're reviewing. # NB: The below guidance is for reviewers only. If you are a submitter, please click here for guidance on v"
+ },
+ {
+  "title": "Viewing and making decisions",
+  "path": "13-for-reviewers-committee/viewing-and-making-decisions.html",
+  "section": "Reviewing",
+  "audience": "participants",
+  "plan": "all plans (including free Basic)",
+  "summary": "A committee member can view decisions but can also, if permissions allow, make decisions on submissions. # Register for an Oxford Abstracts account or log in, if you already have an account. Once logged in, your personal"
+ },
+ {
+  "title": "Exhibitor space - setting up and managing your booth",
+  "path": "14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "professional conference",
+  "summary": "In this article learn how, as an exhibitor, representative or admin, you can configure your booths and interact with attendees."
+ },
+ {
+  "title": "Exploring the conference platform",
+  "path": "14-for-attendees-exhibitors/exploring-the-conference-platform.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "The conference platform offers a schedule / program with lots of dynamic content and interactive content. You can network with delegates with the chat feature and interact with sessions and content such as live and on-de"
+ },
+ {
+  "title": "Exploring the poster gallery",
+  "path": "14-for-attendees-exhibitors/exploring-the-poster-gallery.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "professional conference",
+  "summary": "The Poster Gallery offers an online space where delegates can search, view and download (subject to settings) poster submissions. # NB: The guidance below is for conference attendees. If you are the administrator of an e"
+ },
+ {
+  "title": "How attendees can download event schedules",
+  "path": "14-for-attendees-exhibitors/how-attendees-can-download-event-schedules.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "Learn how to download and print an events schedule. # You can now download the event schedule as a PDF. From the Event Timetable , click on the Download Arrow at the top of the timetable. The timetable will now be downlo"
+ },
+ {
+  "title": "How do i contact the event administrator?",
+  "path": "14-for-attendees-exhibitors/how-do-i-contact-the-event-administrator.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "If you experience any issues after logging in to your event, please contact the event administrator. # The email for the conference administrator is shown below the conference name when you log in to your personal dashbo"
+ },
+ {
+  "title": "Payment error",
+  "path": "14-for-attendees-exhibitors/payment-error.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "Receiving an error when trying to pay for your event with PayPal? # If you are trying to pay for a ticket to attend an event but are receiving the following error message: It could be due to PayPal not being available in"
+ },
+ {
+  "title": "Setting up your conference program account",
+  "path": "14-for-attendees-exhibitors/setting-up-your-conference-program-account.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "After clicking the link to the conference platform, you will need to follow a few steps to create your profile and set up your timezone. # NB: The guidance below is for conference attendees. If you are the administrator "
+ },
+ {
+  "title": "Using the chat and controlling notifications",
+  "path": "14-for-attendees-exhibitors/using-the-chat-and-controlling-notifications.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "professional conference",
+  "summary": "If settings allow, you can interact and engage with fellow attendees using the chat feature, with private, group and event-wide options available. # NB: The guidance below is for conference attendees. If you are the admi"
+ },
+ {
+  "title": "Viewing sessions and content in the conference program",
+  "path": "14-for-attendees-exhibitors/viewing-sessions-and-content-in-the-conference-program.html",
+  "section": "Attending",
+  "audience": "participants",
+  "plan": "standard conference",
+  "summary": "# NB: The guidance below is for conference attendees. If you are the administrator of an event please see The conference platform. Once you have created an account and logged in to the conference, you will be taken to th"
+ }
+]
