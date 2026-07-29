@@ -86,11 +86,34 @@ textarea{min-height:120px;resize:vertical}
 .filebox{border:1px dashed var(--field);border-radius:6px;padding:14px;font-size:15px;color:#5a6377}
 
 /* ---- deflection ---- */
-.checking{display:flex;align-items:center;gap:12px;color:#5a6377;padding:14px 0}
-.spinner{width:18px;height:18px;border:2px solid var(--hair);border-top-color:var(--red);
-  border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+/* The wait. Short, but it is the one moment the reader is being asked to pause, so it
+   should look like something is being done for them rather than like a stall. */
+.checking{display:flex;align-items:center;gap:16px;padding:22px 20px;border-radius:6px;
+  border:1px solid var(--hair);background:linear-gradient(105deg,#fbfbf8,#f4f6ef);
+  overflow:hidden;position:relative}
+.checking::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.85) 50%,transparent 65%);
+  transform:translateX(-100%);animation:sheen 1.9s ease-in-out infinite}
+@keyframes sheen{to{transform:translateX(100%)}}
+
+.wand{width:38px;height:38px;flex-shrink:0;position:relative;animation:wave 1.5s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
+.wand .stick{stroke:var(--ink);stroke-width:3.2;stroke-linecap:round}
+.wand .spark{fill:var(--red);transform-origin:center;animation:twinkle 1.25s ease-in-out infinite}
+.wand .s2{animation-delay:.28s}
+.wand .s3{animation-delay:.56s}
+@keyframes twinkle{0%,100%{opacity:.3;transform:scale(.65)}50%{opacity:1;transform:scale(1)}}
+
+.checking .say{position:relative;z-index:1}
+.checking .say b{display:block;font-weight:500;font-size:17px;color:var(--ink);margin-bottom:2px}
+.checking .say span{display:block;font-size:15px;color:#5a6377}
+.checking .say span.swap{animation:rise .35s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .checking::after,.wand,.wand .spark,.checking .say span.swap{animation:none}
+  .checking::after{display:none}
+}
 
 .answer{border:1px solid var(--hair);border-left:4px solid var(--ok);border-radius:6px;
   background:#fbfcfa;padding:22px;margin-bottom:20px}
@@ -267,9 +290,18 @@ footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
           <div class="btn-row"><button class="pill" type="submit" id="submitBtn">Submit</button></div>
         </form>
 
-        <div id="checking" class="checking hidden">
-          <div class="spinner" aria-hidden="true"></div>
-          <span>Checking the help centre first…</span>
+        <div id="checking" class="checking hidden" role="status" aria-live="polite">
+          <svg class="wand" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path class="stick" d="M9 39 L27 21"/>
+            <path class="stick" d="M13.5 34.5 L17.5 38.5"/>
+            <path class="spark" d="M33 6 l2.4 6.2 6.2 2.4 -6.2 2.4 -2.4 6.2 -2.4 -6.2 -6.2 -2.4 6.2 -2.4 Z"/>
+            <path class="spark s2" d="M42 21 l1.3 3.3 3.3 1.3 -3.3 1.3 -1.3 3.3 -1.3 -3.3 -3.3 -1.3 3.3 -1.3 Z"/>
+            <path class="spark s3" d="M23.5 6 l1.1 2.8 2.8 1.1 -2.8 1.1 -1.1 2.8 -1.1 -2.8 -2.8 -1.1 2.8 -1.1 Z"/>
+          </svg>
+          <div class="say">
+            <b>Checking for an answer to your query…</b>
+            <span id="checkStep">Reading what you’ve written</span>
+          </div>
         </div>
 
         <div id="deflect" class="hidden">
@@ -406,10 +438,31 @@ function isStrong(r) {
   return a.length >= 60 && !HEDGES.test(a) && (r.sources || []).length >= 1;
 }
 
+// The three beats of the wait. Named after what is actually happening, so the pause
+// explains itself rather than just filling time.
+const STEPS = ['Reading what you’ve written', 'Searching 174 guides', 'Putting an answer together'];
+let stepTimer = null;
+
+function startSteps() {
+  const el = $('#checkStep');
+  let i = 0;
+  el.textContent = STEPS[0];
+  stepTimer = setInterval(() => {
+    i += 1;
+    el.textContent = STEPS[i];
+    el.classList.remove('swap');
+    void el.offsetWidth;            // restart the animation
+    el.classList.add('swap');
+    if (i >= STEPS.length - 1) stopSteps();   // hold on the last beat however long it takes
+  }, 720);
+}
+function stopSteps() { clearInterval(stepTimer); stepTimer = null; }
+
 async function ask(question, scenario) {
   if (scenario === 'down') throw new Error('simulated outage');
   if (scenario === 'strong' || scenario === 'weak') {
-    await new Promise(r => setTimeout(r, 900));
+    // Long enough for all three beats to land; still under two and a half seconds.
+    await new Promise(r => setTimeout(r, 2300));
     return CANNED[scenario];
   }
   const res = await fetch('/api/search', {
@@ -432,11 +485,13 @@ $('#ticket').addEventListener('submit', async e => {
 
   $('#submitBtn').disabled = true;
   $('#checking').classList.remove('hidden');
+  startSteps();
 
   let result = null;
   try { result = await ask(question, $('#scenario').value); }
   catch { result = null; }               // an outage must look like no answer, never an error
 
+  stopSteps();
   $('#checking').classList.add('hidden');
   if (!isStrong(result)) { sendTicket([]); return; }   // weak or broken: never interrupt
 
