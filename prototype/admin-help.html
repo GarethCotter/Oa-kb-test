@@ -521,7 +521,12 @@ function addBot(text, sources, followups) {
       const a = document.createElement('a');
       a.href = 'https://oa-kb-test.vercel.app/' + s.path;
       // Read it here, in the panel - leaving the app to read help is the old world.
-      a.addEventListener('click', e => { e.preventDefault(); openReader(s.path, a.href); });
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const last = state.history[state.history.length - 1];
+        logEvent(last ? last.q : s.title, true, [s], 'opened_article');
+        openReader(s.path, a.href);
+      });
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       g.setAttribute('width', '13'); g.setAttribute('height', '13');
       g.setAttribute('viewBox', '0 0 20 20'); g.setAttribute('fill', 'currentColor');
@@ -618,6 +623,23 @@ async function fetchAnswer(question) {
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* One row per interaction (see api/log.js). Only fired in live mode: demo runs must
+   not skew the success rate. Fire-and-forget - logging must never affect the reader. */
+function logEvent(question, answered, sources, action) {
+  if ($('#scenario').value !== 'live') return;
+  try {
+    fetch('/api/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        surface: 'widget', screen: state.page, question,
+        answered, sources: sources || [], action: action || 'none'
+      })
+    }).catch(() => {});
+  } catch {}
+}
+
 async function send(question) {
   if (state.busy || !question.trim()) return;
   state.busy = true;
@@ -633,6 +655,7 @@ async function send(question) {
   if (isStrong(r)) {
     addBot(r.answer, r.sources, r.followups);
     state.history.push({ q: question, a: r.answer });
+    logEvent(question, true, r.sources, 'none');
   } else {
     // Never a dead end, never an error. Honest about the miss, and both exits are one tap.
     addBot('I couldn’t find a confident answer to that one — and I’d rather say so than guess.\nThe knowledge base search sometimes does better with a bit more detail, or our support team will pick it up quickly — no question is too small.',
@@ -647,7 +670,8 @@ async function send(question) {
     wrap.append(kb, tk);
     $('#body').appendChild(wrap);
     scrollDown();
-    state.history.push({ q: question, a: null });   // in the real build this is the gap log
+    state.history.push({ q: question, a: null });
+    logEvent(question, false, [], 'none');          // this row is the gap log
   }
   state.busy = false;
   $('#sendBtn').disabled = false;

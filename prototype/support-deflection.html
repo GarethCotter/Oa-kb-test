@@ -484,6 +484,23 @@ let pending = null;      // { key, promise, done }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const withTimeout = (p, ms) => Promise.race([p, sleep(ms).then(() => TIMED_OUT)]);
 
+/* One row per interaction (see api/log.js). Live mode only: demo runs must not skew
+   the deflection rate. Fire-and-forget - logging must never affect the reader. */
+function logEvent(question, answered, sources, action) {
+  if ($('#scenario').value !== 'live') return;
+  try {
+    fetch('/api/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        surface: 'ticket-form', screen: '', question,
+        answered, sources: sources || [], action
+      })
+    }).catch(() => {});
+  } catch {}
+}
+
 function questionFrom() {
   const subject = $('#subject').value.trim(), content = $('#content').value.trim();
   if (!subject || !content) return null;
@@ -584,6 +601,7 @@ $('#ticket').addEventListener('submit', async e => {
 });
 
 $('#solvedBtn').addEventListener('click', () => {
+  logEvent(questionFrom(), true, state.suggested, 'solved');
   $('#deflect').classList.add('hidden');
   const r = $('#result');
   r.className = 'outcome good';
@@ -597,6 +615,8 @@ $('#solvedBtn').addEventListener('click', () => {
 $('#anywayBtn').addEventListener('click', () => sendTicket(state.suggested));
 
 function sendTicket(suggested) {
+  logEvent(questionFrom(), state.shown, suggested,
+           state.shown ? 'sent_anyway' : 'not_interrupted');
   $('#deflect').classList.add('hidden');
   $('#ticket').classList.add('hidden');
   const payload = {

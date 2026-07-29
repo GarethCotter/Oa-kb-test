@@ -31,15 +31,38 @@ One row per interaction, identical schema from all three surfaces:
 anything email-shaped from the question text before writing it. Same reasoning as
 the corpus-internal rule: this data will be read widely and casually.
 
-### Where to put it
+### Where to put it — built, needs ten minutes of your time to switch on
 
-Recommended start: **one `/api/log` function forwarding rows to a Google Sheet**
-(via an Apps Script web-app URL). Zero infrastructure, instantly filterable and
-pivotable by a human, and at this volume (~165 tickets/month plus searches) a
-sheet lasts years. `api/feedback.js` already exists and just logs to the console —
-it becomes the first client of `/api/log`. If volume ever outgrows a sheet, swap
-the storage inside `/api/log` for Vercel KV or Postgres; the clients never change
-because the schema doesn't.
+`api/log.js` and `scripts/sheet-logger.gs` are written. Both prototypes already
+call `/api/log`, **in live mode only**, so demo runs cannot skew the numbers.
+
+Three tabs in one Google Sheet:
+
+| Tab | Contents |
+|---|---|
+| **Answered** | timestamp · surface · screen · question · articles shown · outcome |
+| **Unanswered** | timestamp · surface · screen · question · outcome |
+| **Weekly summary** | week beginning · answered · unanswered · total · **success rate %** |
+
+The summary is live formulas, not a snapshot, so the rate updates itself as rows
+arrive — one row per week, "89%" in the last column, exactly the score to read at
+a glance. Splitting answered from unanswered means the Unanswered tab *is* the
+content backlog: sort by date, cluster the repeats, write those articles.
+
+To switch on: create the sheet, paste `scripts/sheet-logger.gs` into
+Extensions → Apps Script, set `TOKEN`, run `setup` once, deploy as a web app, then
+put `SHEET_WEBHOOK_URL` and `SHEET_TOKEN` into Vercel. Full steps are in the
+comment at the top of that file. Until that is done `/api/log` still writes to the
+Vercel log stream, so nothing breaks and nothing is lost by deploying first.
+
+**Where the privacy rule is enforced:** in `api/log.js`, server-side — emails and
+phone-shaped numbers are replaced before anything is written or forwarded. The
+browser sends what the reader typed; the server is the boundary, because a
+client-side strip can be bypassed. Verified against both patterns.
+
+If volume ever outgrows a sheet, swap the storage inside `/api/log` for Vercel KV
+or Postgres; the clients never change because the schema doesn't. `api/feedback.js`
+(article thumbs) should fold into the same store next.
 
 ### What the data answers
 
