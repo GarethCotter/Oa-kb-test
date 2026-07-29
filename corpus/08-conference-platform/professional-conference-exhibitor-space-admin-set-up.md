@@ -5,14 +5,12 @@ audience: organisers
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/professional-conference-exhibitor-feature
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Professional Conference - exhibitor space - admin set up
 
 In this article learn how, as an event admin, you can add exhibitors and give them access to set up their booth.
-
-# Professional Conference - Exhibitor space - Admin set up
 
 ## This feature allows you to create exhibitor booths in your conference and facilitate interaction between attendees and exhibitors. In this article learn how, as an event admin, you can add exhibitors and give them access to set up their booth.
 

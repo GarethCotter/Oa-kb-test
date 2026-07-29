@@ -4,14 +4,12 @@ section: "07-delegate-registration"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-create-your-delegate-registration-tickets-for-your-event
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Creating your delegate registration tickets for your event
 
 Plus You can learn how to purchase tickets on behalf of attendees.
-
-# How to create your delegate registration tickets for your event
 
 ## In this article, you will find instructions on creating and editing your tickets, groups and add-ons for delegate registration. Plus You can learn how to purchase tickets on behalf of attendees.
 

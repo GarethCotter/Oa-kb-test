@@ -4,14 +4,12 @@ section: "08-conference-platform"
 audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-colour-coding
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Colour-coding your programme
 
 Colour by session, track or presentation type
-
-# Colour coding your event
 
 ## Create a striking and visually engaging program. Choose from a full colour palette including RGB, HEX and colour picker Colour by session, track or presentation type
 

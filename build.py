@@ -1,10 +1,29 @@
 import os, re, json, shutil, html
 import markdown
 
-SRC = 'kb/corpus'
-OUT = 'kb/site'
-shutil.rmtree(OUT, ignore_errors=True)
-os.makedirs(OUT)
+# Repo layout: sources live alongside the generated site at the repo root.
+#   corpus/           174 article markdown files  <- source of truth
+#   corpus-internal/  notes the AI can use but that never become pages
+#   structure/        one JSON per section: intro, "start here", groups, next stage
+#   assets/img/       1,326 committed screenshots (NOT generated - never deleted)
+#   api/, vercel.json, assets/search.js, assets/article.js  (hand-written, never deleted)
+# Everything this script writes is listed in GENERATED below.
+SRC = 'corpus'
+OUT = '.'
+
+# Only ever delete what we generate. Never rmtree the repo root.
+GENERATED_DIRS = [s[0] for s in [
+    ('01-getting-started',), ('02-submissions',), ('03-reviewing',), ('04-decisions',),
+    ('05-emails',), ('06-programme-exports-reports',), ('07-delegate-registration',),
+    ('08-conference-platform',), ('09-add-ons',), ('10-integrations-api',),
+    ('11-account-administration',), ('12-for-submitters',),
+    ('13-for-reviewers-committee',), ('14-for-attendees-exhibitors',)]]
+for d in GENERATED_DIRS:
+    shutil.rmtree(d, ignore_errors=True)
+for f in ('index.html', 'assets/style.css', 'assets/search-index.json', 'assets/articles.json'):
+    if os.path.exists(f):
+        os.remove(f)
+os.makedirs('assets', exist_ok=True)
 
 SECTIONS = [
     ('01-getting-started', '1', 'Getting started', 'organisers', 'Your account, creating an event, adding your team'),
@@ -146,13 +165,61 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .sec-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;padding-bottom:40px}
 .sec-list a{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;text-decoration:none;font-weight:500;font-size:17.5px;transition:transform .15s ease,box-shadow .15s ease}
 .sec-list a:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,28,56,.10)}
-.helpful{margin-top:28px;text-align:center;color:var(--muted);font-size:17px}
+.search-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid rgba(208,67,44,.35);border-radius:999px;padding:7px 16px 7px 12px;margin-bottom:20px;font-size:14.5px;font-weight:600;color:var(--red);letter-spacing:.01em}
+.search-badge .spark{width:16px;height:16px;flex:none;animation:sparkle 2.8s ease-in-out infinite}
+.search-badge .sep{color:rgba(208,67,44,.4);font-weight:400}
+.search-badge .plain{color:var(--muted);font-weight:500}
+@keyframes sparkle{0%,100%{opacity:.55;transform:scale(.9) rotate(0deg)}50%{opacity:1;transform:scale(1.08) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.search-badge .spark{animation:none;opacity:1}}
+@media (max-width:520px){.search-badge{font-size:13.5px;padding:6px 13px 6px 10px}.search-badge .sep,.search-badge .plain{display:none}}
+.standfirst{font-size:20px;color:var(--muted);margin:0 0 22px;line-height:1.55}
+.toc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;margin-bottom:22px;font-size:16.5px}
+.toc span{display:block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.toc a{display:block;padding:4px 0;text-decoration:none;color:var(--navy)}
+.toc a:hover{color:var(--red)}
+.prose h2 .anchor,.prose h3 .anchor{margin-left:8px;font-family:'Outfit',sans-serif;font-size:.75em;color:rgba(16,28,56,.22);text-decoration:none;-webkit-text-stroke:0}
+.prose h2 .anchor:hover,.prose h3 .anchor:hover{color:var(--red)}
+.prose h2,.prose h3{scroll-margin-top:90px}
+.prose ol{counter-reset:step;list-style:none;margin-left:0}
+.prose ol>li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:14px}
+.prose ol>li::before{content:counter(step);position:absolute;left:0;top:-1px;width:29px;height:29px;border-radius:50%;background:var(--red);color:#fff;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
+.prose ol ol>li::before{background:var(--navy)}
+.prose img.zoomable{cursor:zoom-in}
+.lightbox[hidden]{display:none}
+.lightbox{position:fixed;inset:0;background:rgba(16,28,56,.88);display:flex;align-items:center;justify-content:center;z-index:60;cursor:zoom-out;padding:20px}
+.lightbox img{max-width:96vw;max-height:92vh;border-radius:8px;background:#fff}
+.prevnext{display:flex;gap:16px;margin-top:30px}
+.prevnext a{flex:1;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;text-decoration:none;font-weight:600;font-size:16.5px;transition:transform .15s ease,box-shadow .15s ease}
+.prevnext a:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(16,28,56,.10)}
+.prevnext a span{display:block;font-weight:500;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pn-next{text-align:right}
+.hdr-search{flex:1;max-width:330px;display:flex;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:5px 6px 5px 16px}
+.hdr-search input{flex:1;min-width:0;border:none;background:none;font-family:'Outfit',sans-serif;font-size:15.5px;color:var(--navy)}
+.hdr-search input:focus{outline:none}
+.hdr-search button{background:var(--red);color:#fff;border:none;border-radius:999px;padding:6px 14px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14.5px;cursor:pointer}
+.feedback{margin-top:30px;text-align:center;color:var(--muted);font-size:17px}
+.feedback button{margin:8px 5px 0;background:none;border:1.5px solid var(--line);border-radius:999px;padding:9px 20px;font-family:'Outfit',sans-serif;font-size:15.5px;cursor:pointer;color:var(--navy)}
+.feedback button:hover{border-color:var(--navy)}
+.feedback .fb-thanks{margin-top:10px;color:var(--navy);font-weight:500}
+.answer-block{margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}
+.answer-block.revealed,.answer-block.is-loading{opacity:1;transform:none}
+.answer-block p{font-size:18px;margin-bottom:10px}
+.thinking{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:17px;margin-bottom:14px}
+.thinking-text{transition:opacity .18s ease}
+.dots{display:inline-flex;gap:4px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--red);opacity:.35;animation:blink 1.25s infinite ease-in-out}
+.dots i:nth-child(2){animation-delay:.18s}
+.dots i:nth-child(3){animation-delay:.36s}
+@keyframes blink{0%,80%,100%{opacity:.25;transform:scale(.85)}40%{opacity:1;transform:scale(1)}}
+.skel{display:flex;flex-direction:column;gap:9px}
+.skel span{height:13px;border-radius:7px;background:linear-gradient(90deg,rgba(16,28,56,.07) 25%,rgba(16,28,56,.14) 37%,rgba(16,28,56,.07) 63%);background-size:400% 100%;animation:shimmer 1.5s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+@media (prefers-reduced-motion:reduce){.answer-block{transition:none;opacity:1;transform:none}.dots i,.skel span{animation:none}.skel span{background:rgba(16,28,56,.10)}}
+@media (max-width:640px){.hdr-search{max-width:none;order:3;flex-basis:100%}.nav{flex-wrap:wrap}.prevnext{flex-direction:column}}
 .support{margin-top:30px;background:var(--navy);color:var(--cream);border-radius:var(--radius);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .support h2{font-family:'Gloock',serif;font-weight:400;font-size:25px;margin-bottom:6px;-webkit-text-stroke:.3px currentColor}
 .support p{color:rgba(237,235,226,.78);font-size:17px;max-width:460px;margin:0}
 .support .btn{flex:none}
-.helpful button{margin:10px 6px 0;background:none;border:1.5px solid var(--line);border-radius:999px;padding:9px 22px;font-family:'Outfit',sans-serif;font-size:16px;cursor:pointer;color:var(--navy)}
-.helpful button:hover{border-color:var(--navy)}
 @media (max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}.part-grid,.doors-grid,.sec-list{grid-template-columns:1fr}.nav-links .hide-sm{display:none}.prose{padding:24px 20px}}
 """
 
@@ -205,7 +272,7 @@ sec_articles = {}
 # map old KB slug -> new site path, from redirects.csv
 import csv as _csv
 OLD2NEW = {}
-for old, new in _csv.reader(open(os.path.join(SRC, 'redirects.csv'))):
+for old, new in _csv.reader(open('redirects.csv')):
     if old == 'old_url':
         continue
     if '/knowledge/' in old:
@@ -313,6 +380,7 @@ for folder, num, name, aud, blurb in SECTIONS:
     arts = []
     parsed = []
     meta_by_slug = {}
+    first_sentence = {}
     for fn in sorted(os.listdir(src_dir)):
         if not fn.endswith('.md'):
             continue
@@ -329,6 +397,9 @@ for folder, num, name, aud, blurb in SECTIONS:
         standfirst, toc, body_html = enrich_body(body_html, title)
         parsed.append((slug, title, meta.get('plan', ''), standfirst, toc, body_html))
         meta_by_slug[slug] = meta
+        _plain = ' '.join(re.sub(r'<[^>]+>', ' ', body_html).split())
+        _m = re.match(r'(.{20,150}?[.!?])(\s|$)', _plain)
+        first_sentence[slug] = _m.group(1) if _m else _plain[:120]
 
     for i, (slug, title, plan, standfirst, toc, body_html) in enumerate(parsed):
         badges = ['<span class="badge">%s</span>' % html.escape(name)]
@@ -367,7 +438,9 @@ for folder, num, name, aud, blurb in SECTIONS:
         if lr:
             try:
                 import datetime as _dt
-                lr_h = _dt.date.fromisoformat(lr).strftime('%-d %B %Y')
+                # Build the day by hand: '%-d' is a glibc extension and raises on Windows.
+                _d = _dt.date.fromisoformat(lr)
+                lr_h = '%d %s %d' % (_d.day, _d.strftime('%B'), _d.year)
             except Exception:
                 lr_h = lr
             badges.append('<span class="badge reviewed">Last reviewed %s</span>' % lr_h)
@@ -411,12 +484,12 @@ for folder, num, name, aud, blurb in SECTIONS:
     sec_articles[folder] = arts
 
     # section index page
-    struct_path = os.path.join('kb/structure', folder + '.json')
+    struct_path = os.path.join('structure', folder + '.json')
     by_slug_p = {sl: (t, st) for (sl, t, pl, st, tc, bh) in parsed}
     page = HEAD.format(title=html.escape(name) + ' | Oxford Abstracts Help',
                        desc=html.escape(blurb), root='../',
                        hdr_search=HDR_SEARCH.format(root='../'))
-    page += f"""<div class="wrap crumbs"><a href="../index.html">Help centre</a> &nbsp;›&nbsp; {html.escape(name)}</div>
+    page += f"""<div class="wrap crumbs"><a href="/">Help centre</a> &nbsp;›&nbsp; {html.escape(name)}</div>
 <section class="wrap" style="padding-top:20px">
 <div class="section-head"><h2 class="display">{html.escape(name)}</h2></div>"""
 
@@ -427,14 +500,17 @@ for folder, num, name, aud, blurb in SECTIONS:
         def card(slug):
             t, sf = by_slug_p.get(slug, (slug, ''))
             listed.add(slug)
+            if not sf:
+                sf = first_sentence.get(slug, '')
             desc = html.escape((sf or '')[:150])
-            return f'<a class="gcard" href="{slug}.html"><b>{html.escape(t)}</b><span>{desc}</span></a>'
+            return (f'<a class="gcard" href="/{folder}/{slug}.html">'
+                    f'<b>{html.escape(t)}</b><span>{desc}</span></a>')
 
         page += f'<p class="sec-intro">{html.escape(st["intro"])}</p>'
         sslug = st['start']['slug']
         stitle, ssf = by_slug_p.get(sslug, (sslug, ''))
         listed.add(sslug)
-        page += f"""<a class="start-card" href="{sslug}.html"><span class="tag">Start here</span>
+        page += f"""<a class="start-card" href="/{folder}/{sslug}.html"><span class="tag">Start here</span>
 <h3>{html.escape(stitle)}</h3><p>{html.escape(st['start'].get('why', ssf or ''))}</p></a>"""
         for g in st['groups']:
             cards = ''.join(card(sl) for sl in g['slugs'] if sl in by_slug_p)
@@ -448,10 +524,10 @@ for folder, num, name, aud, blurb in SECTIONS:
 <p class="gblurb"></p><div class="gcards">{cards}</div></div>"""
         nx = st.get('next')
         if nx:
-            page += f'<a class="next-stage" href="../{nx["folder"]}/index.html">{html.escape(nx["label"])} \u2192</a>'
+            page += f'<a class="next-stage" href="/{nx["folder"]}/">{html.escape(nx["label"])} \u2192</a>'
         page += '</section>'
     else:
-        links = ''.join('<a href="%s.html">%s</a>' % (sl, html.escape(t)) for t, sl in arts)
+        links = ''.join('<a href="/%s/%s.html">%s</a>' % (folder, sl, html.escape(t)) for t, sl in arts)
         page += f"""<div class="section-head" style="margin-top:-8px"><p>{html.escape(blurb)}</p></div>
 <div class="sec-list">{links}</div></section>"""
 
@@ -473,26 +549,37 @@ parts = ''.join(f'''<a class="door" href="{f}/index.html"><h2 class="display" st
                 for f, n, nm, a, b in SECTIONS if a == 'participants')
 
 POPULAR = [
-    ('12-for-submitters/accessing-your-review.html', 'Accessing your reviews'),
-    ('01-getting-started/creating-an-account-with-oxford-abstracts.html', 'Creating an account and logging in'),
+    ('12-for-submitters/accessing-your-reviews.html', 'Accessing your reviews'),
+    ('01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html',
+     'Creating an account and logging in'),
     ('12-for-submitters/making-a-submission.html', 'Making a submission'),
-    ('12-for-submitters/editing-a-submission.html', 'Editing an abstract or submission'),
-    ('01-getting-started/what-to-do-if-a-verification-email-hasnt-arrived-in-your-inbox.html',
+    ('12-for-submitters/editing-an-abstract-or-submission.html', 'Editing an abstract or submission'),
+    ('01-getting-started/if-your-verification-email-hasn-t-arrived.html',
      "If you're not receiving Oxford Abstracts emails"),
     ('13-for-reviewers-committee/completing-a-review.html', 'Completing a review'),
-    ('02-submissions/open-and-close-submissions-_-call-for-abstracts.html',
-     'Open and close submissions (organisers)'),
+    ('02-submissions/opening-and-closing-submissions-deadlines.html',
+     'Opening and closing submissions (organisers)'),
 ]
+missing_pop = [p for p, t in POPULAR if not os.path.exists(os.path.join(OUT, p))]
+if missing_pop:
+    raise SystemExit('POPULAR points at missing pages: %s' % missing_pop)
 pop = ''.join('<a href="%s">%s <span class="arrow">→</span></a>' % (p, html.escape(t))
-              for p, t in POPULAR if os.path.exists(os.path.join(OUT, p)))
+              for p, t in POPULAR)
 
 index = HEAD.format(title='Help Centre | Oxford Abstracts',
                     desc='Guides and answers for organisers and participants using Oxford Abstracts.',
                     root='', hdr_search='')
 index += f'''
 <section class="hero wrap">
+<span class="search-badge">
+<svg class="spark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9L12 2.5z" fill="currentColor"/>
+<path d="M19 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8L19 15z" fill="currentColor" opacity=".6"/>
+</svg>
+New search <span class="sep">&middot;</span> <span class="plain">answers your question, not just links</span>
+</span>
 <h1 class="display">What do you need help&nbsp;with?</h1>
-<p class="lede">Type your question the way you'd ask a colleague — we'll point you to the guide that answers it.</p>
+<p class="lede">Ask a full question in your own words, the way you'd ask a colleague. You'll get a straight answer back, plus the guide it came from.</p>
 <div class="searchbox">
 <form id="searchForm" role="search" aria-label="Search the help centre">
 <input id="searchInput" type="text" placeholder="e.g. How do I email my reviewers?" aria-label="Your question">
@@ -534,15 +621,35 @@ index += f'''
 index += FOOT
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index)
 
-shutil.copy(os.path.join(SRC, 'redirects.csv'), os.path.join(OUT, 'redirects.csv'))
 
-# copy hand-written extras (search JS, API functions, deploy config, docs)
-for root, dirs, files in os.walk('kb/extras'):
-    rel = os.path.relpath(root, 'kb/extras')
-    dst = os.path.join(OUT, rel) if rel != '.' else OUT
-    os.makedirs(dst, exist_ok=True)
-    for f in files:
-        shutil.copy(os.path.join(root, f), os.path.join(dst, f))
+
+# regenerate the answer store the search API reads (public corpus + internal notes)
+def _load_store(dirpath, internal):
+    out = {}
+    for root, _, files in os.walk(dirpath):
+        for fn in sorted(files):
+            if not fn.endswith('.md') or fn == 'README.md':
+                continue
+            meta, body = parse(os.path.join(root, fn))
+            body = re.sub(r'!\[[^\]]*\]\([^)]*\)', '', body).strip()
+            if internal:
+                p = 'internal/' + fn[:-3]
+                out[p] = {'title': meta.get('title', fn[:-3]), 'path': p,
+                          'section': 'Internal note', 'plan': '', 'internal': True,
+                          'body': body[:6000]}
+            else:
+                folder = os.path.basename(root)
+                p = '%s/%s.html' % (folder, fn[:-3])
+                out[p] = {'title': meta.get('title', fn[:-3]), 'path': p,
+                          'section': meta.get('section', folder),
+                          'plan': meta.get('plan', ''), 'body': body[:12000]}
+    return out
+
+store = _load_store(SRC, False)
+store.update(_load_store('corpus-internal', True))
+json.dump(store, open('assets/articles.json', 'w'), indent=0)
+print('answer store:', len(store), 'entries (%d internal)'
+      % sum(1 for v in store.values() if v.get('internal')))
 print('sections:', len(sec_articles))
 print('article pages:', sum(len(v) for v in sec_articles.values()))
 print('total files:', sum(len(f) for _, _, f in os.walk(OUT)))

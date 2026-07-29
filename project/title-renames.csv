@@ -1,0 +1,175 @@
+section,current title,proposed title,current slug,proposed slug,why
+01-getting-started,An overview of the tables function,Working with tables,an-overview-of-the-tables-function,working-with-tables,Wordy
+01-getting-started,Creating an account with Oxford Abstracts and logging in,Creating an account with Oxford Abstracts and logging in,creating-an-account-with-oxford-abstracts,creating-an-account-with-oxford-abstracts-and-logging-in,
+01-getting-started,Different types of users in the system,,different-types-of-users-in-the-system,,No change
+01-getting-started,Abstract management checklist,Abstract management checklist,event-administrator-checklist,abstract-management-checklist,
+01-getting-started,Event dashboard,,event-dashboard,,No change
+01-getting-started,Event details,,event-details,,No change
+01-getting-started,Event theme,,event-theme,,No change
+01-getting-started,"Admins: Guidance for dealing with submitter, reviewer and committee etc. issues","Helping your submitters, reviewers and committee with problems",faq-guidance-for-admins-dealing-with-end-user-issues,helping-your-submitters-reviewers-and-committee-with-problems,"FAQ prefix remnant; ""etc."" in title"
+01-getting-started,How to test the accessibility of Oxford Abstracts web pages,Testing the accessibility of Oxford Abstracts web pages,how-to-test-accessibility-of-oxford-abstracts-web-pages-with-google-lighthouse,testing-the-accessibility-of-oxford-abstracts-web-pages,Style: uniform sentence case / task phrasing
+01-getting-started,How to use the Search Bars,Using the search bars,how-to-use-the-search-bars,using-the-search-bars,Style: uniform sentence case / task phrasing
+01-getting-started,Manage users,,manage-users,,No change
+01-getting-started,Creating and paying for a new event,Creating and paying for a new event,paying-for-your-event,creating-and-paying-for-a-new-event,
+01-getting-started,Recommended Dimensions for Picture Uploads,Recommended dimensions for picture uploads,picture-dimensions-for-upload,recommended-dimensions-for-picture-uploads,Style: uniform sentence case / task phrasing
+01-getting-started,The essential abstract management tools,The essential abstract management tools,the-essential-tools,the-essential-abstract-management-tools,
+01-getting-started,Updating your profile,,updating-your-profile,,No change
+01-getting-started,What are the differences between the free package and paid packages?,,what-are-the-differences-between-the-free-package-and-paid-packages,,No change
+01-getting-started,What to do if you're not receiving Oxford Abstracts emails to your inbox,If your verification email hasn't arrived,what-to-do-if-a-verification-email-hasnt-arrived-in-your-inbox,if-your-verification-email-hasn-t-arrived,User-voice troubleshooting title
+01-getting-started,What to do when you have a 'Network Failure' error message.,"Fixing a ""network failure"" error",what-to-do-when-you-have-a-network-failure-error-message,fixing-a-network-failure-error,User-voice troubleshooting title
+01-getting-started,Your personal dashboard,,your-personal-dashboard,,No change
+02-submissions,Accessing reviews from previous stages,,accessing-reviews-from-previous-stages,,No change
+02-submissions,The authors and affiliations question,The authors and affiliations question,adding-author-information-questions,the-authors-and-affiliations-question,
+02-submissions,Charging a fee for submission,,charging-a-fee-for-submission,,No change
+02-submissions,Combined word count,,combined-word-count,,No change
+02-submissions,Creating questions / forms to be answered by individually by authors and/ or presenters.,Creating questions for individual authors and presenters,creating-forms-to-be-answered-by-authors,creating-questions-for-individual-authors-and-presenters,Grammar error and 88-character title
+02-submissions,Creating multi-stage submission forms,Creating Multi-stage submission forms,creating-multi-stage-submission-forms,,Style: uniform sentence case / task phrasing
+02-submissions,Deleting / restoring or withdrawing a submission,"Deleting, restoring or withdrawing a submission",deleting-_-restoring-or-withdrawing-a-submission,deleting-restoring-or-withdrawing-a-submission,Underscore artifact
+02-submissions,Dependency questions,,dependency-questions,,No change
+02-submissions,Designing the submission form,,designing-the-submission-form,,No change
+02-submissions,Editing a user's submission,Editing a user's submission,editing-a-users-submission,editing-a-user-s-submission,
+02-submissions,How to bulk upload and automatically assign files,Bulk upload and automatically assign files,how-to-bulk-upload-and-automatically-assign-files,bulk-upload-and-automatically-assign-files,Style: uniform sentence case / task phrasing
+02-submissions,How to change the owner of a submission,Changing the owner of a submission,how-to-change-the-owner-of-a-submission,changing-the-owner-of-a-submission,Style: uniform sentence case / task phrasing
+02-submissions,How to create a Multi-Language Submission Form,Creating a multi-language submission form,how-to-create-a-multi-language-submission-form,creating-a-multi-language-submission-form,Style: uniform sentence case / task phrasing
+02-submissions,How to enable and disable Inline Comments as an admin,Turning inline comments on and off,how-to-enable-and-disable-inline-comments-as-an-admin,turning-inline-comments-on-and-off,Wordy
+02-submissions,How to use Submission Analytics,Using submission analytics,how-to-use-submission-analytics,using-submission-analytics,Style: uniform sentence case / task phrasing
+02-submissions,Making a submission on behalf of someone else,,making-a-submission-on-behalf-of-someone-else,,No change
+02-submissions,Managing a sequential multi-stage event - eg. abstract followed by full paper.,Running a sequential Multi-stage event,managing-a-sequential-multi-stage-event-eg--abstract-followed-by-full-paper,running-a-sequential-multi-stage-event,"""eg."" and trailing full stop in title"
+02-submissions,Multi-stage - the decision stage,Multi-stage - the decision stage,moving-submissions-to-a-different-stage,multi-stage-the-decision-stage,
+02-submissions,Multi-stage reviews,,multi-stage-reviews,,No change
+02-submissions,Open and close submissions / call for abstracts,Opening and closing submissions (deadlines),open-and-close-submissions-_-call-for-abstracts,opening-and-closing-submissions-deadlines,"""Deadline"" searched 24x with 4 clicks; word absent from every title"
+02-submissions,Question setting tags,Question setting tags,question-tags,question-setting-tags,
+02-submissions,Question types,Submission question types,question-types-1,submission-question-types,"""-1"" duplicate-slug suffix from HubSpot"
+02-submissions,Restricting who can submit by email,,restricting-who-can-submit-by-email,,No change
+02-submissions,Setting up a multi-stage event,Setting up a Multi-stage event,setting-up-a-multi-stage-event,,Style: uniform sentence case / task phrasing
+02-submissions,Text editor types,,text-editor-types,,No change
+02-submissions,The Submissions Table,The submissions table (including incomplete submissions),the-submissions-table,the-submissions-table-including-incomplete-submissions,"""Incomplete submission"" searched 11x, zero clicks"
+02-submissions,Word and character count,,word-and-character-count,,No change
+03-reviewing,Assigning and unassigning a submission to a reviewer,,assigning-and-unassigning-a-submission-to-a-reviewer,,No change
+03-reviewing,Controlling what the reviewer can see,,controlling-what-the-reviewer-can-see,,No change
+03-reviewing,Designing the review form,,designing-the-review-form,,No change
+03-reviewing,Editing a review or completing a review on behalf of a reviewer,,editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer,,No change
+03-reviewing,How to chase up late reviews,Chasing up late reviews,how-to-chase-up-late-reviews,chasing-up-late-reviews,Style: uniform sentence case / task phrasing
+03-reviewing,How To Create The Reviewer Recruitment Form and Assign Categories,Creating the reviewer recruitment form and assign categories,how-to-create-the-reviewer-form-and-assign-reviewers,creating-the-reviewer-recruitment-form-and-assign-categories,Style: uniform sentence case / task phrasing
+03-reviewing,Notifying reviewers that they have been assigned submissions to review,,notifying-reviewers-that-they-have-been-assigned-submissions-to-review,,No change
+03-reviewing,Opening / closing reviewing,Opening and closing reviewing,opening_-closing-reviewing,opening-and-closing-reviewing,Underscore artifact in slug
+03-reviewing,Review question types,,review-question-types,,No change
+03-reviewing,Show reviews to submitters,Showing reviews to submitters,show-reviews-to-submitters-1,showing-reviews-to-submitters,"""-1"" duplicate-slug suffix"
+03-reviewing,The review tables,,the-review-tables,,No change
+03-reviewing,Tips on designing your reviewing form,,tips-on-designing-your-reviewing-form,,No change
+04-decisions,Assigning program codes in the decisions table,,assigning-program-codes-in-the-decisions-table,,No change
+04-decisions,Design the decision form,,design-the-decision-form,,No change
+04-decisions,Assigning specific categories to committee members (filtered committee view),Assigning categories to committee members,filtered-committee-view-assigning-specific-categories-to-committee-members,assigning-categories-to-committee-members,"Internal jargon ""filtered committee view"" leads the title"
+04-decisions,Notifying submitters of their outcomes,,notifying-submitters-of-their-outcomes,,No change
+04-decisions,Opening and closing decision making,,opening-and-closing-decision-making,,No change
+04-decisions,Recording a decision (accepting/ rejecting/ withdrawing a submission),"Recording decisions: accept, reject or withdraw",recording-a-decision-accepting_-rejecting_-withdrawing-a-submission,recording-decisions-accept-reject-or-withdraw,Underscore artifacts; 66-char title
+04-decisions,The decisions table,,the-decisions-table,,No change
+05-emails,Amending template emails,Editing the template emails,amending-template-emails,editing-the-template-emails,"""Template"" searched 15x, 0.13 clicks"
+05-emails,Creating custom emails,,creating-custom-emails,,No change
+05-emails,Emailing presenters and authors directly,Emailing presenters and authors directly,emailing-presenters-directly,emailing-presenters-and-authors-directly,
+05-emails,How to send emails from tables,Sending emails from tables,emails-from-submission-table,sending-emails-from-tables,Style: uniform sentence case / task phrasing
+05-emails,How to email Session Chairs from the dashboard,Emailing session chairs from the dashboard,how-to-email-session-chairs-from-the-dashboard,emailing-session-chairs-from-the-dashboard,Style: uniform sentence case / task phrasing
+05-emails,How To Use The Email Sent Log,Using the email sent log,how-to-use-the-email-logs,using-the-email-sent-log,Style: uniform sentence case / task phrasing
+05-emails,Sending emails from your chosen email address,Sending emails from your chosen email address,verify-sender-email-function,sending-emails-from-your-chosen-email-address,
+05-emails,Sending and scheduling emails,Sending and scheduling emails,viewing-editing-and-sending-emails,sending-and-scheduling-emails,
+05-emails,What domains will emails from Oxford Abstracts originate from?,,what-domains-will-emails-from-oxford-abstracts-originate-from,,No change
+05-emails,Why does my email need to be DKIM validated?,,why-does-my-email-need-to-be-dkim-validated,,No change
+06-programme-exports-reports,Abstract books,,abstract-books,,No change
+06-programme-exports-reports,Creating a backup of your conference data,Creating a backup of your conference data,creating-a-back-up-of-your-conference-data,creating-a-backup-of-your-conference-data,
+06-programme-exports-reports,Downloading data on presenters only,,downloading-data-on-presenters-only,,No change
+06-programme-exports-reports,Downloading your program and session books,Downloading your program and session books,downloading-session-books,downloading-your-program-and-session-books,
+06-programme-exports-reports,Export table data to Excel,,export-table-data-to-excel,,No change
+06-programme-exports-reports,How to add Chair's email addresses.,Adding chair's email addresses,how-to-add-chairs-email-addresses,adding-chair-s-email-addresses,Style: uniform sentence case / task phrasing
+06-programme-exports-reports,How to include a submission which is not in a session in the title listing,Adding a session-less submission to the title listing,how-to-include-a-submission-which-is-not-in-a-session-in-the-title-listing,adding-a-session-less-submission-to-the-title-listing,74-char title
+06-programme-exports-reports,How to lock and change the timezone for your conference,Locking and change the timezone for your conference,how-to-lock-and-change-the-timezone-for-your-virtual-conference,locking-and-change-the-timezone-for-your-conference,Style: uniform sentence case / task phrasing
+06-programme-exports-reports,How to view the mobile version of the program builder,Viewing the mobile version of the program builder,how-to-view-the-program-builder,viewing-the-mobile-version-of-the-program-builder,Style: uniform sentence case / task phrasing
+06-programme-exports-reports,What is the difference between the public and full access program?,Public vs full-access programme,if-you-have-the-professional-conference-package-you-will-have-a-feature-that-allows-you-to-control-access-to-the-premium-features-of-the-platform,public-vs-full-access-programme,Slug is a 145-character sentence
+06-programme-exports-reports,Other reports,,other-reports,,No change
+06-programme-exports-reports,Program sessions table,,program-sessions-table,,No change
+06-programme-exports-reports,Publishing your program,,publishing-your-program,,No change
+07-delegate-registration,Dependency Questions On The Delegate Registration Form,Dependency questions on the delegate registration form,dependency-questions-on-the-delegate-registration-form,,Style: uniform sentence case / task phrasing
+07-delegate-registration,How admins can amend existing delegate registration orders,,how-admins-can-amend-existing-delegate-registration-orders,,No change
+07-delegate-registration,How attendees can complete the registration form when a ticket is bought on their behalf,Completing registration when someone bought your ticket,how-attendees-can-complete-the-registration-form-when-a-ticket-is-bought-on-their-behalf,completing-registration-when-someone-bought-your-ticket,88-char title
+07-delegate-registration,How to add add-ons to an existing order,Adding add-ons to an existing order,how-to-add-add-ons,adding-add-ons-to-an-existing-order,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to configure invoices and receipts for Delegate Registration,Configuring invoices and receipts for delegate registration,how-to-configure-invoices-and-receipts-for-delegate-registration,configuring-invoices-and-receipts-for-delegate-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to create coupon codes for delegate registration,Creating coupon codes for delegate registration,how-to-create-coupon-codes-for-delegate-registration,creating-coupon-codes-for-delegate-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to create your delegate registration form,Creating your delegate registration form,how-to-create-your-delegate-registration-form,creating-your-delegate-registration-form,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to create your delegate registration tickets for your event,Creating your delegate registration tickets for your event,how-to-create-your-delegate-registration-tickets-for-your-event,creating-your-delegate-registration-tickets-for-your-event,Style: uniform sentence case / task phrasing
+07-delegate-registration,How To Download Invoices and Receipts,Downloading invoices and receipts,how-to-download-invoices-and-receipts,downloading-invoices-and-receipts,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to edit automated emails for delegate registration,Editing automated emails for delegate registration,how-to-edit-automated-emails-for-delegate-registration,editing-automated-emails-for-delegate-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to edit your delegate registration ticket details page,Editing your delegate registration ticket details page,how-to-edit-your-delegate-registration-event-details-page,editing-your-delegate-registration-ticket-details-page,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to manage orders and edit the attendee table,Managing orders and edit the attendee table,how-to-manage-orders-on-the-attendee-table,managing-orders-and-edit-the-attendee-table,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to preview and publish your event registration,Previewing and publish your event registration,how-to-preview-and-publish-your-event-registration,previewing-and-publish-your-event-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to change/reassign a registration email address on delegate registration,Changing the email address on a registration,how-to-reassign-a-registration-email-address-on-delegate-registration,changing-the-email-address-on-a-registration,76-char title
+07-delegate-registration,How to refund an attendee through delegate registration,Refunding an attendee through delegate registration,how-to-refund-attendees-delegate-registration,refunding-an-attendee-through-delegate-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to register on the behalf of someone else,Registering on the behalf of someone else,how-to-register-on-the-behalf-of-someone-else,registering-on-the-behalf-of-someone-else,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to set up payment providers for delegate registration,Setting up payment providers for delegate registration,how-to-set-up-payment-providers-for-delegate-registration,setting-up-payment-providers-for-delegate-registration,Style: uniform sentence case / task phrasing
+07-delegate-registration,How To Use Registration Analytics,Using registration analytics,how-to-use-registration-analytics,using-registration-analytics,Style: uniform sentence case / task phrasing
+07-delegate-registration,How to view transactions on the attendee table,Viewing transactions on the attendee table,how-to-view-transactions-on-the-attendee-table,viewing-transactions-on-the-attendee-table,Style: uniform sentence case / task phrasing
+08-conference-platform,Colour coding your event,Colour-coding your programme,advanced-_-virtual-conference-program-colour-coding,colour-coding-your-programme,"""Advanced -"" prefix means nothing to readers"
+08-conference-platform,Professional Conference - Controlling access,Controlling access to the programme,advanced-_-virtual-conference-program-controlling-access,controlling-access-to-the-programme,"""Advanced -"" prefix"
+08-conference-platform,Program bookings,Session bookings,advanced-_-virtual-conference-program-program-bookings,session-bookings,"""Advanced -"" prefix; ""program program"" repetition"
+08-conference-platform,Professional Conference - Chat feature,The chat feature,advanced-_-virtual-program-chat-feature,the-chat-feature,"""Advanced -"" prefix"
+08-conference-platform,Professional Conference - Networking,Networking for attendees,advanced-_-virtual-program-networking,networking-for-attendees,"""Advanced -"" prefix"
+08-conference-platform,Allow submitters to hide abstract from program,Letting submitters hide their abstract from the programme,advanced-_virtual-conference-program-allow-submitters-to-hide-abstract-from-program,letting-submitters-hide-their-abstract-from-the-programme,"""Advanced -"" prefix; 84-char slug"
+08-conference-platform,Professional Conference - User comments,Comments on sessions and abstracts,advanced_-virtual-conference-program-user-comments,comments-on-sessions-and-abstracts,"""Advanced -"" prefix"
+08-conference-platform,"Amending, deleting and copying a session",,amending-deleting-and-copying-a-session,,No change
+08-conference-platform,Assigning program codes,,assigning-program-codes,,No change
+08-conference-platform,Professional Conference - Branding,Professional Conference - branding,branding-in-the-program,professional-conference-branding,Style: uniform sentence case / task phrasing
+08-conference-platform,Creating a session,,creating-a-session,,No change
+08-conference-platform,Attaching content to sessions,Attaching content to sessions,draft-creating-and-editing-sessions,attaching-content-to-sessions,"Slug still says ""draft-"" and does not match the title"
+08-conference-platform,Setting Up The Homepage For Your Conference,Setting up the homepage for your conference,homepage-feature-for-virtual-conference,setting-up-the-homepage-for-your-conference,Style: uniform sentence case / task phrasing
+08-conference-platform,How to bookmark sessions on the event schedule,Bookmarking sessions on the event schedule,how-to-bookmark-sessions-on-the-event-schedule,bookmarking-sessions-on-the-event-schedule,Style: uniform sentence case / task phrasing
+08-conference-platform,How to create announcements on conference,Creating announcements on conference,how-to-create-announcements-on-virtual-conference,creating-announcements-on-conference,Style: uniform sentence case / task phrasing
+08-conference-platform,How To Create Your Event Website,Creating your event website,how-to-create-your-event-website,creating-your-event-website,Style: uniform sentence case / task phrasing
+08-conference-platform,How to make a session cross columns in the program timetable,Making a session cross columns in the program timetable,how-to-make-a-session-cross-two-columns-in-the-program-timetable,making-a-session-cross-columns-in-the-program-timetable,Style: uniform sentence case / task phrasing
+08-conference-platform,How To Use Speaker Management,Using speaker management,how-to-use-speaker-management,using-speaker-management,Style: uniform sentence case / task phrasing
+08-conference-platform,Professional Conference - Exhibitor space - Admin set up,Professional Conference - exhibitor space - admin set up,professional-conference-exhibitor-feature,professional-conference-exhibitor-space-admin-set-up,Style: uniform sentence case / task phrasing
+08-conference-platform,Professional Conference - The poster gallery,Professional Conference - the poster gallery,setting-up-the-poster-gallery,professional-conference-the-poster-gallery,Style: uniform sentence case / task phrasing
+08-conference-platform,Setting up your program - display,Setting up your program - display,setting-up-your-online-program-display,setting-up-your-program-display,
+08-conference-platform,Setting up your program - timezones,Setting up your program - timezones,setting-up-your-online-program-timezones,setting-up-your-program-timezones,
+08-conference-platform,Setting up your program - configuration,Setting up your program - configuration,setting-up-your-program-program-configuration,setting-up-your-program-configuration,
+08-conference-platform,Setting up your Zoom integration,Setting up your Zoom integration,setting-up-your-zoom-integration-coming-soon,setting-up-your-zoom-integration,"Slug still says ""coming-soon"""
+08-conference-platform,Professional Conference - Sponsors,Professional Conference - sponsors,sponsorship,professional-conference-sponsors,Style: uniform sentence case / task phrasing
+08-conference-platform,Which Zoom package do I need?,Which Zoom package do i need?,which-zoom-package-do-i-need,,Style: uniform sentence case / task phrasing
+09-add-ons,Collecting symposia,Collecting Symposia,collecting-symposia,,Style: uniform sentence case / task phrasing
+09-add-ons,Designing the symposia forms,Designing the Symposia forms,designing-the-symposia-forms,,Style: uniform sentence case / task phrasing
+09-add-ons,How To Create A Certificate,Creating a certificate,how-to-create-a-certificate,creating-a-certificate,Style: uniform sentence case / task phrasing
+09-add-ons,Managing symposia,Managing Symposia,managing-symposia,,Style: uniform sentence case / task phrasing
+09-add-ons,Symposia decisions & emails,,symposia-decisions-emails,,No change
+09-add-ons,Symposia overview & dashboard,,symposia-overview-dashboard,,No change
+09-add-ons,Symposia reviewing,,symposia-reviewing,,No change
+10-integrations-api,Application Programming Interface (API),Application programming interface (API),application-programming-interface-api,,Style: uniform sentence case / task phrasing
+10-integrations-api,How to integrate EventsAir to Oxford Abstracts,Integrating EventsAir to Oxford Abstracts,how-to-integrate-eventsair-to-oxford-abstracts,integrating-eventsair-to-oxford-abstracts,Style: uniform sentence case / task phrasing
+10-integrations-api,How to integrate Oxford Abstracts and Cvent,Integrating Oxford Abstracts and Cvent,how-to-integrate-oxford-abstracts-and-cvent,integrating-oxford-abstracts-and-cvent,Style: uniform sentence case / task phrasing
+10-integrations-api,How to integrate Oxford Abstracts and idloom,Integrating Oxford Abstracts and idloom,how-to-integrate-oxford-abstracts-and-idloom,integrating-oxford-abstracts-and-idloom,Style: uniform sentence case / task phrasing
+10-integrations-api,How to integrate Oxford Abstracts and Swapcard,Integrating Oxford Abstracts and Swapcard,how-to-integrate-oxford-abstracts-and-swapcard,integrating-oxford-abstracts-and-swapcard,Style: uniform sentence case / task phrasing
+11-account-administration,Account administration dashboard,,account-administration-dashboard,,No change
+11-account-administration,How To Delete Your Oxford Abstracts Account,Deleting your Oxford Abstracts account,how-an-attendee-can-delete-their-oxford-abstracts-account,deleting-your-oxford-abstracts-account,Style: uniform sentence case / task phrasing
+11-account-administration,How to permanently delete or archive your event,Permanently delete or archive your event,how-to-permanently-delete-your-event,permanently-delete-or-archive-your-event,Style: uniform sentence case / task phrasing
+11-account-administration,How to use the Customer Portal,Using the customer portal,how-to-use-the-customer-portal,using-the-customer-portal,Style: uniform sentence case / task phrasing
+11-account-administration,Managing your account,,managing-your-account,,No change
+12-for-submitters,Accessing your reviews,Accessing your reviews,accessing-your-review,accessing-your-reviews,
+12-for-submitters,Attaching your submission to a symposium,Attaching your submission to a Symposium,attaching-your-submission-to-a-symposium,,Style: uniform sentence case / task phrasing
+12-for-submitters,In-Line Comments - How to view comments left by reviewers,Viewing comments left by reviewers,draft-submitters-inline-comments,viewing-comments-left-by-reviewers,draft- slug
+12-for-submitters,Editing an abstract or submission,Editing an abstract or submission,editing-a-submission,editing-an-abstract-or-submission,
+12-for-submitters,Editing a symposium,Editing a Symposium,editing-a-symposium,,Style: uniform sentence case / task phrasing
+12-for-submitters,Making a second/additional submission,Making a second/additional submission,making-a-second_additional-submission,making-a-second-additional-submission,
+12-for-submitters,Making a submission,,making-a-submission,,No change
+12-for-submitters,Paying for your submission,,paying-for-your-submission,,No change
+12-for-submitters,Submit a symposium,Submit a Symposium,submit-a-symposium,,Style: uniform sentence case / task phrasing
+12-for-submitters,Withdrawing or removing your submission from a symposium,Withdrawing or removing your submission from a Symposium,withdrawing-or-removing-your-submission-from-a-symposium,,Style: uniform sentence case / task phrasing
+13-for-reviewers-committee,Assigning submissions to reviewers as a committee member,Assigning submissions to reviewers as a committee member,assigning-reviews-to-reviewers-as-a-committee-member,assigning-submissions-to-reviewers-as-a-committee-member,
+13-for-reviewers-committee,Completing a review,,completing-a-review,,No change
+13-for-reviewers-committee,Completing a Symposium Review,Completing a Symposium review,completing-a-symposium-review,,Style: uniform sentence case / task phrasing
+13-for-reviewers-committee,Viewing and making decisions,Viewing and making decisions,making-decisions-on-submissions-as-a-committee-member,viewing-and-making-decisions,
+13-for-reviewers-committee,In-Line Comments - How to leave comments on submissions you are reviewing,Leaving comments on submissions you review,reviewers-leaving-inline-comments,leaving-comments-on-submissions-you-review,Prefix pattern
+14-for-attendees-exhibitors,Exploring the Poster Gallery,Exploring the poster gallery,exploring-the-poster-gallery,,Style: uniform sentence case / task phrasing
+14-for-attendees-exhibitors,Exploring the conference platform,Exploring the conference platform,exploring-the-virtual-conference,exploring-the-conference-platform,
+14-for-attendees-exhibitors,How attendees can download event schedules,How attendees can download event schedules,how-attendees-can-download-the-programme-schedule,how-attendees-can-download-event-schedules,
+14-for-attendees-exhibitors,How do I contact the event administrator?,How do i contact the event administrator?,how-do-i-contact-the-event-administrator,,Style: uniform sentence case / task phrasing
+14-for-attendees-exhibitors,Payment Error,Payment error,payment-error,,Style: uniform sentence case / task phrasing
+14-for-attendees-exhibitors,Exhibitor space - Setting up and managing your booth,Exhibitor space - setting up and managing your booth,professional-conference-exhibitor-feature-exhibitor-set-up,exhibitor-space-setting-up-and-managing-your-booth,Style: uniform sentence case / task phrasing
+14-for-attendees-exhibitors,Setting up your conference program account,Setting up your conference program account,registering-for-the-virtual-program,setting-up-your-conference-program-account,
+14-for-attendees-exhibitors,"Using the chat feature (event, group, private and video) and controlling notifications",Using the chat and controlling notifications,using-the-chat-feature,using-the-chat-and-controlling-notifications,86-char title with a bracketed list
+14-for-attendees-exhibitors,Viewing sessions and content in the conference program,Viewing sessions and content in the conference program,viewing-sessions-and-content,viewing-sessions-and-content-in-the-conference-program,

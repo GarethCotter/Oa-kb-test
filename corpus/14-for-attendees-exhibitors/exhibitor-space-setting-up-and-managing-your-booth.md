@@ -4,14 +4,12 @@ section: "14-for-attendees-exhibitors"
 audience: participants
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/professional-conference-exhibitor-feature-exhibitor-set-up
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Exhibitor space - setting up and managing your booth
 
 In this article learn how, as an exhibitor, representative or admin, you can configure your booths and interact with attendees.
-
-# Exhibitor space - Setting up and managing your booth
 
 ## This feature allows you to create exhibitor booths and facilitate interaction between attendees and exhibitors. In this article learn how, as an exhibitor, representative or admin, you can configure your booths and interact with attendees.
 

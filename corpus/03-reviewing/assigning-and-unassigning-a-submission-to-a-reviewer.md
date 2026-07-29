@@ -5,14 +5,12 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer
 merged_from: [allowing-committee-members-to-assign-reviews, faq-reviews]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Assigning and unassigning a submission to a reviewer
 
 Learn how to automatically assign, manually assign and un-assign submissions to reviewers.
-
-# Assigning and unassigning a submission to a reviewer
 
 ## Assigning submissions to a reviewer(s) is a simple process. Before you can assign reviewers, you will need to add them to the system. Learn how to automatically assign, manually assign and un-assign submissions to reviewers.
 
