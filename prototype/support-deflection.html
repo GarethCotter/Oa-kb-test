@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Prototype — answering the question before the ticket sends</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+/* Tokens read off the live contact-support page on 29 July 2026, so the prototype
+   sits in the real design rather than an approximation of it. */
+:root{
+  --bg:#EAECE1; --ink:#0A1B3E; --red:#C54538; --white:#fff;
+  --muted:#4A5468; --line:#D1D5DB; --radius:6px;
+  --ok:#1F6F5C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',ui-sans-serif,system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--ink);background:var(--bg)}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.page{padding:40px 0 80px}
+a{color:var(--red)}
+
+/* demo chrome — not part of the design being proposed */
+.demobar{background:var(--ink);color:#fff;font-size:14px;padding:10px 0}
+.demobar .wrap{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;max-width:900px}
+.demobar strong{font-weight:600;letter-spacing:.02em}
+.demobar label{display:flex;align-items:center;gap:6px;color:#cbd2e0;cursor:pointer}
+.demobar select{font:inherit;font-size:13px;padding:3px 8px;border-radius:4px;border:1px solid #33436b;background:#1b2a4d;color:#fff}
+.demobar .mode{margin-left:auto;font-size:13px;color:#9fb0cd}
+
+h1{font-size:34px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+.lede{color:var(--muted);margin-bottom:32px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px}
+.step-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+h2{font-size:24px;font-weight:600;margin-bottom:6px}
+.hint{color:var(--muted);font-size:16px;margin-bottom:20px}
+
+.roles{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.role{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:inherit;font-size:16px;cursor:pointer;color:var(--ink)}
+.role[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+label.field{display:block;margin-bottom:18px}
+label.field span{display:block;font-size:16px;font-weight:500;margin-bottom:6px}
+label.field em{font-style:normal;color:var(--muted);font-size:14px;font-weight:400}
+input[type=text],input[type=email],input[type=number],textarea{
+  width:100%;font:inherit;font-size:17px;padding:12px;background:#fff;
+  border:1px solid var(--line);border-radius:var(--radius);color:var(--ink)}
+textarea{min-height:130px;resize:vertical}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+.btn{display:inline-block;background:var(--red);color:#fff;border:none;cursor:pointer;
+  font:inherit;font-weight:500;font-size:17px;padding:12px 44px;border-radius:999px}
+.btn:hover{background:#a83a2e}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn-quiet{background:transparent;color:var(--ink);border:1px solid var(--ink);padding:12px 26px}
+.btn-quiet:hover{background:rgba(10,27,62,.06)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+
+/* the deflection step */
+.checking{display:flex;align-items:center;gap:12px;color:var(--muted);padding:8px 0}
+.spinner{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+
+.answer{border:1px solid var(--line);border-left:5px solid var(--ok);border-radius:12px;background:#fff;padding:24px;margin-top:6px}
+.answer h3{font-size:19px;font-weight:600;margin-bottom:10px}
+.answer p.body{margin-bottom:16px}
+.sources{border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
+.sources p{font-size:14px;color:var(--muted);margin-bottom:8px}
+.sources a{display:block;font-size:16px;margin-bottom:6px;text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.followups{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:15px;cursor:pointer;color:var(--ink)}
+.chip:hover{border-color:var(--ink)}
+
+.sent{border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:12px;background:#fff;padding:24px}
+.sent h3{font-size:20px;font-weight:600;margin-bottom:8px}
+.payload{background:#f6f7f4;border:1px solid var(--line);border-radius:8px;padding:14px;margin-top:16px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.55;white-space:pre-wrap;color:#2b3550}
+.solved{border-left-color:var(--ok)}
+.note{font-size:14px;color:var(--muted);margin-top:14px}
+.hidden{display:none}
+
+.explain{margin-top:34px;border-top:1px solid var(--line);padding-top:24px}
+.explain h3{font-size:15px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+.explain li{margin-bottom:10px;font-size:16px;color:var(--muted);margin-left:20px}
+.explain b{color:var(--ink);font-weight:600}
+@media (max-width:600px){h1{font-size:27px}.card{padding:20px}.btn{padding:12px 28px}}
+</style>
+</head>
+<body>
+
+<div class="demobar"><div class="wrap">
+  <strong>DEMO CONTROLS</strong>
+  <label>Scenario
+    <select id="scenario">
+      <option value="live">Ask the real KB (live)</option>
+      <option value="strong">Strong answer</option>
+      <option value="weak">Weak answer — do not interrupt</option>
+      <option value="down">API unavailable</option>
+    </select>
+  </label>
+  <span class="mode" id="modeNote">answers come from the live /api/search</span>
+</div></div>
+
+<div class="page"><div class="wrap">
+
+  <h1>Before your ticket sends</h1>
+  <p class="lede">A prototype of the support-form check. Same fields as the live HubSpot
+  form; the difference is what happens when you press Submit.</p>
+
+  <div class="card">
+    <p class="step-label">Step 1</p>
+    <h2>Tell us about your role</h2>
+    <p class="hint">We’ll use this to fast-track your enquiry to the right place.</p>
+    <div class="roles" id="roles" role="group" aria-label="What is your role in the conference?">
+      <button class="role" type="button" aria-pressed="true"  data-aud="organisers">Event Administrator</button>
+      <button class="role" type="button" aria-pressed="false" data-aud="participants">Submitter</button>
+      <button class="role" type="button" aria-pressed="false" data-aud="participants">Reviewer</button>
+      <button class="role" type="button" aria-pressed="false" data-aud="participants">Attendee</button>
+      <button class="role" type="button" aria-pressed="false" data-aud="">Other</button>
+    </div>
+
+    <p class="step-label">Step 2</p>
+    <h2>Tell us about your query</h2>
+    <p class="hint">Support form</p>
+
+    <form id="ticket" novalidate>
+      <label class="field"><span>First name*</span>
+        <input type="text" id="firstname" value="Alex" required></label>
+      <label class="field"><span>Email*</span>
+        <input type="email" id="email" value="alex@example.ac.uk" required></label>
+      <label class="field"><span>Ticket name*</span>
+        <input type="text" id="subject" required
+               value="Reviewers cannot see their assigned reviews"></label>
+      <label class="field"><span>Ticket description* <em>Add links to the page if appropriate</em></span>
+        <textarea id="content" required>My reviewers say they log in but cannot see any of the abstracts I have assigned to them. How do I check what has gone wrong?</textarea></label>
+      <label class="field"><span>Event ID <em>This can be found in the URL admin/events/{event_id}/…</em></span>
+        <input type="number" id="eventid"></label>
+      <label class="field"><span>OR Event name</span>
+        <input type="text" id="eventname"></label>
+
+      <div class="btn-row">
+        <button class="btn" type="submit" id="submitBtn">Submit</button>
+      </div>
+    </form>
+
+    <div id="checking" class="checking hidden">
+      <div class="spinner" aria-hidden="true"></div>
+      <span>Checking the help centre first…</span>
+    </div>
+
+    <div id="deflect" class="hidden">
+      <div class="answer">
+        <h3>This might be what you’re after —</h3>
+        <p class="body" id="answerText"></p>
+        <div class="sources" id="sourcesBox">
+          <p>Where this came from</p>
+          <div id="sources"></div>
+        </div>
+        <div class="followups" id="followups"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" type="button" id="solvedBtn">That’s solved it</button>
+        <button class="btn btn-quiet" type="button" id="anywayBtn">Send my ticket anyway</button>
+      </div>
+    </div>
+
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <div class="explain">
+    <h3>What this is demonstrating</h3>
+    <ul>
+      <li><b>No confidence percentage.</b> “We’re 90% sure” is false precision, and the one
+      time it is confidently wrong, trust is gone. The wording carries the doubt instead.</li>
+      <li><b>The send is never blocked.</b> <i>Send my ticket anyway</i> is visible from the
+      first moment, one click, never hidden behind the answer. Someone filling in a support
+      form is already frustrated; making them fight past a robot is the moment that costs
+      loyalty.</li>
+      <li><b>It only interrupts when the answer is strong.</b> Try the <i>weak answer</i>
+      scenario — the ticket goes straight through with no interruption at all.</li>
+      <li><b>Failure is silent.</b> Try <i>API unavailable</i> — the reader sees the normal
+      form, never an error.</li>
+      <li><b>The ticket carries what was tried.</b> Send anyway and look at what reaches
+      support: the suggested articles travel with it.</li>
+    </ul>
+  </div>
+
+</div></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const state = { audience: 'organisers', suggested: [], shown: false };
+
+// ---- role selection -------------------------------------------------------
+$('#roles').addEventListener('click', e => {
+  const b = e.target.closest('.role');
+  if (!b) return;
+  [...$('#roles').children].forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  state.audience = b.dataset.aud;
+});
+
+$('#scenario').addEventListener('change', e => {
+  const m = { live: 'answers come from the live /api/search',
+              strong: 'canned strong answer — no network call',
+              weak: 'canned weak answer — no network call',
+              down: 'simulated outage — no network call' };
+  $('#modeNote').textContent = m[e.target.value];
+});
+
+// ---- canned answers, so a demo never depends on the network ---------------
+const CANNED = {
+  strong: {
+    answer: 'Reviewers only see submissions once three things are true: reviewing is open, ' +
+            'the submissions have been assigned to them, and their reviewer account uses the ' +
+            'same email address you assigned. Check Event dashboard → Reviewing → Assign, ' +
+            'then confirm reviewing is open for the current stage.',
+    sources: [
+      { title: 'Assigning and unassigning a submission to a reviewer', path: '03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html' },
+      { title: 'Opening and closing reviewing', path: '03-reviewing/opening-and-closing-reviewing.html' }
+    ],
+    followups: ['How do I check reviewing is open?', 'How do I change a reviewer’s email?']
+  },
+  weak: { answer: null, sources: [], followups: [] }
+};
+
+// ---- confidence -----------------------------------------------------------
+// Stand-in for the signal /api/search does not return yet. It currently answers
+// found: true/false, which is not enough to decide whether to interrupt someone.
+// Until the endpoint returns one, this approximates it client-side: an answer of
+// reasonable length, at least one cited article, and no hedging language.
+const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
+function isStrong(r) {
+  if (!r || !r.answer) return false;
+  const a = r.answer.trim();
+  if (a.length < 60) return false;
+  if (HEDGES.test(a)) return false;
+  return (r.sources || []).length >= 1;
+}
+
+async function ask(question, scenario) {
+  if (scenario === 'down') throw new Error('simulated outage');
+  if (scenario === 'strong' || scenario === 'weak') {
+    await new Promise(r => setTimeout(r, 700));
+    return CANNED[scenario];
+  }
+  const res = await fetch('/api/search', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question })
+  });
+  if (!res.ok) throw new Error('bad status ' + res.status);
+  return res.json();
+}
+
+// ---- the flow -------------------------------------------------------------
+$('#ticket').addEventListener('submit', async e => {
+  e.preventDefault();
+  const subject = $('#subject').value.trim();
+  const content = $('#content').value.trim();
+  if (!subject || !content) { alert('Add a ticket name and description first.'); return; }
+
+  // The question we route on is the subject plus the description — exactly the two
+  // required fields the HubSpot form already collects (TICKET.subject, TICKET.content).
+  const question = (subject + '. ' + content).slice(0, 500);
+
+  $('#submitBtn').disabled = true;
+  $('#checking').classList.remove('hidden');
+
+  let result = null;
+  try { result = await ask(question, $('#scenario').value); }
+  catch { result = null; }          // an outage must look like no answer, never an error
+
+  $('#checking').classList.add('hidden');
+
+  if (!isStrong(result)) { sendTicket([]); return; }   // weak or broken: do not interrupt
+
+  state.suggested = result.sources || [];
+  state.shown = true;
+  $('#answerText').textContent = result.answer;
+  // Built through the DOM rather than an HTML string: a literal href in a template
+  // literal reads as a real link to the repo's link checker and would sit there as a
+  // permanent false positive.
+  const box = $('#sources');
+  box.textContent = '';
+  state.suggested.forEach(s => {
+    const a = document.createElement('a');
+    a.href = '/' + s.path;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.textContent = s.title;
+    box.appendChild(a);
+  });
+  $('#sourcesBox').style.display = state.suggested.length ? '' : 'none';
+  $('#followups').innerHTML = (result.followups || [])
+    .map(f => `<button class="chip" type="button">${f}</button>`).join('');
+  $('#deflect').classList.remove('hidden');
+  $('#ticket').classList.add('hidden');
+});
+
+$('#solvedBtn').addEventListener('click', () => {
+  $('#deflect').classList.add('hidden');
+  const r = $('#result');
+  r.className = 'sent solved';
+  r.innerHTML = `<h3>Glad that sorted it</h3>
+    <p>No ticket was sent. Nothing else for you to do.</p>
+    <p class="note">Logged for the gap report: question asked, article suggested,
+    outcome <b>solved</b>. This is the labelled outcome that tells you which articles
+    actually work — not just which ones get found.</p>`;
+});
+
+$('#anywayBtn').addEventListener('click', () => sendTicket(state.suggested));
+
+function sendTicket(suggested) {
+  $('#deflect').classList.add('hidden');
+  $('#ticket').classList.add('hidden');
+  const r = $('#result');
+  r.className = 'sent';
+  const payload = {
+    firstname: $('#firstname').value,
+    email: $('#email').value,
+    'TICKET.subject': $('#subject').value,
+    'TICKET.content': $('#content').value,
+    'TICKET.event_id': $('#eventid').value || null,
+    'TICKET.event_name': $('#eventname').value || null,
+    role: [...$('#roles').children].find(b => b.getAttribute('aria-pressed') === 'true').textContent,
+    suggested_articles: suggested.map(s => s.title),
+    deflection_shown: state.shown,
+    outcome: state.shown ? 'sent anyway' : 'not interrupted'
+  };
+  r.innerHTML = `<h3>Your ticket is on its way</h3>
+    <p>Someone who knows the software will pick it up. ${state.shown
+      ? 'We’ve attached what we suggested so they can see what you have already tried.'
+      : 'We had nothing confident to offer, so we did not get in your way.'}</p>
+    <div class="payload">${escapeHtml(JSON.stringify(payload, null, 2))}</div>
+    <p class="note">Nothing is actually sent from this prototype — the block above is what
+    would reach HubSpot.</p>`;
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+}
+</script>
+</body>
+</html>
