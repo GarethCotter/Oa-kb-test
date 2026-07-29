@@ -116,32 +116,65 @@ function renderLinks(hits) {
 
 /* ---------- layer 2: plain-English answer ---------- */
 
+let thinkingTimer = null;
+
 function clearAnswer() {
+  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
   const old = document.getElementById('llmAnswer');
   if (old) old.remove();
 }
+
+/* Loading state. Three jobs:
+ *   1. Say something is happening, immediately.
+ *   2. Reserve the space the answer will occupy, so it doesn't shove the page
+ *      about when it lands.
+ *   3. Keep the reader informed as it goes, in plain language.
+ */
+const THINKING_STEPS = [
+  'Looking through the guides…',
+  'Reading the ones that match…',
+  'Writing your answer…',
+  'Almost there…'
+];
 
 function showThinking() {
   clearAnswer();
   const el = document.createElement('div');
   el.id = 'llmAnswer';
-  el.style.cssText = 'margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid rgba(16,28,56,.14);color:#4A5468';
-  el.textContent = 'Looking through the guides…';
+  el.className = 'answer-block is-loading';
+  el.innerHTML =
+    '<p class="thinking" role="status">' +
+      '<span class="thinking-text">' + THINKING_STEPS[0] + '</span>' +
+      '<span class="dots"><i></i><i></i><i></i></span>' +
+    '</p>' +
+    '<div class="skel"><span style="width:96%"></span><span style="width:88%"></span>' +
+    '<span style="width:64%"></span></div>';
   box.insertBefore(el, box.firstChild);
+
+  let i = 0;
+  thinkingTimer = setInterval(() => {
+    i += 1;
+    if (i >= THINKING_STEPS.length) { clearInterval(thinkingTimer); thinkingTimer = null; return; }
+    const t = el.querySelector('.thinking-text');
+    if (!t) return;
+    t.style.opacity = '0';
+    setTimeout(() => { t.textContent = THINKING_STEPS[i]; t.style.opacity = '1'; }, 180);
+  }, 1900);
 }
 
 function showAnswer(answer, sources, followups) {
-  clearAnswer();
-  const el = document.createElement('div');
+  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
+  const existing = document.getElementById('llmAnswer');
+  const el = existing || document.createElement('div');
   el.id = 'llmAnswer';
-  el.style.cssText = 'margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid rgba(16,28,56,.14)';
+  el.className = 'answer-block';
+  el.innerHTML = '';
 
   // the answer may contain short labelled branches; render each on its own line
   answer.split(/\n+/).filter(Boolean).forEach(line => {
     const p = document.createElement('p');
     p.textContent = line;
-    p.style.cssText = 'font-size:18px;margin-bottom:10px';
-    el.appendChild(p);
+      el.appendChild(p);
   });
 
   (sources || []).slice(0, 2).forEach(src => {
@@ -172,14 +205,15 @@ function showAnswer(answer, sources, followups) {
 }
 
 function showEscalation(question) {
-  clearAnswer();
-  const el = document.createElement('div');
+  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
+  const existing = document.getElementById('llmAnswer');
+  const el = existing || document.createElement('div');
   el.id = 'llmAnswer';
-  el.style.cssText = 'margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid rgba(16,28,56,.14)';
+  el.className = 'answer-block';
+  el.innerHTML = '';
   const p = document.createElement('p');
   p.textContent = "We couldn't find a guide that answers that — but our support team can. " +
     'No question is too small.';
-  p.style.cssText = 'font-size:18px;margin-bottom:12px';
   el.appendChild(p);
   const a = document.createElement('a');
   a.href = 'https://oxfordabstracts.com/resources/contact-support?topic=' +
@@ -188,7 +222,8 @@ function showEscalation(question) {
   a.style.cssText = 'display:inline-block;background:#D0432C;color:#fff;font-weight:600;' +
     'padding:10px 20px;border-radius:999px;text-decoration:none';
   el.appendChild(a);
-  box.insertBefore(el, box.firstChild);
+  if (!existing) box.insertBefore(el, box.firstChild);
+  requestAnimationFrame(() => el.classList.add('revealed'));
 }
 
 async function fetchAnswer(question) {
