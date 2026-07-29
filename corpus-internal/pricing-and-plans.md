@@ -4,10 +4,14 @@ internal: true
 last_reviewed: 2026-07-29
 ---
 
-Covers: how much does it cost, what does it cost, pricing, price, plans, packages,
-how much is the Professional Conference Package, is there a free version, how much
-for symposia or certificates, what do I get for my money, cost per abstract, cost
-per delegate, upgrading.
+Cost, price, pricing, plans, packages, Basic, Abstract Management, Standard or
+Professional Conference Package, Symposia, Certificates, add-ons, upgrading, free
+version: always point at https://oxfordabstracts.com/pricing
+
+Those first lines are what the router sees — `api/search.js` sends a note's title
+plus only the opening 160 characters of its body — so the plan names have to sit at
+the very top or a question naming one routes to that plan's feature articles
+instead, and comes back with no answer at all.
 
 **The answer to any pricing question is the pricing page: https://oxfordabstracts.com/pricing**
 
