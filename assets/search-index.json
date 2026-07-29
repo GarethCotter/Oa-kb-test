@@ -93,7 +93,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Find out the dimensions your images need to be for your event and certificates with Oxford Abstracts. # This article is for Admins ONLY! Below you will find the recommended picture dimensions for uploading images to your"
+  "summary": "Find out the dimensions your images need to be for your event and certificates with Oxford Abstracts. # Below you will find the recommended picture dimensions for uploading images to your event and certificates. Logo: 10"
  },
  {
   "title": "Testing the accessibility of Oxford Abstracts web pages",
@@ -173,7 +173,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to change the submission owner by following the instructions below # This article is for Admins ONLY. Please note: You cannot add a new submitters name. This can only be added by the user when they register wit"
+  "summary": "Learn how to change the submission owner by following the instructions below # Please note: You cannot add a new submitters name. This can only be added by the user when they register with Oxford Abstracts. From your Eve"
  },
  {
   "title": "Charging a fee for submission",
@@ -597,7 +597,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Understand what DKIM is, how to get DKIM validated and how it affects your Oxford Abstract event. # Please note: this Knowledge Base article is for Admins ONLY Google &amp; Yahoo have implemented that all email senders m"
+  "summary": "Understand what DKIM is, how to get DKIM validated and how it affects your Oxford Abstract event. # Google &amp; Yahoo have implemented that all email senders must be DKIM validated. This is to help protect recipients fr"
  },
  {
   "title": "Abstract books",
@@ -613,7 +613,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Learn how to add submission titles into a session without having them included in the program builder, by following the guidance below. # This guide is for admins ONLY. Skip to: How to see what the In Titles listing will"
+  "summary": "Learn how to add submission titles into a session without having them included in the program builder, by following the guidance below. # Skip to: How to see what the In Titles listing will look like on the Program Sched"
  },
  {
   "title": "Adding chair's email addresses",
@@ -621,7 +621,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Find out how to add chair email addresses for your event. # NB: This article is for ADMINS ONLY. Skip to adding multiple chair email address in one go. How to manually add chair email addresses, individually. # From your"
+  "summary": "Find out how to add chair email addresses for your event. # Skip to adding multiple chair email address in one go. How to manually add chair email addresses, individually. # From your Dashboard \u2192 Conference \u2192 Program \u2192 B"
  },
  {
   "title": "Creating a backup of your conference data",
@@ -765,7 +765,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In this article, we\u2019ll talk you through how to create dependency questions on the delegate registration form. # Please Note: This article is for Admins ONLY! From your dashboard, click on Registration \u2192 Tickets \u2192 Form. N"
+  "summary": "In this article, we\u2019ll talk you through how to create dependency questions on the delegate registration form. # From your dashboard, click on Registration \u2192 Tickets \u2192 Form. Next, click on the Add Question button at the t"
  },
  {
   "title": "Downloading invoices and receipts",
@@ -797,7 +797,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In the below article, you\u2019ll find out how admins can amend existing orders on the attendee table of delegate registration. # Please Note: This article is for Administrators only! You either watch the below video for a wa"
+  "summary": "In the below article, you\u2019ll find out how admins can amend existing orders on the attendee table of delegate registration. # You either watch the below video for a walkthrough on what to do or scroll down and follow the "
  },
  {
   "title": "Managing orders and edit the attendee table",

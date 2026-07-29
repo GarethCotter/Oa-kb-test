@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 Reviewing symposia works much like [reviewing abstracts](/03-reviewing/opening-and-closing-reviewing), with one difference worth knowing up front: you cannot assign symposia by category.
 
-This guide is for event administrators, and follows the order you will need it: assign, open, notify, then step in where a review needs finishing.
+This guide is for event administrators. It follows the order you will need it: assign, open, notify, then step in where a review needs finishing.
 
 ## 1. Assign reviewers
 

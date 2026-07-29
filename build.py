@@ -72,11 +72,32 @@ body{font-family:'Outfit',sans-serif;font-size:18px;line-height:1.65;color:var(-
 a{color:var(--navy)}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
 header{border-bottom:1px solid var(--line);background:var(--cream);position:sticky;top:0;z-index:20}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+/* Top row mirrors oxfordabstracts.com so the help centre reads as the same site:
+   same items, same order, same dropdowns. The help-centre's own search and home
+   link sit on a second row, so they never compete with the site nav. */
+.nav{display:flex;align-items:center;gap:30px;padding:16px 0}
 .nav img{height:32px;display:block}
-.nav-links{display:flex;align-items:center;gap:20px;font-size:16px}
-.nav-links a{text-decoration:none;font-weight:500}
-.nav-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.logo{flex-shrink:0}
+.site-nav{display:flex;align-items:center;gap:26px;font-size:16px;margin:0 auto 0 6px}
+.site-nav>a,.nav-item>button{color:var(--navy);text-decoration:none;font-weight:400;font-size:16px;
+  font-family:'Outfit',sans-serif;background:none;border:none;cursor:pointer;padding:0;
+  display:inline-flex;align-items:center;gap:5px;line-height:1.4}
+.site-nav>a:hover,.nav-item>button:hover{color:var(--red)}
+.caret{width:11px;height:11px;opacity:.75;flex-shrink:0}
+.nav-item{position:relative}
+.nav-drop{position:absolute;top:100%;left:-14px;margin-top:10px;background:var(--white);
+  border:1px solid var(--line);border-radius:12px;padding:8px;min-width:236px;
+  box-shadow:0 14px 34px rgba(16,28,56,.14);display:none;z-index:30}
+.nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop{display:block}
+.nav-drop a{display:block;padding:9px 12px;border-radius:8px;font-size:15.5px;
+  color:var(--navy);text-decoration:none}
+.nav-drop a:hover{background:rgba(16,28,56,.06);color:var(--red)}
+.nav-actions{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.signin{color:var(--navy);text-decoration:none;font-size:16px}
+.signin:hover{color:var(--red)}
+.subnav{display:flex;align-items:center;gap:18px;padding:0 0 14px}
+.kb-home{font-size:15.5px;font-weight:500;color:var(--navy);text-decoration:none;flex-shrink:0}
+.kb-home:hover{color:var(--red)}
 .btn{display:inline-block;background:var(--red);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;padding:12px 22px;border-radius:999px;text-decoration:none}
 .btn:hover{background:#b53a25}
 .hero{padding:60px 0 38px;text-align:center}
@@ -228,12 +249,15 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .skel span{height:13px;border-radius:7px;background:linear-gradient(90deg,rgba(16,28,56,.07) 25%,rgba(16,28,56,.14) 37%,rgba(16,28,56,.07) 63%);background-size:400% 100%;animation:shimmer 1.5s ease-in-out infinite}
 @keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
 @media (prefers-reduced-motion:reduce){.answer-block{transition:none;opacity:1;transform:none}.dots i,.skel span{animation:none}.skel span{background:rgba(16,28,56,.10)}}
-@media (max-width:640px){.hdr-search{max-width:none;order:3;flex-basis:100%}.nav{flex-wrap:wrap}.prevnext{flex-direction:column}}
+@media (max-width:640px){.hdr-search{max-width:none}.subnav{flex-wrap:wrap}.prevnext{flex-direction:column}}
+/* Below the site-nav breakpoint the marketing links fold away and the help centre's
+   own row carries the header, exactly as the main site drops to a burger. */
+@media (max-width:900px){.site-nav{display:none}.nav{gap:16px;justify-content:space-between}.nav-actions{gap:14px}}
 .support{margin-top:30px;background:var(--navy);color:var(--cream);border-radius:var(--radius);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .support h2{font-family:'Gloock',serif;font-weight:400;font-size:25px;margin-bottom:6px;-webkit-text-stroke:.3px currentColor}
 .support p{color:rgba(237,235,226,.78);font-size:17px;max-width:460px;margin:0}
 .support .btn{flex:none}
-@media (max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}.part-grid,.doors-grid,.sec-list{grid-template-columns:1fr}.nav-links .hide-sm{display:none}.prose{padding:24px 20px}}
+@media (max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}.part-grid,.doors-grid,.sec-list{grid-template-columns:1fr}.prose{padding:24px 20px}}
 """
 
 HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
@@ -245,11 +269,30 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png"></head><body>
 <header><div class="wrap nav">
-<a href="{root}index.html" aria-label="Oxford Abstracts Help Centre"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
-{hdr_search}<nav class="nav-links" aria-label="Main">
-<a class="hide-sm" href="{root}index.html">Help centre home</a>
-<a class="btn" href="https://app.oxfordabstracts.com/">Sign in</a>
-</nav></div></header><main>"""
+<a class="logo" href="https://oxfordabstracts.com/" aria-label="Oxford Abstracts"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
+<nav class="site-nav" aria-label="Oxford Abstracts">
+<div class="nav-item"><button type="button" aria-expanded="false">Products{caret}</button>
+<div class="nav-drop"><a href="https://oxfordabstracts.com/product/abstract-management-software/">Abstract management</a><a href="https://oxfordabstracts.com/product/academic-conference-software/">Academic conference software</a></div></div>
+<a href="https://oxfordabstracts.com/pricing/">Pricing</a>
+<div class="nav-item"><button type="button" aria-expanded="false">Company{caret}</button>
+<div class="nav-drop"><a href="https://oxfordabstracts.com/about/">About us</a><a href="https://oxfordabstracts.com/careers/">Careers</a><a href="https://oxfordabstracts.com/client-stories/">Client stories</a></div></div>
+<div class="nav-item"><button type="button" aria-expanded="false">Resources{caret}</button>
+<div class="nav-drop"><a href="{root}index.html">Help centre</a><a href="https://oxfordabstracts.com/resources/videos/">Video tutorials</a><a href="https://oxfordabstracts.com/blog/">Blog</a><a href="https://oxfordabstracts.com/resources/glossary/">Glossary</a><a href="https://oxfordabstracts.com/changelog/">Changelog</a><a href="https://oxfordabstracts.com/resources/contact/">Contact us</a></div></div>
+</nav>
+<div class="nav-actions">
+<a class="signin" href="https://app.oxfordabstracts.com/">Sign in</a>
+<a class="btn" href="https://oxfordabstracts.com/meeting/">Book a demo</a>
+</div>
+</div>
+<div class="wrap subnav">
+<a class="kb-home" href="{root}index.html">Help centre</a>
+{hdr_search}</div>
+</header><main>"""
+
+CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
+         '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 '
+         '111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" '
+         'clip-rule="evenodd"/></svg>')
 
 HDR_SEARCH = """<form class="hdr-search" role="search" action="{root}index.html" method="get">
 <input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
@@ -345,13 +388,24 @@ AUDIENCES = {
     'reviewers':  ('For reviewers',               'Organising the event?',  '/#organisers'),
     'attendees':  ('For conference attendees',    'Organising the event?',  '/#organisers'),
 }
+# The audience sentence came over from HubSpot in two families - "The guidance below
+# is for X" and the shorter "This guide/article is for X" - behind an optional
+# "NB:" / "Note:" / "Please note:", and sometimes as "this Knowledge Base article".
+# Classification and removal are built from the SAME subject fragment below: when they
+# drifted apart, articles were classified by an unanchored search, tagged, and then
+# had nothing stripped because the removal was anchored at the paragraph start.
+AUD_LEAD = r'(?:NB|Please\s+note|Note)\s*[:.]?\s*'
+AUD_SUBJ = r'(?:the\s+guidance\s+below|th(?:is|e)\s+(?:knowledge\s+base\s+)?(?:guide|article))'
+
+def _aud(keyword):
+    return AUD_SUBJ + r'\s+is\s+for\s+[^.!]*' + keyword
+
 # Ordered: the first pattern that matches the paragraph text wins.
 AUDIENCE_PATTERNS = [
-    ('organisers', r'guidance below is for (?:event|account) administrators'),
-    ('submitters', r'guidance below is for (?:users who are )?submit'),
-    ('submitters', r'guidance below is for those wishing to submit'),
-    ('reviewers',  r'guidance below is for reviewers'),
-    ('attendees',  r'guidance below is for conference attendees'),
+    ('organisers', _aud(r'(?:admin|organiser)')),
+    ('submitters', _aud(r'submit')),
+    ('reviewers',  _aud(r'reviewer')),
+    ('attendees',  _aud(r'(?:attendee|delegate)')),
 ]
 # The sentence naming the audience, and the "if you are someone else, go here"
 # sentence that usually follows it. Both are removed; anything else in the
@@ -359,8 +413,10 @@ AUDIENCE_PATTERNS = [
 # Only "If you are ..." is audience routing. "If you experience any issues ..."
 # tells a reviewer to contact their event administrator - that is support routing
 # and has to stay in the prose, so it is deliberately not matched here.
+# Ends at a full stop, an exclamation mark, or the end of the paragraph - several of
+# these sentences carry no terminator at all.
 AUD_SENTENCE = re.compile(
-    r'^\s*(?:NB:\s*)?The guidance below is for [^.]*\.\s*', re.I)
+    r'^\s*(?:' + AUD_LEAD + r')?' + AUD_SUBJ + r'\s+is\s+for\s*[^.!]*(?:[.!]|$)\s*', re.I)
 # Runs to the end of the paragraph rather than to the first full stop: the usual
 # wording is "If you are an end user (eg. submitter, reviewer, delegate etc),
 # please click here." and a first-full-stop match stops dead inside "(eg." and
@@ -665,7 +721,7 @@ for folder, num, name, aud, blurb in SECTIONS:
             badges.append('<span class="badge reviewed">Last reviewed %s</span>' % lr_h)
         page = HEAD.format(title=html.escape(title) + ' | Oxford Abstracts Help',
                            desc=html.escape(standfirst or title), root='../',
-                           hdr_search=HDR_SEARCH.format(root='../'))
+                           hdr_search=HDR_SEARCH.format(root='../'), caret=CARET)
         page += f"""<div class="wrap narrow crumbs">
 <a href="../index.html">Help centre</a> &nbsp;›&nbsp; <a href="index.html">{html.escape(name)}</a></div>
 <article class="wrap narrow article">
@@ -675,6 +731,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 {stand_html}
 {toc}
 <div class="prose">{body_html}</div>
+{SUPPORT_BANNER if aud == 'organisers' else ''}
 <div class="feedback" data-path="{folder}/{slug}.html">
 <p>Did this page solve it?</p>
 <div class="fb-row"><button type="button" data-fb="yes">Yes</button><button type="button" data-fb="no">No</button></div>
@@ -687,7 +744,6 @@ for folder, num, name, aud, blurb in SECTIONS:
 <p class="fb-thanks" hidden>Thanks — this helps us fix it.</p>
 </div>
 {prevnext}
-{SUPPORT_BANNER if aud == 'organisers' else ''}
 </article>
 <div class="lightbox" id="lightbox" hidden><img alt=""></div>
 <script src="../assets/article.js"></script>"""
@@ -708,7 +764,7 @@ for folder, num, name, aud, blurb in SECTIONS:
     by_slug_p = {sl: (t, st) for (sl, t, pl, st, au, tc, bh) in parsed}
     page = HEAD.format(title=html.escape(name) + ' | Oxford Abstracts Help',
                        desc=html.escape(blurb), root='../',
-                       hdr_search=HDR_SEARCH.format(root='../'))
+                       hdr_search=HDR_SEARCH.format(root='../'), caret=CARET)
     page += f"""<div class="wrap crumbs"><a href="/">Help centre</a> &nbsp;›&nbsp; {html.escape(name)}</div>
 <section class="wrap" style="padding-top:20px">
 <div class="section-head"><h2 class="display">{html.escape(name)}</h2></div>"""
@@ -788,7 +844,7 @@ pop = ''.join('<a href="%s">%s <span class="arrow">→</span></a>' % (p, html.es
 
 index = HEAD.format(title='Help Centre | Oxford Abstracts',
                     desc='Guides and answers for organisers and participants using Oxford Abstracts.',
-                    root='', hdr_search='')
+                    root='', hdr_search='', caret=CARET)
 index += f'''
 <section class="hero wrap">
 <span class="search-badge">
@@ -796,7 +852,7 @@ index += f'''
 <path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9L12 2.5z" fill="currentColor"/>
 <path d="M19 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8L19 15z" fill="currentColor" opacity=".6"/>
 </svg>
-New search <span class="sep">&middot;</span> <span class="plain">answers your question, not just links</span>
+New Advanced Search <span class="sep">&middot;</span> <span class="plain">answers your question, not just links</span>
 </span>
 <h1 class="display">What do you need help&nbsp;with?</h1>
 <p class="lede">Ask a full question in your own words, the way you'd ask a colleague. You'll get a straight answer back, plus the guide it came from.</p>
@@ -849,7 +905,7 @@ open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index)
 # assets/search-index.json relatively and would 404 from a deep path.
 notfound = HEAD.format(title='Page not found | Oxford Abstracts Help',
                        desc='We could not find that page.', root='/',
-                       hdr_search=HDR_SEARCH.format(root='/'))
+                       hdr_search=HDR_SEARCH.format(root='/'), caret=CARET)
 notfound += '''<section class="wrap narrow hero">
 <h1 class="display">We can't find that page</h1>
 <p class="lede">The help centre was rebuilt recently, so a saved link or bookmark may
