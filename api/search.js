@@ -12,8 +12,8 @@
  * stays here, server-side. It must never reach the browser.
  */
 
-import routingIndex from '../assets/search-index.json' assert { type: 'json' };
-import articles from '../assets/articles.json' assert { type: 'json' };
+import routingIndex from '../assets/search-index.json' with { type: 'json' };
+import articles from '../assets/articles.json' with { type: 'json' };
 
 const MODEL = 'claude-haiku-4-5';
 const API = 'https://api.anthropic.com/v1/messages';
