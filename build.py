@@ -20,7 +20,8 @@ GENERATED_DIRS = [s[0] for s in [
     ('13-for-reviewers-committee',), ('14-for-attendees-exhibitors',)]]
 for d in GENERATED_DIRS:
     shutil.rmtree(d, ignore_errors=True)
-for f in ('index.html', 'assets/style.css', 'assets/search-index.json', 'assets/articles.json'):
+for f in ('index.html', '404.html', 'assets/style.css', 'assets/search-index.json',
+          'assets/articles.json'):
     if os.path.exists(f):
         os.remove(f)
 os.makedirs('assets', exist_ok=True)
@@ -133,6 +134,18 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .badge{font-size:14px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(16,28,56,.06);color:var(--muted)}
 .badge.plan{background:rgba(208,67,44,.10);color:var(--red)}
+/* Who the article is for. Lifted out of the prose so it reads before the body.
+   Every --aud colour clears WCAG AA for white text on the pill. */
+.audience{--aud:var(--navy);display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:-10px 0 24px;padding:12px 16px;border-radius:var(--radius);border:1px solid var(--line);border-left:5px solid var(--aud);background:var(--white)}
+.aud-who{font-size:15px;font-weight:600;line-height:1.3;padding:5px 14px;border-radius:999px;background:var(--aud);color:#fff}
+.aud-alt{font-size:15px;font-weight:500;color:var(--muted);text-underline-offset:3px}
+.aud-alt::after{content:"\\2192";margin-left:.35em}
+.aud-alt:hover{color:var(--aud)}
+.aud-organisers{--aud:#101C38}
+.aud-submitters{--aud:#1F6F5C}
+.aud-reviewers{--aud:#5B3E8E}
+.aud-attendees{--aud:#8A5A00}
+@media (max-width:520px){.audience{padding:12px 14px}}
 .prose{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px 38px}
 .prose h2{font-family:'Gloock',serif;font-weight:400;font-size:27px;margin:30px 0 12px;-webkit-text-stroke:.3px currentColor}
 .prose h2:first-child{margin-top:0}
@@ -228,7 +241,9 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{root}assets/style.css"></head><body>
+<link rel="stylesheet" href="{root}assets/style.css">
+<link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png"></head><body>
 <header><div class="wrap nav">
 <a href="{root}index.html" aria-label="Oxford Abstracts Help Centre"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
 {hdr_search}<nav class="nav-links" aria-label="Main">
@@ -263,7 +278,7 @@ someone who knows the software will pick it up.</p></div>
 </section>""" % SUPPORT_URL
 
 os.makedirs(os.path.join(OUT, 'assets'), exist_ok=True)
-open(os.path.join(OUT, 'assets/style.css'), 'w').write(CSS)
+open(os.path.join(OUT, 'assets/style.css'), 'w', encoding='utf-8').write(CSS)
 
 md = markdown.Markdown(extensions=['extra', 'sane_lists'])
 search_index = []
@@ -316,12 +331,73 @@ def slugify(t):
     t = re.sub(r'[^a-z0-9]+', '-', t.lower()).strip('-')
     return t or 'section'
 
+# Articles carry a sentence naming who they are for, in fourteen slightly different
+# wordings inherited from HubSpot. We lift it out of the prose and show it as a
+# colour-coded tag under the title instead, so the reader sees it before reading.
+# The redirect in the source always pointed at the old HubSpot KB this site
+# replaces - two of them at analytics URLs that expired in 2023 - so we send the
+# reader to our own landing-page doors instead. Root-absolute: these links have to
+# resolve from article pages and from 404.html, which can be served at any path.
+# Key -> (tag label, "not you?" prompt, where that prompt goes).
+AUDIENCES = {
+    'organisers': ('For event organisers',        'Not an organiser?',      '/#participants'),
+    'submitters': ('For people making a submission', 'Organising the event?', '/#organisers'),
+    'reviewers':  ('For reviewers',               'Organising the event?',  '/#organisers'),
+    'attendees':  ('For conference attendees',    'Organising the event?',  '/#organisers'),
+}
+# Ordered: the first pattern that matches the paragraph text wins.
+AUDIENCE_PATTERNS = [
+    ('organisers', r'guidance below is for (?:event|account) administrators'),
+    ('submitters', r'guidance below is for (?:users who are )?submit'),
+    ('submitters', r'guidance below is for those wishing to submit'),
+    ('reviewers',  r'guidance below is for reviewers'),
+    ('attendees',  r'guidance below is for conference attendees'),
+]
+# The sentence naming the audience, and the "if you are someone else, go here"
+# sentence that usually follows it. Both are removed; anything else in the
+# paragraph is left alone, because a few carry an extra note about plan limits.
+# Only "If you are ..." is audience routing. "If you experience any issues ..."
+# tells a reviewer to contact their event administrator - that is support routing
+# and has to stay in the prose, so it is deliberately not matched here.
+AUD_SENTENCE = re.compile(
+    r'^\s*(?:NB:\s*)?The guidance below is for [^.]*\.\s*', re.I)
+AUD_REDIRECT = re.compile(
+    r'^\s*If you are [^.]*\.\s*', re.I)
+
+
+def extract_audience(root, soup):
+    """Strip every 'who this is for' paragraph from the prose and return the audience
+    key of the first - or None when the article does not carry one. Five articles
+    repeat the sentence further down the page, so this cannot stop at the first hit."""
+    found = None
+    for p in root.find_all('p'):
+        text = p.get_text(' ', strip=True)
+        key = next((k for k, pat in AUDIENCE_PATTERNS if re.search(pat, text, re.I)), None)
+        if not key:
+            continue
+        if found is None:
+            found = key
+
+        # Rebuild the paragraph without the audience and redirect sentences. A few
+        # carry a further note (plan limits, who to contact) that has to survive.
+        rest = AUD_SENTENCE.sub('', text, count=1)
+        rest = AUD_REDIRECT.sub('', rest, count=1).strip()
+        if rest:
+            p.clear()
+            p.append(soup.new_string(rest))
+        else:
+            p.decompose()
+    return found
+
+
 def enrich_body(body_html, title):
     """Add heading ids + anchor links, contextual alt text, lazy click-to-enlarge
-    images, an on-this-page list for long articles, and lift a short opening
-    paragraph out as a standfirst. Returns (standfirst, toc_html, body_html)."""
+    images, an on-this-page list for long articles, lift a short opening paragraph
+    out as a standfirst, and pull the 'who this is for' sentence out as a tag.
+    Returns (standfirst, audience, toc_html, body_html)."""
     soup = BeautifulSoup(body_html, 'lxml')
     root = soup.body or soup
+    audience = extract_audience(root, soup)
 
     # standfirst: lift the opening paragraph when it is short and text-only
     standfirst = ''
@@ -370,7 +446,7 @@ def enrich_body(body_html, title):
             el['tabindex'] = '0'
 
     inner = root.decode_contents() if root.name == 'body' else str(soup)
-    return standfirst, toc, inner
+    return standfirst, audience, toc, inner
 
 for folder, num, name, aud, blurb in SECTIONS:
     src_dir = os.path.join(SRC, folder)
@@ -394,14 +470,14 @@ for folder, num, name, aud, blurb in SECTIONS:
         if 'faq-block' in body_html:
             body_html += '</div>'
         title = meta.get('title', slug.replace('-', ' ').title())
-        standfirst, toc, body_html = enrich_body(body_html, title)
-        parsed.append((slug, title, meta.get('plan', ''), standfirst, toc, body_html))
+        standfirst, audience, toc, body_html = enrich_body(body_html, title)
+        parsed.append((slug, title, meta.get('plan', ''), standfirst, audience, toc, body_html))
         meta_by_slug[slug] = meta
         _plain = ' '.join(re.sub(r'<[^>]+>', ' ', body_html).split())
         _m = re.match(r'(.{20,150}?[.!?])(\s|$)', _plain)
         first_sentence[slug] = _m.group(1) if _m else _plain[:120]
 
-    for i, (slug, title, plan, standfirst, toc, body_html) in enumerate(parsed):
+    for i, (slug, title, plan, standfirst, audience, toc, body_html) in enumerate(parsed):
         badges = ['<span class="badge">%s</span>' % html.escape(name)]
         label = None
         if plan.startswith('add-on: symposia'):
@@ -434,6 +510,13 @@ for folder, num, name, aud, blurb in SECTIONS:
         prevnext = f'<nav class="prevnext" aria-label="Article navigation">{prev_a}{next_a}</nav>' if (prev_a or next_a) else ''
 
         stand_html = f'<p class="standfirst">{html.escape(standfirst)}</p>' if standfirst else ''
+        aud_html = ''
+        if audience:
+            a_label, a_prompt, a_href = AUDIENCES[audience]
+            aud_html = (
+                f'<p class="audience aud-{audience}">'
+                f'<span class="aud-who">{html.escape(a_label)}</span>'
+                f'<a class="aud-alt" href="{a_href}">{html.escape(a_prompt)}</a></p>')
         lr = meta_by_slug.get(slug, {}).get('last_reviewed', '')
         if lr:
             try:
@@ -452,6 +535,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 <article class="wrap narrow article">
 <h1 class="display">{html.escape(title)}</h1>
 <div class="badges">{''.join(badges)}</div>
+{aud_html}
 {stand_html}
 {toc}
 <div class="prose">{body_html}</div>
@@ -485,7 +569,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 
     # section index page
     struct_path = os.path.join('structure', folder + '.json')
-    by_slug_p = {sl: (t, st) for (sl, t, pl, st, tc, bh) in parsed}
+    by_slug_p = {sl: (t, st) for (sl, t, pl, st, au, tc, bh) in parsed}
     page = HEAD.format(title=html.escape(name) + ' | Oxford Abstracts Help',
                        desc=html.escape(blurb), root='../',
                        hdr_search=HDR_SEARCH.format(root='../'))
@@ -517,7 +601,7 @@ for folder, num, name, aud, blurb in SECTIONS:
             page += f"""<div class="group"><h3>{html.escape(g['title'])}</h3>
 <p class="gblurb">{html.escape(g.get('blurb', ''))}</p>
 <div class="gcards">{cards}</div></div>"""
-        leftover = [(t, sl) for (sl, t, pl, sf, tc, bh) in parsed if sl not in listed]
+        leftover = [(t, sl) for (sl, t, pl, sf, au, tc, bh) in parsed if sl not in listed]
         if leftover:
             cards = ''.join(card(sl) for t, sl in leftover)
             page += f"""<div class="group"><h3>Also in this section</h3>
@@ -620,6 +704,40 @@ New search <span class="sep">&middot;</span> <span class="plain">answers your qu
 '''
 index += FOOT
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index)
+
+
+# 404. Vercel serves this file for any unmatched path, so every link and asset
+# reference has to be root-absolute - a relative one would resolve against
+# whatever URL the reader actually typed. For the same reason the search box here
+# is a plain GET to the home page rather than the live widget: search.js fetches
+# assets/search-index.json relatively and would 404 from a deep path.
+notfound = HEAD.format(title='Page not found | Oxford Abstracts Help',
+                       desc='We could not find that page.', root='/',
+                       hdr_search=HDR_SEARCH.format(root='/'))
+notfound += '''<section class="wrap narrow hero">
+<h1 class="display">We can't find that page</h1>
+<p class="lede">The help centre was rebuilt recently, so a saved link or bookmark may
+point somewhere that has moved. Search for what you need and you'll land in the right
+place.</p>
+<div class="searchbox">
+<form role="search" action="/index.html" method="get" aria-label="Search the help centre">
+<input type="text" name="q" placeholder="e.g. How do I email my reviewers?" aria-label="Your question">
+<button class="btn" type="submit">Search</button></form>
+</div>
+</section>
+
+<section class="wrap"><div class="doors-grid">
+<a class="door" href="/index.html#organisers"><h2 class="display">I'm organising an event</h2>
+<p>Setting up submissions, reviewing, decisions, emails, the programme, registration or
+your conference site.</p>
+<span class="go">Show me organiser guides &rarr;</span></a>
+<a class="door" href="/index.html#participants"><h2 class="display">I'm taking part in an event</h2>
+<p>Submitting an abstract, reviewing, or attending a conference run on Oxford Abstracts.</p>
+<span class="go">Show me participant guides &rarr;</span></a>
+</div></section>
+'''
+notfound += FOOT
+open(os.path.join(OUT, '404.html'), 'w', encoding='utf-8').write(notfound)
 
 
 
