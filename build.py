@@ -361,8 +361,18 @@ AUDIENCE_PATTERNS = [
 # and has to stay in the prose, so it is deliberately not matched here.
 AUD_SENTENCE = re.compile(
     r'^\s*(?:NB:\s*)?The guidance below is for [^.]*\.\s*', re.I)
+# Runs to the end of the paragraph rather than to the first full stop: the usual
+# wording is "If you are an end user (eg. submitter, reviewer, delegate etc),
+# please click here." and a first-full-stop match stops dead inside "(eg." and
+# strands the rest. The redirect is always the last sentence, so this is safe.
 AUD_REDIRECT = re.compile(
-    r'^\s*If you are [^.]*\.\s*', re.I)
+    r'^\s*If you are .*$', re.I | re.S)
+# Two articles put the redirect in a paragraph of its own, so it never reaches
+# AUD_REDIRECT above. Matched narrowly and only on articles that already produced
+# a tag: of the 16 standalone "If you are ..." lines in the corpus, the other 14
+# are real content ("If you are on the Free Plan you cannot add any questions").
+AUD_STANDALONE = re.compile(
+    r'^\s*If you are the administrator of an event please see\b.*$', re.I | re.S)
 
 
 def extract_audience(root, soup):
@@ -387,6 +397,11 @@ def extract_audience(root, soup):
             p.append(soup.new_string(rest))
         else:
             p.decompose()
+
+    if found:
+        for p in root.find_all('p'):
+            if AUD_STANDALONE.match(p.get_text(' ', strip=True)):
+                p.decompose()
     return found
 
 

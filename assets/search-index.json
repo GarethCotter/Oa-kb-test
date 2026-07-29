@@ -21,7 +21,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In most cases, client /account admins can create, set up and pay for a new event, without needing to contact Oxford Abstracts. The guidance below shows you how to do this. # submitter, reviewer, delegate etc), please cli"
+  "summary": "In most cases, client /account admins can create, set up and pay for a new event, without needing to contact Oxford Abstracts. The guidance below shows you how to do this. # Skip to text instructions Skip to Paying for y"
  },
  {
   "title": "Different types of users in the system",
@@ -29,7 +29,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn more about the various types of users who will need access to your event, from admin through to reviewers and other personnel. # # submitter, reviewer, delegate etc), please click here . NB: See also Manage Users. "
+  "summary": "Learn more about the various types of users who will need access to your event, from admin through to reviewers and other personnel. # # NB: See also Manage Users. Different types of users in the system # Account Adminis"
  },
  {
   "title": "Event dashboard",
@@ -37,7 +37,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The event dashboard is the portal where you access the tools you'll need for all aspects of your event. # submitter, reviewer, delegate etc), please click here . When you log into the Oxford Abstracts home page, your fir"
+  "summary": "The event dashboard is the portal where you access the tools you'll need for all aspects of your event. # When you log into the Oxford Abstracts home page, your first screen is your personal dashboard . If you have been "
  },
  {
   "title": "Event details",
@@ -45,7 +45,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Clicking the Event details option in the menu on the event dashboard allows you to add/view/edit key information relating to the event, including title, venue, date(s), logo, email address, phone number etc. # submitter,"
+  "summary": "Clicking the Event details option in the menu on the event dashboard allows you to add/view/edit key information relating to the event, including title, venue, date(s), logo, email address, phone number etc. # Skip to wr"
  },
  {
   "title": "Event theme",
@@ -53,7 +53,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you have the Standard Conference Package, you can add colours and logos to your event set up if you wish. # submitter, reviewer, delegate etc), please click here . Skip to written instructions Go to Event dashboard \u2192 "
+  "summary": "If you have the Standard Conference Package, you can add colours and logos to your event set up if you wish. # Skip to written instructions Go to Event dashboard \u2192 Event Setup \u2192 Event theme The Event theme panel will be "
  },
  {
   "title": "Fixing a 'network failure' error",
@@ -85,7 +85,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Clicking on the Users option in the menu in the event dashboard allows you to view, add and remove reviewers, committee members, event administrators, and API users. # submitter, reviewer, delegate etc), please click her"
+  "summary": "Clicking on the Users option in the menu in the event dashboard allows you to view, add and remove reviewers, committee members, event administrators, and API users. # Skip to written instructions. Go to Event dashboard "
  },
  {
   "title": "Recommended dimensions for picture uploads",
@@ -109,7 +109,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "A brief introduction to the features of the abstract management toolbox, designed to help you manage the submission, review and decision process for your academic or research conference. # submitter, reviewer, delegate e"
+  "summary": "A brief introduction to the features of the abstract management toolbox, designed to help you manage the submission, review and decision process for your academic or research conference. # NB: The features highlighted in"
  },
  {
   "title": "Updating your profile",
@@ -157,7 +157,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you have set up a multi stage sequential event, you may wish to access reviews from a previous stage. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 B"
+  "summary": "If you have set up a multi stage sequential event, you may wish to access reviews from a previous stage. # Go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 By submission You will see from the view below, the 1) Cl"
  },
  {
   "title": "Bulk upload and automatically assign files",
@@ -181,7 +181,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "This feature allows you to charge and collect fees from submitters. It is not available in the FREE package. # submitter, reviewer, delegate etc), please click here . Skip to written instructions Go to Event dashboard \u2192 "
+  "summary": "This feature allows you to charge and collect fees from submitters. It is not available in the FREE package. # Skip to written instructions Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Form &amp; Setup. Yo"
  },
  {
   "title": "Combined word count",
@@ -205,7 +205,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "add-on: multi-stage",
-  "summary": "Creating forms for a multi-stage event is very similar to a single stage event, but there are a few differences that you should be aware of before you set up your submission forms. # submitter, reviewer, delegate etc), p"
+  "summary": "Creating forms for a multi-stage event is very similar to a single stage event, but there are a few differences that you should be aware of before you set up your submission forms. # NB: It is advisable that you familiar"
  },
  {
   "title": "Creating questions for individual authors and presenters",
@@ -221,7 +221,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "An account or event administrator can delete or withdraw any unwanted submissions. # submitter, reviewer, delegate etc), please click here . Skip to text instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Submis"
+  "summary": "An account or event administrator can delete or withdraw any unwanted submissions. # Skip to text instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Table Skip to: Deleting a submission Restoring d"
  },
  {
   "title": "Dependency questions",
@@ -229,7 +229,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "There may be a requirement for you to set up dependency questions, eg. a new question is revealed when a submitter selects an option from a 'choice' type question. Read on to find out how to add this to your form. # subm"
+  "summary": "There may be a requirement for you to set up dependency questions, eg. a new question is revealed when a submitter selects an option from a 'choice' type question. Read on to find out how to add this to your form. # NB: "
  },
  {
   "title": "Designing the submission form",
@@ -237,7 +237,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to design the submission form so you can collect the information and data you need. # submitter, reviewer, delegate etc), please click here . NB: Not all of the features below will be available in the FREE pack"
+  "summary": "Learn how to design the submission form so you can collect the information and data you need. # NB: Not all of the features below will be available in the FREE package. To view the limitations, click here. Skip to writte"
  },
  {
   "title": "Editing a user's submission",
@@ -245,7 +245,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You may find you are required to edit a user's submission. It's a straightforward process and any updates will be recorded in the 'last updated by' column in the submission tables. # submitter, reviewer, delegate etc), p"
+  "summary": "You may find you are required to edit a user's submission. It's a straightforward process and any updates will be recorded in the 'last updated by' column in the submission tables. # Skip to text instructions . Go to Eve"
  },
  {
   "title": "Making a submission on behalf of someone else",
@@ -253,7 +253,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "An account administrator or event administrator can make a submission on behalf of a submitter. # submitter, reviewer, delegate etc), please click here . Skip to text instructions. Go to Event dashboard \u2192 Scroll to the S"
+  "summary": "An account administrator or event administrator can make a submission on behalf of a submitter. # Skip to text instructions. Go to Event dashboard \u2192 Scroll to the Submissions panel Click on the Submit On behalf button. E"
  },
  {
   "title": "Multi-stage reviews",
@@ -261,7 +261,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "add-on: multi-stage",
-  "summary": "The reviews in multi-stage work in the same way as a standard set-up, but you can create separate review forms for each stage. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Abstract Ma"
+  "summary": "The reviews in multi-stage work in the same way as a standard set-up, but you can create separate review forms for each stage. # Go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 Forms &amp; Setup. It is advised th"
  },
  {
   "title": "Multi-stage - the decision stage",
@@ -269,7 +269,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "add-on: multi-stage",
-  "summary": "As well as recording a decision (accepting/ rejecting/ withdrawing a submission) you can also move a submission to another stage. # submitter, reviewer, delegate etc), please click here . Unlike the submission and review"
+  "summary": "As well as recording a decision (accepting/ rejecting/ withdrawing a submission) you can also move a submission to another stage. # Unlike the submission and review forms, there is only one decision form in multi-stage, "
  },
  {
   "title": "Opening and closing submissions (deadlines)",
@@ -277,7 +277,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In order to make the submission system live, you must open submissions. # submitter, reviewer, delegate etc), please click here . NB: Before you open your call for abstracts, it is advisable to complete a test submission"
+  "summary": "In order to make the submission system live, you must open submissions. # NB: Before you open your call for abstracts, it is advisable to complete a test submission. Skip to video - How do I allow for reworking and late "
  },
  {
   "title": "Question setting tags",
@@ -285,7 +285,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Various tags can be applied to your questions to determine how responses will be treated and viewed within the system. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Abstract Management"
+  "summary": "Various tags can be applied to your questions to determine how responses will be treated and viewed within the system. # Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Form &amp; Setup You can apply 'tags' t"
  },
  {
   "title": "Restricting who can submit by email",
@@ -293,7 +293,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you wish, you can restrict submission to your event to a specific group of people by adding their email addresses. It is not available in the FREE package. # submitter, reviewer, delegate etc), please click here . NB:"
+  "summary": "If you wish, you can restrict submission to your event to a specific group of people by adding their email addresses. It is not available in the FREE package. # NB: The instructions below show how to manually add emails "
  },
  {
   "title": "Running a sequential Multi-stage event",
@@ -301,7 +301,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "add-on: multi-stage",
-  "summary": "Multi -stage abstract submission can be used for parallel stages (eg. Clinical and Practice) or sequential. This article provides guidance on how to manage the sequential type of multi-stage submission. # submitter, revi"
+  "summary": "Multi -stage abstract submission can be used for parallel stages (eg. Clinical and Practice) or sequential. This article provides guidance on how to manage the sequential type of multi-stage submission. # To add Multi-st"
  },
  {
   "title": "Setting up a Multi-stage event",
@@ -317,7 +317,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements # submitter, reviewer, delegate etc), please click here . Skip to written instructions. Go"
+  "summary": "As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements # Skip to written instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Submissions "
  },
  {
   "title": "Text editor types",
@@ -325,7 +325,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements. # submitter, reviewer, delegate etc), "
+  "summary": "When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements. # Go to Event dashboard \u2192 Abstract Man"
  },
  {
   "title": "The authors and affiliations question",
@@ -333,7 +333,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need. # submitter, reviewer, delegate etc), please "
+  "summary": "The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need. # Skip to written instructions. Go to Event d"
  },
  {
   "title": "The submissions table (including incomplete submissions)",
@@ -365,7 +365,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "On text questions, you can add a word or character limit, if you wish. # submitter, reviewer, delegate etc), please click here . Skip to text instructions. From your go to Event dashboard \u2192 Abstract Management \u2192 Submissi"
+  "summary": "On text questions, you can add a word or character limit, if you wish. # Skip to text instructions. From your go to Event dashboard \u2192 Abstract Management \u2192 Submission \u2192 Form &amp; Setup \u2192 Submission form Skip to Discrepa"
  },
  {
   "title": "Assigning and unassigning a submission to a reviewer",
@@ -381,7 +381,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You may want to chase up reviewers if their reviews are incomplete and the deadline is approaching. # submitter, reviewer, delegate etc), please click here . To get an overview of how many reviews are incomplete, go to E"
+  "summary": "You may want to chase up reviewers if their reviews are incomplete and the deadline is approaching. # To get an overview of how many reviews are incomplete, go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 By revi"
  },
  {
   "title": "Controlling what the reviewer can see",
@@ -389,7 +389,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can determine which questions' responses will be visible to the reviewer, along with the submitters' individual information (eg. name and email address). # submitter, reviewer, delegate etc), please click here . Skip"
+  "summary": "You can determine which questions' responses will be visible to the reviewer, along with the submitters' individual information (eg. name and email address). # Skip to written instructions. Go to Event dashboard \u2192 Abstra"
  },
  {
   "title": "Creating the reviewer recruitment form and assign categories",
@@ -405,7 +405,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Explore the settings and tools that will help you design the review form for your requirements. # submitter, reviewer, delegate etc), please click here . Skip to written instructions. Go to Event dashboard \u2192 Abstract Man"
+  "summary": "Explore the settings and tools that will help you design the review form for your requirements. # Skip to written instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 Forms &amp; Setup. Skip to: The cont"
  },
  {
   "title": "Editing a review or completing a review on behalf of a reviewer",
@@ -413,7 +413,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can edit or complete a review on behalf of an assigned reviewer, should you require. # submitter, reviewer, delegate etc), please click here . NB: in order to complete a review on behalf of someone else, the submissi"
+  "summary": "You can edit or complete a review on behalf of an assigned reviewer, should you require. # NB: in order to complete a review on behalf of someone else, the submission must be assigned to a reviewer . Go to Event dashboar"
  },
  {
   "title": "Notifying reviewers that they have been assigned submissions to review",
@@ -421,7 +421,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "After adding reviewers and assigning submissions to them, you will need to notify them via the notifying reviewers email template. # submitter, reviewer, delegate etc), please click here . NB: Emails to reviewers are NOT"
+  "summary": "After adding reviewers and assigning submissions to them, you will need to notify them via the notifying reviewers email template. # NB: Emails to reviewers are NOT SENT AUTOMATICALLY. They will need to be sent manually "
  },
  {
   "title": "Opening and closing reviewing",
@@ -429,7 +429,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In order to make the review system live, you will need to open reviews. # submitter, reviewer, delegate etc), please click here . Skip to written instructions. Go to Event dashboard \u2192 Scroll down to the Reviews panel To "
+  "summary": "In order to make the review system live, you will need to open reviews. # Skip to written instructions. Go to Event dashboard \u2192 Scroll down to the Reviews panel To allow reviews, click on the drop down box next to Form S"
  },
  {
   "title": "Review question types",
@@ -437,7 +437,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "As well as the default questions, you can add supplementary questions, should you require. They are split into various types. # submitter, reviewer, delegate etc), please click here . Skip to written instructions. Go to "
+  "summary": "As well as the default questions, you can add supplementary questions, should you require. They are split into various types. # Skip to written instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Review \u2192 Forms &"
  },
  {
   "title": "Showing reviews to submitters",
@@ -445,7 +445,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "By default, reviews are not made available to submitters (just their acceptance status). If you would like submitters to view their reviews, follow the guidance below. It is not available in the FREE package. # submitter"
+  "summary": "By default, reviews are not made available to submitters (just their acceptance status). If you would like submitters to view their reviews, follow the guidance below. It is not available in the FREE package. # Go to Eve"
  },
  {
   "title": "The review tables",
@@ -453,7 +453,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The review tables are very useful tools for having an overview of review information, and to manipulate and extract data. # submitter, reviewer, delegate etc), please click here . NB. To become familiar with the Review t"
+  "summary": "The review tables are very useful tools for having an overview of review information, and to manipulate and extract data. # NB. To become familiar with the Review tables layout and tools, see An overview of tables. The R"
  },
  {
   "title": "Tips on designing your reviewing form",
@@ -469,7 +469,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you need to assign categories to specific committee members, follow the guidance below. This feature is not available in the FREE package. # submitter, reviewer, delegate etc), please click here . Before assigning cat"
+  "summary": "If you need to assign categories to specific committee members, follow the guidance below. This feature is not available in the FREE package. # Before assigning categories, you will need to add committee members to the s"
  },
  {
   "title": "Assigning program codes in the decisions table",
@@ -477,7 +477,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require. # submitter, revi"
+  "summary": "Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require. # NB. It is advis"
  },
  {
   "title": "Design the decision form",
@@ -485,7 +485,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The decision form questions create the columns in the decision table. As well as key data, there will be fields where data can be entered by the administrators or committee members. # submitter, reviewer, delegate etc), "
+  "summary": "The decision form questions create the columns in the decision table. As well as key data, there will be fields where data can be entered by the administrators or committee members. # Go to Event dashboard \u2192 Abstract Man"
  },
  {
   "title": "Notifying submitters of their outcomes",
@@ -493,7 +493,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "When you and your committee have made your decisions, you can then notify your submitters # submitter, reviewer, delegate etc), please click here . NB: Before you read this article, it is advised that you are familiar wi"
+  "summary": "When you and your committee have made your decisions, you can then notify your submitters # NB: Before you read this article, it is advised that you are familiar with Amending email templates and Sending and scheduling e"
  },
  {
   "title": "Opening and closing decision making",
@@ -501,7 +501,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In order to make the decision system live, you will need to open decisions. # submitter, reviewer, delegate etc), please click here . Please note: The form only needs to be open if Committee Members are working on the fo"
+  "summary": "In order to make the decision system live, you will need to open decisions. # Please note: The form only needs to be open if Committee Members are working on the form. To assign Committee members, go to Manage users Go t"
  },
  {
   "title": "Recording decisions: accept, reject or withdraw",
@@ -509,7 +509,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below. # submitter, reviewer, delegate et"
+  "summary": "You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below. # NB Go to Event dashboard \u2192 Abstr"
  },
  {
   "title": "The decisions table",
@@ -517,7 +517,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The decisions table gives an overview of submissions data relating to outcome status and is used for making decisions on submissions. # submitter, reviewer, delegate etc), please click here . NB. To become familiar with "
+  "summary": "The decisions table gives an overview of submissions data relating to outcome status and is used for making decisions on submissions. # NB. To become familiar with the decisions table layout and tools, see An overview of"
  },
  {
   "title": "Creating custom emails",
@@ -525,7 +525,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # submitter, reviewer, delegate etc), please click here . There are two ways to create custom emails. Creating "
+  "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # There are two ways to create custom emails. Creating a custom email from scratch Creating a custom email from"
  },
  {
   "title": "Editing the template emails",
@@ -533,7 +533,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # submitter, reviewer, delegate etc), please click here . Skip"
+  "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # Skip to written instructions Go to Event dashboard \u2192 Emails "
  },
  {
   "title": "Emailing presenters and authors directly",
@@ -541,7 +541,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "It is possible to create new templates to send out messages to presenters and authors. This article will show you how. # submitter, reviewer, delegate etc), please click here . NB It's important to be able to distinguish"
+  "summary": "It is possible to create new templates to send out messages to presenters and authors. This article will show you how. # NB It's important to be able to distinguish between submitters, authors and presenters. Submitters:"
  },
  {
   "title": "Emailing session chairs from the dashboard",
@@ -565,7 +565,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "If you would like to send emails from your tables instead of the email tool, follow the guidance below. # submitter, reviewer, delegate etc), please click here . NB: the email facility is not available in all tables. The"
+  "summary": "If you would like to send emails from your tables instead of the email tool, follow the guidance below. # NB: the email facility is not available in all tables. The submission table has been used in the example below, so"
  },
  {
   "title": "Sending emails from your chosen email address",
@@ -605,7 +605,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Abstract"
+  "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # Go to Event dashboard \u2192 Abstract Management \u2192 Reports &amp; Downloads Skip to Downloadin"
  },
  {
   "title": "Adding a session-less submission to the title listing",
@@ -629,7 +629,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "If you would like to create a backup of all the data in your conference, follow the guidance below. # submitter, reviewer, delegate etc), please click here . For instructions on how to download reports, see Creating expo"
+  "summary": "If you would like to create a backup of all the data in your conference, follow the guidance below. # For instructions on how to download reports, see Creating exports, reports and abstract books The backup can be done i"
  },
  {
   "title": "Downloading data on presenters only",
@@ -637,7 +637,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "There may be occasions where you only require presenters' data, as opposed to all authors. # submitter, reviewer, delegate etc), please click here . Read The overview of tables article and Export table data to Excel firs"
+  "summary": "There may be occasions where you only require presenters' data, as opposed to all authors. # Read The overview of tables article and Export table data to Excel first, so you are familiar with the tables and exporting of "
  },
  {
   "title": "Downloading your program and session books",
@@ -645,7 +645,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "You can download a range of reports from your program builder dashboard, if you require. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder Skip to Downloadin"
+  "summary": "You can download a range of reports from your program builder dashboard, if you require. # Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder Skip to Downloading your program Click on Downloads in the top right of yo"
  },
  {
   "title": "Export table data to Excel",
@@ -653,7 +653,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need. # submitter, reviewer, delegate etc), please click here ."
+  "summary": "In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need. # NB: When clicking the Download icon, all filtered data "
  },
  {
   "title": "Locking and change the timezone for your conference",
@@ -669,7 +669,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management",
-  "summary": "In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question. # submitt"
+  "summary": "In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question. # Go to E"
  },
  {
   "title": "Program sessions table",
@@ -677,7 +677,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "The program sessions table is a very useful tool for an overview of program session information, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports. # subm"
+  "summary": "The program sessions table is a very useful tool for an overview of program session information, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports. # Go t"
  },
  {
   "title": "Public vs full-access programme",
@@ -685,7 +685,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "If you have the Professional Conference package, you will have a feature that allows you to control access to the premium features of the platform. # submitter, reviewer, delegate etc), please click here . If you have se"
+  "summary": "If you have the Professional Conference package, you will have a feature that allows you to control access to the premium features of the platform. # If you have set who can see your full access program, it is useful to "
  },
  {
   "title": "Publishing your program",
@@ -693,7 +693,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Publishing your program is simple, and any changes you make after publishing will be reflected in the live program. # submitter, reviewer, delegate etc), please click here . Skip to the differences between the public and"
+  "summary": "Publishing your program is simple, and any changes you make after publishing will be reflected in the live program. # Skip to the differences between the public and full access program. Go to Event dashboard \u2192 Conference"
  },
  {
   "title": "Viewing the mobile version of the program builder",
@@ -861,7 +861,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "If you wish to edit a session, click on your chosen session and continue as with creating a session. # submitter, reviewer, delegate etc), please click here . You will notice the four icons to the top right of each sessi"
+  "summary": "If you wish to edit a session, click on your chosen session and continue as with creating a session. # You will notice the four icons to the top right of each session. From left to right: 1) Preview - click to see how th"
  },
  {
   "title": "Assigning program codes",
@@ -869,7 +869,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "When submissions are displayed in the program, the default is to include the submission ID but you can assign program codes within the program builder, if you require. # submitter, reviewer, delegate etc), please click h"
+  "summary": "When submissions are displayed in the program, the default is to include the submission ID but you can assign program codes within the program builder, if you require. # Skip to written instructions Go to Event dashboard"
  },
  {
   "title": "Attaching content to sessions",
@@ -901,7 +901,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "This feature allows delegates to add comments to sessions, submissions and posters. This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here . Skip to"
+  "summary": "This feature allows delegates to add comments to sessions, submissions and posters. This feature is only available in the Professional Conference package. # Skip to written instructions. Go to Event dashboard \u2192 Conferenc"
  },
  {
   "title": "Controlling access to the programme",
@@ -909,7 +909,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "There are several access options that will allow you to choose who can view program content. This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here "
+  "summary": "There are several access options that will allow you to choose who can view program content. This feature is only available in the Professional Conference package. # Skip to written instructions. NB: It is advised that y"
  },
  {
   "title": "Creating a session",
@@ -917,7 +917,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "After you have set up your online program settings, you can create a session. # submitter, reviewer, delegate etc), please click here . NB: Go to Event dashboard \u2192 Conference \u2192 Program \u279e Builder You can create a session "
+  "summary": "After you have set up your online program settings, you can create a session. # NB: Go to Event dashboard \u2192 Conference \u2192 Program \u279e Builder You can create a session by clicking on the default session or, to add a new sess"
  },
  {
   "title": "Creating announcements on conference",
@@ -941,7 +941,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "This option lets submitters choose whether or not their abstract / poster is displayed in the program. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Abstract Management \u2192 Submission \u2192 "
+  "summary": "This option lets submitters choose whether or not their abstract / poster is displayed in the program. # Go to Event dashboard \u2192 Abstract Management \u2192 Submission \u2192 Form &amp; Setup. The submission form will then be displ"
  },
  {
   "title": "Making a session cross columns in the program timetable",
@@ -957,7 +957,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "Networking allows attendees to create name tags so that they can connect and chat with each other. This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click"
+  "summary": "Networking allows attendees to create name tags so that they can connect and chat with each other. This feature is only available in the Professional Conference package. # NB: Delegates can only use chat if they have set"
  },
  {
   "title": "Professional Conference - branding",
@@ -965,7 +965,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u279e Conference \u279e Program \u279e Builder then Display \u279e Formatting \u279e Branding"
+  "summary": "This feature is only available in the Professional Conference package. # Go to Event dashboard \u279e Conference \u279e Program \u279e Builder then Display \u279e Formatting \u279e Branding The Program branding panel will open. At the top you wi"
  },
  {
   "title": "Professional Conference - exhibitor space - admin set up",
@@ -981,7 +981,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here . Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder** then Settings \u279e Sessions \u279e Sponsor"
+  "summary": "This feature is only available in the Professional Conference package. # Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder** then Settings \u279e Sessions \u279e Sponsors 1) Overwrite the label, if you wish 2) Enter the name "
  },
  {
   "title": "Professional Conference - the poster gallery",
@@ -989,7 +989,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here . "
+  "summary": "Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package. # Skip to Adding a poster upload question to your submissi"
  },
  {
   "title": "Session bookings",
@@ -1021,7 +1021,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "This article shows you how to set up how some features are displayed and formatted, eg. column headers, dates, time display, menu etc. # submitter, reviewer, delegate etc), please click here . Skip to written instruction"
+  "summary": "This article shows you how to set up how some features are displayed and formatted, eg. column headers, dates, time display, menu etc. # Skip to written instructions Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder"
  },
  {
   "title": "Setting up your program - timezones",
@@ -1029,7 +1029,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Follow the guidance below to set up your timezone. # Go to Event dashboard \u2192 Conference \u2192 Builder \u2192 Settings \u279e Timezone** submitter, reviewer, delegate etc), please click here . NB: Your delegates will set their own time"
+  "summary": "Follow the guidance below to set up your timezone. # Go to Event dashboard \u2192 Conference \u2192 Builder \u2192 Settings \u279e Timezone** NB: Your delegates will set their own time zones. See here for how this is done. The Event timezon"
  },
  {
   "title": "Setting up your Zoom integration",
@@ -1037,7 +1037,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "You can integrate your Zoom account with Oxford Abstracts to easily set up video calls in your program. This article will help you understand what you can do with the integration and how to set it up. # # submitter, revi"
+  "summary": "You can integrate your Zoom account with Oxford Abstracts to easily set up video calls in your program. This article will help you understand what you can do with the integration and how to set it up. # # How does it wor"
  },
  {
   "title": "The chat feature",
@@ -1045,7 +1045,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "This feature allows attendees to message each other, and engage in event-wide chat. This feature is only available in the Professional Conference package. # submitter, reviewer, delegate etc), please click here . Skip to"
+  "summary": "This feature allows attendees to message each other, and engage in event-wide chat. This feature is only available in the Professional Conference package. # Skip to written instructions Go to Event dashboard \u2192 Conference"
  },
  {
   "title": "Using speaker management",
@@ -1125,7 +1125,7 @@
   "section": "Integrations & API",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Application Programming Interface (API) allows applications to communicate with one another. This means you can extract/share data from your event with third party applications or vice versa. # submitter, reviewer, deleg"
+  "summary": "Application Programming Interface (API) allows applications to communicate with one another. This means you can extract/share data from your event with third party applications or vice versa. # In order to generate an AP"
  },
  {
   "title": "Integrating EventsAir to Oxford Abstracts",
@@ -1181,7 +1181,7 @@
   "section": "Account administration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to see an overview of your events, and add and remove event, account and API admins. # submitter, reviewer, delegate etc), please click here . Skip to: Managing event admins Managing account (client) admins Cli"
+  "summary": "Learn how to see an overview of your events, and add and remove event, account and API admins. # Skip to: Managing event admins Managing account (client) admins Click on Manage Account in the relevant account in your per"
  },
  {
   "title": "Permanently delete or archive your event",
@@ -1293,7 +1293,7 @@
   "section": "Reviewing",
   "audience": "participants",
   "plan": "all plans (including free Basic)",
-  "summary": "Find out how to complete your review in the Oxford Abstracts reviewing space. # If you experience any issues or have any questions, please contact your event administrator in the first instance. If you are the administra"
+  "summary": "Find out how to complete your review in the Oxford Abstracts reviewing space. # If you experience any issues or have any questions, please contact your event administrator in the first instance. Skip to begin reviewing T"
  },
  {
   "title": "Completing a Symposium review",
