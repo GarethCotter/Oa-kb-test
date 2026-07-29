@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why does my email need to be DKIM validated? | Oxford Abstracts Help</title><meta name="description" content="Why does my email need to be DKIM validated?">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header><div class="wrap nav">
+<a href="../index.html" aria-label="Oxford Abstracts Help Centre"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
+<form class="hdr-search" role="search" action="../index.html" method="get">
+<input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
+<button type="submit">Search</button></form><nav class="nav-links" aria-label="Main">
+<a class="hide-sm" href="../index.html">Help centre home</a>
+<a class="btn" href="https://app.oxfordabstracts.com/">Sign in</a>
+</nav></div></header><main><div class="wrap narrow crumbs">
+<a href="../index.html">Help centre</a> &nbsp;›&nbsp; <a href="index.html">Emails</a></div>
+<article class="wrap narrow article">
+<h1 class="display">Why does my email need to be DKIM validated?</h1>
+<div class="badges"><span class="badge">Emails</span><span class="badge reviewed">Last reviewed 28 July 2026</span></div>
+
+
+<div class="prose"><h2 id="understand-what-dkim-is-how-to-get-dkim-validated-and-how-it-affects-your-oxford-abstract-event">Understand what DKIM is, how to get DKIM validated and how it affects your Oxford Abstract event.<a aria-label="Link to this section" class="anchor" href="#understand-what-dkim-is-how-to-get-dkim-validated-and-how-it-affects-your-oxford-abstract-event">#</a></h2>
+<p><strong>Please note:</strong> this Knowledge Base article is for Admins ONLY</p>
+<p>Google &amp; Yahoo have implemented that all email senders must be DKIM validated.</p>
+<p>This is to help protect recipients from receiving malicious emails and to help prevent your emails from being rejected or marked as spam.</p>
+<p><strong>If the email address you use for your Oxford Abstract event is</strong> <strong>not properly DKIM authenticated,</strong> <strong>it could mean that emails sent and received will be considered spam and not reach the intended recipient.</strong></p>
+<p><strong>What does this mean for you?</strong>Because you are sending emails from your event email address, it's important that your emails don't get marked as spam.</p>
+<p><strong>How to get DKIM validated:</strong></p>
+<p>To do this you will need to be able to:</p>
+<ul>
+<li>Access your admin account Oxford Abstracts</li>
+<li>Access to your DNS (your domain name hosting - e.g. GoDaddy, Namecheap, DreamHost)</li>
+</ul>
+<p>If someone else has access to your domain name hosting (IT support team), you can follow the first steps and then email them the instructions for the remaining parts.</p>
+<p><strong>Instructions on how to set up your DKIM authentication:</strong></p>
+<ol>
+<li><strong>Go to your Oxford Abstracts admin dashboard → Emails </strong>&gt; Verify Sender &gt; Copy your DKIM information and return path</li>
+<li>Go to your Domain Name Settings (in GoDaddy, Namecheap, or whichever provider you use)</li>
+<li>Add a TXT record for DKIM - paste in the DKIM information from Oxford Abstracts</li>
+<li>Add a CNAME record for your Return-Path - paste in the information from Oxford Abstracts</li>
+<li>Note that it can take up to 48 hours for the DNS changes to propagate, so it can be a little while before your domain shows as verified</li>
+<li>In the meantime, emails will continue to be delivered from no-reply@oxfordabstracts.com with a reply-to address of your sender email</li>
+</ol>
+<p><strong>When should I do this?</strong></p>
+<p>ASAP. Google will begin to reject non-compliant traffic in April.</p>
+<p><strong>What will happen in the meantime until I do this?</strong></p>
+<p>We want to reassure you that we will continue to deliver emails to your users; however if your event email address is not DKIM authenticated, then we will switch the sender email to Oxford Abstract’s default email address: no-reply@oxfordabstracts.com. The Reply-To address will be set to your sender email address, so you will still receive email replies to your email address.</p>
+<p><strong>Need further help?</strong></p>
+<p>We understand this is a technical change and may be tricky.</p>
+<p>You can read a more detailed walkthrough <a href="https://postmarkapp.com/support/article/1046-how-do-i-verify-a-domain"><strong>here</strong></a> on how to verify your domain but if you’re still stuck, please reach out to the <strong>support desk,</strong> and we are always happy to help.</p></div>
+<div class="feedback" data-path="05-emails/why-does-my-email-need-to-be-dkim-validated.html">
+<p>Did this page solve it?</p>
+<div class="fb-row"><button type="button" data-fb="yes">Yes</button><button type="button" data-fb="no">No</button></div>
+<div class="fb-reasons" hidden>
+<button type="button" data-reason="confusing">Confusing</button>
+<button type="button" data-reason="out-of-date">Out of date</button>
+<button type="button" data-reason="missing-details">Missing details</button>
+<button type="button" data-reason="not-what-i-searched">Not what I searched for</button>
+</div>
+<p class="fb-thanks" hidden>Thanks — this helps us fix it.</p>
+</div>
+<nav class="prevnext" aria-label="Article navigation"><a class="pn-prev" href="what-domains-will-emails-from-oxford-abstracts-originate-from.html"><span>Previous</span>What domains will emails from Oxford Abstracts originate from?</a><a class="pn-next" href="../06-programme-exports-reports/index.html"><span>Next section</span>Programme &amp; reports</a></nav>
+<section class="support">
+<div><h2>Didn't solve it? Ask our support team</h2>
+<p>No question is too small, and there's no charge for asking. Raise a ticket and
+someone who knows the software will pick it up.</p></div>
+<a class="btn" href="https://oxfordabstracts.com/resources/contact-support">Create a support ticket</a>
+</section>
+</article>
+<div class="lightbox" id="lightbox" hidden><img alt=""></div>
+<script src="../assets/article.js"></script></main>
+<footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
+</body></html>
