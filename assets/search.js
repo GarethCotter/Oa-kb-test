@@ -162,6 +162,14 @@ function showThinking() {
   }, 1900);
 }
 
+/* The model marks menu paths and button names with **double asterisks**
+   (see ANSWER_SYSTEM in api/search.js), so the reader can pick out what to click
+   without re-reading. Everything is HTML-escaped first; only <strong> is produced. */
+function boldify(text) {
+  const esc = text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  return esc.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
+
 function showAnswer(answer, sources, followups) {
   if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
   const existing = document.getElementById('llmAnswer');
@@ -173,7 +181,7 @@ function showAnswer(answer, sources, followups) {
   // the answer may contain short labelled branches; render each on its own line
   answer.split(/\n+/).filter(Boolean).forEach(line => {
     const p = document.createElement('p');
-    p.textContent = line;
+    p.innerHTML = boldify(line);
       el.appendChild(p);
   });
 

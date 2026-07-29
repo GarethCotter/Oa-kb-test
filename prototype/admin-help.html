@@ -75,6 +75,9 @@ button{font:inherit}
 .msg.bot{background:var(--white);border:1px solid var(--hair);align-self:flex-start;border-bottom-left-radius:4px}
 .msg.you{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .msg p{margin-bottom:10px}.msg p:last-child{margin-bottom:0}
+/* 600 is the heaviest Outfit weight this page loads - without this, <strong> asks for a
+   700 the browser has to fake */
+.msg strong{font-weight:600}
 .msg .from{border-top:1px solid var(--hair);margin-top:11px;padding-top:10px}
 .msg .from .cap{font-size:12.5px;color:var(--muted);margin-bottom:5px}
 .msg .from a{display:flex;align-items:center;gap:7px;color:var(--ink);font-size:14.5px;padding:3px 0;
@@ -85,6 +88,8 @@ button{font:inherit}
 .chip{border:1px solid rgba(10,27,62,.28);background:var(--white);border-radius:9999px;
   padding:8px 14px;font-size:14px;color:var(--ink);cursor:pointer;text-align:left}
 .chip:hover{border-color:var(--red);color:var(--red)}
+.chip.solid{background:var(--red);border-color:var(--red);color:#fff;font-weight:500}
+.chip.solid:hover{background:#ab3a2f;color:#fff}
 .typing{display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--hair);
   border-radius:12px;border-bottom-left-radius:4px;padding:14px 16px;align-self:flex-start}
 .typing i{width:7px;height:7px;border-radius:50%;background:#9aa3b5;animation:blink 1.2s infinite}
@@ -100,9 +105,15 @@ button{font:inherit}
   cursor:pointer;flex-shrink:0;display:grid;place-items:center}
 .ask button:hover{background:#ab3a2f}
 .ask button[disabled]{opacity:.5;cursor:not-allowed}
-.p-foot .human{text-align:center;margin-top:9px;font-size:13px;color:var(--muted)}
-.p-foot .human a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-.p-foot .human a:hover{color:var(--red)}
+/* Escalation must be unmissable without shouting: a real button, full width, always
+   in view - not a line of small print. */
+.ticket-btn{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:10px;
+  padding:11px 16px;border:1.5px solid var(--ink);border-radius:9999px;background:#fff;
+  color:var(--ink);font-size:15px;font-weight:500;text-decoration:none;cursor:pointer}
+.ticket-btn:hover{background:var(--ink);color:#fff}
+.ticket-btn svg{flex-shrink:0}
+.ticket-btn .quiet{font-weight:400;color:var(--muted)}
+.ticket-btn:hover .quiet{color:rgba(255,255,255,.75)}
 
 @media (prefers-reduced-motion:reduce){.panel,.msg,.typing i{animation:none}}
 @media (max-width:700px){
@@ -179,7 +190,11 @@ button{font:inherit}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
       </button>
     </form>
-    <p class="human">Prefer a person? <a href="/prototype/support-deflection" target="_blank" rel="noopener">Raise a support ticket</a> — no charge for asking.</p>
+    <a class="ticket-btn" href="/prototype/support-deflection" target="_blank" rel="noopener"
+       title="A person will pick it up — no question is too small">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      Raise a support ticket
+    </a>
   </div>
 </section>
 
@@ -246,6 +261,13 @@ function el(tag, cls, text) {
   if (text) e.textContent = text;
   return e;
 }
+/* Menu paths and button names arrive marked **like this** (the answer prompt asks for
+   it) and render bold, so the reader can pick out what to click without re-reading.
+   Everything is escaped first; only <strong> is produced. */
+function boldify(text) {
+  const esc = text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+  return esc.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+}
 function scrollDown() { const b = $('#body'); b.scrollTop = b.scrollHeight; }
 
 function addYou(text) {
@@ -254,7 +276,12 @@ function addYou(text) {
 }
 function addBot(text, sources, followups) {
   const m = el('div', 'msg bot');
-  text.split('\n').forEach(p => { if (p.trim()) m.appendChild(el('p', '', p.trim())); });
+  text.split('\n').forEach(p => {
+    if (!p.trim()) return;
+    const para = el('p');
+    para.innerHTML = boldify(p.trim());
+    m.appendChild(para);
+  });
   if (sources && sources.length) {
     const from = el('div', 'from');
     from.appendChild(el('p', 'cap', 'From these guides'));
@@ -310,7 +337,7 @@ function greet(pageChanged) {
 
 /* ---- canned conversation (Emails screen story) ---- */
 const CANNED_FIRST = {
-  answer: 'Check whether the email is set to send automatically. Go to Event dashboard → Emails → Edit and send and look under the “Automatic emails” heading — if the Activated checkbox isn’t ticked, it never sends. If your email is under “Manually sent emails” instead, it won’t go anywhere until you click Review and send.',
+  answer: 'Check whether the email is set to send automatically. Go to **Event dashboard → Emails → Edit and send** and look under the **Automatic emails** heading — if the **Activated** checkbox isn’t ticked, it never sends. If your email is under **Manually sent emails** instead, it won’t go anywhere until you click **Review and send**.',
   sources: [
     { title: 'Sending and scheduling emails', path: '05-emails/sending-and-scheduling-emails.html' },
     { title: 'Editing the template emails', path: '05-emails/editing-the-template-emails.html' }
@@ -318,7 +345,7 @@ const CANNED_FIRST = {
   followups: ['It was activated — what else could it be?', 'How do I see what’s already been sent?']
 };
 const CANNED_SECOND = {
-  answer: 'Then check the email sent log — Event dashboard → Emails → Sent log — which shows every email the system has sent and to whom. If it shows as sent but people say they got nothing, it’s usually landing in spam: that’s why sending from your own address needs DKIM validation, and unvalidated addresses fall back to our domain.',
+  answer: 'Then check the email sent log — **Event dashboard → Emails → Sent log** — which shows every email the system has sent and to whom. If it shows as sent but people say they got nothing, it’s usually landing in spam: that’s why sending from your own address needs DKIM validation, and unvalidated addresses fall back to our domain.',
   sources: [
     { title: 'Using the email sent log', path: '05-emails/using-the-email-sent-log.html' },
     { title: 'Why does my email need to be DKIM validated?', path: '05-emails/why-does-my-email-need-to-be-dkim-validated.html' }
@@ -377,7 +404,7 @@ async function send(question) {
     const kb = el('button', 'chip', 'Search the knowledge base');
     kb.type = 'button';
     kb.addEventListener('click', () => window.open('https://oa-kb-test.vercel.app/?q=' + encodeURIComponent(question), '_blank'));
-    const tk = el('button', 'chip', 'Raise a support ticket');
+    const tk = el('button', 'chip solid', 'Raise a support ticket');
     tk.type = 'button';
     tk.addEventListener('click', () => window.open('/prototype/support-deflection', '_blank'));
     wrap.append(kb, tk);

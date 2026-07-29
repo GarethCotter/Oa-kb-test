@@ -119,6 +119,7 @@ textarea{min-height:120px;resize:vertical}
   background:#fbfcfa;padding:22px;margin-bottom:20px}
 .answer h3{font-size:18px;font-weight:600;margin-bottom:12px}
 .answer .body{margin-bottom:16px}
+.answer .body strong{font-weight:600}
 .sources{border-top:1px solid var(--hair);padding-top:14px}
 .sources .cap{font-size:14px;color:#5a6377;margin-bottom:8px}
 .sources a{display:block;font-size:17px;margin-bottom:6px;text-decoration:underline;text-underline-offset:4px}
@@ -421,8 +422,8 @@ const CANNED = {
   strong: {
     answer: 'Reviewers only see submissions once three things are true: reviewing is open for ' +
             'the current stage, the submissions have actually been assigned to them, and the ' +
-            'reviewer signed in with the same email address you assigned. Check Event dashboard ' +
-            '→ Reviewing → Assign to confirm the assignments landed, then check reviewing is open.',
+            'reviewer signed in with the same email address you assigned. Check **Event dashboard ' +
+            '→ Reviewing → Assign** to confirm the assignments landed, then check reviewing is open.',
     sources: [
       { title: 'Assigning and unassigning a submission to a reviewer', path: '03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html' },
       { title: 'Opening and closing reviewing', path: '03-reviewing/opening-and-closing-reviewing.html' }
@@ -555,7 +556,10 @@ $('#ticket').addEventListener('submit', async e => {
 
   state.suggested = result.sources || [];
   state.shown = true;
-  $('#answerText').textContent = result.answer;
+  // Menu paths arrive marked **like this**; escape everything, then render only <strong>.
+  $('#answerText').innerHTML = result.answer
+    .replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 
   const box = $('#sources');
   box.textContent = '';

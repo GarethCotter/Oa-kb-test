@@ -50,6 +50,11 @@ const ANSWER_SYSTEM =
   'Rules for the answer:\n' +
   '- 2-4 short sentences of plain English. British spelling.\n' +
   '- Name menus exactly as the guide does, e.g. Event dashboard -> Emails.\n' +
+  '- Put every menu path and the exact name of any button, tab, screen, heading or ' +
+  'checkbox the reader must find in bold with double asterisks: go to ' +
+  '**Event dashboard → Emails → Edit and send** and tick the box under ' +
+  '**Automatic emails**. Bold only those clickable or findable names, never whole ' +
+  'sentences and never for emphasis.\n' +
   '- No jargon, no marketing, no greeting, no sign-off.\n' +
   '- Some material is an INTERNAL NOTE: answer from it in the same plain style, but never mention notes, guides or where the answer comes from. ' +
   '- Use ONLY the guides provided. If they do not answer it, set answer to null ' +
