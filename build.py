@@ -405,6 +405,91 @@ def extract_audience(root, soup):
     return found
 
 
+# Alt text. Every screenshot used to inherit the nearest heading, so a page with 39
+# images had 3 alt texts between them and a screen reader announced the same phrase
+# a dozen times running. Each image sits directly under the step it illustrates
+# (measured: all 1,343 have preceding text, 93% of it a paragraph), so the step is
+# what the picture shows. We strip the imperative lead-in - "Click on the Create an
+# Account button" -> "the Create an Account button" - so the alt names what is
+# pictured instead of repeating the instruction word for word to someone who has
+# just heard it. This is derived from surrounding text, not from looking at the
+# images: it makes them distinct and specific, not truly described.
+ALT_LEADIN = re.compile(
+    r'^(?:next,?\s+|then\s+|now\s+|finally,?\s+|you (?:can|will|should|need to)\s+)*'
+    r'(?:click(?:ing)?(?:\s+on)?(?:\s+the)?|select(?:ing)?|choose|go\s+to|navigate\s+to'
+    r'|open(?:ing)?|press|tap|see|find|head\s+to)\s+', re.I)
+ALT_MAX = 100          # the descriptive part
+ALT_HEAD_MAX = 40      # the heading prefix used only to break a tie
+ALT_HARD_MAX = 140     # the finished string, whatever it is made of
+ALT_FILE_NOUN = re.compile(
+    r'^(?:screen\s?shot|image|img|photo|picture|unnamed|untitled)\b', re.I)
+
+
+def is_junk_alt(text):
+    """True for alt text carried over from HubSpot that names the file rather than
+    the picture - "Screenshot 2026-05-14 at 12.38.38", "image001.png", "unnamed".
+    Such alt text is treated as absent so a described one is derived instead."""
+    t = re.sub(r'\.(?:png|jpe?g|webp|gif|svg)$', '', text.strip(), flags=re.I)
+    t = ALT_FILE_NOUN.sub('', t)
+    t = re.sub(r'\b(?:at|on|am|pm|copy|final|v\d+)\b', ' ', t, flags=re.I)
+    return len(re.sub(r'[^A-Za-z]', '', t)) < 3
+
+
+def _preceding_text(img):
+    """Text of the nearest element before the image that is not itself an image."""
+    node = img
+    while node is not None:
+        prev = node.previous_sibling
+        while prev is not None and not getattr(prev, 'name', None):
+            prev = prev.previous_sibling
+        if prev is not None:
+            if prev.get_text(strip=True) and not prev.find('img'):
+                return prev.get_text(' ', strip=True)
+            node = prev
+            continue
+        node = node.parent
+        if node is None or node.name in ('body', '[document]'):
+            return ''
+    return ''
+
+
+def _trim(text, limit):
+    text = ' '.join(text.split()).strip(' –—-:;,')
+    if len(text) > limit:
+        cut = text[:limit].rsplit(' ', 1)[0]
+        text = cut.rstrip(' .,;:') + '…'
+    return text.rstrip('.')
+
+
+def derive_alt(img, heading, used):
+    """Alt text naming what this screenshot shows, unique within the page."""
+    context = _preceding_text(img)
+    stripped = ALT_LEADIN.sub('', context, count=1).strip()
+    # Falling back keeps a too-short remainder (e.g. "Next.") from becoming the alt.
+    body = stripped if len(stripped) >= 12 else (context or heading)
+
+    candidates = ['Screenshot: %s' % _trim(body, ALT_MAX)]
+    if heading and heading.lower() not in body.lower():
+        candidates.append('Screenshot: %s — %s'
+                          % (_trim(heading, ALT_HEAD_MAX), _trim(body, ALT_MAX)))
+    candidates = [_trim(c, ALT_HARD_MAX) for c in candidates]
+    for alt in candidates:
+        if alt not in used:
+            used.add(alt)
+            return alt
+    # Still identical to an earlier image: say which one, rather than repeat blindly.
+    # The counter is part of the length budget, not bolted on after it.
+    base, n = candidates[-1], 2
+    while True:
+        suffix = ' (%d)' % n
+        alt = _trim(base, ALT_HARD_MAX - len(suffix)) + suffix
+        if alt not in used:
+            break
+        n += 1
+    used.add(alt)
+    return alt
+
+
 def enrich_body(body_html, title):
     """Add heading ids + anchor links, contextual alt text, lazy click-to-enlarge
     images, an on-this-page list for long articles, lift a short opening paragraph
@@ -450,13 +535,17 @@ def enrich_body(body_html, title):
 
     # images: lazy, contextual alt where missing, click-to-enlarge
     last_heading = title
+    used_alts = set()
     for el in root.find_all(['h2', 'h3', 'img']):
         if el.name in ('h2', 'h3'):
             last_heading = el.get_text(' ', strip=True).rstrip('#').strip()
         else:
             el['loading'] = 'lazy'
-            if not el.get('alt'):
-                el['alt'] = 'Screenshot: %s' % last_heading
+            existing = (el.get('alt') or '').strip()
+            if existing and not is_junk_alt(existing):
+                used_alts.add(existing)   # so a derived alt cannot collide with it
+            else:
+                el['alt'] = derive_alt(el, last_heading, used_alts)
             el['class'] = (el.get('class') or []) + ['zoomable']
             el['tabindex'] = '0'
 
