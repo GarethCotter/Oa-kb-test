@@ -115,6 +115,31 @@ button{font:inherit}
 .ticket-btn .quiet{font-weight:400;color:var(--muted)}
 .ticket-btn:hover .quiet{color:rgba(255,255,255,.75)}
 
+/* Reading mode. Clicking a cited guide opens the article inside the panel - the one
+   thing the old Resource Center got right was reading without leaving the app. The
+   panel grows, and the article is the live KB page fetched and re-rooted, so there is
+   no second copy of the content to drift. */
+.panel.wide{width:680px;height:calc(100vh - 44px)}
+.reader{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--white)}
+.r-head{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--hair);flex-shrink:0}
+.r-back{display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;
+  color:var(--ink);font-size:15px;font-weight:500;padding:6px 10px;border-radius:8px}
+.r-back:hover{background:rgba(10,27,62,.07)}
+.r-open{margin-left:auto;font-size:13.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.r-open:hover{color:var(--red)}
+.r-body{flex:1;overflow-y:auto;padding:22px 28px}
+.r-body h1{font-family:'Gloock',Georgia,serif;font-weight:400;font-size:26px;line-height:1.15;margin-bottom:16px}
+.r-body h2{font-size:19px;font-weight:600;margin:22px 0 8px}
+.r-body h3{font-size:16.5px;font-weight:600;margin:18px 0 6px}
+.r-body p{margin-bottom:12px;font-size:15.5px}
+.r-body ul,.r-body ol{margin:0 0 14px 22px;font-size:15.5px}
+.r-body li{margin-bottom:6px}
+.r-body img{max-width:100%;height:auto;border:1px solid var(--hair);border-radius:8px;margin:6px 0 14px}
+.r-body a{color:var(--red);text-underline-offset:3px}
+.r-body strong{font-weight:600}
+.r-body .anchor{display:none}          /* heading permalinks make no sense in a panel */
+.r-load{padding:40px;text-align:center;color:var(--muted)}
+
 @media (prefers-reduced-motion:reduce){.panel,.msg,.typing i{animation:none}}
 @media (max-width:700px){
   .app{grid-template-columns:1fr}.side{display:none}
@@ -146,12 +171,15 @@ button{font:inherit}
   <nav class="side" aria-label="Event menu">
     <div class="brand"><img src="assets/oa-logo.svg" alt="Oxford Abstracts"></div>
     <a data-page="Dashboard"    class="on">Dashboard</a>
-    <a data-page="Submissions">Submissions</a>
-    <a data-page="Reviewing">Reviewing</a>
-    <a data-page="Decisions">Decisions</a>
+    <a data-page="Event setup">Event setup</a>
     <a data-page="Emails">Emails</a>
-    <a data-page="Program">Program</a>
+    <a data-page="Abstract Management">Abstract Management</a>
+    <a data-page="Symposium">Symposium</a>
+    <a data-page="Speaker Management">Speaker Management</a>
+    <a data-page="Website Builder">Website Builder</a>
     <a data-page="Registration">Registration</a>
+    <a data-page="Conference">Conference</a>
+    <a data-page="Certificates">Certificates</a>
     <div class="foot">Simulated backend — the widget is the prototype, this page is scenery.</div>
   </nav>
   <div class="main">
@@ -181,6 +209,16 @@ button{font:inherit}
     <button class="p-close" id="closeBtn" aria-label="Close help">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
+  </div>
+  <div class="reader hidden" id="reader" role="region" aria-label="Article">
+    <div class="r-head">
+      <button class="r-back" type="button" id="readerBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to chat
+      </button>
+      <a class="r-open" id="readerOpen" href="#" target="_blank" rel="noopener">Open in knowledge base ↗</a>
+    </div>
+    <div class="r-body" id="readerBody"></div>
   </div>
   <div class="p-body" id="body" aria-live="polite"></div>
   <div class="p-foot">
@@ -220,13 +258,16 @@ const state = { page: 'Dashboard', open: false, history: [], busy: false };
    instead of what someone wants the admin to read, the questions the ticket data says
    admins on this screen actually ask. */
 const SUGGEST = {
-  Dashboard:    ['How do I add someone to my team?', 'Where do I find my event ID?', 'What does my package include?'],
-  Submissions:  ['How do I change the submission deadline?', 'Why does a submission show as incomplete?', 'Can I edit someone’s submission for them?'],
-  Reviewing:    ['Why can’t my reviewers see their assigned reviews?', 'How do I assign submissions to reviewers?', 'How do I chase up late reviews?'],
-  Decisions:    ['How do I record accept and reject decisions?', 'How do I tell submitters their outcome?'],
-  Emails:       ['Why have my submitters not received my email?', 'How do I schedule an email for later?', 'Can I send from my own address?'],
-  Program:      ['How do I create sessions?', 'How do I publish the programme?', 'How do I make an abstract book?'],
-  Registration: ['How do I set up tickets?', 'How do I refund an attendee?', 'Where are the invoices?']
+  'Dashboard':           ['How do I add someone to my team?', 'Where do I find my event ID?', 'What does my package include?'],
+  'Event setup':         ['How do I edit my event details?', 'Can I add my own colours and logo?', 'How do I add admins to my event?'],
+  'Emails':              ['Why have my submitters not received my email?', 'How do I schedule an email for later?', 'Can I send from my own address?'],
+  'Abstract Management': ['How do I change the submission deadline?', 'Why can’t my reviewers see their assigned reviews?', 'Why does a submission show as incomplete?'],
+  'Symposium':           ['How do I collect symposia?', 'How does someone attach their abstract to a symposium?'],
+  'Speaker Management':  ['How does speaker management work?', 'How do I email session chairs?'],
+  'Website Builder':     ['How do I create my event website?', 'How do I publish the homepage?'],
+  'Registration':        ['How do I set up tickets?', 'How do I refund an attendee?', 'Where are the invoices?'],
+  'Conference':          ['How do I create sessions?', 'How do I publish the programme?', 'Which Zoom package do I need?'],
+  'Certificates':        ['How do I create a certificate?', 'Is Certificates included in my plan?']
 };
 
 /* ---- backdrop navigation ---- */
@@ -288,7 +329,8 @@ function addBot(text, sources, followups) {
     sources.forEach(s => {
       const a = document.createElement('a');
       a.href = 'https://oa-kb-test.vercel.app/' + s.path;
-      a.target = '_blank'; a.rel = 'noopener';
+      // Read it here, in the panel - leaving the app to read help is the old world.
+      a.addEventListener('click', e => { e.preventDefault(); openReader(s.path, a.href); });
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
       g.setAttribute('width', '13'); g.setAttribute('height', '13');
       g.setAttribute('viewBox', '0 0 20 20'); g.setAttribute('fill', 'currentColor');
@@ -415,6 +457,53 @@ async function send(question) {
   state.busy = false;
   $('#sendBtn').disabled = false;
 }
+
+/* ---- reading mode ---- */
+async function openReader(path, kbUrl) {
+  $('#panel').classList.add('wide');
+  $('#body').classList.add('hidden');
+  document.querySelector('.p-foot').classList.add('hidden');
+  $('#reader').classList.remove('hidden');
+  $('#readerOpen').href = kbUrl;
+  $('#readerBody').innerHTML = '<p class="r-load">Opening the guide…</p>';
+  $('#readerBack').focus();
+  try {
+    const res = await fetch('/' + path);
+    if (!res.ok) throw new Error('status ' + res.status);
+    const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+    const title = doc.querySelector('h1');
+    const prose = doc.querySelector('.prose');
+    if (!prose) throw new Error('no article body');
+    // Re-root every URL against the article's real address: the page was built to be
+    // served from its own folder, not from inside this panel.
+    const base = location.origin + '/' + path;
+    prose.querySelectorAll('[src]').forEach(n => n.src = new URL(n.getAttribute('src'), base).href);
+    prose.querySelectorAll('a[href]').forEach(n => {
+      n.href = new URL(n.getAttribute('href'), base).href;
+      n.target = '_blank'; n.rel = 'noopener';
+    });
+    $('#readerBody').innerHTML = '';
+    if (title) {
+      const h = document.createElement('h1');
+      h.textContent = title.textContent;
+      $('#readerBody').appendChild(h);
+    }
+    $('#readerBody').append(...prose.childNodes);
+    $('#readerBody').scrollTop = 0;
+  } catch {
+    // Cannot fetch it here: fall back to the old behaviour rather than a dead panel.
+    window.open(kbUrl, '_blank');
+    closeReader();
+  }
+}
+function closeReader() {
+  $('#reader').classList.add('hidden');
+  $('#panel').classList.remove('wide');
+  $('#body').classList.remove('hidden');
+  document.querySelector('.p-foot').classList.remove('hidden');
+  $('#askInput').focus();
+}
+$('#readerBack').addEventListener('click', closeReader);
 
 $('#askForm').addEventListener('submit', e => {
   e.preventDefault();
