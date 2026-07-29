@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Event dashboard — Oxford Abstracts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+/* Brand tokens shared with the KB and the live site. The backdrop is a deliberately
+   greeked stand-in for the admin backend - grey bars, no invented UI claims - so the
+   widget is the thing being judged, not a guess at the real app. */
+:root{
+  --cream:#EAECE1; --ink:#0A1B3E; --red:#C54538; --white:#fff;
+  --hair:#E5E7EB; --muted:#5a6377; --ok:#1F6F5C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.55;
+     color:var(--ink);background:#F4F5F1;overflow:hidden}
+.display{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-.01em}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;border-radius:4px}
+
+/* ---- simulated admin backend ---- */
+.app{display:grid;grid-template-columns:230px 1fr;height:100vh}
+.side{background:var(--ink);color:#cfd6e4;display:flex;flex-direction:column;padding:18px 0}
+.side .brand{padding:4px 20px 18px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:12px}
+.side .brand img{width:132px;filter:invert(1) brightness(2)}
+.side a{display:flex;align-items:center;gap:10px;padding:10px 20px;color:#cfd6e4;
+  text-decoration:none;font-size:15px;border-left:3px solid transparent;cursor:pointer}
+.side a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.side a.on{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--red)}
+.side .foot{margin-top:auto;padding:14px 20px;font-size:12.5px;color:#7e8aa5}
+.main{overflow:auto;padding:26px 34px}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:6px}
+.main h1{font-size:26px;font-weight:600;margin-bottom:22px}
+/* greeked content: honest placeholders, not fake features */
+.ghost{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:20px;margin-bottom:16px}
+.bar{height:12px;border-radius:6px;background:#E8EAE3;margin:10px 0}
+.bar.w40{width:40%}.bar.w65{width:65%}.bar.w85{width:85%}.bar.w25{width:25%}
+.ghost .row{display:flex;gap:14px}
+.ghost .row .bar{flex:1}
+
+/* ---- launcher ---- */
+.launcher{position:fixed;right:22px;bottom:22px;z-index:40;display:inline-flex;align-items:center;gap:9px;
+  background:var(--ink);color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-size:16px;
+  font-weight:500;cursor:pointer;box-shadow:0 10px 30px rgba(10,27,62,.35)}
+.launcher:hover{background:#16254a}
+.launcher svg{flex-shrink:0}
+.launcher .dot{position:absolute;top:-2px;right:-2px;width:11px;height:11px;border-radius:50%;
+  background:var(--red);border:2px solid #F4F5F1;display:none}
+
+/* ---- help panel ---- */
+.panel{position:fixed;right:22px;bottom:22px;z-index:50;width:400px;max-width:calc(100vw - 24px);
+  height:600px;max-height:calc(100vh - 44px);background:var(--cream);border:1px solid var(--ink);
+  border-radius:14px;box-shadow:0 24px 60px rgba(10,27,62,.35);display:flex;flex-direction:column;
+  overflow:hidden;transform-origin:bottom right;animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}
+.panel.hidden{display:none}
+.p-head{padding:18px 20px 14px;border-bottom:1px solid rgba(10,27,62,.14);display:flex;
+  align-items:flex-start;justify-content:space-between;gap:12px}
+.p-head h2{font-size:24px;line-height:1.1}
+.p-head .where{font-size:13px;color:var(--muted);margin-top:5px;display:flex;align-items:center;gap:6px}
+.p-head .where .pin{width:7px;height:7px;border-radius:50%;background:var(--ok);flex-shrink:0}
+.p-close{background:none;border:none;cursor:pointer;color:var(--ink);padding:4px;border-radius:6px;line-height:0}
+.p-close:hover{background:rgba(10,27,62,.08)}
+
+.p-body{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:88%;border-radius:12px;padding:12px 15px;font-size:15.5px;animation:rise .25s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.msg.bot{background:var(--white);border:1px solid var(--hair);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.you{background:var(--ink);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.msg p{margin-bottom:10px}.msg p:last-child{margin-bottom:0}
+.msg .from{border-top:1px solid var(--hair);margin-top:11px;padding-top:10px}
+.msg .from .cap{font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.msg .from a{display:flex;align-items:center;gap:7px;color:var(--ink);font-size:14.5px;padding:3px 0;
+  text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.msg .from a:hover{color:var(--red)}
+.msg .from a svg{flex-shrink:0;color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start;max-width:95%}
+.chip{border:1px solid rgba(10,27,62,.28);background:var(--white);border-radius:9999px;
+  padding:8px 14px;font-size:14px;color:var(--ink);cursor:pointer;text-align:left}
+.chip:hover{border-color:var(--red);color:var(--red)}
+.typing{display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--hair);
+  border-radius:12px;border-bottom-left-radius:4px;padding:14px 16px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9aa3b5;animation:blink 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+
+.p-foot{border-top:1px solid rgba(10,27,62,.14);padding:12px 16px;background:var(--cream)}
+.ask{display:flex;gap:8px}
+.ask input{flex:1;font:inherit;font-size:15.5px;padding:11px 14px;border:1px solid rgba(10,27,62,.3);
+  border-radius:9999px;background:#fff;color:var(--ink)}
+.ask input::placeholder{color:#8a92a3}
+.ask button{background:var(--red);border:none;color:#fff;border-radius:50%;width:44px;height:44px;
+  cursor:pointer;flex-shrink:0;display:grid;place-items:center}
+.ask button:hover{background:#ab3a2f}
+.ask button[disabled]{opacity:.5;cursor:not-allowed}
+.p-foot .human{text-align:center;margin-top:9px;font-size:13px;color:var(--muted)}
+.p-foot .human a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.p-foot .human a:hover{color:var(--red)}
+
+@media (prefers-reduced-motion:reduce){.panel,.msg,.typing i{animation:none}}
+@media (max-width:700px){
+  .app{grid-template-columns:1fr}.side{display:none}
+  .panel{right:8px;bottom:8px;left:8px;width:auto;height:calc(100vh - 16px)}
+}
+
+/* ---- demo controls ---- */
+.demo{position:fixed;left:16px;bottom:16px;z-index:60;background:var(--ink);color:#fff;
+  border-radius:10px;padding:12px 14px;font-size:13px;box-shadow:0 8px 30px rgba(0,0,0,.25);
+  display:flex;flex-direction:column;gap:9px;max-width:260px}
+.demo strong{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#93a3c4}
+.demo select{font:inherit;font-size:13px;padding:5px 8px;border-radius:5px;border:1px solid #33436b;
+  background:#16254a;color:#fff;width:100%}
+.demo .row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.demo button{font-size:12px;background:none;border:1px solid #33436b;color:#cbd5e6;
+  border-radius:5px;padding:4px 9px;cursor:pointer}
+.demo button:hover{background:#16254a}
+.demo .hintline{color:#93a3c4;font-size:12px;line-height:1.45}
+#showDemo{position:fixed;left:16px;bottom:16px;z-index:60;background:var(--ink);color:#fff;
+  border:none;border-radius:9999px;padding:8px 14px;font-size:12px;cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- simulated admin backend: greeked, so nothing about the real app is invented -->
+<div class="app">
+  <nav class="side" aria-label="Event menu">
+    <div class="brand"><img src="assets/oa-logo.svg" alt="Oxford Abstracts"></div>
+    <a data-page="Dashboard"    class="on">Dashboard</a>
+    <a data-page="Submissions">Submissions</a>
+    <a data-page="Reviewing">Reviewing</a>
+    <a data-page="Decisions">Decisions</a>
+    <a data-page="Emails">Emails</a>
+    <a data-page="Program">Program</a>
+    <a data-page="Registration">Registration</a>
+    <div class="foot">Simulated backend — the widget is the prototype, this page is scenery.</div>
+  </nav>
+  <div class="main">
+    <p class="crumb" id="crumb">International Fictional Conference 2027 &nbsp;›&nbsp; Dashboard</p>
+    <h1 id="pageTitle">Dashboard</h1>
+    <div class="ghost"><div class="bar w40"></div><div class="row"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div><div class="bar w85"></div><div class="bar w65"></div></div>
+    <div class="ghost"><div class="bar w25"></div><div class="bar w85"></div><div class="bar w65"></div><div class="bar w40"></div></div>
+    <div class="ghost"><div class="row"><div class="bar"></div><div class="bar"></div></div><div class="bar w65"></div></div>
+  </div>
+</div>
+
+<!-- launcher -->
+<button class="launcher" id="launcher" aria-haspopup="dialog" aria-expanded="false">
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+  </svg>
+  Help
+</button>
+
+<!-- panel -->
+<section class="panel hidden" id="panel" role="dialog" aria-label="Help">
+  <div class="p-head">
+    <div>
+      <h2 class="display">Help</h2>
+      <p class="where"><span class="pin" aria-hidden="true"></span><span id="whereText">You’re on Dashboard — I’ll take that into account</span></p>
+    </div>
+    <button class="p-close" id="closeBtn" aria-label="Close help">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="p-body" id="body" aria-live="polite"></div>
+  <div class="p-foot">
+    <form class="ask" id="askForm">
+      <input type="text" id="askInput" placeholder="Ask in your own words…" aria-label="Ask a question" autocomplete="off">
+      <button type="submit" id="sendBtn" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+    <p class="human">Prefer a person? <a href="/prototype/support-deflection" target="_blank" rel="noopener">Raise a support ticket</a> — no charge for asking.</p>
+  </div>
+</section>
+
+<button id="showDemo" class="hidden" type="button">Demo controls</button>
+<div class="demo" id="demoPanel">
+  <div class="row"><strong>Demo controls</strong><button type="button" id="hideDemo">Hide</button></div>
+  <select id="scenario">
+    <option value="live">Ask the real knowledge base (live)</option>
+    <option value="canned" selected>Canned conversation</option>
+    <option value="weak">No answer found</option>
+    <option value="down">Knowledge base unavailable</option>
+  </select>
+  <div class="hintline" id="modeNote">Scripted answers. No network call, so it cannot fail mid-demo.</div>
+  <div class="hintline">Switch screens in the left menu — the suggested questions and the answer context follow you.</div>
+  <div class="row"><button type="button" id="resetBtn">Start again</button></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const state = { page: 'Dashboard', open: false, history: [], busy: false };
+
+/* Suggested questions per screen. These replace the Resource Center's promoted cards:
+   instead of what someone wants the admin to read, the questions the ticket data says
+   admins on this screen actually ask. */
+const SUGGEST = {
+  Dashboard:    ['How do I add someone to my team?', 'Where do I find my event ID?', 'What does my package include?'],
+  Submissions:  ['How do I change the submission deadline?', 'Why does a submission show as incomplete?', 'Can I edit someone’s submission for them?'],
+  Reviewing:    ['Why can’t my reviewers see their assigned reviews?', 'How do I assign submissions to reviewers?', 'How do I chase up late reviews?'],
+  Decisions:    ['How do I record accept and reject decisions?', 'How do I tell submitters their outcome?'],
+  Emails:       ['Why have my submitters not received my email?', 'How do I schedule an email for later?', 'Can I send from my own address?'],
+  Program:      ['How do I create sessions?', 'How do I publish the programme?', 'How do I make an abstract book?'],
+  Registration: ['How do I set up tickets?', 'How do I refund an attendee?', 'Where are the invoices?']
+};
+
+/* ---- backdrop navigation ---- */
+document.querySelectorAll('.side a').forEach(a => a.addEventListener('click', () => {
+  document.querySelectorAll('.side a').forEach(x => x.classList.toggle('on', x === a));
+  state.page = a.dataset.page;
+  $('#pageTitle').textContent = state.page;
+  $('#crumb').innerHTML = 'International Fictional Conference 2027 &nbsp;›&nbsp; ' + state.page;
+  $('#whereText').textContent = 'You’re on ' + state.page + ' — I’ll take that into account';
+  if (state.open) greet(true);
+}));
+
+/* ---- open / close ---- */
+$('#launcher').addEventListener('click', () => {
+  state.open = true;
+  $('#panel').classList.remove('hidden');
+  $('#launcher').setAttribute('aria-expanded', 'true');
+  if (!$('#body').children.length) greet(false);
+  $('#askInput').focus();
+});
+$('#closeBtn').addEventListener('click', () => {
+  state.open = false;
+  $('#panel').classList.add('hidden');
+  $('#launcher').setAttribute('aria-expanded', 'false');
+  $('#launcher').focus();
+});
+
+/* ---- message rendering ---- */
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text) e.textContent = text;
+  return e;
+}
+function scrollDown() { const b = $('#body'); b.scrollTop = b.scrollHeight; }
+
+function addYou(text) {
+  $('#body').appendChild(el('div', 'msg you', text));
+  scrollDown();
+}
+function addBot(text, sources, followups) {
+  const m = el('div', 'msg bot');
+  text.split('\n').forEach(p => { if (p.trim()) m.appendChild(el('p', '', p.trim())); });
+  if (sources && sources.length) {
+    const from = el('div', 'from');
+    from.appendChild(el('p', 'cap', 'From these guides'));
+    sources.forEach(s => {
+      const a = document.createElement('a');
+      a.href = 'https://oa-kb-test.vercel.app/' + s.path;
+      a.target = '_blank'; a.rel = 'noopener';
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      g.setAttribute('width', '13'); g.setAttribute('height', '13');
+      g.setAttribute('viewBox', '0 0 20 20'); g.setAttribute('fill', 'currentColor');
+      g.innerHTML = '<path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>';
+      a.appendChild(g);
+      a.appendChild(document.createTextNode(s.title));
+      from.appendChild(a);
+    });
+    m.appendChild(from);
+  }
+  $('#body').appendChild(m);
+  if (followups && followups.length) addChips(followups);
+  scrollDown();
+}
+function addChips(list) {
+  const wrap = el('div', 'chips');
+  list.forEach(q => {
+    const c = el('button', 'chip', q);
+    c.type = 'button';
+    c.addEventListener('click', () => { wrap.remove(); send(q); });
+    wrap.appendChild(c);
+  });
+  $('#body').appendChild(wrap);
+  scrollDown();
+}
+function addTyping() {
+  const t = el('div', 'typing');
+  t.id = 'typing';
+  t.setAttribute('aria-label', 'Looking that up');
+  t.append(el('i'), el('i'), el('i'));
+  $('#body').appendChild(t);
+  scrollDown();
+}
+function removeTyping() { const t = $('#typing'); if (t) t.remove(); }
+
+function greet(pageChanged) {
+  const b = $('#body');
+  if (pageChanged) {
+    // keep the conversation, refresh the suggestions for the new screen
+    [...b.querySelectorAll('.chips')].forEach(c => c.remove());
+  } else {
+    addBot('Ask me anything about running your event — in your own words, the way you’d ask a colleague. I’ll answer and show you which guide it came from.');
+  }
+  addChips(SUGGEST[state.page] || []);
+}
+
+/* ---- canned conversation (Emails screen story) ---- */
+const CANNED_FIRST = {
+  answer: 'Check whether the email is set to send automatically. Go to Event dashboard → Emails → Edit and send and look under the “Automatic emails” heading — if the Activated checkbox isn’t ticked, it never sends. If your email is under “Manually sent emails” instead, it won’t go anywhere until you click Review and send.',
+  sources: [
+    { title: 'Sending and scheduling emails', path: '05-emails/sending-and-scheduling-emails.html' },
+    { title: 'Editing the template emails', path: '05-emails/editing-the-template-emails.html' }
+  ],
+  followups: ['It was activated — what else could it be?', 'How do I see what’s already been sent?']
+};
+const CANNED_SECOND = {
+  answer: 'Then check the email sent log — Event dashboard → Emails → Sent log — which shows every email the system has sent and to whom. If it shows as sent but people say they got nothing, it’s usually landing in spam: that’s why sending from your own address needs DKIM validation, and unvalidated addresses fall back to our domain.',
+  sources: [
+    { title: 'Using the email sent log', path: '05-emails/using-the-email-sent-log.html' },
+    { title: 'Why does my email need to be DKIM validated?', path: '05-emails/why-does-my-email-need-to-be-dkim-validated.html' }
+  ],
+  followups: ['How do I get my address DKIM validated?']
+};
+let cannedTurn = 0;
+
+/* ---- the ask ---- */
+const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
+const isStrong = r => !!(r && r.answer && r.answer.trim().length >= 60 && !HEDGES.test(r.answer) && (r.sources || []).length >= 1);
+
+async function fetchAnswer(question) {
+  const sc = $('#scenario').value;
+  if (sc === 'down') throw new Error('simulated outage');
+  if (sc === 'weak') { await sleep(1300); return { answer: null, sources: [], followups: [] }; }
+  if (sc === 'canned') {
+    await sleep(1600);
+    return (cannedTurn++ === 0) ? CANNED_FIRST : CANNED_SECOND;
+  }
+  // Live. Page context is one string on the front of the question - no endpoint change.
+  // A short memory of the last exchange rides along the same way, inside the 500-char cap.
+  let q = '[The admin is on the ' + state.page + ' screen of their event dashboard] ';
+  const last = state.history[state.history.length - 1];
+  if (last) q += '[Earlier they asked: "' + last.q.slice(0, 90) + '"] ';
+  q = (q + question).slice(0, 500);
+  const res = await fetch('/api/search', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: q })
+  });
+  if (!res.ok) throw new Error('bad status ' + res.status);
+  return res.json();
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function send(question) {
+  if (state.busy || !question.trim()) return;
+  state.busy = true;
+  $('#sendBtn').disabled = true;
+  [...document.querySelectorAll('.chips')].forEach(c => c.remove());
+  addYou(question);
+  addTyping();
+
+  let r = null;
+  try { r = await fetchAnswer(question); } catch { r = null; }   // outages look like no answer
+
+  removeTyping();
+  if (isStrong(r)) {
+    addBot(r.answer, r.sources, r.followups);
+    state.history.push({ q: question, a: r.answer });
+  } else {
+    // Never a dead end, never an error. Honest about the miss, and both exits are one tap.
+    addBot('I couldn’t find a confident answer to that one — and I’d rather say so than guess.\nThe knowledge base search sometimes does better with a bit more detail, or our support team will pick it up quickly — no question is too small.',
+      [], []);
+    const wrap = el('div', 'chips');
+    const kb = el('button', 'chip', 'Search the knowledge base');
+    kb.type = 'button';
+    kb.addEventListener('click', () => window.open('https://oa-kb-test.vercel.app/?q=' + encodeURIComponent(question), '_blank'));
+    const tk = el('button', 'chip', 'Raise a support ticket');
+    tk.type = 'button';
+    tk.addEventListener('click', () => window.open('/prototype/support-deflection', '_blank'));
+    wrap.append(kb, tk);
+    $('#body').appendChild(wrap);
+    scrollDown();
+    state.history.push({ q: question, a: null });   // in the real build this is the gap log
+  }
+  state.busy = false;
+  $('#sendBtn').disabled = false;
+}
+
+$('#askForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const q = $('#askInput').value;
+  $('#askInput').value = '';
+  send(q);
+});
+
+/* ---- demo controls ---- */
+const NOTES = {
+  live:   'Real calls to /api/search, with the current screen passed as context. Only works on the deployed URL.',
+  canned: 'Scripted answers. No network call, so it cannot fail mid-demo.',
+  weak:   'Shows the no-answer path: honest miss, KB and ticket one tap away.',
+  down:   'Simulated outage — reads identically to no-answer. Never an error.'
+};
+$('#scenario').addEventListener('change', e => { $('#modeNote').textContent = NOTES[e.target.value]; });
+$('#hideDemo').addEventListener('click', () => { $('#demoPanel').classList.add('hidden'); $('#showDemo').classList.remove('hidden'); });
+$('#showDemo').addEventListener('click', () => { $('#demoPanel').classList.remove('hidden'); $('#showDemo').classList.add('hidden'); });
+$('#resetBtn').addEventListener('click', () => location.reload());
+</script>
+</body>
+</html>
