@@ -84,6 +84,14 @@ corpus in place.*
       Add one pointing to their event administrator?
 - [ ] **Landing page top tasks** — three quick links inside each of the two doors?
 - [ ] **Who holds the approve button** on the update pipeline
+- [ ] **Where Professional-tier conference features belong** — asked in
+      `structure-rationale.md` and never answered. 10 articles carrying
+      `plan: professional` sit in Conference platform. If Professional feels like an
+      add-on commercially rather than a tier, they belong in Add-ons instead. Your call
+      on how customers perceive it.
+- [ ] **Sanity-check the `event-administrator-dashboard` merge** — `merge-plan.md` asked
+      you to confirm it and `event-dashboard` are the same screen. The merge was applied;
+      the confirmation never came back.
 
 ## 3. Build list (me)
 
