@@ -178,6 +178,12 @@ function showAnswer(answer, sources, followups) {
   el.className = 'answer-block';
   el.innerHTML = '';
 
+  // a quiet label, so the eye lands on the answer before the keyword links below it
+  const lab = document.createElement('p');
+  lab.className = 'ans-label';
+  lab.textContent = 'Answer';
+  el.appendChild(lab);
+
   // the answer may contain short labelled branches; render each on its own line
   answer.split(/\n+/).filter(Boolean).forEach(line => {
     const p = document.createElement('p');

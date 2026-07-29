@@ -72,33 +72,34 @@ body{font-family:'Outfit',sans-serif;font-size:18px;line-height:1.65;color:var(-
 a{color:var(--navy)}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
 header{border-bottom:1px solid var(--line);background:var(--cream);position:sticky;top:0;z-index:20}
-/* Top row mirrors oxfordabstracts.com so the help centre reads as the same site:
-   same items, same order, same dropdowns. The help-centre's own search and home
-   link sit on a second row, so they never compete with the site nav. */
-.nav{display:flex;align-items:center;gap:30px;padding:16px 0}
-.nav img{height:32px;display:block}
+/* Top row mirrors oxfordabstracts.com, to the values measured off its header on
+   29 July 2026: 92px tall, container 1280px with 80px side padding, 156x37 logo,
+   18px links whose hit-areas sit 12px apart, nav left of centre after the logo,
+   Sign in and the demo pill right-aligned. The help centre's own search sits on a
+   second row so it never competes with the site nav. */
+.wrap-nav{max-width:1280px;margin:0 auto;padding:0 80px}
+.nav{display:flex;align-items:center;height:92px}
+.nav img{width:156px;height:37px;display:block}
 .logo{flex-shrink:0}
-.site-nav{display:flex;align-items:center;gap:26px;font-size:16px;margin:0 auto 0 6px}
-.site-nav>a,.nav-item>button{color:var(--navy);text-decoration:none;font-weight:400;font-size:16px;
-  font-family:'Outfit',sans-serif;background:none;border:none;cursor:pointer;padding:0;
-  display:inline-flex;align-items:center;gap:5px;line-height:1.4}
+.site-nav{display:flex;align-items:center;gap:12px;margin-left:52px}
+.site-nav>a,.nav-item>button{color:var(--navy);text-decoration:none;font-weight:400;font-size:18px;
+  font-family:'Outfit',sans-serif;background:none;border:none;cursor:pointer;padding:8px 12px;
+  display:inline-flex;align-items:center;gap:6px;line-height:1.4}
 .site-nav>a:hover,.nav-item>button:hover{color:var(--red)}
-.caret{width:11px;height:11px;opacity:.75;flex-shrink:0}
+.caret{width:12px;height:12px;opacity:.75;flex-shrink:0}
 .nav-item{position:relative}
-.nav-drop{position:absolute;top:100%;left:-14px;margin-top:10px;background:var(--white);
-  border:1px solid var(--line);border-radius:12px;padding:8px;min-width:236px;
+.nav-drop{position:absolute;top:100%;left:0;margin-top:2px;background:var(--white);
+  border:1px solid var(--line);border-radius:12px;padding:8px;min-width:250px;
   box-shadow:0 14px 34px rgba(16,28,56,.14);display:none;z-index:30}
 .nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 12px;border-radius:8px;font-size:15.5px;
+.nav-drop a{display:block;padding:9px 12px;border-radius:8px;font-size:16px;
   color:var(--navy);text-decoration:none}
 .nav-drop a:hover{background:rgba(16,28,56,.06);color:var(--red)}
-.nav-actions{display:flex;align-items:center;gap:20px;flex-shrink:0}
-.signin{color:var(--navy);text-decoration:none;font-size:16px}
+.nav-actions{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.signin{color:var(--navy);text-decoration:none;font-size:18px;padding:8px 12px}
 .signin:hover{color:var(--red)}
-.subnav{display:flex;align-items:center;gap:18px;padding:0 0 14px}
-.kb-home{font-size:15.5px;font-weight:500;color:var(--navy);text-decoration:none;flex-shrink:0}
-.kb-home:hover{color:var(--red)}
-.btn{display:inline-block;background:var(--red);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;font-size:17px;padding:12px 22px;border-radius:999px;text-decoration:none}
+.subnav{display:flex;align-items:center;padding-bottom:14px}
+.btn{display:inline-block;background:var(--red);color:#fff;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;font-size:18px;padding:12px 24px;border-radius:999px;text-decoration:none}
 .btn:hover{background:#b53a25}
 .hero{padding:60px 0 38px;text-align:center}
 .hero h1{font-size:clamp(32px,5vw,52px);margin-bottom:14px}
@@ -238,6 +239,8 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .answer-block{margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}
 .answer-block.revealed,.answer-block.is-loading{opacity:1;transform:none}
 .answer-block p{font-size:18px;margin-bottom:10px}
+.ans-label{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.answer-block p.ans-label{font-size:12.5px}
 .thinking{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:17px;margin-bottom:14px}
 .thinking-text{transition:opacity .18s ease}
 .dots{display:inline-flex;gap:4px}
@@ -252,7 +255,8 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 @media (max-width:640px){.hdr-search{max-width:none}.subnav{flex-wrap:wrap}.prevnext{flex-direction:column}}
 /* Below the site-nav breakpoint the marketing links fold away and the help centre's
    own row carries the header, exactly as the main site drops to a burger. */
-@media (max-width:900px){.site-nav{display:none}.nav{gap:16px;justify-content:space-between}.nav-actions{gap:14px}}
+@media (max-width:1000px){.wrap-nav{padding:0 24px}}
+@media (max-width:900px){.site-nav{display:none}.nav{height:76px}.nav-actions{gap:10px}}
 .support{margin-top:30px;background:var(--navy);color:var(--cream);border-radius:var(--radius);padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .support h2{font-family:'Gloock',serif;font-weight:400;font-size:25px;margin-bottom:6px;-webkit-text-stroke:.3px currentColor}
 .support p{color:rgba(237,235,226,.78);font-size:17px;max-width:460px;margin:0}
@@ -268,7 +272,7 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <link rel="stylesheet" href="{root}assets/style.css">
 <link rel="icon" href="{root}assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{root}assets/apple-touch-icon.png"></head><body>
-<header><div class="wrap nav">
+<header><div class="wrap-nav nav">
 <a class="logo" href="https://oxfordabstracts.com/" aria-label="Oxford Abstracts"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
 <nav class="site-nav" aria-label="Oxford Abstracts">
 <div class="nav-item"><button type="button" aria-expanded="false">Products{caret}</button>
@@ -284,19 +288,20 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <a class="btn" href="https://oxfordabstracts.com/meeting/">Book a demo</a>
 </div>
 </div>
-<div class="wrap subnav">
-<a class="kb-home" href="{root}index.html">Help centre</a>
-{hdr_search}</div>
-</header><main>"""
+{subnav}</header><main>"""
+
+# The help centre's own search sits on a second row so it never competes with the
+# site nav. The row only exists where the search does - the home page has the hero
+# search instead, so it gets no second row at all.
+SUBNAV = """<div class="wrap-nav subnav">
+<form class="hdr-search" role="search" action="{root}index.html" method="get">
+<input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
+<button type="submit">Ask</button></form></div>"""
 
 CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
          '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 '
          '111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" '
          'clip-rule="evenodd"/></svg>')
-
-HDR_SEARCH = """<form class="hdr-search" role="search" action="{root}index.html" method="get">
-<input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
-<button type="submit">Search</button></form>"""
 
 ARTICLE_FOOT = """</main>
 <footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
@@ -721,7 +726,7 @@ for folder, num, name, aud, blurb in SECTIONS:
             badges.append('<span class="badge reviewed">Last reviewed %s</span>' % lr_h)
         page = HEAD.format(title=html.escape(title) + ' | Oxford Abstracts Help',
                            desc=html.escape(standfirst or title), root='../',
-                           hdr_search=HDR_SEARCH.format(root='../'), caret=CARET)
+                           subnav=SUBNAV.format(root='../'), caret=CARET)
         page += f"""<div class="wrap narrow crumbs">
 <a href="../index.html">Help centre</a> &nbsp;›&nbsp; <a href="index.html">{html.escape(name)}</a></div>
 <article class="wrap narrow article">
@@ -764,7 +769,7 @@ for folder, num, name, aud, blurb in SECTIONS:
     by_slug_p = {sl: (t, st) for (sl, t, pl, st, au, tc, bh) in parsed}
     page = HEAD.format(title=html.escape(name) + ' | Oxford Abstracts Help',
                        desc=html.escape(blurb), root='../',
-                       hdr_search=HDR_SEARCH.format(root='../'), caret=CARET)
+                       subnav=SUBNAV.format(root='../'), caret=CARET)
     page += f"""<div class="wrap crumbs"><a href="/">Help centre</a> &nbsp;›&nbsp; {html.escape(name)}</div>
 <section class="wrap" style="padding-top:20px">
 <div class="section-head"><h2 class="display">{html.escape(name)}</h2></div>"""
@@ -844,7 +849,7 @@ pop = ''.join('<a href="%s">%s <span class="arrow">→</span></a>' % (p, html.es
 
 index = HEAD.format(title='Help Centre | Oxford Abstracts',
                     desc='Guides and answers for organisers and participants using Oxford Abstracts.',
-                    root='', hdr_search='', caret=CARET)
+                    root='', subnav='', caret=CARET)
 index += f'''
 <section class="hero wrap">
 <span class="search-badge">
@@ -859,7 +864,7 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
 <div class="searchbox">
 <form id="searchForm" role="search" aria-label="Search the help centre">
 <input id="searchInput" type="text" placeholder="e.g. How do I email my reviewers?" aria-label="Your question">
-<button class="btn" type="submit">Search</button></form>
+<button class="btn" type="submit">Ask</button></form>
 <div class="chips">
 <button class="chip" type="button">Change the submission deadline</button>
 <button class="chip" type="button">Why is my submission incomplete?</button>
@@ -905,7 +910,7 @@ open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index)
 # assets/search-index.json relatively and would 404 from a deep path.
 notfound = HEAD.format(title='Page not found | Oxford Abstracts Help',
                        desc='We could not find that page.', root='/',
-                       hdr_search=HDR_SEARCH.format(root='/'), caret=CARET)
+                       subnav=SUBNAV.format(root='/'), caret=CARET)
 notfound += '''<section class="wrap narrow hero">
 <h1 class="display">We can't find that page</h1>
 <p class="lede">The help centre was rebuilt recently, so a saved link or bookmark may
@@ -914,7 +919,7 @@ place.</p>
 <div class="searchbox">
 <form role="search" action="/index.html" method="get" aria-label="Search the help centre">
 <input type="text" name="q" placeholder="e.g. How do I email my reviewers?" aria-label="Your question">
-<button class="btn" type="submit">Search</button></form>
+<button class="btn" type="submit">Ask</button></form>
 </div>
 </section>
 
