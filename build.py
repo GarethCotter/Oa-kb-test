@@ -490,6 +490,40 @@ def derive_alt(img, heading, used):
     return alt
 
 
+def lead_sentence(body_html):
+    """First real sentence of an article, used as its section-page card description
+    when the article has no standfirst.
+
+    Parsed rather than regex-stripped, and taken from one block at a time.
+
+    Blanking tags with a regex flattened the whole article into a single string, so
+    two things leaked in: the <a class="anchor">#</a> that enrich_body appends to
+    every heading, and the text of the *next* block once the current one had no full
+    stop - "…following the instructions below # This article is for Admins ONLY."
+
+    Headings are deliberately still eligible. Most of these articles open with a
+    descriptive '## Create a striking and visually engaging program.' which is the
+    best one-line summary the article has; skipping headings dropped 150 good
+    descriptions in favour of the menu path underneath them.
+    """
+    soup = BeautifulSoup(body_html, 'lxml')
+    root = soup.body or soup
+    for a in root.find_all('a', class_='anchor'):
+        a.decompose()
+
+    for el in root.find_all(['h2', 'h3', 'h4', 'p', 'li']):
+        text = ' '.join(el.get_text(' ', strip=True).split())
+        if len(text) < 20:
+            continue
+        # "Skip to written instructions" is navigation, not a description of anything.
+        link_text = sum(len(a.get_text(' ', strip=True)) for a in el.find_all('a'))
+        if link_text > 0.6 * len(text):
+            continue
+        m = re.match(r'(.{20,150}?[.!?])(\s|$)', text)
+        return m.group(1) if m else text[:120]
+    return ''
+
+
 def enrich_body(body_html, title):
     """Add heading ids + anchor links, contextual alt text, lazy click-to-enlarge
     images, an on-this-page list for long articles, lift a short opening paragraph
@@ -577,9 +611,7 @@ for folder, num, name, aud, blurb in SECTIONS:
         standfirst, audience, toc, body_html = enrich_body(body_html, title)
         parsed.append((slug, title, meta.get('plan', ''), standfirst, audience, toc, body_html))
         meta_by_slug[slug] = meta
-        _plain = ' '.join(re.sub(r'<[^>]+>', ' ', body_html).split())
-        _m = re.match(r'(.{20,150}?[.!?])(\s|$)', _plain)
-        first_sentence[slug] = _m.group(1) if _m else _plain[:120]
+        first_sentence[slug] = lead_sentence(body_html)
 
     for i, (slug, title, plan, standfirst, audience, toc, body_html) in enumerate(parsed):
         badges = ['<span class="badge">%s</span>' % html.escape(name)]

@@ -4,6 +4,10 @@
 oa-kb-test.vercel.app with working search, all images self-hosted, and the internal
 corpus in place.*
 
+> **Read `project/context-from-conversation.md` alongside this.** It holds the evidence
+> and design decisions behind these items — the search analytics, the pageview
+> conclusions, and the design intent for everything not yet built.
+
 ---
 
 ## Done in the Claude Code session (29 July)
@@ -54,6 +58,11 @@ corpus in place.*
       ordered by value so you can stop early.
 - [ ] **Place the 2 unmapped FAQ chunks** (`unmapped-faq-chunks.md`) — both are about
       reviewers and submitters not being able to see reviews.
+- [ ] **Search-derived gaps** (separate from the ticket gaps, and only partly overlapping):
+      copyright in submitted abstracts · what happens at the deadline · withdrawing your
+      own submission · does my work save automatically · expanding the API article
+      (most-searched term, one page) · reviewer troubleshooting. Evidence in the context
+      doc, §2.
 - [ ] **Write the top five gap articles**, from the ticket data:
       file/figure/PDF upload failures (85 tickets), backups and data retention (34),
       attendee-facing refunds (32), reviewers who can't see assigned reviews (26),
@@ -80,6 +89,13 @@ corpus in place.*
 
 - [ ] **Ticket deflection on the HubSpot support form** — needs the form details from you.
       Best data source we'll have: every interaction is a labelled outcome.
+      Design rules in the context doc §4: never show a confidence percentage, never block
+      the send, only interrupt when the answer is strong.
+- [ ] **Add a confidence signal to `/api/search`** — it returns `found: true/false`, which
+      is not enough to decide whether to interrupt someone. Blocks ticket deflection.
+- [ ] **A "What's New" surface** the update pipeline can generate from its own PRs.
+- [x] ~~Fix the card description that ran across a heading~~ — done 29 July. "Changing the
+      owner of a submission" showed a stray `#`; 7 cards were affected, not 1.
 - [ ] **Weekly gap-digest email** — Monday cron, clustered unanswered questions plus
       articles rated unhelpful. Needs search logs written somewhere queryable first.
 - [x] ~~404 page~~, ~~favicon~~, ~~alt text~~ — done 29 July
@@ -104,6 +120,8 @@ corpus in place.*
 
 ## 4. Before going live on the real domain
 
+- [ ] **Pull entry pages, traffic sources and per-category totals from HubSpot** — settles
+      whether the homepage audience really is organiser-dominated (context doc §1).
 - [ ] **Confirm who controls DNS** for help.oxfordabstracts.com
 - [ ] **Check the HubSpot contract renewal date**
 - [ ] **Spot-check the 199 redirects** against the live deployment
@@ -122,6 +140,10 @@ corpus in place.*
   which step is pictured, not what is on screen. Same fix as above: the testing agent.
   A handful reflect weak source text — "Click on the icon, and then in the bar shown
   below" is an incomplete sentence in the article itself.
+- **The header logo loads from Storyblok**, Oxford Abstracts' own CDN. Safe, but it is the
+  last external dependency in the page.
+- **No benchmarks are being tracked yet.** Deflection rate, failed-search rate, top
+  zero-result queries and article-level "No" reasons all need somewhere to live.
 - **`corpus-internal/` has not been fully reviewed.** Two of the files in and around it
   turned out to be work-lists rather than answers. The remaining 8 are worth a read on
   the same grounds: anything in there can be surfaced to any reader who asks the right
