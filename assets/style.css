@@ -117,6 +117,7 @@ footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
 .prose ol>li::before{content:counter(step);position:absolute;left:0;top:-1px;width:29px;height:29px;border-radius:50%;background:var(--red);color:#fff;font-weight:600;font-size:15px;display:flex;align-items:center;justify-content:center}
 .prose ol ol>li::before{background:var(--navy)}
 .prose img.zoomable{cursor:zoom-in}
+.lightbox[hidden]{display:none}
 .lightbox{position:fixed;inset:0;background:rgba(16,28,56,.88);display:flex;align-items:center;justify-content:center;z-index:60;cursor:zoom-out;padding:20px}
 .lightbox img{max-width:96vw;max-height:92vh;border-radius:8px;background:#fff}
 .prevnext{display:flex;gap:16px;margin-top:30px}
