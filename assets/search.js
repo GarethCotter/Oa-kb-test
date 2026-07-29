@@ -201,7 +201,8 @@ function showAnswer(answer, sources, followups) {
     el.appendChild(row);
   }
 
-  box.insertBefore(el, box.firstChild);
+  if (!existing) box.insertBefore(el, box.firstChild);
+  requestAnimationFrame(() => el.classList.add('revealed'));
 }
 
 function showEscalation(question) {
