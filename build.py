@@ -772,6 +772,17 @@ def _load_store(dirpath, internal):
                           'body': body[:6000]}
             else:
                 folder = os.path.basename(root)
+                # A public entry's path is rendered as a source link under the AI
+                # answer, so it has to correspond to a page that actually gets built.
+                # A stray file at the corpus root used to yield "corpus/x.html" and a
+                # dead link. Fail loudly rather than ship one: put notes the AI may
+                # answer from in corpus-internal/, and work-lists in project/.
+                if folder not in SEC_BY_FOLDER:
+                    raise SystemExit(
+                        'answer store: %s is not inside a section folder, so its '
+                        'source link "%s/%s.html" would 404. Move it to '
+                        'corpus-internal/ (answerable, never cited) or project/.'
+                        % (os.path.join(root, fn), folder, fn[:-3]))
                 p = '%s/%s.html' % (folder, fn[:-3])
                 out[p] = {'title': meta.get('title', fn[:-3]), 'path': p,
                           'section': meta.get('section', folder),
