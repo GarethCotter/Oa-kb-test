@@ -162,6 +162,9 @@ footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
 .demo button{font:inherit;font-size:12px;background:none;border:1px solid #33436b;color:#cbd5e6;
   border-radius:5px;padding:4px 9px;cursor:pointer}
 .demo button:hover{background:#16254a}
+.demo .chk{display:flex;gap:8px;align-items:flex-start;cursor:pointer;font-size:12.5px;line-height:1.4}
+.demo .chk input{margin-top:2px;accent-color:var(--red);flex-shrink:0}
+.demo .chk i{font-style:normal;color:#93a3c4;font-size:11.5px}
 .demo .hintline{color:#93a3c4;font-size:12px;line-height:1.45}
 #showDemo{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--ink);color:#fff;
   border:none;border-radius:9999px;padding:8px 14px;font:inherit;font-size:12px;cursor:pointer;
@@ -357,6 +360,8 @@ footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
     <option value="down">Knowledge base unavailable</option>
   </select>
   <div class="hintline" id="modeNote">Canned answer. No network call, so it cannot fail mid-demo.</div>
+  <label class="chk"><input type="checkbox" id="prefetchOn" checked>
+    <span>Search while they type<br><i>off = the old 3.5s wait on Submit</i></span></label>
   <div class="row"><button type="button" id="resetBtn">Start again</button></div>
 </div>
 
@@ -443,8 +448,15 @@ function isStrong(r) {
 const STEPS = ['Reading what you’ve written', 'Searching 174 guides', 'Putting an answer together'];
 let stepTimer = null;
 
-function startSteps() {
+function startSteps(alreadyDone) {
   const el = $('#checkStep');
+  stopSteps();
+  if (alreadyDone) {
+    // The search ran while they were filling in the rest of the form, so skip to the
+    // last beat rather than act out work that has already happened.
+    el.textContent = STEPS[STEPS.length - 1];
+    return;
+  }
   let i = 0;
   el.textContent = STEPS[0];
   stepTimer = setInterval(() => {
@@ -457,6 +469,39 @@ function startSteps() {
   }, 720);
 }
 function stopSteps() { clearInterval(stepTimer); stepTimer = null; }
+
+// ---- running the search before Submit is pressed -------------------------
+// The endpoint takes 3.5s or so. Holding someone on a support form for that long
+// contradicts the whole point of not getting in their way, so the search starts when
+// they leave the description field - by then they are filling in Event ID - and the
+// answer is usually waiting by the time they press Submit.
+const MAX_WAIT = 2500;   // never hold the reader longer than this
+const MIN_SHOW = 1100;   // but never flash the check so briefly it cannot be read
+const TIMED_OUT = Symbol('timed out');
+let pending = null;      // { key, promise, done }
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const withTimeout = (p, ms) => Promise.race([p, sleep(ms).then(() => TIMED_OUT)]);
+
+function questionFrom() {
+  const subject = $('#subject').value.trim(), content = $('#content').value.trim();
+  if (!subject || !content) return null;
+  // TICKET.subject plus TICKET.content — the two fields the real form already requires.
+  return (subject + '. ' + content).slice(0, 500);
+}
+
+function prefetch() {
+  if (!$('#prefetchOn').checked) return;
+  const question = questionFrom();
+  if (!question) return;
+  const key = $('#scenario').value + '|' + question;
+  if (pending && pending.key === key) return;      // already asked exactly this
+  const rec = { key, done: false, promise: null };
+  rec.promise = ask(question, $('#scenario').value)
+    .then(r => { rec.done = true; return r; })
+    .catch(() => { rec.done = true; return null; });
+  pending = rec;
+}
 
 async function ask(question, scenario) {
   if (scenario === 'down') throw new Error('simulated outage');
@@ -474,26 +519,39 @@ async function ask(question, scenario) {
 }
 
 // ---- the flow ------------------------------------------------------------
+// Starting the search the moment they leave the description — by then they are clicking
+// into Event ID, so the wait happens while they are still busy.
+$('#content').addEventListener('blur', prefetch);
+$('#subject').addEventListener('blur', prefetch);
+
 $('#ticket').addEventListener('submit', async e => {
   e.preventDefault();
-  const subject = $('#subject').value.trim(), content = $('#content').value.trim();
-  if (!subject || !content) { alert('Add a ticket name and description first.'); return; }
+  const question = questionFrom();
+  if (!question) { alert('Add a ticket name and description first.'); return; }
 
-  // The routed question is TICKET.subject plus TICKET.content — the two fields the real
-  // HubSpot form already requires, so nothing new is asked of the reader.
-  const question = (subject + '. ' + content).slice(0, 500);
+  const key = $('#scenario').value + '|' + question;
+  let promise, ready = false;
+  if (pending && pending.key === key) {
+    promise = pending.promise;           // started when they left the description
+    ready = pending.done;
+  } else {
+    promise = ask(question, $('#scenario').value).catch(() => null);
+  }
 
   $('#submitBtn').disabled = true;
   $('#checking').classList.remove('hidden');
-  startSteps();
+  startSteps(ready);
 
-  let result = null;
-  try { result = await ask(question, $('#scenario').value); }
-  catch { result = null; }               // an outage must look like no answer, never an error
+  const t0 = Date.now();
+  const result = await withTimeout(promise, MAX_WAIT);
+  const waited = Date.now() - t0;
+  if (waited < MIN_SHOW) await sleep(MIN_SHOW - waited);
 
   stopSteps();
   $('#checking').classList.add('hidden');
-  if (!isStrong(result)) { sendTicket([]); return; }   // weak or broken: never interrupt
+  // Timed out, weak, or broken: send it and never interrupt. A slow endpoint must not
+  // become a slow form.
+  if (result === TIMED_OUT || !isStrong(result)) { sendTicket([]); return; }
 
   state.suggested = result.sources || [];
   state.shown = true;
