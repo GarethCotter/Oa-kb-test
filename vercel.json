@@ -1,0 +1,1001 @@
+{
+ "cleanUrls": true,
+ "trailingSlash": false,
+ "redirects": [
+  {
+   "source": "/knowledge/abstract-books",
+   "destination": "/06-programme-exports-reports/abstract-books.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/acceptance-types",
+   "destination": "/04-decisions/design-the-decision-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/accessing-reviews-from-previous-stages",
+   "destination": "/02-submissions/accessing-reviews-from-previous-stages.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/accessing-your-review",
+   "destination": "/12-for-submitters/accessing-your-reviews.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/account-administration-dashboard",
+   "destination": "/11-account-administration/account-administration-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/adding-author-information-questions",
+   "destination": "/02-submissions/the-authors-and-affiliations-question.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/-virtual-conference-program-colour-coding",
+   "destination": "/08-conference-platform/colour-coding-your-programme.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/-virtual-conference-program-controlling-access",
+   "destination": "/08-conference-platform/controlling-access-to-the-programme.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/-virtual-conference-program-program-bookings",
+   "destination": "/08-conference-platform/session-bookings.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/-virtual-program-chat-feature",
+   "destination": "/08-conference-platform/the-chat-feature.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/-virtual-program-networking",
+   "destination": "/08-conference-platform/networking-for-attendees.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced-/virtual-conference-program-allow-submitters-to-hide-abstract-from-program",
+   "destination": "/08-conference-platform/letting-submitters-hide-their-abstract-from-the-programme.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/advanced/-virtual-conference-program-user-comments",
+   "destination": "/08-conference-platform/comments-on-sessions-and-abstracts.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/allowing-committee-members-to-assign-reviews",
+   "destination": "/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/amending-deleting-and-copying-a-session",
+   "destination": "/08-conference-platform/amending-deleting-and-copying-a-session.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/amending-template-emails",
+   "destination": "/05-emails/editing-the-template-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/an-overview-of-the-tables-function",
+   "destination": "/01-getting-started/working-with-tables.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/application-programming-interface-api",
+   "destination": "/10-integrations-api/application-programming-interface-api.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer",
+   "destination": "/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/assigning-program-codes",
+   "destination": "/08-conference-platform/assigning-program-codes.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/assigning-program-codes-in-the-decisions-table",
+   "destination": "/04-decisions/assigning-program-codes-in-the-decisions-table.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/assigning-reviews-to-reviewers-as-a-committee-member",
+   "destination": "/13-for-reviewers-committee/assigning-submissions-to-reviewers-as-a-committee-member.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/attaching-your-submission-to-a-symposium",
+   "destination": "/12-for-submitters/attaching-your-submission-to-a-symposium.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/branding-in-the-program",
+   "destination": "/08-conference-platform/professional-conference-branding.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/charging-a-fee-for-submission",
+   "destination": "/02-submissions/charging-a-fee-for-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/close-symposium-submission-/-call-for-symposia",
+   "destination": "/09-add-ons/collecting-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/combined-word-count",
+   "destination": "/02-submissions/combined-word-count.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/completing-a-review",
+   "destination": "/13-for-reviewers-committee/completing-a-review.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/completing-a-symposium-review",
+   "destination": "/13-for-reviewers-committee/completing-a-symposium-review.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/controlling-what-the-reviewer-can-see",
+   "destination": "/03-reviewing/controlling-what-the-reviewer-can-see.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-a-back-up-of-your-conference-data",
+   "destination": "/06-programme-exports-reports/creating-a-backup-of-your-conference-data.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-a-session",
+   "destination": "/08-conference-platform/creating-a-session.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-a-symposium-as-an-administrator",
+   "destination": "/09-add-ons/collecting-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-an-account-with-oxford-abstracts",
+   "destination": "/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-custom-emails",
+   "destination": "/05-emails/creating-custom-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-forms-to-be-answered-by-authors",
+   "destination": "/02-submissions/creating-questions-for-individual-authors-and-presenters.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/creating-multi-stage-submission-forms",
+   "destination": "/02-submissions/creating-multi-stage-submission-forms.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/delete-/-restore-or-withdraw-symposia",
+   "destination": "/09-add-ons/managing-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/deleting-/-restoring-or-withdrawing-a-submission",
+   "destination": "/02-submissions/deleting-restoring-or-withdrawing-a-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/dependency-questions",
+   "destination": "/02-submissions/dependency-questions.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/dependency-questions-on-the-delegate-registration-form-2.0-2023-version",
+   "destination": "/07-delegate-registration/dependency-questions-on-the-delegate-registration-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/design-the-decision-form",
+   "destination": "/04-decisions/design-the-decision-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/designing-the-review-form",
+   "destination": "/03-reviewing/designing-the-review-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/designing-the-submission-form",
+   "destination": "/02-submissions/designing-the-submission-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/designing-the-symposia-review-form",
+   "destination": "/09-add-ons/designing-the-symposia-forms.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/designing-the-symposium-form-administrators",
+   "destination": "/09-add-ons/designing-the-symposia-forms.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/different-types-of-users-in-the-system",
+   "destination": "/01-getting-started/different-types-of-users-in-the-system.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/downloading-data-on-presenters-only",
+   "destination": "/06-programme-exports-reports/downloading-data-on-presenters-only.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/downloading-session-books",
+   "destination": "/06-programme-exports-reports/downloading-your-program-and-session-books.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/draft-creating-and-editing-sessions",
+   "destination": "/08-conference-platform/attaching-content-to-sessions.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/draft-submitters-inline-comments",
+   "destination": "/12-for-submitters/viewing-comments-left-by-reviewers.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer",
+   "destination": "/03-reviewing/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-submission",
+   "destination": "/12-for-submitters/editing-an-abstract-or-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-symposia-review-or-completing-a-review-on-behalf-of-a-reviewer",
+   "destination": "/09-add-ons/symposia-reviewing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-symposium",
+   "destination": "/12-for-submitters/editing-a-symposium.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-symposium-1",
+   "destination": "/09-add-ons/managing-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-a-users-submission",
+   "destination": "/02-submissions/editing-a-user-s-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/editing-email-signature",
+   "destination": "/05-emails/creating-custom-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/emailing-presenters-directly",
+   "destination": "/05-emails/emailing-presenters-and-authors-directly.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/emails-from-submission-table",
+   "destination": "/05-emails/sending-emails-from-tables.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/event-administrator-checklist",
+   "destination": "/01-getting-started/abstract-management-checklist.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/event-administrator-dashboard",
+   "destination": "/01-getting-started/event-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/event-dashboard",
+   "destination": "/01-getting-started/event-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/event-details",
+   "destination": "/01-getting-started/event-details.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/event-theme",
+   "destination": "/01-getting-started/event-theme.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/exploring-the-poster-gallery",
+   "destination": "/14-for-attendees-exhibitors/exploring-the-poster-gallery.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/exploring-the-virtual-conference",
+   "destination": "/14-for-attendees-exhibitors/exploring-the-conference-platform.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/export-table-data-to-excel",
+   "destination": "/06-programme-exports-reports/export-table-data-to-excel.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-conference-program",
+   "destination": "/08-conference-platform/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-decisions",
+   "destination": "/04-decisions/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-delegate-registration",
+   "destination": "/07-delegate-registration/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-emails",
+   "destination": "/05-emails/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-getting-started",
+   "destination": "/01-getting-started/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-guidance-for-admins-dealing-with-end-user-issues",
+   "destination": "/01-getting-started/helping-your-submitters-reviewers-and-committee-with-problems.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-multistage",
+   "destination": "/02-submissions/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-reports",
+   "destination": "/06-programme-exports-reports/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-reviewers",
+   "destination": "/13-for-reviewers-committee/completing-a-symposium-review.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-reviews",
+   "destination": "/03-reviewing/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/faq-submissions",
+   "destination": "/02-submissions/",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members",
+   "destination": "/04-decisions/assigning-categories-to-committee-members.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/homepage-feature-for-virtual-conference",
+   "destination": "/08-conference-platform/setting-up-the-homepage-for-your-conference.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-admins-can-amend-existing-delegate-registration-orders",
+   "destination": "/07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-an-attendee-can-delete-their-oxford-abstracts-account",
+   "destination": "/11-account-administration/deleting-your-oxford-abstracts-account.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-attendees-can-complete-the-registration-form-when-a-ticket-is-bought-on-their-behalf",
+   "destination": "/07-delegate-registration/completing-registration-when-someone-bought-your-ticket.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-attendees-can-download-the-programme-schedule",
+   "destination": "/14-for-attendees-exhibitors/how-attendees-can-download-event-schedules.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-do-i-contact-the-event-administrator",
+   "destination": "/14-for-attendees-exhibitors/how-do-i-contact-the-event-administrator.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-add-add-ons",
+   "destination": "/07-delegate-registration/adding-add-ons-to-an-existing-order.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-add-chairs-email-addresses",
+   "destination": "/06-programme-exports-reports/adding-chair-s-email-addresses.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-attach-a-submission-to-a-symposium-as-an-admin",
+   "destination": "/09-add-ons/collecting-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-bookmark-sessions-on-the-event-schedule",
+   "destination": "/08-conference-platform/bookmarking-sessions-on-the-event-schedule.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-bulk-upload-and-automatically-assign-files",
+   "destination": "/02-submissions/bulk-upload-and-automatically-assign-files.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-change-the-owner-of-a-submission",
+   "destination": "/02-submissions/changing-the-owner-of-a-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-chase-up-late-reviews",
+   "destination": "/03-reviewing/chasing-up-late-reviews.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-configure-invoices-and-receipts-for-delegate-registration-2.0-2023-version",
+   "destination": "/07-delegate-registration/configuring-invoices-and-receipts-for-delegate-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-a-certificate",
+   "destination": "/09-add-ons/creating-a-certificate.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-a-multi-language-submission-form",
+   "destination": "/02-submissions/creating-a-multi-language-submission-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-announcements-on-virtual-conference",
+   "destination": "/08-conference-platform/creating-announcements-on-conference.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-coupon-codes-for-delegate-registration",
+   "destination": "/07-delegate-registration/creating-coupon-codes-for-delegate-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-the-reviewer-form-and-assign-reviewers",
+   "destination": "/03-reviewing/creating-the-reviewer-recruitment-form-and-assign-categories.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-your-delegate-registration-form",
+   "destination": "/07-delegate-registration/creating-your-delegate-registration-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-your-delegate-registration-tickets-for-your-event",
+   "destination": "/07-delegate-registration/creating-your-delegate-registration-tickets-for-your-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-create-your-event-website",
+   "destination": "/08-conference-platform/creating-your-event-website.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-download-invoices-and-receipts",
+   "destination": "/07-delegate-registration/downloading-invoices-and-receipts.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-edit-automated-emails-for-delegate-registration-2.0-2023-version",
+   "destination": "/07-delegate-registration/editing-automated-emails-for-delegate-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-edit-your-delegate-registration-event-details-page",
+   "destination": "/07-delegate-registration/editing-your-delegate-registration-ticket-details-page.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-email-session-chairs-from-the-dashboard",
+   "destination": "/05-emails/emailing-session-chairs-from-the-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-embed-the-online-programme-to-your-events-website",
+   "destination": "/06-programme-exports-reports/publishing-your-program.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-enable-and-disable-inline-comments-as-an-admin",
+   "destination": "/02-submissions/turning-inline-comments-on-and-off.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-include-a-submission-which-is-not-in-a-session-in-the-title-listing",
+   "destination": "/06-programme-exports-reports/adding-a-session-less-submission-to-the-title-listing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-integrate-eventsair-to-oxford-abstracts",
+   "destination": "/10-integrations-api/integrating-eventsair-to-oxford-abstracts.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-integrate-oxford-abstracts-and-cvent",
+   "destination": "/10-integrations-api/integrating-oxford-abstracts-and-cvent.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-integrate-oxford-abstracts-and-idloom",
+   "destination": "/10-integrations-api/integrating-oxford-abstracts-and-idloom.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-integrate-oxford-abstracts-and-swapcard",
+   "destination": "/10-integrations-api/integrating-oxford-abstracts-and-swapcard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-lock-and-change-the-timezone-for-your-virtual-conference",
+   "destination": "/06-programme-exports-reports/locking-and-change-the-timezone-for-your-conference.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-make-a-session-cross-two-columns-in-the-program-timetable",
+   "destination": "/08-conference-platform/making-a-session-cross-columns-in-the-program-timetable.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-manage-orders-on-the-attendee-table",
+   "destination": "/07-delegate-registration/managing-orders-and-edit-the-attendee-table.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-permanently-delete-your-event",
+   "destination": "/11-account-administration/permanently-delete-or-archive-your-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-preview-and-publish-your-event-registration",
+   "destination": "/07-delegate-registration/previewing-and-publish-your-event-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-reassign-a-registration-email-address-on-delegate-registration-2.0-2023-version",
+   "destination": "/07-delegate-registration/changing-the-email-address-on-a-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-refund-attendees-delegate-registration",
+   "destination": "/07-delegate-registration/refunding-an-attendee-through-delegate-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-register-on-the-behalf-of-someone-else-2.0-2023-version",
+   "destination": "/07-delegate-registration/registering-on-the-behalf-of-someone-else.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-set-up-payment-providers-for-delegate-registration",
+   "destination": "/07-delegate-registration/setting-up-payment-providers-for-delegate-registration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-test-accessibility-of-oxford-abstracts-web-pages-with-google-lighthouse",
+   "destination": "/01-getting-started/testing-the-accessibility-of-oxford-abstracts-web-pages.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-registration-analytics",
+   "destination": "/07-delegate-registration/using-registration-analytics.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-speaker-management",
+   "destination": "/08-conference-platform/using-speaker-management.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-submission-analytics",
+   "destination": "/02-submissions/using-submission-analytics.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-the-customer-portal",
+   "destination": "/11-account-administration/using-the-customer-portal.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-the-email-logs",
+   "destination": "/05-emails/using-the-email-sent-log.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-use-the-search-bars",
+   "destination": "/01-getting-started/using-the-search-bars.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-view-the-program-builder",
+   "destination": "/06-programme-exports-reports/viewing-the-mobile-version-of-the-program-builder.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/how-to-view-transactions-on-the-attendee-table",
+   "destination": "/07-delegate-registration/viewing-transactions-on-the-attendee-table.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/if-you-have-the-professional-conference-package-you-will-have-a-feature-that-allows-you-to-control-access-to-the-premium-features-of-the-platform",
+   "destination": "/06-programme-exports-reports/public-vs-full-access-programme.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/making-a-second/additional-submission",
+   "destination": "/12-for-submitters/making-a-second-additional-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/making-a-submission",
+   "destination": "/12-for-submitters/making-a-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/making-a-submission-on-behalf-of-someone-else",
+   "destination": "/02-submissions/making-a-submission-on-behalf-of-someone-else.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/making-decisions-on-submissions-as-a-committee-member",
+   "destination": "/13-for-reviewers-committee/viewing-and-making-decisions.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/manage-users",
+   "destination": "/01-getting-started/manage-users.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/managing-a-sequential-multi-stage-event-eg.-abstract-followed-by-full-paper",
+   "destination": "/02-submissions/running-a-sequential-multi-stage-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/managing-your-account",
+   "destination": "/11-account-administration/managing-your-account.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/moving-submissions-to-a-different-stage",
+   "destination": "/02-submissions/multi-stage-the-decision-stage.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/multi-stage-reviews",
+   "destination": "/02-submissions/multi-stage-reviews.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/notifying-reviewers-that-they-have-been-assigned-submissions-to-review",
+   "destination": "/03-reviewing/notifying-reviewers-that-they-have-been-assigned-submissions-to-review.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/notifying-reviewers-that-they-have-been-assigned-symposia-to-review",
+   "destination": "/09-add-ons/symposia-reviewing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/notifying-submitters-of-their-outcomes",
+   "destination": "/04-decisions/notifying-submitters-of-their-outcomes.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/open-and-close-submissions-/-call-for-abstracts",
+   "destination": "/02-submissions/opening-and-closing-submissions-deadlines.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/opening-and-closing-decision-making",
+   "destination": "/04-decisions/opening-and-closing-decision-making.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/opening/-closing-reviewing",
+   "destination": "/03-reviewing/opening-and-closing-reviewing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/opening/-closing-symposia-reviewing",
+   "destination": "/09-add-ons/symposia-reviewing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/other-reports",
+   "destination": "/06-programme-exports-reports/other-reports.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/paying-for-your-event",
+   "destination": "/01-getting-started/creating-and-paying-for-a-new-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/paying-for-your-submission",
+   "destination": "/12-for-submitters/paying-for-your-submission.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/payment-error",
+   "destination": "/14-for-attendees-exhibitors/payment-error.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/picture-dimensions-for-upload",
+   "destination": "/01-getting-started/recommended-dimensions-for-picture-uploads.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/professional-conference-exhibitor-feature",
+   "destination": "/08-conference-platform/professional-conference-exhibitor-space-admin-set-up.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/professional-conference-exhibitor-feature-exhibitor-set-up",
+   "destination": "/14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/program-sessions-table",
+   "destination": "/06-programme-exports-reports/program-sessions-table.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/publishing-your-program",
+   "destination": "/06-programme-exports-reports/publishing-your-program.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/question-tags",
+   "destination": "/02-submissions/question-setting-tags.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/question-types-1",
+   "destination": "/02-submissions/submission-question-types.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/recording-a-decision-accepting/-rejecting/-withdrawing-a-submission",
+   "destination": "/04-decisions/recording-decisions-accept-reject-or-withdraw.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/registering-for-the-virtual-program",
+   "destination": "/14-for-attendees-exhibitors/setting-up-your-conference-program-account.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/restricting-who-can-submit-by-email",
+   "destination": "/02-submissions/restricting-who-can-submit-by-email.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/review-question-types",
+   "destination": "/03-reviewing/review-question-types.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/reviewers-leaving-inline-comments",
+   "destination": "/13-for-reviewers-committee/leaving-comments-on-submissions-you-review.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-a-multi-stage-event",
+   "destination": "/02-submissions/setting-up-a-multi-stage-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-symposia",
+   "destination": "/09-add-ons/symposia-overview-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-the-poster-gallery",
+   "destination": "/08-conference-platform/professional-conference-the-poster-gallery.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-your-online-program-display",
+   "destination": "/08-conference-platform/setting-up-your-program-display.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-your-online-program-timezones",
+   "destination": "/08-conference-platform/setting-up-your-program-timezones.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-your-program-program-configuration",
+   "destination": "/08-conference-platform/setting-up-your-program-configuration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/setting-up-your-zoom-integration-coming-soon",
+   "destination": "/08-conference-platform/setting-up-your-zoom-integration.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/show-reviews-to-submitters-1",
+   "destination": "/03-reviewing/showing-reviews-to-submitters.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/sponsorship",
+   "destination": "/08-conference-platform/professional-conference-sponsors.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/submit-a-symposium",
+   "destination": "/12-for-submitters/submit-a-symposium.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/symposia-assigning-reviews",
+   "destination": "/09-add-ons/symposia-reviewing.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/symposia-decisions-outcomes",
+   "destination": "/09-add-ons/symposia-decisions-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/symposia-emails",
+   "destination": "/09-add-ons/symposia-decisions-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/symposium-dashboard",
+   "destination": "/09-add-ons/symposia-overview-dashboard.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/text-editor-types",
+   "destination": "/02-submissions/text-editor-types.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/the-decisions-table",
+   "destination": "/04-decisions/the-decisions-table.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/the-essential-tools",
+   "destination": "/01-getting-started/the-essential-abstract-management-tools.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/the-review-tables",
+   "destination": "/03-reviewing/the-review-tables.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/the-submissions-table",
+   "destination": "/02-submissions/the-submissions-table-including-incomplete-submissions.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/the-symposia-table",
+   "destination": "/09-add-ons/managing-symposia.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/tips-on-designing-your-reviewing-form",
+   "destination": "/03-reviewing/tips-on-designing-your-reviewing-form.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/updating-your-profile",
+   "destination": "/01-getting-started/updating-your-profile.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/using-the-chat-feature",
+   "destination": "/14-for-attendees-exhibitors/using-the-chat-and-controlling-notifications.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/verify-sender-email-function",
+   "destination": "/05-emails/sending-emails-from-your-chosen-email-address.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/viewing-editing-and-sending-emails",
+   "destination": "/05-emails/sending-and-scheduling-emails.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/viewing-sessions-and-content",
+   "destination": "/14-for-attendees-exhibitors/viewing-sessions-and-content-in-the-conference-program.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/what-are-the-differences-between-the-free-package-and-paid-packages",
+   "destination": "/01-getting-started/what-are-the-differences-between-the-free-package-and-paid-packages.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/what-domains-will-emails-from-oxford-abstracts-originate-from",
+   "destination": "/05-emails/what-domains-will-emails-from-oxford-abstracts-originate-from.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/what-to-do-if-a-verification-email-hasnt-arrived-in-your-inbox",
+   "destination": "/01-getting-started/if-your-verification-email-hasn-t-arrived.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/what-to-do-when-you-have-a-network-failure-error-message",
+   "destination": "/01-getting-started/fixing-a-network-failure-error.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/which-zoom-package-do-i-need",
+   "destination": "/08-conference-platform/which-zoom-package-do-i-need.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/why-does-my-email-need-to-be-dkim-validated",
+   "destination": "/05-emails/why-does-my-email-need-to-be-dkim-validated.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/withdrawing-or-removing-your-submission-from-a-symposium",
+   "destination": "/12-for-submitters/withdrawing-or-removing-your-submission-from-a-symposium.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/word-and-character-count",
+   "destination": "/02-submissions/word-and-character-count.html",
+   "permanent": true
+  },
+  {
+   "source": "/knowledge/your-personal-dashboard",
+   "destination": "/01-getting-started/your-personal-dashboard.html",
+   "permanent": true
+  }
+ ]
+}

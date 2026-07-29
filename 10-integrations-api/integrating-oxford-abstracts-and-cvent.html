@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrating Oxford Abstracts and Cvent | Oxford Abstracts Help</title><meta name="description" content="Integrating Oxford Abstracts and Cvent">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css"></head><body>
+<header><div class="wrap nav">
+<a href="../index.html" aria-label="Oxford Abstracts Help Centre"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
+<form class="hdr-search" role="search" action="../index.html" method="get">
+<input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
+<button type="submit">Search</button></form><nav class="nav-links" aria-label="Main">
+<a class="hide-sm" href="../index.html">Help centre home</a>
+<a class="btn" href="https://app.oxfordabstracts.com/">Sign in</a>
+</nav></div></header><main><div class="wrap narrow crumbs">
+<a href="../index.html">Help centre</a> &nbsp;›&nbsp; <a href="index.html">Integrations &amp; API</a></div>
+<article class="wrap narrow article">
+<h1 class="display">Integrating Oxford Abstracts and Cvent</h1>
+<div class="badges"><span class="badge">Integrations &amp; API</span><span class="badge reviewed">Last reviewed 28 July 2026</span></div>
+
+
+<div class="prose"><h2 id="learn-how-to-export-registration-data-from-cvent-and-import-it-into-oxford-abstracts">Learn how to export registration data from Cvent and import it into Oxford Abstracts.<a aria-label="Link to this section" class="anchor" href="#learn-how-to-export-registration-data-from-cvent-and-import-it-into-oxford-abstracts">#</a></h2>
+<p>On the <strong>left-hand menu</strong>, click on <strong>Advanced &gt; Integrations &gt; click on the connect button</strong> under Cvent.</p>
+<p>You’ll need to <strong>add your Cvent Client ID and Cvent Client Secret</strong> to the box and click the connect button.</p>
+<p><img alt="Screenshot: Learn how to export registration data from Cvent and import it into Oxford Abstracts." class="zoomable" loading="lazy" src="../assets/img/undefined-may-13-2026-10-54-58-6688-am-53ddd347.webp" tabindex="0"/></p>
+<h3 id="how-to-connect-to-cvent"><strong>How to connect to Cvent</strong><a aria-label="Link to this section" class="anchor" href="#how-to-connect-to-cvent">#</a></h3>
+<p><strong>Create a workspace</strong></p>
+<ul>
+<li>Go to the this <a href="https://developers.app.cvent.com/admin/integrations/restapi/workspaces">page to create a workspace</a>.</li>
+<li>Give the workspace any name and select the "event" permissions.</li>
+<li>Click <strong>Save</strong> to create the workspace.</li>
+</ul>
+<p><strong>Invite a developer</strong></p>
+<ul>
+<li>Go to the <a href="https://developers.app.cvent.com/admin/integrations/restapi/invitations/create">invite developers page</a>.</li>
+<li>Add the email address of the developer you want to invite. You can use your own email for this.</li>
+<li>Add the developer to the workspace you previously created.</li>
+<li>Click <strong>Send</strong> to send the invitation.</li>
+</ul>
+<p><strong>Create an Application</strong></p>
+<ul>
+<li>Go to the <a href="https://developers.cvent.com/applications/create">create application page</a>. You may be asked to sign in with your developer email.</li>
+<li>Select Machine to Machine as the application type.</li>
+<li>Give the application any name.</li>
+<li>Select the following scopes:</li>
+<li>event/events:read</li>
+<li>event/attendees:read</li>
+<li>
+<p>event/orders:read</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to create the application.</p>
+</li>
+</ul>
+<p><strong>Copy your Client ID and Secret</strong></p>
+<p>After creating the application, go to the <a href="https://developers.cvent.com/applications">applications page</a>.</p>
+<p>There, you will be shown your Client ID and Client Secret.</p>
+<p>Copy these values, paste them into the fields above and click <strong>Connect</strong>.</p>
+<p><strong>Select your event and sync</strong></p>
+<p>After connecting, select the Cvent event to sync registrations from.</p>
+<p>Registrations will be synced automatically every 15 minutes.</p>
+<p>If you need further support, please contact our Support Team via this <a href="https://oxfordabstracts.com/resources/contact-support/">Contact Form.</a></p></div>
+<div class="feedback" data-path="10-integrations-api/integrating-oxford-abstracts-and-cvent.html">
+<p>Did this page solve it?</p>
+<div class="fb-row"><button type="button" data-fb="yes">Yes</button><button type="button" data-fb="no">No</button></div>
+<div class="fb-reasons" hidden>
+<button type="button" data-reason="confusing">Confusing</button>
+<button type="button" data-reason="out-of-date">Out of date</button>
+<button type="button" data-reason="missing-details">Missing details</button>
+<button type="button" data-reason="not-what-i-searched">Not what I searched for</button>
+</div>
+<p class="fb-thanks" hidden>Thanks — this helps us fix it.</p>
+</div>
+<nav class="prevnext" aria-label="Article navigation"><a class="pn-prev" href="integrating-eventsair-to-oxford-abstracts.html"><span>Previous</span>Integrating EventsAir to Oxford Abstracts</a><a class="pn-next" href="integrating-oxford-abstracts-and-idloom.html"><span>Next</span>Integrating Oxford Abstracts and idloom</a></nav>
+<section class="support">
+<div><h2>Didn't solve it? Ask our support team</h2>
+<p>No question is too small, and there's no charge for asking. Raise a ticket and
+someone who knows the software will pick it up.</p></div>
+<a class="btn" href="https://oxfordabstracts.com/resources/contact-support">Create a support ticket</a>
+</section>
+</article>
+<div class="lightbox" id="lightbox" hidden><img alt=""></div>
+<script src="../assets/article.js"></script></main>
+<footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
+</body></html>
