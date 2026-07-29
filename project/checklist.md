@@ -93,6 +93,23 @@ corpus in place.*
       you to confirm it and `event-dashboard` are the same screen. The merge was applied;
       the confirmation never came back.
 
+## Prototypes built (29 July) — both live and demoable
+
+- **Support-form deflection** — `/prototype/support-deflection`. Replica of the live
+  contact-support page (real HubSpot field names, portal 9108826 / form 69bc8c33).
+  Search runs while the reader fills in Event ID, 2.5s cap at Submit, never blocks the
+  send, sent tickets carry the suggested articles and outcome. Demo controls bottom-right.
+- **In-app help widget** (the Amplitude / Resource Center replacement) —
+  `/prototype/admin-help`. One surface called "Help", not Home/Ask AI tabs. Per-screen
+  suggested questions, page context passed as a question prefix (verified to improve
+  routing live), multi-turn via follow-up chips, cited guides open *inside* the panel
+  (live KB page, re-rooted — no second copy to drift), OA-mark avatar on bot messages,
+  full-width ticket button. Backdrop uses the real app sidebar sections.
+- **Carried into the real build:** `/api/search` needs CORS headers before
+  oxfordabstracts.com can call it; the confidence signal belongs in the endpoint (both
+  prototypes approximate it client-side); multi-turn needs an endpoint accepting
+  structured history rather than a prefix inside the 500-char cap.
+
 ## 3. Build list (me)
 
 - [ ] **Ticket deflection on the HubSpot support form** — needs the form details from you.
