@@ -39,6 +39,38 @@ const ACTIONS = new Set(['asked', 'solved', 'unhelpful', 'ticket_created',
                          'followup', 'none']);
 
 export default async function handler(req, res) {
+  /* GET /api/log?check=1 — is the sheet wired up? Reports only whether each
+     variable is present and, on ?check=ping, what the webhook actually answered.
+     Never returns the URL or the token. Exists because every failure path here is
+     deliberately silent, which is right for readers and hopeless for diagnosis. */
+  if (req.method === 'GET' && req.query && req.query.check) {
+    const url = process.env.SHEET_WEBHOOK_URL;
+    const out = {
+      webhookUrl: url ? 'set' : 'MISSING',
+      webhookHost: url ? new URL(url).host : null,
+      urlEndsWithExec: url ? url.endsWith('/exec') : null,
+      token: process.env.SHEET_TOKEN ? 'set' : 'MISSING'
+    };
+    if (req.query.check === 'ping' && url) {
+      try {
+        const r = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            token: process.env.SHEET_TOKEN || '',
+            row: { ts: new Date().toISOString(), surface: 'kb-search', screen: '',
+                   question: 'CONNECTION TEST - safe to delete', answered: true,
+                   sources: '', action: 'asked' }
+          })
+        });
+        out.ping = { status: r.status, body: (await r.text()).slice(0, 300) };
+      } catch (e) {
+        out.ping = { error: e.message };
+      }
+    }
+    return res.status(200).json(out);
+  }
+
   if (req.method !== 'POST') return res.status(405).end();
 
   let row = null;
@@ -66,7 +98,9 @@ export default async function handler(req, res) {
     try {
       // Bounded: a slow sheet must never hold the reader's request open.
       const ctl = new AbortController();
-      const t = setTimeout(() => ctl.abort(), 2500);
+      // 5s, not 2.5: an Apps Script web app that has not been hit recently cold-starts
+      // for several seconds, and aborting mid-flight loses the row.
+      const t = setTimeout(() => ctl.abort(), 5000);
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

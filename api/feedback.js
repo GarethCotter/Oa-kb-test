@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     try {
       // Bounded: a slow sheet must never hold the reader's request open.
       const ctl = new AbortController();
-      const t = setTimeout(() => ctl.abort(), 2500);
+      const t = setTimeout(() => ctl.abort(), 5000);   // Apps Script cold starts are slow
       await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
