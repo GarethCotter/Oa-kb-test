@@ -104,6 +104,13 @@ function buildDashboard(ss) {
                         cPrev('G:G,"asked"')],
     ['Answer rate',     '=IFERROR(' + c7('G:G,"asked",' + LOG + '!E:E,TRUE').slice(1) + '/B4, "")',
                         '=IFERROR(' + cPrev('G:G,"asked",' + LOG + '!E:E,TRUE').slice(1) + '/B5, "")'],
+    // Success = an answer was shown and the reader did not click "didn't help".
+    // A deliberate assumption: silence counts as success. We never see inside the
+    // reader's head, but this matches how deflection is conventionally counted.
+    ['Success rate',    '=IFERROR(MAX(0,' + c7('G:G,"asked",' + LOG + '!E:E,TRUE').slice(1) +
+                          '-' + c7('G:G,"unhelpful"').slice(1) + ')/B4, "")',
+                        '=IFERROR(MAX(0,' + cPrev('G:G,"asked",' + LOG + '!E:E,TRUE').slice(1) +
+                          '-' + cPrev('G:G,"unhelpful"').slice(1) + ')/B5, "")'],
     ['Solved',          c7('G:G,"solved"'),
                         cPrev('G:G,"solved"')],
     ["Didn't help",     c7('G:G,"unhelpful"'),
@@ -114,19 +121,19 @@ function buildDashboard(ss) {
                         cPrev('G:G,"ticket_created"')]
   ];
   for (var i = 0; i < tiles.length; i++) {
-    var col = String.fromCharCode(66 + i);                       // B..G
+    var col = String.fromCharCode(66 + i);                       // B..H
     s.getRange(col + '3').setValue(tiles[i][0]).setFontWeight('bold');
     s.getRange(col + '4').setFormula(tiles[i][1]).setFontSize(16);
     s.getRange(col + '5').setFormula(tiles[i][2]).setFontColor('#888880');
   }
   s.getRange('A4').setValue('Last 7 days').setFontColor('#5F5E5A');
   s.getRange('A5').setValue('7 before').setFontColor('#888880');
-  s.getRange('C4:C5').setNumberFormat('0%');
+  s.getRange('C4:D5').setNumberFormat('0%');
 
   // ---- by week ----
   s.getRange('A8').setValue('By week').setFontWeight('bold');
-  var head = ['Week', 'Asked', 'Answer rate', 'KB', 'Widget', 'Form', 'Solved',
-              "Didn't help", 'Tickets', 'Form deflected', 'Sent anyway'];
+  var head = ['Week', 'Asked', 'Answer rate', 'Success', 'KB', 'Widget', 'Form',
+              'Solved', "Didn't help", 'Tickets', 'Form deflected', 'Sent anyway'];
   s.getRange(9, 1, 1, head.length).setValues([head]).setFontWeight('bold');
 
   s.getRange('A10').setFormula(
@@ -140,6 +147,12 @@ function buildDashboard(ss) {
     '=ARRAYFORMULA(IF(A10:A="","",IF(B10:B=0,"",' +
       'COUNTIFS(' + LOG + '!A:A,">="&A10:A,' + LOG + '!A:A,"<"&A10:A+7,' +
       LOG + '!G:G,"asked",' + LOG + '!E:E,TRUE)/B10:B)))',
+    // success per week: answered asks minus didn't-help clicks, over asks
+    '=ARRAYFORMULA(IF(A10:A="","",IF(B10:B=0,"",(' +
+      'COUNTIFS(' + LOG + '!A:A,">="&A10:A,' + LOG + '!A:A,"<"&A10:A+7,' +
+      LOG + '!G:G,"asked",' + LOG + '!E:E,TRUE)-' +
+      'COUNTIFS(' + LOG + '!A:A,">="&A10:A,' + LOG + '!A:A,"<"&A10:A+7,' +
+      LOG + '!G:G,"unhelpful"))/B10:B)))',
     wcount('G:G,"asked",' + LOG + '!B:B,"kb-search"'),
     wcount('G:G,"asked",' + LOG + '!B:B,"widget"'),
     wcount('G:G,"asked",' + LOG + '!B:B,"ticket-form"'),
@@ -152,7 +165,7 @@ function buildDashboard(ss) {
   for (var j = 0; j < wk.length; j++)
     s.getRange(10, 2 + j).setFormula(wk[j]);
   s.getRange('A10:A').setNumberFormat('d mmm yyyy');
-  s.getRange('C10:C').setNumberFormat('0%');
+  s.getRange('C10:D').setNumberFormat('0%');
 
   // ---- what to write next / what to fix ----
   s.getRange('M3').setValue('Top unanswered, last 30 days').setFontWeight('bold');

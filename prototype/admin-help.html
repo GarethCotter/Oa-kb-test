@@ -506,7 +506,10 @@ function addYou(text) {
   $('#body').appendChild(el('div', 'msg you', text));
   scrollDown();
 }
-function addBot(text, sources, followups) {
+/* Follow-up suggestions after answers were removed 30 July 2026, matching the KB:
+   the model's suggestions were too often a worse question than the one just asked.
+   The per-screen suggested questions in greet() are a different thing and stay. */
+function addBot(text, sources) {
   const m = el('div', 'msg bot');
   text.split('\n').forEach(p => {
     if (!p.trim()) return;
@@ -540,7 +543,6 @@ function addBot(text, sources, followups) {
   const row = botRow();
   row.appendChild(m);
   $('#body').appendChild(row);
-  if (followups && followups.length) addChips(followups);
   scrollDown();
 }
 function addChips(list) {
@@ -583,16 +585,14 @@ const CANNED_FIRST = {
   sources: [
     { title: 'Sending and scheduling emails', path: '05-emails/sending-and-scheduling-emails.html' },
     { title: 'Editing the template emails', path: '05-emails/editing-the-template-emails.html' }
-  ],
-  followups: ['It was activated — what else could it be?', 'How do I see what’s already been sent?']
+  ]
 };
 const CANNED_SECOND = {
   answer: 'Then check the email sent log — **Event dashboard → Emails → Sent log** — which shows every email the system has sent and to whom. If it shows as sent but people say they got nothing, it’s usually landing in spam: that’s why sending from your own address needs DKIM validation, and unvalidated addresses fall back to our domain.',
   sources: [
     { title: 'Using the email sent log', path: '05-emails/using-the-email-sent-log.html' },
     { title: 'Why does my email need to be DKIM validated?', path: '05-emails/why-does-my-email-need-to-be-dkim-validated.html' }
-  ],
-  followups: ['How do I get my address DKIM validated?']
+  ]
 };
 let cannedTurn = 0;
 
@@ -603,7 +603,7 @@ const isStrong = r => !!(r && r.answer && r.answer.trim().length >= 60 && !HEDGE
 async function fetchAnswer(question) {
   const sc = $('#scenario').value;
   if (sc === 'down') throw new Error('simulated outage');
-  if (sc === 'weak') { await sleep(1300); return { answer: null, sources: [], followups: [] }; }
+  if (sc === 'weak') { await sleep(1300); return { answer: null, sources: [] }; }
   if (sc === 'canned') {
     await sleep(1600);
     return (cannedTurn++ === 0) ? CANNED_FIRST : CANNED_SECOND;
@@ -653,13 +653,13 @@ async function send(question) {
 
   removeTyping();
   if (isStrong(r)) {
-    addBot(r.answer, r.sources, r.followups);
+    addBot(r.answer, r.sources);
     state.history.push({ q: question, a: r.answer });
     logEvent(question, true, r.sources, 'none');
   } else {
     // Never a dead end, never an error. Honest about the miss, and both exits are one tap.
     addBot('I couldn’t find a confident answer to that one — and I’d rather say so than guess.\nThe knowledge base search sometimes does better with a bit more detail, or our support team will pick it up quickly — no question is too small.',
-      [], []);
+      []);
     const wrap = el('div', 'chips');
     const kb = el('button', 'chip', 'Search the knowledge base');
     kb.type = 'button';
