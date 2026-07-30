@@ -1438,18 +1438,19 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
                         click-through) against one thin article, and 59 tickets. Kept
                         general because the commonest real question is "can it connect
                         to X", where X is a different system every time.
-       incomplete     - "incomplete submission": 11 searches, ZERO clicks. The worst
-                        performing search in the whole of the old KB, and unlike the
-                        other two it is a problem every organiser hits.
+       deadline       - 24 searches at 0.17 average clicks: the highest-volume failing
+                        search in the old KB. It is also the only one of the three
+                        that every organiser meets, the other two being a Professional
+                        add-on and an integration topic.
 
-     All phrased as questions on purpose: two used not to be, which argued against the
+     All phrased as questions on purpose: they used not to be, which argued against the
      line above them asking for a full question. Phrasing also steers who gets
-     answered - "why is MY submission incomplete" is answered in submitter voice, "why
-     do SOME submissions" in organiser voice, and this page is an organiser surface. -->
+     answered - "how do I change MY deadline" would be answered in submitter voice,
+     so these stay in organiser voice, because this page is an organiser surface. -->
 <div class="chips">
 <button class="chip" type="button">How do we set up the poster gallery?</button>
 <button class="chip" type="button">What can I do with the API?</button>
-<button class="chip" type="button">Why do some submissions show as incomplete?</button>
+<button class="chip" type="button">How do I change the submission deadline?</button>
 </div></div>
 <div class="results" id="results" aria-live="polite"><h3 id="resultsTitle">Guides that match</h3><ul id="resultsList"></ul></div>
 </section>
