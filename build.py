@@ -1,4 +1,4 @@
-import os, re, json, shutil, html
+import os, re, json, shutil, html, collections
 import markdown
 
 # Repo layout: sources live alongside the generated site at the repo root.
@@ -275,6 +275,21 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .prose ul,.prose ol{margin:0 0 18px 22px}
 .prose li{margin-bottom:8px}
 .prose img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);margin:8px 0 20px}
+/* Callouts. Sage for a tip, navy for a note. The brand red is the site's link and
+   button colour throughout, so a red panel would read as something to click - and
+   with 174 notes in the corpus a wall of red would stop meaning "important" by the
+   third article. The tint carries the colour; the label text is a darkened version
+   of it, because #B7C097 on its own tint is nowhere near AA. */
+.callout{display:flex;gap:12px;margin:22px 0;padding:14px 18px 15px 16px;border-radius:var(--radius);border-left:4px solid var(--co);background:var(--co-bg)}
+.callout .co-ico{flex:none;width:19px;height:19px;margin-top:3px;color:var(--co-ink)}
+.callout .co-b{min-width:0}
+.callout .co-label{display:block;font-weight:600;font-size:14.5px;letter-spacing:.02em;color:var(--co-ink);margin-bottom:2px}
+.callout p{margin:0}
+.callout p+p{margin-top:10px}
+.callout p:last-child{margin-bottom:0}
+.co-note{--co:#0A1B3E;--co-ink:#0A1B3E;--co-bg:rgba(10,27,62,.055)}
+.co-tip{--co:#B7C097;--co-ink:#4E5A31;--co-bg:rgba(183,192,151,.22)}
+@media (max-width:520px){.callout{padding:13px 14px 14px 13px;gap:10px}}
 .prose a{color:var(--red);text-underline-offset:3px}
 .prose strong{font-weight:600}
 .prose iframe{max-width:100%;border-radius:8px;border:1px solid var(--line)}
@@ -436,6 +451,36 @@ CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden
          '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 '
          '111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" '
          'clip-rule="evenodd"/></svg>')
+
+# Callouts. 180 asides arrived from HubSpot as "NB:" or "Please note:" run into the
+# prose, where they read as just another sentence - including the one telling you
+# reviewer emails are not sent automatically. Two registers only: a note for the
+# caveats and a tip for the advice. The brand red is deliberately not used; it is the
+# site's link and button colour, and a red panel would read as something to click.
+NOTE_ICON = ('<svg class="co-ico" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
+             '<path fill-rule="evenodd" d="M18 10A8 8 0 112 10a8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 '
+             '012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" '
+             'clip-rule="evenodd"/></svg>')
+TIP_ICON = ('<svg class="co-ico" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
+            '<path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 '
+            '1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 '
+            '1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 '
+            '110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 '
+            '10-4.954 0c.27.213.462.519.476.859h4.002z"/></svg>')
+
+# lead word -> (kind, visible label). Longest first, so "Please note" wins over "Note".
+CALLOUT_LEADS = [
+    ('please note', 'note', 'Note'),
+    ('n.b.',        'note', 'Note'),
+    ('nb',          'note', 'Note'),
+    ('note',        'note', 'Note'),
+    ('remember',    'tip',  'Tip'),
+    ('tip',         'tip',  'Tip'),
+]
+CALLOUT_RE = re.compile(
+    r'^\s*(' + '|'.join(re.escape(w) for w, _, _ in CALLOUT_LEADS) + r')\b\s*([:.,–-])?\s*',
+    re.I)
+CALLOUT_COUNTS = collections.Counter()
 
 # The "On this page" jump arrow. An SVG rather than "&darr;" because Outfit has no
 # U+2193 glyph and renders it zero-width instead of falling back, so the arrows were
@@ -760,6 +805,13 @@ def _preceding_text(img):
             prev = prev.previous_sibling
         if prev is not None:
             if prev.get_text(strip=True) and not prev.find('img'):
+                # Inside a callout, only the note itself is context - not its "Note"
+                # label, which would otherwise open the alt text of every screenshot
+                # that happens to follow one.
+                if prev.name == 'aside' and 'callout' in (prev.get('class') or []):
+                    body = ' '.join(q.get_text(' ', strip=True) for q in prev.find_all('p'))
+                    if body.strip():
+                        return body.strip()
                 return prev.get_text(' ', strip=True)
             node = prev
             continue
@@ -826,6 +878,11 @@ def lead_sentence(body_html):
     root = soup.body or soup
     for a in root.find_all('a', class_='anchor'):
         a.decompose()
+    # A note is a caveat about the article, never a description of it. Left in, a
+    # boxed "NB: emails are not sent automatically" became the card description for
+    # the article on notifying reviewers.
+    for c in root.find_all(class_='callout'):
+        c.decompose()
 
     for el in root.find_all(['h2', 'h3', 'h4', 'p', 'li']):
         text = ' '.join(el.get_text(' ', strip=True).split())
@@ -838,6 +895,115 @@ def lead_sentence(body_html):
         m = re.match(r'(.{20,150}?[.!?])(\s|$)', text)
         return m.group(1) if m else text[:120]
     return ''
+
+
+def _strip_callout_label(p, soup):
+    """Remove a leading "NB:" from a callout paragraph, whether it is plain text or a
+    bolded <strong>Please note:</strong>. Returns True if it removed one."""
+    first = next((c for c in p.contents
+                  if not (isinstance(c, str) and not c.strip())), None)
+    if first is None:
+        return False
+    if isinstance(first, str):
+        rest = CALLOUT_RE.sub('', str(first), count=1)
+        if rest == str(first):
+            return False
+        first.replace_with(rest)
+        return True
+    if first.name in ('strong', 'b'):
+        t = first.get_text(' ', strip=True)
+        m = CALLOUT_RE.match(t)
+        if not m:
+            return False
+        if m.end() == len(t):                # the bold run is the label and nothing else
+            first.decompose()
+            nxt = next((c for c in p.contents if isinstance(c, str)), None)
+            if nxt is not None:
+                nxt.replace_with(str(nxt).lstrip(' :–-'))
+            return True
+        # the label and the note are inside one bold run: "**Please note: IMPORTANT.**"
+        inner = next((c for c in first.descendants if isinstance(c, str) and c.strip()), None)
+        if inner is not None:
+            rest = CALLOUT_RE.sub('', str(inner), count=1)
+            if rest != str(inner):
+                inner.replace_with(rest)
+                return True
+    return False
+
+
+def _capitalise_first(p):
+    """After the label comes off, "this will add the user" needs its capital back.
+    Words carrying an inner capital (iPhone, eTicket) are left alone."""
+    node = next((c for c in p.descendants if isinstance(c, str) and c.strip()), None)
+    if node is None:
+        return
+    s = str(node)
+    i = len(s) - len(s.lstrip())
+    ch = s[i:i + 1]
+    if ch.islower() and not any(x.isupper() for x in s[i:].split(' ', 1)[0]):
+        node.replace_with(s[:i] + ch.upper() + s[i + 1:])
+
+
+def wrap_callouts(root, soup, counts):
+    """Lift "NB:" and "Please note:" paragraphs out of the prose into a labelled box.
+
+    The label is only stripped when it is a clean one - "NB:" or a bolded
+    "**Please note:**". Where the lead runs into the sentence's own grammar
+    ("Please note, that you have thirty days", "Remember to check the box") the text
+    is left exactly as written, because cutting it produced fragments like "that you
+    have thirty days to pay". Those paragraphs just gain the label above them.
+
+    The icon goes in as a placeholder and is swapped for real SVG after the tree is
+    serialised: both available parsers lowercase viewBox to viewbox, which silently
+    breaks the icon's scaling.
+    """
+    for p in list(root.find_all('p')):
+        # Testing for a top-level parent missed the "Common questions" block, which is
+        # wrapped in a div.faq-block. What actually disqualifies a paragraph is being
+        # inside something a box cannot sit in - a list item, a quote, a table cell.
+        if p.find_parent(['li', 'blockquote', 'td', 'th', 'aside']):
+            continue
+        m = CALLOUT_RE.match(p.get_text(' ', strip=True))
+        if not m:
+            continue
+        word = m.group(1).lower()
+        kind, label = next((k, l) for w, k, l in CALLOUT_LEADS if w == word)
+        if m.group(2) == ':' and _strip_callout_label(p, soup):
+            _capitalise_first(p)
+            counts['stripped'] += 1
+        else:
+            counts['kept whole'] += 1
+
+        # "NB:" alone on its own line with the note in the block underneath is the
+        # commonest HubSpot shape - 7 of these. Stripping the label empties the
+        # paragraph, so absorb the block below it, or there is nothing to box.
+        if not p.get_text(strip=True):
+            nxt = p.find_next_sibling()
+            p.decompose()
+            if nxt is None or nxt.name != 'p' or not nxt.get_text(strip=True):
+                counts['bare label, nothing to box'] += 1
+                continue
+            p = nxt
+            counts['label on its own line'] += 1
+        counts[kind] += 1
+
+        aside = soup.new_tag('aside')
+        aside['class'] = ['callout', 'co-' + kind]
+        holder = soup.new_tag('div')
+        holder['class'] = ['co-b']
+        lab = soup.new_tag('span')
+        lab['class'] = ['co-label']
+        lab.string = label
+        p.insert_before(aside)
+        # An empty element, not a text placeholder: a text one is picked up by
+        # _preceding_text and ends up inside an image's alt attribute, where the
+        # post-serialisation swap then injects raw SVG and breaks the markup.
+        slot = soup.new_tag('i')
+        slot['class'] = ['co-slot-' + kind]
+        aside.append(slot)
+        holder.append(lab)
+        holder.append(p.extract())
+        aside.append(holder)
 
 
 def enrich_body(body_html, title):
@@ -862,6 +1028,12 @@ def enrich_body(body_html, title):
         says_skip = re.match(r'^skip to\b', text, re.I) and (all_frag or not links)
         if only_links or says_skip:
             p.decompose()
+
+    # Callouts run BEFORE the standfirst lift on purpose. 40 articles open on an
+    # "NB:", which the lift was taking as the article's summary - so the section-page
+    # card for "Notifying reviewers" described the article as a warning that the
+    # emails do not send themselves. Boxed first, those stop being eligible.
+    wrap_callouts(root, soup, CALLOUT_COUNTS)
 
     # standfirst: lift the opening paragraph when it is short and text-only
     standfirst = ''
@@ -937,6 +1109,8 @@ def enrich_body(body_html, title):
             a.unwrap()
 
     inner = root.decode_contents() if root.name == 'body' else str(soup)
+    inner = (inner.replace('<i class="co-slot-note"></i>', NOTE_ICON)
+                  .replace('<i class="co-slot-tip"></i>', TIP_ICON))
     return standfirst, audience, toc, inner
 
 for folder, num, name, aud, blurb in SECTIONS:
@@ -1341,4 +1515,7 @@ def _site_files():
         yield len(files)
 
 
+c = CALLOUT_COUNTS
+print('callouts: %d note, %d tip (%d label stripped, %d kept whole)'
+      % (c['note'], c['tip'], c['stripped'], c['kept whole']))
 print('total files:', sum(_site_files()))

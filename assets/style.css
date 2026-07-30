@@ -213,6 +213,21 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .prose ul,.prose ol{margin:0 0 18px 22px}
 .prose li{margin-bottom:8px}
 .prose img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--line);margin:8px 0 20px}
+/* Callouts. Sage for a tip, navy for a note. The brand red is the site's link and
+   button colour throughout, so a red panel would read as something to click - and
+   with 174 notes in the corpus a wall of red would stop meaning "important" by the
+   third article. The tint carries the colour; the label text is a darkened version
+   of it, because #B7C097 on its own tint is nowhere near AA. */
+.callout{display:flex;gap:12px;margin:22px 0;padding:14px 18px 15px 16px;border-radius:var(--radius);border-left:4px solid var(--co);background:var(--co-bg)}
+.callout .co-ico{flex:none;width:19px;height:19px;margin-top:3px;color:var(--co-ink)}
+.callout .co-b{min-width:0}
+.callout .co-label{display:block;font-weight:600;font-size:14.5px;letter-spacing:.02em;color:var(--co-ink);margin-bottom:2px}
+.callout p{margin:0}
+.callout p+p{margin-top:10px}
+.callout p:last-child{margin-bottom:0}
+.co-note{--co:#0A1B3E;--co-ink:#0A1B3E;--co-bg:rgba(10,27,62,.055)}
+.co-tip{--co:#B7C097;--co-ink:#4E5A31;--co-bg:rgba(183,192,151,.22)}
+@media (max-width:520px){.callout{padding:13px 14px 14px 13px;gap:10px}}
 .prose a{color:var(--red);text-underline-offset:3px}
 .prose strong{font-weight:600}
 .prose iframe{max-width:100%;border-radius:8px;border:1px solid var(--line)}

@@ -110,8 +110,8 @@ them: they surface to any user who asks the right question.
 
 ## What `build.py` derives from the prose
 
-Three things are lifted out of the markdown rather than written by hand. All three are
-derived from surrounding text, so check the built output when you change the sources.
+Four things are lifted out of the markdown rather than written by hand. All are derived
+from surrounding text, so check the built output when you change the sources.
 
 - **Audience tag.** The "The guidance below is for…" sentence is pulled out of the body
   and rendered as a colour-coded tag under the title on 99 articles — navy organisers,
@@ -128,7 +128,24 @@ derived from surrounding text, so check the built output when you change the sou
 - **Card descriptions.** A section-page card uses the article's standfirst, falling back
   to `lead_sentence()`. Headings are eligible on purpose: most articles open with a
   descriptive `## Create a striking and visually engaging program.` that is the best
-  one-line summary they have.
+  one-line summary they have. Callouts are *not* eligible — a note is a caveat about the
+  article, never a description of it.
+- **Callouts.** A paragraph opening `NB:`, `Please note:`, `Note:` (→ **Note**, navy) or
+  `Remember`, `Tip` (→ **Tip**, sage) becomes a labelled box: 158 of them, 154 notes and
+  4 tips. Write one by starting a paragraph with the lead word; nothing else is needed.
+  Three rules the corpus forced:
+  - The lead is stripped only when it is a clean `LABEL:`. `Please note, that you have
+    thirty days` and `Remember to check the box` carry the note inside their own
+    grammar, so the text is left whole and only gains a label — cutting it produced
+    fragments like "that you have thirty days to pay".
+  - `NB:` alone on its line takes the paragraph below it into the box.
+  - Not inside a list item, quote or table cell, where a box cannot sit. The `<p>` may
+    be anywhere else, including inside `div.faq-block` — testing for a top-level parent
+    missed every note in "Common questions".
+
+  **Red is deliberately not a callout colour.** It is the site's link and button colour,
+  so a red panel reads as something to click, and 154 red boxes would stop meaning
+  "important" by the third article.
 
 ## Conventions
 
