@@ -285,6 +285,8 @@ Used for uploading documents and can be set to permitting just pdfs, if required
 
 The upload file question will provide a link to a file, as opposed to the content within the file.
 
+**The size limit starts at 10MB and you can raise it to 500MB.** If submitters are being turned away when uploading, this is the first thing to check — the default is comfortable for a PDF but not for video or a large poster. Set it on the question itself, and tell submitters the limit in the question text so they find out before they try.
+
 **2) Upload image**
 
   

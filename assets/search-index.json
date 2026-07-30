@@ -248,6 +248,14 @@
   "summary": "You may find you are required to edit a user's submission. It's a straightforward process and any updates will be recorded in the 'last updated by' column in the submission tables. # Skip to text instructions . Go to Eve"
  },
  {
+  "title": "If a submitter can't upload a file or image",
+  "path": "02-submissions/if-a-submitter-cannot-upload-a-file-or-image.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "More often than not the setting is at your end rather than a fault at theirs, and these five checks find it. Take a screenshot of the error from the submitter before you start \u2014 it usually names the cause. # 1. Is the fi"
+ },
+ {
   "title": "Making a submission on behalf of someone else",
   "path": "02-submissions/making-a-submission-on-behalf-of-someone-else.html",
   "section": "Submissions",
