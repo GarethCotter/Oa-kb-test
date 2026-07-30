@@ -222,8 +222,13 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
   color:var(--muted);text-decoration:none;line-height:1.35}
 .rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
 .rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
-/* The down-arrow on jump links says "this jumps down the page, not to a new one". */
-.tj{display:inline-block;color:var(--muted);margin-right:7px;font-weight:400}
+/* The down-arrow on jump links says "this jumps down the page, not to a new one".
+   It is an inline SVG, not the U+2193 character: Outfit has no glyph for it and the
+   Google Fonts subset renders it zero-width rather than falling back, so the arrows
+   were in the markup on all 59 pages and invisible on every one of them. U+2192 in
+   .aud-alt and .go is fine - it is only the down arrow that is missing.
+   fill="currentColor" on the path keeps the muted/hover colours below working. */
+.tj{display:inline-block;width:12px;height:12px;vertical-align:middle;color:var(--muted);margin-right:8px}
 .toc a:hover .tj,.pagemap a:hover .tj{color:var(--red)}
 /* On this page, as a right-hand rail once there is room for three columns; the
    inline box above the article serves every narrower width. */
@@ -403,6 +408,18 @@ CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden
          '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 '
          '111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" '
          'clip-rule="evenodd"/></svg>')
+
+# The "On this page" jump arrow. An SVG rather than "&darr;" because Outfit has no
+# U+2193 glyph and renders it zero-width instead of falling back, so the arrows were
+# present in the markup and invisible on all 59 pages that carry a jump list.
+JUMP_ARROW = ('<svg class="tj" width="12" height="12" viewBox="0 0 12 12" fill="none" '
+              'aria-hidden="true"><path d="M5.01405 1.49072V9.14072L2.4507 6.36572C2.24286 '
+              '6.14072 1.9311 6.14072 1.72326 6.36572C1.51542 6.59072 1.51542 6.92822 1.72326 '
+              '7.15322L5.18724 10.9032C5.39508 11.1282 5.70684 11.1282 5.91468 10.9032L9.37866 '
+              '7.15322C9.48258 7.04072 9.51722 6.89072 9.51722 6.74072C9.51722 6.59072 9.48258 '
+              '6.44072 9.37866 6.32822C9.17082 6.10322 8.85907 6.10322 8.65123 6.32822L6.08788 '
+              '9.10322V1.49072C6.08788 1.19072 5.8454 0.928223 5.56828 0.928223C5.3258 0.928223 '
+              '5.01405 1.19072 5.01405 1.49072Z" fill="currentColor"/></svg>')
 
 # The three header dropdowns, replicated item-for-item from oxfordabstracts.com's
 # mega-menus (scraped 29 July 2026): a 48px navy tile with a white heroicon, a
@@ -861,8 +878,8 @@ def enrich_body(body_html, title):
         # narrow screens, and a plain right-hand rail on wide ones where it can stay
         # in reach all the way down. The down-arrow says "this jumps, not navigates".
         items = ''.join(
-            f'<a href="#{hid}"><span class="tj" aria-hidden="true">&darr;</span>'
-            f'{html.escape(t)}</a>' for hid, t in entries[:14])
+            f'<a href="#{hid}">{JUMP_ARROW}{html.escape(t)}</a>'
+            for hid, t in entries[:14])
         toc = (f'<nav class="toc" aria-label="On this page"><span>On this page</span>{items}</nav>',
                f'<aside class="pagemap" aria-label="On this page"><span>On this page</span>{items}</aside>')
 

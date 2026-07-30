@@ -160,8 +160,13 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
   color:var(--muted);text-decoration:none;line-height:1.35}
 .rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
 .rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
-/* The down-arrow on jump links says "this jumps down the page, not to a new one". */
-.tj{display:inline-block;color:var(--muted);margin-right:7px;font-weight:400}
+/* The down-arrow on jump links says "this jumps down the page, not to a new one".
+   It is an inline SVG, not the U+2193 character: Outfit has no glyph for it and the
+   Google Fonts subset renders it zero-width rather than falling back, so the arrows
+   were in the markup on all 59 pages and invisible on every one of them. U+2192 in
+   .aud-alt and .go is fine - it is only the down arrow that is missing.
+   fill="currentColor" on the path keeps the muted/hover colours below working. */
+.tj{display:inline-block;width:12px;height:12px;vertical-align:middle;color:var(--muted);margin-right:8px}
 .toc a:hover .tj,.pagemap a:hover .tj{color:var(--red)}
 /* On this page, as a right-hand rail once there is room for three columns; the
    inline box above the article serves every narrower width. */
