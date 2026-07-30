@@ -563,10 +563,17 @@ $('#ticket').addEventListener('submit', async e => {
   $('#checking').classList.add('hidden');
   // Timed out, weak, or broken: send it and never interrupt. A slow endpoint must not
   // become a slow form.
-  if (result === TIMED_OUT || !isStrong(result)) { sendTicket([]); return; }
+  if (result === TIMED_OUT || !isStrong(result)) {
+    // One 'asked' row per question, whatever happens next, or the dashboard's Form
+    // column and answer rate can never see this surface at all.
+    logEvent(questionFrom(), false, [], 'asked');
+    sendTicket([]);
+    return;
+  }
 
   state.suggested = result.sources || [];
   state.shown = true;
+  logEvent(questionFrom(), true, state.suggested, 'asked');
   // Menu paths arrive marked **like this**; escape everything, then render only <strong>.
   $('#answerText').innerHTML = result.answer
     .replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))

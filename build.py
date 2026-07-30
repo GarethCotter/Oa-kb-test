@@ -395,7 +395,12 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .verdict{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .verdict button{display:inline-flex;align-items:center;gap:8px;background:none;border:1.5px solid rgba(16,28,56,.14);border-radius:999px;padding:9px 18px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--navy);cursor:pointer}
 .verdict button:hover{border-color:var(--navy)}
-.verdict button svg,.verdict-thanks svg{width:15px;height:15px;flex:none;color:#4E5A31}
+.verdict button svg,.verdict-thanks svg{width:15px;height:15px;flex:none}
+/* Sage tick, muted cross. The no must be easy to find and never the inviting one -
+   a red cross pulls the eye straight to the option we least want people to need. */
+.verdict .v-yes svg,.verdict-thanks svg{color:#4E5A31}
+.verdict .v-no svg{color:var(--muted)}
+.verdict .v-no:hover{border-color:var(--muted)}
 .verdict-thanks{display:flex;align-items:center;gap:8px;margin-top:18px;color:var(--navy);font-weight:500}
 /* Only the content below the line fades in - the book itself must not flicker as
    the block goes from loading to answered. */

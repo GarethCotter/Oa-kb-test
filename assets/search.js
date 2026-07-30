@@ -216,6 +216,15 @@ const TICK =
   '01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 ' +
   '011.05-.143z" clip-rule="evenodd"/></svg>';
 
+/* Tick and cross rather than thumbs: the question is "did this solve it", which has a
+   yes and a no, where a thumb asks the reader to rate us. The cross is muted rather
+   than red - it must be easy to find and never look like the inviting option. */
+const CROSS =
+  '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">' +
+  '<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 ' +
+  '0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 ' +
+  '1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
+
 /* One row per event: an 'asked' row when a question completes (answered says
    whether an answer was shown), then a row per verdict or ticket click. The master
    sheet's dashboard is computed entirely from these. Fire-and-forget: logging must
@@ -270,10 +279,12 @@ function showAnswer(answer, sources, question) {
   v.className = 'verdict ans-in';
   const yes = document.createElement('button');
   yes.type = 'button';
+  yes.className = 'v-yes';
   yes.innerHTML = TICK + 'This solved it';
   const no = document.createElement('button');
   no.type = 'button';
-  no.textContent = 'This didn’t help me';
+  no.className = 'v-no';
+  no.innerHTML = CROSS + 'This didn’t help me';
 
   yes.addEventListener('click', () => {
     logEvent(question, sources, 'solved');

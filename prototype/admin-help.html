@@ -164,6 +164,19 @@ table.subs .m{color:var(--muted);font-size:13.5px}
   padding:8px 14px;font-size:14px;color:var(--ink);cursor:pointer;text-align:left}
 .chip:hover{border-color:var(--red);color:var(--red)}
 .chip.solid{background:var(--red);border-color:var(--red);color:#fff;font-weight:500}
+/* Verdict row: quieter than the suggestion chips, because it is a question about the
+   answer just given rather than another thing to ask. */
+.verdict{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start;max-width:95%}
+.vbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(10,27,62,.18);
+  background:var(--white);border-radius:9999px;padding:7px 14px;font:inherit;font-size:13.5px;
+  color:var(--ink);cursor:pointer}
+.vbtn:hover{border-color:rgba(10,27,62,.45)}
+.vbtn svg{width:14px;height:14px;flex:none}
+.v-yes svg{color:#4E5A31}
+.v-no svg{color:#5a6377}
+.verdict-done{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+  font-size:13.5px;font-weight:500;color:var(--ink)}
+.verdict-done svg{width:14px;height:14px;flex:none;color:#4E5A31}
 .chip.solid:hover{background:#ab3a2f;color:#fff}
 .typing{display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--hair);
   border-radius:12px;border-bottom-left-radius:4px;padding:14px 16px;align-self:flex-start}
@@ -545,6 +558,50 @@ function addBot(text, sources) {
   $('#body').appendChild(row);
   scrollDown();
 }
+/* Did that answer work? Same two options and the same wording as the knowledge base,
+   so a reader who has seen one recognises the other. Every click is a labelled outcome
+   in the log - the one signal that says an answer WORKED rather than merely appeared. */
+const V_TICK = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>';
+const V_CROSS = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
+
+function addVerdict(question, sources) {
+  const wrap = el('div', 'verdict');
+  const yes = el('button', 'vbtn v-yes');
+  yes.type = 'button';
+  yes.innerHTML = V_TICK + 'This solved it';
+  const no = el('button', 'vbtn v-no');
+  no.type = 'button';
+  no.innerHTML = V_CROSS + 'This didn’t help me';
+
+  yes.addEventListener('click', () => {
+    logEvent(question, true, sources, 'solved');
+    const t = el('div', 'verdict-done');
+    t.innerHTML = V_TICK + 'Good — glad it helped.';
+    wrap.replaceWith(t);
+    scrollDown();
+  });
+
+  no.addEventListener('click', () => {
+    logEvent(question, true, sources, 'unhelpful');
+    wrap.remove();
+    addBot('Sorry about that — and thank you for telling us. Your click has flagged this answer for review, and feedback like this is how we improve every day.\nOur support team can give you a proper answer in the meantime.', []);
+    const row = el('div', 'chips');
+    const tk = el('button', 'chip solid', 'Raise a support ticket');
+    tk.type = 'button';
+    tk.addEventListener('click', () => {
+      logEvent(question, true, sources, 'ticket_created');
+      window.open('/prototype/support-deflection', '_blank');
+    });
+    row.appendChild(tk);
+    $('#body').appendChild(row);
+    scrollDown();
+  });
+
+  wrap.append(yes, no);
+  $('#body').appendChild(wrap);
+  scrollDown();
+}
+
 function addChips(list) {
   const wrap = el('div', 'chips');
   list.forEach(q => {
@@ -655,7 +712,8 @@ async function send(question) {
   if (isStrong(r)) {
     addBot(r.answer, r.sources);
     state.history.push({ q: question, a: r.answer });
-    logEvent(question, true, r.sources, 'none');
+    logEvent(question, true, r.sources, 'asked');
+    addVerdict(question, r.sources);
   } else {
     // Never a dead end, never an error. Honest about the miss, and both exits are one tap.
     addBot('I couldn’t find a confident answer to that one — and I’d rather say so than guess.\nThe knowledge base search sometimes does better with a bit more detail, or our support team will pick it up quickly — no question is too small.',
@@ -671,7 +729,7 @@ async function send(question) {
     $('#body').appendChild(wrap);
     scrollDown();
     state.history.push({ q: question, a: null });
-    logEvent(question, false, [], 'none');          // this row is the gap log
+    logEvent(question, false, [], 'asked');         // this row is the gap log
   }
   state.busy = false;
   $('#sendBtn').disabled = false;
