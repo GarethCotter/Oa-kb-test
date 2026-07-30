@@ -78,8 +78,9 @@ corpus in place.*
       way. Three questions: is API/integration access really on free Basic; are exports
       and reports really Abstract Management and above; are the event website and
       conference homepage Professional only?
-- [ ] **Skim the 32 renames worth checking** (`renames-to-check.md`) — the other 142 are
-      style-only, slug-only, or were never renamed
+- [x] ~~Skim the 32 renames worth checking~~ — done 29 July. 31 confirmed; *Colour-coding
+      your programme* reverted to **Colour coding your event** (slug too, with redirects).
+      See `renames-to-check.md`.
 - [ ] **Participant end-banner** — participant articles currently end with nothing.
       Add one pointing to their event administrator?
 - [ ] **Landing page top tasks** — three quick links inside each of the two doors?

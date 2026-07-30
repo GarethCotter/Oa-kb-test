@@ -34,7 +34,12 @@
   },
   {
    "source": "/knowledge/advanced-/-virtual-conference-program-colour-coding",
-   "destination": "/08-conference-platform/colour-coding-your-programme.html",
+   "destination": "/08-conference-platform/colour-coding-your-event.html",
+   "permanent": true
+  },
+  {
+   "source": "/08-conference-platform/colour-coding-your-programme",
+   "destination": "/08-conference-platform/colour-coding-your-event.html",
    "permanent": true
   },
   {

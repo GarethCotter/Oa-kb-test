@@ -1,5 +1,5 @@
 ---
-title: "Colour-coding your programme"
+title: "Colour coding your event"
 section: "08-conference-platform"
 audience: organisers
 plan: standard conference
@@ -7,7 +7,7 @@ source_url: https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-confer
 last_reviewed: 2026-07-29
 ---
 
-# Colour-coding your programme
+# Colour coding your event
 
 Colour by session, track or presentation type
 

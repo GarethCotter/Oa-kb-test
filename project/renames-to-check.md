@@ -1,5 +1,20 @@
 # Renames worth a second look
 
+> **Reviewed 29 July 2026. 31 of the 32 confirmed as they stand.**
+>
+> One reverted: *Colour-coding your programme* is back to **Colour coding your event**,
+> because "event" and "programme" are not interchangeable in the product and the
+> original title was right. The slug went back to `colour-coding-your-event` to match,
+> with redirects added from both the old HubSpot URL and the interim
+> `colour-coding-your-programme` path. Done now rather than later because the site is
+> still on the test domain, where changing a URL costs nothing.
+>
+> The dropped "Professional Conference —" and "Advanced —" prefixes (9 titles) were
+> discussed and kept: the plan badge carries the tier instead. If that decision is ever
+> revisited, it belongs with the open question about where Professional-tier content
+> should live.
+
+
 Generated from `title-renames.csv`. All 106 renames are already applied and
 redirected; this is the review, not a to-do list.
 
