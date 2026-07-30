@@ -1106,7 +1106,7 @@
  {
   "title": "Collecting Symposia",
   "path": "09-add-ons/collecting-symposia.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "Once your symposia forms are ready, open submissions so people can propose symposia \u2014 and attach abstracts to them yourself where you need to."
@@ -1114,7 +1114,7 @@
  {
   "title": "Creating a certificate",
   "path": "09-add-ons/creating-a-certificate.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: certificates (included in Professional)",
   "summary": "Learn how to create, edit, and send certificates. Plus, learn how to create recipient lists and custom recipients lists for your certifciates. # Please note: This information is for Admins only! For an overview of the ce"
@@ -1122,7 +1122,7 @@
  {
   "title": "Designing the Symposia forms",
   "path": "09-add-ons/designing-the-symposia-forms.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "Symposia have two forms of their own: the submission form people fill in to\npropose a symposium, and the review form your reviewers score them with. Both\nwork like their abstract equivalents, with different default quest"
@@ -1130,7 +1130,7 @@
  {
   "title": "Managing Symposia",
   "path": "09-add-ons/managing-symposia.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "Everything you need once symposia are coming in: reading the table, editing a\nsymposium, and deleting, restoring or withdrawing one."
@@ -1138,7 +1138,7 @@
  {
   "title": "Symposia decisions & emails",
   "path": "09-add-ons/symposia-decisions-emails.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "The last stage: recording outcomes for your symposia and telling people about them. Both work like their abstract equivalents, with templates written for symposia."
@@ -1146,7 +1146,7 @@
  {
   "title": "Symposia overview & dashboard",
   "path": "09-add-ons/symposia-overview-dashboard.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "Symposia is an optional add-on. It lets submitters group abstracts together under a single heading, with its own submission form, reviewing and decisions, run alongside your normal abstract collection."
@@ -1154,7 +1154,7 @@
  {
   "title": "Symposia reviewing",
   "path": "09-add-ons/symposia-reviewing.html",
-  "section": "Add-ons: Symposia & Certificates",
+  "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: symposia",
   "summary": "Reviewing symposia works much like reviewing abstracts , with one difference worth knowing up front: you cannot assign symposia by category."

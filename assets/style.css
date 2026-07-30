@@ -81,7 +81,11 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
    They were plain text links and read as a footnote; people did not find Symposia.
    Now cards, but deliberately smaller and unnumbered, so they sit below the eight
    lifecycle steps rather than alongside them. */
-.quiet-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+/* The row needed a label. It cannot just say "Add-ons" - only the first of the three
+   is one - so the heading names all three and the card drops the prefix. */
+.quiet-head{margin:34px 0 12px;font-size:13px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted)}
+.quiet-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .quiet-links a{display:flex;align-items:center;gap:11px;background:var(--white);
   border:1px solid var(--line);border-radius:12px;padding:15px 18px;text-decoration:none;
   color:var(--navy);font-size:16.5px;font-weight:500;line-height:1.3;

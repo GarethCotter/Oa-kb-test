@@ -35,7 +35,7 @@ SECTIONS = [
     ('06-programme-exports-reports', '6', 'Programme & reports', 'organisers', 'Build sessions, abstract books and exports'),
     ('07-delegate-registration', '7', 'Registration', 'organisers', 'Tickets, payments, orders and invoices'),
     ('08-conference-platform', '8', 'Conference platform', 'organisers', 'Your event site, live and on demand'),
-    ('09-add-ons', '', 'Add-ons: Symposia & Certificates', 'organisers', 'Optional extras you can buy alongside your plan'),
+    ('09-add-ons', '', 'Symposia & Certificates', 'organisers', 'Optional extras you can buy alongside your plan'),
     ('10-integrations-api', '', 'Integrations & API', 'organisers', 'Connect Oxford Abstracts to other tools'),
     ('11-account-administration', '', 'Account administration', 'organisers', 'Your account, billing and archiving'),
     ('12-for-submitters', '', 'Submitting', 'participants', 'Make, edit or pay for your submission'),
@@ -143,7 +143,11 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
    They were plain text links and read as a footnote; people did not find Symposia.
    Now cards, but deliberately smaller and unnumbered, so they sit below the eight
    lifecycle steps rather than alongside them. */
-.quiet-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+/* The row needed a label. It cannot just say "Add-ons" - only the first of the three
+   is one - so the heading names all three and the card drops the prefix. */
+.quiet-head{margin:34px 0 12px;font-size:13px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted)}
+.quiet-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .quiet-links a{display:flex;align-items:center;gap:11px;background:var(--white);
   border:1px solid var(--line);border-radius:12px;padding:15px 18px;text-decoration:none;
   color:var(--navy);font-size:16.5px;font-weight:500;line-height:1.3;
@@ -328,9 +332,8 @@ SUPPORT_URL = 'https://oxfordabstracts.com/resources/contact-support'
 FOOT = ("""</main>
 <section class="human"><div class="wrap">
 <h2 class="display">Still stuck? Send us a ticket</h2>
-<p>Tell us what you're trying to do and someone who knows the software will come back to you
-promptly &mdash; usually the same working day. No question is too small, and there's no charge
-for asking.</p>
+<p>Tell us what you're trying to do and one of our support team experts will come back to you
+promptly with the solution. No question is too small, and there's no charge for asking.</p>
 <a class="btn" href="%s">Create ticket</a>
 </div></section>
 <footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
@@ -927,6 +930,7 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
 <div class="section-head"><h2 class="display">Your event, step by step</h2>
 <p>Guides are arranged in the order you'll need them — start where you are.</p></div>
 <div class="steps">{steps}</div>
+<p class="quiet-head">Add-ons, integrations and your account</p>
 <div class="quiet-links">{quiet}</div></section>
 
 <section class="participants wrap" id="participants">
