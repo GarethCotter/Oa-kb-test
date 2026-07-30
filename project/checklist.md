@@ -147,8 +147,13 @@ corpus in place.*
 - [ ] *Social share tags: dropped 29 July.* `<meta name="description">` already covers
       search engines; `og:` only changes the preview card when a link is pasted into
       Slack or email, and these articles are rarely shared.
-- [ ] **In-app chat widget** — same endpoint, bottom-right launcher, knows what page
-      she's on. Best after the search proves itself.
+- [x] ~~In-app chat widget~~ — **built to handover, 30 July.** `widget/help-widget.js`
+      is the production drop-in (one config line + one script include per page),
+      `widget/test-page.html` the live harness, `widget/HANDOVER.md` the engineer's
+      instructions. Static KB pages now send `Access-Control-Allow-Origin: *` so the
+      in-panel reader can fetch article HTML cross-origin. Known limitation recorded:
+      multi-turn is one exchange deep (prefix in the 500-char cap) until the endpoint
+      accepts structured history. Waiting on the OA engineer to add it to app pages.
 - [ ] **8th-grade readability pass** — standing job for the update pipeline.
 - [ ] **App-testing agent** — walks flows in a test event, records undocumented behaviour
       into the internal corpus, captures fresh screenshots.
