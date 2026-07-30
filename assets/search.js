@@ -216,9 +216,11 @@ const TICK =
   '01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 ' +
   '011.05-.143z" clip-rule="evenodd"/></svg>';
 
-/* One row per verdict click, never per search. Fire-and-forget: logging must never
-   affect the reader (see api/log.js, which enforces the same rule server-side). */
-function logVerdict(question, sources, action) {
+/* One row per event: an 'asked' row when a question completes (answered says
+   whether an answer was shown), then a row per verdict or ticket click. The master
+   sheet's dashboard is computed entirely from these. Fire-and-forget: logging must
+   never affect the reader (api/log.js enforces the same rule server-side). */
+function logEvent(question, sources, action, answered) {
   try {
     fetch('/api/log', {
       method: 'POST',
@@ -227,7 +229,7 @@ function logVerdict(question, sources, action) {
       body: JSON.stringify({
         surface: 'kb-search',
         question: question,
-        answered: true,
+        answered: answered !== false,
         sources: (sources || []).map(s => s.path),
         action: action
       })
@@ -274,7 +276,7 @@ function showAnswer(answer, sources, question) {
   no.textContent = 'This didn’t help me';
 
   yes.addEventListener('click', () => {
-    logVerdict(question, sources, 'solved');
+    logEvent(question, sources, 'solved');
     const t = document.createElement('p');
     t.className = 'verdict-thanks';
     t.setAttribute('role', 'status');
@@ -283,7 +285,7 @@ function showAnswer(answer, sources, question) {
   });
 
   no.addEventListener('click', () => {
-    logVerdict(question, sources, 'unhelpful');
+    logEvent(question, sources, 'unhelpful');
     const card = document.createElement('div');
     card.className = 'gap-card ans-in';
     card.setAttribute('role', 'status');
@@ -297,6 +299,8 @@ function showAnswer(answer, sources, question) {
     a.href = 'https://oxfordabstracts.com/resources/contact-support?topic=' +
       encodeURIComponent((question || '').slice(0, 120));
     a.textContent = 'Create support ticket →';
+    // keepalive on the fetch means the row survives the navigation to the form
+    a.addEventListener('click', () => logEvent(question, sources, 'ticket_created'));
     card.appendChild(a);
     v.replaceWith(card);
   });
@@ -374,6 +378,7 @@ function showEscalation(question) {
   a.href = 'https://oxfordabstracts.com/resources/contact-support?topic=' +
     encodeURIComponent(question.slice(0, 120));
   a.textContent = 'Create support ticket →';
+  a.addEventListener('click', () => logEvent(question, [], 'ticket_created', false));
   card.appendChild(a);
   el.appendChild(card);
 }
@@ -392,12 +397,16 @@ async function fetchAnswer(question) {
     });
     if (!res.ok) throw new Error('bad status');
     const data = await res.json();
-    if (data && data.answer) showAnswer(data.answer, data.sources, question);
-    else if (data && data.found === false) {
+    if (data && data.answer) {
+      showAnswer(data.answer, data.sources, question);
+      logEvent(question, data.sources, 'asked', true);
+    } else if (data && data.found === false) {
       // keywords that found nothing get "ask in full", not "we haven't written this"
       if (looksLikeKeywords(question)) showAskFully();
       else showEscalation(question);
+      logEvent(question, [], 'asked', false);
     }
+    // a transport error logs nothing: we know nothing about the question's fate
     else clearAnswer();          // transport errors stay silent
   } catch (e) {
     clearAnswer();               // never surface an API error to the reader

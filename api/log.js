@@ -6,7 +6,12 @@
  *   question  the reader's own words
  *   answered  true when a confident answer was shown
  *   sources   article paths shown
- *   action    solved | unhelpful | sent_anyway | not_interrupted | opened_article | followup | none
+ *   action    asked | solved | unhelpful | ticket_created | sent_anyway |
+ *             not_interrupted | opened_article | followup | none
+ *
+ * 'asked' is one row per completed question from any surface (answered says whether
+ * an answer was shown); everything else is a subsequent event on that question.
+ * The master sheet's Dashboard tab computes all of its numbers from these rows.
  *
  * Forwards to a Google Sheet via an Apps Script web app (see scripts/sheet-logger.gs).
  * Set SHEET_WEBHOOK_URL and SHEET_TOKEN in Vercel's environment variables. With no
@@ -29,8 +34,9 @@ const scrub = s => String(s || '')
   .slice(0, 500)
   .trim();
 
-const ACTIONS = new Set(['solved', 'unhelpful', 'sent_anyway', 'not_interrupted',
-                         'opened_article', 'followup', 'none']);
+const ACTIONS = new Set(['asked', 'solved', 'unhelpful', 'ticket_created',
+                         'sent_anyway', 'not_interrupted', 'opened_article',
+                         'followup', 'none']);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
