@@ -141,7 +141,22 @@ derived from surrounding text, so check the built output when you change the sou
 - **Menu paths in bold**: `**Event dashboard → Emails → Edit & Send**`.
 - **Frontmatter**: `title`, `section`, `audience`, `plan`, `source_url`, `last_reviewed`,
   and `merged_from` where content was consolidated. Bump `last_reviewed` on every edit.
+  `source_url` is provenance — the original HubSpot address — and the redirect check
+  resolves it against `vercel.json`. Never rewrite it.
+- **`plan:`** must match `project/plan-feature-matrix.md`, which is transcribed from the
+  pricing page. Nine articles claimed to be on the free plan and were not.
 - **British English throughout.**
+- **Screenshots: only at decision points.** Bolded menu paths navigate as well as a
+  screenshot of a menu does and never go stale; the existing 1,326 images date from
+  2021–2023 and some already show a previous UI. Keep pictures for screens that are
+  genuinely confusing or where "you should now see this" reassures. Two or three per
+  article, not ten.
+- **`corpus-internal/` notes: put the keywords in the first 160 characters.** The
+  router sees a note's title plus only that much of its body, so a pricing note whose
+  plan names sat lower down was never selected for "how much is the Professional
+  Conference Package".
+- **No hand-written jump links.** The generated "On this page" box does that job; 380
+  hand-made in-page links had rotted across 97 pages before they were removed.
 
 ---
 
@@ -185,6 +200,30 @@ derived from surrounding text, so check the built output when you change the sou
 ---
 
 ## Checks worth running after any change
+
+```bash
+python3 build.py
+python3 scripts/checks.py      # exits non-zero if anything fails
+```
+
+`scripts/checks.py` is the standing suite — ten checks, each one there because the
+thing it catches actually happened. It covers link resolution under `cleanUrls`,
+links to the old HubSpot KB (which the resolution check structurally cannot see,
+because it skips `http`), redirect coverage for every renamed article, the audience
+sentence never being left in the prose, alt text being per-image, in-page anchors
+resolving, one `<h1>` per page, "Most popular" having seven entries, every section
+card having a description, and nothing stray under `corpus/`.
+
+Two things it taught us about writing checks, both learned the hard way:
+
+- **Scope to the article body.** Counting across whole pages caught the footer logo
+  and the lightbox's deliberately-empty alt, and reported 180 failures that were the
+  chrome working correctly.
+- **Tripwire phrases must be unique to the fault.** "please click" was tried as a
+  proxy for the audience boilerplate; it occurs in ordinary instructions, and the
+  derived alt text repeats those instructions, so it false-positived by design.
+
+The original inline link checker, kept for reference:
 
 ```bash
 python3 build.py
