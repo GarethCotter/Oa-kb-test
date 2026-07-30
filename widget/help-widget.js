@@ -407,13 +407,15 @@
   }
 
   /* ---------- the in-panel reader ---------- */
-  function openReader(path, kbUrl) {
+  /* pageUrl, not kbUrl: a parameter named kbUrl shadowed the kbUrl() helper above,
+     so fetch(kbUrl(path)) called a string and threw before fetching anything. */
+  function openReader(path, pageUrl) {
     panel.classList.add('oahw-wide');
     body.classList.add('oahw-hidden');
     foot.classList.add('oahw-hidden');
     state._rbar.classList.remove('oahw-hidden');
     reader.classList.remove('oahw-hidden');
-    readerOpen.href = kbUrl;
+    readerOpen.href = pageUrl;
     reader.innerHTML = '<p>Opening the guide…</p>';
     fetch(kbUrl(path))
       .then(function (r) { if (!r.ok) throw new Error('status'); return r.text(); })
@@ -442,7 +444,7 @@
         // Cross-origin fetch blocked or page changed: never a dead end - open the
         // real page in a tab instead and put the conversation back.
         closeReader();
-        window.open(kbUrl, '_blank');
+        window.open(pageUrl, '_blank');
       });
   }
   function closeReader() {
