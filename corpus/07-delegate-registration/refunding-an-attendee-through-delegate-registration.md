@@ -69,4 +69,33 @@ Please Note:
 
 **Please note:** Oxford Abstracts does not reimburse the service fee for refunded registrations.
 
+## Before you refund, three things to know
+
+**Refunding cancels their place.** A refund and a cancellation are the same action —
+there is no way to return the money and leave the ticket active. If somebody should
+still attend after being refunded (a speaker being comped, for example), refund them
+first and then give them access as an invited user. See
+[Controlling access to the programme](/08-conference-platform/controlling-access-to-the-programme.html).
+
+**The fees are not returned.** The delegate gets the full amount back, but neither the
+payment provider's fee nor the Oxford Abstracts service fee is refunded, so you absorb
+both. If you expect cancellations, it is worth putting a cancellation fee in your terms
+and saying so on the invoice.
+
+**Partial refunds are not supported.** You can only remove a whole ticket or add-on
+from an order. To refund part of what somebody paid — a 50% cancellation policy, or a
+discount code they should have used but didn't — do it in two steps: refund the
+original order in full, then create a ticket at the reduced price, visible to admins
+only, and add them to it.
+
+## If you refunded outside Oxford Abstracts
+
+If you issued the refund directly in Stripe or Authorize.net, the attendee table will
+still show them as paid. **Do not refund them again here** — that would send the money
+twice. [Contact support](https://oxfordabstracts.com/resources/contact-support/) with
+the attendee and the date, and the status can be corrected for you.
+
+Refunds usually take five to ten days to reach the payer's statement. Refunded amounts
+are excluded from the gross total on the transactions page.
+
 Should you require any further assistance, please contact our help desk via our [contact form.](https://oxfordabstracts.com/resources/contact-support/)
