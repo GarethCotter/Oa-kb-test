@@ -88,13 +88,24 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .site-nav>a:hover,.nav-item>button:hover{color:var(--red)}
 .caret{width:12px;height:12px;opacity:.75;flex-shrink:0}
 .nav-item{position:relative}
-.nav-drop{position:absolute;top:100%;left:0;margin-top:2px;background:var(--white);
-  border:1px solid var(--line);border-radius:12px;padding:8px;min-width:250px;
-  box-shadow:0 14px 34px rgba(16,28,56,.14);display:none;z-index:30}
-.nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop{display:block}
-.nav-drop a{display:block;padding:9px 12px;border-radius:8px;font-size:16px;
-  color:var(--navy);text-decoration:none}
-.nav-drop a:hover{background:rgba(16,28,56,.06);color:var(--red)}
+/* Mega-menu panels replicated from oxfordabstracts.com: 640px white panel, 8px
+   radius, 12px padding, two 308px columns; each item a 48px navy tile with a white
+   icon, a semibold title and a muted description; #F5F8FF hover. */
+.nav-drop{position:absolute;top:calc(100% - 2px);right:-160px;background:#fff;
+  border-radius:8px;padding:12px;width:640px;display:none;z-index:30;
+  box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+  grid-template-columns:308px 308px}
+.nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop{display:grid}
+/* The leftmost menu anchors left, or its panel runs 79px off the viewport edge. */
+.site-nav .nav-item:first-of-type .nav-drop{left:-12px;right:auto}
+.nd-item{display:flex;align-items:flex-start;padding:12px;border-radius:8px;
+  text-decoration:none;color:var(--navy);font-size:16px;line-height:1.25}
+.nd-item:hover{background:#F5F8FF}
+.nd-ico{flex:none;width:48px;height:48px;margin-right:12px;border-radius:8px;
+  background:#0A1B3E;display:flex;align-items:center;justify-content:center}
+.nd-ico svg{width:24px;height:24px;color:#fff}
+.nd-item b{display:block;font-weight:600;margin-bottom:4px}
+.nd-item small{display:block;font-size:14px;opacity:.6;line-height:1.35}
 .nav-actions{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
 .signin{color:var(--navy);text-decoration:none;font-size:18px;padding:8px 12px}
 .signin:hover{color:var(--red)}
@@ -167,7 +178,21 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .human{background:var(--navy);color:var(--cream);padding:54px 0;text-align:center;margin-top:20px}
 .human h2{font-size:clamp(26px,3.5vw,34px);margin-bottom:10px}
 .human p{color:rgba(237,235,226,.75);max-width:520px;margin:0 auto 24px}
-footer{padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
+/* The site footer, to the values measured off oxfordabstracts.com: navy, cream
+   #EAECE1 at 18px (the site's cream, marginally different from this page's), 1280px
+   container at 80px padding, auto-filling 192px columns with a 24px gap, uppercase
+   plain-weight h4 group headings, 12px between links, the address in muted green. */
+.site-footer{background:#0A1B3E;color:#EAECE1;font-size:18px}
+.site-footer .cols{max-width:1280px;margin:0 auto;padding:80px;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(192px,1fr));gap:24px}
+.site-footer img{width:156px;height:38px;display:block}
+.f-addr{color:#B7C097;line-height:26px;margin-top:18px}
+.site-footer h4{font-size:18px;font-weight:400;text-transform:uppercase;margin:0 0 8px}
+.site-footer ul{list-style:none;margin:0;padding:0}
+.site-footer li{margin:0 0 12px}
+.site-footer li a{display:block;color:#EAECE1;text-decoration:none;line-height:18px}
+.site-footer li a:hover{text-decoration:underline;text-underline-offset:2px}
+@media (max-width:1000px){.site-footer .cols{padding:48px 24px}}
 .crumbs{padding:22px 0 0;font-size:16px;color:var(--muted)}
 .crumbs a{color:var(--muted);text-decoration:none}
 .crumbs a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -295,13 +320,10 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <header><div class="wrap-nav nav">
 <a class="logo" href="https://oxfordabstracts.com/" aria-label="Oxford Abstracts"><img src="https://a.storyblok.com/f/262790/192x46/f2b614f59c/oa_dark.svg/m/384x0" alt="Oxford Abstracts"></a>
 <nav class="site-nav" aria-label="Oxford Abstracts">
-<div class="nav-item"><button type="button" aria-expanded="false">Products{caret}</button>
-<div class="nav-drop"><a href="https://oxfordabstracts.com/product/abstract-management-software/">Abstract management</a><a href="https://oxfordabstracts.com/product/academic-conference-software/">Academic conference software</a></div></div>
+@@MENU_PRODUCTS@@
 <a href="https://oxfordabstracts.com/pricing/">Pricing</a>
-<div class="nav-item"><button type="button" aria-expanded="false">Company{caret}</button>
-<div class="nav-drop"><a href="https://oxfordabstracts.com/about/">About us</a><a href="https://oxfordabstracts.com/careers/">Careers</a><a href="https://oxfordabstracts.com/client-stories/">Client stories</a></div></div>
-<div class="nav-item"><button type="button" aria-expanded="false">Resources{caret}</button>
-<div class="nav-drop"><a href="{root}index.html">Help centre</a><a href="https://oxfordabstracts.com/resources/videos/">Video tutorials</a><a href="https://oxfordabstracts.com/blog/">Blog</a><a href="https://oxfordabstracts.com/resources/glossary/">Glossary</a><a href="https://oxfordabstracts.com/changelog/">Changelog</a><a href="https://oxfordabstracts.com/resources/contact/">Contact us</a></div></div>
+@@MENU_COMPANY@@
+@@MENU_RESOURCES@@
 </nav>
 <div class="nav-actions">
 <a class="signin" href="https://app.oxfordabstracts.com/">Sign in</a>
@@ -323,8 +345,116 @@ CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden
          '111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" '
          'clip-rule="evenodd"/></svg>')
 
+# The three header dropdowns, replicated item-for-item from oxfordabstracts.com's
+# mega-menus (scraped 29 July 2026): a 48px navy tile with a white heroicon, a
+# semibold title and a muted one-line description per item, in a 640px two-column
+# white panel. One deliberate difference: the site's "Knowledge Base" item points at
+# the old HubSpot KB; ours points home, because this IS the knowledge base.
+NAV_MENUS = [
+    ('Products', [
+        ('https://oxfordabstracts.com/product/abstract-management-software/',
+         'Abstract Management Software', 'Manage your submission, review and decision process',
+         'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'),
+        ('https://oxfordabstracts.com/product/academic-conference-software/',
+         'Academic Conference Software', 'All-in-one system for your academic event',
+         'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'),
+    ]),
+    ('Company', [
+        ('https://oxfordabstracts.com/about/',
+         'About Us', 'Find out more about Oxford Abstracts',
+         'M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.3'),
+        ('https://oxfordabstracts.com/careers/',
+         'Careers', "View open jobs and see what it's like to work with us",
+         'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'),
+        ('https://oxfordabstracts.com/client-stories/',
+         'Client Stories', 'Discover what our clients say about us',
+         'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'),
+        ('https://oxfordabstracts.com/integrations-partners/',
+         'Integrations & Partners', 'Explore integrations and partners for your event',
+         'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'),
+    ]),
+    ('Resources', [
+        ('https://oxfordabstracts.com/blog/',
+         'Blog', 'See our latest industry articles and product updates',
+         'M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z'),
+        ('{root}index.html',
+         'Knowledge Base', 'Find answers and guides for your software questions',
+         'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'),
+        ('https://oxfordabstracts.com/resources/videos/',
+         'Video Tutorials', 'Watch our informative videos to learn more about Oxford Abstracts',
+         'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z'),
+        ('https://oxfordabstracts.com/resources/glossary/',
+         'Glossary', 'A reference for common terms relating to academic conferences',
+         'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'),
+        ('https://oxfordabstracts.com/changelog/',
+         'Changelog', 'Latest updates',
+         'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'),
+        ('https://oxfordabstracts.com/resources/faq/',
+         'FAQs', 'Look through our frequently asked questions',
+         'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'),
+        ('https://oxfordabstracts.com/resources/contact/',
+         'Contact Us', 'Here to help with both sales queries and support issues',
+         'M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z'),
+    ]),
+]
+
+
+def _nav_menu_html():
+    out = []
+    for label, items in NAV_MENUS:
+        rows = ''.join(
+            '<a class="nd-item" href="%s"><span class="nd-ico">'
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+            'aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="%s"/></svg>'
+            '</span><span><b>%s</b><small>%s</small></span></a>'
+            % (href, svg, html.escape(title), html.escape(desc))
+            for href, title, desc, svg in items)
+        out.append(
+            '<div class="nav-item"><button type="button" aria-expanded="false">%s{caret}</button>'
+            '<div class="nav-drop">%s</div></div>' % (label, rows))
+    return out
+
+NAV_PRODUCTS, NAV_COMPANY, NAV_RESOURCES = _nav_menu_html()
+HEAD = (HEAD.replace('@@MENU_PRODUCTS@@', NAV_PRODUCTS)
+            .replace('@@MENU_COMPANY@@', NAV_COMPANY)
+            .replace('@@MENU_RESOURCES@@', NAV_RESOURCES))
+
+# The site footer, replicated column-for-column from oxfordabstracts.com
+# (scraped 29 July 2026): navy, cream 18px text, a 1280px container at 80px padding,
+# auto-filling 192px columns, the cream logo above the registered address in the
+# muted green, then five link groups. The logo is committed in assets/ rather than
+# hotlinked, per the images rule.
+FOOTER_HTML = """<footer class="site-footer"><div class="cols">
+<div><a href="https://oxfordabstracts.com/" aria-label="Oxford Abstracts"><img src="/assets/oa-logo-cream.svg" alt="Oxford Abstracts" width="156" height="38"></a>
+<div class="f-addr">Oxford Abstracts Limited<br>Silicon Croft, Saltacre<br>Kilchoan<br>Acharacle PH36 4LP<br>United Kingdom</div></div>
+<div><h4>Getting started</h4><ul>
+<li><a href="https://oxfordabstracts.com/pricing/">Pricing</a></li>
+<li><a href="https://oxfordabstracts.com/meeting/">Book A Demo</a></li>
+<li><a href="https://oxfordabstracts.com/resources/contact/">Contact Us</a></li></ul></div>
+<div><h4>Product</h4><ul>
+<li><a href="https://oxfordabstracts.com/product/abstract-management-software/">Abstract Management Software</a></li>
+<li><a href="https://oxfordabstracts.com/product/academic-conference-software/">Academic Conference Software</a></li></ul></div>
+<div><h4>Oxford Abstracts</h4><ul>
+<li><a href="https://oxfordabstracts.com/about/">About Us</a></li>
+<li><a href="https://oxfordabstracts.com/careers/">Careers</a></li>
+<li><a href="https://oxfordabstracts.com/client-stories/">Client Stories</a></li></ul></div>
+<div><h4>Resources</h4><ul>
+<li><a href="https://oxfordabstracts.com/resources/faq/">FAQ</a></li>
+<li><a href="https://oxfordabstracts.com/resources/glossary/">Glossary</a></li>
+<li><a href="https://oxfordabstracts.com/terms-of-service/">Terms of Service</a></li>
+<li><a href="https://oxfordabstracts.com/privacy-policy/">Privacy Policy</a></li>
+<li><a href="https://oxfordabstracts.com/cookie-policy/">Cookie Policy</a></li>
+<li><a href="https://oxfordabstracts.com/accessibility/">Accessibility</a></li>
+<li><a href="https://oxfordabstracts.com/changelog/">Changelog</a></li></ul></div>
+<div><h4>Popular posts</h4><ul>
+<li><a href="https://oxfordabstracts.com/blog/top-ai-conferences-to-attend-in-2024/">Top AI Conferences In 2025</a></li>
+<li><a href="https://oxfordabstracts.com/blog/top-sustainability-conferences-to-attend-in-2024/">Top Sustainability Conferences In 2025</a></li>
+<li><a href="https://oxfordabstracts.com/blog/the-best-abstract-management-software-for-2024-a-comparison/">Best Abstract Management Software In 2025</a></li>
+<li><a href="https://oxfordabstracts.com/blog/the-best-academic-conference-software-for-2024-a-comparison/">Best Academic Conference Software In 2025</a></li></ul></div>
+</div></footer>"""
+
 ARTICLE_FOOT = """</main>
-<footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
+""" + FOOTER_HTML + """
 </body></html>"""
 
 SUPPORT_URL = 'https://oxfordabstracts.com/resources/contact-support'
@@ -336,8 +466,8 @@ FOOT = ("""</main>
 promptly with the solution. No question is too small, and there's no charge for asking.</p>
 <a class="btn" href="%s">Create ticket</a>
 </div></section>
-<footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
-</body></html>""" % SUPPORT_URL)
+""" % SUPPORT_URL) + FOOTER_HTML + """
+</body></html>"""
 
 SUPPORT_BANNER = """<section class="support">
 <div><h2>Didn't solve it? Ask our support team</h2>
