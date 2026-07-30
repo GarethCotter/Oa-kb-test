@@ -43,3 +43,33 @@ After navigating to **My profile** (see above), click the link shown below and f
 NB: If you create a new password , you will then be able to log in with your third party account (e.g.Linkedin / Google) AND just your email and new password.
 
 If you update your email, you can no longer log in with your third party account.
+
+## If it says "email failed to save"
+
+Almost always this means **the address you are changing to already has an Oxford
+Abstracts account**. Two accounts cannot share one address, so the change is refused.
+Trying a different browser or turning off blockers will not help — the problem is not
+at your end.
+
+Work out which of these applies:
+
+* **You already have an account on the new address.** You now have two, and your work
+  is split between them. There is no self-service way to merge them —
+  [contact support](https://oxfordabstracts.com/resources/contact-support/), say which
+  account you want to keep, and your submissions can be moved across to it.
+* **You have lost access to the old mailbox** — you have left an institution, say — and
+  cannot sign in to change it yourself. Support can move you across; you will be asked
+  to confirm both addresses.
+* **You mistyped the new address.** If the change went through with a typo, you cannot
+  correct it yourself, because you cannot receive mail at an address that does not
+  exist. Support can put it right.
+
+Two things worth knowing before you ask:
+
+* **Submissions can be moved between accounts. Reviews are much harder.** If you have
+  completed reviews under the wrong address, say so early — the usual fix is to move
+  the submissions rather than the reviews.
+* **If you are a submitter or reviewer for a specific conference**, your event
+  administrator can change the address held against your submission themselves, which
+  is often quicker than going through us. See
+  [How do I contact the event administrator?](/14-for-attendees-exhibitors/how-do-i-contact-the-event-administrator.html)
