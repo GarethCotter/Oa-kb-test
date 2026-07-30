@@ -184,6 +184,14 @@
   "summary": "This feature allows you to charge and collect fees from submitters. It is not available in the FREE package. # Skip to written instructions Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Form &amp; Setup. Yo"
  },
  {
+  "title": "Collecting slides and posters from your presenters",
+  "path": "02-submissions/collecting-slides-and-posters-from-presenters.html",
+  "section": "Submissions",
+  "audience": "organisers",
+  "plan": "abstract management and above",
+  "summary": "There is no separate upload area for presentations \u2014 you collect them through the submission form, which means there are two decisions to get right before you ask anyone for anything. # Add a file upload question # Go to"
+ },
+ {
   "title": "Combined word count",
   "path": "02-submissions/combined-word-count.html",
   "section": "Submissions",
@@ -662,6 +670,14 @@
   "audience": "organisers",
   "plan": "abstract management",
   "summary": "There may be occasions where you only require presenters' data, as opposed to all authors. # Read The overview of tables article and Export table data to Excel first, so you are familiar with the tables and exporting of "
+ },
+ {
+  "title": "Downloading all submissions and the files attached to them",
+  "path": "06-programme-exports-reports/downloading-submissions-and-their-files.html",
+  "section": "Programme & reports",
+  "audience": "organisers",
+  "plan": "abstract management and above",
+  "summary": "You do not have to open submissions one at a time. Everything comes down in a single zipped folder from Reports and downloads \u2014 the trick is knowing which download gives you what. # Go to Event dashboard \u2192 Abstract Manag"
  },
  {
   "title": "Downloading your program and session books",

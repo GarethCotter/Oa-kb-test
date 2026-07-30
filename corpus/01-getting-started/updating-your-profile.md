@@ -64,6 +64,26 @@ Work out which of these applies:
   correct it yourself, because you cannot receive mail at an address that does not
   exist. Support can put it right.
 
+## If you signed up with Google, LinkedIn or your institution's login
+
+An account created through a third-party sign-in has no password of its own, and
+**you cannot change the email address on it** — you will be told the change failed
+because you are an SSO user.
+
+There is a way round it, and you can do it yourself:
+
+1. Go to your profile and **set a password** on the account.
+2. Sign out, then sign back in with your email address and that new password.
+3. Change the email address as normal.
+
+Once the account has a password it is no longer tied to the third-party sign-in, so
+the change goes through. Note the trade-off: after changing the address you can no
+longer sign in with the third-party button, only with your email and password.
+
+If you are an organiser and a **reviewer** is stuck on this, it is often quicker to
+reassign their reviews to the address they already use than to move them onto a new
+one.
+
 Two things worth knowing before you ask:
 
 * **Submissions can be moved between accounts. Reviews are much harder.** If you have
