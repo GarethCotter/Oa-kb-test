@@ -237,6 +237,53 @@ function showAnswer(answer, sources) {
   // The example questions under the homepage search box are a different thing and stay.
 }
 
+/* Amplitude taught us most people type two words, not a question - "incomplete
+   submissions", "reviewer emails". Those still search fine, so nothing nags while
+   an answer is coming or once one has arrived. But when the answer layer comes back
+   empty on a keyword-shaped query, the honest reading is "we couldn't tell what you
+   were asking", not "we haven't written this up" - so those get an invitation to ask
+   in full instead of the gap card, which would be claiming a content gap we have no
+   evidence for. */
+const QUESTION_LEADS = new Set(['how', 'why', 'what', 'where', 'when', 'who', 'which',
+  'can', 'cant', 'cannot', 'could', 'do', 'does', 'did', 'is', 'are', 'am', 'was',
+  'will', 'would', 'should', 'shall', 'may', 'might', 'has', 'have', 'had', 'if',
+  'i', 'my', 'we', 'our', 'the']);
+
+function looksLikeKeywords(q) {
+  if (q.includes('?')) return false;
+  const words = q.toLowerCase().trim().split(/\s+/);
+  if (words.length >= 5) return false;      // a five-word phrase is a real attempt
+  return !QUESTION_LEADS.has(words[0].replace(/[^a-z']/g, ''));
+}
+
+/* The invitation. The reader is not told off for searching in keywords - the guides
+   below still carry them - just shown that one full sentence usually skips the
+   digging. The button puts them back in the box with their words selected, so one
+   keystroke starts the question. */
+function showAskFully() {
+  const el = settleInto('more', 'Want the answer, not just the guides?');
+  const hasGuides = list.children.length > 0 && !list.querySelector('a[href*="contact"]');
+  const card = document.createElement('div');
+  card.className = 'gap-card ans-in';
+  const p = document.createElement('p');
+  p.textContent = (hasGuides
+    ? 'The guides below should cover it. But ask in a full sentence - the way ' +
+      'you’d ask a colleague, like “Why is my submission incomplete?” - ' +
+      'and we can usually answer you on the spot, so you don’t have to dig.'
+    : 'Those words on their own didn’t find anything, but a full question often ' +
+      'will. Ask it the way you’d ask a colleague - like “Why is my ' +
+      'submission incomplete?” - and if the guides cover it, we’ll answer ' +
+      'you directly.');
+  card.appendChild(p);
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'gap-btn';
+  b.textContent = 'Ask your full question';
+  b.addEventListener('click', () => { input.focus(); input.select(); });
+  card.appendChild(b);
+  el.appendChild(card);
+}
+
 /* The gap state. Reached only on an explicit found:false - a transport error goes to
    clearAnswer() instead, because "we have not written this up" is a claim about our
    guides, and it would be a lie if the endpoint had simply failed.
@@ -277,7 +324,11 @@ async function fetchAnswer(question) {
     if (!res.ok) throw new Error('bad status');
     const data = await res.json();
     if (data && data.answer) showAnswer(data.answer, data.sources);
-    else if (data && data.found === false) showEscalation(question);
+    else if (data && data.found === false) {
+      // keywords that found nothing get "ask in full", not "we haven't written this"
+      if (looksLikeKeywords(question)) showAskFully();
+      else showEscalation(question);
+    }
     else clearAnswer();          // transport errors stay silent
   } catch (e) {
     clearAnswer();               // never surface an API error to the reader
