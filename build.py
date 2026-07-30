@@ -340,19 +340,47 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .answer-block{margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid var(--line);opacity:0;transform:translateY(6px);transition:opacity .45s ease,transform .45s ease}
 .answer-block.revealed,.answer-block.is-loading{opacity:1;transform:none}
 .answer-block p{font-size:18px;margin-bottom:10px}
-.ans-label{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
-.answer-block p.ans-label{font-size:12.5px}
 .thinking{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:17px;margin-bottom:14px}
 .thinking-text{transition:opacity .18s ease}
-.dots{display:inline-flex;gap:4px}
-.dots i{width:6px;height:6px;border-radius:50%;background:var(--red);opacity:.35;animation:blink 1.25s infinite ease-in-out}
-.dots i:nth-child(2){animation-delay:.18s}
-.dots i:nth-child(3){animation-delay:.36s}
-@keyframes blink{0%,80%,100%{opacity:.25;transform:scale(.85)}40%{opacity:1;transform:scale(1)}}
+/* The loading state is a little book leafing through its pages, and it settles into
+   one of two endings rather than being swapped out for a result: a sage bookmark on
+   the page when we found the answer, or a blank, unwritten page when we did not.
+   The same line of text carries all three states, so the reader watches one object
+   resolve instead of watching a spinner disappear. */
+.book{position:relative;width:30px;height:22px;flex:none;perspective:60px;transition:transform .4s ease}
+.book .cover{position:absolute;inset:0;border:1.5px solid var(--navy);border-radius:2px 4px 4px 2px;background:var(--white)}
+.book .spine{position:absolute;left:50%;top:0;bottom:0;width:1.5px;background:var(--navy)}
+.book .page{position:absolute;left:50%;top:3px;bottom:3px;width:11px;background:var(--cream);border:1px solid #b9b5a4;border-left:none;transform-origin:left center;animation:flip 2.2s infinite ease-in-out}
+.book .page.p2{animation-delay:1.1s;background:#e2dfd2}
+@keyframes flip{0%,10%{transform:rotateY(0)}45%,55%{transform:rotateY(-150deg)}90%,100%{transform:rotateY(0)}}
+/* Sage, from the brand palette. The darker edges are doing real work: #B7C097 alone
+   is too pale to hold its shape at 8px against the white answer card. */
+.ribbon{position:absolute;top:-4px;left:68%;width:8px;height:0;box-sizing:border-box;background:#B7C097;border-left:1px solid #96A172;border-right:1px solid #96A172;clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 4px),0 100%);transition:height .35s cubic-bezier(.34,1.3,.64,1);z-index:3}
+.blank{position:absolute;right:3px;top:6px;width:10px;height:10px;z-index:2;opacity:0;transition:opacity .5s .15s}
+.blank i{display:block;height:1.5px;margin-bottom:2.5px;background:repeating-linear-gradient(90deg,#b9b5a4 0 3px,transparent 3px 5px)}
+.thinking.found,.thinking.gap{color:var(--navy)}
+.thinking.found .page,.thinking.gap .page{animation:none;transform:rotateY(0)}
+.thinking.found .book{animation:settle .45s ease-out}
+.thinking.found .ribbon{height:32px}
+/* The gap message is a full sentence and wraps on a phone, so the book aligns to the
+   first line rather than to the middle of a three-line paragraph. */
+.thinking.gap{align-items:flex-start}
+.thinking.gap .book{transform:scale(1.15);margin-top:3px}
+.thinking.gap .blank{opacity:1}
+@keyframes settle{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+.gap-card p{font-size:16.5px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.gap-btn{display:inline-block;background:var(--navy);color:var(--cream);font-weight:600;padding:11px 24px;border-radius:999px;text-decoration:none}
+.gap-btn:hover{background:#1d2b4f;color:var(--cream)}
+/* Only the content below the line fades in - the book itself must not flicker as
+   the block goes from loading to answered. */
+.ans-in{animation:ansIn .4s ease both}
+@keyframes ansIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .skel{display:flex;flex-direction:column;gap:9px}
 .skel span{height:13px;border-radius:7px;background:linear-gradient(90deg,rgba(16,28,56,.07) 25%,rgba(16,28,56,.14) 37%,rgba(16,28,56,.07) 63%);background-size:400% 100%;animation:shimmer 1.5s ease-in-out infinite}
 @keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
-@media (prefers-reduced-motion:reduce){.answer-block{transition:none;opacity:1;transform:none}.dots i,.skel span{animation:none}.skel span{background:rgba(16,28,56,.10)}}
+/* Reduced motion keeps every state legible and drops only the movement: the book
+   still takes its bookmark or shows its blank page, just without animating there. */
+@media (prefers-reduced-motion:reduce){.answer-block{transition:none;opacity:1;transform:none}.skel span{animation:none;background:rgba(16,28,56,.10)}.book .page,.thinking.found .book,.ans-in{animation:none}.book,.ribbon,.blank{transition:none}}
 @media (max-width:640px){.hdr-search{max-width:none}.subnav{flex-wrap:wrap}.prevnext{flex-direction:column}}
 /* Below the site-nav breakpoint the marketing links fold away and the help centre's
    own row carries the header, exactly as the main site drops to a burger. */
@@ -1305,4 +1333,12 @@ print('answer store:', len(store), 'entries (%d internal)'
       % sum(1 for v in store.values() if v.get('internal')))
 print('sections:', len(sec_articles))
 print('article pages:', sum(len(v) for v in sec_articles.values()))
-print('total files:', sum(len(f) for _, _, f in os.walk(OUT)))
+def _site_files():
+    # dot-directories are not the site: .git, and .claude/worktrees/ when a background
+    # task is running, which otherwise inflated this count by a whole second copy
+    for root, dirs, files in os.walk(OUT):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        yield len(files)
+
+
+print('total files:', sum(_site_files()))

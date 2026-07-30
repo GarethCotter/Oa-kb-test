@@ -137,15 +137,26 @@ const THINKING_STEPS = [
   'Almost there…'
 ];
 
+/* Both endings ship in the markup and the state class picks one, so settling the
+   book never rebuilds it - it only stops the pages and reveals the bookmark or the
+   blank page. Decorative throughout: the text beside it carries the meaning. */
+const BOOK =
+  '<span class="book" aria-hidden="true">' +
+    '<span class="cover"></span>' +
+    '<span class="page p2"></span><span class="page"></span>' +
+    '<span class="spine"></span>' +
+    '<span class="ribbon"></span>' +
+    '<span class="blank"><i></i><i></i><i></i></span>' +
+  '</span>';
+
 function showThinking() {
   clearAnswer();
   const el = document.createElement('div');
   el.id = 'llmAnswer';
   el.className = 'answer-block is-loading';
   el.innerHTML =
-    '<p class="thinking" role="status">' +
+    '<p class="thinking" role="status">' + BOOK +
       '<span class="thinking-text">' + THINKING_STEPS[0] + '</span>' +
-      '<span class="dots"><i></i><i></i><i></i></span>' +
     '</p>' +
     '<div class="skel"><span style="width:96%"></span><span style="width:88%"></span>' +
     '<span style="width:64%"></span></div>';
@@ -162,6 +173,35 @@ function showThinking() {
   }, 1900);
 }
 
+/* Settle the loading state into its ending. The thinking line stays exactly where it
+   is and becomes the answer's own heading, so the book never blinks out and the
+   reader sees one continuous object: pages turning, then a bookmark or a blank page.
+   Everything below the line is replaced. Returns the block, ready to append to.
+
+   The block keeps 'revealed' rather than re-running the block-level fade, which
+   would flicker the book; new content fades itself in with .ans-in instead. */
+function settleInto(state, message) {
+  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
+  let el = document.getElementById('llmAnswer');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'llmAnswer';
+    box.insertBefore(el, box.firstChild);
+  }
+  el.className = 'answer-block revealed';
+  let line = el.querySelector('.thinking');
+  if (!line) {                       // no loading state ran; build the line to settle
+    el.innerHTML = '<p class="thinking" role="status">' + BOOK +
+      '<span class="thinking-text"></span></p>';
+    line = el.querySelector('.thinking');
+  }
+  while (line.nextSibling) el.removeChild(line.nextSibling);   // drop the skeleton
+  const t = line.querySelector('.thinking-text');
+  if (t) t.textContent = message;
+  line.classList.add(state);
+  return el;
+}
+
 /* The model marks menu paths and button names with **double asterisks**
    (see ANSWER_SYSTEM in api/search.js), so the reader can pick out what to click
    without re-reading. Everything is HTML-escaped first; only <strong> is produced. */
@@ -171,22 +211,13 @@ function boldify(text) {
 }
 
 function showAnswer(answer, sources, followups) {
-  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
-  const existing = document.getElementById('llmAnswer');
-  const el = existing || document.createElement('div');
-  el.id = 'llmAnswer';
-  el.className = 'answer-block';
-  el.innerHTML = '';
-
-  // a quiet label, so the eye lands on the answer before the keyword links below it
-  const lab = document.createElement('p');
-  lab.className = 'ans-label';
-  lab.textContent = 'Answer';
-  el.appendChild(lab);
+  // the settled line is the answer's own heading, so there is no separate label
+  const el = settleInto('found', 'Found it —');
 
   // the answer may contain short labelled branches; render each on its own line
   answer.split(/\n+/).filter(Boolean).forEach(line => {
     const p = document.createElement('p');
+    p.className = 'ans-in';
     p.innerHTML = boldify(line);
       el.appendChild(p);
   });
@@ -194,6 +225,7 @@ function showAnswer(answer, sources, followups) {
   (sources || []).slice(0, 2).forEach(src => {
     const a = document.createElement('a');
     a.href = src.path;
+    a.className = 'ans-in';
     a.textContent = 'Read the full guide: ' + src.title + ' \u2192';
     a.style.cssText = 'display:block;font-weight:600;color:#D0432C;text-decoration:none;margin-top:6px';
     el.appendChild(a);
@@ -202,6 +234,7 @@ function showAnswer(answer, sources, followups) {
   // tappable narrowing: one tap beats retyping on a phone
   if (followups && followups.length) {
     const row = document.createElement('div');
+    row.className = 'ans-in';
     row.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:14px';
     followups.forEach(q => {
       const b = document.createElement('button');
@@ -214,31 +247,31 @@ function showAnswer(answer, sources, followups) {
     });
     el.appendChild(row);
   }
-
-  if (!existing) box.insertBefore(el, box.firstChild);
-  requestAnimationFrame(() => el.classList.add('revealed'));
 }
 
+/* The gap state. Reached only on an explicit found:false - a transport error goes to
+   clearAnswer() instead, because "we have not written this up" is a claim about our
+   guides, and it would be a lie if the endpoint had simply failed.
+
+   The apology sits on the settled line itself, beside the blank page, so the reader
+   gets one statement rather than the same news told to her twice. */
 function showEscalation(question) {
-  if (thinkingTimer) { clearInterval(thinkingTimer); thinkingTimer = null; }
-  const existing = document.getElementById('llmAnswer');
-  const el = existing || document.createElement('div');
-  el.id = 'llmAnswer';
-  el.className = 'answer-block';
-  el.innerHTML = '';
+  const el = settleInto('gap',
+    'Sorry — we don’t have an answer written for this yet.');
+  const card = document.createElement('div');
+  card.className = 'gap-card ans-in';
   const p = document.createElement('p');
-  p.textContent = "We couldn't find a guide that answers that — but our support team can. " +
-    'No question is too small.';
-  el.appendChild(p);
+  p.textContent = 'You’ve found a real gap in our guides, and that’s genuinely ' +
+    'useful to us. Our support team enjoy answering the questions nobody has asked ' +
+    'before, and by creating a support ticket you’ll be helping others in the future.';
+  card.appendChild(p);
   const a = document.createElement('a');
+  a.className = 'gap-btn';
   a.href = 'https://oxfordabstracts.com/resources/contact-support?topic=' +
     encodeURIComponent(question.slice(0, 120));
-  a.textContent = 'Create a support ticket \u2192';
-  a.style.cssText = 'display:inline-block;background:#D0432C;color:#fff;font-weight:600;' +
-    'padding:10px 20px;border-radius:999px;text-decoration:none';
-  el.appendChild(a);
-  if (!existing) box.insertBefore(el, box.firstChild);
-  requestAnimationFrame(() => el.classList.add('revealed'));
+  a.textContent = 'Create support ticket →';
+  card.appendChild(a);
+  el.appendChild(card);
 }
 
 async function fetchAnswer(question) {

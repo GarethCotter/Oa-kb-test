@@ -54,9 +54,12 @@ def target(u):
 
 def check_links():
     bad = []
-    for d, _, fs in os.walk('.'):
-        if '.git' in d:
-            continue
+    for d, dirs, fs in os.walk('.'):
+        # Prune every dot-directory, not just .git. A git worktree under
+        # .claude/worktrees/ holds a second copy of the whole site, and its pages
+        # resolve against a base path that does not exist in production - so the
+        # checker reported hundreds of 404s that were only ever the worktree.
+        dirs[:] = [x for x in dirs if not x.startswith('.')]
         for f in fs:
             if not f.endswith('.html'):
                 continue
