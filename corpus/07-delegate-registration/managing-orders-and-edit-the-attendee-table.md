@@ -211,5 +211,5 @@ Or the attendee has abandoned cart. For such order, there will be no payment typ
 
 ### How can I check if a presenter has registered?
 
-See [Cross referencing presenters and delegates](//help.oxfordabstracts.com/knowledge/cross-referencing-presenters-and-delegates?hsLang=en).
+See [Cross referencing presenters and delegates](/06-programme-exports-reports/).
 

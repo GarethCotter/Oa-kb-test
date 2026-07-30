@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## If one of your users reports a technical issue, it is important to collect as much detail as you can about the problem in order to resolve it as quickly as possible.
 
-If your users contact you regarding guidance, see: [Guidance for submitters, reviewers and committee](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+If your users contact you regarding guidance, see: [Guidance for submitters, reviewers and committee](https://oxfordabstracts.com/resources/contact-support/).
 
 ### Technical issues
 
@@ -23,7 +23,7 @@ Often, issues occur because users have logged on to [Oxford Abstracts](https://a
 * users seeing submissions and reviews from a past event on their dashboard, and not the one in question
 * submitters not being able to access their submissions
 
-Check they are logging in with the correct email address. **Guidance for** **Reviewer users** that are experiencing this can be found [here.](https://help.oxfordabstracts.com/knowledge/faq-reviewers?hsLang=en#CH)
+Check they are logging in with the correct email address. **Guidance for** **Reviewer users** that are experiencing this can be found [here.](/13-for-reviewers-committee/completing-a-symposium-review.html#CH)
 
 If they are logging in with the correct email, ask them to:
 
@@ -36,7 +36,7 @@ Then let Oxford Abstracts know:
 * send any screenshots
 * if the issue is being experienced by multiple users.
 
-Contact [Oxford Abstracts](https://help.oxfordabstracts.com/knowledge/kb-tickets/new?hsLang=en) as soon as possible.
+Contact [Oxford Abstracts](https://oxfordabstracts.com/resources/contact-support/) as soon as possible.
 
 This will save a lot of time and ensure issues are identified, investigated and resolved as quickly as possible.
 

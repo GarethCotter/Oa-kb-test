@@ -64,7 +64,7 @@ If you are an event administrator, you will see a list of events that you have p
 
 You can access **Archived events (1)**, but you don't have permission to either archive or restore them.
 
-Clicking the **View (2)** button will take you to the [event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en).
+Clicking the **View (2)** button will take you to the [event dashboard](/01-getting-started/event-dashboard.html).
 
 ![](/assets/img/undefined-4-ee342eb3.webp)
 
@@ -126,7 +126,7 @@ If you have completed a registration, you will see:
 
 (3) A **View** button which you can click to access your registration.
 
-See [Guidance for delegates](https://help.oxfordabstracts.com/knowledge/kb-search-results?term=guidance+for+delegates&hsLang=en) for more information.
+See [Guidance for delegates](https://oxfordabstracts.com/resources/contact-support/) for more information.
 
   
 ![](/assets/img/undefined-feb-18-2021-05-03-28-35-pm-8f37c5e7.webp)

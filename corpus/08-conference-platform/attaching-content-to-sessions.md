@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Attach content that you have collected in the submission form, eg. posters, abstracts or links to live (Zoom, Google Meet etc.) or on-demand (Youtube or Vimeo etc.) content. You can also add activities such as Q&A sessions, and coffee breaks.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 **Go to [Event dashboard](/01-getting-started/event-dashboard) → Conference → Builder**
 

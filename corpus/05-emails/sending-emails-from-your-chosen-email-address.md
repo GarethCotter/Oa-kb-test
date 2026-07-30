@@ -12,11 +12,11 @@ last_reviewed: 2026-07-28
 
 ## By default, all emails are from no-reply@oxfordabstracts.com but you can change this so that the emails come from your chosen email address. The reply-to address will always be the notification email you enter into the system.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → **Emails → Verify sender**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails → Verify sender**
 
 In the middle of the screen, you can enter the email address that you would like notification emails to be sent from. Please note the email needs to be from a domain that you have control over. Unfortunately @gmail.com or @yahoo.com addresses won't work because some of the large email vendors have policies disallowing third parties from sending mail from their domains.
 
@@ -55,7 +55,7 @@ You will return to the **Verify email** page and see that:
 
 ![](/assets/img/undefined-oct-07-2021-11-22-41-16-am-3c97638a.webp)
 
-You can remove the verified email address at any point by going to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → **Emails →  Verify sender**
+You can remove the verified email address at any point by going to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails →  Verify sender**
 
 and clicking remove next to the relevant email address.
 
@@ -67,5 +67,5 @@ and clicking remove next to the relevant email address.
 
 ### I want the emails that are associated with the event to be from an email address of my choosing. Is this possible?
 
-See [Sending emails from your chosen email address](//help.oxfordabstracts.com/knowledge/verify-sender-email-function?hsLang=en).
+See [Sending emails from your chosen email address](/05-emails/sending-emails-from-your-chosen-email-address.html).
 

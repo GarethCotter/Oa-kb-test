@@ -13,11 +13,11 @@ last_reviewed: 2026-07-28
 
 [Skip to written instructions](#TEX)
 
-Register for an [Oxford Abstracts account](//help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts?hsLang=en) or log in if you already have an account.
+Register for an [Oxford Abstracts account](/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html) or log in if you already have an account.
 
   
 
-When you log into the Oxford Abstracts home page, your first screen is your [personal dashboard](//help.oxfordabstracts.com/knowledge/your-personal-dashboard?hsLang=en).
+When you log into the Oxford Abstracts home page, your first screen is your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 If you have been set up as an account administrator on the system, you will see a list of your accounts at the top of the screen.
 
@@ -25,7 +25,7 @@ In the example below, the user is an account administrator for just Oxford Abstr
 
 **(1)** **Archived Account Events** (if there are any)
 
-**(2) [Manage Account](//help.oxfordabstracts.com/knowledge/managing-your-account?hsLang=en)**
+**(2) [Manage Account](/11-account-administration/managing-your-account.html)**
 
 **![](/assets/img/undefined-2-4e1148df.webp)**
 
@@ -33,7 +33,7 @@ If you click on **Archived Account Events**, you will see a list of all your arc
 
 Click **Unarchive** if you would like to restore it. It will then move to your 'active' events.![](/assets/img/image-png-feb-18-2021-04-22-20-24-pm-0ebf4f0c.webp)
 
-Click on 2) (above) [Manage Account](//help.oxfordabstracts.com/knowledge/managing-your-account?hsLang=en)  to add event and client admins etc.
+Click on 2) (above) [Manage Account](/11-account-administration/managing-your-account.html)  to add event and client admins etc.
 
 To archive or delete and event, click on the hamburger icon and select your required option.
 

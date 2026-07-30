@@ -14,7 +14,7 @@ last_reviewed: 2026-07-28
 
 ### 
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB - the system will alert potential conflicts where the surname and at least the first initial are a match, so Jane Smith and J. Smith, but not Albert Jones and Bert Jones.
 

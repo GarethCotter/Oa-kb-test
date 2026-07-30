@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## If you wish to edit a session, click on your chosen session and continue as with creating a session.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 You will notice the four icons to the top right of each session. From left to right:
 
@@ -60,5 +60,5 @@ To delete a session, click on the bin icon. NB - you cannot delete a session wit
 
 ### How do I delete a session?
 
-See [Amending, deleting and copying a session](//help.oxfordabstracts.com/knowledge/amending-deleting-and-copying-a-session?hsLang=en).
+See [Amending, deleting and copying a session](/08-conference-platform/amending-deleting-and-copying-a-session.html).
 

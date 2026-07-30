@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## After clicking the link to the conference platform, you will need to follow a few steps to create your profile and set up your timezone.
 
-NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en)
+NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](/08-conference-platform/)
 
 If you experience any issues when logging in to program, and don't see what you would expect to see, watch the video below for guidance on how to remedy this.
 

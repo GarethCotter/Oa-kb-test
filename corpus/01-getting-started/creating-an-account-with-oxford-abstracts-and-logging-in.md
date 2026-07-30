@@ -128,5 +128,5 @@ If you require further assistance please get in touch with our help desk via our
 
 ### I’ve forgotten my password – how do I reset it?
 
-See [Creating an account](//help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts?hsLang=en) with Oxford Abstracts.
+See [Creating an account](/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html) with Oxford Abstracts.
 

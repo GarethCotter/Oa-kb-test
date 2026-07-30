@@ -11,9 +11,9 @@ last_reviewed: 2026-07-28
 
 ## Various tags can be applied to your questions to determine how responses will be treated and viewed within the system.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Form & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & Setup**
 
 You can apply 'tags' to each question. These will vary according to the type of question and setup you have. In the example below, you can see that the **Title** question has three tags - **Title** **Reviewer** and **Book**. This signifies that the response to this question:
 
@@ -31,7 +31,7 @@ Click on any question to see the tags.
 
 Scrolling to the bottom of the question will reveal the following.
 
-For the section marked red, see [Display settings](https://help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en#DS)
+For the section marked red, see [Display settings](/02-submissions/designing-the-submission-form.html#DS)
 
 This article deals with the lower half of the section.
 

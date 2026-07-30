@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## You can download a range of reports from your program builder dashboard, if you require.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Go to**Event dashboard** **→ Conference →** **Program → Builder**
 
@@ -82,5 +82,5 @@ You can also include details of the contents of the sessions, see below for deta
 
 ### How do I download information from the** **Conference Program** **to Word?
 
-See [Downloading session books](//help.oxfordabstracts.com/knowledge/downloading-session-books?hsLang=en).
+See [Downloading session books](/06-programme-exports-reports/downloading-your-program-and-session-books.html).
 

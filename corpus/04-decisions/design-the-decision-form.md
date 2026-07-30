@@ -14,9 +14,9 @@ last_reviewed: 2026-07-28
 
 ---
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Decisions → Form & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Decisions → Form & Setup**
 
 Skip to [The default questions](#QQ)
 
@@ -34,7 +34,7 @@ The default **Decision Form** will be displayed with the current default questio
 
 At the top, before the questions, there are four key settings
 
-**[Manage acceptance types](//help.oxfordabstracts.com/knowledge/acceptance-types?hsLang=en):** Click to create decisions such as accepted for poster, oral etc.
+**[Manage acceptance types](/04-decisions/design-the-decision-form.html):** Click to create decisions such as accepted for poster, oral etc.
 
 **Submitters' information:** Toggle on or off to enable or disable the visibility of submitters' name and email address.
 
@@ -47,7 +47,7 @@ At the top, before the questions, there are four key settings
   
   
 
-The final setting allows you to enable and disable the permissions for committee members to edit the program code (see [Recording a decision](//help.oxfordabstracts.com/knowledge/recording-a-decision-accepting/-rejecting/-withdrawing-a-submission?hsLang=en).)
+The final setting allows you to enable and disable the permissions for committee members to edit the program code (see [Recording a decision](/04-decisions/recording-decisions-accept-reject-or-withdraw.html).)
 
   
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-c6c7687c.webp)   
@@ -63,7 +63,7 @@ The final setting allows you to enable and disable the permissions for committee
 
 **2) Acceptance type -** the options here are determined by acceptance types.
 
-**3) Final Category -** options are determined by the categories entered in the**Category** question in the [Submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en)
+**3) Final Category -** options are determined by the categories entered in the**Category** question in the [Submission form](/02-submissions/designing-the-submission-form.html)
 
 **4) Decision Notes -** data entered here will only be viewed by admin.
 
@@ -170,9 +170,9 @@ See [Acceptance types](/04-decisions/design-the-decision-form)
 
 ## When going through the decision making process, you will first need to decide on the acceptance type - ie oral, poster etc.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Decisions → Form & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Decisions → Form & Setup**
 
 Click on **Manage Acceptance Types** at the top of the form.
 

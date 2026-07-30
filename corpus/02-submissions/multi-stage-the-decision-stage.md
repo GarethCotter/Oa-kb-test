@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## As well as recording a decision (accepting/ rejecting/ withdrawing a submission) you can also move a submission to another stage.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Unlike the submission and review forms, there is only one decision form in multi-stage, see
 

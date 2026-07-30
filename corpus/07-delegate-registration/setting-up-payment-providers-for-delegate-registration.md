@@ -288,7 +288,7 @@ Should you require further assistance, then please get in touch with our helpdes
 
 ### How do I set up payment for delegates?
 
-See [Setting up the invoice and payments for delegate registration](//help.oxfordabstracts.com/knowledge/setting-up-payments-for-delegate-registration?hsLang=en).
+See [Setting up the invoice and payments for delegate registration](/07-delegate-registration/setting-up-payment-providers-for-delegate-registration.html).
 
 
 ### What options are currently available for payment?

@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## In order to make the decision system live, you will need to open decisions.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 **Please note:** The form only needs to be open if Committee Members are working on the form.
 
-To assign Committee members, go to [Manage users](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en)
+To assign Committee members, go to [Manage users](/01-getting-started/manage-users.html)
 
-Go to the [**Event dashboard**](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en).
+Go to the [**Event dashboard**](/01-getting-started/event-dashboard.html).
 
 Scroll down and you will see the **Decisions panel** on the screen.
 
@@ -40,7 +40,7 @@ When you are ready to start making decisions on submissions, click on the **Copy
 
 ![](/assets/img/screenshot-2025-07-29-at-14-57-07-png-bbd1422d.webp)
 
-You will need to notify submitters via email of their decisions. Although they will see the decision when they log in to their personal dashboards, they won't automatically receive notification. See [Amending email templates](//help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en).
+You will need to notify submitters via email of their decisions. Although they will see the decision when they log in to their personal dashboards, they won't automatically receive notification. See [Amending email templates](/05-emails/editing-the-template-emails.html).
 
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000077-a1beb879.gif)
@@ -51,7 +51,7 @@ You will need to notify submitters via email of their decisions. Although they w
 
 ### What do I need to do to ensure committee members can make decisions?
 
-You can choose the questions that committee members can amend the responses to. See [Design the decision form](//help.oxfordabstracts.com/knowledge/design-the-decision-form?hsLang=en).
+You can choose the questions that committee members can amend the responses to. See [Design the decision form](/04-decisions/design-the-decision-form.html).
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-8aac2375.gif)
 

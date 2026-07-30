@@ -12,17 +12,17 @@ last_reviewed: 2026-07-28
 
 ## On text questions, you can add a word or character limit, if you wish.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to text instructions.](#TEX)
 
-From your go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submission → Form & Setup → [Submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en)**
+From your go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submission → Form & Setup → [Submission form](/02-submissions/designing-the-submission-form.html)**
 
 Skip to [Discrepancies with word count](#Dis)
 
 Click on any text editor question.
 
-All [text editor type](//help.oxfordabstracts.com/knowledge/text-editor-types?hsLang=en) of questions (including the abstract question), allow you to enter a word or character limit.![](/assets/img/undefined-feb-23-2021-04-14-38-03-pm-93190a12.webp)
+All [text editor type](/02-submissions/text-editor-types.html) of questions (including the abstract question), allow you to enter a word or character limit.![](/assets/img/undefined-feb-23-2021-04-14-38-03-pm-93190a12.webp)
 
 Although you can enter a value for each, when the submitter reaches the lower of the two, they will be alerted that they are over the limit.  
 ![](/assets/img/undefined-feb-23-2021-04-20-46-30-pm-efc613ae.webp)

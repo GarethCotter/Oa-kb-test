@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 **Skip to**
 
@@ -31,7 +31,7 @@ There is no file size limit for poster upload.
 
 Setting up your poster gallery will need to be undertaken in stages. The first stage is to set your submission form up to collect posters.
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Form & Setup →  +QUESTION**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & Setup →  +QUESTION**
 
 ![](/assets/img/undefined-oct-06-2021-08-35-58-07-am-86e145f5.webp)
 
@@ -39,7 +39,7 @@ Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?h
 
 **![](/assets/img/screenshot-2025-08-04-at-11-47-44-png-f6728211.webp)**
 
-Fill in the details (see [Question types](//help.oxfordabstracts.com/knowledge/question-types-1?hsLang=en) for further guidance).
+Fill in the details (see [Question types](/02-submissions/submission-question-types.html) for further guidance).
 
 At the bottom of the question fields, tick the checkbox next to 1) **Poster gallery upload**.(checking this will automatically restrict any uploads to pdfs only)
 
@@ -81,7 +81,7 @@ This will allow Youtube and Vimeo videos to be embedded directly within the post
 
 ![](/assets/img/undefined-aug-05-2021-02-51-23-32-pm-06661375.webp)
 
-See [Question types](//help.oxfordabstracts.com/knowledge/question-types-1?hsLang=en) for further guidance.
+See [Question types](/02-submissions/submission-question-types.html) for further guidance.
 
 Make your choice, click **CREATE SELECTED QUESTION** and complete the details.
 
@@ -103,7 +103,7 @@ For more information, see [Question tags](/02-submissions/question-setting-tags)
 
 Once submissions are in and the reviewing stage is complete, you can then go to the decisions table to complete the next stage.
 
-Ensure the columns below are visible. (See the [decisions table](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en))
+Ensure the columns below are visible. (See the [decisions table](/04-decisions/the-decisions-table.html))
 
 ![](/assets/img/undefined-mar-29-2021-02-37-34-32-pm-a6ce69d3.webp)
 
@@ -111,7 +111,7 @@ Scroll to the **Decision** and **In poster gallery** columns
 
 For each submission that you want included in the poster gallery, ensure you accept the submission and check the **In poster gallery** checkbox.
 
-If you would like to do this in bulk, see the [decisions table](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en).
+If you would like to do this in bulk, see the [decisions table](/04-decisions/the-decisions-table.html).
 
 ![](/assets/img/undefined-mar-29-2021-02-52-04-71-pm-9d03fae6.webp)
 

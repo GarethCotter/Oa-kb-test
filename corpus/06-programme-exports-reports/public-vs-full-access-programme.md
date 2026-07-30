@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## If you have the Professional Conference package, you will have a feature that allows you to control access to the premium features of the platform.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 If you have [set who can see your full access program,](/08-conference-platform/controlling-access-to-the-programme) it is useful to know what those who have **full access** will be able to view, and those who don't have access - ie the **public** version of the program.
 

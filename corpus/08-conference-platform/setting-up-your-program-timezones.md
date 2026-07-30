@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →**Builder → Settings** ➞ **Timezone**
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Your delegates will set their own time zones. See [here](/14-for-attendees-exhibitors/setting-up-your-conference-program-account) for how this is done.
 
@@ -31,4 +31,4 @@ We display a standard list of times that doesn't change in the program builder, 
 
 This is because an event can be at any time of the year, even potentially moving across the date boundary of summer time/standard time.
 
-If you would like your conference to be asynchronous, please follow the guidance above and then [hide your time / date display.](https://help.oxfordabstracts.com/knowledge/setting-up-your-online-program-display?hsLang=en#DATT)
+If you would like your conference to be asynchronous, please follow the guidance above and then [hide your time / date display.](/08-conference-platform/setting-up-your-program-display.html#DATT)

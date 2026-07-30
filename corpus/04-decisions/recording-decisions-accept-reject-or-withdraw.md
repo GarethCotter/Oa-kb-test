@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB **Go to [Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Decisions** **→ Table**
+NB **Go to [Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Decisions** **→ Table**
 
 Skip to [Making bulk decisions](#MBD)
 
-This will access the **[Decisions Table](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en).**
+This will access the **[Decisions Table](/04-decisions/the-decisions-table.html).**
 
 Click on **Columns** to the right hand of the table to reveal the groups of data: Choose which fields you would like to view in table from the first three - **Submission data, Submission responses,** and **Review data.**
 
@@ -42,7 +42,7 @@ NB: The subset of options under **Accepted**, are determined by [acceptance type
 
 Choose the **Final Category** in the next column.
 
-NB: The **Final Category** fields are automatically populated by the **Category** question in the [Submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en).
+NB: The **Final Category** fields are automatically populated by the **Category** question in the [Submission form](/02-submissions/designing-the-submission-form.html).
 
 ![](/assets/img/undefined-feb-25-2021-12-46-20-60-pm-de451ca3.webp)  
 

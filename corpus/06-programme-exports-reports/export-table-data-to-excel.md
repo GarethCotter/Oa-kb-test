@@ -11,13 +11,13 @@ last_reviewed: 2026-07-28
 
 ## In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: When clicking the Download icon, all filtered data (including selected columns) will be exported for the entire table, not just those on view in the screen.
 
-Read the [Overview of tables](//help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function?hsLang=en)  article so you are familiar with the tables in the Oxford Abstracts system.
+Read the [Overview of tables](/01-getting-started/working-with-tables.html)  article so you are familiar with the tables in the Oxford Abstracts system.
 
-Although you can click on the **Download** icon to export the contents of the screen into an Excel spreadsheet for every table, the [Submission table](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en) has been used for this article. Some tables - like the Submission and [Reviews tables](//help.oxfordabstracts.com/knowledge/the-review-tables?hsLang=en) - have accordion rows, so it's helpful to use this example, as those without accordion rows are more straightforward.
+Although you can click on the **Download** icon to export the contents of the screen into an Excel spreadsheet for every table, the [Submission table](/02-submissions/the-submissions-table-including-incomplete-submissions.html) has been used for this article. Some tables - like the Submission and [Reviews tables](/03-reviewing/the-review-tables.html) - have accordion rows, so it's helpful to use this example, as those without accordion rows are more straightforward.
 
 1) Click **Columns** in the top right of the table to select the information that you would like visible in the table.
 
@@ -35,7 +35,7 @@ Clicking on the **Download** icon button will export the data on view in the cho
   
   
 
-NB: Tables without accordion rows - eg. [Decisions table](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en) - will just give you the option to export to Excel or CSV.
+NB: Tables without accordion rows - eg. [Decisions table](/04-decisions/the-decisions-table.html) - will just give you the option to export to Excel or CSV.
 
 You can select from
 

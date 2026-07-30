@@ -14,9 +14,9 @@ Learn how to automatically assign, manually assign and un-assign submissions to 
 
 ## Assigning submissions to a reviewer(s) is a simple process. Before you can assign reviewers, you will need to add them to the system. Learn how to automatically assign, manually assign and un-assign submissions to reviewers.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-See [**Manage users**](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en) for instructions on adding reviewers. It would also be useful to be familiar with **[The Review Tables](//help.oxfordabstracts.com/knowledge/the-review-tables?hsLang=en)** first.
+See [**Manage users**](/01-getting-started/manage-users.html) for instructions on adding reviewers. It would also be useful to be familiar with **[The Review Tables](/03-reviewing/the-review-tables.html)** first.
 
 ***Skip to:***
 
@@ -34,7 +34,7 @@ See [**Manage users**](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=
 
 Any rows with a pink background are incomplete submissions, not incomplete reviews.
 
-NB: If you wish to add or remove columns, see [The review tables](//help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function?hsLang=en)
+NB: If you wish to add or remove columns, see [The review tables](/01-getting-started/working-with-tables.html)
 
 Go to **Event dashboard → Abstract Management → Reviews → By Submission**and click on Assign Reviewers at the top of the table.
 
@@ -196,21 +196,21 @@ Should you need any further assistance, please contact our Support Team via our 
 ## Common questions
 
 
-### If I remove a reviewer in** [**Manage users**](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en)**,  do I also need to unassign them from any assigned reviews?
+### If I remove a reviewer in** [**Manage users**](/01-getting-started/manage-users.html)**,  do I also need to unassign them from any assigned reviews?
 
-No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en) and [Assigning and unassigning a submission to a reviewer](//help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer?hsLang=en).
+No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](/01-getting-started/manage-users.html) and [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
 
 ### I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?
 
-See [Assigning and unassigning a submission to a reviewer](//help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer?hsLang=en).
+See [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
 
 ### Allowing committee members to assign reviews
 
 ## You have the facility to allow committee members to assign reviews to reviewers, should you require. It is not available in the FREE package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to text instructions.](#TEX)
 

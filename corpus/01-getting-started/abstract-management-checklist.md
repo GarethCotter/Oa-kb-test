@@ -25,13 +25,13 @@ Click [Users](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion
 
 **Submission, review and decision forms**
 
-Scroll to the **Forms** section of the [Event Dashboard](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LWRhc2hib2FyZA%3D%3D&ct=AUTOCOMPLETE&pid=9108826&cid=41194664376&t=ZXZlbnQgZGFzaGJv&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=fea0d294-2323-4a7f-829b-5211fd032799&rs=LIVE_PAGE&hs-expires=1675423460&hs-version=1&hs-signature=APUk-v7GTHUJDJc20NDyQ6PhXrhr_Xpvqw&hsLang=en) then click on [Submission form](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en#designing-your-submission-form), [Review form](http://t.ly/VDMz), [Decision form](/04-decisions/design-the-decision-form) to review/update each of the forms.
+Scroll to the **Forms** section of the [Event Dashboard](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LWRhc2hib2FyZA%3D%3D&ct=AUTOCOMPLETE&pid=9108826&cid=41194664376&t=ZXZlbnQgZGFzaGJv&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=fea0d294-2323-4a7f-829b-5211fd032799&rs=LIVE_PAGE&hs-expires=1675423460&hs-version=1&hs-signature=APUk-v7GTHUJDJc20NDyQ6PhXrhr_Xpvqw&hsLang=en) then click on [Submission form](/02-submissions/), [Review form](http://t.ly/VDMz), [Decision form](/04-decisions/design-the-decision-form) to review/update each of the forms.
 
   
 
 **Emails**
 
-Click [Emails](https://help.oxfordabstracts.com/knowledge/emails?hsLang=en) in the [Event Dashboard](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LWRhc2hib2FyZA%3D%3D&ct=AUTOCOMPLETE&pid=9108826&cid=41194664376&t=ZXZlbnQgZGFzaGJv&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=fea0d294-2323-4a7f-829b-5211fd032799&rs=LIVE_PAGE&hs-expires=1675423460&hs-version=1&hs-signature=APUk-v7GTHUJDJc20NDyQ6PhXrhr_Xpvqw&hsLang=en) then click on **Edit and send** to check each email is fit for purpose and create any custom emails required.
+Click [Emails](/05-emails/) in the [Event Dashboard](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LWRhc2hib2FyZA%3D%3D&ct=AUTOCOMPLETE&pid=9108826&cid=41194664376&t=ZXZlbnQgZGFzaGJv&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=fea0d294-2323-4a7f-829b-5211fd032799&rs=LIVE_PAGE&hs-expires=1675423460&hs-version=1&hs-signature=APUk-v7GTHUJDJc20NDyQ6PhXrhr_Xpvqw&hsLang=en) then click on **Edit and send** to check each email is fit for purpose and create any custom emails required.
 
   
   

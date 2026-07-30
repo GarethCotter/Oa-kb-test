@@ -106,7 +106,7 @@ If you require further assistance please get in touch with our help desk via our
 
 ## This is one of our most frequently asked questions, and can be addressed following the guidance below.
 
-NB: The guidance below is for reviewers. If you are the administrator of an event please see [The reviewing stage.](https://help.oxfordabstracts.com/knowledge/the-reviewing-stage?hsLang=en)
+NB: The guidance below is for reviewers. If you are the administrator of an event please see [The reviewing stage.](/03-reviewing/)
 
 [Skip to written instructions](#TEX)
 

@@ -12,9 +12,9 @@ last_reviewed: 2026-07-28
 
 ## The event dashboard is the portal where you access the tools you'll need for all aspects of your event.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-When you log into the [Oxford Abstracts](//help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts?hsLang=en) home page, your first screen is your [personal dashboard](//help.oxfordabstracts.com/knowledge/your-personal-dashboard?hsLang=en). If you have been set up as an event administrator for an event, you will see it listed in the **Events** section, with an **Admin view** button.
+When you log into the [Oxford Abstracts](/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html) home page, your first screen is your [personal dashboard](/01-getting-started/your-personal-dashboard.html). If you have been set up as an event administrator for an event, you will see it listed in the **Events** section, with an **Admin view** button.
 
 [Skip to written instructions.](#TEX)
 
@@ -42,7 +42,7 @@ The dashboard is split - the working elements in the main panel of the window, t
 
 **Overview of the event details**
 
-The key details for your event including **Title,** **Event ID, Venue, Date**(s), **Submission deadline** and **Outcome notification date**, etc. This can be amended by clicking [Event details](//help.oxfordabstracts.com/knowledge/event-details?hsLang=en).
+The key details for your event including **Title,** **Event ID, Venue, Date**(s), **Submission deadline** and **Outcome notification date**, etc. This can be amended by clicking [Event details](/01-getting-started/event-details.html).
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-f385010c.webp)   
   
@@ -66,9 +66,9 @@ This panel contains the controls for submission status.
 
 2) This button will submit an abstract on someone else's behalf
 
-3) [Edit the submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en)
+3) [Edit the submission form](/02-submissions/designing-the-submission-form.html)
 
-4) Submission status, where you can [open and close abstract submission](//help.oxfordabstracts.com/knowledge/open-and-close-submissions-/-call-for-abstracts?hsLang=en)
+4) Submission status, where you can [open and close abstract submission](/02-submissions/opening-and-closing-submissions-deadlines.html)
 
 5) Preview your submission form
 
@@ -99,11 +99,11 @@ Here you will find the:
 
 1) Review form link, which you can copy and paste into emails or a website
 
-2) [Assign reviewers](//help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer?hsLang=en)
+2) [Assign reviewers](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html)
 
-3) [Edit the review form](//help.oxfordabstracts.com/knowledge/designing-the-review-form?hsLang=en)
+3) [Edit the review form](/03-reviewing/designing-the-review-form.html)
 
-4) Review status - where you can [open and close reviewing](//help.oxfordabstracts.com/knowledge/opening/-closing-reviewing?hsLang=en).
+4) Review status - where you can [open and close reviewing](/03-reviewing/opening-and-closing-reviewing.html).
 
 ![](/assets/img/screenshot-2025-08-15-at-11-51-07-png-4ea655bb.webp)  
   
@@ -112,15 +112,15 @@ Here you will find the:
 
 This panel contains the controls for the decision-making stage. Here you can find the
 
-1) [Committee decisions form](//help.oxfordabstracts.com/knowledge/design-the-decision-form?hsLang=en) link, which you can copy and paste into any website or emails publicising the event
+1) [Committee decisions form](/04-decisions/design-the-decision-form.html) link, which you can copy and paste into any website or emails publicising the event
 
-2) The link to [add and invite committee members](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en)
+2) The link to [add and invite committee members](/01-getting-started/manage-users.html)
 
-3)  [Assign specific categories to committee members](//help.oxfordabstracts.com/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members?hsLang=en)
+3)  [Assign specific categories to committee members](/04-decisions/assigning-categories-to-committee-members.html)
 
-4) [Edit the decision form](//help.oxfordabstracts.com/knowledge/design-the-decision-form?hsLang=en)
+4) [Edit the decision form](/04-decisions/design-the-decision-form.html)
 
-5) [Open and close decisions](//help.oxfordabstracts.com/knowledge/opening-and-closing-decision-making?hsLang=en)
+5) [Open and close decisions](/04-decisions/opening-and-closing-decision-making.html)
 
 ![](/assets/img/screenshot-2025-08-15-at-11-57-43-png-55b85fd4.webp)
 
@@ -132,7 +132,7 @@ NB, The items in the navigation menu will vary depending on the package you have
 
 ![](/assets/img/screenshot-2024-04-10-at-12-10-33-png-fff2372e.webp)
 
-1) [Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en)
+1) [Event dashboard](/01-getting-started/event-dashboard.html)
 
 2) **Event Setup**
 
@@ -148,13 +148,13 @@ Edit and send emails, view sent logs and verify sender.
 
 4) **Abstract Management**
 
-***Submissions***  - Form & Setup and view [the submissions table](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en).
+***Submissions***  - Form & Setup and view [the submissions table](/02-submissions/the-submissions-table-including-incomplete-submissions.html).
 
 ***Reviews***  - Form & setup, view reviews by submission or by reviewer.
 
-See also [The reviews tables](//help.oxfordabstracts.com/knowledge/the-review-tables?hsLang=en).
+See also [The reviews tables](/03-reviewing/the-review-tables.html).
 
-***Decisions*** - Form & Setup, view [the decisions table,](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en) view reports and download them.
+***Decisions*** - Form & Setup, view [the decisions table,](/04-decisions/the-decisions-table.html) view reports and download them.
 
 5) **Symposium**
 
@@ -198,11 +198,11 @@ Design and distribute your certificates.
 
 ![](/assets/img/undefined-feb-22-2021-04-08-57-45-pm-cc837b46.webp)
 
-9)  [Designing the submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en)
+9)  [Designing the submission form](/02-submissions/designing-the-submission-form.html)
 
-10) [Designing the review form](//help.oxfordabstracts.com/knowledge/designing-the-review-form?hsLang=en)
+10) [Designing the review form](/03-reviewing/designing-the-review-form.html)
 
-11) [Designing the decision form](//help.oxfordabstracts.com/knowledge/design-the-decision-form?hsLang=en)
+11) [Designing the decision form](/04-decisions/design-the-decision-form.html)
 
   
   
@@ -216,7 +216,7 @@ Design and distribute your certificates.
 
 ## Follow the link in the email you receive inviting you to become an event administrator to get started.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Register for an Oxford Abstracts account or log in if you already have an account.
 

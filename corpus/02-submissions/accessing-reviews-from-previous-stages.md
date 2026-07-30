@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If you have set up a multi stage sequential event, you may wish to access reviews from a previous stage.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Go to [**Event dashboard**](/01-getting-started/event-dashboard) → **Abstract Management →** **Reviews → By submission**
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## In most cases, client /account admins can create, set up and pay for a new event, without needing to contact Oxford Abstracts. The guidance below shows you how to do this.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to text instructions](#TEX)
 

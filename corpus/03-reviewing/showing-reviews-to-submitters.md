@@ -11,9 +11,9 @@ last_reviewed: 2026-07-28
 
 ## By default, reviews are not made available to submitters (just their acceptance status). If you would like submitters to view their reviews, follow the guidance below. It is not available in the FREE package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reviews → Form & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews → Form & Setup**
 
 Click on any question or the +Question button if setting up a new question.
 

@@ -12,11 +12,11 @@ last_reviewed: 2026-07-28
 
 ## You can determine which questions' responses will be visible to the reviewer, along with the submitters' individual information (eg. name and email address).
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip](#TEX) to written instructions.
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reviews → Forms & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews → Forms & Setup**
 
 At the top of the screen, choose **Visible submission questions**
 
@@ -36,7 +36,7 @@ At the bottom of the settings, you will see that the default is for submitters' 
 
 ![](/assets/img/undefined-feb-09-2022-11-53-27-70-am-c2b22197.webp)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Form → Submission form**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Form → Submission form**
 
 Click on any question. On each question you can apply 'tags'.
 
@@ -48,7 +48,7 @@ Click the **Show reviewer** checkbox at the bottom of the screen if you would li
   
   
 
-When back in the [submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en) edit view, you will see the **Reviewer** tag under the question.
+When back in the [submission form](/02-submissions/designing-the-submission-form.html) edit view, you will see the **Reviewer** tag under the question.
 
   
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-6f42f5d4.webp)  
@@ -61,5 +61,5 @@ When back in the [submission form](//help.oxfordabstracts.com/knowledge/designin
 
 ### How do I control what data the reviewer can view in the submissions?
 
-See [Question tags](//help.oxfordabstracts.com/knowledge/question-tags?hsLang=en).
+See [Question tags](/02-submissions/question-setting-tags.html).
 

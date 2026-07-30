@@ -14,7 +14,7 @@ In this article learn how, as an event admin, you can add exhibitors and give th
 
 ## This feature allows you to create exhibitor booths in your conference and facilitate interaction between attendees and exhibitors. In this article learn how, as an event admin, you can add exhibitors and give them access to set up their booth.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#Tex)
 

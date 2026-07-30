@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 ### 
 
-NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en).
+NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](/02-submissions/).
 
 [Skip to written instructions.](#TEX)
 
@@ -25,7 +25,7 @@ Go to your event dashboard, click **View** on the event your submission is assoc
 
 ![](/assets/img/screenshot-2022-07-25-at-16-46-48-png-0a61991f.webp)
 
-To edit a submission you have already made, click on **Edit** (on your [personal dashboard).](//help.oxfordabstracts.com/knowledge/your-personal-dashboard?hsLang=en)
+To edit a submission you have already made, click on **Edit** (on your [personal dashboard).](/01-getting-started/your-personal-dashboard.html)
 
 You can edit any submission, even if it is complete, subject to deadlines and settings.![](/assets/img/screenshot-2022-07-25-at-16-40-29-png-3e44cda2.webp)
 

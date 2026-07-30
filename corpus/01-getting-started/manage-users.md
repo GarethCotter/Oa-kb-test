@@ -12,11 +12,11 @@ last_reviewed: 2026-07-28
 
 ## Clicking on the Users option in the menu in the event dashboard  allows you to view, add and remove reviewers, committee members, event administrators, and API users.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#Tex)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Event Setup → Users**.
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Event Setup → Users**.
 
 NB: There are tabs for each user type, which will vary according to which package you have.
 
@@ -83,5 +83,5 @@ See [Manage users](/01-getting-started/manage-users)
 
 ### How do I give someone admin rights to the event?
 
-See [Manage users](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en).
+See [Manage users](/01-getting-started/manage-users.html).
 

@@ -12,15 +12,15 @@ last_reviewed: 2026-07-28
 
 ## Once you have edited the template emails, or created your own custom ones, you can send or schedule your emails - send individually, in groups, or all at once.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg: submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg: submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Emails →** **Edit and send → Abstract Management.**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Emails →** **Edit and send → Abstract Management.**
 
 ***Skip to:***
 
 **[Scheduling emails](#sch)**
 
-**[Amending template emails](//help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en)**
+**[Amending template emails](/05-emails/editing-the-template-emails.html)**
 
 Each default email template set up for the event is listed.  Those that are under the heading **Automatic emails** will be sent out automatically by the system, e.g. when a submission is created.
 
@@ -98,5 +98,5 @@ To remove the scheduled email - click on the bin icon.
 
 ### I want to be informed when abstracts are submitted. How do I do this?
 
-You can CC and BCC emails to the event admin. See [Amending template emails](//help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en) - Additional settings.
+You can CC and BCC emails to the event admin. See [Amending template emails](/05-emails/editing-the-template-emails.html) - Additional settings.
 

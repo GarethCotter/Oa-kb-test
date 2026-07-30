@@ -12,9 +12,9 @@ last_reviewed: 2026-07-28
 
 ## When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Forms & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Forms & Setup**
 
 The default abstract question is an example of a formatted text editor quesion.
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If you wish, you can restrict submission to your event to a specific group of people by adding their email addresses. It is not available in the FREE package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: The instructions below show how to manually add emails to a restricted list of submitters. This process can also be done automatically through API.  If you have a list of email on a system, you can post these to a specific stage using API.
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Creating forms for a multi-stage event is very similar to a single stage event, but there are a few differences that you should be aware of before you set up your submission forms.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: It is advisable that you familiarise yourself with the [Submission form](/02-submissions/designing-the-submission-form) first.
 

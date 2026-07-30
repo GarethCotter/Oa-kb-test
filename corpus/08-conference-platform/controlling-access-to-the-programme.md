@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## There are several access options that will allow you to choose who can view program content. This feature is only available in the Professional Conference package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#TEX)
 
@@ -46,7 +46,7 @@ The choices are as below
 
 ![](/assets/img/undefined-oct-14-2021-01-48-49-43-pm-55bb5add.webp)
 
-NB: Delegates are pulled from the [Delegate Registration](https://help.oxfordabstracts.com/knowledge/delegate-registration?hsLang=en) module.
+NB: Delegates are pulled from the [Delegate Registration](/07-delegate-registration/) module.
 
 **Only invited users - (as above)**
 

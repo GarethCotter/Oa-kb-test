@@ -14,7 +14,7 @@ last_reviewed: 2026-07-28
 
 ### 
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 To add [Multi-stage](https://oxfordabstracts.com/product/multi-stage-submission/) to your event, contact sales@oxfordabstracts.com.
 
@@ -84,7 +84,7 @@ If you require further assistance please get in touch with our help desk via our
 
 ### Why would I need multi-stage?
 
-[Multi-stage](https://help.oxfordabstracts.com/knowledge/multi-stage?hsLang=en) is an add-on feature that you can bolt onto your package (all except FREE).
+[Multi-stage](/02-submissions/) is an add-on feature that you can bolt onto your package (all except FREE).
 
 It is perfect for when there is a two stage process, e.g. initial and final papers or where there is a concurrent stage - eg. different submission forms for different types of submission. It could also be used for prizes, awards etc or any other process that is essentially one event, but with several streams that require different submission and review forms.
 

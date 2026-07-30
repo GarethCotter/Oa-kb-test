@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## If you need a specific template that isn't included in the range of default emails, you can create your own.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 There are two ways to create custom emails.
 
@@ -94,7 +94,7 @@ Then follow the guidance in [Amending email templates](/05-emails/editing-the-te
 
 ### What information can I include in emails?
 
-See [Amending template emails](//help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en).
+See [Amending template emails](/05-emails/editing-the-template-emails.html).
 
 
 ### How can I create an email that's not on the list of templates?
@@ -106,7 +106,7 @@ See [Creating custom emails](/05-emails/creating-custom-emails).
 
 ## You can create your own email signature and add it as an optional feature on each email template.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Go to **Event dashboard → Emails →**Edit and send → Abstract Management**
 

@@ -11,17 +11,17 @@ last_reviewed: 2026-07-28
 
 ## After adding reviewers and assigning submissions to them, you will need to notify them via the notifying reviewers email template.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Emails to reviewers are NOT SENT AUTOMATICALLY. They will need to be sent manually - in bulk or individually.
 
 [Skip to written instructions](#TES)
 
-For guidance on creating and sending emails, see [Amending template emails](//help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en)
+For guidance on creating and sending emails, see [Amending template emails](/05-emails/editing-the-template-emails.html)
 
   
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → **Emails → Edit and Send** **→ Abstract Management**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails → Edit and Send** **→ Abstract Management**
 
 Scroll down to **Review Emails** under **Manual sent emails** and **click on Notify Reviewers**.
 

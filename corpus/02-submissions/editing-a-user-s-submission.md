@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## You may find you are required to edit a user's submission. It's a straightforward process and any updates will be recorded in the 'last updated by' column in the submission tables.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Skip to [text instructions](#GO).
 
-Go to [**Event dashboard**](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → **Abstract Management** **→** **Submissions → Table**
+Go to [**Event dashboard**](/01-getting-started/event-dashboard.html) → **Abstract Management** **→** **Submissions → Table**
 
   
 

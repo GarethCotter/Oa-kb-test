@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## The tables appear in several of the different stages within the Oxford Abstracts system - eg submissions, reviews, delegates etc. Before you work with any of the tables, it's advisable to become familar with their layout and tools.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-In the example below, the [**Submissions table**](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en) is used. Like the [**Review tables**](//help.oxfordabstracts.com/knowledge/the-review-tables?hsLang=en), the [**Submission table**](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en) has accordion rows. This is because submissions often have multiple authors, each with their own data such as affiliation, email address etc.
+In the example below, the [**Submissions table**](/02-submissions/the-submissions-table-including-incomplete-submissions.html) is used. Like the [**Review tables**](/03-reviewing/the-review-tables.html), the [**Submission table**](/02-submissions/the-submissions-table-including-incomplete-submissions.html) has accordion rows. This is because submissions often have multiple authors, each with their own data such as affiliation, email address etc.
 
-Some tables do not have the accordion tables - such as the [**Decision table**](//help.oxfordabstracts.com/knowledge/the-decisions-table?hsLang=en), so where the article below refers to accordion row features, these will not apply in those tables without them.
+Some tables do not have the accordion tables - such as the [**Decision table**](/04-decisions/the-decisions-table.html), so where the article below refers to accordion row features, these will not apply in those tables without them.
 
 Go to **Event dashboard** → **Abstract Management → Submissions → Table** to access the table
 
@@ -25,7 +25,7 @@ Skip to
 
 [Accordion tables](#ACC)
 
-Entries are displayed in rows. Any with a pink background are incomplete, which means that the submitter has not completed a mandatory question, or has exceeded any set [word limits](//help.oxfordabstracts.com/knowledge/word-and-character-count?hsLang=en).
+Entries are displayed in rows. Any with a pink background are incomplete, which means that the submitter has not completed a mandatory question, or has exceeded any set [word limits](/02-submissions/word-and-character-count.html).
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-a6b3542c.png)
 
@@ -40,7 +40,7 @@ The controls, from left to right, are:
 ![](/assets/img/undefined-jan-19-2022-02-48-53-74-pm-68359492.webp)  
 1) The field shown below is a general search bar, for entering any keywords. For example - entering 'data' will return every entry where that word / text string occurs.
 
-2) Click on the arrow to the right of **10 per page** to select how many rows you would like to appear in the [submissions table](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en) view.
+2) Click on the arrow to the right of **10 per page** to select how many rows you would like to appear in the [submissions table](/02-submissions/the-submissions-table-including-incomplete-submissions.html) view.
 
 3) Pages - from left to right - The first page (greyed out), previous page, select page number, next page, last page
 

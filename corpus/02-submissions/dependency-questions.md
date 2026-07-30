@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## There may be a requirement for you to set up dependency questions, eg. a new question is revealed when a submitter selects an option from a 'choice' type question. Read on to find out how to add this to your form.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: You can only set up dependency questions when the 'parent' question is a 'choice' type of question, e.g. checkbox, dropdown or radio button questions.
 
 [Skip to text guidance](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submission → Forms & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submission → Forms & Setup**
 
 Where you have a 'choice' type of question in the submission form, it is possible to reveal a hidden question depending on the response to the first question. Below is an example.
 

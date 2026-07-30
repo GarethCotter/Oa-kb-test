@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ##
 
-NB: The guidance below is for submitters of a symposium. If you are the administrator of an event please see [Symposia.](https://help.oxfordabstracts.com/knowledge/symposia?hsLang=en)
+NB: The guidance below is for submitters of a symposium. If you are the administrator of an event please see [Symposia.](/09-add-ons/)
 
 [Skip to written instructions](#TEX)
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## You may want to chase up reviewers if their reviews are incomplete and the deadline is approaching.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 To get an overview of how many reviews are incomplete, go to **[Event dashboard](/01-getting-started/event-dashboard) → Abstract Management → Reviews → By reviewer.**
 

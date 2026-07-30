@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## Publishing your program is simple, and any changes you make after publishing will be reflected in the live program.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to the differences between the public and full access program.](#DIFF)
 

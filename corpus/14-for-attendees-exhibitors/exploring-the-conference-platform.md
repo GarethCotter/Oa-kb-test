@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 NB: The guidance below is for conference attendees. Some of the features viewed below are not available on the Standard Conference Package.
 
-If you are the administrator of an event please see [The conference platform.](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en)
+If you are the administrator of an event please see [The conference platform.](/08-conference-platform/)
 
 Once you have [created an account and logged in to the conference,](/14-for-attendees-exhibitors/setting-up-your-conference-program-account) you will be taken to the welcome screen.
 
@@ -41,7 +41,7 @@ Author affiliations, content of submissions, session descriptions and comments a
 
 2) Search and filter content by these options
 
-3) Access the [Poster Gallery](//help.oxfordabstracts.com/knowledge/exploring-the-poster-gallery?hsLang=en)
+3) Access the [Poster Gallery](/14-for-attendees-exhibitors/exploring-the-poster-gallery.html)
 
 4) View and network with other [attendees.](#ATT)
 

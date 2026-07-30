@@ -12,11 +12,11 @@ last_reviewed: 2026-07-28
 
 ## Explore the settings and tools that will help you design the review form for your requirements.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reviews → Forms & Setup.**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews → Forms & Setup.**
 
 Skip to:
 
@@ -81,7 +81,7 @@ Clicking here will reveal the submission questions. Toggle the eye icon on and o
 
 #### **Default Questions**
 
-**See [Review question types](//help.oxfordabstracts.com/knowledge/review-question-types?hsLang=en)** for guidance**.![](/assets/img/undefined-feb-24-2021-11-43-37-26-am-6daf70a8.webp)**
+**See [Review question types](/03-reviewing/review-question-types.html)** for guidance**.![](/assets/img/undefined-feb-24-2021-11-43-37-26-am-6daf70a8.webp)**
 
 **1) Grade -** data in this field will be numerical and will allow for calculations - ie average grade etc.
 
@@ -128,7 +128,7 @@ Checking **Show response to submitter** will allow the response to be shown wher
 
 **Adding a question** - You can add a new question to the review form by clicking **+Question** then choosing the relevant question type from the list.
 
-See [Review question types](//help.oxfordabstracts.com/knowledge/review-question-types?hsLang=en)  for more information.
+See [Review question types](/03-reviewing/review-question-types.html)  for more information.
 
 ![](/assets/img/undefined-nov-02-2021-02-22-54-59-pm-36a06a25.webp)  
   

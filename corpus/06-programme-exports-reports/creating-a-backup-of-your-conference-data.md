@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If you would like to create a backup of all the data in your conference, follow the guidance below.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 For instructions on how to download reports, see  [Creating exports, reports and abstract books](/06-programme-exports-reports/export-table-data-to-excel)
 
@@ -58,7 +58,7 @@ See [The symposia table](/09-add-ons/managing-symposia)
 
 9) Uploaded files in a sub-folder separated by stages
 
-See [Other reports - file uploads](https://help.oxfordabstracts.com/knowledge/other-reports?hsLang=en#FU)
+See [Other reports - file uploads](/06-programme-exports-reports/other-reports.html#FU)
 
 10) Any abstract books
 

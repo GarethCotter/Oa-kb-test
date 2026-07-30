@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## When you and your committee have made your decisions, you can then notify your submitters
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Before you read this article, it is advised that you are familiar with [Amending email templates](/05-emails/editing-the-template-emails)  and [Sending and scheduling emails](/05-emails/sending-and-scheduling-emails)
 

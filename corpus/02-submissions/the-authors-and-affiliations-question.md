@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) →  Abstract Management → Submission → Form & Setup**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →  Abstract Management → Submission → Form & Setup**
 
 **Then click on the Authors and Affiliations** question.
 

@@ -13,11 +13,11 @@ last_reviewed: 2026-07-28
 
 ### 
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to text instructions.](#TEX)
 
-**Go to [Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → [Submission](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en) → Form & Setup →**Combine Word Limits**.
+**Go to [Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → [Submission](/02-submissions/designing-the-submission-form.html) → Form & Setup →**Combine Word Limits**.
 
 ![](/assets/img/screenshot-2025-08-15-at-11-28-04-png-ae3fb4be.webp)
 

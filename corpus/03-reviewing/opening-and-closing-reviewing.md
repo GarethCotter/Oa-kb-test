@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## In order to make the review system live, you will need to open reviews.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip](#TEX) to written instructions.
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Scroll down to the Reviews panel**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Scroll down to the Reviews panel**
 
 To allow reviews, **click on the drop down box** next to **Form Status**, and **tick the box next to Open for Reviews.**
 

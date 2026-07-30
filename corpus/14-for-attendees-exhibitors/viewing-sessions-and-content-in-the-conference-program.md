@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ##
 
-NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en)
+NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](/08-conference-platform/)
 
 Once you have [created an account and logged in to the conference,](/14-for-attendees-exhibitors/setting-up-your-conference-program-account) you will be taken to the welcome screen. Click the top icon shown below in the top left hand corner of the screen, then **Schedule\*** to reveal the program / schedule.
 

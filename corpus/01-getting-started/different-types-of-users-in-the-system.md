@@ -14,13 +14,13 @@ last_reviewed: 2026-07-28
 
 ### 
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: See also [Manage Users.](//help.oxfordabstracts.com/knowledge/manage-users?hsLang=en)
+NB: See also [Manage Users.](/01-getting-started/manage-users.html)
 
 ### Different types of users in the system
 
-[**Account Administrator**](//help.oxfordabstracts.com/knowledge/account-administration-dashboard?hsLang=en)
+[**Account Administrator**](/11-account-administration/account-administration-dashboard.html)
 
 Account Administrators have access to all of the events within their account.
 
@@ -28,13 +28,13 @@ Once an account is set up by Oxford Abstracts, account admins can add more accou
 
   
 
-[**Event Administrator**](//help.oxfordabstracts.com/knowledge/event-administrator-dashboard?hsLang=en)
+[**Event Administrator**](/01-getting-started/event-dashboard.html)
 
-This permission is set up by the [Account Administrator](//help.oxfordabstracts.com/knowledge/account-administration-dashboard?hsLang=en)
+This permission is set up by the [Account Administrator](/11-account-administration/account-administration-dashboard.html)
 
 Event Administrators have access to specific events as determined by the Account Administrator.
 
-[**Submitter**](//help.oxfordabstracts.com/knowledge/making-a-submission?hsLang=en)
+[**Submitter**](/12-for-submitters/making-a-submission.html)
 
 Anyone with an Oxford Abstracts account can [submit](/12-for-submitters/making-a-submission) an abstract to a conference or an application to a competition or award.
 
@@ -44,37 +44,37 @@ You can also [restrict submitters](/02-submissions/restricting-who-can-submit-by
 
   
 
-**[Reviewer](//help.oxfordabstracts.com/knowledge/guidance-for-reviewers?hsLang=en)**
+**[Reviewer](/13-for-reviewers-committee/)**
 
 The terms Referee or Grader or Judge are sometimes used to describe the role of a reviewer.
 
-Reviewers for a particular event are set up by the [Account Administrator](//help.oxfordabstracts.com/knowledge/account-administration-dashboard?hsLang=en) or [Event Administrator](//help.oxfordabstracts.com/knowledge/event-administrator-dashboard?hsLang=en).
+Reviewers for a particular event are set up by the [Account Administrator](/11-account-administration/account-administration-dashboard.html) or [Event Administrator](/01-getting-started/event-dashboard.html).
 
 Reviewers can see the submissions assigned to them and they can grade the submissions.
 
   
 
-[**Committee Member**](//help.oxfordabstracts.com/knowledge/making-decisions-on-submissions-as-a-committee-member?hsLang=en)
+[**Committee Member**](/13-for-reviewers-committee/viewing-and-making-decisions.html)
 
 The terms Chair or Panel Member are sometimes used to describe the role of a Committee Member.
 
-Committee Members for a particular event are set up by the [Account Administrator](//help.oxfordabstracts.com/knowledge/account-administration-dashboard?hsLang=en) or [Event Administrator.](//help.oxfordabstracts.com/knowledge/event-administrator-dashboard?hsLang=en)
+Committee Members for a particular event are set up by the [Account Administrator](/11-account-administration/account-administration-dashboard.html) or [Event Administrator.](/01-getting-started/event-dashboard.html)
 
 Committee Members can see all the submissions and all the grades for all the submissions. They can, if permissions are enabled, also [make decisions.](/13-for-reviewers-committee/viewing-and-making-decisions)
 
-[**Delegates**](https://help.oxfordabstracts.com/knowledge/support?hsLang=en#guidance-for-delegates-wishing-to-register)
+[**Delegates**](https://oxfordabstracts.com/resources/contact-support/)
 
 Anyone with an Oxford Abstracts account can register as a delegate (the [Delegate Registration](https://oxfordabstracts.com/product/delegate-registration/) add-on is available for all our packages).
 
-To [register as a delegate](https://help.oxfordabstracts.com/knowledge/registering-for-an-event-as-a-delegate?hsLang=en), they will need to know the url of the [delegate registration form](https://help.oxfordabstracts.com/knowledge/the-registration-form?hsLang=en), which can be copied from the [event dashboard](/01-getting-started/event-dashboard) and published in your event website.
+To [register as a delegate](/07-delegate-registration/), they will need to know the url of the [delegate registration form](/07-delegate-registration/), which can be copied from the [event dashboard](/01-getting-started/event-dashboard) and published in your event website.
 
 **[API users](/10-integrations-api/application-programming-interface-api)**
 
-API users can generate an API code and access the API documentation. They can be set up to manage specific events by the [event administrator](//help.oxfordabstracts.com/knowledge/event-administrator-dashboard?hsLang=en), or to manage the API for all events in an account by the [account administrator](//help.oxfordabstracts.com/knowledge/account-administration-dashboard?hsLang=en).
+API users can generate an API code and access the API documentation. They can be set up to manage specific events by the [event administrator](/01-getting-started/event-dashboard.html), or to manage the API for all events in an account by the [account administrator](/11-account-administration/account-administration-dashboard.html).
 
 **[Program users](/08-conference-platform/controlling-access-to-the-programme)**
 
-When setting up access ([Professional Conference Package](https://oxfordabstracts.com/pricing/) only) to your [conference platform](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en) , you can invite users who can view your program who are not registered as delegates.
+When setting up access ([Professional Conference Package](https://oxfordabstracts.com/pricing/) only) to your [conference platform](/08-conference-platform/) , you can invite users who can view your program who are not registered as delegates.
 
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-f996db5a.gif)
@@ -96,20 +96,20 @@ It's important to be able to distinguish between submitters, authors and present
 
 ### I am an administrator for an event, and also a reviewer. How does that work?
 
-See [Your personal dashboard](//help.oxfordabstracts.com/knowledge/your-personal-dashboard?hsLang=en).
+See [Your personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 
 ### What guidance can I give to users?
 
-[Guidance for submitters](//help.oxfordabstracts.com/knowledge/making-a-submission?hsLang=en)
+[Guidance for submitters](/12-for-submitters/making-a-submission.html)
 
 [Guidance for reviewers](/13-for-reviewers-committee/completing-a-review)
 
-[Guidance for committee members,](//help.oxfordabstracts.com/knowledge/making-decisions-on-submissions-as-a-committee-member?hsLang=en)
+[Guidance for committee members,](/13-for-reviewers-committee/viewing-and-making-decisions.html)
 
-[Guidance for symposia](//help.oxfordabstracts.com/knowledge/submit-a-symposium?hsLang=en)
+[Guidance for symposia](/12-for-submitters/submit-a-symposium.html)
 
-[Guidance for delegates wishing to register](https://help.oxfordabstracts.com/knowledge/support?hsLang=en#guidance-for-delegates-wishing-to-register)
+[Guidance for delegates wishing to register](https://oxfordabstracts.com/resources/contact-support/)
 
 [Guidance for conference platform users](http://t.ly/PUOJ)
 

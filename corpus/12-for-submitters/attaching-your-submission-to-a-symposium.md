@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If symposia are available for you to attach your submission to, you will see a list of available symposia after submitting your abstract and in your personal dashboard.
 
-NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en).
+NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](/02-submissions/).
 
 You will see public symposia (available to everyone) or private symposia (you have been invited to submit to).
 

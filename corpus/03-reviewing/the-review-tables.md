@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## The review tables are very useful tools for having an overview of review information, and to manipulate and extract data.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB. To become familiar with the Review tables layout and tools, see [An overview of tables.](//help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function?hsLang=en)
+NB. To become familiar with the Review tables layout and tools, see [An overview of tables.](/01-getting-started/working-with-tables.html)
 
 The Review tables contain accordion rows. You can assign reviewers,  edit reviews, and download reports.
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reviews**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews**
 
 Skip to [Accordion rows](#ACC)
 
@@ -36,7 +36,7 @@ The accordion rows under **Reviews by submission** table main rows contain the r
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9b00f119.webp)  
 
-Each table has the same tools to search, order, filter and download reports. To assign reviewers, [click here](//help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer?hsLang=en).
+Each table has the same tools to search, order, filter and download reports. To assign reviewers, [click here](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
 #### Columns
 

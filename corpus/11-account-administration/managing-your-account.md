@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Learn how to see an overview of your events, and add and remove event, account and API admins.
 
-The guidance below is for account administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for account administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Skip to:
 
@@ -19,7 +19,7 @@ Skip to:
 
 [Managing account (client) admins](#ANA)
 
-Click on [**Manage Account**](//help.oxfordabstracts.com/knowledge/managing-your-account?hsLang=en) in the relevant account in your [personal dashboard](//help.oxfordabstracts.com/knowledge/your-personal-dashboard?hsLang=en).
+Click on [**Manage Account**](/11-account-administration/managing-your-account.html) in the relevant account in your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9571b285.webp)  
   
@@ -45,7 +45,7 @@ NB: For guidance on how the tables throughout the system work, see [Overview of 
 
 ### **Managing account (client) administrators**
 
-Clicking on client admins will display details of those who have account admin access. This will give them permission to all [Account administrator functions.](https://help.oxfordabstracts.com/knowledge/account-administrator-functions?hsLang=en)
+Clicking on client admins will display details of those who have account admin access. This will give them permission to all [Account administrator functions.](/11-account-administration/)
 
 To add a new client admin, click on **Add Admins**
 
@@ -59,7 +59,7 @@ You can review/edit the invitation message by clicking into the **Invitation ema
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-816177e9.webp)  
   
 
-Once you are ready to send the invitations to the account adminstrators, click on **Invite**. Newly set up account administrators will receive email notification and be invited to register for an [Oxford Abstracts account,](//help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts?hsLang=en) if they don't already have one.
+Once you are ready to send the invitations to the account adminstrators, click on **Invite**. Newly set up account administrators will receive email notification and be invited to register for an [Oxford Abstracts account,](/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html) if they don't already have one.
 
   
   

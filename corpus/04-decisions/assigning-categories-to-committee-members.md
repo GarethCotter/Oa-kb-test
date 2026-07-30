@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## If you need to assign categories to specific committee members, follow the guidance below. This feature is not available in the FREE package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Before assigning categories, you will need to add committee members to the system. See [Manage users](/01-getting-started/manage-users) for guidance.
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Advanced → Committee filter**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Advanced → Committee filter**
 
-This link will take you to the **Assign Categories**table. The table is formatted in a similar way to all tables in the system (See [An overview of tables](//help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function?hsLang=en)).
+This link will take you to the **Assign Categories**table. The table is formatted in a similar way to all tables in the system (See [An overview of tables](/01-getting-started/working-with-tables.html)).
 
   
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-b61e53b3.png)  
@@ -60,5 +60,5 @@ When committee members login, they will only view their assigned categories.
 
 ### I want committee members to be able to make decisions on specific categories. How do I do this?
 
-See [Assigning specific categories to committee members](//help.oxfordabstracts.com/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members?hsLang=en).
+See [Assigning specific categories to committee members](/04-decisions/assigning-categories-to-committee-members.html).
 

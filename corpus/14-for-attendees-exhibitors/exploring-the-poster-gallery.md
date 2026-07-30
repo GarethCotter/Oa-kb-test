@@ -11,9 +11,9 @@ last_reviewed: 2026-07-28
 
 ## The Poster Gallery offers an online space where delegates can search, view and download (subject to settings) poster submissions.
 
-NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en)
+NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](/08-conference-platform/)
 
-Once you have [created an account and logged in to the conference](//help.oxfordabstracts.com/knowledge/registering-for-the-virtual-program?hsLang=en) you will be taken to the welcome screen. Click the icon in the top left hand corner of the screen, shown below to reveal the full menu.
+Once you have [created an account and logged in to the conference](/14-for-attendees-exhibitors/setting-up-your-conference-program-account.html) you will be taken to the welcome screen. Click the icon in the top left hand corner of the screen, shown below to reveal the full menu.
 
 ![](/assets/img/undefined-jun-10-2021-11-26-55-36-am-6cac3847.webp)
 

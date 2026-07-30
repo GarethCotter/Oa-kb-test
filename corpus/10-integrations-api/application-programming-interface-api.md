@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## Application Programming Interface (API) allows applications to communicate with one another. This means you can extract/share data from your event with third party applications or vice versa.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 In order to generate an API code and access the API documentation; Account Administrators and Event You must first set up an API user by either:
 
-a) Go to the **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Event Setup → Event Details**
+a) Go to the **[Event dashboard](/01-getting-started/event-dashboard.html) → Event Setup → Event Details**
 
 Scroll to **More options** at the bottom.
 
@@ -23,7 +23,7 @@ Then toggle to Enable API.
 
 ![](/assets/img/undefined-aug-23-2021-09-29-40-84-am-cc1049f9.webp)
 
-b) Or you can go tothe **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Users,**  then click on the **API USERS** tab.
+b) Or you can go tothe **[Event dashboard](/01-getting-started/event-dashboard.html) → Users,**  then click on the **API USERS** tab.
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9fb799cb.webp)
 

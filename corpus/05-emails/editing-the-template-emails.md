@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#TEX)
 
@@ -76,5 +76,5 @@ One or more attachments can be added to an email.  Click **UPLOAD ATTACHMENT** 
 
 ### I want to stop the automatic emails going out while I update some submissions. How do I do that?
 
-See [Sending and scheduling emails](//help.oxfordabstracts.com/knowledge/viewing-editing-and-sending-emails?hsLang=en).
+See [Sending and scheduling emails](/05-emails/sending-and-scheduling-emails.html).
 

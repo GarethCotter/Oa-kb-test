@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 NB: The guidance below is for reviewers. If you experience any issues or have any questions, please [contact your event administrator](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2hvdy1kby1pLWNvbnRhY3QtdGhlLWV2ZW50LWFkbWluaXN0cmF0b3I%3D&ct=SEARCH&pid=9108826&cid=61459936823&t=Y29udGFjdA%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=ba0bcb11-204c-4092-b250-964d7f4cc884&rs=UNKNOWN&hs-expires=1677077982&hs-version=1&hs-signature=APUk-v60QTbRjothG4BrAVixf6_wWX3_PA&hsLang=en) in the first instance.
 
-If you are the administrator of an event please see [The reviewing stage.](https://help.oxfordabstracts.com/knowledge/the-reviewing-stage?hsLang=en)
+If you are the administrator of an event please see [The reviewing stage.](/03-reviewing/)
 
 Skip to [begin reviewing](#BR)
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If settings allow, you can interact and engage with fellow attendees using the chat feature, with private, group and event-wide options available.
 
-NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](https://help.oxfordabstracts.com/knowledge/the-conference-platform?hsLang=en)
+NB: The guidance below is for conference attendees. If you are the administrator of an event please see [The conference platform.](/08-conference-platform/)
 
 Skip to:
 

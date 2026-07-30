@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## It is possible to create new templates to send out messages to presenters and authors. This article will show you how.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB It's important to be able to distinguish between submitters, authors and presenters.
 

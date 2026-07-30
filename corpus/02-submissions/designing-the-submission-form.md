@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 ---
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Not all of the features below will be available in the FREE package. To view the limitations, click [here.](/01-getting-started/the-essential-abstract-management-tools)
 
@@ -45,7 +45,7 @@ NB: Not all of the features below will be available in the FREE package. To view
 
 ---
 
-To view, design or edit a submission form, go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → → Submissions → Form & Setup.**
+To view, design or edit a submission form, go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → → Submissions → Form & Setup.**
 
   
 
@@ -68,12 +68,12 @@ Edit to your requirements and click **Back to Form**when you are done. Changes a
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-d1e35fbe.webp)  
   
 
-Instructions for setting **Combined word limits** are[here](//help.oxfordabstracts.com/knowledge/combined-word-count?hsLang=en).
+Instructions for setting **Combined word limits** are[here](/02-submissions/combined-word-count.html).
 
 ![](/assets/img/undefined-feb-23-2021-11-27-06-51-am-f8fe1bb6.webp)  
   
 
-**[Submission fees](//help.oxfordabstracts.com/knowledge/charging-a-fee-for-submission?hsLang=en) and IEEE Copyright** (below)
+**[Submission fees](/02-submissions/charging-a-fee-for-submission.html) and IEEE Copyright** (below)
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-33b7c21c.webp)
 
@@ -89,7 +89,7 @@ If you wish to enable this, click on the link, complete the fields, and click th
 
 You will notice there are tags on some questions
 
-![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-ec97c943.webp)See **[Question tags](//help.oxfordabstracts.com/knowledge/question-tags?hsLang=en)** for guidance
+![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-ec97c943.webp)See **[Question tags](/02-submissions/question-setting-tags.html)** for guidance
 
   
 
@@ -125,17 +125,17 @@ NB: If you mark a question as **Hide** or **Read-only** as Required(\*), the sub
 
 **Editing the content of a question**- (Note that all changes are automatically saved.)
 
-Click on any question to open up the **Edit question**screen below. Different types of questions will have specific elements. Below is an example of a text editor question - the [text editor types](//help.oxfordabstracts.com/knowledge/text-editor-types?hsLang=en) are only available in these questions. See **[Question types](//help.oxfordabstracts.com/knowledge/question-types-1?hsLang=en)** for more information.
+Click on any question to open up the **Edit question**screen below. Different types of questions will have specific elements. Below is an example of a text editor question - the [text editor types](/02-submissions/text-editor-types.html) are only available in these questions. See **[Question types](/02-submissions/submission-question-types.html)** for more information.
 
 1) Amend the title (**Question name**- this field is mandatory)
 
-2) Set a word limit, (**[Word limit](//help.oxfordabstracts.com/knowledge/word-and-character-count?hsLang=en) (optional)**)
+2) Set a word limit, (**[Word limit](/02-submissions/word-and-character-count.html) (optional)**)
 
-3) Set a character limit (**[Character limit](//help.oxfordabstracts.com/knowledge/word-and-character-count?hsLang=en) (optional)**)
+3) Set a character limit (**[Character limit](/02-submissions/word-and-character-count.html) (optional)**)
 
 4) Check this box if this question's response is the title of the submission. Note: this is used to pick up the title of the submission when emailing a submitter.
 
-5) Choose the formatting you wish to make available ([**Text editor type**](//help.oxfordabstracts.com/knowledge/text-editor-types?hsLang=en))
+5) Choose the formatting you wish to make available ([**Text editor type**](/02-submissions/text-editor-types.html))
 
 6) Add a description (this will be the text of the question)
 

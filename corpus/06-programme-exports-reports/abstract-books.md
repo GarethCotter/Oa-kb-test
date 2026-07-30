@@ -12,9 +12,9 @@ last_reviewed: 2026-07-28
 
 ## You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reports & Downloads**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reports & Downloads**
 
 Skip to
 
@@ -26,7 +26,7 @@ The abstract book options will be displayed. Choose  an html, Word doc or PDF f
 
 ![](/assets/img/undefined-mar-01-2021-10-19-04-87-am-8cdff547.webp)  
   
-To determine the data that will appear in the abstract books, please go to **[Question tags](//help.oxfordabstracts.com/knowledge/question-tags?hsLang=en).**
+To determine the data that will appear in the abstract books, please go to **[Question tags](/02-submissions/question-setting-tags.html).**
 
 **Downloading individual submissions in a .zip file**
 
@@ -52,10 +52,10 @@ Once these have been created, they will appear in the **Custom abstract books** 
 
 ### I need a report or an abstract book that you don’t seem to offer in your default options.
 
-Firstly, check all the options available here: [Creating exports, reports and abstract books](https://help.oxfordabstracts.com/knowledge/creating-exports-reports-and-abstract-books?hsLang=en). If you can't see what you need, contact [support@oxfordabstracts.com](mailto:support@oxfordabstracts.com) and we will try our best to supply you with what you require.
+Firstly, check all the options available here: [Creating exports, reports and abstract books](/06-programme-exports-reports/). If you can't see what you need, contact [support@oxfordabstracts.com](mailto:support@oxfordabstracts.com) and we will try our best to supply you with what you require.
 
 
 ### How do I edit the fields I want to appear in the abstract book?
 
-See [Abstract books](//help.oxfordabstracts.com/knowledge/abstract-books?hsLang=en).
+See [Abstract books](/06-programme-exports-reports/abstract-books.html).
 

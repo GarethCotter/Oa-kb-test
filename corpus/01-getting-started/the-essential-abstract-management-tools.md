@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 #### 
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: The features highlighted in pink are NOT available (or are limited) in the FREE package. The FREE package also features **Oxford Abstracts** branding throughout.
 
@@ -35,7 +35,7 @@ NB: The features highlighted in pink are NOT available (or are limited) in the F
 * [Embed secure online submission forms on your website or in emails](/02-submissions/opening-and-closing-submissions-deadlines)
 * [Choose from an extensive range of fully customisable question templates](/02-submissions/submission-question-types)
 * [Infinite range of options to search, filter and download submissions](/02-submissions/the-submissions-table-including-incomplete-submissions)
-* [Submitters can add content, and upload supporting documents in any file format, e.g. PDF, PowerPoint](https://help.oxfordabstracts.com/knowledge/question-types-1?hsLang=en#UF2)
+* [Submitters can add content, and upload supporting documents in any file format, e.g. PDF, PowerPoint](/02-submissions/submission-question-types.html#UF2)
 * [You can submit on behalf of a user](/02-submissions/making-a-submission-on-behalf-of-someone-else)
 * [Manage, view, delete, withdraw and edit submissions with ease on our intuitive interface](/02-submissions/the-submissions-table-including-incomplete-submissions)
 
@@ -43,7 +43,7 @@ NB: The features highlighted in pink are NOT available (or are limited) in the F
 * [Add IEEE copyright to submission form](/02-submissions/designing-the-submission-form)
 * [Charge fees for submission](/02-submissions/charging-a-fee-for-submission)
 * [Restricting who can submit by email](/02-submissions/restricting-who-can-submit-by-email)
-* [Author / presenter specific forms](https://help.oxfordabstracts.com/knowledge/adding-author-information-questions?hsLang=en#CAF)
+* [Author / presenter specific forms](/02-submissions/the-authors-and-affiliations-question.html#CAF)
 
   
 
@@ -67,13 +67,13 @@ NB: The features highlighted in pink are NOT available (or are limited) in the F
 * [Accept, reject and withdraw submissions, with integrated manual and automatic email notification](/04-decisions/recording-decisions-accept-reject-or-withdraw)
 
 * [Semi - editable range of template questions](/04-decisions/design-the-decision-form)
-* [Assigning specific categories to committee members](//help.oxfordabstracts.com/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members?hsLang=en).
+* [Assigning specific categories to committee members](/04-decisions/assigning-categories-to-committee-members.html).
 
 #### Communication
 
 * [Add admins, committee members, reviewers, API users with just their email address](/01-getting-started/manage-users)
 * [Schedule emails, or send manually](/05-emails/sending-and-scheduling-emails)
-* [Track email delivery](https://help.oxfordabstracts.com/knowledge/view-sent-email-log?hsLang=en)
+* [Track email delivery](/05-emails/using-the-email-sent-log.html)
 * [Send individually, or in bulk](/05-emails/sending-and-scheduling-emails)
 
 * [Custom creation of automatic and manual emails for streamlined communication with submitters and all collaborators](/05-emails/creating-custom-emails)
@@ -89,5 +89,5 @@ Publishing and reporting
 * [Quick click for indexes and country reports](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL290aGVyLXJlcG9ydHM%3D&ct=SEARCH&pid=9108826&cid=41196162661&t=b3RoZXIgcmVwb3J0cw%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=70e59dc9-0dcd-439e-9348-5b54a8d4b7cf&rs=UNKNOWN&hs-expires=1673543840&hs-version=1&hs-signature=APUk-v6eKfMfLCPwwV9G8mKEES_grne0Zw&hsLang=en)
 
 * [Extensive range of abstract book options with formatting tools](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2Fic3RyYWN0LWJvb2tz&ct=AUTOCOMPLETE&pid=9108826&cid=41194664385&t=YWJzdHJhY3QgYm9va3M%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=6100112d-33cb-44a5-8b2b-c83b38766946&rs=LIVE_PAGE&hs-expires=1673543933&hs-version=1&hs-signature=APUk-v4gcU7kmNP5Vb-XI-4-Ve0mIRDkNA&hsLang=en)
-* [Extensive range of report options - include any data from anywhere in the event](https://help.oxfordabstracts.com/knowledge/creating-exports-reports-and-abstract-books?hsLang=en)
+* [Extensive range of report options - include any data from anywhere in the event](/06-programme-exports-reports/)
 * [Event theme - add logos and custom colours to forms](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LXRoZW1l&ct=AUTOCOMPLETE&pid=9108826&cid=52668942091&t=ZXZlbnQgdGhlbWU%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=2ce48143-556e-4d54-af07-41ab0edd8a09&rs=LIVE_PAGE&hs-expires=1673543960&hs-version=1&hs-signature=APUk-v6iXL5-EFtdxq4b3uBdb6vdWl73IA&hsLang=en)

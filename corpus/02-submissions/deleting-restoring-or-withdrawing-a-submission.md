@@ -12,11 +12,11 @@ last_reviewed: 2026-07-28
 
 ## An account or event administrator can delete or withdraw any unwanted submissions.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to text instructions.](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Table**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Table**
 
 Skip to:
 
@@ -28,7 +28,7 @@ Skip to:
 
 #### Deleting a submission
 
-In the [**Submissions table**](//help.oxfordabstracts.com/knowledge/the-submissions-table?hsLang=en), select the submissions you wish to delete by ticking the checkbox(es) on the left of each submission ID![](/assets/img/undefined-feb-24-2021-09-45-25-38-am-3dfe358b.webp)
+In the [**Submissions table**](/02-submissions/the-submissions-table-including-incomplete-submissions.html), select the submissions you wish to delete by ticking the checkbox(es) on the left of each submission ID![](/assets/img/undefined-feb-24-2021-09-45-25-38-am-3dfe358b.webp)
 
   
   
@@ -66,7 +66,7 @@ The restored submissions will now be restored to the main submission table.
 
   
 
-To withdraw a submission, go to [**Event dashboard**](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → **Decisions** →
+To withdraw a submission, go to [**Event dashboard**](/01-getting-started/event-dashboard.html) → **Decisions** →
 
 Ensure the **Decision** column is visible (in the **Decisions responses** section\_.
 

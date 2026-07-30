@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## If you would like to send emails from your tables instead of the email tool, follow the guidance below.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: the email facility is not available in all tables. The submission table has been used in the example below, so it is advisable that you are familiar with [The submission tables](/02-submissions/the-submissions-table-including-incomplete-submissions) before you read this guidance, along with [Amending email templates](/05-emails/editing-the-template-emails).
 
@@ -46,7 +46,7 @@ Along the top right there are the following options:
 
 ![](/assets/img/undefined-jan-05-2022-12-18-59-64-pm-7bd336e1.webp)
 
-Lower in the panel, there are further options, as with the standard email tool. See [Additional settings](https://help.oxfordabstracts.com/knowledge/amending-template-emails?hsLang=en#ADS) for guidance.
+Lower in the panel, there are further options, as with the standard email tool. See [Additional settings](/05-emails/editing-the-template-emails.html#ADS) for guidance.
 
 ![](/assets/img/undefined-jan-05-2022-02-06-02-56-pm-9d1fa787.webp)
 
@@ -98,5 +98,5 @@ NB: Clicking **Send** will result in the emails to all selected recipients being
 
 ### Can I send emails out to just a few people - or even just one?
 
-Yes - see [Sending and scheduling emails](//help.oxfordabstracts.com/knowledge/viewing-editing-and-sending-emails?hsLang=en).
+Yes - see [Sending and scheduling emails](/05-emails/sending-and-scheduling-emails.html).
 

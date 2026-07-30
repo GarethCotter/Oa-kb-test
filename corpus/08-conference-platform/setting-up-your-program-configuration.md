@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## The conference program is a great tool for publishing a conference program or schedule. This article will help you get set up and shows you how to add content, dates, columns, locations, chairs, presentation types and tracks.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Some of the features listed below will not be available in the Standard Conference Package.
 
@@ -235,7 +235,7 @@ In the program, the new category will appear as a new filter option.
 
 **11) Program codes**
 
-For guidance on assigning program codes, see [here.](//help.oxfordabstracts.com/knowledge/assigning-program-codes?hsLang=en)
+For guidance on assigning program codes, see [here.](/08-conference-platform/assigning-program-codes.html)
 
 **12) Manage Information**
 

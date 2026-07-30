@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Forms & Setup → +QUESTION**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Forms & Setup → +QUESTION**
 
 This will open up the page of question types.
 
@@ -82,7 +82,7 @@ Click on the type of question you require, and click **Create Selected Question*
 At the bottom of the edit question panel, you can apply various tags - See [Question tags](/02-submissions/question-setting-tags)
 
 ![](/assets/img/undefined-jan-26-2022-02-05-18-61-pm-0199b5d5.webp)  
-In the lower half, you can find [Question tags](/02-submissions/question-setting-tags) and the [display settings](https://help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en#DS)  
+In the lower half, you can find [Question tags](/02-submissions/question-setting-tags) and the [display settings](/02-submissions/designing-the-submission-form.html#DS)  
 ![](/assets/img/undefined-jan-26-2022-12-36-25-14-pm-e43feea7.webp)  
 
  When published, it is viewed as below.

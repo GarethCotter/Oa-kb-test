@@ -11,11 +11,11 @@ last_reviewed: 2026-07-28
 
 ## Clicking the Event details option in the menu on the event dashboard allows you to add/view/edit key information relating to the event, including title, venue, date(s), logo, email address, phone number etc.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Event Setup → Event details.**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Event Setup → Event details.**
 
 Click into any field to amend/populate it.
 

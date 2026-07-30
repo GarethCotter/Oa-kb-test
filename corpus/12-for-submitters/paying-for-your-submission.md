@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Sometimes, conference organisers ask for a fee to be paid when submitting your abstract. The guidance below shows you how to do this.
 
-NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en).
+NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](/02-submissions/).
 
 Follow the link to the submission form. If there is a fee charged for submitting, you will see the blue PAYMENT button at the top of the form.
 

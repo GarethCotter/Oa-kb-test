@@ -11,13 +11,13 @@ last_reviewed: 2026-07-28
 
 ## This feature allows you to charge and collect fees from submitters. It is not available in the FREE package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#TEX)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Submissions → Form & Setup.**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & Setup.**
 
-You will see in the top section of the**[submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en)**a link to **submission fees.**
+You will see in the top section of the**[submission form](/02-submissions/designing-the-submission-form.html)**a link to **submission fees.**
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-e5d76cc3.webp)
 

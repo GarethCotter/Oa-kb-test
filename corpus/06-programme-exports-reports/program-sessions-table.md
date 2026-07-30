@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## The program sessions table is a very useful tool for an overview of program session information, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 Go to**Event dashboard** **→ Conference → Program → Sessions**
 

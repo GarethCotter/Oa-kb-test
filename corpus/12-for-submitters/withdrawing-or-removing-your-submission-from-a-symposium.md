@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 ### 
 
-NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en).
+NB: The guidance below is for users who are submitting to a conference. If you are the administrator of an event please see [The submission stage](/02-submissions/).
 
   
 

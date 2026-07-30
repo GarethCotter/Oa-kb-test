@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## The submissions table is a very useful tool as an overview of submission info, and to manipulate and extract data. You can add and remove columns, delete or edit submissions and download reports. You can also send emails from the table.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Before you read this guidance, it is advised that you become familiar with how the tables work throughout the Oxford Abstracts system by reading [An overview of the tables function.](/01-getting-started/working-with-tables) The submission table is used as an example in that article.
 
@@ -28,7 +28,7 @@ Go to [How to email submitters from tables](https://help.oxfordabstracts.com/_hc
 
 ---
 
-Go to [**Event dashboard**](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) **→ Abstract Management** → **Submissions → Table** to access the table
+Go to [**Event dashboard**](/01-getting-started/event-dashboard.html) **→ Abstract Management** → **Submissions → Table** to access the table
 
 #### Columns
 
@@ -62,7 +62,7 @@ When you have made your selection, click on the up arrow
 
 ![](/assets/img/undefined-feb-24-2021-10-35-13-94-am-63d43e7c.webp)  
 
-**Submission responses** include all responses to the questions in the [submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en).
+**Submission responses** include all responses to the questions in the [submission form](/02-submissions/designing-the-submission-form.html).
 
   
 

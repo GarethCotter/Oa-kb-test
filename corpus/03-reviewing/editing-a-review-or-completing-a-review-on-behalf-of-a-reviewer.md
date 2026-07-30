@@ -12,17 +12,17 @@ last_reviewed: 2026-07-28
 
 ## You can edit or complete a review on behalf of an assigned reviewer, should you require.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: in order to complete a review on behalf of someone else, the submission must be [assigned to a reviewer](//help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer?hsLang=en).
+NB: in order to complete a review on behalf of someone else, the submission must be [assigned to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Reviews**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Reviews**
 
 Skip to [**View as a reviewer**](#VAR)
 
 There are two tables -  the default option is**Reviews by submission** (ordered according to submission ID).  You can edit or complete reviews here. If you wish to view the review as a reviewer would, you will need to go to **Reviews by reviewer** (see below)
 
-It's helpful to be familiar with [The Reviews Table](//help.oxfordabstracts.com/knowledge/the-review-tables?hsLang=en) before you begin editing or completing a review.
+It's helpful to be familiar with [The Reviews Table](/03-reviewing/the-review-tables.html) before you begin editing or completing a review.
 
 Click anywhere in the row of the submission that you wish to edit.![](/assets/img/undefined-feb-24-2021-11-10-46-84-am-8ac6c8dd.webp)  
   
@@ -76,5 +76,5 @@ Click **Start reviewing** to complete or view the review. When you have finished
 
 ### I need to complete a review on behalf of a reviewer. How do I do that?
 
-See [Editing a review or completing a review on behalf of a reviewer](//help.oxfordabstracts.com/knowledge/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer?hsLang=en).
+See [Editing a review or completing a review on behalf of a reviewer](/03-reviewing/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer.html).
 

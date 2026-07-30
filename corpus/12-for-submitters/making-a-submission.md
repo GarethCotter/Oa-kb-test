@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## After clicking the link you have been supplied by your conference organiser - usually in an email or via the event website - you can begin to make a submission.
 
-NB: The guidance below is for users who are submitting a paper / abstract etc to a conference. If you are the administrator of an event please see [The submission stage](https://help.oxfordabstracts.com/knowledge/the-submission-stage?hsLang=en).
+NB: The guidance below is for users who are submitting a paper / abstract etc to a conference. If you are the administrator of an event please see [The submission stage](/02-submissions/).
 
 Before you can make a submission, you will be prompted to log in or set up an account with [Oxford Abstracts.](http://app.oxfordabstracts.com)
 

@@ -12,13 +12,13 @@ last_reviewed: 2026-07-28
 
 ## In order to make the submission system live, you must open submissions.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB: Before you open your call for abstracts, it is advisable to complete a [test submission.](#TEST)
 
 Skip to video - [How do I allow for reworking and late breaking abstracts?](#RE)
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) →** **Submissions panel**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →** **Submissions panel**
 
 To allow abstract submissions, go to the **Form Status** section on the submission panel and click on the drop-down box next to it.
 

@@ -11,9 +11,9 @@ last_reviewed: 2026-07-28
 
 ## Networking allows attendees to create name tags so that they can connect and chat with each other. This feature is only available in the Professional Conference package.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: Delegates can only use chat if they have set up a [name badge](https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-program-networking?hsLang=en#NB).
+NB: Delegates can only use chat if they have set up a [name badge](/08-conference-platform/networking-for-attendees.html#NB).
 
 [Skip to written instructions.](#TEX)
 
@@ -29,7 +29,7 @@ This will open the Networking panel. In the upper part of the panel you will see
 
 2) [Setting up name badges](#NB) (below)
 
-3), 4) and 5) the chat settings   [Advanced / Virtual Program - Chat feature](//help.oxfordabstracts.com/knowledge/advanced-/-virtual-program-chat-feature?hsLang=en)
+3), 4) and 5) the chat settings   [Advanced / Virtual Program - Chat feature](/08-conference-platform/the-chat-feature.html)
 
 ![](/assets/img/undefined-oct-14-2021-02-54-18-49-pm-e3dced85.webp)
 

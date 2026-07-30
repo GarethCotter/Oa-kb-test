@@ -11,9 +11,9 @@ last_reviewed: 2026-07-28
 
 ## There may be occasions where you only require presenters' data, as opposed to all authors.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Read [The overview of tables article](//help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function?hsLang=en)  and [Export table data to Excel](//help.oxfordabstracts.com/knowledge/export-table-data-to-excel?hsLang=en) first, so you are familiar with the tables and exporting of data in the Oxford Abstracts system.
+Read [The overview of tables article](/01-getting-started/working-with-tables.html)  and [Export table data to Excel](/06-programme-exports-reports/export-table-data-to-excel.html) first, so you are familiar with the tables and exporting of data in the Oxford Abstracts system.
 
   
 

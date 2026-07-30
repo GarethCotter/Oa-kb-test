@@ -12,9 +12,9 @@ last_reviewed: 2026-07-28
 
 ## In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](//help.oxfordabstracts.com/knowledge/event-dashboard?hsLang=en) → Abstract Management → Reports & Downloads**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reports & Downloads**
 
 Skip to
 
@@ -33,7 +33,7 @@ Scroll to the lower part of the page.
 
 #### File upload question files
 
-If you have a file upload question in your [submission form](//help.oxfordabstracts.com/knowledge/designing-the-submission-form?hsLang=en), you will be able to download a zip file of all responses, here.
+If you have a file upload question in your [submission form](/02-submissions/designing-the-submission-form.html), you will be able to download a zip file of all responses, here.
 
 ![](/assets/img/undefined-mar-01-2021-11-48-24-58-am-f3b1014c.webp)
 
@@ -71,5 +71,5 @@ If you need a spreadsheet that isn't in our standard downloads, [get in touch](m
 
 ### I want to download a spreadsheet of the reviews in one continuous row, as opposed to sub rows. How do I do that?
 
-See [Export table data to Excel](//help.oxfordabstracts.com/knowledge/export-table-data-to-excel?hsLang=en).
+See [Export table data to Excel](/06-programme-exports-reports/export-table-data-to-excel.html).
 

@@ -62,5 +62,5 @@ Should you need further assistance, please contact our Support Desk via our [Con
 
 ### If a delegate has already registered and paid, can a delegate then add event tickets at a later date?
 
-Delegates can only purchase one fee option, but are permitted to purchase multiple event tickets. If at a later date they require additional tickets, admins can do this on their behalf. See [Deleting or changing the status of a registration.](//help.oxfordabstracts.com/knowledge/editing-or-changing-the-status-of-a-registration?hsLang=en)
+Delegates can only purchase one fee option, but are permitted to purchase multiple event tickets. If at a later date they require additional tickets, admins can do this on their behalf. See [Deleting or changing the status of a registration.](/07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.html)
 

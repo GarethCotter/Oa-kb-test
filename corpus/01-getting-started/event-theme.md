@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## If you have the Standard Conference Package, you can add colours and logos to your event set up if you wish.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#TEX)
 

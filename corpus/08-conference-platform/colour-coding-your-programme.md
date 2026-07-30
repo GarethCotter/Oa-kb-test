@@ -13,7 +13,7 @@ Colour by session, track or presentation type
 
 ## Create a striking and visually engaging program. Choose from a full colour palette including RGB, HEX and colour picker Colour by session, track or presentation type
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 **Event dashboard** **→ Conference →** **Program ➞ Builder** ➞ **Settings** (top right) ➞ **Pick colours**
 

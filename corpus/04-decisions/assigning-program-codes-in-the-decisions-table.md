@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 NB. It is advised that you become familiar with the [Decisions table](/04-decisions/the-decisions-table) layout and tools first.
 

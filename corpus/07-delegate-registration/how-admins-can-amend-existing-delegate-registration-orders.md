@@ -126,5 +126,5 @@ If you need further assistance, please get in touch with our Customer Support Te
 
 ### How do I delete a registration?
 
-See [Deleting or changing the status of a registration](//help.oxfordabstracts.com/knowledge/editing-or-changing-the-status-of-a-registration?hsLang=en).
+See [Deleting or changing the status of a registration](/07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.html).
 

@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## When submissions are displayed in the program, the default is to include the submission ID but you can assign program codes within the program builder, if you require.
 
-The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://help.oxfordabstracts.com/knowledge/support?hsLang=en).
+The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
 [Skip to written instructions](#TEX)
 
@@ -21,7 +21,7 @@ Click **Settings** (top right corner), then choose **Assign program codes**
 
 This opens the program assignment panel.
 
-NB. You can also [assign program codes manually in the decisions table](//help.oxfordabstracts.com/knowledge/assigning-program-codes-in-the-decisions-table?hsLang=en).
+NB. You can also [assign program codes manually in the decisions table](/04-decisions/assigning-program-codes-in-the-decisions-table.html).
 
 ![](/assets/img/undefined-aug-23-2021-01-47-55-26-pm-4f35b097.webp)
 
