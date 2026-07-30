@@ -477,7 +477,7 @@
   "section": "Reviewing",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The review tables are very useful tools for having an overview of review information, and to manipulate and extract data. # Note NB. To become familiar with the Review tables layout and tools, see An overview of tables. "
+  "summary": "The review tables are very useful tools for having an overview of review information, and to manipulate and extract data. # Note To become familiar with the Review tables layout and tools, see An overview of tables. The "
  },
  {
   "title": "Tips on designing your reviewing form",
@@ -501,7 +501,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require. # Note NB. It is "
+  "summary": "Whenever submissions are displayed in the program or abstract books, the default is to include the submission ID but you can assign program codes to replace these in the decisions table, if you require. # Note It is advi"
  },
  {
   "title": "Design the decision form",
@@ -533,7 +533,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below. # Note NB Go to Event dashboard \u2192 "
+  "summary": "You can record a decision in the Decisions Table. Committee Members can also make decisions if permitted. Although the interface is slightly different, the process is the same as below. # Note Go to Event dashboard \u2192 Abs"
  },
  {
   "title": "The decisions table",
@@ -541,7 +541,7 @@
   "section": "Decisions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The decisions table gives an overview of submissions data relating to outcome status and is used for making decisions on submissions. # Note NB. To become familiar with the decisions table layout and tools, see An overvi"
+  "summary": "The decisions table gives an overview of submissions data relating to outcome status and is used for making decisions on submissions. # Note To become familiar with the decisions table layout and tools, see An overview o"
  },
  {
   "title": "Creating custom emails",
@@ -565,7 +565,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "It is possible to create new templates to send out messages to presenters and authors. This article will show you how. # Note NB It's important to be able to distinguish between submitters, authors and presenters. Submit"
+  "summary": "It is possible to create new templates to send out messages to presenters and authors. This article will show you how. # Note It's important to be able to distinguish between submitters, authors and presenters. Submitter"
  },
  {
   "title": "Emailing session chairs from the dashboard",
@@ -757,7 +757,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Here you can find instructions on how to change a registration email address for delegate registration. # Note Please note this information is for Admins ONLY! You can either watch the video below for a step-by-step walk"
+  "summary": "Here you can find instructions on how to change a registration email address for delegate registration. # Note This information is for Admins ONLY! You can either watch the video below for a step-by-step walkthrough or s"
  },
  {
   "title": "Completing registration when someone bought your ticket",
@@ -821,7 +821,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to edit automated emails in the delegate registration feature. # Note Please note this information is for Admins only! If you are on the free package you are unable to edit automated delegate registration email"
+  "summary": "Learn how to edit automated emails in the delegate registration feature. # Note This information is for Admins only! If you are on the free package you are unable to edit automated delegate registration emails. From your"
  },
  {
   "title": "Editing your delegate registration ticket details page",
@@ -965,7 +965,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Follow the instructions below to create announcements for your attendees of your event to see. # Note Please note, this information is for Admins Only! This feature is only available for the Professional Conference Packa"
+  "summary": "Follow the instructions below to create announcements for your attendees of your event to see. # Note This information is for Admins Only! This feature is only available for the Professional Conference Package . Event ad"
  },
  {
   "title": "Creating your event website",

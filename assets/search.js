@@ -210,7 +210,7 @@ function boldify(text) {
   return esc.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
-function showAnswer(answer, sources, followups) {
+function showAnswer(answer, sources) {
   // the settled line is the answer's own heading, so there is no separate label
   const el = settleInto('found', 'Found it —');
 
@@ -231,22 +231,10 @@ function showAnswer(answer, sources, followups) {
     el.appendChild(a);
   });
 
-  // tappable narrowing: one tap beats retyping on a phone
-  if (followups && followups.length) {
-    const row = document.createElement('div');
-    row.className = 'ans-in';
-    row.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;margin-top:14px';
-    followups.forEach(q => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = q;
-      b.style.cssText = 'background:none;border:1.5px solid rgba(16,28,56,.14);border-radius:999px;' +
-        'padding:7px 14px;font-family:inherit;font-size:15px;color:#4A5468;cursor:pointer';
-      b.addEventListener('click', () => { input.value = q; search(q); });
-      row.appendChild(b);
-    });
-    el.appendChild(row);
-  }
+  // Follow-up question chips were removed on 30 July 2026: the model's suggestions
+  // were too often a worse question than the one just asked, and a row of them under
+  // the answer invited a second search instead of the guide the answer came from.
+  // The example questions under the homepage search box are a different thing and stay.
 }
 
 /* The gap state. Reached only on an explicit found:false - a transport error goes to
@@ -288,7 +276,7 @@ async function fetchAnswer(question) {
     });
     if (!res.ok) throw new Error('bad status');
     const data = await res.json();
-    if (data && data.answer) showAnswer(data.answer, data.sources, data.followups);
+    if (data && data.answer) showAnswer(data.answer, data.sources);
     else if (data && data.found === false) showEscalation(question);
     else clearAnswer();          // transport errors stay silent
   } catch (e) {

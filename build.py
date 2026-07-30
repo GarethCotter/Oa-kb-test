@@ -910,7 +910,9 @@ def _strip_callout_label(p, soup):
             return False
         first.replace_with(rest)
         return True
-    if first.name in ('strong', 'b'):
+    # em/i as well as strong/b: several of these were written "*Please note if you
+    # are a Multi-Stage event…*", italicising the whole sentence.
+    if first.name in ('strong', 'b', 'em', 'i'):
         t = first.get_text(' ', strip=True)
         m = CALLOUT_RE.match(t)
         if not m:
@@ -929,6 +931,18 @@ def _strip_callout_label(p, soup):
                 inner.replace_with(rest)
                 return True
     return False
+
+
+def _drop_leading_that(p):
+    """"Please note, that you have thirty days" reads as a fragment once the label is
+    gone, so the "that" goes with it."""
+    node = next((c for c in p.descendants if isinstance(c, str) and c.strip()), None)
+    if node is None:
+        return
+    s = str(node)
+    m = re.match(r'^(\s*)that\s+', s, re.I)
+    if m:
+        node.replace_with(m.group(1) + s[m.end():])
 
 
 def _capitalise_first(p):
@@ -968,11 +982,22 @@ def wrap_callouts(root, soup, counts):
             continue
         word = m.group(1).lower()
         kind, label = next((k, l) for w, k, l in CALLOUT_LEADS if w == word)
-        if m.group(2) == ':' and _strip_callout_label(p, soup):
+        # The label belongs in the header, not repeated in the sentence, so the lead
+        # comes off whatever follows it - "NB:", "NB,", "NB -" or a bare "NB". The one
+        # thing that cannot be cut is a lead doing duty as the sentence's verb:
+        # "Remember to check the box" would be left as "to check the box".
+        # Lowercase "to" only: "Remember to check the box" is the lead doing duty as
+        # the verb, but "NB: To become familiar with the tables, see…" is already a
+        # sentence and the capital says so.
+        rest = CALLOUT_RE.sub('', p.get_text(' ', strip=True), count=1)
+        if rest.startswith('to '):
+            counts['lead is the verb, kept'] += 1
+        elif _strip_callout_label(p, soup):
+            _drop_leading_that(p)
             _capitalise_first(p)
             counts['stripped'] += 1
         else:
-            counts['kept whole'] += 1
+            counts['could not strip'] += 1
 
         # "NB:" alone on its own line with the note in the block underneath is the
         # commonest HubSpot shape - 7 of these. Stripping the label empties the

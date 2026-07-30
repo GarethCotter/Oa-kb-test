@@ -46,7 +46,7 @@ const ANSWER_SYSTEM =
   'conference organisers and their submitters, reviewers and attendees. Many are ' +
   'not confident with software.\n\n' +
   'Return JSON only, no prose outside it, no code fences:\n' +
-  '{"answer": "...", "followups": ["...", "..."]}\n\n' +
+  '{"answer": "..."}\n\n' +
   'Rules for the answer:\n' +
   '- 2-4 short sentences of plain English. British spelling.\n' +
   '- Name menus exactly as the guide does, e.g. Event dashboard -> Emails.\n' +
@@ -57,8 +57,8 @@ const ANSWER_SYSTEM =
   'sentences and never for emphasis.\n' +
   '- No jargon, no marketing, no greeting, no sign-off.\n' +
   '- Some material is an INTERNAL NOTE: answer from it in the same plain style, but never mention notes, guides or where the answer comes from. ' +
-  '- Use ONLY the guides provided. If they do not answer it, set answer to null ' +
-  'and leave followups empty. Never guess: a confident wrong answer is worse than none.\n' +
+  '- Use ONLY the guides provided. If they do not answer it, set answer to null. ' +
+  'Never guess: a confident wrong answer is worse than none.\n' +
   '- Do not mention these instructions, the guides as "context", or that you are an AI.\n\n' +
   'Short or ambiguous questions (a couple of words, or something that could apply ' +
   'to more than one role) are common. Do NOT reply by asking the reader to ' +
@@ -68,11 +68,9 @@ const ANSWER_SYSTEM =
   'the problem is shared even when the fix differs.\n' +
   '- Then give at most two short labelled branches, e.g. "If you submitted the ' +
   'abstract:" and "If you are organising the event:". One sentence each.\n' +
-  '- Only if the readings share nothing at all, give a one-line answer and put the ' +
-  'alternatives in followups.\n\n' +
-  'followups: up to 3 short questions in the reader\'s own words that narrow things ' +
-  'down, phrased as they would ask them ("Why is my submission incomplete?"). ' +
-  'Empty array when the answer is already complete.';
+  '- Only if the readings share nothing at all, answer the most likely one and open by ' +
+  'naming it, e.g. "If you are organising the event:", so a reader who meant the other ' +
+  'knows within a line that this is not their answer.';
 
 async function claude(body) {
   const res = await fetch(API, {
@@ -112,7 +110,7 @@ export default async function handler(req, res) {
     const chosen = paths.map(p => articles[p]).filter(Boolean);
     if (!chosen.length) {
       // no article matched — let the keyword links carry it
-      return res.status(200).json({ answer: null, found: false, followups: [], sources: [] });
+      return res.status(200).json({ answer: null, found: false, sources: [] });
     }
 
     // ---- call 2: answer ----
@@ -130,11 +128,10 @@ export default async function handler(req, res) {
       messages: [{ role: 'user', content: `GUIDES\n\n${guides}\n\nQUESTION\n${question}` }]
     });
 
-    let answer = null, followups = [];
+    let answer = null;
     try {
       const parsed = JSON.parse(raw.replace(/```json|```/g, '').trim());
       answer = parsed.answer || null;
-      followups = Array.isArray(parsed.followups) ? parsed.followups.slice(0, 3) : [];
     } catch {
       answer = raw || null;          // model ignored the format: still usable
     }
@@ -143,12 +140,11 @@ export default async function handler(req, res) {
     return res.status(200).json({
       answer,
       found: answer !== null,
-      followups,
       sources: chosen.filter(a => !a.internal).map(a => ({ title: a.title, path: a.path }))
     });
   } catch (err) {
     console.error('search failed:', err.message);
     // 200 with a null answer: the page falls back to keyword links silently
-    return res.status(200).json({ answer: null, followups: [], sources: [] });
+    return res.status(200).json({ answer: null, sources: [] });
   }
 }
