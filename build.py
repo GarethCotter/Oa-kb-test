@@ -377,7 +377,7 @@ HEAD = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 # search instead, so it gets no second row at all.
 SUBNAV = """<div class="wrap-nav subnav">
 <form class="hdr-search" role="search" action="{root}index.html" method="get">
-<input type="search" name="q" placeholder="Search the guides" aria-label="Search the guides">
+<input type="search" name="q" placeholder="Ask a question&hellip;" aria-label="Ask a question">
 <button type="submit">Ask</button></form></div>"""
 
 CARET = ('<svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">'
