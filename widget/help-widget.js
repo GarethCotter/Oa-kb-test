@@ -128,6 +128,14 @@
 
   function emit(name, detail) { try { if (CFG.onEvent) CFG.onEvent(name, detail || {}); } catch (e) {} }
 
+  /* Canonical URL for a KB path. The API returns paths ending .html; under the KB's
+     cleanUrls those answer with a 308 redirect, and the redirect carries no CORS
+     header - so a cross-origin fetch dies there even though the page itself allows
+     it. Fetching the extensionless URL goes straight to the page. */
+  function kbUrl(path) {
+    return CFG.kbBase + path.replace(/^\//, '').replace(/\.html$/, '');
+  }
+
   function logEvent(question, answered, sources, action) {
     try {
       fetch(CFG.endpoint + '/api/log', {
@@ -257,7 +265,7 @@
       from.appendChild(el('p', null, 'From these guides'));
       sources.slice(0, 2).forEach(function (s) {
         var a = el('a', null, s.title);
-        a.href = CFG.kbBase + s.path.replace(/^\//, '');
+        a.href = kbUrl(s.path);
         a.addEventListener('click', function (e) {
           e.preventDefault();
           var last = state.history[state.history.length - 1];
@@ -407,14 +415,14 @@
     reader.classList.remove('oahw-hidden');
     readerOpen.href = kbUrl;
     reader.innerHTML = '<p>Opening the guide…</p>';
-    fetch(CFG.kbBase + path.replace(/^\//, ''))
+    fetch(kbUrl(path))
       .then(function (r) { if (!r.ok) throw new Error('status'); return r.text(); })
       .then(function (html) {
         var doc = new DOMParser().parseFromString(html, 'text/html');
         var title = doc.querySelector('h1');
         var prose = doc.querySelector('.prose');
         if (!prose) throw new Error('no article body');
-        var base = CFG.kbBase + path.replace(/^\//, '');
+        var base = CFG.kbBase + path.replace(/^\//, '');   // .html kept: relative srcs resolve the same
         Array.prototype.forEach.call(prose.querySelectorAll('[src]'), function (n) {
           n.src = new URL(n.getAttribute('src'), base).href;
         });
