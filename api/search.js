@@ -46,7 +46,12 @@ const ANSWER_SYSTEM =
   'conference organisers and their submitters, reviewers and attendees. Many are ' +
   'not confident with software.\n\n' +
   'Return JSON only, no prose outside it, no code fences:\n' +
-  '{"answer": "..."}\n\n' +
+  '{"answer": "...", "confidence": "high" | "partial"}\n\n' +
+  'confidence: "high" ONLY when the guides directly and fully answer the question ' +
+  'asked. "partial" when you answered something adjacent, had to branch across ' +
+  'readings, or the guides only partly cover it. When in doubt, "partial" - this ' +
+  'field decides whether we interrupt someone mid-task, and interrupting with a ' +
+  'wrong answer costs more than staying quiet.\n\n' +
   'Rules for the answer:\n' +
   '- 2-4 short sentences of plain English. British spelling.\n' +
   '- Name menus exactly as the guide does, e.g. Event dashboard -> Emails.\n' +
@@ -87,7 +92,28 @@ async function claude(body) {
   return data.content.filter(c => c.type === 'text').map(c => c.text).join('\n').trim();
 }
 
+/* CORS: lets the support form and the in-app widget on Oxford Abstracts' own domains
+   call this endpoint. An allowlist, not '*' - this endpoint spends API money, and
+   localhost is included so the engineer can test an integration before it ships. */
+const CORS_ORIGINS = new Set([
+  'https://oxfordabstracts.com',
+  'https://www.oxfordabstracts.com',
+  'https://app.oxfordabstracts.com'
+]);
+export function applyCors(req, res) {
+  const o = req.headers.origin || '';
+  if (CORS_ORIGINS.has(o) || /^https?:\/\/localhost(:\d+)?$/.test(o)) {
+    res.setHeader('Access-Control-Allow-Origin', o);
+    res.setHeader('Vary', 'Origin');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Max-Age', '86400');
+  }
+}
+
 export default async function handler(req, res) {
+  applyCors(req, res);
+  if (req.method === 'OPTIONS') return res.status(204).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Use POST' });
 
   const question = (req.body && req.body.question || '').toString().trim().slice(0, 500);
@@ -128,18 +154,30 @@ export default async function handler(req, res) {
       messages: [{ role: 'user', content: `GUIDES\n\n${guides}\n\nQUESTION\n${question}` }]
     });
 
-    let answer = null;
+    let answer = null, selfReport = 'partial';
     try {
       const parsed = JSON.parse(raw.replace(/```json|```/g, '').trim());
       answer = parsed.answer || null;
+      if (parsed.confidence === 'high') selfReport = 'high';
     } catch {
       answer = raw || null;          // model ignored the format: still usable
     }
+
+    /* The interrupt signal, decided here rather than by each caller. 'strong' means
+       the support-form deflection may put this answer in front of someone mid-task;
+       'weak' means show it only where an answer was asked for. The model's own
+       confidence is necessary but not sufficient - it is demoted by hedging language
+       and by too-short answers, the same heuristics the prototypes proved out. */
+    const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
+    const confidence = (answer && selfReport === 'high'
+                        && answer.trim().length >= 60
+                        && !HEDGES.test(answer)) ? 'strong' : 'weak';
 
     res.setHeader('cache-control', 'public, s-maxage=86400');
     return res.status(200).json({
       answer,
       found: answer !== null,
+      confidence: answer !== null ? confidence : undefined,
       sources: chosen.filter(a => !a.internal).map(a => ({ title: a.title, path: a.path }))
     });
   } catch (err) {

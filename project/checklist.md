@@ -117,12 +117,17 @@ corpus in place.*
 
 ## 3. Build list (me)
 
-- [ ] **Ticket deflection on the HubSpot support form** — needs the form details from you.
-      Best data source we'll have: every interaction is a labelled outcome.
-      Design rules in the context doc §4: never show a confidence percentage, never block
-      the send, only interrupt when the answer is strong.
-- [ ] **Add a confidence signal to `/api/search`** — it returns `found: true/false`, which
-      is not enough to decide whether to interrupt someone. Blocks ticket deflection.
+- [x] ~~Ticket deflection on the HubSpot support form~~ — **built to handover, 30 July.**
+      `deflection/deflect.js` is the production drop-in (one script include + four
+      selectors), `deflection/test-form.html` is a live harness against the real API,
+      and `deflection/HANDOVER.md` is the engineer's instructions, including the
+      HubSpot-embed variations and the kill switch. Waiting on the OA engineer to
+      integrate; we cannot touch the live form.
+- [x] ~~Add a confidence signal to `/api/search`~~ — done 30 July. Returns
+      `confidence: 'strong' | 'weak'`: model self-report, demoted by hedging language
+      and short answers (the heuristics the prototypes proved out). Both prototypes
+      and deflect.js now prefer it. CORS added to `/api/search` and `/api/log` for
+      the oxfordabstracts.com domains plus localhost.
 - [ ] **A "What's New" surface** the update pipeline can generate from its own PRs.
 - [x] ~~Fix the card description that ran across a heading~~ — done 29 July. "Changing the
       owner of a submission" showed a stray `#`; 7 cards were affected, not 1.

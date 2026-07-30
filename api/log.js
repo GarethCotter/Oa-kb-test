@@ -38,7 +38,11 @@ const ACTIONS = new Set(['asked', 'solved', 'unhelpful', 'ticket_created',
                          'sent_anyway', 'not_interrupted', 'opened_article',
                          'followup', 'none']);
 
+import { applyCors } from './search.js';
+
 export default async function handler(req, res) {
+  applyCors(req, res);
+  if (req.method === 'OPTIONS') return res.status(204).end();
   /* GET /api/log?check=1 — is the sheet wired up? Reports only whether each
      variable is present and, on ?check=ping, what the webhook actually answered.
      Never returns the URL or the token. Exists because every failure path here is

@@ -427,13 +427,14 @@ const CANNED = {
   weak: { answer: null, sources: [] }
 };
 
-// Stand-in for the signal /api/search does not return yet. It answers found: true/false,
-// which is not enough to decide whether to interrupt someone. Until the endpoint returns
-// one, this approximates it: a reasonable-length answer, at least one cited article, and
-// no hedging language.
+// The endpoint now returns confidence: 'strong' | 'weak' (added 30 July 2026), decided
+// server-side with the same heuristics this prototype proved out. The local
+// approximation remains only as a fallback for canned scenarios and older cached
+// responses that predate the field.
 const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
 function isStrong(r) {
   if (!r || !r.answer) return false;
+  if (r.confidence) return r.confidence === 'strong';
   const a = r.answer.trim();
   return a.length >= 60 && !HEDGES.test(a) && (r.sources || []).length >= 1;
 }

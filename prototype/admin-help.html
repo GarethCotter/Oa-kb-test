@@ -654,8 +654,12 @@ const CANNED_SECOND = {
 let cannedTurn = 0;
 
 /* ---- the ask ---- */
+// Prefer the endpoint's own confidence signal (added 30 July 2026); the local
+// heuristic remains for canned scenarios and older cached responses.
 const HEDGES = /\b(might not|unclear|cannot find|can't find|no article|not sure|unable to|does not (?:appear|seem))\b/i;
-const isStrong = r => !!(r && r.answer && r.answer.trim().length >= 60 && !HEDGES.test(r.answer) && (r.sources || []).length >= 1);
+const isStrong = r => !!(r && r.answer && (r.confidence
+  ? r.confidence === 'strong'
+  : r.answer.trim().length >= 60 && !HEDGES.test(r.answer) && (r.sources || []).length >= 1));
 
 async function fetchAnswer(question) {
   const sc = $('#scenario').value;
