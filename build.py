@@ -1426,10 +1426,21 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
 <form id="searchForm" role="search" aria-label="Search the help centre">
 <input id="searchInput" type="text" placeholder="e.g. How do I email my reviewers?" aria-label="Your question">
 <button class="btn" type="submit">Ask</button></form>
+<!-- The three examples are the three worst-performing searches in the old HubSpot KB:
+     deadline (24 searches, 0.17 clicks), "incomplete submission" (11 searches, ZERO
+     clicks) and template (0.13). Not the most popular topics - the ones the old search
+     failed at, so the examples double as proof this one does not.
+
+     All three are phrased as questions on purpose. Two of them were not, which
+     contradicted the line directly above them asking for a full question, and the
+     phrasing steers the answer: "why is MY submission incomplete" gets answered in
+     submitter voice, "why do SOME submissions" in organiser voice - and this page is
+     an organiser surface. Every one is checked against /api/search before it ships;
+     an example that returns a weak answer is worse than no example at all. -->
 <div class="chips">
-<button class="chip" type="button">Change the submission deadline</button>
-<button class="chip" type="button">Why is my submission incomplete?</button>
-<button class="chip" type="button">Editing the template emails</button>
+<button class="chip" type="button">How do I change the submission deadline?</button>
+<button class="chip" type="button">Why do some submissions show as incomplete?</button>
+<button class="chip" type="button">How do I edit the template emails?</button>
 </div></div>
 <div class="results" id="results" aria-live="polite"><h3 id="resultsTitle">Guides that match</h3><ul id="resultsList"></ul></div>
 </section>
