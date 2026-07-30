@@ -120,6 +120,12 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .doors-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px 0 8px}
 .door{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-decoration:none;display:block;transition:transform .15s ease,box-shadow .15s ease}
 .door:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,28,56,.12)}
+/* A single line-drawn icon per door, in the brand red, so the two choices are
+   distinguishable at a glance before either is read. */
+.door-ico{display:flex;align-items:center;justify-content:center;width:52px;height:52px;
+  border-radius:14px;background:rgba(208,67,44,.09);color:var(--red);margin-bottom:16px}
+.door-ico svg{width:29px;height:29px;display:block}
+.door:hover .door-ico{background:var(--red);color:#fff}
 .door h2{font-size:25px;margin-bottom:8px}
 .door p{color:var(--muted);font-size:17px}
 .door .go{display:inline-block;margin-top:14px;font-weight:600;color:var(--red)}
@@ -133,9 +139,19 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .step .num{font-family:'Gloock',serif;font-size:30px;color:var(--red);line-height:1;margin-bottom:10px}
 .step h3{font-size:19.5px;margin-bottom:6px}
 .step p{font-size:15.5px;color:var(--muted);line-height:1.45}
-.quiet-links{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center;margin-top:26px;font-size:16.5px}
-.quiet-links a{color:var(--muted);text-decoration:none;font-weight:500}
-.quiet-links a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+/* The three non-lifecycle organiser sections - add-ons, integrations, account admin.
+   They were plain text links and read as a footnote; people did not find Symposia.
+   Now cards, but deliberately smaller and unnumbered, so they sit below the eight
+   lifecycle steps rather than alongside them. */
+.quiet-links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.quiet-links a{display:flex;align-items:center;gap:11px;background:var(--white);
+  border:1px solid var(--line);border-radius:12px;padding:15px 18px;text-decoration:none;
+  color:var(--navy);font-size:16.5px;font-weight:500;line-height:1.3;
+  transition:transform .15s ease,box-shadow .15s ease}
+.quiet-links a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,28,56,.10);border-color:var(--navy)}
+.quiet-links svg{width:19px;height:19px;flex-shrink:0;color:var(--red)}
+.quiet-links .ql-go{margin-left:auto;color:var(--red);font-weight:600;font-size:18px;line-height:1}
+@media (max-width:820px){.quiet-links{grid-template-columns:1fr}}
 .participants{padding:26px 0 6px}
 .part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
 .popular{padding:48px 0}
@@ -307,16 +323,18 @@ ARTICLE_FOOT = """</main>
 <footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
 </body></html>"""
 
-FOOT = """</main>
+SUPPORT_URL = 'https://oxfordabstracts.com/resources/contact-support'
+
+FOOT = ("""</main>
 <section class="human"><div class="wrap">
-<h2 class="display">Prefer to talk to a person?</h2>
-<p>Our support team answers quickly, across every time zone — by email or on a free video call.</p>
-<a class="btn" href="https://oxfordabstracts.com/resources/contact/">Contact support</a>
+<h2 class="display">Still stuck? Send us a ticket</h2>
+<p>Tell us what you're trying to do and someone who knows the software will come back to you
+promptly &mdash; usually the same working day. No question is too small, and there's no charge
+for asking.</p>
+<a class="btn" href="%s">Create ticket</a>
 </div></section>
 <footer><div class="wrap">Oxford Abstracts Help Centre &middot; <a href="https://oxfordabstracts.com/">oxfordabstracts.com</a></div></footer>
-</body></html>"""
-
-SUPPORT_URL = 'https://oxfordabstracts.com/resources/contact-support'
+</body></html>""" % SUPPORT_URL)
 
 SUPPORT_BANNER = """<section class="support">
 <div><h2>Didn't solve it? Ask our support team</h2>
@@ -823,8 +841,23 @@ def step_card(folder, num, name, blurb):
 <h3>{html.escape(name)}</h3><p>{html.escape(blurb)}</p></a>'''
 
 steps = ''.join(step_card(f, n, nm, b) for f, n, nm, a, b in SECTIONS if n)
-quiet = ''.join('<a href="%s/index.html">%s</a>' % (f, html.escape(nm))
-                for f, n, nm, a, b in SECTIONS if a == 'organisers' and not n)
+# One icon per non-lifecycle section, keyed on the folder so it cannot drift if the
+# section names change.
+QUIET_ICONS = {
+    '09-add-ons':
+        '<path d="M12 2.7 3 7.4v9.2l9 4.7 9-4.7V7.4Z"/><path d="M3 7.4l9 4.7 9-4.7M12 12.1v9.2"/>',
+    '10-integrations-api':
+        '<path d="M9.5 14.5 5.9 18a3.6 3.6 0 1 0 5.1 5.1l3.5-3.6M14.5 9.5 18 5.9a3.6 3.6 0 1 1 5.1 5.1l-3.6 3.5"/>'
+        '<path d="M9.7 14.3l4.6-4.6"/>',
+    '11-account-administration':
+        '<circle cx="12" cy="8" r="3.6"/><path d="M4.8 21a7.2 7.2 0 0 1 14.4 0"/>',
+}
+quiet = ''.join(
+    '<a href="%s/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '%s</svg>%s<span class="ql-go">&rarr;</span></a>'
+    % (f, QUIET_ICONS.get(f, ''), html.escape(nm))
+    for f, n, nm, a, b in SECTIONS if a == 'organisers' and not n)
 parts = ''.join(f'''<a class="door" href="{f}/index.html"><h2 class="display" style="font-size:23px">{html.escape(nm)}</h2>
 <p>{html.escape(b)}</p><span class="go">{html.escape(nm)} guides →</span></a>'''
                 for f, n, nm, a, b in SECTIONS if a == 'participants')
@@ -859,7 +892,7 @@ index += f'''
 </svg>
 New Advanced Search <span class="sep">&middot;</span> <span class="plain">answers your question, not just links</span>
 </span>
-<h1 class="display">What do you need help&nbsp;with?</h1>
+<h1 class="display">Hello, how can we&nbsp;help?</h1>
 <p class="lede">Ask a full question in your own words, the way you'd ask a colleague. You'll get a straight answer back, plus the guide it came from.</p>
 <div class="searchbox">
 <form id="searchForm" role="search" aria-label="Search the help centre">
@@ -874,10 +907,18 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
 </section>
 
 <section class="wrap"><div class="doors-grid">
-<a class="door" href="#organisers"><h2 class="display">I'm organising an event</h2>
+<a class="door" href="#organisers"><span class="door-ico" aria-hidden="true">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<rect x="3.5" y="6.5" width="25" height="21" rx="3"/><path d="M3.5 12.5h25"/><path d="M10 3.5v5M22 3.5v5"/>
+<path d="M9 18h5.5M9 22.5h9.5"/><circle cx="22" cy="18" r="1.7" fill="currentColor" stroke="none"/>
+</svg></span><h2 class="display">I'm organising an event</h2>
 <p>Setting up submissions, reviewing, decisions, emails, the programme, registration or your conference site.</p>
 <span class="go">Show me organiser guides →</span></a>
-<a class="door" href="#participants"><h2 class="display">I'm taking part in an event</h2>
+<a class="door" href="#participants"><span class="door-ico" aria-hidden="true">
+<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12.8" cy="12" r="4.4"/><path d="M5.5 26.5v-1.9a5.3 5.3 0 015.3-5.3h4a5.3 5.3 0 015.3 5.3v1.9"/>
+<path d="M21.6 8.2a4 4 0 010 7.7M22.4 19.4h.7a5.3 5.3 0 015.3 5.3v1.8"/>
+</svg></span><h2 class="display">I'm taking part in an event</h2>
 <p>Submitting an abstract, reviewing, or attending a conference run on Oxford Abstracts.</p>
 <span class="go">Show me participant guides →</span></a>
 </div></section>
@@ -894,7 +935,7 @@ New Advanced Search <span class="sep">&middot;</span> <span class="plain">answer
 <div class="part-grid">{parts}</div></section>
 
 <section class="popular wrap">
-<div class="section-head"><h2 class="display">Most popular right now</h2></div>
+<div class="section-head"><h2 class="display">Most popular articles</h2></div>
 <div class="pop-list">{pop}</div></section>
 
 <script src="assets/search.js"></script>
