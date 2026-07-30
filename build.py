@@ -389,6 +389,14 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
    resets are harmless on the link and keep the two visually identical. */
 .gap-btn{display:inline-block;background:var(--navy);color:var(--cream);font-weight:600;padding:11px 24px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;font-family:'Outfit',sans-serif;font-size:16px}
 .gap-btn:hover{background:#1d2b4f;color:var(--cream)}
+/* Did the answer work? Two quiet pills, then either a one-line thank-you or the
+   sorry-and-ticket card. The tick is the darkened sage from the Tip callout - the
+   pale brand sage vanishes at 15px on white. */
+.verdict{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.verdict button{display:inline-flex;align-items:center;gap:8px;background:none;border:1.5px solid rgba(16,28,56,.14);border-radius:999px;padding:9px 18px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--navy);cursor:pointer}
+.verdict button:hover{border-color:var(--navy)}
+.verdict button svg,.verdict-thanks svg{width:15px;height:15px;flex:none;color:#4E5A31}
+.verdict-thanks{display:flex;align-items:center;gap:8px;margin-top:18px;color:var(--navy);font-weight:500}
 /* Only the content below the line fades in - the book itself must not flicker as
    the block goes from loading to answered. */
 .ans-in{animation:ansIn .4s ease both}

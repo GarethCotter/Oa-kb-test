@@ -22,10 +22,12 @@ var TOKEN = 'change-me-to-something-long-and-random';
 
 var ANSWERED   = 'Answered';
 var UNANSWERED = 'Unanswered';
+var UNHELPFUL  = "Didn't help";
 var SUMMARY    = 'Weekly summary';
 
 var HEAD_ANSWERED   = ['Timestamp', 'Surface', 'Screen', 'Question', 'Articles shown', 'Outcome'];
 var HEAD_UNANSWERED = ['Timestamp', 'Surface', 'Screen', 'Question', 'Outcome'];
+var HEAD_UNHELPFUL  = ['Timestamp', 'Surface', 'Screen', 'Question', 'Articles shown'];
 
 function doPost(e) {
   try {
@@ -36,7 +38,15 @@ function doPost(e) {
     var ts = r.ts ? new Date(r.ts) : new Date();
     var ss = SpreadsheetApp.getActiveSpreadsheet();
 
-    if (r.answered) {
+    if (r.action === 'unhelpful') {
+      // An answer was shown and the reader said it failed. Its own tab, because
+      // these are the rows someone actually works through: an article suggested
+      // repeatedly that solves nothing is definitively broken, and no other
+      // signal reveals that.
+      sheet(ss, UNHELPFUL, HEAD_UNHELPFUL)
+        .appendRow([ts, r.surface || '', r.screen || '', r.question || '',
+                    r.sources || '']);
+    } else if (r.answered) {
       sheet(ss, ANSWERED, HEAD_ANSWERED)
         .appendRow([ts, r.surface || '', r.screen || '', r.question || '',
                     r.sources || '', r.action || '']);
@@ -55,6 +65,7 @@ function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   sheet(ss, ANSWERED, HEAD_ANSWERED);
   sheet(ss, UNANSWERED, HEAD_UNANSWERED);
+  sheet(ss, UNHELPFUL, HEAD_UNHELPFUL);
 
   var s = ss.getSheetByName(SUMMARY) || ss.insertSheet(SUMMARY);
   s.clear();

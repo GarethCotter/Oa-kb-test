@@ -210,7 +210,32 @@ function boldify(text) {
   return esc.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
 }
 
-function showAnswer(answer, sources) {
+const TICK =
+  '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">' +
+  '<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 ' +
+  '01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 ' +
+  '011.05-.143z" clip-rule="evenodd"/></svg>';
+
+/* One row per verdict click, never per search. Fire-and-forget: logging must never
+   affect the reader (see api/log.js, which enforces the same rule server-side). */
+function logVerdict(question, sources, action) {
+  try {
+    fetch('/api/log', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        surface: 'kb-search',
+        question: question,
+        answered: true,
+        sources: (sources || []).map(s => s.path),
+        action: action
+      })
+    }).catch(() => {});
+  } catch (e) { /* logging never breaks the page */ }
+}
+
+function showAnswer(answer, sources, question) {
   // the settled line is the answer's own heading, so there is no separate label
   const el = settleInto('found', 'Found it —');
 
@@ -235,6 +260,50 @@ function showAnswer(answer, sources) {
   // were too often a worse question than the one just asked, and a row of them under
   // the answer invited a second search instead of the guide the answer came from.
   // The example questions under the homepage search box are a different thing and stay.
+
+  /* The verdict row. Every click is a labelled outcome - question, articles shown,
+     solved or not - which is the one signal that says whether an answer WORKED
+     rather than merely appeared. Rows land in the interaction-log sheet. */
+  const v = document.createElement('div');
+  v.className = 'verdict ans-in';
+  const yes = document.createElement('button');
+  yes.type = 'button';
+  yes.innerHTML = TICK + 'This solved it';
+  const no = document.createElement('button');
+  no.type = 'button';
+  no.textContent = 'This didn’t help me';
+
+  yes.addEventListener('click', () => {
+    logVerdict(question, sources, 'solved');
+    const t = document.createElement('p');
+    t.className = 'verdict-thanks';
+    t.setAttribute('role', 'status');
+    t.innerHTML = TICK + 'Good — glad it helped.';
+    v.replaceWith(t);
+  });
+
+  no.addEventListener('click', () => {
+    logVerdict(question, sources, 'unhelpful');
+    const card = document.createElement('div');
+    card.className = 'gap-card ans-in';
+    card.setAttribute('role', 'status');
+    const p = document.createElement('p');
+    p.textContent = 'Sorry about that — and thank you for telling us. Your click has ' +
+      'flagged this answer for review, and feedback like this is how we improve the ' +
+      'system every day. In the meantime, our support team can give you a proper answer.';
+    card.appendChild(p);
+    const a = document.createElement('a');
+    a.className = 'gap-btn';
+    a.href = 'https://oxfordabstracts.com/resources/contact-support?topic=' +
+      encodeURIComponent((question || '').slice(0, 120));
+    a.textContent = 'Create support ticket →';
+    card.appendChild(a);
+    v.replaceWith(card);
+  });
+
+  v.appendChild(yes);
+  v.appendChild(no);
+  el.appendChild(v);
 }
 
 /* Amplitude taught us most people type two words, not a question - "incomplete
@@ -323,7 +392,7 @@ async function fetchAnswer(question) {
     });
     if (!res.ok) throw new Error('bad status');
     const data = await res.json();
-    if (data && data.answer) showAnswer(data.answer, data.sources);
+    if (data && data.answer) showAnswer(data.answer, data.sources, question);
     else if (data && data.found === false) {
       // keywords that found nothing get "ask in full", not "we haven't written this"
       if (looksLikeKeywords(question)) showAskFully();
