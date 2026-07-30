@@ -2,9 +2,9 @@
 title: "Restricting who can submit by email"
 section: "02-submissions"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/restricting-who-can-submit-by-email
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Restricting who can submit by email

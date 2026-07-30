@@ -2,10 +2,10 @@
 title: "Creating custom emails"
 section: "05-emails"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/creating-custom-emails
 merged_from: [editing-email-signature, faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Creating custom emails

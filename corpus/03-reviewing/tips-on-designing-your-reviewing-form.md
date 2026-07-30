@@ -2,9 +2,9 @@
 title: "Tips on designing your reviewing form"
 section: "03-reviewing"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/tips-on-designing-your-reviewing-form
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Tips on designing your reviewing form

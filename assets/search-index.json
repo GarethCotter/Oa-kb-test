@@ -180,7 +180,7 @@
   "path": "02-submissions/charging-a-fee-for-submission.html",
   "section": "Submissions",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "This feature allows you to charge and collect fees from submitters. It is not available in the FREE package. # Skip to written instructions Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Form &amp; Setup. Yo"
  },
  {
@@ -308,7 +308,7 @@
   "path": "02-submissions/restricting-who-can-submit-by-email.html",
   "section": "Submissions",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "If you wish, you can restrict submission to your event to a specific group of people by adding their email addresses. It is not available in the FREE package. # NB: The instructions below show how to manually add emails "
  },
  {
@@ -420,7 +420,7 @@
   "path": "03-reviewing/designing-the-review-form.html",
   "section": "Reviewing",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "Explore the settings and tools that will help you design the review form for your requirements. # Skip to written instructions. Go to Event dashboard \u2192 Abstract Management \u2192 Reviews \u2192 Forms &amp; Setup. Skip to: The cont"
  },
  {
@@ -468,7 +468,7 @@
   "path": "03-reviewing/showing-reviews-to-submitters.html",
   "section": "Reviewing",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "By default, reviews are not made available to submitters (just their acceptance status). If you would like submitters to view their reviews, follow the guidance below. It is not available in the FREE package. # Go to Eve"
  },
  {
@@ -484,7 +484,7 @@
   "path": "03-reviewing/tips-on-designing-your-reviewing-form.html",
   "section": "Reviewing",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "The review form templates are designed to be very flexible but in order to collect the information you need and to make the reviewing process simple, there are a few things that you should consider when designing your fo"
  },
  {
@@ -492,7 +492,7 @@
   "path": "04-decisions/assigning-categories-to-committee-members.html",
   "section": "Decisions",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "If you need to assign categories to specific committee members, follow the guidance below. This feature is not available in the FREE package. # Before assigning categories, you will need to add committee members to the s"
  },
  {
@@ -508,7 +508,7 @@
   "path": "04-decisions/design-the-decision-form.html",
   "section": "Decisions",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "The decision form questions create the columns in the decision table. As well as key data, there will be fields where data can be entered by the administrators or committee members. # Go to Event dashboard \u2192 Abstract Man"
  },
  {
@@ -548,7 +548,7 @@
   "path": "05-emails/creating-custom-emails.html",
   "section": "Emails",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # There are two ways to create custom emails. Creating a custom email from scratch Creating a custom email from"
  },
  {
@@ -556,7 +556,7 @@
   "path": "05-emails/editing-the-template-emails.html",
   "section": "Emails",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # Skip to written instructions Go to Event dashboard \u2192 Emails "
  },
  {
@@ -636,7 +636,7 @@
   "path": "06-programme-exports-reports/abstract-books.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # Go to Event dashboard \u2192 Abstract Management \u2192 Reports &amp; Downloads Skip to Downloadin"
  },
  {
@@ -660,7 +660,7 @@
   "path": "06-programme-exports-reports/creating-a-backup-of-your-conference-data.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "If you would like to create a backup of all the data in your conference, follow the guidance below. # For instructions on how to download reports, see Creating exports, reports and abstract books The backup can be done i"
  },
  {
@@ -668,7 +668,7 @@
   "path": "06-programme-exports-reports/downloading-data-on-presenters-only.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "There may be occasions where you only require presenters' data, as opposed to all authors. # Read The overview of tables article and Export table data to Excel first, so you are familiar with the tables and exporting of "
  },
  {
@@ -692,7 +692,7 @@
   "path": "06-programme-exports-reports/export-table-data-to-excel.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need. # NB: When clicking the Download icon, all filtered data "
  },
  {
@@ -708,7 +708,7 @@
   "path": "06-programme-exports-reports/other-reports.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "abstract management",
+  "plan": "abstract management and above",
   "summary": "In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question. # Go to E"
  },
  {
@@ -1164,7 +1164,7 @@
   "path": "10-integrations-api/application-programming-interface-api.html",
   "section": "Integrations & API",
   "audience": "organisers",
-  "plan": "all plans (including free Basic)",
+  "plan": "abstract management and above",
   "summary": "Application Programming Interface (API) allows applications to communicate with one another. This means you can extract/share data from your event with third party applications or vice versa. # In order to generate an AP"
  },
  {

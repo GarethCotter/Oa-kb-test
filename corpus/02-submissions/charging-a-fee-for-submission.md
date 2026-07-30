@@ -2,9 +2,9 @@
 title: "Charging a fee for submission"
 section: "02-submissions"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/charging-a-fee-for-submission
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Charging a fee for submission

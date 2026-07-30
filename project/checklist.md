@@ -73,11 +73,15 @@ corpus in place.*
 
 ## 2. Decisions only you can make
 
-- [ ] **17 plan-gating questions** (`plan-gating-review.csv`) — 0 of 17 answered. Note the
-      `plan` field only *labels*, it gates nothing; a wrong value costs a ticket either
-      way. Three questions: is API/integration access really on free Basic; are exports
-      and reports really Abstract Management and above; are the event website and
-      conference homepage Professional only?
+- [x] ~~17 plan-gating questions~~ — **12 of 17 settled 29 July** from the pricing-page
+      feature table, now transcribed in `plan-feature-matrix.md`. The API article was
+      wrong (API access is not on Free) and has been corrected, along with **9 further
+      articles** the same table re-gated that were never in the original 17.
+- [ ] **5 plan values still unresolved** (`plan-gating-review.csv`, marked STILL
+      UNRESOLVED) — the four third-party integration articles (EventsAir, Cvent, idloom,
+      Swapcard: do they need API access, which is not on Free?) and *Creating your event
+      website* (the website builder is not a row in the feature table, and the nearest
+      rows disagree).
 - [x] ~~Skim the 32 renames worth checking~~ — done 29 July. 31 confirmed; *Colour-coding
       your programme* reverted to **Colour coding your event** (slug too, with redirects).
       See `renames-to-check.md`.

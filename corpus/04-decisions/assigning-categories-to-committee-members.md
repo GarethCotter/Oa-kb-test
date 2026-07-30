@@ -2,10 +2,10 @@
 title: "Assigning categories to committee members"
 section: "04-decisions"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members
 merged_from: [faq-decisions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Assigning categories to committee members

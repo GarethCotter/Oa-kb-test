@@ -1,18 +1,18 @@
-section,article,plan I assigned,correct? (leave blank if right)
-06-programme-exports-reports,Abstract books,abstract management,
-06-programme-exports-reports,Creating a backup of your conference data,abstract management,
-06-programme-exports-reports,Downloading data on presenters only,abstract management,
-06-programme-exports-reports,Export table data to Excel,abstract management,
-06-programme-exports-reports,Other reports,abstract management,
-08-conference-platform,Setting Up The Homepage For Your Conference,professional conference,
-08-conference-platform,How To Create Your Event Website,professional conference,
-10-integrations-api,Application Programming Interface (API),all plans (including free Basic),
-10-integrations-api,How to integrate EventsAir to Oxford Abstracts,all plans (including free Basic),
-10-integrations-api,How to integrate Oxford Abstracts and Cvent,all plans (including free Basic),
-10-integrations-api,How to integrate Oxford Abstracts and idloom,all plans (including free Basic),
-10-integrations-api,How to integrate Oxford Abstracts and Swapcard,all plans (including free Basic),
-11-account-administration,Account administration dashboard,all plans (including free Basic),
-11-account-administration,How To Delete Your Oxford Abstracts Account,all plans (including free Basic),
-11-account-administration,How to permanently delete or archive your event,all plans (including free Basic),
-11-account-administration,How to use the Customer Portal,all plans (including free Basic),
-11-account-administration,Managing your account,all plans (including free Basic),
+section,article,plan I assigned,correct? (leave blank if right),settled by
+06-programme-exports-reports,Abstract books,abstract management and above,,Feature table: default and custom abstract books are AM and above
+06-programme-exports-reports,Creating a backup of your conference data,abstract management and above,,Feature table: reports are AM and above and a backup is a report
+06-programme-exports-reports,Downloading data on presenters only,abstract management and above,,Feature table: default and custom reports are AM and above
+06-programme-exports-reports,Export table data to Excel,abstract management and above,,Feature table: reports are AM and above. Note table VIEWS are on every plan; exporting them is not listed separately
+06-programme-exports-reports,Other reports,abstract management and above,,Feature table: default and custom reports are AM and above
+08-conference-platform,Setting up the homepage for your conference,professional conference,,Feature table: custom splash page and customise event portal are Professional only
+08-conference-platform,Creating your event website,professional conference,STILL UNRESOLVED,Website builder is not a row in the feature table. Nearest rows disagree - conference logo is Standard and above but customise event portal is Professional only
+10-integrations-api,Application programming interface (API),abstract management and above,CORRECTED from all plans,Feature table: API access is NOT on Free
+10-integrations-api,How to integrate EventsAir to Oxford Abstracts,all plans (including free Basic),STILL UNRESOLVED,Not a row in the feature table. If these integrations use the API they cannot be on Free since API access is not
+10-integrations-api,How to integrate Oxford Abstracts and Cvent,all plans (including free Basic),STILL UNRESOLVED,As above
+10-integrations-api,How to integrate Oxford Abstracts and idloom,all plans (including free Basic),STILL UNRESOLVED,As above
+10-integrations-api,How to integrate Oxford Abstracts and Swapcard,all plans (including free Basic),STILL UNRESOLVED,As above
+11-account-administration,Account administration dashboard,all plans (including free Basic),,Account-level function not a gated feature
+11-account-administration,Deleting your Oxford Abstracts account,all plans (including free Basic),,Account-level function not a gated feature
+11-account-administration,Permanently delete or archive your event,all plans (including free Basic),,Account-level function not a gated feature
+11-account-administration,Using the customer portal,all plans (including free Basic),,Account-level function not a gated feature
+11-account-administration,Managing your account,all plans (including free Basic),,Account-level function not a gated feature

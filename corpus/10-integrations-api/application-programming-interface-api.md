@@ -2,9 +2,9 @@
 title: "Application programming interface (API)"
 section: "10-integrations-api"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/application-programming-interface-api
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Application programming interface (API)

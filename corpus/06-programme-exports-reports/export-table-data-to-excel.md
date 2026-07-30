@@ -2,9 +2,9 @@
 title: "Export table data to Excel"
 section: "06-programme-exports-reports"
 audience: organisers
-plan: abstract management
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/export-table-data-to-excel
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Export table data to Excel

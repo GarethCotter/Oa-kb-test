@@ -2,9 +2,9 @@
 title: "Downloading data on presenters only"
 section: "06-programme-exports-reports"
 audience: organisers
-plan: abstract management
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/downloading-data-on-presenters-only
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Downloading data on presenters only

@@ -2,10 +2,10 @@
 title: "Design the decision form"
 section: "04-decisions"
 audience: organisers
-plan: all plans (including free Basic)
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/design-the-decision-form
 merged_from: [acceptance-types, faq-decisions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Design the decision form

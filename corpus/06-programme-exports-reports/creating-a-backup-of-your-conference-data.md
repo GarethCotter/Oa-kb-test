@@ -2,9 +2,9 @@
 title: "Creating a backup of your conference data"
 section: "06-programme-exports-reports"
 audience: organisers
-plan: abstract management
+plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/creating-a-back-up-of-your-conference-data
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-29
 ---
 
 # Creating a backup of your conference data
