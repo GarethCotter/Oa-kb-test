@@ -416,6 +416,14 @@
   "summary": "You can edit or complete a review on behalf of an assigned reviewer, should you require. # NB: in order to complete a review on behalf of someone else, the submission must be assigned to a reviewer . Go to Event dashboar"
  },
  {
+  "title": "If your reviewers can't see their assigned submissions",
+  "path": "03-reviewing/if-reviewers-cannot-see-their-submissions.html",
+  "section": "Reviewing",
+  "audience": "organisers",
+  "plan": "abstract management and above",
+  "summary": "A reviewer signs in and finds nothing waiting, or is told they have not been assigned anything. Work down this list \u2014 the first two causes account for most of it. # 1. They are signed in with a different email address # "
+ },
+ {
   "title": "Notifying reviewers that they have been assigned submissions to review",
   "path": "03-reviewing/notifying-reviewers-that-they-have-been-assigned-submissions-to-review.html",
   "section": "Reviewing",
@@ -550,6 +558,14 @@
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
   "summary": "Learn how to email Session Chairs of your event either in bulk or individually. # If you would like to send Session Chair\u2019s emails you can do so via your event dashboard. Please ensure you have added the Chair's email ad"
+ },
+ {
+  "title": "If your submitters say your email never arrived",
+  "path": "05-emails/if-your-emails-are-not-arriving.html",
+  "section": "Emails",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Work down this list in order \u2014 the sent log answers most cases in a few seconds, and tells you whether the problem is at your end or theirs. # Start with the sent log: Event dashboard \u2192 Emails \u2192 Sent log. If the email is"
  },
  {
   "title": "Sending and scheduling emails",

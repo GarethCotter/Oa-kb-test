@@ -66,7 +66,11 @@ At the top of the list **click on** the tab titled **Archived Account Events.**
 
 **![](/assets/img/screenshot-2025-01-15-at-11-30-08-png-f581cd32.webp)**
 
-Thiswill show a list of events that have been archived. **Click on the Unarchive button** next to the event you want to unarchive.
+This will show a list of events that have been archived. **Click on the Unarchive button** next to the event you want to unarchive.
+
+**Only a client administrator can archive or unarchive an event.** If you are an event administrator you will not see the **Archived Account Events** tab at all, and cannot restore an event yourself — ask one of your client administrators, who can do it in a moment.
+
+**Archiving does not delete anything.** The event, its submissions, reviews and data are all still there; archiving only takes it out of your everyday list. Unarchiving puts it back exactly as it was.
 
 ![](/assets/img/screenshot-2025-01-15-at-11-30-18-png-ca9db65c.webp)
 
@@ -75,6 +79,12 @@ If you need further assistance, please contact our Support Team via our [Contact
 
 ## Common questions
 
+### My submitters are being told "this event is archived"
+
+Their link points at last year's event, which has since been archived. It is almost
+always an old submission link still sitting on a conference website or in an email
+template. Take the current link from this year's event and share that instead — the
+event does not need unarchiving to fix it.
 
 ### How long do you keep the data for an event?
 
