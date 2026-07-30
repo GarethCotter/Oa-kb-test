@@ -215,6 +215,22 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
   color:var(--muted);text-decoration:none;line-height:1.35}
 .rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
 .rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
+/* The down-arrow on jump links says "this jumps down the page, not to a new one". */
+.tj{color:var(--muted);margin-right:7px;font-weight:400}
+.toc a:hover .tj,.pagemap a:hover .tj{color:var(--red)}
+/* On this page, as a right-hand rail once there is room for three columns; the
+   inline box above the article serves every narrower width. */
+.pagemap{display:none}
+@media (min-width:1320px){
+  .alayout{max-width:1300px;grid-template-columns:220px minmax(0,760px) 196px;gap:40px}
+  .pagemap{display:block;position:sticky;top:104px;align-self:start;
+    max-height:calc(100vh - 120px);overflow-y:auto;padding:28px 0 40px;font-size:14.5px}
+  .pagemap span{display:block;font-weight:600;font-size:11.5px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .pagemap a{display:block;padding:4px 0;color:var(--muted);text-decoration:none;line-height:1.4}
+  .pagemap a:hover{color:var(--red)}
+  .acol .toc{display:none}
+}
 @media (max-width:1100px){.alayout{display:block;max-width:808px}.rail{display:none}}
 .article h1{font-size:clamp(30px,4.5vw,42px);margin:14px 0 10px}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
@@ -815,11 +831,16 @@ def enrich_body(body_html, title):
     # h4-structured article gets the same box an h2-structured one does.
     entries = next((v for v in (by_level['h2'], by_level['h3'], by_level['h4'])
                     if len(v) >= 2), [])
-    toc = ''
+    toc = ('', '')
     if sum(len(v) for v in by_level.values()) >= 4 and entries:
-        items = ''.join(f'<a href="#{hid}">{html.escape(t)}</a>'
-                        for hid, t in entries[:14])
-        toc = f'<nav class="toc" aria-label="On this page"><span>On this page</span>{items}</nav>'
+        # The same jump list is rendered twice: an inline box above the article on
+        # narrow screens, and a plain right-hand rail on wide ones where it can stay
+        # in reach all the way down. The down-arrow says "this jumps, not navigates".
+        items = ''.join(
+            f'<a href="#{hid}"><span class="tj" aria-hidden="true">&darr;</span>'
+            f'{html.escape(t)}</a>' for hid, t in entries[:14])
+        toc = (f'<nav class="toc" aria-label="On this page"><span>On this page</span>{items}</nav>',
+               f'<aside class="pagemap" aria-label="On this page"><span>On this page</span>{items}</aside>')
 
     # images: lazy, contextual alt where missing, click-to-enlarge
     last_heading = title
@@ -886,30 +907,32 @@ for folder, num, name, aud, blurb in SECTIONS:
     sec_struct = json.load(open(_sp, encoding='utf-8')) if os.path.exists(_sp) else None
 
     def rail_html(cur):
+        """The rail shows only the group the current article belongs to - its
+        immediate siblings, Miro-style - never the whole section. A first cut listed
+        all of Submissions' 30 articles and read as a wall; the section page remains
+        the one place with the full curated map, one click up."""
         if not sec_struct:
             return ''
-        parts = ['<aside class="rail" aria-label="Articles in %s">' % html.escape(name),
-                 '<a class="rail-over" href="index.html">%s overview</a>' % html.escape(name)]
         listed = set()
+        group_title, group_slugs = None, []
         for g in sec_struct.get('groups', []):
-            inner = ''
-            for sl in g.get('slugs', []):
-                if sl not in titles_by_slug:
-                    continue
-                listed.add(sl)
-                inner += ('<a%s href="%s.html">%s</a>'
-                          % (' class="on"' if sl == cur else '', sl,
-                             html.escape(titles_by_slug[sl])))
-            if inner:
-                parts.append('<div class="rail-g">%s</div>%s'
-                             % (html.escape(g.get('title', '')), inner))
-        extra = ''.join('<a%s href="%s.html">%s</a>'
-                        % (' class="on"' if sl == cur else '', sl, html.escape(t))
-                        for sl, t in titles_by_slug.items() if sl not in listed)
-        if extra:
-            parts.append('<div class="rail-g">More guides</div>' + extra)
-        parts.append('</aside>')
-        return ''.join(parts)
+            slugs = [sl for sl in g.get('slugs', []) if sl in titles_by_slug]
+            listed.update(slugs)
+            if cur in slugs:
+                group_title, group_slugs = g.get('title', ''), slugs
+        if group_title is None:
+            extras = [sl for sl in titles_by_slug if sl not in listed]
+            if cur not in extras:
+                return ''
+            group_title, group_slugs = 'More guides', extras
+        links = ''.join('<a%s href="%s.html">%s</a>'
+                        % (' class="on"' if sl == cur else '', sl,
+                           html.escape(titles_by_slug[sl]))
+                        for sl in group_slugs)
+        return ('<aside class="rail" aria-label="Related articles">'
+                '<a class="rail-over" href="index.html">&larr; %s overview</a>'
+                '<div class="rail-g">%s</div>%s</aside>'
+                % (html.escape(name), html.escape(group_title), links))
 
     for i, (slug, title, plan, standfirst, audience, toc, body_html) in enumerate(parsed):
         badges = ['<span class="badge">%s</span>' % html.escape(name)]
@@ -943,6 +966,7 @@ for folder, num, name, aud, blurb in SECTIONS:
                 next_a = f'<a class="pn-next" href="../{nf}/index.html"><span>Next section</span>{html.escape(nn)}</a>'
         prevnext = f'<nav class="prevnext" aria-label="Article navigation">{prev_a}{next_a}</nav>' if (prev_a or next_a) else ''
 
+        toc_inline, toc_rail = toc
         stand_html = f'<p class="standfirst">{html.escape(standfirst)}</p>' if standfirst else ''
         aud_html = ''
         if audience:
@@ -972,7 +996,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 <div class="badges">{''.join(badges)}</div>
 {aud_html}
 {stand_html}
-{toc}
+{toc_inline}
 <div class="prose">{body_html}</div>
 {SUPPORT_BANNER if aud == 'organisers' else ''}
 <div class="feedback" data-path="{folder}/{slug}.html">
@@ -987,7 +1011,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 <p class="fb-thanks" hidden>Thanks — this helps us fix it.</p>
 </div>
 {prevnext}
-</article></div></div>
+</article></div>{toc_rail}</div>
 <div class="lightbox" id="lightbox" hidden><img alt=""></div>
 <script src="../assets/article.js"></script>"""
         page += ARTICLE_FOOT
