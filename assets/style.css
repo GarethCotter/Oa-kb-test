@@ -154,7 +154,7 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
 .rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
 /* The down-arrow on jump links says "this jumps down the page, not to a new one". */
-.tj{color:var(--muted);margin-right:7px;font-weight:400}
+.tj{display:inline-block;color:var(--muted);margin-right:7px;font-weight:400}
 .toc a:hover .tj,.pagemap a:hover .tj{color:var(--red)}
 /* On this page, as a right-hand rail once there is room for three columns; the
    inline box above the article serves every narrower width. */
@@ -163,9 +163,12 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
   .alayout{max-width:1300px;grid-template-columns:220px minmax(0,760px) 196px;gap:40px}
   .pagemap{display:block;position:sticky;top:104px;align-self:start;
     max-height:calc(100vh - 120px);overflow-y:auto;padding:28px 0 40px;font-size:14.5px}
-  .pagemap span{display:block;font-weight:600;font-size:11.5px;letter-spacing:.07em;
+  .pagemap>span{display:block;font-weight:600;font-size:11.5px;letter-spacing:.07em;
     text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .pagemap a{display:block;padding:4px 0;color:var(--muted);text-decoration:none;line-height:1.4}
+  /* Hanging indent: the arrow sits left of the first line and wrapped lines align
+     with the text, not under the arrow. */
+  .pagemap a{display:block;padding:4px 0;color:var(--muted);text-decoration:none;
+    line-height:1.4;padding-left:20px;text-indent:-20px}
   .pagemap a:hover{color:var(--red)}
   .acol .toc{display:none}
 }
@@ -227,7 +230,9 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 @media (max-width:520px){.search-badge{font-size:13.5px;padding:6px 13px 6px 10px}.search-badge .sep,.search-badge .plain{display:none}}
 .standfirst{font-size:20px;color:var(--muted);margin:0 0 22px;line-height:1.55}
 .toc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px 22px;margin-bottom:22px;font-size:16.5px}
-.toc span{display:block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+/* Direct child only: a bare "span" selector also caught the .tj jump arrows inside
+   each link and made them block, so every arrow sat on its own line. */
+.toc>span{display:block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .toc a{display:block;padding:4px 0;text-decoration:none;color:var(--navy)}
 .toc a:hover{color:var(--red)}
 .prose h2 .anchor,.prose h3 .anchor{margin-left:8px;font-family:'Outfit',sans-serif;font-size:.75em;color:rgba(16,28,56,.22);text-decoration:none;-webkit-text-stroke:0}
