@@ -135,6 +135,25 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .crumbs a{color:var(--muted);text-decoration:none}
 .crumbs a:hover{text-decoration:underline;text-underline-offset:4px}
 .article{padding:14px 0 60px}
+/* Article layout: a section-scoped rail beside the article on wide screens. The rail
+   lists only this section's articles, grouped as the section page groups them - the
+   old KB's whole-site tree buried the reader. Below 1100px the rail goes and the
+   breadcrumbs carry orientation, as before. */
+.alayout{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;
+  grid-template-columns:232px minmax(0,760px);gap:44px;justify-content:center}
+.acol{min-width:0}
+.rail{position:sticky;top:104px;align-self:start;max-height:calc(100vh - 120px);
+  overflow-y:auto;padding:24px 0 40px;font-size:15px}
+.rail-over{display:block;font-weight:600;color:var(--navy);text-decoration:none;
+  padding:6px 10px;border-radius:7px}
+.rail-over:hover{color:var(--red)}
+.rail-g{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);margin:16px 0 4px;padding:0 10px}
+.rail a:not(.rail-over){display:block;padding:5px 10px;border-radius:7px;
+  color:var(--muted);text-decoration:none;line-height:1.35}
+.rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
+.rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
+@media (max-width:1100px){.alayout{display:block;max-width:808px}.rail{display:none}}
 .article h1{font-size:clamp(30px,4.5vw,42px);margin:14px 0 10px}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .badge{font-size:14px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(16,28,56,.06);color:var(--muted)}

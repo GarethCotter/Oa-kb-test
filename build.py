@@ -197,6 +197,25 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .crumbs a{color:var(--muted);text-decoration:none}
 .crumbs a:hover{text-decoration:underline;text-underline-offset:4px}
 .article{padding:14px 0 60px}
+/* Article layout: a section-scoped rail beside the article on wide screens. The rail
+   lists only this section's articles, grouped as the section page groups them - the
+   old KB's whole-site tree buried the reader. Below 1100px the rail goes and the
+   breadcrumbs carry orientation, as before. */
+.alayout{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;
+  grid-template-columns:232px minmax(0,760px);gap:44px;justify-content:center}
+.acol{min-width:0}
+.rail{position:sticky;top:104px;align-self:start;max-height:calc(100vh - 120px);
+  overflow-y:auto;padding:24px 0 40px;font-size:15px}
+.rail-over{display:block;font-weight:600;color:var(--navy);text-decoration:none;
+  padding:6px 10px;border-radius:7px}
+.rail-over:hover{color:var(--red)}
+.rail-g{font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--muted);margin:16px 0 4px;padding:0 10px}
+.rail a:not(.rail-over){display:block;padding:5px 10px;border-radius:7px;
+  color:var(--muted);text-decoration:none;line-height:1.35}
+.rail a:not(.rail-over):hover{color:var(--navy);background:rgba(16,28,56,.05)}
+.rail a.on{color:var(--red);font-weight:600;background:rgba(208,67,44,.08)}
+@media (max-width:1100px){.alayout{display:block;max-width:808px}.rail{display:none}}
 .article h1{font-size:clamp(30px,4.5vw,42px);margin:14px 0 10px}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
 .badge{font-size:14px;font-weight:600;padding:4px 12px;border-radius:999px;background:rgba(16,28,56,.06);color:var(--muted)}
@@ -745,6 +764,20 @@ def enrich_body(body_html, title):
     root = soup.body or soup
     audience = extract_audience(root, soup)
 
+    # Legacy "Skip to:" navigation from HubSpot: paragraphs that are nothing but
+    # in-page fragment links, and their "Skip to:" label lines. 380 of their targets
+    # no longer exist, and the generated "On this page" box does the same job without
+    # rotting - so every such paragraph goes, working or not.
+    for p in root.find_all(['p', 'h2', 'h3', 'h4']):
+        text = p.get_text(' ', strip=True)
+        links = p.find_all('a')
+        all_frag = bool(links) and all((a.get('href') or '').startswith('#') for a in links)
+        link_text = sum(len(a.get_text(' ', strip=True)) for a in links)
+        only_links = all_frag and len(text) - link_text <= max(12, len(links) * 3)
+        says_skip = re.match(r'^skip to\b', text, re.I) and (all_frag or not links)
+        if only_links or says_skip:
+            p.decompose()
+
     # standfirst: lift the opening paragraph when it is short and text-only
     standfirst = ''
     first = None
@@ -758,10 +791,15 @@ def enrich_body(body_html, title):
             standfirst = txt
             first.decompose()
 
-    # headings: ids + visible anchors; collect h2s for the jump list
-    seen, h2s = {}, []
-    for h in root.find_all(['h2', 'h3']):
-        base = slugify(h.get_text(' ', strip=True))
+    # headings: ids + visible anchors. h4 is included because a fair few imported
+    # articles use it (or bold pseudo-headings above it) as their only structure -
+    # those are exactly the ones that carried a hand-made "Skip to:" list.
+    seen, by_level = {}, {'h2': [], 'h3': [], 'h4': []}
+    for h in root.find_all(['h2', 'h3', 'h4']):
+        text = h.get_text(' ', strip=True)
+        if not text:
+            continue
+        base = slugify(text)
         n = seen.get(base, 0)
         seen[base] = n + 1
         hid = base if n == 0 else f'{base}-{n+1}'
@@ -771,12 +809,16 @@ def enrich_body(body_html, title):
         a['aria-label'] = 'Link to this section'
         a.string = '#'
         h.append(a)
-        if h.name == 'h2':
-            h2s.append((hid, h.get_text(' ', strip=True).rstrip('#').strip()))
+        by_level[h.name].append((hid, text.rstrip('#').strip()))
 
+    # The jump list uses the highest heading level with at least two entries, so an
+    # h4-structured article gets the same box an h2-structured one does.
+    entries = next((v for v in (by_level['h2'], by_level['h3'], by_level['h4'])
+                    if len(v) >= 2), [])
     toc = ''
-    if len(root.find_all(['h2', 'h3'])) >= 4 and len(h2s) >= 2:
-        items = ''.join(f'<a href="#{hid}">{html.escape(t)}</a>' for hid, t in h2s)
+    if sum(len(v) for v in by_level.values()) >= 4 and entries:
+        items = ''.join(f'<a href="#{hid}">{html.escape(t)}</a>'
+                        for hid, t in entries[:14])
         toc = f'<nav class="toc" aria-label="On this page"><span>On this page</span>{items}</nav>'
 
     # images: lazy, contextual alt where missing, click-to-enlarge
@@ -794,6 +836,15 @@ def enrich_body(body_html, title):
                 el['alt'] = derive_alt(el, last_heading, used_alts)
             el['class'] = (el.get('class') or []) + ['zoomable']
             el['tabindex'] = '0'
+
+    # Any in-page link whose target no longer exists becomes plain text. These are
+    # HubSpot-era anchors (#TEX, #SQ...) whose targets did not survive conversion -
+    # a link that scrolls nowhere reads as the page being broken.
+    ids = {el.get('id') for el in root.find_all(attrs={'id': True})}
+    for a in root.find_all('a', href=True):
+        if (a['href'].startswith('#') and a['href'][1:] not in ids
+                and 'anchor' not in (a.get('class') or [])):
+            a.unwrap()
 
     inner = root.decode_contents() if root.name == 'body' else str(soup)
     return standfirst, audience, toc, inner
@@ -824,6 +875,41 @@ for folder, num, name, aud, blurb in SECTIONS:
         parsed.append((slug, title, meta.get('plan', ''), standfirst, audience, toc, body_html))
         meta_by_slug[slug] = meta
         first_sentence[slug] = lead_sentence(body_html)
+
+    # The section rail: this section's articles, grouped as the section page groups
+    # them, with the current article highlighted. Section-scoped on purpose - the old
+    # KB's whole-site tree buried the reader; fourteen sections of links is not
+    # orientation. Anything not yet placed in a group appears under "More guides",
+    # so a new article is never invisible here.
+    titles_by_slug = {sl: t for (sl, t, _pl, _sf, _au, _tc, _bh) in parsed}
+    _sp = os.path.join('structure', folder + '.json')
+    sec_struct = json.load(open(_sp, encoding='utf-8')) if os.path.exists(_sp) else None
+
+    def rail_html(cur):
+        if not sec_struct:
+            return ''
+        parts = ['<aside class="rail" aria-label="Articles in %s">' % html.escape(name),
+                 '<a class="rail-over" href="index.html">%s overview</a>' % html.escape(name)]
+        listed = set()
+        for g in sec_struct.get('groups', []):
+            inner = ''
+            for sl in g.get('slugs', []):
+                if sl not in titles_by_slug:
+                    continue
+                listed.add(sl)
+                inner += ('<a%s href="%s.html">%s</a>'
+                          % (' class="on"' if sl == cur else '', sl,
+                             html.escape(titles_by_slug[sl])))
+            if inner:
+                parts.append('<div class="rail-g">%s</div>%s'
+                             % (html.escape(g.get('title', '')), inner))
+        extra = ''.join('<a%s href="%s.html">%s</a>'
+                        % (' class="on"' if sl == cur else '', sl, html.escape(t))
+                        for sl, t in titles_by_slug.items() if sl not in listed)
+        if extra:
+            parts.append('<div class="rail-g">More guides</div>' + extra)
+        parts.append('</aside>')
+        return ''.join(parts)
 
     for i, (slug, title, plan, standfirst, audience, toc, body_html) in enumerate(parsed):
         badges = ['<span class="badge">%s</span>' % html.escape(name)]
@@ -878,9 +964,10 @@ for folder, num, name, aud, blurb in SECTIONS:
         page = HEAD.format(title=html.escape(title) + ' | Oxford Abstracts Help',
                            desc=html.escape(standfirst or title), root='../',
                            subnav=SUBNAV.format(root='../'), caret=CARET)
-        page += f"""<div class="wrap narrow crumbs">
+        page += f"""<div class="alayout">
+{rail_html(slug)}<div class="acol"><div class="crumbs">
 <a href="../index.html">Help centre</a> &nbsp;›&nbsp; <a href="index.html">{html.escape(name)}</a></div>
-<article class="wrap narrow article">
+<article class="article">
 <h1 class="display">{html.escape(title)}</h1>
 <div class="badges">{''.join(badges)}</div>
 {aud_html}
@@ -900,7 +987,7 @@ for folder, num, name, aud, blurb in SECTIONS:
 <p class="fb-thanks" hidden>Thanks — this helps us fix it.</p>
 </div>
 {prevnext}
-</article>
+</article></div></div>
 <div class="lightbox" id="lightbox" hidden><img alt=""></div>
 <script src="../assets/article.js"></script>"""
         page += ARTICLE_FOOT
