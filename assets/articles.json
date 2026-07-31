@@ -1267,6 +1267,22 @@
 "internal": true,
 "body": "Email failed to save, cannot change email address, duplicate account, merge two\naccounts, two accounts same person, lost access to old institutional email, wrong\nemail on a submission, submitted under the wrong account.\n\nDistilled from 19 support replies. The public half \u2014 why the change is refused, and\nwhat the reader can do \u2014 is on **Updating your profile**. This note is the part that\nonly support can act on, so answers should point people at raising a ticket rather\nthan describe the mechanics.\n\n**There is no account merge feature.** What actually happens is that submissions are\nmoved from one account to the other and the spare account is deleted. Answer in terms\nof \"your submissions can be moved to the account you want to keep\", never \"we will\nmerge your accounts\", which promises a button that does not exist.\n\n**The cause of \"email failed to save\" is almost always that the target address already\nhas an account.** Worth stating plainly, because readers reasonably assume it is a\nbrowser or blocker problem and waste time on that.\n\n**Reviews are not straightforward to move between accounts.** Submissions are. If a\nreviewer has completed reviews under the wrong address, the practical fix is usually\nto move the submissions rather than the reviews, and to accept some rework.\n\n**An event administrator can change the email address held against a submission\nthemselves**, from the submissions table. For anyone tied to a single conference this\nis faster than coming to us, so route them to their organiser first.\n\n**Where the person has lost access to the old mailbox**, they cannot prove the change\nby email, so this always needs support. Expect to confirm both the old and new address\nbefore anything moves.\n\nDo not describe temporary passwords, admin URLs or the internal steps for deleting an\naccount in an answer. The right answer is always: contact support, say which account\nto keep, and it will be sorted."
 },
+"internal/attendees-cannot-edit-their-own-registration": {
+"title": "Attendees cannot change their own registration answers \u2014 the organiser has to amend them",
+"path": "internal/attendees-cannot-edit-their-own-registration",
+"section": "Internal note",
+"plan": "",
+"internal": true,
+"body": "Attendee wants to change their registration, edit my registration answers, change my\ndietary requirements, wrong ticket type selected, amend a delegate's details, can\ndelegates update their own booking, registrant needs to correct their form.\n\n**No.** Once someone has registered, they cannot go back and change the answers they\ngave on the registration form. The organiser has to amend the registration on their\nbehalf, from the registrations table on the event dashboard.\n\nThis is a known pain point rather than a setting that is switched off somewhere \u2014 it\nwas raised with the product team in 2026 and is not on the roadmap as of mid-2026,\nthough the registration module is being looked at. Organisers who ask are usually\nspending real time on it, so it is worth saying that the amendment is quick to do\nfrom the table rather than only saying no.\n\n**Two things that are different and do work:**\n\n- **Their own name and email address** \u2014 attendees change those themselves from their\n  profile page, and admins cannot do it for them.\n- **Adding a question after people have registered** \u2014 allowed, but the new question\n  is not asked of anyone who registered before it existed."
+},
+"internal/authorize-net-pending-payments": {
+"title": "Authorize.net payments that are pending or held do not appear in the registrations table",
+"path": "internal/authorize-net-pending-payments",
+"section": "Internal note",
+"plan": "",
+"internal": true,
+"body": "Authorize.net transaction not showing, payment pending in Authorize, charge held for\nreview, registration missing after payment, transaction in Authorize but not in Oxford\nAbstracts, cannot find the registration to apply a payment to.\n\n**Why it happens.** Authorize.net payments are handled differently from invoices and\npayment links. Until Authorize confirms the payment, the registration is in the\ndatabase but does not appear in the registrations table, so there is nothing on screen\nto match the transaction against. A charge held for review by Authorize does the same\nthing.\n\n**The workaround support uses:**\n\n1. Create the registration for the person using the **offline invoice** option.\n2. Once the money clears in your Authorize account, mark that registration as **Paid**.\n3. The registrant gets an email and completes the form as normal.\n\nIf the transaction stays stuck rather than merely pending, that is one for support to\npass to the development team \u2014 it has happened, and it is not something the organiser\ncan resolve from the dashboard."
+},
 "internal/certificates-notes": {
 "title": "Certificates \u2014 quick answers",
 "path": "internal/certificates-notes",
@@ -1322,6 +1338,14 @@
 "plan": "",
 "internal": true,
 "body": "- **Attendees reach the conference homepage** by logging into your event portal \u2014 it's the\n  first page they land on.\n- **Adding a link inside a programme session:** Program builder \u2192 open the session \u2192\n  Add a description \u2192 Insert link icon \u2192 paste your link.\n- **Committee members cannot build the programme** \u2014 admin users only."
+},
+"internal/qr-codes-and-name-badges": {
+"title": "QR codes and barcodes on delegate name badges \u2014 one per event, not one per person",
+"path": "internal/qr-codes-and-name-badges",
+"section": "Internal note",
+"plan": "",
+"internal": true,
+"body": "QR code for each registrant, barcode per delegate, unique QR code per attendee,\nscanning delegates in, name tag with a barcode, badge scanning, check-in by QR,\nindividual QR codes, can the system generate QR codes.\n\nThe most-asked limitation of the year: 17 support tickets in the twelve months to\nJuly 2026, more than any other \"can it do this\" question.\n\n**No \u2014 not per person.** Oxford Abstracts cannot generate an individual QR code or\nbarcode for each registrant to carry on their badge. What it produces is a single\ncommon code for the whole programme, which anyone can scan to reach the event.\n\nThere is no workaround inside Oxford Abstracts, so say so plainly rather than\noffering a half-answer. Organisers who need per-delegate scanning \u2014 for session\nattendance, entry control or lead capture \u2014 do it with a separate badge-printing or\ncheck-in service, feeding it an export of the attendee list from the registrations\ntable.\n\nDo not confuse this with the name badge content itself, which is configurable in the\nusual way; the limitation is specifically the per-person code."
 },
 "internal/registration-and-fees-notes": {
 "title": "Registration and fees \u2014 quick answers",

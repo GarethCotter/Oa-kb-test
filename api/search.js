@@ -114,6 +114,28 @@ export function applyCors(req, res) {
 export default async function handler(req, res) {
   applyCors(req, res);
   if (req.method === 'OPTIONS') return res.status(204).end();
+
+  /* GET /api/search?check=1 — is the answer layer actually able to answer?
+     Asks Claude the cheapest possible question and reports what came back. A dead
+     credit balance, a missing key and a working endpoint are indistinguishable from
+     the outside otherwise: all three answer a reader's question with silence. */
+  if (req.method === 'GET' && req.query && req.query.check) {
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return res.status(200).json({ ok: false, reason: 'ANTHROPIC_API_KEY missing' });
+    }
+    try {
+      await claude({ model: MODEL, max_tokens: 4, messages: [{ role: 'user', content: 'hi' }] });
+      return res.status(200).json({ ok: true });
+    } catch (e) {
+      const credit = /credit balance is too low/i.test(e.message);
+      return res.status(200).json({
+        ok: false,
+        reason: credit ? 'Anthropic credit balance exhausted' : 'Anthropic call failed',
+        detail: e.message.slice(0, 300)
+      });
+    }
+  }
+
   if (req.method !== 'POST') return res.status(405).json({ error: 'Use POST' });
 
   const question = (req.body && req.body.question || '').toString().trim().slice(0, 500);
@@ -182,7 +204,16 @@ export default async function handler(req, res) {
     });
   } catch (err) {
     console.error('search failed:', err.message);
-    // 200 with a null answer: the page falls back to keyword links silently
-    return res.status(200).json({ answer: null, sources: [] });
+    /* 200 with a null answer and NO found field: the page falls back to keyword
+       links silently and logs nothing, because we know nothing about the question's
+       fate. The absent found field is the only thing distinguishing this from "we
+       looked and there is no article" - so `degraded` names it for anything
+       monitoring the endpoint, without ever reaching the reader.
+
+       Worth knowing: an exhausted Anthropic credit balance lands here. On 31 July
+       2026 it took the answer layer down for half an hour and looked, from outside,
+       exactly like a knowledge base with no answers. GET /api/search?check=1 exists
+       so that question can be asked directly. */
+    return res.status(200).json({ answer: null, sources: [], degraded: true });
   }
 }
