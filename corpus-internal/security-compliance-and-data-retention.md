@@ -32,11 +32,13 @@ past events, and deleted data cannot be recovered**, whereas submission data fro
 events does remain. Anyone who needs registration records long-term should export them
 while the event is live.
 
-**There is no audit log.** Oxford Abstracts does not record which admin changed event
-details, and there is no change tracker showing what a submitter altered on a
-submission, so there is no built-in proof of what an abstract originally said.
-Organisers who need that should download the submissions table on a schedule and keep
-the files.
+**There is no full audit log, but there is one column worth knowing about.** The
+submissions table carries **last updated by**, which names the most recent editor of
+each submission. That is the whole of it: no history of earlier edits, no record of
+what the previous version said, and no log of which admin changed event details such
+as dates. So the column answers "who touched this last" but never "what did this
+abstract originally say". Organisers who need that should download the submissions
+table on a schedule and keep the files.
 
 **ISBNs** for published abstracts are not something Oxford Abstracts can issue; in the
 UK those come from Nielsen.

@@ -60,9 +60,14 @@ corpus in place.*
       `oa-support-replies/` **outside the repo** — it has real names and must stay out.
       Remaining writable gaps are listed in `oa-support-replies/triage.md`, ordered by
       ticket volume; roughly 40 clusters of genuine knowledge are still unwritten.
-- [ ] **Work through the rest of `triage.md`** — about 40 clusters of writable
-      knowledge left, biggest first. One note per problem (see CLAUDE.md); do not
-      append to the omnibus files, it does not route.
+- [x] ~~Work through the rest of `triage.md`~~ — **done 31 July.** All 3,954 tickets
+      with a reply were read, not just the clusters of three or more: the 2-ticket
+      clusters and the 1,727 singletons too, the latter grouped by *what support
+      replied* rather than what was asked. `corpus-internal` went from 12 notes to 39.
+      Measured after: 18 of 20 control questions strong on all three runs, 20 of 20 on
+      at least one, and 13 of 14 new facts answering correctly. The tail left in
+      `triage.md` is one-off fixes support made for a single customer, which do not
+      generalise — treat it as exhausted unless a theme resurfaces in the live log.
 - [ ] **Expand the ~48 truncated command.ai answers** (`truncated-command-ai-answers.md`),
       ordered by value so you can stop early.
 - [ ] **Place the 2 unmapped FAQ chunks** (`unmapped-faq-chunks.md`) — both are about

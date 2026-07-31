@@ -62,8 +62,9 @@ Added from a year of support replies, July 2026:
 
 From a further pass over the same year's replies, July 2026:
 
-- **An audit log or change history** — no record of which admin changed what, and no
-  tracker of what a submitter altered.
+- **A full audit log or change history** — the submissions table has a **last updated
+  by** column naming the most recent editor, but there is no history of earlier edits
+  and no record of which admin changed event details.
 - **Renaming or reordering stages once created** — the only route is new stages, move
   the submissions, delete the old ones, which is unwise once submissions exist.
 - **Hiding an individual session** from the public programme — publish or unpublish
