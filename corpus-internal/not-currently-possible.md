@@ -59,3 +59,29 @@ Added from a year of support replies, July 2026:
 - **Hosting a downloadable file, such as a Word template, on the submission form** —
   the form can only link out to an external URL, so the file has to live somewhere
   else (your own site, a shared drive) and be linked from there.
+
+From a further pass over the same year's replies, July 2026:
+
+- **An audit log or change history** — no record of which admin changed what, and no
+  tracker of what a submitter altered.
+- **Renaming or reordering stages once created** — the only route is new stages, move
+  the submissions, delete the old ones, which is unwise once submissions exist.
+- **Hiding an individual session** from the public programme — publish or unpublish
+  the whole programme only.
+- **Duplicating a question** on the submission form, and only one authors question and
+  one category question per form.
+- **A second review form** — one per stage. Different criteria per category need
+  separate stages.
+- **Rejection sub-types** — only acceptance supports types. The decision list itself
+  (Pending, Accepted, Rejected, Withdrawn) is fixed and cannot be switched off.
+- **Sponsor levels beyond Gold, Silver and Bronze** — hard coded and shared by every
+  event, so they cannot be renamed or added to. Only one sponsor shows in the
+  programme side menu.
+- **Bulk importing registrations**, and **no check-in function** at the event.
+- **Guest ticket checkout** — anyone buying a ticket must register or log in.
+- **Embedding the submission form** in an iframe; only the programme can be embedded.
+- **URL redirects** for programme pages.
+- **Bulk changing abstract titles** between sentence and title case — one at a time in
+  the submissions table.
+- **Capping submissions per submission type** — monitor and hide the option when full.
+- **Telephone support** — email, or book a support session.
