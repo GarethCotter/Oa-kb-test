@@ -148,7 +148,10 @@ corpus in place.*
 - [ ] **Weekly gap-digest email** — Monday cron, clustered unanswered questions plus
       articles rated unhelpful. Needs search logs written somewhere queryable first.
 - [x] ~~404 page~~, ~~favicon~~, ~~alt text~~ — done 29 July
-- [ ] **Make Vercel actually serve the 404 page.** It is built, deployed and correct at
+- [ ] **Make the host actually serve the 404 page.** *(31 July: deliberately deferred
+      to the hosting move — the fix is Vercel-specific and the site is going onto Oxford
+      Abstracts' own hosting on help.oxfordabstracts.com. Written up for the engineer in
+      `hosting/HANDOVER.md`.)* It is built, deployed and correct at
       `/404`, but unmatched paths return an empty 404 body. `cleanUrls: true` republishes
       `404.html` as `/404` (requesting `/404.html` 308-redirects), so the not-found
       handler no longer finds it under the name it looks for. The fix is converting
@@ -178,7 +181,10 @@ corpus in place.*
       whether the homepage audience really is organiser-dominated (context doc §1).
 - [ ] **Confirm who controls DNS** for help.oxfordabstracts.com
 - [ ] **Check the HubSpot contract renewal date**
-- [ ] **Spot-check the 199 redirects** against the live deployment
+- [x] ~~Spot-check the 199 redirects~~ — **done better, 31 July.** `scripts/check-redirects.py <host>` checks all 200 from `redirects.csv`, follows
+      them and asserts each lands 200 on the right article; exits non-zero on any
+      failure. Baseline **200/200 against oa-kb-test.vercel.app**. Re-run it against
+      the real host either side of the changeover — see `hosting/HANDOVER.md`.
 - [ ] **Watch five real users** do three tasks each
 - [ ] **Colour contrast check** on cream/navy/red against WCAG AA
 - [ ] **Test on a real phone**, not a resized browser
