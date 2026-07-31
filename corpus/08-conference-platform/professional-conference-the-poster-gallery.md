@@ -4,7 +4,7 @@ section: "08-conference-platform"
 audience: organisers
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/setting-up-the-poster-gallery
-last_reviewed: 2026-07-28
+last_reviewed: 2026-07-31
 ---
 
 # Professional Conference - the poster gallery
@@ -13,37 +13,42 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-**Skip to**
+### What makes a poster appear
 
-[Adding a poster upload question to your submission form](#GO)
+The poster gallery is not a setting you switch on. It is a view of your submissions, and a poster only appears in it when **all four** of these are true:
 
-[Adding other poster-related questions](#ADD)
+1. A question on your submission form has **Poster gallery upload (1 allowed per event)** ticked. This one question is what creates the gallery.
+2. The submitter has uploaded a file to that question.
+3. The submission has **In poster gallery** ticked in the decisions table.
+4. The submission has been **Accepted**.
 
-[Choosing which information you would like included with the poster](#Cho)
+Most setup problems are one of these four being missed, and the gallery cannot tell you which. If yours is empty, see [If your poster gallery is empty](/08-conference-platform/if-your-poster-gallery-is-empty.html).
 
-[Selecting the posters you would like to appear in the poster gallery](#SEL)
+NB: the first condition comes first for a reason. Until a question is marked as the poster gallery upload, the **In poster gallery** column does not exist in your decisions table, and the other poster question types do not appear on your submission form. If those seem to be missing, this is why.
 
-[The poster gallery view in the conference program](#GAL)
+NB: Posters can only be uploaded in a PDF format. The default maximum file size is 10MB, which you can change on the question itself.
 
-NB: Posters can only be uploaded in a PDF format and they can only be one page in length.
-
-There is no file size limit for poster upload.
+Please note, the one-page guidance in the question description is advice to your submitters, not a rule the system enforces. A multi-page PDF will upload without any warning, and the gallery will show only its first page.
 
 Setting up your poster gallery will need to be undertaken in stages. The first stage is to set your submission form up to collect posters.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & Setup →  +QUESTION**
+Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & setup →  +QUESTION**
 
 ![](/assets/img/undefined-oct-06-2021-08-35-58-07-am-86e145f5.webp)
 
-**Click** on **Poster Upload underneath Poster Questions.**
+**Click** on **Poster upload** underneath **Poster questions**.
+
+Remember: **Decisions** has a **Form & setup** page too. The poster question goes on the one under **Submissions**.
 
 **![](/assets/img/screenshot-2025-08-04-at-11-47-44-png-f6728211.webp)**
 
 Fill in the details (see [Question types](/02-submissions/submission-question-types.html) for further guidance).
 
-At the bottom of the question fields, tick the checkbox next to 1) **Poster gallery upload**.(checking this will automatically restrict any uploads to pdfs only)
+At the bottom of the question fields, tick the checkbox next to 1) **Poster gallery upload (1 allowed per event)**. Checking this restricts uploads to PDFs only.
 
-If you would like to enable users to download the posters, you should also tick  2) **Include poster download button** checkbox. In order for the posters to be visible in the program, you will also need to tick 3) **In program.**
+Please note, the **Allowed file extensions** box on the question stays blank, and its help text says "Leave blank to allow all files". That is misleading on a poster gallery question - PDF-only is enforced regardless. To change the size limit, put a number between 0 and 500 in **Max file size (MB)**.
+
+If you would like to enable users to download the posters, you should also tick  2) **Allow poster downloads**, which is ticked by default. In order for the posters to be visible in the program, you will also need to tick 3) **In program.**
 
 ![](/assets/img/undefined-mar-16-2022-09-45-56-97-am-1e4a55da.webp)
 
@@ -57,13 +62,15 @@ If you require, you can set other questions to allow submitters to add further d
 
 #### Keywords
 
-You can add a question about keywords, to enable searching by keyword in the poster gallery. See the poster gallery view below.
+You can add a question about keywords, to let delegates filter the gallery by keyword. See the poster gallery view below.
+
+NB: keywords power the **Keywords** filter in the gallery. They are not matched by the gallery's search box.
 
 ![](/assets/img/undefined-oct-06-2021-09-59-08-64-am-c141982a.webp)
 
 Click **+QUESTION**
 
-NB: Only one of the poster keywords can be added (1,2 and 3 below)
+NB: Only one of the poster keywords can be added (1,2 and 3 below). These options, and the presentation video question, only appear in the list once your poster upload question exists.
 
 The options are:
 
@@ -83,7 +90,9 @@ This will allow Youtube and Vimeo videos to be embedded directly within the post
 
 See [Question types](/02-submissions/submission-question-types.html) for further guidance.
 
-Make your choice, click **CREATE SELECTED QUESTION** and complete the details.
+Make your choice, complete the details and click **CREATE QUESTION**.
+
+Once you have added one upload question, one keyword question and one presentation link, the **Poster questions** group disappears from the list. That is expected - you have added everything the gallery supports.
 
 ---
 
@@ -109,9 +118,11 @@ Ensure the columns below are visible. (See the [decisions table](/04-decisions/t
 
 Scroll to the **Decision** and **In poster gallery** columns
 
-For each submission that you want included in the poster gallery, ensure you accept the submission and check the **In poster gallery** checkbox.
+For each submission that you want included in the poster gallery, ensure you accept the submission and check the **In poster gallery** checkbox. Both are needed - ticking the box on a submission that is still **Pending** does nothing.
 
-If you would like to do this in bulk, see the [decisions table](/04-decisions/the-decisions-table.html).
+NB: **Accepted: Poster** is a decision type, not a gallery setting. Choosing it does not add a submission to the poster gallery. You still need the **In poster gallery** box ticked as well.
+
+To do this in bulk, tick the checkboxes beside the submissions you want, then click **BULK DECIDE**. Under **Additional decision options** you will find **ADD TO POSTER GALLERY**, and a **REMOVE** beside it to take posters back out again. See the [decisions table](/04-decisions/the-decisions-table.html).
 
 ![](/assets/img/undefined-mar-29-2021-02-52-04-71-pm-9d03fae6.webp)
 
@@ -127,7 +138,7 @@ In the left hand menu, you will see the poster gallery icon. Click to view
 
 The poster gallery will then display. Users can
 
-1) Search using any term
+1) Search by poster title or author affiliation (the search box does not cover abstracts or keywords)
 
 2) Sort alphabetically
 

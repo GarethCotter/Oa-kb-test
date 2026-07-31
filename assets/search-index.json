@@ -976,6 +976,14 @@
   "summary": "Learn how to create your own website for your academic event, in this simple guide. # What is the website builder feature? Oxford Abstract\u2019s new website builder allows event admins to create their own custom website usin"
  },
  {
+  "title": "If your poster gallery is empty",
+  "path": "08-conference-platform/if-your-poster-gallery-is-empty.html",
+  "section": "Conference platform",
+  "audience": "organisers",
+  "plan": "professional conference",
+  "summary": "Work through the six things that stop a poster appearing, in the order they are most likely. # You have added a poster question, your submitters have uploaded their posters, and the gallery still says \"Sorry, we couldn't"
+ },
+ {
   "title": "Letting submitters hide their abstract from the programme",
   "path": "08-conference-platform/letting-submitters-hide-their-abstract-from-the-programme.html",
   "section": "Conference platform",
@@ -1029,7 +1037,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package. # Note Posters can only be uploaded in a PDF format and th"
+  "summary": "Find out how to optimise your poster submissions by displaying them in the poster gallery. This feature is only available in the Professional Conference package. # What makes a poster appear # The poster gallery is not a"
  },
  {
   "title": "Session bookings",
