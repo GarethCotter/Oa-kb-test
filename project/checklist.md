@@ -52,8 +52,17 @@ corpus in place.*
 
 ## 1. Content — the highest-value work left
 
-- [ ] **Pull support replies for the 281 gap tickets** (`ticket-gaps.csv`).
-      Most become internal-corpus notes; the recurring ones become articles.
+- [x] ~~Pull support replies for the 281 gap tickets~~ — **superseded and done bigger,
+      31 July.** Pulled all 4,898 tickets from the last 365 days instead (4,406 with a
+      support reply), clustered into 321 topics, and asked every cluster of
+      `/api/search` so the KB graded its own coverage: 118 answered strongly, 133
+      hedged, 70 returned nothing. Nine internal notes written or extended. Raw data in
+      `oa-support-replies/` **outside the repo** — it has real names and must stay out.
+      Remaining writable gaps are listed in `oa-support-replies/triage.md`, ordered by
+      ticket volume; roughly 40 clusters of genuine knowledge are still unwritten.
+- [ ] **Work through the rest of `triage.md`** — about 40 clusters of writable
+      knowledge left, biggest first. One note per problem (see CLAUDE.md); do not
+      append to the omnibus files, it does not route.
 - [ ] **Expand the ~48 truncated command.ai answers** (`truncated-command-ai-answers.md`),
       ordered by value so you can stop early.
 - [ ] **Place the 2 unmapped FAQ chunks** (`unmapped-faq-chunks.md`) — both are about

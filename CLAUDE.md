@@ -172,6 +172,15 @@ from surrounding text, so check the built output when you change the sources.
   router sees a note's title plus only that much of its body, so a pricing note whose
   plan names sat lower down was never selected for "how much is the Professional
   Conference Package".
+- **One note per problem — appending a fact to a long note does not make it
+  findable.** Measured 31 July 2026: facts added to `not-currently-possible.md` (now
+  twenty-five unrelated limitations) were reached for 4 of 14 test questions, because
+  no 160 characters can represent that file. The same facts split into their own
+  notes, where the *title* is the answer, answered 2 of 2. Use the omnibus files for
+  the long tail; anything with real ticket volume gets its own file.
+- **Routing is probabilistic, so do not read one miss as a missing note.** The same
+  question can answer on one run and not the next, and phrasing moves it more than
+  content does. Judge a note over several runs and several phrasings.
 - **No hand-written jump links.** The generated "On this page" box does that job; 380
   hand-made in-page links had rotted across 97 pages before they were removed.
 
