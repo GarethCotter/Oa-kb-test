@@ -74,38 +74,38 @@ Checkable claims from the articles, to be marked **confirmed**, **changed** or
 
 | # | Claim | Status |
 |---|---|---|
-| 1 | Path is **Registration → Tickets → Create Tickets** | |
-| 2 | The ticket dashboard has **Tickets, Add-Ons and Coupons** at the top | |
-| 3 | "Create Ticket" is a **blue button in the middle of the screen** | |
-| 4 | A ticket has a **name** and **description** | |
-| 5 | Currency is changed by clicking the blue **"Finance"** word above the price box | |
-| 6 | Ticket price defaults to **0.00 (free of charge)** | |
-| 7 | **"Add tax"** sits below the price box | |
-| 8 | There is a **"Quantity Available"** box | |
-| 9 | You can select the **dates tickets are available for purchase** | |
-| 10 | You can assign a ticket to a **group** | |
-| 11 | Button at the bottom is **"Create Ticket"** | |
-| 12 | Edit/delete via **three dots at the end of the row** | |
-| 13 | **"Create Group"** appears mid-page with no tickets, top right with tickets | |
-| 14 | Group creation opens a **pop-up on the right-hand side** | |
-| 15 | Hidden tickets let admins buy on behalf of a user | |
+| 1 | Path is **Registration → Tickets → Create Tickets** | **Changed** - nav is Registration > Tickets, expanding to Conference tickets / Add-ons / Coupons / Ticket details page. No 'Create Tickets' item. |
+| 2 | The ticket dashboard has **Tickets, Add-Ons and Coupons** at the top | **Confirmed**, wording 'Add-ons'. Now both top tabs and left-nav items. |
+| 3 | "Create Ticket" is a **blue button in the middle of the screen** | **Changed** - 'Create ticket', navy not blue; moves to top left once a ticket exists. |
+| 4 | A ticket has a **name** and **description** | **Confirmed**. |
+| 5 | Currency is changed by clicking the blue **"Finance"** word above the price box | **Changed** - link reads 'Change currency here.' *below* the price box, not a 'Finance' word above it. |
+| 6 | Ticket price defaults to **0.00 (free of charge)** | **Confirmed** - shows 0, 'This is a free ticket.' |
+| 7 | **"Add tax"** sits below the price box | **Changed - not present.** Tax moved to Registration > Finance > Tax. |
+| 8 | There is a **"Quantity Available"** box | **Confirmed** - 'Quantity available'. |
+| 9 | You can select the **dates tickets are available for purchase** | **Confirmed** - 'Available from' / 'Available to'. |
+| 10 | You can assign a ticket to a **group** | **Confirmed** - 'Ticket group', default 'Ungrouped'. |
+| 11 | Button at the bottom is **"Create Ticket"** | **Confirmed** - 'Create ticket'. |
+| 12 | Edit/delete via **three dots at the end of the row** | **Confirmed**. |
+| 13 | **"Create Group"** appears mid-page with no tickets, top right with tickets | **Partly changed** - mid-page when empty, but **top left** once tickets exist, not top right. |
+| 14 | Group creation opens a **pop-up on the right-hand side** | `[untested]`. Ticket, add-on and coupon panels are all right-hand slide-overs, so `[inferred]` groups are too. |
+| 15 | Hidden tickets let admins buy on behalf of a user | **Partly confirmed** - control is 'Hide ticket (visible to admins only)'; attendee preview has 'Show hidden tickets' and 'Admin mode'. Buying on behalf not walked. |
 
 ## From `creating-coupon-codes-for-delegate-registration.md`
 
 | # | Claim | Status |
 |---|---|---|
-| 16 | Coupons are reached via **Registration → Tickets → Coupon tab (top right)** | |
-| 17 | **"Create Coupon"** button, opening a right-hand pop-up | |
-| 18 | Fields: Coupon Name, **Discount amount (percentage)**, Quantity Available, date range | |
-| 19 | Coupons can be limited to chosen tickets and add-ons via **"Add Tickets" / "Add Addons"** | |
+| 16 | Coupons are reached via **Registration → Tickets → Coupon tab (top right)** | **Confirmed** - 'Coupons' tab, plus a left-nav item. |
+| 17 | **"Create Coupon"** button, opening a right-hand pop-up | **Confirmed** - 'Create coupon', right-hand panel. |
+| 18 | Fields: Coupon Name, **Discount amount (percentage)**, Quantity Available, date range | **Changed.** Field is **'Coupon code'**, not name. Discount is **not percentage-only** - 'Discount type' offers 'Percentage (%)' and 'Amount ($)'. Undocumented 'Deactivate coupon' toggle. |
+| 19 | Coupons can be limited to chosen tickets and add-ons via **"Add Tickets" / "Add Addons"** | **Partly changed** - controls are 'Available with selected tickets' and 'Add addons'. |
 
 ## From `downloading-invoices-and-receipts.md`
 
 | # | Claim | Status |
 |---|---|---|
-| 20 | After payment, the **Order Details Confirmation** screen shows a **"Download Receipt"** dropdown at top right | |
-| 21 | The dropdown offers both **receipt and invoice** | |
-| 22 | Later, an attendee signs in, finds the event box, clicks **"View Details"**, and uses the same dropdown | |
+| 20 | After payment, the **Order Details Confirmation** screen shows a **"Download Receipt"** dropdown at top right | **Confirmed**, wording **'Download receipt'**; page heading is 'Order details'. |
+| 21 | The dropdown offers both **receipt and invoice** | **Confirmed** - options are **'Receipt - 2'** and **'Invoice - 1'**. |
+| 22 | Later, an attendee signs in, finds the event box, clicks **"View Details"**, and uses the same dropdown | `[untested]` - needs an attendee account. Confirmation page offers 'Return to dashboard'. |
 
 ## Open questions to answer by observation
 
