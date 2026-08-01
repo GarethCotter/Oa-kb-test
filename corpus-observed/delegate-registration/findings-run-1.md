@@ -173,6 +173,80 @@ Two things worth documenting:
   tab you are looking at. For anyone reconciling a list of attendees against a
   list of payments, that is a trap, and no article mentions it.
 
+## The registration form is a grid, not a form
+
+**Registration → Form.** This is not a linear question list like the submission
+form builder. It is a **matrix: questions down the side, ticket groups across the
+top**, with a toggle in every cell. A question is switched on or off *per ticket
+group*.
+
+That is the mechanism behind the ticket panel's helper text about groups
+controlling "which add-ons and questions are shown to attendees". Two features
+that read as unrelated in the documentation are the same feature.
+
+- **Name** and **Email** are present by default, both marked **Required**, both
+  carrying a **padlock** icon — they cannot be removed.
+- The **"Visible to the public"** and **"Allow attendee to edit responses"**
+  toggles appear here *as well as* on the Publish page. Same switches, two
+  locations.
+- Question types, from **"Add question" → "Select the question type you want to
+  add:"**
+
+  | Group | Types |
+  |---|---|
+  | **STANDARD** | Dropdown, Checkbox, Radio, File Upload |
+  | **CONTACT DETAILS** | Phone number, Email, Address |
+  | **TEXT** | Short text, Long text, Text block (read only) |
+
+  Ten types, and **a completely different set from the submission form builder** —
+  no date picker, no number field, no multi-response dropdown. An organiser who
+  knows one builder will look for options that are not there.
+
+## Add-ons
+
+Empty state: **"No add-ons created yet"** / "Sell additional add-ons for your
+event. E.g. galas, dinners, workshops or networking events." / **"Create add-on"**.
+
+Panel fields: **Add-on name*** (e.g. Gala dinner), **Add-on description**,
+**Price** (0, GBP, "This is a free add-on"), **Quantity available**,
+**Quantity per person**, **Available from / Available to**, **Available with
+selected tickets** (default "All tickets"), **Hide add-on** toggle, **Create
+add-on**.
+
+- Add-ons can be scoped **directly to chosen tickets**, independently of ticket
+  groups. So there are two overlapping mechanisms for controlling what an attendee
+  sees, and no article explains how they interact. `[untested]` what happens when
+  they disagree.
+- **Inconsistent helper text between two panels in the same module**: the ticket
+  panel says *"Change currency here."*, the add-on panel says *"Change currency in
+  the finance tab"*.
+
+## Coupons — the article is wrong about the main thing
+
+Empty state: **"No coupons created yet"** / "Add coupons to provide discounts to
+your attendees. Choose amount or percentage price reductions." / **"Create
+coupon"**.
+
+| Field | Observed |
+|---|---|
+| **Coupon code*** | placeholder `E.G. SPEAKER50` — the article calls this "Coupon Name" |
+| **Discount amount*** | e.g. 50, with a `%` suffix that follows the type |
+| **Discount type*** | dropdown: **"Percentage (%)"** (default) and **"Amount ($)"** |
+| **Quantity available** | e.g. 500 |
+| **Available from / Available to** | date range |
+| **Deactivate coupon** | toggle — undocumented |
+| **Available with selected tickets** | default "All tickets" |
+| **Add addons** | default "All addons" |
+
+**Coupons can be a fixed amount, not only a percentage.** The article describes
+only "Discount amount (percentage)". The empty state on screen even says "Choose
+amount or percentage price reductions" — so the product says it and the
+documentation does not.
+
+Also: the option reads **"Amount ($)"** with a **dollar sign**, on an event whose
+currency is **GBP** and whose price fields show GBP. A small localisation bug, but
+a confusing one on a screen about money.
+
 ## Cosmetic defects
 
 - Registrations table reads **"1 rows"** (not pluralised) — same class of bug as
