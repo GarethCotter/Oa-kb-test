@@ -6,54 +6,48 @@ explored: 2026-07-31
 plan: professional conference
 ---
 
-# Screenshots — empty, and why
+# Screenshots — capture status
 
-**No screenshots were captured to disk on the 31 July 2026 run.**
+The 31 July 2026 run produced no images: the browser extension available in that
+session could return screenshots to the transcript but not save files. **Solved
+1 August 2026** with `scripts/capture-poster-gallery.py` — Playwright driving the
+installed Chrome at a fixed 1440×900 viewport, element-anchored crops, WebP
+output into this folder.
 
-The browser tooling available in that session returned screenshots into the
-conversation transcript but exposed no writable file path; its `save_to_disk`
-option returned no location. Every state the brief asks to be pictured is
-therefore described in prose in `walkthrough.md`, `behaviour.md` and
-`errors.md`, with all labels and messages quoted verbatim.
+```bash
+py scripts/capture-poster-gallery.py            # public shots (no sign-in)
+py scripts/capture-poster-gallery.py --login    # one-time sign-in, saves session
+py scripts/capture-poster-gallery.py --admin    # admin shots (needs the session)
+```
 
-This is a genuine shortfall against the brief on two counts:
+Because the shots are anchored to element selectors rather than pixel
+coordinates, re-running the script after a UI change photographs the new state
+of the same controls — captures are reproducible and refreshable.
 
-1. The brief asks for a screenshot of every distinct state.
-2. Ten of the eleven images in
-   `corpus/08-conference-platform/professional-conference-the-poster-gallery.md`
-   date from 2021–2022, and this run was meant to supply replacements. It has
-   not. Given the label changes recorded in `META.md` (claims 7, 9, 15, 23) and
-   the fact that the "Poster questions" group changes contents depending on
-   state, those images are near-certainly stale — but that is inference from the
-   label drift, not an image-by-image comparison.
+## Status
 
-## States to capture on the next run
+| Shot | State | How |
+|---|---|---|
+| `gallery-grid-populated.webp` | **captured 2026-08-01** | public |
+| `gallery-list-view.webp` | **captured 2026-08-01** | public |
+| `gallery-empty-clear-filters.webp` | **captured 2026-08-01** | public (search `zzzz`; list view says "No posters found", grid view says "Sorry, we couldn't find any posters") |
+| `gallery-poster-detail.webp` | **captured 2026-08-01** | public. Shows the PDF viewer spinner — that is the app's real current behaviour (see `errors.md`), so the image is honest; recapture when the viewer is fixed |
+| `decisions-table-in-poster-gallery-column` | awaiting `--login` | admin |
+| `question-picker-poster-group-after` | awaiting `--login` | admin |
+| `poster-upload-question-defaults` | awaiting `--login` | admin |
+| `program-menu-poster-gallery-enabled` | awaiting `--login` | admin |
+| `program-access-settings` | awaiting `--login` | admin |
+| `question-picker-poster-group-before` | next exploration run | needs the poster questions temporarily deleted — destructive, do deliberately |
+| `poster-upload-invalid-file-type-error` | next exploration run | needs a scripted wrong upload on the submission form (admin) |
+| `poster-upload-file-too-large-error` | next exploration run | as above |
 
-In rough priority order — the first four are the ones the articles most need:
+## Notes for whoever captures next
 
-1. **+ QUESTION picker, before any poster question exists** — showing "Poster
-   questions → Poster upload" as the only entry.
-   `question-picker-poster-group-before.png`
-2. **+ QUESTION picker, after the upload question exists** — showing the four
-   keyword/link options that were previously invisible.
-   `question-picker-poster-group-after.png`
-3. **The "File upload question" editor** with its pre-filled defaults and the
-   "Question settings" block.
-   `poster-upload-question-defaults.png`
-4. **Decisions table** with the "In poster gallery" column visible.
-   `decisions-table-in-poster-gallery-column.png`
-5. **DISPLAY → Program menu panel** with "Poster gallery" ticked.
-   `program-menu-poster-gallery-enabled.png`
-6. **Gallery grid**, populated. `gallery-grid-populated.png`
-7. **Poster detail panel** with download button, abstract, keywords.
-   `gallery-poster-detail.png`
-8. **Empty gallery** — "Sorry, we couldn't find any posters" / "Clear filters".
-   `gallery-empty-clear-filters.png`
-9. **Upload error, wrong type** — "Invalid file type…".
-   `poster-upload-invalid-file-type-error.png`
-10. **Upload error, too large** — "The file is too large…".
-    `poster-upload-file-too-large-error.png`
-11. **Program access settings** showing "Show submission contents".
-    `program-access-settings.png`
-
-Name by state, not by sequence number, per the brief.
+- The one-time sign-in: `--login` opens a visible window; sign in yourself
+  (the script never touches credentials), press Enter, and the session is
+  saved to `%USERPROFILE%\.oa-capture-state.json` — outside the repo on
+  purpose, since it holds live cookies. Never commit it.
+- Name by state, not sequence number, per the exploration brief.
+- Keep the 1440×900 viewport so images stay comparable between runs.
+- The timezone dialog intercepts first load of a fresh profile; the script
+  dismisses it.
