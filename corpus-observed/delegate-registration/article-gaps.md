@@ -31,33 +31,57 @@ Most of the individual confusions below are consequences of those two.
 
 ---
 
-## Priority 1 — rewrite "Downloading invoices and receipts"
+## CORRECTION — read `ticket-sample-findings.md` before using this list
 
-**Edit:** `corpus/07-delegate-registration/downloading-invoices-and-receipts.md`
-(228 words — the shortest article in the section, against **193 tickets a year,
-the largest single theme in the 4,898-ticket analysis**)
+The original version of this file claimed the 193-ticket invoice theme was mostly
+organisers asking *"how do I get my attendee their invoice"*. **A read of 30
+random invoice tickets on 1 August showed that was wrong**, and it was the
+load-bearing assumption here. Four distinct themes exist and retrieval is one of
+the smaller ones. Priorities below are revised accordingly.
 
-**Scope:** answer all four routes, not two, and split the word "invoice".
+## Priority 1 — new article: changing what appears on an invoice
+
+**The biggest delegate-registration invoice theme, and wholly undocumented.**
+
+**Scope:** what can be put on an invoice, how, and what can be changed after the
+fact — attendee or company name, billing address, PO number, VAT number, invoice
+note text.
 
 **Evidence:**
 
-- The article documents only the two **attendee** routes. Observed, there are two
-  **admin** routes as well: **Registrations table → click the row → "Order
-  downloads"** (Receipt / Invoice) and **→ "Email"** (Receipt / Invoice), the
-  latter sending it straight to the attendee.
-- `[inferred]` most of the 193 are organisers asking *"how do I get my attendee
-  their invoice"*, which the current article never answers. **Check a sample of
-  the raw tickets before acting** — this inference is the load-bearing one on this
-  whole list.
-- Exact labels are **"Download receipt"**, **"Receipt - 2"**, **"Invoice - 1"** —
-  the article's "Download Receipt" is close but the numbering is undocumented.
+- Roughly a quarter of a 30-ticket sample. Requests observed: correct a name on an
+  issued invoice, add a company name, add a PO number, add a billing address,
+  amend invoice note text. **Several organisers state they do not think they can
+  do it themselves** and ask support to do it for them.
+- The product surface exists and is undocumented: **Payment providers → "Configure
+  invoice and receipts"** (invoice title, which event and customer details appear,
+  **"Generate preview"**), the **"show on invoice"** toggle on individual form
+  questions, and **"custom questions for delayed payments"** whose responses appear
+  on the invoice — the panel explicitly suggests *tax number* and *company
+  address*.
+- One ticket independently confirms the buyer/holder split: an organiser can
+  capture the buyer's address via the registration form **when the buyer is also
+  the ticket holder**, but not when someone buys for another person.
 
-**Also worth its own section or article:** invoice *content* is configurable at
-**Payment providers → "Configure invoice and receipts"** — title, which event and
-customer details appear, a **"show on invoice"** toggle on individual form
-questions, and **"Generate preview"**, which renders an invoice without needing an
-order. None of it is documented, and it answers "can we put our logo / VAT number
-/ PO number on it".
+**Open question this article must answer, and I could not:** what is changeable
+**after** an invoice has been issued, and by whom? Organisers are escalating
+because they believe it is not self-service. `[untested]`.
+
+## Priority 1b — rewrite "Downloading invoices and receipts"
+
+Still worth doing, but **smaller than I first claimed**.
+
+**Edit:** `corpus/07-delegate-registration/downloading-invoices-and-receipts.md`
+(228 words)
+
+- It documents only the two **attendee** routes. Two **admin** routes exist and are
+  undocumented: **Registrations table → click the row → "Order downloads"**, and
+  **→ "Email"**, which sends it straight to the attendee.
+- Exact labels: **"Download receipt"**, **"Receipt - 2"**, **"Invoice - 1"**.
+- Note from the sample: several retrieval tickets are **fault reports** — "File not
+  found" on a receipt link, an error page viewing receipt and invoice, an attendee
+  locked out after changing their email. **An article would not have deflected
+  those**; they belong on the product list.
 
 ## Priority 2 — new article: paying by invoice / bank transfer
 
