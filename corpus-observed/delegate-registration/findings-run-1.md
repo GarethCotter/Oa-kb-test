@@ -9,11 +9,13 @@ plan: professional conference
 # Registration — findings, run 1 (partial)
 
 Covered this run: ticket creation, the publish/preview page, the attendee purchase
-path end to end, the order confirmation screen, and the registrations table.
+path end to end, the order confirmation screen, the registrations table
+(attendees and transactions), the attendee detail panel, the registration form
+builder, add-ons, coupons, payment providers, invoice configuration, delayed
+payments, and tax.
 
-**Not yet covered:** the registration form builder, add-ons, coupons, groups,
-Finance (billing / payment providers / tax), the ticket details page, admin
-amendments to existing orders, refunds, and analytics.
+**Not yet covered:** ticket group creation, the ticket details page, billing,
+admin amendments to existing orders, refunds, and analytics.
 
 ---
 
@@ -86,10 +88,12 @@ ticket"** (135 words) and to the 29 tickets about editing registrations.
 | 11 | Button at bottom is **"Create Ticket"** | **Confirmed** — "Create ticket". |
 | 12 | Edit/delete via **three dots at the end of the row** | **Confirmed** (⋮ at row end). |
 | 13 | **"Create Group"** mid-page with no tickets, **top right** with tickets | **Partly changed.** Mid-page in the empty state: confirmed. Once tickets exist it is **top left**, not top right. |
-| 14 | Group creation is a **right-hand pop-up** | `[untested]` this run. |
+| 14 | Group creation is a **right-hand pop-up** | `[untested]`. Ticket, add-on and coupon panels are all right-hand slide-overs, so `[inferred]` groups are too. |
 | 15 | Hidden tickets let admins buy on behalf of a user | **Partly confirmed.** The control is a toggle **"Hide ticket (visible to admins only)"**. The attendee preview carries a **"Show hidden tickets"** control and an **"Admin mode"** toggle. Buying-on-behalf not yet walked. |
-| 16 | Coupons via **Registration → Tickets → Coupon tab** | **Confirmed** the tab exists ("Coupons"); creation flow `[untested]`. |
-| 17–19 | Coupon fields | `[untested]` this run. |
+| 16 | Coupons via **Registration → Tickets → Coupon tab** | **Confirmed.** Tab is "Coupons", and there is also a left-nav item. |
+| 17 | **"Create Coupon"** button, right-hand pop-up | **Confirmed** — "Create coupon", right-hand panel. |
+| 18 | Fields: Coupon Name, **Discount amount (percentage)**, Quantity Available, date range | **Changed.** The field is **"Coupon code"**, not name. Discount is **not percentage-only**: a **"Discount type"** dropdown offers **"Percentage (%)"** and **"Amount ($)"**. An undocumented **"Deactivate coupon"** toggle also exists. |
+| 19 | Limited to tickets/add-ons via **"Add Tickets" / "Add Addons"** | **Partly changed.** Controls are **"Available with selected tickets"** and **"Add addons"**. |
 | 20 | Post-payment **Order Details Confirmation** shows a **"Download Receipt"** dropdown top right | **Confirmed**, wording corrected to **"Download receipt"**. Heading on the page is **"Order details"**. |
 | 21 | Dropdown offers **receipt and invoice** | **Confirmed.** Exact options: **"Receipt - 2"** and **"Invoice - 1"** — each numbered. `[inferred]` these are document sequence numbers. |
 | 22 | Attendee later signs in, finds the event box, clicks **"View Details"** | `[untested]` — needs an attendee account. The confirmation page does offer **"Return to dashboard"**. |
