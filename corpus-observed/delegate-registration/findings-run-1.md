@@ -247,8 +247,115 @@ Also: the option reads **"Amount ($)"** with a **dollar sign**, on an event whos
 currency is **GBP** and whose price fields show GBP. A small localisation bug, but
 a confusing one on a screen about money.
 
+## Finance: payment providers
+
+**Registration → Finance → Payment providers.** Tabs: **Billing / Payment
+providers / Tax**.
+
+> Select your payment provider
+> Set up your payment provider in order to publish paid tickets. Read about
+> Oxford Abstracts' **fees and collection policy**.
+
+**Paid tickets cannot be published without a provider** — a gating rule stated
+plainly on screen and in none of the articles.
+
+| Provider | State | Notes |
+|---|---|---|
+| **Stripe** | NOT CONNECTED | "Enable payments to be collected by debit/credit card via Stripe." Button: **"Link to Stripe"** |
+| **PayPal** | NOT CONNECTED | "Enable payments collected through PayPal." Button: **"Configure"** |
+| **Authorize.net** | NOT CONNECTED | In red: **"Authorize.net payments require the event currency to be USD."** |
+| **Invoice payments** | NOT CONNECTED | "Generate an invoice and allow attendees to pay offline. **Requires a fee collection card.**" Button **"Enable"**, greyed out |
+
+Plus a highlighted panel: *"Add a fee payment method — To set up authorize.net or
+invoice payments we require a payment card to collect our service fees through."*
+
+The Authorize.net currency constraint is exactly the kind of hard, specific fact
+that generates a ticket and is answerable in one line. Nothing documents it.
+
+## The word "invoice" means two different things, and that may explain the 193
+
+There are **two unrelated features** both called invoice:
+
+1. **Invoice/receipt documents** — the PDFs an attendee or admin downloads after
+   an order. Covered by `downloading-invoices-and-receipts` and
+   `configuring-invoices-and-receipts-for-delegate-registration`.
+2. **Invoice payments** — a *payment method* where the attendee asks for an
+   invoice and pays offline by bank transfer. Covered by **nothing**.
+
+`[inferred]` — the 193 tickets tagged "invoices & receipts" are very likely a
+mixture of *"how does my attendee get their receipt"*, *"how do I let my
+university pay by invoice"*, and *"how do I get our PO/VAT number onto the
+invoice"*. Three different questions collapsed under one word, answered by
+articles that only address the first. Worth checking against the raw tickets
+before acting — but it would explain why the largest theme in the analysis sits
+behind the shortest article.
+
+## Invoice configuration — where the answers actually live
+
+**Payment providers → "Configure invoice and receipts"** (top right) opens a
+right-hand panel with two tabs, **Details** and **Delayed payments**.
+
+> Configure the branding and content of your invoices and receipts. Registration
+> form questions marked as 'show on invoice' will also appear.
+
+**Details tab:**
+
+- **Invoice title*** — default "Conference invoice"
+- **"Include the following event details on the invoice"** — Venue ✓, Email,
+  Telephone, Start date, End date, Event logo (with an "Add here" link)
+- **"Include the following customer details on the invoice"** — Order reference ✓,
+  Registration date, **Buyer email**
+- **"Question responses displayed"** — *"Attendee responses to questions can be
+  included on invoices and receipts by toggling the 'show on invoice' option
+  during question setup."* with a **"Go to form builder"** link
+- **Header design** — a rich text editor
+- Buttons: **"Save details"**, **"Generate preview"**
+
+Two things worth pulling out:
+
+- **A "show on invoice" toggle exists on registration form questions.** It was not
+  visible in the question-type picker, so it must sit inside individual question
+  setup. `[untested]`. This is the mechanism for getting arbitrary data onto an
+  invoice.
+- **"Generate preview"** lets an organiser see the invoice **without needing an
+  order**. That is the single most useful thing for anyone setting this up, and no
+  article mentions it.
+- Note again the buyer/holder split: the customer detail available is **"Buyer
+  email"**.
+
+**Delayed payments tab:**
+
+> Delayed payments include offline payments and payment links. Configure custom
+> questions for both and payment details for offline payments.
+
+- **"Offline payments is not currently configured."** *(sic — "is")*
+- *"Offline payments allows people to complete their purchase by requesting an
+  invoice and then transferring the amount to you, e.g. via bank transfer."*
+- *"To activate offline payment you must first add a fee collection card. This is
+  so we can collect Oxford Abstracts fees on offline invoices."*
+- **"Custom questions for delayed payments"** — *"Ask questions to users paying
+  with delayed payments. These questions and responses will appear on the invoice.
+  E.g. tax number, or company address."*
+
+**This answers a classic conference question — "our finance department needs a PO
+number and VAT number on the invoice" — and it is documented nowhere.**
+**"Payment links"** is also named here and appears in no article at all.
+
+## Tax
+
+**Registration → Finance → Tax.** Empty state: **"No tax rules added yet"** /
+"Add a tax rules to apply to all or some tickets. Add multiple rules to handle
+multiple scenarios." *(sic — "a tax rules")* / **"Create tax rule"**.
+
+Confirms claim 7 from the other direction: tax is no longer an "Add tax" link on a
+ticket but a **rules system**, supporting **multiple rules scoped to all or some
+tickets**. That is more capable than the article describes, and the article
+describes it in the wrong place.
+
 ## Cosmetic defects
 
+- Tax empty state reads **"Add a tax rules"**; delayed payments reads **"Offline
+  payments is not currently configured."**
 - Registrations table reads **"1 rows"** (not pluralised) — same class of bug as
   the poster gallery's "Showing 1 results".
 - Guessing `/delegate-registration-v3/registrations` gives a bare **"Page not
