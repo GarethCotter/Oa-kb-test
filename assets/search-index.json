@@ -752,6 +752,14 @@
   "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Note This information is for attendees of events only. For a walk through demonstration on how to purchase an add-on to an existing order,"
  },
  {
+  "title": "Buyers, ticket holders and who receives what",
+  "path": "07-delegate-registration/buyers-ticket-holders-and-who-receives-what.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "When one person books tickets for colleagues, the buyer and the ticket holder are different people \u2014 and that explains most registration puzzles. # A departmental administrator books five tickets for five colleagues. Reg"
+ },
+ {
   "title": "Changing the email address on a registration",
   "path": "07-delegate-registration/changing-the-email-address-on-a-registration.html",
   "section": "Registration",
@@ -838,6 +846,14 @@
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
   "summary": "In the below article, you\u2019ll find out how admins can amend existing orders on the attendee table of delegate registration. # You either watch the below video for a walkthrough on what to do or scroll down and follow the "
+ },
+ {
+  "title": "Letting attendees pay by invoice or bank transfer",
+  "path": "07-delegate-registration/letting-attendees-pay-by-invoice-or-bank-transfer.html",
+  "section": "Registration",
+  "audience": "organisers",
+  "plan": "all plans (including free Basic)",
+  "summary": "Set up offline payments so delegates whose institution cannot pay by card can request an invoice and pay you directly. # Many university, hospital and government delegates cannot pay by card at all \u2014 their finance depart"
  },
  {
   "title": "Managing orders and edit the attendee table",
