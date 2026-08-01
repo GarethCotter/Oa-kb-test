@@ -3,22 +3,32 @@ corpus-observed/poster-gallery/screenshots/README.md, as reproducible
 element-anchored shots at a fixed viewport.
 
     py scripts/capture-poster-gallery.py            # public shots (no sign-in)
-    py scripts/capture-poster-gallery.py --login    # one-time: sign in, save session
-    py scripts/capture-poster-gallery.py --admin    # admin shots (needs the session)
+    py scripts/capture-poster-gallery.py --admin    # admin shots (sign in when asked)
 
 Needs: py -m pip install playwright pillow   (uses the installed Chrome; no
 browser download).
 
 How auth works
 --------------
-Admin screens need Gareth's session. --login opens a visible window on the
-sign-in page; **you sign in yourself** (this script never touches credentials),
-press Enter in the terminal when the dashboard is up, and the session is saved to
+Admin screens need a signed-in session, and that session **cannot be saved and
+replayed**. --admin therefore opens a visible Chrome window on the sign-in page,
+waits for you to sign in yourself (this script never touches credentials), and
+then takes the screenshots immediately in that same window. Expect to sign in
+once per admin capture run.
 
-    %USERPROFILE%\\.oa-capture-state.json
+Why it has to work that way, established 1 Aug 2026 after two failed attempts:
 
-OUTSIDE the repo, deliberately: that file holds live session cookies and must
-never be committed. Admin runs then reuse it headlessly until it expires.
+- Playwright's `storage_state` export, taken straight after a real sign-in, held
+  only `anon_user_id` and `_dd_s` - no auth token. Admin pages bounced to /auth.
+- A full persistent Chrome profile failed the same way, in headless *and*
+  headful runs. Inspecting a fresh page on that profile showed `localStorage`
+  completely empty, no auth cookie on app.oxfordabstracts.com, and a
+  `code_verifier` cookie - i.e. an OAuth/PKCE flow whose access token is held in
+  memory by the running page and whose identity-provider session does not
+  survive a browser restart in a clean automation profile.
+
+So there is no artefact to save. Same-session capture is the design, not a
+workaround.
 
 Conventions
 -----------
@@ -44,11 +54,11 @@ from playwright.sync_api import sync_playwright
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'corpus-observed', 'poster-gallery', 'screenshots')
-STATE = os.path.join(os.path.expanduser('~'), '.oa-capture-state.json')
 
 EVENT = 78206
 VIRTUAL = 'https://virtual.oxfordabstracts.com/event/%d' % EVENT
-ADMIN = 'https://app.oxfordabstracts.com/admin/events/%d/app' % EVENT
+APP = 'https://app.oxfordabstracts.com'
+ADMIN = APP + '/admin/events/%d/app' % EVENT
 VIEWPORT = {'width': 1440, 'height': 900}
 
 
@@ -114,74 +124,149 @@ def public_shots(page):
 # ----------------------------------------------------------------- admin ----
 
 def admin_shots(page):
-    # decisions table with the In poster gallery column
+    """Each shot is independent: one failure reports and the run carries on.
+
+    A sign-in costs the operator fifteen seconds of attention, so a single bad
+    selector must never throw away the other four captures.
+    """
+    for fn in (_shot_decisions_table, _shot_question_picker,
+               _shot_question_editor, _shot_program_menu, _shot_access_settings):
+        name = fn.__name__.replace('_shot_', '')
+        try:
+            fn(page)
+        except Exception as e:
+            print('  FAILED %-38s %s' % (name, str(e).split('\n')[0][:70]))
+            try:                                  # salvage: what was on screen
+                save_webp(page.screenshot(), 'FAILED-' + name)
+            except Exception:
+                pass
+
+
+def _shot_decisions_table(page):
+    """The decisions table is far wider than the viewport - the 'In poster
+    gallery' column sits off to the right, so scroll it into view first."""
     page.goto(ADMIN + '/decisions', wait_until='networkidle')
-    page.wait_for_selector('text=In poster gallery', timeout=30000)
+    page.wait_for_selector('text=Submission Id', timeout=60000)
+    page.wait_for_timeout(2000)
+    col = page.locator('text=In poster gallery').first
+    col.wait_for(timeout=30000)
+    col.scroll_into_view_if_needed()
+    page.wait_for_timeout(1000)
     shoot(page, 'decisions-table-in-poster-gallery-column')
 
-    # question picker, with the poster upload question already existing
+
+def _shot_question_picker(page):
     page.goto(ADMIN + '/edit-submission-form', wait_until='networkidle')
-    page.get_by_role('button', name='Question').click()
-    page.wait_for_selector('text=Poster questions', timeout=15000)
+    page.wait_for_selector('text=Submission form', timeout=60000)
+    page.get_by_role('button', name='Question').first.click()
+    page.wait_for_selector('text=Poster questions', timeout=30000)
+    page.wait_for_timeout(800)
     shoot(page, 'question-picker-poster-group-after')
 
-    # the poster upload question's editor (settings block)
-    page.get_by_role('button', name='Back to form').click()
-    page.get_by_text('Please upload a 1 page pdf file').click()
-    page.wait_for_selector('text=Poster gallery upload', timeout=15000)
+
+def _shot_question_editor(page):
+    page.get_by_role('button', name='Back to form').first.click()
+    page.wait_for_timeout(1500)
+    page.get_by_text('Please upload a 1 page pdf file').first.click()
+    page.wait_for_selector('text=Poster gallery upload', timeout=30000)
+    page.locator('text=Question settings').first.scroll_into_view_if_needed()
+    page.wait_for_timeout(800)
     shoot(page, 'poster-upload-question-defaults')
 
-    # program menu panel
-    page.goto(ADMIN + '/program-builder', wait_until='networkidle')
-    page.get_by_text('DISPLAY', exact=False).click()
-    page.get_by_text('Program menu').click()
-    page.wait_for_selector('text=This panel controls', timeout=15000)
-    dlg = page.locator('text=Program menu').locator(
-        'xpath=ancestor::div[contains(@class,"dialog") or @role="dialog"][1]')
-    shoot(page, 'program-menu-poster-gallery-enabled',
-          dlg.first if dlg.count() else None)
 
-    # program access settings
+def _shot_program_menu(page):
+    page.goto(ADMIN + '/program-builder', wait_until='networkidle')
+    page.wait_for_timeout(3000)
+    page.get_by_text('DISPLAY', exact=True).first.click()
+    page.get_by_text('Program menu', exact=True).first.click()
+    page.wait_for_selector('text=This panel controls', timeout=30000)
+    page.wait_for_timeout(800)
+    shoot(page, 'program-menu-poster-gallery-enabled')
+
+
+def _shot_access_settings(page):
     page.goto(ADMIN + '/program-builder/access-code', wait_until='networkidle')
-    page.wait_for_selector('text=Show submission contents', timeout=15000)
+    page.wait_for_selector('text=Show submission contents', timeout=30000)
+    page.wait_for_timeout(800)
     shoot(page, 'program-access-settings')
 
 
-# ----------------------------------------------------------------- login ----
+# ------------------------------------------------------------- sign-in ----
 
-def login():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(channel='chrome', headless=False)
-        ctx = browser.new_context(viewport=VIEWPORT)
-        page = ctx.new_page()
-        page.goto('https://app.oxfordabstracts.com')
-        print('\nA Chrome window is open. Sign in there yourself.')
-        input('When you can see the Oxford Abstracts dashboard, press Enter here... ')
-        ctx.storage_state(path=STATE)
-        browser.close()
-    print('Session saved to %s (never commit this file).' % STATE)
+def signed_out(page):
+    """True if this page is the sign-in screen."""
+    if '/auth' in page.url:
+        return True
+    try:
+        return 'Sign in to Oxford Abstracts' in page.inner_text('body')
+    except Exception:
+        return True                                # mid-navigation; assume not yet
+
+
+def wait_for_sign_in(page, minutes=10):
+    """Park on the sign-in page until the user is genuinely through.
+
+    The script never types credentials. Detection is by PROBE, not by URL:
+    the app briefly shows an /events URL while bouncing through auth, and an
+    earlier version of this function matched that transient and charged ahead
+    into five failed captures. So: wait for the sign-in screen to go away and
+    stay away, then prove it by loading the real target and checking we are
+    not bounced back.
+    """
+    page.goto(APP, wait_until='networkidle')
+    print('\nA Chrome window is open. Sign in there - capture starts by itself.')
+    print('(waiting up to %d minutes)' % minutes)
+
+    deadline = minutes * 30                        # 2-second polls
+    stable = 0
+    for _ in range(deadline):
+        page.wait_for_timeout(2000)
+        if signed_out(page):
+            stable = 0
+            continue
+        stable += 1
+        if stable < 3:                             # hold for ~6s before probing
+            continue
+
+        # probe: load a page that genuinely requires auth
+        try:
+            page.goto(ADMIN + '/decisions', wait_until='networkidle')
+            page.wait_for_timeout(2500)
+        except Exception:
+            stable = 0
+            continue
+        if signed_out(page):
+            print('  ...still signing in, waiting')
+            page.goto(APP, wait_until='networkidle')
+            stable = 0
+            continue
+        print('signed in and verified on an admin page, capturing...\n')
+        return True
+
+    print('Timed out after %d minutes without a verified sign-in.' % minutes)
+    return False
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
-    if '--login' in sys.argv:
-        return login()
-
     admin = '--admin' in sys.argv
-    if admin and not os.path.exists(STATE):
-        print('No saved session at %s' % STATE)
-        print('Run:  py scripts/capture-poster-gallery.py --login')
-        return 1
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(channel='chrome', headless=True)
-        ctx = browser.new_context(viewport=VIEWPORT,
-                                  storage_state=STATE if admin else None)
-        page = ctx.new_page()
         if admin:
+            # headful: the user has to sign in, and capture happens in the very
+            # same session because the token cannot be persisted (see above)
+            browser = p.chromium.launch(channel='chrome', headless=False)
+            ctx = browser.new_context(viewport=VIEWPORT)
+            page = ctx.new_page()
+            if not wait_for_sign_in(page):
+                browser.close()
+                return 1
             print('admin shots:')
             admin_shots(page)
         else:
+            browser = p.chromium.launch(channel='chrome', headless=True)
+            ctx = browser.new_context(viewport=VIEWPORT)
+            page = ctx.new_page()
             print('public shots:')
             public_shots(page)
         browser.close()
