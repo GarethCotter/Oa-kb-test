@@ -125,6 +125,54 @@ The 19 articles in this section quote **none** of these.
 | Clearing a required email on the attendee form | **"Email required"**, shown live in red under the field; "Complete order" greys out |
 | Attendee needs help | "Not sure what you need? **Contact your event administrator**" |
 
+## The 193-ticket theme: there are four routes to a receipt, and the article has two
+
+`downloading-invoices-and-receipts.md` (228 words) documents only the two
+**attendee** routes: the confirmation screen after payment, and the attendee's own
+dashboard later. Observed in the app, there are two more, both **admin** routes,
+and both undocumented:
+
+**Registration → Registrations table → click the attendee row.** A right-hand
+**"Attendee details"** panel opens showing Status, Order reference, *Order created
+by*, Created date, a Ticket details block with **"Total paid"**, then two
+dropdowns:
+
+| Control | Options |
+|---|---|
+| **"Order downloads"** | **"Receipt - 2"**, **"Invoice - 1"** |
+| **"Email"** | **"Receipt - 2"**, **"Invoice - 1"** |
+
+So an admin can **download** a receipt or invoice for any attendee, **or email it
+to them**, without the attendee doing anything.
+
+Given the volume — 193 tickets, the single largest theme in the 4,898-ticket
+analysis — the likeliest reading is that most of those are organisers asking *how
+do I get my attendee their invoice*, and the article answers a different question:
+how the attendee gets it themselves. `[inferred]` from the volume and the shape of
+the gap, not from reading the tickets.
+
+The panel also has an **Email** field with a swap/change icon beside it, which is
+presumably the route for "Changing the email address on a registration" (237-word
+article). `[untested]`.
+
+## Transactions tab
+
+**Registration → Registrations table → Transactions.**
+
+- Summary cards: **Gross Total**, **Net Total**, **Refunds**, each £0.00
+- Columns: PROCESSED AT / TRANSACTION ID / ORDER NO. / **ORDER OWNER** /
+  TRANSACTION TYPE / **REFUND METHOD** / GROSS TOTAL / NET TOTAL / TAX TOTAL
+- An **Export** dropdown
+
+Two things worth documenting:
+
+- **A £0 order still writes a transaction**, typed **"Payment"**, with a full
+  transaction ID. Free tickets are not invisible to finance.
+- **ORDER OWNER is the buyer**, while the Attendees tab is keyed on the **ticket
+  holder**. The same order appears under two different names depending on which
+  tab you are looking at. For anyone reconciling a list of attendees against a
+  list of payments, that is a trap, and no article mentions it.
+
 ## Cosmetic defects
 
 - Registrations table reads **"1 rows"** (not pluralised) — same class of bug as
