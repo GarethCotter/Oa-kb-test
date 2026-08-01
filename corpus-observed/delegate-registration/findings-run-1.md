@@ -356,6 +356,52 @@ ticket but a **rules system**, supporting **multiple rules scoped to all or some
 tickets**. That is more capable than the article describes, and the article
 describes it in the wrong place.
 
+## Refunds and amendments — the articles' central buttons are not there
+
+Both articles hinge on a control that does not appear on this event.
+
+| Article | Claimed path | Observed |
+|---|---|---|
+| `how-admins-can-amend-existing-delegate-registration-orders` (29 tickets) | **Registration → Registrations**, then **"Edit Order"** | Nav item is **"Registrations table"**. Clicking a row opens an **"Attendee details"** panel with **no "Edit Order" button**. |
+| `refunding-an-attendee-through-delegate-registration` (32 tickets) | **Registration → Registrations**, then **"Edit & Refund Order"** | **No "Edit & Refund Order" button** anywhere. |
+
+Searched the rendered page for `Edit Order`, `Edit order`, `Edit & Refund`,
+`Amend` and `Cancel order`: **all absent**. The only match for "Refund" is the
+**"Refunds £0.00"** summary card on the Transactions tab, which is a figure, not
+an action.
+
+The attendee panel offers only: **Order downloads**, **Email**, and an editable
+**Email** field with a swap icon. The transaction panel offers only **Close**.
+
+**I cannot tell which of two explanations is right, and this matters:**
+
+1. The buttons were removed or renamed in `delegate-registration-v3`, in which
+   case both articles are broken for everyone; or
+2. They appear only on an order that has **money to refund** and a **connected
+   payment provider** — neither of which this £0 order on an unconfigured event
+   has.
+
+Explanation 2 is at least as likely, and I have no way to separate them without a
+paid order on an event with Stripe or PayPal connected. **Do not rewrite either
+article on the strength of this** — settle it first. It is a five-minute check on
+any real event that has taken a payment.
+
+`[untested]` as a result: the whole refund flow, refund states ("Pending Refund"
+is named in the article), and whether refunding cancels the attendee's place as
+the article claims.
+
+## Two smaller finds on the transaction panel
+
+- **A £0 order is recorded as "Payment method: Offline"** — on an event where the
+  Delayed payments tab states in an amber panel that *"Offline payments is not
+  currently configured."* The product is labelling free orders with a payment
+  method it also says is switched off.
+- **The same timestamp is shown in two timezones on one screen.** The transactions
+  table reads **"01 Aug 2026, 15:49 BST"**; the detail panel for that same
+  transaction reads **"Created: 01 Aug 2026, 14:49"** — the UTC value, unlabelled.
+  Anyone reconciling against a bank statement or a payment provider's dashboard
+  will meet a one-hour discrepancy with no explanation on screen.
+
 ## Cosmetic defects
 
 - Tax empty state reads **"Add a tax rules"**; delayed payments reads **"Offline

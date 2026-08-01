@@ -146,3 +146,31 @@ Recorded here because they are certain, not observations of the product.
   jump-link blocks**, so neither reaches the page and `scripts/checks.py` passes.
   Same behaviour as the poster gallery article's `#GO` anchors. Worth deleting from
   the markdown for whoever edits next, but it is tidying, not a live fault.
+
+---
+
+# Dossier structure note
+
+The brief's `walkthrough.md` and `behaviour.md` are combined into
+**`findings-run-1.md`**, which holds the step-by-step observations, verbatim
+labels, error states and settings behaviour from run 1. The remaining files
+follow the brief:
+
+- `overview.md` — the mental model, including the buyer/holder distinction
+- `stumbling.md` — where a first-timer gets stuck
+- `by-plan.md` — deliberately thin; only Professional was available
+- `article-gaps.md` — the deliverable
+
+No screenshots were captured this run. `scripts/capture-poster-gallery.py` proves
+the Playwright pattern works; a registration equivalent would need the same
+one-time sign-in, since the admin session cannot be saved and replayed.
+
+## Left on event 78206
+
+- Ticket **"Test Ticket One - Free"** (quantity 50, max 2 per order)
+- One registration: **Test Attendee One**, order **AD47C**, `test.attendee.one@example.com`
+- A real confirmation email was sent to Gareth's own address as a side effect of
+  the preview walk
+
+Both fixtures are synthetic and deletable. Keeping them is useful: refund and
+amendment testing needs a live order, and that question is still open.
