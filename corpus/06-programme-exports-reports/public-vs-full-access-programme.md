@@ -41,11 +41,7 @@ The table below contains the features availablein each version of the program.
 | Set timezone | Yes | Yes |
 | View event-wide extra content (ie. information / welcome messages etc) | Admin controls | Yes |
 
-
 ## Common questions
 
-
 ### I am unsure what can be viewed in the public and private (full access) version of the program?
-
-See [What is the difference between the public and full access program?](/06-programme-exports-reports/public-vs-full-access-programme)
 

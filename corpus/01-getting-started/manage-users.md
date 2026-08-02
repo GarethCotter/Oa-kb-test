@@ -72,16 +72,9 @@ Should you require any further assistance, please contact our support desk via o
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-99335788.gif)
 
-
 ## Common questions
-
 
 ### How do I add committee members to the software?
 
-See [Manage users](/01-getting-started/manage-users)
-
-
 ### How do I give someone admin rights to the event?
-
-See [Manage users](/01-getting-started/manage-users.html).
 

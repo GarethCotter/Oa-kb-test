@@ -284,8 +284,6 @@ Should you require further assistance, then please get in touch with our helpdes
 
 ### How do I set up payment for delegates?
 
-See [Setting up the invoice and payments for delegate registration](/07-delegate-registration/setting-up-payment-providers-for-delegate-registration.html).
-
 ### What options are currently available for payment?
 
 You can set up [Paypal](https://www.paypal.com/), credit / debit card through [Stripe](https://stripe.com/) or [Authorize.net](https://www.authorize.net/) and there is an invoice option, which offers delegates the option to pay via BACS or cheque.

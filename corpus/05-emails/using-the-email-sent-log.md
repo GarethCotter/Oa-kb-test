@@ -56,11 +56,7 @@ You can also **rearrange the columns to suit your needs better** by simply **cli
 
 Should you need further help please get in touch with our Support team, via the [Contact Form](https://oxfordabstracts.com/resources/contact-support/).
 
-
 ## Common questions
 
-
 ### I'm not sure if I sent an email. How can I check?
-
-See [View sent emails log](/05-emails/using-the-email-sent-log).
 

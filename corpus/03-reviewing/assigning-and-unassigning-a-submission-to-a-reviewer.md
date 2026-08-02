@@ -192,19 +192,13 @@ The reviewer will now be unassigned to that submission.
 
 Should you need any further assistance, please contact our Support Team via our [Contact Form](https://oxfordabstracts.com/resources/contact-support/).
 
-
 ## Common questions
-
 
 ### If I remove a reviewer in** [**Manage users**](/01-getting-started/manage-users.html)**,  do I also need to unassign them from any assigned reviews?
 
 No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](/01-getting-started/manage-users.html) and [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
-
 ### I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?
-
-See [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
-
 
 ### Allowing committee members to assign reviews
 

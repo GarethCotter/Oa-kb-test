@@ -157,14 +157,9 @@ You can drag and drop the questions to change their order
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-e2f759c9.gif)
 
-
 ## Common questions
 
-
 ### I want to add another decision type - 'rework' - how do I do this?
-
-See [Acceptance types](/04-decisions/design-the-decision-form)
-
 
 ### Acceptance types
 

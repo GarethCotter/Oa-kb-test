@@ -36,11 +36,7 @@ Once you have selected your filter, the list of emails with this acceptance type
 
 You can then go back and amend the email for the next acceptance type, and repeat the process.
 
-
 ## Common questions
 
-
 ### How do I send emails to let submitters know if they have been rejected or accepted?
-
-See [Notifying submitters of their outcomes](/04-decisions/notifying-submitters-of-their-outcomes)
 

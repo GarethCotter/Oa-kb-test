@@ -85,11 +85,7 @@ You can add or delete any invited users whenever you require, by scrolling down 
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000087-74516eb1.gif)
 
-
 ## Common questions
 
-
 ### I need to give full access to some people who have not bought a ticket to the conference. How do I do that?
-
-See [Controlling access](/08-conference-platform/controlling-access-to-the-programme)
 

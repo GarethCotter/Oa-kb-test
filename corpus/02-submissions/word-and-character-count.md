@@ -77,11 +77,7 @@ To permit the submissions affected by these discrepancies, you can increase the 
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-82598208.gif)
 
-
 ## Common questions
 
-
 ### Users have reported that the abstract field in the submission form is alerting them that they are over the word limit? How can I resolve this?
-
-See [Word and character count](/02-submissions/word-and-character-count).
 

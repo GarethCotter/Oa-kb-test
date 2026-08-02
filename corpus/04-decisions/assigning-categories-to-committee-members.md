@@ -54,11 +54,7 @@ When committee members login, they will only view their assigned categories.
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-c592f95f.gif)
 
-
 ## Common questions
 
-
 ### I want committee members to be able to make decisions on specific categories. How do I do this?
-
-See [Assigning specific categories to committee members](/04-decisions/assigning-categories-to-committee-members.html).
 

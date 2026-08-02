@@ -61,11 +61,7 @@ and clicking remove next to the relevant email address.
 
 ![](/assets/img/image-png-oct-04-2021-01-38-50-30-pm-e1134f1c.webp)
 
-
 ## Common questions
 
-
 ### I want the emails that are associated with the event to be from an email address of my choosing. Is this possible?
-
-See [Sending emails from your chosen email address](/05-emails/sending-emails-from-your-chosen-email-address.html).
 

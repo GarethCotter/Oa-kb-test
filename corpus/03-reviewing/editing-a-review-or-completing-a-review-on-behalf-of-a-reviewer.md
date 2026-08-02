@@ -70,11 +70,7 @@ Click **Start reviewing** to complete or view the review. When you have finished
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-6652d795.gif)
 
-
 ## Common questions
 
-
 ### I need to complete a review on behalf of a reviewer. How do I do that?
-
-See [Editing a review or completing a review on behalf of a reviewer](/03-reviewing/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer.html).
 

@@ -54,11 +54,7 @@ Or alternatively, enter the booking ID of the scheduled conflict and amend that.
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000081-91608620.gif)
 
-
 ## Common questions
 
-
 ### How can I see if there is a clash in bookings?
-
-See [Advanced / virtual conference program - program bookings](/08-conference-platform/session-bookings).
 

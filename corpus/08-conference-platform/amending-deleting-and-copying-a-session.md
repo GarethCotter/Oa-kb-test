@@ -54,11 +54,7 @@ To delete a session, click on the bin icon. NB - you cannot delete a session wit
 ![](/assets/img/undefined-apr-01-2021-03-08-56-32-pm-fd817d10.webp)  
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000081-97afa079.gif)
 
-
 ## Common questions
 
-
 ### How do I delete a session?
-
-See [Amending, deleting and copying a session](/08-conference-platform/amending-deleting-and-copying-a-session.html).
 
