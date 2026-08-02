@@ -23,7 +23,7 @@ Often, issues occur because users have logged on to [Oxford Abstracts](https://a
 * users seeing submissions and reviews from a past event on their dashboard, and not the one in question
 * submitters not being able to access their submissions
 
-Check they are logging in with the correct email address. **Guidance for** **Reviewer users** that are experiencing this can be found [here.](/13-for-reviewers-committee/completing-a-symposium-review.html#CH)
+Check they are logging in with the correct email address. **Guidance for** **Reviewer users** that are experiencing this can be found in [Completing a symposium review](/13-for-reviewers-committee/completing-a-symposium-review.html).
 
 If they are logging in with the correct email, ask them to:
 

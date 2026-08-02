@@ -60,7 +60,7 @@ With all dropdown questions, it is advised that you always add 'other' as an opt
 
 #### Showing reviews to submitters
 
-If you decide that you would like to show the reviews to submitters, there is guidance [here](/03-reviewing/showing-reviews-to-submitters).
+If you decide that you would like to show the reviews to submitters, see [Showing reviews to submitters](/03-reviewing/showing-reviews-to-submitters).
 
 You can select which of the review questions that you would like submitters to see the response to, by checking the box at the end of each question (shown below) so be aware that anything entered by your reviewers will be seen by the submitters in each case.
 

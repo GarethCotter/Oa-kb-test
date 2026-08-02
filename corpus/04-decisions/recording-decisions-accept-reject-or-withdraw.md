@@ -25,7 +25,7 @@ Click on **Columns** to the right hand of the table to reveal the groups of data
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-72314642.png)   
   
 
-The bottom group, **Decision responses**, contains the fields where you will make your decisions (with the exception of decision last updated, which is generated automatically). These fields are determined by [Decision form.](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2Rlc2lnbi10aGUtZGVjaXNpb24tZm9ybQ%3D%3D&ct=SEARCH&pid=9108826&cid=41194666889&t=ZGVjaXNpb24gZm9ybQ%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=42c790c2-df17-4bd5-b255-9c84e21be706&rs=UNKNOWN&hs-expires=1669819998&hs-version=1&hs-signature=APUk-v5NrK3swBubJY0OIHBkvWfn32StRg&hsLang=en)
+The bottom group, **Decision responses**, contains the fields where you will make your decisions (with the exception of decision last updated, which is generated automatically). These fields are determined by [Decision form.](/04-decisions/design-the-decision-form)
 
 Tick **Decision**, as well as the columns in which you would like to enter data.
 

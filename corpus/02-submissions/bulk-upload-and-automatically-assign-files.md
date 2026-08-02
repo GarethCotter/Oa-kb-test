@@ -15,7 +15,7 @@ This information is for Admins ONLY!
 
 **Please note:** To be able to accept uploaded files such as posters, this question has to be added to the submission form.
 
-[Click here](/02-submissions/designing-the-submission-form) and scroll down to ‘Adding Questions’ to find out how to do this.
+See [Designing the submission form](/02-submissions/designing-the-submission-form) and scroll down to ‘Adding Questions’ to find out how to do this.
 
 From your main dashboard, navigate to the left-hand column and **click on Abstract Management ➞ Reports & Downloads**.
 

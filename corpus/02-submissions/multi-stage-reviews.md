@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 Go to [**Event dashboard**](/01-getting-started/event-dashboard) **→ Abstract Management** **→** **Reviews → Forms & Setup.**
 
-It is advised that you become familiar with setting up [review forms](https://app.hubspot.com/knowledge/9108826/insights/article/41196128493/performance)  before you set up your mult-stage review forms. The process is the same, apart from the guidance below.
+It is advised that you become familiar with setting up [review forms](/03-reviewing/designing-the-review-form.html)  before you set up your mult-stage review forms. The process is the same, apart from the guidance below.
 
 You wll see a tab for each stage. Simply click on the stage tab you would like to edit.
 

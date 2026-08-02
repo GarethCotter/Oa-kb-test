@@ -15,7 +15,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: Not all of the features below will be available in the FREE package. To view the limitations, click [here.](/01-getting-started/the-essential-abstract-management-tools)
+NB: Not all of the features below will be available in the FREE package. To view the limitations, see [The essential abstract management tools](/01-getting-started/the-essential-abstract-management-tools).
 
 [Skip to written instructions.](#TEX)
 
@@ -68,7 +68,7 @@ Edit to your requirements and click **Back to Form**when you are done. Changes a
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-d1e35fbe.webp)  
   
 
-Instructions for setting **Combined word limits** are[here](/02-submissions/combined-word-count.html).
+Instructions for setting **combined word limits** are in [Combined word count](/02-submissions/combined-word-count.html).
 
 ![](/assets/img/undefined-feb-23-2021-11-27-06-51-am-f8fe1bb6.webp)  
   

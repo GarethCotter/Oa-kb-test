@@ -106,7 +106,7 @@ The 'teaser page' is a preview screen showcasing all your exhibitors for attende
 
 The gives you two options:
 
-1. Allowing exhibitors to use the chat functionality in your event. The attendee will always have to ‘accept’ the chat if the exhibitor makes first contact. If this isn’t checked they won’t see the chat feature at all. (See [Professional Conference - Chat feature](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2FkdmFuY2VkLS8tdmlydHVhbC1wcm9ncmFtLWNoYXQtZmVhdHVyZQ%3D%3D&ct=SEARCH&pid=9108826&cid=48304785796&t=Y2hhdA%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=caa0ee32-5797-4269-80b3-47a5e950530d&rs=UNKNOWN&hs-expires=1669112039&hs-version=1&hs-signature=APUk-v7FeAp371RUVS4SWNmH37klDk3VBg&hsLang=en) for guidance on setting up this feature.)
+1. Allowing exhibitors to use the chat functionality in your event. The attendee will always have to ‘accept’ the chat if the exhibitor makes first contact. If this isn’t checked they won’t see the chat feature at all. (See [Professional Conference - Chat feature](/08-conference-platform/the-chat-feature) for guidance on setting up this feature.)
 
 2. Hiding your attendees' information until they've made first contact with the exhibitor
 
@@ -120,7 +120,7 @@ Go to:
 
 When you add your sponsors you can link them directly to an existing exhibitor.
 
-For guidance on setting up sponsors, see [Professional Conference - Sponsors](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL3Nwb25zb3JzaGlw&ct=SEARCH&pid=9108826&cid=52291597098&t=c3BvbnNvcnM%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=37404300-7c66-4601-ac91-3f596707e56d&rs=UNKNOWN&hs-expires=1669112289&hs-version=1&hs-signature=APUk-v4paWqmLXUUKBsxmuCKISPNu39E2A&hsLang=en)
+For guidance on setting up sponsors, see [Professional Conference - Sponsors](/08-conference-platform/professional-conference-sponsors)
 
 ![](/assets/img/image-png-nov-15-2021-10-26-43-71-am-268f8501.webp)
 
@@ -130,7 +130,7 @@ Then, when you select your session sponsors, if they have a corresponding exhibi
 
 ---
 
-Read how exhibitors configure their booth and the end user experience [here.](/14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth)
+Read how exhibitors configure their booth and the end user experience in [Exhibitor space - setting up and managing your booth](/14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth).
 
 
 ## Common questions

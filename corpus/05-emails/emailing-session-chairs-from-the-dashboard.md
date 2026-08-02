@@ -33,6 +33,6 @@ If you do not wish to email all the chairs at the same time, you can instead **c
 
 Once you have made your selection, go to the **top right of the dashboard** where you will see/click the button “***Email Selected***” (see image above), to send an email.
 
-Please click [here](/05-emails/sending-emails-from-tables) to see how to send emails from tables.
+See [Sending emails from tables](/05-emails/sending-emails-from-tables) for how to send emails from tables.
 
 Should you require further assistance, please get in touch with our helpdesk - support@oxfordabstracts.com.

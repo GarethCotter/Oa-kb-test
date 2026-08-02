@@ -39,4 +39,4 @@ Then scroll to the **Reviews** email towards the end of the page and choose **De
 
 ![](/assets/img/undefined-feb-15-2022-02-53-55-83-pm-7ea9f113.webp)
 
-[Edit your email](/05-emails/editing-the-template-emails) as required, then follow the instructions [here](/05-emails/sending-and-scheduling-emails) to send your email.
+[Edit your email](/05-emails/editing-the-template-emails) as required, then follow [Sending and scheduling emails](/05-emails/sending-and-scheduling-emails) to send your email.

@@ -77,7 +77,12 @@ def check_links():
 #    HubSpot is cancelled, and check 1 cannot see them because it skips http.
 #    source_url in the frontmatter is exempt: it is provenance.
 def check_old_kb():
-    pat = re.compile(r'(?:https?:)?//help\.oxfordabstracts\.com/knowledge/')
+    # Two shapes, both of which have actually occurred. The second is a HubSpot
+    # analytics wrapper with the real old-KB URL base64'd inside the query string,
+    # which the plain /knowledge/ pattern cannot see - 21 of them hid behind it.
+    pat = re.compile(r'(?:https?:)?//help\.oxfordabstracts\.com/knowledge/'
+                     r'|help\.oxfordabstracts\.com/_hcms/'
+                     r'|app\.hubspot\.com/')
     fm = re.compile(r'^---\n.*?\n---\n', re.S)
     bad = []
     for p in glob.glob('corpus/*/*.md') + glob.glob('corpus/*.md'):

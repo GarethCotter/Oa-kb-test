@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 NB: The below guidance is for reviewers only.
 
-If you are a submitter, please [click here](/12-for-submitters/viewing-comments-left-by-reviewers) for guidance on viewing comments on your submissions.
+If you are a submitter, see [Viewing comments left by reviewers](/12-for-submitters/viewing-comments-left-by-reviewers).
 
 **How to leave comments on a submission:**
 
