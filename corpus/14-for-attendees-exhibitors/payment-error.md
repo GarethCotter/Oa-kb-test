@@ -1,7 +1,7 @@
 ---
 title: "Payment error"
 section: "14-for-attendees-exhibitors"
-audience: participants
+audience: attendees
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/payment-error
 last_reviewed: 2026-07-28

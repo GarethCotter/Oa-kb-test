@@ -1,7 +1,7 @@
 ---
 title: "Exhibitor space - setting up and managing your booth"
 section: "14-for-attendees-exhibitors"
-audience: participants
+audience: attendees
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/professional-conference-exhibitor-feature-exhibitor-set-up
 last_reviewed: 2026-07-29

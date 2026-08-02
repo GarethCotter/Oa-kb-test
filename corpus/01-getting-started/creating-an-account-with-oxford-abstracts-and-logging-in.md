@@ -1,7 +1,7 @@
 ---
 title: "Creating an account with Oxford Abstracts and logging in"
 section: "01-getting-started"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts
 merged_from: [faq-getting-started]

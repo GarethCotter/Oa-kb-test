@@ -266,6 +266,7 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .aud-submitters{--aud:#1F6F5C}
 .aud-reviewers{--aud:#5B3E8E}
 .aud-attendees{--aud:#8A5A00}
+.aud-everyone{--aud:#4A5568}
 @media (max-width:520px){.audience{padding:12px 14px}}
 .prose{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px 38px}
 .prose h2{font-family:'Gloock',serif;font-weight:400;font-size:27px;margin:30px 0 12px;-webkit-text-stroke:.3px currentColor}
@@ -708,6 +709,10 @@ AUDIENCES = {
     'submitters': ('For people making a submission', 'Organising the event?', '/#organisers'),
     'reviewers':  ('For reviewers',               'Organising the event?',  '/#organisers'),
     'attendees':  ('For conference attendees',    'Organising the event?',  '/#organisers'),
+    # Everyone: account, login, profile and connection problems apply to every role.
+    # Without this, those articles carried no tag at all, which reads as "we forgot"
+    # rather than "this one is for you whoever you are".
+    'everyone':   ('For everyone',                'Browse by role',         '/'),
 }
 # The audience sentence came over from HubSpot in two families - "The guidance below
 # is for X" and the shorter "This guide/article is for X" - behind an optional
@@ -1185,6 +1190,13 @@ for folder, num, name, aud, blurb in SECTIONS:
             body_html += '</div>'
         title = meta.get('title', slug.replace('-', ' ').title())
         standfirst, audience, toc, body_html = enrich_body(body_html, title)
+        # Most articles state their audience in the prose and it is lifted out above.
+        # Where they do not, fall back to the frontmatter, so a deliberate value is
+        # honoured rather than the article silently rendering with no tag at all.
+        if not audience:
+            fm_aud = (meta.get('audience') or '').strip().lower()
+            if fm_aud in AUDIENCES:
+                audience = fm_aud
         parsed.append((slug, title, meta.get('plan', ''), standfirst, audience, toc, body_html))
         meta_by_slug[slug] = meta
         first_sentence[slug] = lead_sentence(body_html)

@@ -1,7 +1,7 @@
 ---
 title: "Assigning submissions to reviewers as a committee member"
 section: "13-for-reviewers-committee"
-audience: participants
+audience: reviewers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/assigning-reviews-to-reviewers-as-a-committee-member
 last_reviewed: 2026-07-28

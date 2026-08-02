@@ -1,7 +1,7 @@
 ---
 title: "Testing the accessibility of Oxford Abstracts web pages"
 section: "01-getting-started"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-test-accessibility-of-oxford-abstracts-web-pages-with-google-lighthouse
 last_reviewed: 2026-07-28

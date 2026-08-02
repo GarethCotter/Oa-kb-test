@@ -58,7 +58,10 @@ def normalise(path):
 
 def check(host, scheme, row):
     src = urlparse(row['old_url']).path
-    want = normalise(row['new_path'])
+    # A destination may be an absolute URL - one row points off-site to the support
+    # contact form, because the article it used to reach was retired. Compare paths.
+    want = normalise(urlparse(row['new_path']).path if '://' in row['new_path']
+                     else row['new_path'])
     url = '%s://%s%s' % (scheme, host, src)
     req = urllib.request.Request(url, headers={'User-Agent': UA}, method='GET')
     try:

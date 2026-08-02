@@ -1,7 +1,7 @@
 ---
 title: "Bookmarking sessions on the event schedule"
 section: "08-conference-platform"
-audience: organisers
+audience: attendees
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-bookmark-sessions-on-the-event-schedule
 last_reviewed: 2026-07-28

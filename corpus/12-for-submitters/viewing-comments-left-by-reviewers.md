@@ -1,7 +1,7 @@
 ---
 title: "Viewing comments left by reviewers"
 section: "12-for-submitters"
-audience: participants
+audience: submitters
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/draft-submitters-inline-comments
 last_reviewed: 2026-07-28
