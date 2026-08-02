@@ -17,7 +17,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-**Go to Event dashboard → Abstract Management → [Submission](/02-submissions/designing-the-submission-form.html) → Form & Setup →**Combine Word Limits**.
+**Go to Event dashboard → Abstract Management → Submission → Form & Setup →**Combine Word Limits**.
 
 ![](/assets/img/screenshot-2025-08-15-at-11-28-04-png-ae3fb4be.webp)
 

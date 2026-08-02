@@ -15,23 +15,23 @@ last_reviewed: 2026-07-28
 
 **Event details**
 
-Click [Event details](/01-getting-started/event-details) in the Event Dashboard then check/update all the event details and add a logo if desired.
+Click **Event details** in the Event Dashboard then check/update all the event details and add a logo if desired.
 
   
 
 **Users**
 
-Click [Users](/01-getting-started/manage-users) in the Event Dashboard to invite/remove event administrators, reviewers, committee members and API users.
+Click **Users** in the Event Dashboard to invite/remove event administrators, reviewers, committee members and API users.
 
 **Submission, review and decision forms**
 
-Scroll to the **Forms** section of the Event Dashboard then click on [Submission form](/02-submissions/), [Review form](http://t.ly/VDMz), [Decision form](/04-decisions/design-the-decision-form) to review/update each of the forms.
+Scroll to the **Forms** section of the Event Dashboard then click on **Submission form**, **Review form** or **Decision form** to review and update each of them.
 
   
 
 **Emails**
 
-Click [Emails](/05-emails/) in the Event Dashboard then click on **Edit and send** to check each email is fit for purpose and create any custom emails required.
+Click **Emails** in the Event Dashboard then click on **Edit and send** to check each email is fit for purpose and create any custom emails required.
 
   
   

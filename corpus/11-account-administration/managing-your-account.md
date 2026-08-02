@@ -19,7 +19,7 @@ Skip to:
 
 [Managing account (client) admins](#ANA)
 
-Click on [**Manage Account**](/11-account-administration/managing-your-account.html) in the relevant account in your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
+Click on **Manage Account** in the relevant account in your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9571b285.webp)  
   

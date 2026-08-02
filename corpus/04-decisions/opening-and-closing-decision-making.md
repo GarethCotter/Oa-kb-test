@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 **Please note:** The form only needs to be open if Committee Members are working on the form.
 
-To assign Committee members, go to [Manage users](/01-getting-started/manage-users.html)
+To assign Committee members, go to **Manage users**
 
 Go to the **Event dashboard**.
 

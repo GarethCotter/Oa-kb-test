@@ -80,9 +80,14 @@ def check_old_kb():
     # Two shapes, both of which have actually occurred. The second is a HubSpot
     # analytics wrapper with the real old-KB URL base64'd inside the query string,
     # which the plain /knowledge/ pattern cannot see - 21 of them hid behind it.
+    # Three shapes, all of which have occurred. The analytics wrapper hides the real
+    # old-KB URL in a base64 query string; a URL shortener hides it completely -
+    # three t.ly links resolved to the dying HubSpot KB and no pattern could have
+    # seen that, so shorteners are flagged on principle and must be justified.
     pat = re.compile(r'(?:https?:)?//help\.oxfordabstracts\.com/knowledge/'
                      r'|help\.oxfordabstracts\.com/_hcms/'
-                     r'|app\.hubspot\.com/')
+                     r'|app\.hubspot\.com/'
+                     r'|//(?:t\.ly|bit\.ly|tinyurl\.com|goo\.gl|ow\.ly)/')
     fm = re.compile(r'^---\n.*?\n---\n', re.S)
     bad = []
     for p in glob.glob('corpus/*/*.md') + glob.glob('corpus/*.md'):

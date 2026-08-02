@@ -111,7 +111,7 @@ See [Your personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 [Guidance for delegates wishing to register](https://oxfordabstracts.com/resources/contact-support/)
 
-[Guidance for conference platform users](http://t.ly/PUOJ)
+[Guidance for conference platform users](/14-for-attendees-exhibitors/exploring-the-conference-platform)
 
-[Guidance for exhibitors and representatives](http://t.ly/L4AK)
+[Guidance for exhibitors and representatives](/14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth)
 
