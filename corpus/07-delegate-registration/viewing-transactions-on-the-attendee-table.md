@@ -13,8 +13,6 @@ last_reviewed: 2026-07-28
 
 This information is for Admins ONLY!
 
-#### You can either watch the video below for a step by step walkthrough, or scroll down to follow the written instructions.
-
 From your main dashboard, go to the **left-hand column** and click on **Registration → Registrations**
 
 ![](/assets/img/screenshot-2024-03-20-at-15-11-15-png-f7bfdef9.webp)

@@ -15,8 +15,6 @@ Plus You can learn how to purchase tickets on behalf of attendees.
 
 Please note this information is for Admins ONLY.
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 **Skip to the following sections:**
 
 [How to create a ticket](#create-ticket)

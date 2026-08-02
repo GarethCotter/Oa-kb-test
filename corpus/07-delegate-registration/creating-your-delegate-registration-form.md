@@ -13,8 +13,6 @@ last_reviewed: 2026-07-28
 
 This information is for admins ONLY.
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 **Skip to the following written instructions**
 
 [How to add questions to your delegate registration form](#add-questions)

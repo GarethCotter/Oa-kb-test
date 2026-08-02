@@ -13,8 +13,6 @@ last_reviewed: 2026-08-01
 
 This information is for Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 **From your dashboard, click on Registration → Tickets → Coupons**
 
 ![](/assets/img/screenshot-2024-03-20-at-15-36-37-png-691225d6.webp)

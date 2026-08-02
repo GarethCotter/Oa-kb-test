@@ -13,8 +13,6 @@ last_reviewed: 2026-07-28
 
 This information is for Event Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 From your main dashboard, navigate to the **left-hand column** and **click on Registration** → **Tickets → Ticket Details Page**.
 
 ![](/assets/img/screenshot-2024-03-20-at-15-01-22-png-5bbabf29.webp)
@@ -64,7 +62,6 @@ You can also include Alt text below if you wish for the banner image.
 * A heading
 * Text
 * Image
-* Video
 
 You can also **drag and drop these boxes to rearrange the order** they appear in.
 

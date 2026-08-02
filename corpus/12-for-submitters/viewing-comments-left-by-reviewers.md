@@ -15,8 +15,6 @@ NB: The below guidance is for submitters only.
 
 If you are a reviewer, please [click here](/13-for-reviewers-committee/leaving-comments-on-submissions-you-review) for guidance on leaving comments on submissions.
 
-You can view our walkthrough video below, or [skip to the written instructions.](#writteninstructions)
-
 **How to view comments left on my submission:**
 
 1. Log into your account and navigate to your dashboard

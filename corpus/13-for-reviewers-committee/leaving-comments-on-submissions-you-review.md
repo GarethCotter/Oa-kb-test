@@ -15,8 +15,6 @@ NB: The below guidance is for reviewers only.
 
 If you are a submitter, please [click here](/12-for-submitters/viewing-comments-left-by-reviewers) for guidance on viewing comments on your submissions.
 
-You can view our walkthrough video below or [skip to the written instructions.](#writteninstructions)
-
 **How to leave comments on a submission:**
 
 Once you've logged in and have selected "Start Reviewing", you'll know that the comments feature has been enabled if you see "Comments enabled". If you don't see this, this means the event administrator has not enabled this feature.

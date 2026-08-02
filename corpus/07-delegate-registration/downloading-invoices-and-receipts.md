@@ -11,8 +11,6 @@ last_reviewed: 2026-08-01
 
 ## Learn how attendees can download their invoices or receipts when they have purchased a ticket through delegate registration.
 
-For a walk through demonstration on how to download invoices and receipts, please watch the below video.
-
 Alternatively you can read and follow the step by step instructions [here.](#instructions)
 
 When an attendee is in the process of buying their tickets, when payment is completed, on the Order Details Confirmation screen they will see a dropdown box at the top right of the page called Download Receipt.

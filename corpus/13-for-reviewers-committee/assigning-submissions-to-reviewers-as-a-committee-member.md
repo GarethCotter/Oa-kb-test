@@ -47,8 +47,6 @@ Once you have chosen all the reviewers you wish to assign submissions too, click
 
 You can also assign submission to reviewers by searching in the category field.
 
-For further instruction on how to do this - please watch our [Instruction video](#instruction_video) at the top of the page.
-
 **For further guidance on assigning, see [Assigning and unassigning a submission to a reviewer.](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer)**
 
 If you require further assistance please get in touch with our help desk via our [Contact Form.](https://oxfordabstracts.com/resources/contact-support/)
