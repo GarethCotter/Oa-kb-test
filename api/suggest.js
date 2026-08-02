@@ -49,6 +49,35 @@ const AREAS = new Set([
   'More than one / the whole site'
 ]);
 
+/* The team, from oxfordabstracts.com/about. Two jobs: the team name is derived here
+   rather than trusted from the form, so it cannot drift or be spoofed; and being on
+   this list is what makes an email address optional, since Kristy can already reach
+   anyone on it. Someone not listed - a new starter, or anyone the about page has not
+   caught up with - picks "I'm not here", types a name, and must give an email.
+
+   When the about page changes, this list and assets/img/team/ both need the edit.
+   A name here with no matching photo just shows a broken circle, so change both. */
+const ROSTER = new Map([
+  ['Geoff', 'Founder & GM'],
+  ['Sandra', 'Accounts'],
+  ['Nori', 'Customer Support'],
+  ['Diego', 'Customer Support'],
+  ['Rory', 'Engineering'],
+  ['Finn', 'Engineering'],
+  ['Sebastián', 'Engineering'],
+  ['Justin', 'Engineering'],
+  ['Conor', 'Customer Success'],
+  ['Neha', 'Customer Success'],
+  ['Angela', 'Customer Success'],
+  ['Jen', 'Design'],
+  ['Ji', 'Design'],
+  ['Farihah', 'Product Management'],
+  ['Rosie', 'Product Management'],
+  ['Gareth', 'Marketing'],
+  ['Kristy', 'Content Manager'],
+  ['Lou', 'UX Researcher']
+]);
+
 const EMAIL_SHAPE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const clip = (v, n) => String(v == null ? '' : v).trim().slice(0, n);
@@ -93,9 +122,14 @@ export default async function handler(req, res) {
     });
   }
 
+  const name = clip(b.name, 80);
+  const onRoster = ROSTER.has(name);
+
   const s = {
     ts: new Date().toISOString(),
-    name: clip(b.name, 80),
+    name,
+    // Derived, never taken from the request: a client cannot claim a team it is not on.
+    team: onRoster ? ROSTER.get(name) : '',
     email: clip(b.email, 120),
     type: clip(b.type, 60),
     text: clip(b.text, 4000),
@@ -108,14 +142,17 @@ export default async function handler(req, res) {
   // Required fields, named individually so the page can say which one is missing
   // rather than "invalid input".
   const missing = [];
-  if (!s.name) missing.push('your name');
-  if (!s.email) missing.push('your email');
+  if (!s.name) missing.push('who you are');
+  // Only off-roster senders must leave an address; see the note on ROSTER.
+  if (!s.email && !onRoster) missing.push('your email');
   if (!s.type) missing.push('what kind of suggestion this is');
   if (!s.text) missing.push('the suggestion itself');
   if (missing.length) {
     return res.status(400).json({ ok: false, error: 'Still needed: ' + missing.join(', ') + '.' });
   }
-  if (!EMAIL_SHAPE.test(s.email)) {
+  // Optional, but if given it has to be usable - a typo'd address is worse than none,
+  // because it looks like a reply route and is not one.
+  if (s.email && !EMAIL_SHAPE.test(s.email)) {
     return res.status(400).json({ ok: false, error: 'That email address does not look right.' });
   }
 

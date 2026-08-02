@@ -89,6 +89,30 @@ select{appearance:none;cursor:pointer;
   font-weight:500}
 .chips input:focus-visible+label{outline:3px solid var(--red);outline-offset:2px}
 
+/* The face picker. Real radios again, off-screen but focusable, so arrow keys move
+   through the team the way they do through any radio group. The photo carries alt=""
+   because the name sits beside it in text - alt on both makes a screen reader say
+   every colleague's name twice. */
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));
+  gap:16px 8px;margin-top:8px}
+.people input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.people label{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;
+  text-align:center;font-size:14px;color:var(--muted);line-height:1.25}
+.people img,.people .noface{width:64px;height:64px;border-radius:50%;object-fit:cover;
+  display:block;background:var(--cream);border:2.5px solid var(--white);
+  box-shadow:0 0 0 1.5px var(--line);
+  transition:box-shadow .14s,transform .14s}
+.people label:hover img,.people label:hover .noface{transform:translateY(-3px);
+  box-shadow:0 0 0 1.5px var(--navy)}
+.people input:checked+label img,.people input:checked+label .noface{
+  box-shadow:0 0 0 3px var(--red);transform:translateY(-3px)}
+.people input:checked+label{color:var(--navy);font-weight:600}
+.people input:focus-visible+label img,.people input:focus-visible+label .noface{
+  outline:3px solid var(--red);outline-offset:3px}
+.noface{display:grid;place-items:center;font-size:26px;font-weight:300;color:var(--muted);
+  border-style:dashed !important;border-color:rgba(16,28,56,.28) !important;box-shadow:none}
+
+.vh-label{position:absolute;left:-9999px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 .actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
@@ -128,6 +152,13 @@ footer a{color:var(--navy)}
   .nav img{width:132px;height:31px}
   .tagline{display:none}
   .hero{padding:40px 0 26px}
+  /* Nineteen faces at three across ran to seven rows and swallowed a phone screen
+     whole. Smaller circles fit four across in five rows; still a comfortable tap
+     target, and the point is recognising a face, not studying it. */
+  .people{grid-template-columns:repeat(auto-fill,minmax(62px,1fr));gap:14px 6px}
+  .people img,.people .noface{width:52px;height:52px}
+  .people label{font-size:13px;gap:6px}
+  .noface{font-size:21px}
 }
 </style>
 </head>
@@ -258,16 +289,64 @@ footer a{color:var(--navy)}
 
     <fieldset>
       <legend>And you are?</legend>
-      <p class="legend-note">So Kristy can come back to you if she needs the detail.</p>
+      <p class="legend-note">Find your face. Kristy will know who to thank.</p>
 
-      <div class="field">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" maxlength="80" required autocomplete="name">
+      <div class="field grp">
+        <span id="who-l" class="vh-label">Who is sending this?</span>
+        <div class="people" role="radiogroup" aria-labelledby="who-l">
+          <input type="radio" name="who" id="w1" value="Geoff" data-team="Founder &amp; GM">
+            <label for="w1"><img src="/assets/img/team/geoff.webp" alt="" width="64" height="64" loading="lazy"><span>Geoff</span></label>
+          <input type="radio" name="who" id="w2" value="Sandra" data-team="Accounts">
+            <label for="w2"><img src="/assets/img/team/sandra.webp" alt="" width="64" height="64" loading="lazy"><span>Sandra</span></label>
+          <input type="radio" name="who" id="w3" value="Nori" data-team="Customer Support">
+            <label for="w3"><img src="/assets/img/team/nori.webp" alt="" width="64" height="64" loading="lazy"><span>Nori</span></label>
+          <input type="radio" name="who" id="w4" value="Diego" data-team="Customer Support">
+            <label for="w4"><img src="/assets/img/team/diego.webp" alt="" width="64" height="64" loading="lazy"><span>Diego</span></label>
+          <input type="radio" name="who" id="w5" value="Rory" data-team="Engineering">
+            <label for="w5"><img src="/assets/img/team/rory.webp" alt="" width="64" height="64" loading="lazy"><span>Rory</span></label>
+          <input type="radio" name="who" id="w6" value="Finn" data-team="Engineering">
+            <label for="w6"><img src="/assets/img/team/finn.webp" alt="" width="64" height="64" loading="lazy"><span>Finn</span></label>
+          <input type="radio" name="who" id="w7" value="Sebastián" data-team="Engineering">
+            <label for="w7"><img src="/assets/img/team/sebastian.webp" alt="" width="64" height="64" loading="lazy"><span>Sebastián</span></label>
+          <input type="radio" name="who" id="w8" value="Justin" data-team="Engineering">
+            <label for="w8"><img src="/assets/img/team/justin.webp" alt="" width="64" height="64" loading="lazy"><span>Justin</span></label>
+          <input type="radio" name="who" id="w9" value="Conor" data-team="Customer Success">
+            <label for="w9"><img src="/assets/img/team/conor.webp" alt="" width="64" height="64" loading="lazy"><span>Conor</span></label>
+          <input type="radio" name="who" id="w10" value="Neha" data-team="Customer Success">
+            <label for="w10"><img src="/assets/img/team/neha.webp" alt="" width="64" height="64" loading="lazy"><span>Neha</span></label>
+          <input type="radio" name="who" id="w11" value="Angela" data-team="Customer Success">
+            <label for="w11"><img src="/assets/img/team/angela.webp" alt="" width="64" height="64" loading="lazy"><span>Angela</span></label>
+          <input type="radio" name="who" id="w12" value="Jen" data-team="Design">
+            <label for="w12"><img src="/assets/img/team/jen.webp" alt="" width="64" height="64" loading="lazy"><span>Jen</span></label>
+          <input type="radio" name="who" id="w13" value="Ji" data-team="Design">
+            <label for="w13"><img src="/assets/img/team/ji.webp" alt="" width="64" height="64" loading="lazy"><span>Ji</span></label>
+          <input type="radio" name="who" id="w14" value="Farihah" data-team="Product Management">
+            <label for="w14"><img src="/assets/img/team/farihah.webp" alt="" width="64" height="64" loading="lazy"><span>Farihah</span></label>
+          <input type="radio" name="who" id="w15" value="Rosie" data-team="Product Management">
+            <label for="w15"><img src="/assets/img/team/rosie.webp" alt="" width="64" height="64" loading="lazy"><span>Rosie</span></label>
+          <input type="radio" name="who" id="w16" value="Gareth" data-team="Marketing">
+            <label for="w16"><img src="/assets/img/team/gareth.webp" alt="" width="64" height="64" loading="lazy"><span>Gareth</span></label>
+          <input type="radio" name="who" id="w17" value="Kristy" data-team="Content Manager">
+            <label for="w17"><img src="/assets/img/team/kristy.webp" alt="" width="64" height="64" loading="lazy"><span>Kristy</span></label>
+          <input type="radio" name="who" id="w18" value="Lou" data-team="UX Researcher">
+            <label for="w18"><img src="/assets/img/team/lou.webp" alt="" width="64" height="64" loading="lazy"><span>Lou</span></label>
+          <input type="radio" name="who" id="wother" value="__other__">
+            <label for="wother"><span class="noface" aria-hidden="true">+</span><span>I&rsquo;m not here</span></label>
+        </div>
+      </div>
+
+      <!-- Revealed only by "I'm not here". New starters and anyone the about page has
+           not caught up with still need a way through, and it must not be a dead end. -->
+      <div class="field" id="other-wrap" hidden>
+        <label for="othername">Your name</label>
+        <input type="text" id="othername" name="othername" maxlength="80" autocomplete="name">
       </div>
 
       <div class="field">
-        <label for="email">Your email</label>
-        <input type="email" id="email" name="email" maxlength="120" required autocomplete="email">
+        <label for="email">Your email <span class="opt" id="email-opt">(optional)</span></label>
+        <span class="help" id="email-help">Only if there is a better address for this than
+        the one Kristy already has for you.</span>
+        <input type="email" id="email" name="email" maxlength="120" autocomplete="email">
       </div>
 
       <div class="hp" aria-hidden="true">
@@ -322,6 +401,35 @@ footer a{color:var(--navy)}
     return '';
   }
 
+  var whoInputs = f.elements.who;
+
+  function personName() {
+    var w = val('who');
+    return w === '__other__' ? val('othername') : w;
+  }
+
+  function personTeam() {
+    for (var i = 0; i < whoInputs.length; i++)
+      if (whoInputs[i].checked) return whoInputs[i].getAttribute('data-team') || '';
+    return '';
+  }
+
+  /* Picking a face is the whole identity step, so email is optional for everyone on
+     the wall - Kristy can already reach them. "I'm not here" is the one branch that
+     needs it, and the labelling changes to say so rather than staying silently
+     different. No focus() call here on purpose: moving focus out of a radio group on
+     change would break arrow-key navigation through it. */
+  function syncOther() {
+    var other = val('who') === '__other__';
+    document.getElementById('other-wrap').hidden = !other;
+    document.getElementById('email-opt').textContent = other ? '' : '(optional)';
+    document.getElementById('email-help').textContent = other
+      ? 'Needed this time, since you are not on the list above.'
+      : 'Only if there is a better address for this than the one Kristy already has for you.';
+  }
+  for (var wi = 0; wi < whoInputs.length; wi++)
+    whoInputs[wi].addEventListener('change', syncOther);
+
   /* Failure never clears the form. Someone has just written several paragraphs, so
      the error keeps every field as typed and offers to put the text on the clipboard
      - the one thing that makes a dead endpoint survivable. */
@@ -335,7 +443,8 @@ footer a{color:var(--navy)}
       b.textContent = 'Copy what I wrote';
       b.addEventListener('click', function () {
         var payload = [
-          val('name') + ' <' + val('email') + '>',
+          personName() + (val('email') ? ' <' + val('email') + '>' : '') +
+            (personTeam() ? ' — ' + personTeam() : ''),
           'Type: ' + (val('type') || '-'),
           'Area: ' + (val('section') || '-'),
           'How often: ' + (val('frequency') || '-'),
@@ -360,8 +469,7 @@ footer a{color:var(--navy)}
 
     // Checked here as well as server-side so the common mistake is caught without a
     // round trip, and focus lands on the field that is actually missing.
-    var required = [['type', 'the kind of thing it is'], ['text', 'the suggestion itself'],
-                    ['name', 'your name'], ['email', 'your email']];
+    var required = [['type', 'the kind of thing it is'], ['text', 'the suggestion itself']];
     for (var i = 0; i < required.length; i++) {
       if (!val(required[i][0])) {
         fail('Just missing ' + required[i][1] + '.', false);
@@ -369,6 +477,17 @@ footer a{color:var(--navy)}
         (el.length ? el[0] : el).focus();
         return;
       }
+    }
+    if (!personName()) {
+      var other = val('who') === '__other__';
+      fail(other ? 'Just missing your name.' : 'Just pick your face, or "I’m not here".', false);
+      (other ? f.elements.othername : whoInputs[0]).focus();
+      return;
+    }
+    if (val('who') === '__other__' && !val('email')) {
+      fail('Just missing your email — you are not on the list above.', false);
+      f.elements.email.focus();
+      return;
     }
 
     send.disabled = true;
@@ -378,7 +497,7 @@ footer a{color:var(--navy)}
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: val('name'), email: val('email'), type: val('type'),
+        name: personName(), team: personTeam(), email: val('email'), type: val('type'),
         text: text.value, section: val('section'), article: val('article'),
         link: val('link'), frequency: val('frequency'), company: val('company')
       })
@@ -402,11 +521,15 @@ footer a{color:var(--navy)}
   });
 
   document.getElementById('again').addEventListener('click', function () {
-    // Name and email survive: the same person usually has more than one thing to say.
-    var keepName = val('name'), keepEmail = val('email');
+    // Who you are survives: the same person usually has more than one thing to say,
+    // and being made to find your own face again would be a small insult.
+    var keepWho = val('who'), keepOther = val('othername'), keepEmail = val('email');
     f.reset();
-    f.elements.name.value = keepName;
+    for (var i = 0; i < whoInputs.length; i++)
+      if (whoInputs[i].value === keepWho) whoInputs[i].checked = true;
+    f.elements.othername.value = keepOther;
     f.elements.email.value = keepEmail;
+    syncOther();
     count.textContent = '0 / 4000';
     done.style.display = 'none';
     f.style.display = 'block';

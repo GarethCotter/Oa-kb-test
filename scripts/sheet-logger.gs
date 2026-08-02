@@ -66,7 +66,7 @@ var V_UNANS   = 'Unanswered';
 var HEAD_LOG      = ['Timestamp', 'Surface', 'Screen', 'Question', 'Answered',
                      'Articles shown', 'Event'];
 var HEAD_FEEDBACK = ['Timestamp', 'Article', 'Helpful', 'Reason'];
-var HEAD_SUGGEST  = ['Timestamp', 'Name', 'Email', 'Type', 'Suggestion',
+var HEAD_SUGGEST  = ['Timestamp', 'Name', 'Team', 'Email', 'Type', 'Suggestion',
                      'Product area', 'Article or page', 'Link', 'How often',
                      'Status', 'Notes'];
 
@@ -108,7 +108,7 @@ function doPost(e) {
       // beneath their work, so nothing they have typed is ever touched.
       suggestSheet(ss).appendRow([
         g.ts ? new Date(g.ts) : new Date(),
-        g.name || '', g.email || '', g.type || '', g.text || '',
+        g.name || '', g.team || '', g.email || '', g.type || '', g.text || '',
         g.section || '', g.article || '', g.link || '', g.frequency || '',
         STATUSES[0], ''
       ]);
@@ -273,30 +273,35 @@ function buildView(ss, name, head, formula) {
    once. A fixed 1,000-row range silently stops applying at row 1,001, and the tab
    that loses its dropdown is the one nobody notices for a year. */
 function suggestSheet(ss) {
+  // Everything positional is looked up by header name. Inserting "Team" as column 3
+  // silently shifted Status from J to K, and hand-numbered widths, wraps and the
+  // validation range would each have had to be found and renumbered - one missed
+  // and the dropdown lands on the wrong column.
+  function col(header) { return HEAD_SUGGEST.indexOf(header) + 1; }
+
   var s = ss.getSheetByName(SUGGEST);
   if (!s) {
     s = ss.insertSheet(SUGGEST);
     s.appendRow(HEAD_SUGGEST);
     s.getRange(1, 1, 1, HEAD_SUGGEST.length).setFontWeight('bold');
     s.setFrozenRows(1);
-    s.setColumnWidth(1, 155);                       // Timestamp
-    s.setColumnWidth(2, 140);                       // Name
-    s.setColumnWidth(3, 210);                       // Email
-    s.setColumnWidth(4, 190);                       // Type
-    s.setColumnWidth(5, 520);                       // Suggestion
-    s.setColumnWidth(6, 170);                       // Product area
-    s.setColumnWidth(7, 240);                       // Article or page
-    s.setColumnWidth(8, 240);                       // Link
-    s.setColumnWidth(9, 130);                       // How often
-    s.setColumnWidth(10, 130);                      // Status
-    s.setColumnWidth(11, 320);                      // Notes
-    s.getRange('A2:A').setNumberFormat('d mmm yyyy, HH:mm');
-    s.getRange('E2:E').setWrap(true);
-    s.getRange('K2:K').setWrap(true);
+
+    var widths = {
+      'Timestamp': 155, 'Name': 130, 'Team': 160, 'Email': 210, 'Type': 190,
+      'Suggestion': 520, 'Product area': 170, 'Article or page': 240,
+      'Link': 240, 'How often': 130, 'Status': 130, 'Notes': 320
+    };
+    for (var h in widths) if (col(h)) s.setColumnWidth(col(h), widths[h]);
+
+    s.getRange(2, col('Timestamp'), s.getMaxRows() - 1, 1)
+      .setNumberFormat('d mmm yyyy, HH:mm');
+    s.getRange(2, col('Suggestion'), s.getMaxRows() - 1, 1).setWrap(true);
+    s.getRange(2, col('Notes'), s.getMaxRows() - 1, 1).setWrap(true);
   }
   var rule = SpreadsheetApp.newDataValidation()
     .requireValueInList(STATUSES, true).setAllowInvalid(false).build();
-  s.getRange(2, 10, Math.max(s.getLastRow(), 1) + 50, 1).setDataValidation(rule);
+  s.getRange(2, col('Status'), Math.max(s.getLastRow(), 1) + 50, 1)
+    .setDataValidation(rule);
   return s;
 }
 
@@ -310,7 +315,8 @@ function notify(g) {
       to: NOTIFY,
       subject: 'KB suggestion from ' + (g.name || 'a colleague') + ': ' + (g.type || ''),
       body: [
-        (g.name || '') + ' <' + (g.email || '') + '>',
+        (g.name || '') + (g.team ? ' (' + g.team + ')' : '') +
+          (g.email ? ' <' + g.email + '>' : ''),
         'Type: ' + (g.type || '-'),
         'Product area: ' + (g.section || '-'),
         'How often: ' + (g.frequency || '-'),
