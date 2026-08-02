@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/design-the-decision-form
 merged_from: [acceptance-types, faq-decisions]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-02
 ---
 
 # Design the decision form
@@ -34,7 +34,7 @@ The default **Decision Form** will be displayed with the current default questio
 
 At the top, before the questions, there are four key settings
 
-**[Manage acceptance types](/04-decisions/design-the-decision-form.html):** Click to create decisions such as accepted for poster, oral etc.
+**Manage acceptance types:** Click to create decisions such as accepted for poster, oral etc.
 
 **Submitters' information:** Toggle on or off to enable or disable the visibility of submitters' name and email address.
 

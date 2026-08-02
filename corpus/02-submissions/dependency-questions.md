@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/dependency-questions
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Dependency questions
@@ -84,5 +84,5 @@ NB: If you move the order of the questions, the parent / child links will break.
 
 ### Is it possible to include questions that only appear if a response to a previous question is selected?
 
-Yes - see [Dependency questions](/02-submissions/dependency-questions).
+Yes - that is what dependency questions do. The 'parent' question must be a 'choice' type (checkbox, dropdown or radio button), and you tick **Dependency question** in its display settings, as described above.
 

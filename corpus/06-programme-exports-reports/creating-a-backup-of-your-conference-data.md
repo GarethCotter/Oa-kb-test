@@ -4,7 +4,7 @@ section: "06-programme-exports-reports"
 audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/creating-a-back-up-of-your-conference-data
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-02
 ---
 
 # Creating a backup of your conference data
@@ -58,7 +58,7 @@ See [The symposia table](/09-add-ons/managing-symposia)
 
 9) Uploaded files in a sub-folder separated by stages
 
-See [Other reports - file uploads](/06-programme-exports-reports/other-reports.html#FU)
+See [Other reports - file uploads](/06-programme-exports-reports/other-reports.html)
 
 10) Any abstract books
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/text-editor-types
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Text editor types
@@ -59,7 +59,7 @@ When answering long text questions, usually for abstracts, we always recommend s
 
 ### Can submitters include images and tables in their abstract submission?
 
-You can set up the abstract question to accept different [text editor types](/02-submissions/text-editor-types).
+You can set up the abstract question to accept different text editor types.
 
 We always advise copying and pasting abstracts from WORD or any text editor program, to the abstract field.
 

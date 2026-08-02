@@ -4,7 +4,7 @@ section: "01-getting-started"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/the-essential-tools
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # The essential abstract management tools
@@ -35,7 +35,7 @@ NB: The features highlighted in pink are NOT available (or are limited) in the F
 * [Embed secure online submission forms on your website or in emails](/02-submissions/opening-and-closing-submissions-deadlines)
 * [Choose from an extensive range of fully customisable question templates](/02-submissions/submission-question-types)
 * [Infinite range of options to search, filter and download submissions](/02-submissions/the-submissions-table-including-incomplete-submissions)
-* [Submitters can add content, and upload supporting documents in any file format, e.g. PDF, PowerPoint](/02-submissions/submission-question-types.html#UF2)
+* [Submitters can add content, and upload supporting documents in any file format, e.g. PDF, PowerPoint](/02-submissions/submission-question-types.html)
 * [You can submit on behalf of a user](/02-submissions/making-a-submission-on-behalf-of-someone-else)
 * [Manage, view, delete, withdraw and edit submissions with ease on our intuitive interface](/02-submissions/the-submissions-table-including-incomplete-submissions)
 
@@ -43,7 +43,7 @@ NB: The features highlighted in pink are NOT available (or are limited) in the F
 * [Add IEEE copyright to submission form](/02-submissions/designing-the-submission-form)
 * [Charge fees for submission](/02-submissions/charging-a-fee-for-submission)
 * [Restricting who can submit by email](/02-submissions/restricting-who-can-submit-by-email)
-* [Author / presenter specific forms](/02-submissions/the-authors-and-affiliations-question.html#CAF)
+* [Author / presenter specific forms](/02-submissions/the-authors-and-affiliations-question.html)
 
   
 

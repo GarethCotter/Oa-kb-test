@@ -4,7 +4,7 @@ section: "02-submissions"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/question-types-1
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Submission question types
@@ -82,7 +82,7 @@ Click on the type of question you require, and click **Create Selected Question*
 At the bottom of the edit question panel, you can apply various tags - See [Question tags](/02-submissions/question-setting-tags)
 
 ![](/assets/img/undefined-jan-26-2022-02-05-18-61-pm-0199b5d5.webp)  
-In the lower half, you can find [Question tags](/02-submissions/question-setting-tags) and the [display settings](/02-submissions/designing-the-submission-form.html#DS)  
+In the lower half, you can find [Question tags](/02-submissions/question-setting-tags) and the [display settings](/02-submissions/designing-the-submission-form.html)  
 ![](/assets/img/undefined-jan-26-2022-12-36-25-14-pm-e43feea7.webp)  
 
  When published, it is viewed as below.

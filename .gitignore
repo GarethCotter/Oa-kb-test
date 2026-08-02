@@ -1,0 +1,4 @@
+# Python bytecode. Two .pyc files were committed by accident and travelled through
+# a branch merge before anyone noticed; nothing in the repo is generated from them.
+__pycache__/
+*.pyc

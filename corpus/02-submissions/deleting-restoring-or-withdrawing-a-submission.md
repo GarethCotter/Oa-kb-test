@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/deleting-/-restoring-or-withdrawing-a-submission
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Deleting, restoring or withdrawing a submission
@@ -84,7 +84,7 @@ NB: Withdrawing a submission isn't the same as deleting, as it will still remain
 
 ### How do I withdraw or delete a submission as an administrator?
 
-To withdraw (as an administrator), see [Recording a decision (Accepting/ rejecting/ withdrawing a submission)](/04-decisions/recording-decisions-accept-reject-or-withdraw). Alternatively, if you wish to delete a submission, see [Deleting/ restoring or withdrawing a submission](/02-submissions/deleting-restoring-or-withdrawing-a-submission).
+To withdraw (as an administrator), see [Recording a decision (Accepting/ rejecting/ withdrawing a submission)](/04-decisions/recording-decisions-accept-reject-or-withdraw). To delete a submission instead, follow the steps above.
 
 If you are a submitter, contact the event administrator. You will see the email in the relevant event on your dashboard.
 

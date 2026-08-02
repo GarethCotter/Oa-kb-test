@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/recording-a-decision-accepting/-rejecting/-withdrawing-a-submission
 merged_from: [faq-decisions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Recording decisions: accept, reject or withdraw
@@ -78,5 +78,5 @@ Enter the ID numbers of the submissions you wish to apply the decision to, then 
 
 ### Can I make decisions as an administrator?
 
-Yes - admins have full permissions to [make decisions](/04-decisions/recording-decisions-accept-reject-or-withdraw) on submissions.
+Yes - admins have full permissions to make decisions on submissions.
 

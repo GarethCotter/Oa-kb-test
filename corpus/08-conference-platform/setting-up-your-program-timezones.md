@@ -4,7 +4,7 @@ section: "08-conference-platform"
 audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/setting-up-your-online-program-timezones
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Setting up your program - timezones
@@ -31,4 +31,4 @@ We display a standard list of times that doesn't change in the program builder, 
 
 This is because an event can be at any time of the year, even potentially moving across the date boundary of summer time/standard time.
 
-If you would like your conference to be asynchronous, please follow the guidance above and then [hide your time / date display.](/08-conference-platform/setting-up-your-program-display.html#DATT)
+If you would like your conference to be asynchronous, please follow the guidance above and then [hide your time / date display.](/08-conference-platform/setting-up-your-program-display.html)

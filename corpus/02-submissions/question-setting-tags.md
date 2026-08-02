@@ -4,7 +4,7 @@ section: "02-submissions"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/question-tags
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Question setting tags
@@ -31,7 +31,7 @@ Click on any question to see the tags.
 
 Scrolling to the bottom of the question will reveal the following.
 
-For the section marked red, see [Display settings](/02-submissions/designing-the-submission-form.html#DS)
+For the section marked red, see [Display settings](/02-submissions/designing-the-submission-form.html)
 
 This article deals with the lower half of the section.
 

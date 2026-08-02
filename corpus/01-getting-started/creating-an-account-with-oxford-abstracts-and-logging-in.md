@@ -5,7 +5,7 @@ audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/creating-an-account-with-oxford-abstracts
 merged_from: [faq-getting-started]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Creating an account with Oxford Abstracts and logging in
@@ -128,5 +128,5 @@ If you require further assistance please get in touch with our help desk via our
 
 ### I’ve forgotten my password – how do I reset it?
 
-See [Creating an account](/01-getting-started/creating-an-account-with-oxford-abstracts-and-logging-in.html) with Oxford Abstracts.
+Click **Sign in here**, then **Forgotten Password?**, then **Send Reset Link**. A reset email arrives in your inbox with instructions for changing your password. If it does not appear, check your spam folder.
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/open-and-close-submissions-/-call-for-abstracts
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Opening and closing submissions (deadlines)
@@ -60,7 +60,7 @@ Click on **Copy Form link** to copy the URL (link) required to access the submis
 
 See [Event details](/01-getting-started/event-details).
 
-NB - You will still need to switch off submissions manually - see [Open and close submissions / call for abstracts](/02-submissions/opening-and-closing-submissions-deadlines).
+NB - You will still need to switch off submissions manually, as described above.
 
 ### I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
 

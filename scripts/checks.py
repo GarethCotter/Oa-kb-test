@@ -172,6 +172,64 @@ def check_fragments():
     report('in-page links resolve', bad == 0, '%d broken' % bad)
 
 
+# 6b. A link written as a full path PLUS a fragment sits in the blind spot between
+#     checks 1 and 6, and one reached readers for months. Check 1 strips the fragment
+#     and sees a page that exists; check 6 only looks at bare href="#x". So
+#     /08-conference-platform/networking-for-attendees.html#NB - a link to a dead
+#     anchor on the page you are already reading - passed both.
+#     Scoped to built pages, because build.py drops the fragment from most of these
+#     before a reader ever sees one; only the survivors are a real fault.
+def check_path_fragments():
+    ids_of = {}
+    bad = []
+    for p in glob.glob('*/*.html'):
+        t = open(p, encoding='utf-8').read()
+        base = served(p)
+        for href in re.findall(r'href="([^"#]+#[^"]+)"', t):
+            if href.startswith(('http', 'mailto:', 'data:')):
+                continue
+            # Resolved the way a browser would, because build.py rewrites links
+            # within a section to relative form. Matching on a leading "/" alone
+            # sees only the cross-section ones and calls the rest clean.
+            path, frag = urljoin(base, href).split('#', 1)
+            target = path.lstrip('/')
+            for c in (target, target + '.html', os.path.join(target, 'index.html')):
+                if os.path.exists(c):
+                    target = c
+                    break
+            else:
+                bad.append((p, href, 'no such page'))
+                continue
+            if target not in ids_of:
+                ids_of[target] = set(re.findall(r'id="([^"]+)"',
+                                                open(target, encoding='utf-8').read()))
+            if frag not in ids_of[target]:
+                bad.append((p, href, 'dead anchor'))
+    report('path+fragment links resolve', not bad, bad[:3])
+
+
+# 6c. No page may link to itself. The old KB kept its FAQs in a separate silo that
+#     pointed at the topic articles; dissolving the silo into those same articles
+#     turned 34 of those pointers into "see the page you are on". They read as a
+#     way forward and are a dead end, which is worse than no link at all.
+def check_self_links():
+    bad = []
+    for p in article_pages():
+        here = served(p)
+        for href in re.findall(r'href="([^"]+)"', prose_of(p)):
+            if href.startswith(('http', '#', 'mailto:', 'data:')):
+                continue
+            # urljoin for the same reason as above: on an article page a self-link
+            # comes out as the bare filename, so a string compare against the
+            # root-absolute path never matches and the check quietly never fails.
+            clean = urljoin(here, href).split('?')[0].split('#')[0]
+            if clean.endswith('.html'):
+                clean = clean[:-5]
+            if clean == here:
+                bad.append((here, href))
+    report('no page links to itself', not bad, bad[:3])
+
+
 # 7. Structural spot-checks that used to be done by eye.
 def check_structure():
     doubles = [p for p in glob.glob('*/*.html') + ['index.html']
@@ -202,6 +260,8 @@ if __name__ == '__main__':
     check_audience()
     check_alt()
     check_fragments()
+    check_path_fragments()
+    check_self_links()
     check_structure()
     check_corpus_shape()
     print()

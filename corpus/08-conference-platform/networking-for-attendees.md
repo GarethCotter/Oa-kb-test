@@ -4,7 +4,7 @@ section: "08-conference-platform"
 audience: organisers
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-program-networking
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Networking for attendees
@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: Delegates can only use chat if they have set up a [name badge](/08-conference-platform/networking-for-attendees.html#NB).
+NB: Delegates can only use chat if they have set up a name badge.
 
 [Skip to written instructions.](#TEX)
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer
 merged_from: [allowing-committee-members-to-assign-reviews, faq-reviews]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-02
 ---
 
 # Assigning and unassigning a submission to a reviewer
@@ -196,7 +196,7 @@ Should you need any further assistance, please contact our Support Team via our 
 
 ### If I remove a reviewer in** [**Manage users**](/01-getting-started/manage-users.html)**,  do I also need to unassign them from any assigned reviews?
 
-No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](/01-getting-started/manage-users.html) and [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
+No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](/01-getting-started/manage-users.html).
 
 ### I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?
 

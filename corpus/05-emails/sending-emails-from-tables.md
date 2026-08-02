@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/emails-from-submission-table
 merged_from: [faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Sending emails from tables
@@ -46,7 +46,7 @@ Along the top right there are the following options:
 
 ![](/assets/img/undefined-jan-05-2022-12-18-59-64-pm-7bd336e1.webp)
 
-Lower in the panel, there are further options, as with the standard email tool. See [Additional settings](/05-emails/editing-the-template-emails.html#ADS) for guidance.
+Lower in the panel, there are further options, as with the standard email tool. See [Additional settings](/05-emails/editing-the-template-emails.html) for guidance.
 
 ![](/assets/img/undefined-jan-05-2022-02-06-02-56-pm-9d1fa787.webp)
 

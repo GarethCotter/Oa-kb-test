@@ -5,7 +5,7 @@ audience: organisers
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/professional-conference-exhibitor-feature
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-02
 ---
 
 # Professional Conference - exhibitor space - admin set up
@@ -138,7 +138,7 @@ Read how exhibitors configure their booth and the end user experience in [Exhibi
 
 ### How do I set up exhibitors and sponsors?
 
-See [Sponsors](/08-conference-platform/professional-conference-sponsors) and [Exhibitor Space.](/08-conference-platform/professional-conference-exhibitor-space-admin-set-up)
+See [Sponsors](/08-conference-platform/professional-conference-sponsors). Exhibitor space is covered above.
 
 There is also guidance on [setting up exhibitor booths](/14-for-attendees-exhibitors/exhibitor-space-setting-up-and-managing-your-booth)  for your sponsors.
 

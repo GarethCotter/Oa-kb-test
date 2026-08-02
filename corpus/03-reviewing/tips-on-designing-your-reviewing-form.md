@@ -4,7 +4,7 @@ section: "03-reviewing"
 audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/tips-on-designing-your-reviewing-form
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-02
 ---
 
 # Tips on designing your reviewing form
@@ -22,14 +22,14 @@ Reviewer guidelines are an important part of the reviewing process. In order for
 You can do this in a number of ways
 
 1. Attach a document to the reviewers email, when [notifying them of their assigned submissions](/03-reviewing/notifying-reviewers-that-they-have-been-assigned-submissions-to-review)
-2. You can create this in your [welcome message](/03-reviewing/designing-the-review-form.html#TC), which allows for links, tables and images, which should allow you to provide all the information you need.
+2. You can create this in your [welcome message](/03-reviewing/designing-the-review-form.html), which allows for links, tables and images, which should allow you to provide all the information you need.
 3. You can also [add a text block question](/03-reviewing/review-question-types) which will be visible in the review form.
 
 #### Declarations
 
 Sometimes, a reviewer may need to add some information to the review form that is aimed at the administrator, eg, if the abstract they are asked to review is on a topic outside of their expertise.
 
-If this is the case, create a [text input](/03-reviewing/review-question-types.html#TI) question and ensure that you **don't** enable the[Show response to submitters tag](/03-reviewing/showing-reviews-to-submitters) **.**
+If this is the case, create a [text input](/03-reviewing/review-question-types.html) question and ensure that you **don't** enable the[Show response to submitters tag](/03-reviewing/showing-reviews-to-submitters) **.**
 
 #### Grades
 
@@ -43,16 +43,16 @@ For example:
 
 Is 5 (excellent), 4 (good), 3 (average), 2 (poor) and 1 (reject) adequate? Or should you create a wider scale - from 10 (excellent) all the way down to 1 (reject)?
 
-You can have as many [grade questions](/03-reviewing/review-question-types.html#GDD) as you require. Sometimes, this is necessary if you wish to allow grading for different aspects of each submission - eg. style, methodology, conclusion etc. The system will automatically create averages of all grade questions so you have the data you need to make decisions.
+You can have as many [grade questions](/03-reviewing/review-question-types.html) as you require. Sometimes, this is necessary if you wish to allow grading for different aspects of each submission - eg. style, methodology, conclusion etc. The system will automatically create averages of all grade questions so you have the data you need to make decisions.
 
 If you do create multiple grade questions:
 
 * Do you need to weight some of the grade questions - ie - is the grade assigned to the methodology more important than the conclusion? If so, the best way of handling this would be to assign higher values to the methodology question - ie instead of 1-5, enter 2-10 instead, so this would double the weighting of the methodology question responses.
-* Do you need to create [comment questions](/03-reviewing/review-question-types.html#TI) for each of the grade questions? If so, should these be mandatory?
+* Do you need to create [comment questions](/03-reviewing/review-question-types.html) for each of the grade questions? If so, should these be mandatory?
 
 #### Providing recommendations
 
-Would you like your reviewers to give a recommendation on the presentation method, or whether a submission should be accepted or rejected? There is a 'presentation method' question set up in the [default form](/03-reviewing/designing-the-review-form.html#DFQ) but if you would like the reviewer to recommend the decision, you will need to create a [dropdown question](/03-reviewing/review-question-types.html#DD).
+Would you like your reviewers to give a recommendation on the presentation method, or whether a submission should be accepted or rejected? There is a 'presentation method' question set up in the [default form](/03-reviewing/designing-the-review-form.html) but if you would like the reviewer to recommend the decision, you will need to create a [dropdown question](/03-reviewing/review-question-types.html).
 
 ![](/assets/img/undefined-mar-02-2022-12-20-42-01-pm-f3071737.webp)
 
