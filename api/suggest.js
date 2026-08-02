@@ -34,13 +34,6 @@ const TYPES = new Set([
   'Something else'
 ]);
 
-const FREQUENCIES = new Set([
-  'First time I have seen it',
-  'A few times',
-  'Most weeks',
-  'Constantly'
-]);
-
 const AREAS = new Set([
   'Not sure', 'Getting started', 'Submissions', 'Reviewing', 'Decisions', 'Emails',
   'Programme & reports', 'Registration', 'Conference platform',
@@ -135,8 +128,7 @@ export default async function handler(req, res) {
     text: clip(b.text, 4000),
     section: clip(b.section, 60),
     article: clip(b.article, 300),
-    link: clip(b.link, 300),
-    frequency: clip(b.frequency, 40)
+    link: clip(b.link, 300)
   };
 
   // Required fields, named individually so the page can say which one is missing
@@ -160,7 +152,6 @@ export default async function handler(req, res) {
   // rather than rejected - losing a real suggestion over a stale dropdown would be
   // the wrong trade - but it is marked so a drifted form is visible in the column.
   if (!TYPES.has(s.type)) s.type = s.type + ' (unrecognised)';
-  if (s.frequency && !FREQUENCIES.has(s.frequency)) s.frequency = '';
   if (s.section && !AREAS.has(s.section)) s.section = '';
 
   // Written before the forward, so a suggestion survives even a total sheet outage:

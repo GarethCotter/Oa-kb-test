@@ -67,7 +67,7 @@ var HEAD_LOG      = ['Timestamp', 'Surface', 'Screen', 'Question', 'Answered',
                      'Articles shown', 'Event'];
 var HEAD_FEEDBACK = ['Timestamp', 'Article', 'Helpful', 'Reason'];
 var HEAD_SUGGEST  = ['Timestamp', 'Name', 'Team', 'Email', 'Type', 'Suggestion',
-                     'Product area', 'Article or page', 'Link', 'How often',
+                     'Product area', 'Article or page', 'Link',
                      'Status', 'Notes'];
 
 var STATUSES = ['New', 'Being looked at', 'Written up', 'Not needed'];
@@ -109,7 +109,7 @@ function doPost(e) {
       suggestSheet(ss).appendRow([
         g.ts ? new Date(g.ts) : new Date(),
         g.name || '', g.team || '', g.email || '', g.type || '', g.text || '',
-        g.section || '', g.article || '', g.link || '', g.frequency || '',
+        g.section || '', g.article || '', g.link || '',
         STATUSES[0], ''
       ]);
       wrote.push('suggestion');
@@ -289,7 +289,7 @@ function suggestSheet(ss) {
     var widths = {
       'Timestamp': 155, 'Name': 130, 'Team': 160, 'Email': 210, 'Type': 190,
       'Suggestion': 520, 'Product area': 170, 'Article or page': 240,
-      'Link': 240, 'How often': 130, 'Status': 130, 'Notes': 320
+      'Link': 240, 'Status': 130, 'Notes': 320
     };
     for (var h in widths) if (col(h)) s.setColumnWidth(col(h), widths[h]);
 
@@ -319,7 +319,6 @@ function notify(g) {
           (g.email ? ' <' + g.email + '>' : ''),
         'Type: ' + (g.type || '-'),
         'Product area: ' + (g.section || '-'),
-        'How often: ' + (g.frequency || '-'),
         'Article or page: ' + (g.article || '-'),
         'Link: ' + (g.link || '-'),
         '',

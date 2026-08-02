@@ -47,8 +47,8 @@ try/catch, so a bounce can never cost a suggestion.
 
 ## What Kristy gets
 
-Twelve columns: Timestamp, Name, **Team**, Email, Type, Suggestion, Product area,
-Article or page, Link, How often, **Status**, **Notes**.
+Eleven columns: Timestamp, Name, **Team**, Email, Type, Suggestion, Product area,
+Article or page, Link, **Status**, **Notes**.
 
 Team is derived from the roster in `api/suggest.js`, never taken from the form, so it
 cannot be spoofed or drift out of step with the name. It costs the sender nothing and
@@ -88,9 +88,11 @@ with no photo shows a broken circle; a tile whose value is not in `ROSTER` still
 submits, but arrives with no team and demands an email, which is a soft failure
 rather than a lost suggestion.
 
-**"How often does this come up?"** is the field worth defending if anyone wants it cut.
-This corpus is prioritised by ticket volume; frequency is the one thing that cannot be
-reconstructed later from the text, and it is how Kristy decides what to write first.
+**There was a "How often does this come up?" field; it was cut on 2 August 2026** to
+keep the form short. If prioritising the queue later turns out to be the hard part,
+that is the field to bring back — the argument for it was that this corpus is
+prioritised by volume, and frequency is the one thing that cannot be reconstructed
+from the text afterwards. Kristy can still ask.
 
 **Screenshots are a link, not an upload** — a decision, not a limitation. A sheet cell
 cannot hold an image, and the alternatives (Drive uploads through Apps Script, Vercel
@@ -126,7 +128,7 @@ defences are proportionate rather than absolute:
 - a honeypot field (`company`) — filled only by bots; the response is a cheerful 200
   and the row is dropped, so nothing is learned by trying again
 - per-instance rate limiting, 6 per ten minutes per IP
-- hard caps on every string, and closed vocabularies for type, area and frequency
+- hard caps on every string, and closed vocabularies for type and product area
 
 Note that `vercel.json` sets `Access-Control-Allow-Origin: *` for the whole site, so
 `/api/suggest` is callable cross-origin. That is consistent with the page being open;
@@ -139,7 +141,7 @@ Verified against the real `api/suggest.js` handler and a stand-in Apps Script:
 
 - empty submit → names the missing field, focus lands on it
 - full submit → success panel; payload arrives with **name and email intact**, and
-  type/area/frequency matching the closed vocabularies exactly
+  type/area matching the closed vocabularies exactly
 - honeypot filled → 200, no row written
 - malformed email, missing fields → 400 naming what is wrong
 - unrecognised type → written but marked `(unrecognised)`, so a drifted form is

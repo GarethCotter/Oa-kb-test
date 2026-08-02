@@ -249,21 +249,6 @@ footer a{color:var(--navy)}
           placeholder="https://">
       </div>
 
-      <div class="field grp">
-        <span id="freq-l">How often does this come up? <span class="opt">(optional)</span></span>
-        <span class="help">The one thing Kristy cannot work out later from the text
-        itself, and it is how she decides what to write first.</span>
-        <div class="chips" role="radiogroup" aria-labelledby="freq-l">
-          <input type="radio" name="frequency" id="f1" value="First time I have seen it">
-            <label for="f1">First time I&rsquo;ve seen it</label>
-          <input type="radio" name="frequency" id="f2" value="A few times">
-            <label for="f2">A few times</label>
-          <input type="radio" name="frequency" id="f3" value="Most weeks">
-            <label for="f3">Most weeks</label>
-          <input type="radio" name="frequency" id="f4" value="Constantly">
-            <label for="f4">Constantly</label>
-        </div>
-      </div>
     </fieldset>
 
     <fieldset>
@@ -426,7 +411,6 @@ footer a{color:var(--navy)}
             (personTeam() ? ' — ' + personTeam() : ''),
           'Type: ' + (val('type') || '-'),
           'Area: ' + (val('section') || '-'),
-          'How often: ' + (val('frequency') || '-'),
           'Article: ' + (val('article') || '-'),
           'Link: ' + (val('link') || '-'),
           '', text.value
@@ -478,7 +462,7 @@ footer a{color:var(--navy)}
       body: JSON.stringify({
         name: personName(), team: personTeam(), email: val('email'), type: val('type'),
         text: text.value, section: val('section'), article: val('article'),
-        link: val('link'), frequency: val('frequency'), company: val('company')
+        link: val('link'), company: val('company')
       })
     }).then(function (r) {
       return r.json().catch(function () { return { ok: false }; });
