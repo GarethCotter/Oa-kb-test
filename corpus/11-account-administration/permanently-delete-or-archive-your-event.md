@@ -14,8 +14,6 @@ last_reviewed: 2026-07-28
 
 **Please note:** This information is for event admins ONLY!
 
-Watch how to permanently delete your event in this short video below.
-
 Or scroll down to read the instructions.
 
 From your **client dashboard**, click on **Events** in the **left-hand column**.
@@ -75,7 +73,6 @@ This will show a list of events that have been archived. **Click on the Unarchiv
 ![](/assets/img/screenshot-2025-01-15-at-11-30-18-png-ca9db65c.webp)
 
 If you need further assistance, please contact our Support Team via our [Contact Form.](https://oxfordabstracts.com/resources/contact-support/)
-
 
 ## Common questions
 

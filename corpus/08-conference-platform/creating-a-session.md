@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-NB: Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →** **Program** ➞ **Builder**
+NB: Go to **Event dashboard → Conference →** **Program** ➞ **Builder**
 
 You can create a session by clicking on the default session or, to add a new session, click **Add Session**button.
 

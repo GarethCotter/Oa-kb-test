@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-To get an overview of how many reviews are incomplete, go to **[Event dashboard](/01-getting-started/event-dashboard) → Abstract Management → Reviews → By reviewer.**
+To get an overview of how many reviews are incomplete, go to **Event dashboard → Abstract Management → Reviews → By reviewer.**
 
 Ensure you have the column **Incomplete reviews** on display in the table. Enter '1' in the minimum field shown below. Those who have at least 1 incomplete review will appear in the table.
 
@@ -33,10 +33,10 @@ Follow the [emails from tables guidance](/05-emails/sending-emails-from-tables) 
 
 NB: This option will send a reminder to all reviewers, regardless of whether they have completed their reviews
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → **Emails → Edit and send**
+Go to **Event dashboard → **Emails → Edit and send**
 
 Then scroll to the **Reviews** email towards the end of the page and choose **Deadline reminder**
 
 ![](/assets/img/undefined-feb-15-2022-02-53-55-83-pm-7ea9f113.webp)
 
-[Edit your email](/05-emails/editing-the-template-emails) as required, then follow the instructions [here](/05-emails/sending-and-scheduling-emails) to send your email.
+[Edit your email](/05-emails/editing-the-template-emails) as required, then follow [Sending and scheduling emails](/05-emails/sending-and-scheduling-emails) to send your email.

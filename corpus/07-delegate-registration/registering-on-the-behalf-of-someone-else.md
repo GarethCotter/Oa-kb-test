@@ -11,8 +11,6 @@ last_reviewed: 2026-07-28
 
 ## In this article, you’ll learn how to buy tickets to an event for someone else.
 
-### You can either watch the video below, or scroll down to follow the written instructions.
-
 Go to the ticket page for your event.
 
   

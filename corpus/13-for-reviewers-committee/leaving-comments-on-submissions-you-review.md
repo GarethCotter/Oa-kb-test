@@ -1,7 +1,7 @@
 ---
 title: "Leaving comments on submissions you review"
 section: "13-for-reviewers-committee"
-audience: participants
+audience: reviewers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/reviewers-leaving-inline-comments
 last_reviewed: 2026-07-28
@@ -13,9 +13,7 @@ last_reviewed: 2026-07-28
 
 NB: The below guidance is for reviewers only.
 
-If you are a submitter, please [click here](/12-for-submitters/viewing-comments-left-by-reviewers) for guidance on viewing comments on your submissions.
-
-You can view our walkthrough video below or [skip to the written instructions.](#writteninstructions)
+If you are a submitter, see [Viewing comments left by reviewers](/12-for-submitters/viewing-comments-left-by-reviewers).
 
 **How to leave comments on a submission:**
 

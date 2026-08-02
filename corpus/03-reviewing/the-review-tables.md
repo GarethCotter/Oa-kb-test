@@ -18,11 +18,11 @@ NB. To become familiar with the Review tables layout and tools, see [An overview
 
 The Review tables contain accordion rows. You can assign reviewers,  edit reviews, and download reports.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews**
+Go to **Event dashboard → Abstract Management → Reviews**
 
 Skip to [Accordion rows](#ACC)
 
-Go to [How to email submitters from tables](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2VtYWlscy1mcm9tLXN1Ym1pc3Npb24tdGFibGU%3D&ct=AUTOCOMPLETE&pid=9108826&cid=59758112339&t=aG93IHRvIGVtYWlsIHN1Ym1pdHRlcnM%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=c753126e-346b-4244-880b-f92108fd277a&rs=LIVE_PAGE&hs-expires=1671616706&hs-version=1&hs-signature=APUk-v5UEbel9s0USF4fkpNZEgaXqyZQOg&hsLang=en).
+Go to [How to email submitters from tables](/05-emails/sending-emails-from-tables).
 
 This will reveal the review table window. There are two tables -  the default option is**Reviews by submission** (ordered according to submission ID) and **Reviews by reviewer**(ordered according to reviewer). You can access these by clicking **By submission**, or **By reviewer**
 
@@ -36,7 +36,7 @@ The accordion rows under **Reviews by submission** table main rows contain the r
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9b00f119.webp)  
 
-Each table has the same tools to search, order, filter and download reports. To assign reviewers, [click here](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
+Each table has the same tools to search, order, filter and download reports. To assign reviewers, see [Assigning and unassigning a submission to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
 #### Columns
 

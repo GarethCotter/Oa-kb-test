@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →** **Program → Builder**
+Go to **Event dashboard → Conference →** **Program → Builder**
 
 Click **Settings** (top right corner), then choose **Assign program codes**
 

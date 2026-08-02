@@ -16,7 +16,7 @@ last_reviewed: 2026-07-29
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Decisions → Form & Setup**
+Go to **Event dashboard → Abstract Management → Decisions → Form & Setup**
 
 Skip to [The default questions](#QQ)
 
@@ -157,14 +157,9 @@ You can drag and drop the questions to change their order
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-e2f759c9.gif)
 
-
 ## Common questions
 
-
 ### I want to add another decision type - 'rework' - how do I do this?
-
-See [Acceptance types](/04-decisions/design-the-decision-form)
-
 
 ### Acceptance types
 
@@ -172,7 +167,7 @@ See [Acceptance types](/04-decisions/design-the-decision-form)
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Decisions → Form & Setup**
+Go to **Event dashboard → Abstract Management → Decisions → Form & Setup**
 
 Click on **Manage Acceptance Types** at the top of the form.
 

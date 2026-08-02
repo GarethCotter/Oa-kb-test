@@ -14,8 +14,6 @@ last_reviewed: 2026-07-28
 
 This information is for Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 **Skip to:**
 
 [View attendee table](#view-attendee-table)
@@ -205,9 +203,7 @@ Or the attendee has abandoned cart. For such order, there will be no payment typ
 **Pending refund:** order amended and awaiting refund.  
 **Refunded:** order has been fully refunded.
 
-
 ## Common questions
-
 
 ### How can I check if a presenter has registered?
 

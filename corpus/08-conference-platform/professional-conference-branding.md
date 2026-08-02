@@ -25,7 +25,7 @@ then
 
 The **Program branding** panel will open. At the top you will see a preview of the part of the program you will be formatting. To the right of each section, you'll see a + icon. Click to display the options.
 
-(Note - 6) Sponsorship guidance is [here](/08-conference-platform/professional-conference-sponsors).)
+(Note - 6) Sponsorship guidance is in [Professional Conference - sponsors](/08-conference-platform/professional-conference-sponsors).)
 
 ![](/assets/img/undefined-feb-02-2022-04-26-21-45-pm-1d95d90f.webp)
 

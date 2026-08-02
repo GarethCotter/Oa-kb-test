@@ -76,11 +76,7 @@ You can also include details of the contents of the sessions, see below for deta
 
 ![](/assets/img/image-png-jul-28-2022-08-14-39-79-am-e832acbd.webp)
 
-
 ## Common questions
 
-
 ### How do I download information from the** **Conference Program** **to Word?
-
-See [Downloading session books](/06-programme-exports-reports/downloading-your-program-and-session-books.html).
 

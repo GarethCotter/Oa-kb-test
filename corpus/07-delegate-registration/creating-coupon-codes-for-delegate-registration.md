@@ -4,7 +4,7 @@ section: "07-delegate-registration"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-create-coupon-codes-for-delegate-registration
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-01
 ---
 
 # Creating coupon codes for delegate registration
@@ -13,13 +13,11 @@ last_reviewed: 2026-07-28
 
 This information is for Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
-**From your dashboard, click on Registration → Tickets → Create Tickets**
+**From your dashboard, click on Registration → Tickets → Coupons**
 
 ![](/assets/img/screenshot-2024-03-20-at-15-36-37-png-691225d6.webp)
 
-To the top right on the next screen **click on the Coupon Tab**.
+You can also reach this from the **Coupons** tab at the top of the ticket screens.
 
 ![](/assets/img/screenshot-2023-02-20-at-17-38-26-png-d16a0b1f.webp)
 
@@ -31,16 +29,18 @@ A pop-up screen will appear to the right of the screen.
 
 You’ll need to **add the following information**:
 
-* Coupon Name i.e. Discount10
-* Discount amount (percentage) i.e. 10
-* Quantity Available - how many times this coupon code can be used
-* Date ranges the coupon will be active
+* **Coupon code** - this is what attendees type at checkout, i.e. SPEAKER50
+* **Discount amount**, and a **Discount type** of either **Percentage (%)** or **Amount** - so you can take 10% off, or a flat sum off
+* **Quantity available** - how many times this coupon code can be used
+* **Available from** and **Available to** - the dates the coupon is active
 
-* You can select which tickets and add-ons the coupon code can be used on by selecting the tickets from the drop-down box named “Add Tickets” and “Add Addons”
+You can also switch a coupon off at any time without deleting it, using the **Deactivate coupon** toggle.
+
+You can limit which tickets and add-ons the code works on, using **Available with selected tickets** and **Add addons**. Both default to everything.
 
 ![](/assets/img/screenshot-2023-02-20-at-15-46-11-png-4160d7a3.webp)
 
-When all this information is complete you can click the **Save Coupon button** at the bottom of the screen.
+When all this information is complete, click **Create coupon** at the bottom of the panel.
 
 ![](/assets/img/screenshot-2023-02-20-at-17-40-22-png-e37313c9.webp)
 

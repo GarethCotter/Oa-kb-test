@@ -26,7 +26,7 @@ The process is the same for parallel, or sequential events.
 
 [How to add more stages to my event](#add-more-stages)
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard) → **Event Setup →** **Event details**
+Go to **Event dashboard** → **Event Setup →** **Event details**
 
 Type over the default labels to create your stages.![](/assets/img/undefined-apr-26-2021-11-14-15-27-am-da42d45a.webp)
 

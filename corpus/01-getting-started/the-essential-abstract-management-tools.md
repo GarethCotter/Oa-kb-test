@@ -86,8 +86,8 @@ Publishing and reporting
 * [Create real-time reports from default templates](/06-programme-exports-reports/other-reports)
 * [Filter and arrange submission, review and decision data for Excel report downloads](/06-programme-exports-reports/export-table-data-to-excel)
 * Live updates for real-time downloads, any time you choose
-* [Quick click for indexes and country reports](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL290aGVyLXJlcG9ydHM%3D&ct=SEARCH&pid=9108826&cid=41196162661&t=b3RoZXIgcmVwb3J0cw%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=70e59dc9-0dcd-439e-9348-5b54a8d4b7cf&rs=UNKNOWN&hs-expires=1673543840&hs-version=1&hs-signature=APUk-v6eKfMfLCPwwV9G8mKEES_grne0Zw&hsLang=en)
+* [Quick click for indexes and country reports](/06-programme-exports-reports/other-reports)
 
-* [Extensive range of abstract book options with formatting tools](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2Fic3RyYWN0LWJvb2tz&ct=AUTOCOMPLETE&pid=9108826&cid=41194664385&t=YWJzdHJhY3QgYm9va3M%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=6100112d-33cb-44a5-8b2b-c83b38766946&rs=LIVE_PAGE&hs-expires=1673543933&hs-version=1&hs-signature=APUk-v4gcU7kmNP5Vb-XI-4-Ve0mIRDkNA&hsLang=en)
+* [Extensive range of abstract book options with formatting tools](/06-programme-exports-reports/abstract-books)
 * [Extensive range of report options - include any data from anywhere in the event](/06-programme-exports-reports/)
-* [Event theme - add logos and custom colours to forms](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2V2ZW50LXRoZW1l&ct=AUTOCOMPLETE&pid=9108826&cid=52668942091&t=ZXZlbnQgdGhlbWU%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=2ce48143-556e-4d54-af07-41ab0edd8a09&rs=LIVE_PAGE&hs-expires=1673543960&hs-version=1&hs-signature=APUk-v6iXL5-EFtdxq4b3uBdb6vdWl73IA&hsLang=en)
+* [Event theme - add logos and custom colours to forms](/01-getting-started/event-theme)

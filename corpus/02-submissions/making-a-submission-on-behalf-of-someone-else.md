@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →** **Scroll to the** **Submissions panel**
+Go to **Event dashboard →** **Scroll to the** **Submissions panel**
 
 Click on the **Submit** **On behalf** button.
 
@@ -35,11 +35,7 @@ NB:  When looking at the submissions table or looking at reports, the submitter
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-cd430657.gif)
 
-
 ## Common questions
 
-
 ### How do I submit an abstract on behalf on someone else?
-
-See [Making a submission on behalf of someone else](/02-submissions/making-a-submission-on-behalf-of-someone-else).
 

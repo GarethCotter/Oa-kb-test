@@ -19,12 +19,12 @@ Skip to:
 
 [Managing account (client) admins](#ANA)
 
-Click on [**Manage Account**](/11-account-administration/managing-your-account.html) in the relevant account in your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
+Click on **Manage Account** in the relevant account in your [personal dashboard](/01-getting-started/your-personal-dashboard.html).
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9571b285.webp)  
   
 
-The default view in this dashboard is your list of events. Click on **View** to the right of the event you wish to access. This will take you to the [event dasboard](/01-getting-started/event-dashboard).
+The default view in this dashboard is your list of events. Click on **View** to the right of the event you wish to access. This will take you to the event dashboard.
 
 ![](/assets/img/undefined-oct-21-2021-11-27-26-21-am-a8a8a4cf.webp)
 

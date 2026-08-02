@@ -24,11 +24,11 @@ NB: Before you read this guidance, it is advised that you become familiar with h
 
 [Restore a Deleted Submission](#deleted-sub)
 
-Go to [How to email submitters from tables](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2VtYWlscy1mcm9tLXN1Ym1pc3Npb24tdGFibGU%3D&ct=AUTOCOMPLETE&pid=9108826&cid=59758112339&t=aG93IHRvIGVtYWlsIHN1Ym1pdHRlcnM%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=c753126e-346b-4244-880b-f92108fd277a&rs=LIVE_PAGE&hs-expires=1671616706&hs-version=1&hs-signature=APUk-v5UEbel9s0USF4fkpNZEgaXqyZQOg&hsLang=en).
+Go to [How to email submitters from tables](/05-emails/sending-emails-from-tables).
 
 ---
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard.html) **→ Abstract Management** → **Submissions → Table** to access the table
+Go to **Event dashboard** **→ Abstract Management** → **Submissions → Table** to access the table
 
 #### Columns
 

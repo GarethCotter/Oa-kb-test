@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →  Abstract Management → Submission → Form & Setup**
+Go to **Event dashboard →  Abstract Management → Submission → Form & Setup**
 
 **Then click on the Authors and Affiliations** question.
 

@@ -1,7 +1,7 @@
 ---
 title: "Fixing a 'network failure' error"
 section: "01-getting-started"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/what-to-do-when-you-have-a-network-failure-error-message
 last_reviewed: 2026-07-28

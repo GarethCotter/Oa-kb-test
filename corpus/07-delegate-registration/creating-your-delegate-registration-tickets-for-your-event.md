@@ -4,7 +4,7 @@ section: "07-delegate-registration"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-create-your-delegate-registration-tickets-for-your-event
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-01
 ---
 
 # Creating your delegate registration tickets for your event
@@ -14,8 +14,6 @@ Plus You can learn how to purchase tickets on behalf of attendees.
 ## In this article, you will find instructions on creating and editing your tickets, groups and add-ons for delegate registration. Plus You can learn how to purchase tickets on behalf of attendees.
 
 Please note this information is for Admins ONLY.
-
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
 
 **Skip to the following sections:**
 
@@ -31,7 +29,7 @@ Please note this information is for Admins ONLY.
 
 **How to create a ticket**
 
-From your main dashboard, click on **Registration** **→ Tickets → Create Tickets.**
+From your main dashboard, click on **Registration → Tickets → Conference tickets**.
 
 **![](/assets/img/screenshot-2024-03-20-at-15-59-37-png-05fccdd0.webp)**
 
@@ -41,7 +39,7 @@ You can see at the top of the dashboard you have **Tickets, Add-Ons and Coupons*
 
 Naturally, the dashboard will present to you under the Ticket section.
 
-To create a ticket click on **Create Ticket** - the **blue button** in the middle of your screen.
+To create a ticket click **Create ticket**. On a brand new event it sits in the middle of the screen; once you have a ticket it moves to the top left, beside **Create group**.
 
 ![](/assets/img/screenshot-2022-11-01-at-14-48-40-png-e00dba9f.webp)
 
@@ -57,7 +55,7 @@ To create your ticket, you must complete the fields on the following screen.
 
 You can add the ticket price, either by typing in the price or using the arrows provided.
 
-Please note should you need to change the currency of your ticket price, you can do so by clicking on the blue “**Finance**” word above the price box.
+Please note, to change the currency of your ticket price use the **Change currency here.** link, which sits in the helper line just below the price box.
 
 *![](/assets/img/screenshot-2022-11-01-at-14-52-43-png-2dc43575.webp)*
 
@@ -65,11 +63,13 @@ The ticket price will automatically be set to 0.00 (Free of charge).
 
 To add the price of your ticket you need to **type** into the price box the cost of the ticket i.e. 25.99.
 
-You can also **add tax** to your ticket price by clicking on **“Add tax”** below the price box.
+Tax is no longer set on the ticket itself. It is now a set of rules at **Registration → Finance → Tax**, where you can create multiple rules and apply each to all or only some of your tickets.
 
 ![](/assets/img/screenshot-2022-11-01-at-14-53-25-png-72816bc8.webp)
 
-**Add** the **number of tickets** for sale to the **Quantity Available box**.
+**Add** the **number of tickets** for sale to the **Quantity available** box.
+
+You can also set **Maximum number of tickets per order**, which limits how many one person can buy in a single order.
 
 ![](/assets/img/screenshot-2022-11-01-at-14-53-45-png-6335b5ef.webp)
 
@@ -87,9 +87,11 @@ You can now **select which ticket group** you want this ticket to sit in (if you
 
 ![](/assets/img/screenshot-2022-11-01-at-14-55-08-png-f9a1eb17.webp)
 
-For more information on creating a ticket group please [click here](#create-groups).
+Ticket groups are not only a label. They control **which registration form questions and which add-ons an attendee sees**, based on the ticket they bought. If you leave every ticket ungrouped, every attendee sees every question.
 
-When you have completed these fields click on **Create Ticket** at the bottom of the page.
+If you want a ticket that only administrators can see and buy, switch on **Hide ticket (visible to admins only)**.
+
+When you have completed these fields click **Create ticket** at the bottom of the panel.
 
 ![](/assets/img/screenshot-2023-01-23-at-11-17-10-png-bbfb95f1.webp)
 

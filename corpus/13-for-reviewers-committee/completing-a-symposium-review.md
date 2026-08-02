@@ -12,7 +12,7 @@ last_reviewed: 2026-07-28
 
 ## Find out how to complete your symposium review in the Oxford Abstracts reviewing space.
 
-NB: The guidance below is for reviewers. If you experience any issues or have any questions, please [contact your event administrator](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2hvdy1kby1pLWNvbnRhY3QtdGhlLWV2ZW50LWFkbWluaXN0cmF0b3I%3D&ct=SEARCH&pid=9108826&cid=61459936823&t=Y29udGFjdA%3D%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=ba0bcb11-204c-4092-b250-964d7f4cc884&rs=UNKNOWN&hs-expires=1677077982&hs-version=1&hs-signature=APUk-v60QTbRjothG4BrAVixf6_wWX3_PA&hsLang=en) in the first instance.
+NB: The guidance below is for reviewers. If you experience any issues or have any questions, please [contact your event administrator](/14-for-attendees-exhibitors/how-do-i-contact-the-event-administrator) in the first instance.
 
 Once logged in, your [**Personal dashboard**](/01-getting-started/your-personal-dashboard) will show a list of the events with which your email is associated with. Click **View**![](/assets/img/9xxlsfkjrs887t06ojdijpnoazdgkoqggxmmk0-acaeiwy1krby4cm5irbkh-38e6bddc.png)
 

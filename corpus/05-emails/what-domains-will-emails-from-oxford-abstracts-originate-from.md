@@ -1,7 +1,7 @@
 ---
 title: "What domains will emails from Oxford Abstracts originate from?"
 section: "05-emails"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/what-domains-will-emails-from-oxford-abstracts-originate-from
 last_reviewed: 2026-07-28

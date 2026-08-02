@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-From your go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submission → Form & Setup → [Submission form](/02-submissions/designing-the-submission-form.html)**
+From your go to **Event dashboard → Abstract Management → Submission → Form & Setup → Submission form**
 
 Skip to [Discrepancies with word count](#Dis)
 
@@ -77,11 +77,7 @@ To permit the submissions affected by these discrepancies, you can increase the 
   
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-82598208.gif)
 
-
 ## Common questions
 
-
 ### Users have reported that the abstract field in the submission form is alerting them that they are over the word limit? How can I resolve this?
-
-See [Word and character count](/02-submissions/word-and-character-count).
 

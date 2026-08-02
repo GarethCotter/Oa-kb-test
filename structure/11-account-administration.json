@@ -1,21 +1,20 @@
 {
-  "intro": "The account level above your events: billing, the customer portal, and what happens when an event \u2014 or an account \u2014 reaches the end of its life.",
+  "intro": "The account level above your events: billing, the customer portal, and what happens when an event — or an account — reaches the end of its life.",
   "start": {
     "slug": "account-administration-dashboard",
-    "why": "The tour of the account dashboard \u2014 everything else here hangs off it."
+    "why": "The tour of the account dashboard — everything else here hangs off it."
   },
   "groups": [
     {
       "title": "Running your account",
       "blurb": "Billing and administration.",
       "slugs": [
-        "managing-your-account",
-        "using-the-customer-portal"
+        "managing-your-account"
       ]
     },
     {
       "title": "Deleting and archiving",
-      "blurb": "Permanent actions \u2014 read before clicking.",
+      "blurb": "Permanent actions — read before clicking.",
       "slugs": [
         "permanently-delete-or-archive-your-event",
         "deleting-your-oxford-abstracts-account"

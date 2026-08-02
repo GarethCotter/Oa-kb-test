@@ -14,7 +14,7 @@ last_reviewed: 2026-07-29
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reports & Downloads**
+Go to **Event dashboard → Abstract Management → Reports & Downloads**
 
 Skip to
 
@@ -46,16 +46,11 @@ Once these have been created, they will appear in the **Custom abstract books** 
 
 **![](/assets/img/undefined-mar-01-2021-10-20-41-03-am-cc30fe43.webp)**
 
-
 ## Common questions
-
 
 ### I need a report or an abstract book that you don’t seem to offer in your default options.
 
 Firstly, check all the options available here: [Creating exports, reports and abstract books](/06-programme-exports-reports/). If you can't see what you need, contact [support@oxfordabstracts.com](mailto:support@oxfordabstracts.com) and we will try our best to supply you with what you require.
 
-
 ### How do I edit the fields I want to appear in the abstract book?
-
-See [Abstract books](/06-programme-exports-reports/abstract-books.html).
 

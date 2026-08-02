@@ -18,7 +18,7 @@ NB: Before you open your call for abstracts, it is advisable to complete a [test
 
 Skip to video - [How do I allow for reworking and late breaking abstracts?](#RE)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →** **Submissions panel**
+Go to **Event dashboard →** **Submissions panel**
 
 To allow abstract submissions, go to the **Form Status** section on the submission panel and click on the drop-down box next to it.
 
@@ -54,9 +54,7 @@ Click on **Copy Form link** to copy the URL (link) required to access the submis
 
 #### How do I allow for reworking and late-breaking abstracts?
 
-
 ## Common questions
-
 
 ### How do I change the deadline/ notification date for submissions?
 
@@ -64,8 +62,5 @@ See [Event details](/01-getting-started/event-details).
 
 NB - You will still need to switch off submissions manually - see [Open and close submissions / call for abstracts](/02-submissions/opening-and-closing-submissions-deadlines).
 
-
 ### I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
-
-See [Open and close submissions / call for abstracts](/02-submissions/opening-and-closing-submissions-deadlines).
 

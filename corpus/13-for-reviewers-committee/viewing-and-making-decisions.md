@@ -1,7 +1,7 @@
 ---
 title: "Viewing and making decisions"
 section: "13-for-reviewers-committee"
-audience: participants
+audience: reviewers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/making-decisions-on-submissions-as-a-committee-member
 last_reviewed: 2026-07-28

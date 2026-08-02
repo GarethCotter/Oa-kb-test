@@ -39,7 +39,7 @@ See [Downloading your program and session books](/06-programme-exports-reports/
 
 5) Program sessions
 
-See [Program sessions table](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL3Byb2dyYW0tc2Vzc2lvbnMtdGFibGU%3D&ct=AUTOCOMPLETE&pid=9108826&cid=41194665314&t=cHJvZ3JhbSBzZXNz&d=help.oxfordabstracts.com&c=5&rp=1&ab=true&opcid=d1a518fc-063a-40ac-848a-c89f6b1cb745&rs=LIVE_PAGE&hs-expires=1673538311&hs-version=1&hs-signature=APUk-v5mtYmnWiOCE6-D7DqORNSWlSN6RA&hsLang=en)
+See [Program sessions table](/06-programme-exports-reports/program-sessions-table)
 
 6) Program-related documents:
 

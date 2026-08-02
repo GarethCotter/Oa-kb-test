@@ -17,8 +17,6 @@ Speaker Management allows event admins to collect, manage and display invited sp
 
 To enable Speaker Management, you need to have switched to the new session overlay design.
 
-View our video showing you how to use Speaker Management, or continue reading below for step-by-step instructions.
-
 **Skip To:**
 
 **[How To Create The Invited Speaker Form](#create-form)**
@@ -28,8 +26,6 @@ View our video showing you how to use Speaker Management, or continue reading be
 **[How To Manually Add Invited Speakers](#manually-add-speakers)**
 
 **[The Invited Speaker Table Explained](#speaker-table-explained)**
-
-**How To Add Invited Speakers To Your Event Program**
 
 ---
 

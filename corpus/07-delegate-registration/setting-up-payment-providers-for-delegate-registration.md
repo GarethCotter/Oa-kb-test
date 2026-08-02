@@ -14,8 +14,6 @@ last_reviewed: 2026-07-28
 
 **Please note:** This information is for Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 **Skip to :**
 
 **[Billing](#billing)**
@@ -103,11 +101,11 @@ On the next screen, **you will be able to add**:
 
 Include any of the following event details on the invoice by ticking the relevant boxes  
 
-* + Venue
-  + Email
-  + Telephone
-  + Start date
-  + End date
+* Venue
+* Email
+* Telephone
+* Start date
+* End date
 
 Include the following delegate details on the invoice by ticking the relevant boxes  
 
@@ -282,14 +280,9 @@ To **download the monthly or all time invoices** **click on the Download Receipt
 
 Should you require further assistance, then please get in touch with our helpdesk via the [Contact Form.](https://oxfordabstracts.com/resources/contact-support/)
 
-
 ## Common questions
 
-
 ### How do I set up payment for delegates?
-
-See [Setting up the invoice and payments for delegate registration](/07-delegate-registration/setting-up-payment-providers-for-delegate-registration.html).
-
 
 ### What options are currently available for payment?
 

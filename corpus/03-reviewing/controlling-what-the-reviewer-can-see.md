@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip](#TEX) to written instructions.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews → Forms & Setup**
+Go to **Event dashboard → Abstract Management → Reviews → Forms & Setup**
 
 At the top of the screen, choose **Visible submission questions**
 
@@ -36,7 +36,7 @@ At the bottom of the settings, you will see that the default is for submitters' 
 
 ![](/assets/img/undefined-feb-09-2022-11-53-27-70-am-c2b22197.webp)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Form → Submission form**
+Go to **Event dashboard → Form → Submission form**
 
 Click on any question. On each question you can apply 'tags'.
 

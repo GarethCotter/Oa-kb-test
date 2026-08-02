@@ -88,19 +88,13 @@ Then follow the guidance in [Amending email templates](/05-emails/editing-the-te
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-58d108b8.gif)
 
-
 ## Common questions
-
 
 ### What information can I include in emails?
 
 See [Amending template emails](/05-emails/editing-the-template-emails.html).
 
-
 ### How can I create an email that's not on the list of templates?
-
-See [Creating custom emails](/05-emails/creating-custom-emails).
-
 
 ### Editing email signature
 

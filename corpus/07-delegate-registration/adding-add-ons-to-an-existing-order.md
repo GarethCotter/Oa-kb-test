@@ -14,8 +14,6 @@ last_reviewed: 2026-07-28
 
 **Please note:** this information is for attendees of events only.
 
-For a walk through demonstration on how to purchase an add-on to an existing order, please watch the below video.
-
 Alternatively you can read and follow the step by step instructions [here.](#instructions)
 
 Once you have logged into your Oxford Abstracts Account, under the **registration box** go to the **ticket box** and **click on Buy Add-Ons**, on the relevant ticket.
@@ -56,9 +54,7 @@ On your dashboard under **Registration**, you will see now see the add-ons you h
 
 Should you need further assistance, please contact our Support Desk via our [Contact Form](https://oxfordabstracts.com/resources/contact-support/).
 
-
 ## Common questions
-
 
 ### If a delegate has already registered and paid, can a delegate then add event tickets at a later date?
 

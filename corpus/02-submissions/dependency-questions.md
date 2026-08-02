@@ -18,7 +18,7 @@ NB: You can only set up dependency questions when the 'parent' question is a 'ch
 
 [Skip to text guidance](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submission → Forms & Setup**
+Go to **Event dashboard → Abstract Management → Submission → Forms & Setup**
 
 Where you have a 'choice' type of question in the submission form, it is possible to reveal a hidden question depending on the response to the first question. Below is an example.
 

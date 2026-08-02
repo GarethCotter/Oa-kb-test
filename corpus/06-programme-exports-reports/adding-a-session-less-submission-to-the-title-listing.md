@@ -19,8 +19,6 @@ Skip to:
 
 [**How to upload In Titles in Bulk**](#upload-in-titles-in-bulk)
 
-**Watch our instruction video**
-
 From your dashboard, go to the left-hand column and click on Abstract Management **→** **Decisions → Table**
 
 ![](/assets/img/screenshot-2024-03-27-at-15-30-28-png-565f54a5.webp)

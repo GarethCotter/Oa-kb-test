@@ -1,7 +1,7 @@
 ---
 title: "If your verification email hasn't arrived"
 section: "01-getting-started"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/what-to-do-if-a-verification-email-hasnt-arrived-in-your-inbox
 last_reviewed: 2026-07-28

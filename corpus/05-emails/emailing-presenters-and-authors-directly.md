@@ -40,11 +40,7 @@ You can then [create your custom email.](/05-emails/creating-custom-emails)
 
 ![](/assets/img/undefined-oct-11-2021-03-19-05-80-pm-151fd534.webp)
 
-
 ## Common questions
 
-
 ### I want to send emails to just the presenters - how do I do this?
-
-See [Emailing presenters and authors directly](/05-emails/emailing-presenters-and-authors-directly)
 

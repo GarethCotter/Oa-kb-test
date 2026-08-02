@@ -14,8 +14,6 @@ last_reviewed: 2026-07-28
 
 Please Note: This article is for Administrators only!
 
-#### You either watch the below video for a walkthrough on what to do or scroll down and follow the written instructions.
-
 You can make the following amendments without changing the order number:
 
 * Change Tickets
@@ -120,11 +118,7 @@ When the balance has been paid, on the attendee table, you will see under the pa
 
 If you need further assistance, please get in touch with our Customer Support Team via the **[Contact Form.](https://oxfordabstracts.com/resources/contact-support/)**
 
-
 ## Common questions
 
-
 ### How do I delete a registration?
-
-See [Deleting or changing the status of a registration](/07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.html).
 

@@ -13,8 +13,6 @@ last_reviewed: 2026-07-28
 
 Please note this information is for Admins ONLY!
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 From your **Event Dashboard,** on the l**eft-hand column**, click on **Registration** **→ Tickets → Registrations.**
 
 ![](/assets/img/screenshot-2024-03-21-at-12-21-20-png-6dad20c9.webp)  

@@ -19,7 +19,7 @@ NB: Some of the features listed below will not be available in the Standard Conf
 
 Read this [Knowledge Base Article](/08-conference-platform/setting-up-the-homepage-for-your-conference) for instructions on how to create your conference homepage.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →** **Program → Builder**
+Go to **Event dashboard → Conference →** **Program → Builder**
 
 The **Program Builder** screen will open. This is the space where you create your program. You will see a default session in place to get you started. The date will be taken from [Event details](/01-getting-started/event-details).
 
@@ -49,7 +49,7 @@ NB: Some of these options might not be included if you have the Standard Confere
 
 [7) Presentation types](#PRES)
 
-[8) Sponsors](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL3Nwb25zb3JzaGlw&ct=SEARCH&pid=9108826&cid=52291597098&t=c3BvbnNvcnM%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=91c28ede-0057-4bc3-87aa-df8c4b4a5100&rs=UNKNOWN&hs-expires=1671632244&hs-version=1&hs-signature=APUk-v7l-vcbKsuT7_dEyLcQ20xiMIGPeA&hsLang=en)
+[8) Sponsors](/08-conference-platform/professional-conference-sponsors)
 
 [9) Timezone](#TIM)
 
@@ -211,7 +211,7 @@ You can also delete any by clicking on the **bin icon**, but not if they appear 
 
 **9) Timezones**
 
-For guidance on assigning time zones, see [here](/08-conference-platform/setting-up-your-program-timezones).
+See [Setting up your program - timezones](/08-conference-platform/setting-up-your-program-timezones).
 
 **10) Add category**
 
@@ -235,7 +235,7 @@ In the program, the new category will appear as a new filter option.
 
 **11) Program codes**
 
-For guidance on assigning program codes, see [here.](/08-conference-platform/assigning-program-codes.html)
+See [Assigning program codes](/08-conference-platform/assigning-program-codes.html).
 
 **12) Manage Information**
 

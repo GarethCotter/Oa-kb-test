@@ -1,8 +1,8 @@
 {
-  "intro": "Registration is where attendees buy their tickets. Build the form and tickets, connect payments, publish \u2014 then manage orders, invoices and refunds as they come in.",
+  "intro": "Registration is where attendees buy their tickets. Build the form and tickets, connect payments, publish — then manage orders, invoices and refunds as they come in.",
   "start": {
     "slug": "creating-your-delegate-registration-form",
-    "why": "The registration form is the front door \u2014 build it before tickets and payments."
+    "why": "The registration form is the front door — build it before tickets and payments."
   },
   "groups": [
     {
@@ -13,6 +13,7 @@
         "adding-add-ons-to-an-existing-order",
         "dependency-questions-on-the-delegate-registration-form",
         "setting-up-payment-providers-for-delegate-registration",
+        "letting-attendees-pay-by-invoice-or-bank-transfer",
         "configuring-invoices-and-receipts-for-delegate-registration",
         "creating-coupon-codes-for-delegate-registration",
         "editing-automated-emails-for-delegate-registration",
@@ -24,6 +25,7 @@
       "title": "Managing orders",
       "blurb": "Once registrations start arriving.",
       "slugs": [
+        "buyers-ticket-holders-and-who-receives-what",
         "managing-orders-and-edit-the-attendee-table",
         "viewing-transactions-on-the-attendee-table",
         "how-admins-can-amend-existing-delegate-registration-orders",

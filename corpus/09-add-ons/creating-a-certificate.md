@@ -13,8 +13,6 @@ last_reviewed: 2026-07-28
 
 **Please note:** This information is for Admins only!
 
-**For an overview of the certificate feature take a look at the video below, or continue reading for full written instructions.**
-
 **Skip to:**
 
 **[Name Certificate](#name-cert)**

@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-**Go to [Event dashboard](/01-getting-started/event-dashboard) → Conference → Builder**
+**Go to Event dashboard → Conference → Builder**
 
 Click on a session. At the bottom of the panel, you will see **Attach submissions**
 

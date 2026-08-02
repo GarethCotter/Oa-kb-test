@@ -71,7 +71,7 @@ E) Choose the format of your report.
 8) View deleted submissions  
 9) Delete the selected submissions
 
-10) [Send emails](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL2VtYWlscy1mcm9tLXN1Ym1pc3Npb24tdGFibGU%3D&ct=SEARCH&pid=9108826&cid=59758112339&t=c2VuZCBlbWFpbHMgZnJvbSB0YWJsZXM%3D&d=help.oxfordabstracts.com&c=5&rp=1&ab=false&opcid=bbf49b69-3d3e-44aa-91f9-0e82f4a029ab&rs=UNKNOWN&hs-expires=1674140012&hs-version=1&hs-signature=APUk-v6kjGhHDiowvr-xOtMpAoJ2id7e7g&hsLang=en)
+10) [Send emails](/05-emails/sending-emails-from-tables)
 
 11) Click on the arrow to access the options for column display.
 

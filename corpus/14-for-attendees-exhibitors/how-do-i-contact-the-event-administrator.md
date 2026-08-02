@@ -1,7 +1,7 @@
 ---
 title: "How do i contact the event administrator?"
 section: "14-for-attendees-exhibitors"
-audience: participants
+audience: attendees
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/how-do-i-contact-the-event-administrator
 last_reviewed: 2026-07-28

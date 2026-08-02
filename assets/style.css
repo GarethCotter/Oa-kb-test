@@ -204,6 +204,7 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .aud-submitters{--aud:#1F6F5C}
 .aud-reviewers{--aud:#5B3E8E}
 .aud-attendees{--aud:#8A5A00}
+.aud-everyone{--aud:#4A5568}
 @media (max-width:520px){.audience{padding:12px 14px}}
 .prose{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px 38px}
 .prose h2{font-family:'Gloock',serif;font-weight:400;font-size:27px;margin:30px 0 12px;-webkit-text-stroke:.3px currentColor}

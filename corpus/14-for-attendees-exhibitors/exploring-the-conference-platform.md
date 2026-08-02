@@ -59,7 +59,7 @@ B) View individual profiles, including their profile picture, role, interest(s) 
 
 ![](/assets/img/undefined-jan-05-2022-10-09-46-23-am-66101e61.webp)
 
-The first two buttons allow you to (from left to right) [chat](https://help.oxfordabstracts.com/_hcms/analytics/search/conversion?redirect=aHR0cHM6Ly9oZWxwLm94Zm9yZGFic3RyYWN0cy5jb20va25vd2xlZGdlL3VzaW5nLXRoZS1jaGF0LWZlYXR1cmU%3D&ct=SEARCH&pid=9108826&cid=48472758131&t=Y2hhdA%3D%3D&d=help.oxfordabstracts.com&c=5&rp=2&ab=false&opcid=e601840d-b67e-47c8-ab01-56ae6f9d6ab1&rs=UNKNOWN&hs-expires=1672913727&hs-version=1&hs-signature=APUk-v4KDsdRPiVRCRsy9WLTnX1evnQMQg&hsLang=en), and video call.
+The first two buttons allow you to (from left to right) [chat](/14-for-attendees-exhibitors/using-the-chat-and-controlling-notifications), and video call.
 
 ![](/assets/img/undefined-jan-05-2022-10-13-51-72-am-bb241c00.webp)
 

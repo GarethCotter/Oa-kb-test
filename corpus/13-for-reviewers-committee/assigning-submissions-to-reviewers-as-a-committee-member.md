@@ -1,7 +1,7 @@
 ---
 title: "Assigning submissions to reviewers as a committee member"
 section: "13-for-reviewers-committee"
-audience: participants
+audience: reviewers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/assigning-reviews-to-reviewers-as-a-committee-member
 last_reviewed: 2026-07-28
@@ -46,8 +46,6 @@ Once you have chosen all the reviewers you wish to assign submissions too, click
 ![](/assets/img/screenshot-2022-08-10-at-16-25-05-png-2638bca0.webp)
 
 You can also assign submission to reviewers by searching in the category field.
-
-For further instruction on how to do this - please watch our [Instruction video](#instruction_video) at the top of the page.
 
 **For further guidance on assigning, see [Assigning and unassigning a submission to a reviewer.](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer)**
 

@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 Before assigning categories, you will need to add committee members to the system. See [Manage users](/01-getting-started/manage-users) for guidance.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Advanced → Committee filter**
+Go to **Event dashboard → Advanced → Committee filter**
 
 This link will take you to the **Assign Categories**table. The table is formatted in a similar way to all tables in the system (See [An overview of tables](/01-getting-started/working-with-tables.html)).
 
@@ -54,11 +54,7 @@ When committee members login, they will only view their assigned categories.
 
 ![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-c592f95f.gif)
 
-
 ## Common questions
 
-
 ### I want committee members to be able to make decisions on specific categories. How do I do this?
-
-See [Assigning specific categories to committee members](/04-decisions/assigning-categories-to-committee-members.html).
 

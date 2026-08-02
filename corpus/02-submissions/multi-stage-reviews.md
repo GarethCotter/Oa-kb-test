@@ -13,9 +13,9 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard) **→ Abstract Management** **→** **Reviews → Forms & Setup.**
+Go to **Event dashboard** **→ Abstract Management** **→** **Reviews → Forms & Setup.**
 
-It is advised that you become familiar with setting up [review forms](https://app.hubspot.com/knowledge/9108826/insights/article/41196128493/performance)  before you set up your mult-stage review forms. The process is the same, apart from the guidance below.
+It is advised that you become familiar with setting up [review forms](/03-reviewing/designing-the-review-form.html)  before you set up your mult-stage review forms. The process is the same, apart from the guidance below.
 
 You wll see a tab for each stage. Simply click on the stage tab you would like to edit.
 

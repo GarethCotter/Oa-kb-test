@@ -17,8 +17,6 @@ This information is for Admins ONLY.
 
 #### 
 
-#### You can either watch the video below for a step-by-step walkthrough or scroll down to follow the written instructions.
-
 From your main dashboard, navigate to the **column on the left**, click on **Registration** → **Publish.**
 
 ![](/assets/img/screenshot-2024-03-21-at-12-33-01-png-07d1b0f2.webp)
@@ -49,9 +47,9 @@ If you’re happy with how it looks, then you can publish your event.
 
 If you want to make changes, you can go back into the Ticket and Form categories found under the Registration title on the left hand menu and make any edits required.
 
-For information on creating/editing Tickets, Groups and Add Ons [click here](https://app.hubspot.com/knowledge/9108826/edit/90144743739).
+For information on creating and editing tickets, groups and add-ons, see [Creating your delegate registration tickets](/07-delegate-registration/creating-your-delegate-registration-tickets-for-your-event.html).
 
-For information on creating/editing your Form [click here](https://app.hubspot.com/knowledge/9108826/edit/90247939108).
+For information on creating and editing your form, see [Creating your delegate registration form](/07-delegate-registration/creating-your-delegate-registration-form.html).
 
 To **publish** your event, **click the toggle ON for Visible to the Public**.
 

@@ -1,7 +1,7 @@
 ---
 title: "Deleting your Oxford Abstracts account"
 section: "11-account-administration"
-audience: organisers
+audience: everyone
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-an-attendee-can-delete-their-oxford-abstracts-account
 merged_from: [faq-getting-started]
