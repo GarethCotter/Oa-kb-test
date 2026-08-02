@@ -125,7 +125,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Find out how to use the program &amp; session search bars. # Note This information is for Admins Only! The Program Search Bar can help you search for: Submission titles Symposia titles Sessions Chairs Discussants Authors"
+  "summary": "Find out how to use the program &amp; session search bars. # The Program Search Bar can help you search for: Submission titles Symposia titles Sessions Chairs Discussants Authors To search for something on the Session Pr"
  },
  {
   "title": "What are the differences between the free package and paid packages?",
@@ -133,7 +133,7 @@
   "section": "Getting started",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Below, you will find how the free package differs from our paid versions. # This information is for admins only. We\u2019ve put together a little five-minute video for you to watch, or if you would prefer, you can read the di"
+  "summary": "Below, you will find how the free package differs from our paid versions. # We\u2019ve put together a little five-minute video for you to watch, or if you would prefer, you can read the differences below. To make you aware th"
  },
  {
   "title": "Working with tables",
@@ -165,7 +165,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "This article will provide instructions on how to bulk upload files (for example, posters) and automatically assign them to the correct submission/abstract. # This information is for Admins ONLY! Note To be able to accept"
+  "summary": "This article will provide instructions on how to bulk upload files (for example, posters) and automatically assign them to the correct submission/abstract. # Note To be able to accept uploaded files such as posters, this"
  },
  {
   "title": "Changing the owner of a submission",
@@ -365,7 +365,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to enable and disable Inline Comments with our step by step guide. # This information is for Admins ONLY . If you are a submitter and would like to know more about Inline Comments please read this article . If "
+  "summary": "Learn how to enable and disable Inline Comments with our step by step guide. # If you are a submitter and would like to know more about Inline Comments please read this article . If you are a reviewer and would like to k"
  },
  {
   "title": "Using submission analytics",
@@ -373,7 +373,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Find out how to use submission analytics, and what they can do to help elevate your event. # Note This information is for Admins only! Submission Analytics allows Admins to track links to get a better overview of where t"
+  "summary": "Find out how to use submission analytics, and what they can do to help elevate your event. # Submission Analytics allows Admins to track links to get a better overview of where the Link Visitor/Form Views and Form Submis"
  },
  {
   "title": "Word and character count",
@@ -613,7 +613,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can learn how to use the email sent log, to view details, and resend emails. # This information is for Event Admins ONLY! To access the Email Log, on the left-hand menu click on Emails \u2192 Sent Logs. The email log allo"
+  "summary": "You can learn how to use the email sent log, to view details, and resend emails. # To access the Email Log, on the left-hand menu click on Emails \u2192 Sent Logs. The email log allows you to: See the status of the email - if"
  },
  {
   "title": "What domains will emails from Oxford Abstracts originate from?",
@@ -741,7 +741,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "One great aspect when using Oxford Abstracts is that you do not need a separate app to use our software on mobile. We are 100% mobile-friendly. # This information is for Admins ONLY. To view what your program builder wil"
+  "summary": "One great aspect when using Oxford Abstracts is that you do not need a separate app to use our software on mobile. We are 100% mobile-friendly. # To view what your program builder will look like on a mobile device follow"
  },
  {
   "title": "Adding add-ons to an existing order",
@@ -749,7 +749,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Note This information is for attendees of events only. Alternatively you can read and follow the step by step instructions here. Once you "
+  "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Alternatively you can read and follow the step by step instructions here. Once you have logged into your Oxford Abstracts Account, under t"
  },
  {
   "title": "Buyers, ticket holders and who receives what",
@@ -765,7 +765,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Here you can find instructions on how to change a registration email address for delegate registration. # Note This information is for Admins ONLY! From your Event Dashboard, on the l eft-hand column , click on Registrat"
+  "summary": "Here you can find instructions on how to change a registration email address for delegate registration. # From your Event Dashboard, on the l eft-hand column , click on Registration \u2192 Tickets \u2192 Registrations. Search for "
  },
  {
   "title": "Completing registration when someone bought your ticket",
@@ -773,7 +773,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to complete you form when attendee and the ticket has been bought on your behalf. # This information is for attendees only. Firstly, you will have received an email to your email address the ticket is registere"
+  "summary": "Learn how to complete you form when attendee and the ticket has been bought on your behalf. # Firstly, you will have received an email to your email address the ticket is registered to. Open the email and click on the Co"
  },
  {
   "title": "Configuring invoices and receipts for delegate registration",
@@ -781,7 +781,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "This article will show you how to configure invoices and receipts for delegates of your event. # Note This information is for Admins only! From your dashboard , click on Registration \u2192 Tickets \u2192 Finance On the next scree"
+  "summary": "This article will show you how to configure invoices and receipts for delegates of your event. # From your dashboard , click on Registration \u2192 Tickets \u2192 Finance On the next screen, select Payment Providers from the tab a"
  },
  {
   "title": "Creating coupon codes for delegate registration",
@@ -789,7 +789,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to create coupon codes (discount codes) for tickets for delegate registration. # This information is for Admins ONLY! From your dashboard, click on Registration \u2192 Tickets \u2192 Coupons You can also reach this from "
+  "summary": "Learn how to create coupon codes (discount codes) for tickets for delegate registration. # From your dashboard, click on Registration \u2192 Tickets \u2192 Coupons You can also reach this from the Coupons tab at the top of the tic"
  },
  {
   "title": "Creating your delegate registration form",
@@ -797,7 +797,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "This article provides instructions on how to add questions to the delegate registration form and for Add-On tickets also. (For example - attending a gala dinner). # This information is for admins ONLY. How to add questio"
+  "summary": "This article provides instructions on how to add questions to the delegate registration form and for Add-On tickets also. (For example - attending a gala dinner). # How to add questions to your delegate registration form"
  },
  {
   "title": "Creating your delegate registration tickets for your event",
@@ -829,7 +829,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to edit automated emails in the delegate registration feature. # Note This information is for Admins only! If you are on the free package you are unable to edit automated delegate registration emails. From your"
+  "summary": "Learn how to edit automated emails in the delegate registration feature. # If you are on the free package you are unable to edit automated delegate registration emails. From your dashboard, go to the left-hand column and"
  },
  {
   "title": "Editing your delegate registration ticket details page",
@@ -837,7 +837,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In this article event admins can learn how to create and edit their delegate registration ticket event details page. # This information is for Event Admins ONLY! From your main dashboard, navigate to the left-hand column"
+  "summary": "In this article event admins can learn how to create and edit their delegate registration ticket event details page. # From your main dashboard, navigate to the left-hand column and click on Registration \u2192 Tickets \u2192 Tick"
  },
  {
   "title": "How admins can amend existing delegate registration orders",
@@ -869,7 +869,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "This article will provide instructions on how to preview and publish your event registration. # This information is for Admins ONLY. From your main dashboard, navigate to the column on the left , click on Registration \u2192 "
+  "summary": "This article will provide instructions on how to preview and publish your event registration. # From your main dashboard, navigate to the column on the left , click on Registration \u2192 Publish. This will take you to your P"
  },
  {
   "title": "Refunding an attendee through delegate registration",
@@ -877,7 +877,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to provide attendees with a refund. # Note This information is for Admins ONLY! From your main dashboard, click on Registration \u2192 Registrations. Find the person you want to be refunded by searching for their na"
+  "summary": "Learn how to provide attendees with a refund. # From your main dashboard, click on Registration \u2192 Registrations. Find the person you want to be refunded by searching for their name in the search bar at the top of the pag"
  },
  {
   "title": "Registering on the behalf of someone else",
@@ -893,7 +893,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to quickly add your chosen payment providers for delegate registration. # Note This information is for Admins ONLY! Stripe Payment Link Authorize.net Invoice Payments Billing From your main dashboard , navigate"
+  "summary": "Learn how to quickly add your chosen payment providers for delegate registration. # Stripe Payment Link Authorize.net Invoice Payments Billing From your main dashboard , navigate to the left sidebar , click on Registrati"
  },
  {
   "title": "Using registration analytics",
@@ -901,7 +901,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Find out how to use Delegate Registration analytics, and what they can do to help elevate your event. # Note This information is for Admins ONLY! Registration Analytics allows Admins to track links to get a better overvi"
+  "summary": "Find out how to use Delegate Registration analytics, and what they can do to help elevate your event. # Registration Analytics allows Admins to track links to get a better overview of where attendees have seen/clicked th"
  },
  {
   "title": "Viewing transactions on the attendee table",
@@ -909,7 +909,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to view and download all transaction information from the transaction table. # This information is for Admins ONLY! From your main dashboard, go to the left-hand column and click on Registration \u2192 Registrations"
+  "summary": "Learn how to view and download all transaction information from the transaction table. # From your main dashboard, go to the left-hand column and click on Registration \u2192 Registrations Then select Transaction at the top r"
  },
  {
   "title": "Amending, deleting and copying a session",
@@ -981,7 +981,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Follow the instructions below to create announcements for your attendees of your event to see. # Note This information is for Admins Only! This feature is only available for the Professional Conference Package . Event ad"
+  "summary": "Follow the instructions below to create announcements for your attendees of your event to see. # This feature is only available for the Professional Conference Package . Event administrators can now make announcements vi"
  },
  {
   "title": "Creating your event website",
@@ -1013,7 +1013,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Learn how to make a session cross several columns in the program builder. # Note This information is for Admins Only! From your Event Dashboard, click on Conference \u2192 Program \u2192 Builder On the next screen, find the sessio"
+  "summary": "Learn how to make a session cross several columns in the program builder. # From your Event Dashboard, click on Conference \u2192 Program \u2192 Builder On the next screen, find the session you wish to move across both columns and"
  },
  {
   "title": "Networking for attendees",
@@ -1069,7 +1069,7 @@
   "section": "Conference platform",
   "audience": "organisers",
   "plan": "professional conference",
-  "summary": "Learn how to set up the homepage for your virtual conference, enabling attendees to find out all the information about your event. # Note This information is for Admins only! The Homepage for your Conference is the first"
+  "summary": "Learn how to set up the homepage for your virtual conference, enabling attendees to find out all the information about your event. # The Homepage for your Conference is the first page your attendees will see when they lo"
  },
  {
   "title": "Setting up your program - configuration",
@@ -1141,7 +1141,7 @@
   "section": "Symposia & Certificates",
   "audience": "organisers",
   "plan": "add-on: certificates (included in Professional)",
-  "summary": "Learn how to create, edit, and send certificates. Plus, learn how to create recipient lists and custom recipients lists for your certifciates. # Note This information is for Admins only! From your Event Dashboard, scroll"
+  "summary": "Learn how to create, edit, and send certificates. Plus, learn how to create recipient lists and custom recipients lists for your certifciates. # From your Event Dashboard, scroll down to the Certificate section in the le"
  },
  {
   "title": "Designing the Symposia forms",
@@ -1253,7 +1253,7 @@
   "section": "Account administration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In this article you will learn how to permanently delete, archive your event and unarchive your event. # Note This information is for event admins ONLY! Or scroll down to read the instructions. From your client dashboard"
+  "summary": "In this article you will learn how to permanently delete, archive your event and unarchive your event. # Or scroll down to read the instructions. From your client dashboard , click on Events in the left-hand column . On "
  },
  {
   "title": "Using the customer portal",

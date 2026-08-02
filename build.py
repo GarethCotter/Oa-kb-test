@@ -712,11 +712,19 @@ AUDIENCES = {
 # The audience sentence came over from HubSpot in two families - "The guidance below
 # is for X" and the shorter "This guide/article is for X" - behind an optional
 # "NB:" / "Note:" / "Please note:", and sometimes as "this Knowledge Base article".
+# "this information is for ..." is a third family, 32 articles strong. It was missing
+# from the subject fragment, so those articles were never classified AND never
+# stripped - they kept a shouty "This information is for Admins ONLY!" line in the
+# prose and rendered with no audience tag at all.
 # Classification and removal are built from the SAME subject fragment below: when they
 # drifted apart, articles were classified by an unanchored search, tagged, and then
 # had nothing stripped because the removal was anchored at the paragraph start.
-AUD_LEAD = r'(?:NB|Please\s+note|Note)\s*[:.]?\s*'
-AUD_SUBJ = r'(?:the\s+guidance\s+below|th(?:is|e)\s+(?:knowledge\s+base\s+)?(?:guide|article))'
+# Comma included deliberately: one article writes "Please note, this information is
+# for Admins Only!". This is safe here because AUD_LEAD only ever fires as part of a
+# full audience sentence - it is NOT the callout label logic, where a trailing comma
+# means the lead is part of the sentence's own grammar and must be left alone.
+AUD_LEAD = r'(?:NB|Please\s+note|Note)\s*[:.,]?\s*'
+AUD_SUBJ = r'(?:the\s+guidance\s+below|th(?:is|e)\s+(?:knowledge\s+base\s+)?(?:guide|article|information))'
 
 def _aud(keyword):
     return AUD_SUBJ + r'\s+is\s+for\s+[^.!]*' + keyword
