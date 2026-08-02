@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Table**
+Go to **Event dashboard → Abstract Management → Submissions → Table**
 
 Skip to:
 
@@ -66,7 +66,7 @@ The restored submissions will now be restored to the main submission table.
 
   
 
-To withdraw a submission, go to [**Event dashboard**](/01-getting-started/event-dashboard.html) → **Decisions** →
+To withdraw a submission, go to **Event dashboard** → **Decisions** →
 
 Ensure the **Decision** column is visible (in the **Decisions responses** section\_.
 

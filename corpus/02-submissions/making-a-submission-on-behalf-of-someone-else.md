@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) →** **Scroll to the** **Submissions panel**
+Go to **Event dashboard →** **Scroll to the** **Submissions panel**
 
 Click on the **Submit** **On behalf** button.
 

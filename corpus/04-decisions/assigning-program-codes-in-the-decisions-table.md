@@ -18,7 +18,7 @@ NB. It is advised that you become familiar with the [Decisions table](/04-decisi
 
 You can also [assign program codes in the program builder](/08-conference-platform/assigning-program-codes).
 
-Go to**[Event dashboard](/01-getting-started/event-dashboard) → Abstract Management → Decisions → Table**
+Go to**Event dashboard → Abstract Management → Decisions → Table**
 
 Open **Columns** in the top right of the table, then open **Decision responses,** and ensure **Program Code** is selected.
 

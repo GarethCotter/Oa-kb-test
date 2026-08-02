@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 NB: in order to complete a review on behalf of someone else, the submission must be [assigned to a reviewer](/03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Reviews**
+Go to **Event dashboard → Reviews**
 
 Skip to [**View as a reviewer**](#VAR)
 

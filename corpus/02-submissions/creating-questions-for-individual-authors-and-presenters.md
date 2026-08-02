@@ -21,7 +21,7 @@ NB It's important to be able to distinguish between submitters, authors and pres
 
 If you add a custom author question that needs to be answered individually, you will need to make the email field in the [authors and affiliations question](/02-submissions/the-authors-and-affiliations-question) a required one.
 
-**Go to [Event dashboard](/01-getting-started/event-dashboard) →  Abstract Management → [Submissions](/02-submissions/designing-the-submission-form) → Form & Setup → Click on Authors and affiliations question →** Scroll to **Custom author fields**
+**Go to Event dashboard →  Abstract Management → [Submissions](/02-submissions/designing-the-submission-form) → Form & Setup → Click on Authors and affiliations question →** Scroll to **Custom author fields**
 
 Click the **Add A Question** button, then choose which type of question you would like the authors to respond to.
 

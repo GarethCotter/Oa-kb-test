@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails → Verify sender**
+Go to **Event dashboard → **Emails → Verify sender**
 
 In the middle of the screen, you can enter the email address that you would like notification emails to be sent from. Please note the email needs to be from a domain that you have control over. Unfortunately @gmail.com or @yahoo.com addresses won't work because some of the large email vendors have policies disallowing third parties from sending mail from their domains.
 
@@ -55,7 +55,7 @@ You will return to the **Verify email** page and see that:
 
 ![](/assets/img/undefined-oct-07-2021-11-22-41-16-am-3c97638a.webp)
 
-You can remove the verified email address at any point by going to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails →  Verify sender**
+You can remove the verified email address at any point by going to **Event dashboard → **Emails →  Verify sender**
 
 and clicking remove next to the relevant email address.
 

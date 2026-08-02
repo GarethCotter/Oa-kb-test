@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard) → **Abstract Management →** **Reviews → By submission**
+Go to **Event dashboard** → **Abstract Management →** **Reviews → By submission**
 
 You will see from the view below, the 1) **Clinical Abstracts** reviews are displayed in the table. You will also see a 2) **Other stages** dropdown menu to the left of the **Assign reviewers** button.
 

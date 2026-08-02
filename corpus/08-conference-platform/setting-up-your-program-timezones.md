@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## Follow the guidance below to set up your timezone.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →**Builder → Settings** ➞ **Timezone**
+Go to **Event dashboard → Conference →**Builder → Settings** ➞ **Timezone**
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 

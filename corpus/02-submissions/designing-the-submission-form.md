@@ -45,7 +45,7 @@ NB: Not all of the features below will be available in the FREE package. To view
 
 ---
 
-To view, design or edit a submission form, go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → → Submissions → Form & Setup.**
+To view, design or edit a submission form, go to **Event dashboard → Abstract Management → → Submissions → Form & Setup.**
 
   
 

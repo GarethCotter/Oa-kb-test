@@ -19,7 +19,7 @@ NB: Some of the features listed below will not be available in the Standard Conf
 
 Read this [Knowledge Base Article](/08-conference-platform/setting-up-the-homepage-for-your-conference) for instructions on how to create your conference homepage.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference →** **Program → Builder**
+Go to **Event dashboard → Conference →** **Program → Builder**
 
 The **Program Builder** screen will open. This is the space where you create your program. You will see a default session in place to get you started. The date will be taken from [Event details](/01-getting-started/event-details).
 

@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions.](#Tex)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Event Setup → Users**.
+Go to **Event dashboard → Event Setup → Users**.
 
 NB: There are tabs for each user type, which will vary according to which package you have.
 

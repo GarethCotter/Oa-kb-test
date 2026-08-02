@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions.](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Event Setup → Event details.**
+Go to **Event dashboard → Event Setup → Event details.**
 
 Click into any field to amend/populate it.
 

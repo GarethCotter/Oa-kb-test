@@ -32,7 +32,7 @@ Please note, the one-page guidance in the question description is advice to your
 
 Setting up your poster gallery will need to be undertaken in stages. The first stage is to set your submission form up to collect posters.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & setup →  +QUESTION**
+Go to **Event dashboard → Abstract Management → Submissions → Form & setup →  +QUESTION**
 
 ![](/assets/img/undefined-oct-06-2021-08-35-58-07-am-86e145f5.webp)
 

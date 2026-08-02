@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip](#TEX) to written instructions.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Scroll down to the Reviews panel**
+Go to **Event dashboard → Scroll down to the Reviews panel**
 
 To allow reviews, **click on the drop down box** next to **Form Status**, and **tick the box next to Open for Reviews.**
 

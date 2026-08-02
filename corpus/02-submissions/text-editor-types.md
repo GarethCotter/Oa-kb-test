@@ -14,7 +14,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Forms & Setup**
+Go to **Event dashboard → Abstract Management → Submissions → Forms & Setup**
 
 The default abstract question is an example of a formatted text editor quesion.
 

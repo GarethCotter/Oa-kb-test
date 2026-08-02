@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 Before assigning categories, you will need to add committee members to the system. See [Manage users](/01-getting-started/manage-users) for guidance.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Advanced → Committee filter**
+Go to **Event dashboard → Advanced → Committee filter**
 
 This link will take you to the **Assign Categories**table. The table is formatted in a similar way to all tables in the system (See [An overview of tables](/01-getting-started/working-with-tables.html)).
 

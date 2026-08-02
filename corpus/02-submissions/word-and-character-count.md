@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to text instructions.](#TEX)
 
-From your go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submission → Form & Setup → [Submission form](/02-submissions/designing-the-submission-form.html)**
+From your go to **Event dashboard → Abstract Management → Submission → Form & Setup → [Submission form](/02-submissions/designing-the-submission-form.html)**
 
 Skip to [Discrepancies with word count](#Dis)
 

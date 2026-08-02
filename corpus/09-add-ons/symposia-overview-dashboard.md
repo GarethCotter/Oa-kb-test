@@ -29,7 +29,7 @@ Go to **Event dashboard → **Symposium → Dashboard**.
 
 ![](/assets/img/undefined-apr-29-2021-01-46-22-22-pm-e59dba84.webp)
 
-It works like your standard [event dashboard](/01-getting-started/event-dashboard), but for symposia rather than abstracts, with panels for controls, submissions, reviews and decisions.
+It works like your standard event dashboard, but for symposia rather than abstracts, with panels for controls, submissions, reviews and decisions.
 
 ### Symposium controls
 

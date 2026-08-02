@@ -17,7 +17,7 @@ NB. To become familiar with the decisions table layout and tools, see [An overvi
 
 Go to [How to email submitters from tables](/05-emails/sending-emails-from-tables).
 
-Navigate to **[Event dashboard](/01-getting-started/event-dashboard.html) Abstract Management → Decisions → Table**
+Navigate to **Event dashboard Abstract Management → Decisions → Table**
 
 Navigate to the Columns section of the table in the top right corner.
 

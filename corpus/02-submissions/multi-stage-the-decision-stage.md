@@ -17,7 +17,7 @@ Unlike the submission and review forms, there is only one decision form in multi
 
 [Design the decision form](/04-decisions/design-the-decision-form) for guidance.
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard) → **Abstract Management →** **Decisions → Table**
+Go to **Event dashboard** → **Abstract Management →** **Decisions → Table**
 
 It is advised that you first read [The decisions table](/04-decisions/the-decisions-table)
 

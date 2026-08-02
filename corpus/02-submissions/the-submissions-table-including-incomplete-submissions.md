@@ -28,7 +28,7 @@ Go to [How to email submitters from tables](/05-emails/sending-emails-from-table
 
 ---
 
-Go to [**Event dashboard**](/01-getting-started/event-dashboard.html) **→ Abstract Management** → **Submissions → Table** to access the table
+Go to **Event dashboard** **→ Abstract Management** → **Submissions → Table** to access the table
 
 #### Columns
 

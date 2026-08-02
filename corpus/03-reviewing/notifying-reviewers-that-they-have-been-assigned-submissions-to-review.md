@@ -21,7 +21,7 @@ For guidance on creating and sending emails, see [Amending template emails](/05-
 
   
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → **Emails → Edit and Send** **→ Abstract Management**
+Go to **Event dashboard → **Emails → Edit and Send** **→ Abstract Management**
 
 Scroll down to **Review Emails** under **Manual sent emails** and **click on Notify Reviewers**.
 

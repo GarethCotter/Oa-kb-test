@@ -132,7 +132,7 @@ NB, The items in the navigation menu will vary depending on the package you have
 
 ![](/assets/img/screenshot-2024-04-10-at-12-10-33-png-fff2372e.webp)
 
-1) [Event dashboard](/01-getting-started/event-dashboard.html)
+1) Event dashboard
 
 2) **Event Setup**
 

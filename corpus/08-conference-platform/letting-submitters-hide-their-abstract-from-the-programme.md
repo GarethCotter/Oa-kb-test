@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Abstract Management → Submission → Form & Setup.**
+Go to **Event dashboard → Abstract Management → Submission → Form & Setup.**
 
   
 

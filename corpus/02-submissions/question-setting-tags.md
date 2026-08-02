@@ -13,7 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Submissions → Form & Setup**
+Go to **Event dashboard → Abstract Management → Submissions → Form & Setup**
 
 You can apply 'tags' to each question. These will vary according to the type of question and setup you have. In the example below, you can see that the **Title** question has three tags - **Title** **Reviewer** and **Book**. This signifies that the response to this question:
 

@@ -15,7 +15,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions](#TEX)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference → Configure → Networking**
+Go to **Event dashboard → Conference → Configure → Networking**
 
 Make your choice of which chat options you would like to enable. Note - the name badge option must be enabled to permit the chat features.
 

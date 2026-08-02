@@ -38,7 +38,7 @@ Event Administrators have access to specific events as determined by the Account
 
 Anyone with an Oxford Abstracts account can [submit](/12-for-submitters/making-a-submission) an abstract to a conference or an application to a competition or award.
 
-To make a submission, they will need to know the url of the submission form, which can be copied from the [event dashboard](/01-getting-started/event-dashboard) and published in your event website.
+To make a submission, they will need to know the url of the submission form, which can be copied from the event dashboard and published in your event website.
 
 You can also [restrict submitters](/02-submissions/restricting-who-can-submit-by-email) by adding only permitted submitters with their email address.
 
@@ -66,7 +66,7 @@ Committee Members can see all the submissions and all the grades for all the sub
 
 Anyone with an Oxford Abstracts account can register as a delegate (the [Delegate Registration](https://oxfordabstracts.com/product/delegate-registration/) add-on is available for all our packages).
 
-To [register as a delegate](/07-delegate-registration/), they will need to know the url of the [delegate registration form](/07-delegate-registration/), which can be copied from the [event dashboard](/01-getting-started/event-dashboard) and published in your event website.
+To [register as a delegate](/07-delegate-registration/), they will need to know the url of the [delegate registration form](/07-delegate-registration/), which can be copied from the event dashboard and published in your event website.
 
 **[API users](/10-integrations-api/application-programming-interface-api)**
 

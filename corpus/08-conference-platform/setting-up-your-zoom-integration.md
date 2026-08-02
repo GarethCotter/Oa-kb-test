@@ -75,7 +75,7 @@ NB: The Zoom user allocated a specific column does not need to be present in the
 
 You can now return to the program builder.
 
-**[Event dashboard](/01-getting-started/event-dashboard) → Conference →** **Program Builder**
+**Event dashboard → Conference →** **Program Builder**
 
 You can only add Zoom links to sessions that have already been saved.
 

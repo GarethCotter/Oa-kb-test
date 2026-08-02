@@ -64,7 +64,7 @@ If you are an event administrator, you will see a list of events that you have p
 
 You can access **Archived events (1)**, but you don't have permission to either archive or restore them.
 
-Clicking the **View (2)** button will take you to the [event dashboard](/01-getting-started/event-dashboard.html).
+Clicking the **View (2)** button will take you to the event dashboard.
 
 ![](/assets/img/undefined-4-ee342eb3.webp)
 

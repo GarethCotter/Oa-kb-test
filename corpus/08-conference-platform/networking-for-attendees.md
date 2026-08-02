@@ -21,7 +21,7 @@ When attendees sign in, they can create badges as shown below, with optional dat
 
 ![Attendees](/assets/img/attendees-7039c252.webp)
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard) → Conference** → **Configure →** **Networking**
+Go to **Event dashboard → Conference** → **Configure →** **Networking**
 
 This will open the Networking panel. In the upper part of the panel you will see:
 

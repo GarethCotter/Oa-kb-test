@@ -18,7 +18,7 @@ NB. To become familiar with the Review tables layout and tools, see [An overview
 
 The Review tables contain accordion rows. You can assign reviewers,  edit reviews, and download reports.
 
-Go to **[Event dashboard](/01-getting-started/event-dashboard.html) → Abstract Management → Reviews**
+Go to **Event dashboard → Abstract Management → Reviews**
 
 Skip to [Accordion rows](#ACC)
 
