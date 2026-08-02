@@ -6,6 +6,13 @@
  * feedback arrives via api/feedback.js. Everything on the Dashboard is a formula
  * over the Log tab, so the script only ever appends - nothing is computed here.
  *
+ * The "Staff suggestions" tab is the exception to the pattern and deliberately so.
+ * Everything else here is anonymous reader telemetry; that tab is internal staff
+ * writing to a named colleague, so it carries a name and an email on purpose and
+ * api/suggest.js does not scrub them. Its last two columns (Status, Notes) belong
+ * to whoever triages it: a new row arrives as "New" with empty notes, and because
+ * the script only ever appends, nothing already typed there can be overwritten.
+ *
  * SETUP (about five minutes, once)
  *  1. Create a Google Sheet called "OA help — performance".
  *  2. Extensions → Apps Script. Delete the placeholder, paste this file, Save.
@@ -19,6 +26,15 @@
  *       SHEET_WEBHOOK_URL = <the web app URL>
  *       SHEET_TOKEN       = <the same string as TOKEN below>
  *     Redeploy. Nothing else needs to change.
+ *
+ * UPDATING AN ALREADY-DEPLOYED SCRIPT (both steps, in this order)
+ *  1. Paste the new file, Save, then Run → setup. This adds any missing tab to the
+ *     sheet; it is safe to run again and does not touch existing rows.
+ *  2. Deploy → Manage deployments → the pencil → Version: New version → Deploy.
+ *     A web app keeps serving the version it was deployed at, so saving alone
+ *     changes nothing the outside world can see. Skipping this is the reason a
+ *     "correct" script appears to ignore a new field.
+ *     The web app URL does not change, so Vercel needs no edit.
  *
  * Event vocabulary (the Log tab's last column):
  *   asked            a question completed; the Answered column says whether an
@@ -35,8 +51,14 @@
 
 var TOKEN = 'change-me-to-something-long-and-random';
 
+/* Set to an address to get an email whenever a staff suggestion arrives. Empty
+   means no mail is sent. A failed send must never lose the row, so it is wrapped
+   and happens only after the append. */
+var NOTIFY = '';
+
 var LOG       = 'Log';
 var FEEDBACK  = 'Article feedback';
+var SUGGEST   = 'Staff suggestions';
 var DASH      = 'Dashboard';
 var V_UNHELP  = "Didn't help";
 var V_UNANS   = 'Unanswered';
@@ -44,12 +66,23 @@ var V_UNANS   = 'Unanswered';
 var HEAD_LOG      = ['Timestamp', 'Surface', 'Screen', 'Question', 'Answered',
                      'Articles shown', 'Event'];
 var HEAD_FEEDBACK = ['Timestamp', 'Article', 'Helpful', 'Reason'];
+var HEAD_SUGGEST  = ['Timestamp', 'Name', 'Email', 'Type', 'Suggestion',
+                     'Product area', 'Article or page', 'Link', 'How often',
+                     'Status', 'Notes'];
 
+var STATUSES = ['New', 'Being looked at', 'Written up', 'Not needed'];
+
+/* The reply carries `wrote`: the names of the things this script actually stored.
+   A caller cannot otherwise tell "saved" from "did not recognise your payload" -
+   an older deployment handed a kind of row it has never heard of falls straight
+   through to ok:true and reports success for a write that never happened. Senders
+   that care (api/suggest.js) check for their own name in this list. */
 function doPost(e) {
   try {
     var body = JSON.parse(e.postData.contents);
     if (body.token !== TOKEN) return out({ ok: false, error: 'bad token' });
     var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var wrote = [];
 
     if (body.row) {
       var r = body.row;
@@ -58,6 +91,7 @@ function doPost(e) {
         r.surface || '', r.screen || '', r.question || '',
         r.answered === true, r.sources || '', r.action || ''
       ]);
+      wrote.push('row');
     }
     if (body.feedback) {
       var f = body.feedback;
@@ -65,8 +99,23 @@ function doPost(e) {
         f.ts ? new Date(f.ts) : new Date(),
         f.path || '', f.helpful === true, f.reason || ''
       ]);
+      wrote.push('feedback');
     }
-    return out({ ok: true });
+    if (body.suggestion) {
+      var g = body.suggestion;
+      // Status starts at 'New' on the row being created and Notes starts empty.
+      // Both columns belong to whoever triages: appendRow can only add a row
+      // beneath their work, so nothing they have typed is ever touched.
+      suggestSheet(ss).appendRow([
+        g.ts ? new Date(g.ts) : new Date(),
+        g.name || '', g.email || '', g.type || '', g.text || '',
+        g.section || '', g.article || '', g.link || '', g.frequency || '',
+        STATUSES[0], ''
+      ]);
+      wrote.push('suggestion');
+      notify(g);
+    }
+    return out({ ok: true, wrote: wrote });
   } catch (err) {
     return out({ ok: false, error: String(err) });
   }
@@ -77,6 +126,7 @@ function setup() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   sheet(ss, LOG, HEAD_LOG);
   sheet(ss, FEEDBACK, HEAD_FEEDBACK);
+  suggestSheet(ss);
   buildView(ss, V_UNHELP,
     ['Timestamp', 'Surface', 'Screen', 'Question', 'Articles shown'],
     '=IFERROR(QUERY(' + LOG + '!A2:G, "select A,B,C,D,F where G=\'unhelpful\' ' +
@@ -213,6 +263,68 @@ function buildView(ss, name, head, formula) {
   s.getRange('A2').setFormula(formula);
   s.getRange('A2:A').setNumberFormat('d mmm yyyy, HH:mm');
   s.setColumnWidth(head.indexOf('Question') + 1 || 4, 420);
+}
+
+/* The staff suggestions tab. Formatted by hand rather than through sheet(), because
+   it is the one tab a person reads down rather than charts: the suggestion column is
+   wide and wrapped, and Status is a dropdown so triage is a click.
+
+   Validation is re-extended on every append rather than painted onto a huge range
+   once. A fixed 1,000-row range silently stops applying at row 1,001, and the tab
+   that loses its dropdown is the one nobody notices for a year. */
+function suggestSheet(ss) {
+  var s = ss.getSheetByName(SUGGEST);
+  if (!s) {
+    s = ss.insertSheet(SUGGEST);
+    s.appendRow(HEAD_SUGGEST);
+    s.getRange(1, 1, 1, HEAD_SUGGEST.length).setFontWeight('bold');
+    s.setFrozenRows(1);
+    s.setColumnWidth(1, 155);                       // Timestamp
+    s.setColumnWidth(2, 140);                       // Name
+    s.setColumnWidth(3, 210);                       // Email
+    s.setColumnWidth(4, 190);                       // Type
+    s.setColumnWidth(5, 520);                       // Suggestion
+    s.setColumnWidth(6, 170);                       // Product area
+    s.setColumnWidth(7, 240);                       // Article or page
+    s.setColumnWidth(8, 240);                       // Link
+    s.setColumnWidth(9, 130);                       // How often
+    s.setColumnWidth(10, 130);                      // Status
+    s.setColumnWidth(11, 320);                      // Notes
+    s.getRange('A2:A').setNumberFormat('d mmm yyyy, HH:mm');
+    s.getRange('E2:E').setWrap(true);
+    s.getRange('K2:K').setWrap(true);
+  }
+  var rule = SpreadsheetApp.newDataValidation()
+    .requireValueInList(STATUSES, true).setAllowInvalid(false).build();
+  s.getRange(2, 10, Math.max(s.getLastRow(), 1) + 50, 1).setDataValidation(rule);
+  return s;
+}
+
+/* Optional mail on arrival. Wrapped whole: the row is already saved by the time this
+   runs, so a bounced address or a hit quota must not turn a stored suggestion into
+   an error the sender sees. */
+function notify(g) {
+  if (!NOTIFY) return;
+  try {
+    MailApp.sendEmail({
+      to: NOTIFY,
+      subject: 'KB suggestion from ' + (g.name || 'a colleague') + ': ' + (g.type || ''),
+      body: [
+        (g.name || '') + ' <' + (g.email || '') + '>',
+        'Type: ' + (g.type || '-'),
+        'Product area: ' + (g.section || '-'),
+        'How often: ' + (g.frequency || '-'),
+        'Article or page: ' + (g.article || '-'),
+        'Link: ' + (g.link || '-'),
+        '',
+        g.text || '',
+        '',
+        SpreadsheetApp.getActiveSpreadsheet().getUrl()
+      ].join('\n')
+    });
+  } catch (err) {
+    // The row is in the sheet; a missing email is a nuisance, not a loss.
+  }
 }
 
 function sheet(ss, name, head) {
