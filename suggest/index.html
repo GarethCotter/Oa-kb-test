@@ -300,17 +300,21 @@ footer a{color:var(--navy)}
       </div>
 
       <!-- Revealed only by "I'm not here". New starters and anyone the about page has
-           not caught up with still need a way through, and it must not be a dead end. -->
-      <div class="field" id="other-wrap" hidden>
-        <label for="othername">Your name</label>
-        <input type="text" id="othername" name="othername" maxlength="80" autocomplete="name">
-      </div>
+           not caught up with still need a way through, and it must not be a dead end.
+           Everyone on the wall is someone Kristy can already reach, so they never see
+           an email field at all - it is not optional-and-ignorable, it is absent. -->
+      <div id="other-wrap" hidden>
+        <div class="field">
+          <label for="othername">Your name</label>
+          <input type="text" id="othername" name="othername" maxlength="80" autocomplete="name">
+        </div>
 
-      <div class="field">
-        <label for="email">Your email <span class="opt" id="email-opt">(optional)</span></label>
-        <span class="help" id="email-help">Only if there is a better address for this than
-        the one Kristy already has for you.</span>
-        <input type="email" id="email" name="email" maxlength="120" autocomplete="email">
+        <div class="field">
+          <label for="email">Your email</label>
+          <span class="help">Kristy will not have your address otherwise, and may need to
+          ask what you meant.</span>
+          <input type="email" id="email" name="email" maxlength="120" autocomplete="email">
+        </div>
       </div>
 
       <div class="hp" aria-hidden="true">
@@ -378,18 +382,21 @@ footer a{color:var(--navy)}
     return '';
   }
 
-  /* Picking a face is the whole identity step, so email is optional for everyone on
-     the wall - Kristy can already reach them. "I'm not here" is the one branch that
-     needs it, and the labelling changes to say so rather than staying silently
-     different. No focus() call here on purpose: moving focus out of a radio group on
-     change would break arrow-key navigation through it. */
+  /* Picking a face is the whole identity step, so nobody on the wall is shown an email
+     field at all - Kristy can already reach them. "I'm not here" is the one branch that
+     needs one, and it appears next to the name box rather than sitting there greyed out
+     for everyone else. No focus() call here on purpose: moving focus out of a radio
+     group on change would break arrow-key navigation through it. */
   function syncOther() {
     var other = val('who') === '__other__';
     document.getElementById('other-wrap').hidden = !other;
-    document.getElementById('email-opt').textContent = other ? '' : '(optional)';
-    document.getElementById('email-help').textContent = other
-      ? 'Needed this time, since you are not on the list above.'
-      : 'Only if there is a better address for this than the one Kristy already has for you.';
+    /* Cleared on the way out, not just hidden. A hidden input that keeps its value
+       submits something the sender can no longer see - type an address, change your
+       mind about who you are, and it would ride along attached to the wrong name. */
+    if (!other) {
+      f.elements.othername.value = '';
+      f.elements.email.value = '';
+    }
   }
   for (var wi = 0; wi < whoInputs.length; wi++)
     whoInputs[wi].addEventListener('change', syncOther);

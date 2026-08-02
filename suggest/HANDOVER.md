@@ -75,11 +75,18 @@ to `assets/img/team/` — hotlinking them would break the moment marketing reorg
 the about page, and the house rule is that images are committed. Picking a face sets
 the name and derives the team.
 
-That is also why **email is optional**: everyone on the wall is someone Kristy can
-already reach, so asking for an address is friction that buys nothing. The one branch
-that needs it is **"I'm not here"** — a new starter, or anyone the about page has not
-caught up with — which reveals a name box, makes email required, and relabels itself
-to say why. It must never be a dead end.
+That is also why **there is no email field at all** for anyone on the wall: Kristy can
+already reach them, so an address is friction that buys nothing — and a field that is
+present but ignorable still costs a reader a decision. It is absent, not optional.
+
+The one branch that needs one is **"I'm not here"** — a new starter, or anyone the
+about page has not caught up with. Selecting it reveals a name box *and* an email box
+together, both required. It must never be a dead end.
+
+Switching back to a face **clears both**, rather than merely hiding them. A hidden
+input that keeps its value submits something the sender can no longer see: type an
+address, change your mind about who you are, and it would ride along attached to the
+wrong name.
 
 **Keeping the roster current:** the names and teams live in `ROSTER` in
 `api/suggest.js`, the tiles in `suggest/index.html`, and the photos in
@@ -149,11 +156,13 @@ Verified against the real `api/suggest.js` handler and a stand-in Apps Script:
 - 7th post in ten minutes → 429, page keeps the text and offers the copy button
 - "Send another" → keeps who you are, clears the rest
 - all 19 tiles render, all 18 photos load at 160×160, none broken
-- picking a face and leaving email blank → accepted, team derived correctly
+- picking a face → no email field is shown at all; submits and derives team correctly
 - claiming `team: "Chief Executive"` while named Nori → stored as Customer Support;
   the roster wins, the request does not
-- "I'm not here" → reveals the name box, relabels email as required, and blocks on
-  either being missing without making a request
+- "I'm not here" → reveals name and email together, and blocks on either being
+  missing without making a request
+- typing an email, then switching back to a face → the value is cleared, not just
+  hidden, so it cannot be submitted under someone else's name
 - `Sebastián` survives the round trip intact (9 chars, U+00E1) — verified in the
   browser, since PowerShell's console mangles it on the way out and it looks broken
   when it is not
