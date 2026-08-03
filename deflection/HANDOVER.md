@@ -14,6 +14,19 @@ shown once, with two buttons: **That's solved it** and **Send my ticket anyway**
 Live demo of the finished behaviour: https://oa-kb-test.vercel.app/prototype/support-deflection
 Test harness wired to the real script and real API: https://oa-kb-test.vercel.app/deflection/test-form
 
+**Procedural answers arrive as numbered steps** (added 3 August 2026). When the
+reader's question is a "how do I…", `/api/search` returns structured steps
+alongside the prose and the card renders them as a numbered list; everything else
+stays a paragraph. `result.answer` still carries the full instructions either way,
+so nothing breaks if steps are absent.
+
+**One consequence worth knowing:** a steps answer takes roughly 8 seconds to
+generate against this card's 2.5s interrupt cap, so it depends entirely on the
+prefetch that starts when the reader leaves the subject or description field.
+Prose answers still come back in 2–4s. If the `not_interrupted` share of
+`ticket-form` rows looks high once there is real traffic, the fix is prefetching
+earlier — **not** raising `maxWaitMs`. A slow endpoint must never become a slow form.
+
 Three product rules are load-bearing. Please don't soften them in integration:
 
 1. **Never show a confidence percentage.** The endpoint decides strong/weak; the
