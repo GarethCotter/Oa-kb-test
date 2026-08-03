@@ -110,41 +110,53 @@
 
   var state = { open: false, busy: false, history: [], started: false, topic: null, view: 'home' };
 
-  /* ---------- styles ---------- */
+  /* ---------- styles ----------
+     The visual language is the admin-help prototype's, ported wholesale on Gareth's
+     call (2 Aug 2026): cream panel, Gloock display headings over Outfit body, the
+     round red send, and the full-width Raise-a-support-ticket button that is always
+     in view - escalation must be unmissable without shouting. The widget injects
+     the Google Fonts link itself, because the pages it drops into do not load
+     these fonts. */
+  var FONT = "'Outfit',ui-sans-serif,system-ui,sans-serif";
+  var DISPLAY = "'Gloock',Georgia,serif";
   var CSS = [
     '.oahw-launch{position:fixed;right:22px;bottom:22px;z-index:Z;display:inline-flex;align-items:center;gap:9px;',
-    ' background:#0A1B3E;color:#EAECE1;border:none;border-radius:9999px;padding:13px 22px;font-family:inherit;',
-    ' font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(10,27,62,.35)}',
-    '.oahw-launch:hover{background:#152a56}',
-    '.oahw-launch svg{width:18px;height:18px}',
-    '.oahw-panel{position:fixed;right:22px;bottom:22px;z-index:Z;width:390px;max-width:calc(100vw - 30px);',
-    ' height:600px;max-height:calc(100vh - 44px);background:#fff;border:1px solid #d8d5c8;border-radius:14px;',
-    ' box-shadow:0 18px 50px rgba(10,27,62,.3);display:flex;flex-direction:column;overflow:hidden;',
-    ' font-family:inherit;color:#0A1B3E;transition:width .2s ease}',
-    '.oahw-panel.oahw-wide{width:560px}',
-    '.oahw-head{background:#0A1B3E;color:#EAECE1;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}',
-    '.oahw-head b{font-size:17px;font-weight:600}',
-    '.oahw-head span{display:block;font-size:12.5px;color:rgba(234,236,225,.75);margin-top:1px}',
-    '.oahw-x{background:none;border:none;color:#EAECE1;font-size:22px;line-height:1;cursor:pointer;padding:4px}',
-    '.oahw-back{background:none;border:none;color:#EAECE1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px 4px 0;flex:none}',
-    '.oahw-back:hover{color:#fff}',
-    '.oahw-hgroup{display:flex;align-items:center;min-width:0}',
+    ' background:#0A1B3E;color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:FONT;',
+    ' font-size:16px;font-weight:500;cursor:pointer;box-shadow:0 10px 30px rgba(10,27,62,.35)}',
+    '.oahw-launch:hover{background:#16254a}',
+    '.oahw-launch svg{width:19px;height:19px;flex-shrink:0}',
+    '.oahw-panel{position:fixed;right:22px;bottom:22px;z-index:Z;width:400px;max-width:calc(100vw - 24px);',
+    ' height:600px;max-height:calc(100vh - 44px);background:#EAECE1;border:1px solid #0A1B3E;border-radius:14px;',
+    ' box-shadow:0 24px 60px rgba(10,27,62,.35);display:flex;flex-direction:column;overflow:hidden;',
+    ' font-family:FONT;color:#0A1B3E;transform-origin:bottom right;animation:oahw-pop .22s ease-out;transition:width .2s ease}',
+    '.oahw-panel.oahw-wide{width:680px;height:calc(100vh - 44px)}',
+    '@keyframes oahw-pop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}',
+    '@keyframes oahw-rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}',
+    '.oahw-head{padding:18px 20px 14px;border-bottom:1px solid rgba(10,27,62,.14);display:flex;',
+    ' align-items:flex-start;justify-content:space-between;gap:12px}',
+    '.oahw-head b{font-family:DISPLAY;font-weight:400;font-size:24px;line-height:1.1;letter-spacing:-.01em;display:block}',
+    '.oahw-head span{display:flex;align-items:center;gap:6px;font-size:13px;color:#5a6377;margin-top:5px}',
+    '.oahw-pin{width:7px;height:7px;border-radius:50%;background:#1F6F5C;flex:none}',
+    '.oahw-x{background:none;border:none;color:#0A1B3E;cursor:pointer;padding:4px;border-radius:6px;line-height:0}',
+    '.oahw-x:hover{background:rgba(10,27,62,.08)}',
+    '.oahw-back{background:none;border:none;color:#0A1B3E;font-size:24px;line-height:1;cursor:pointer;',
+    ' padding:0 10px 0 0;flex:none;margin-top:1px}',
+    '.oahw-back:hover{color:#C54538}',
+    '.oahw-hgroup{display:flex;align-items:flex-start;min-width:0}',
     /* the topic screen */
-    '.oahw-home{flex:1;overflow-y:auto;padding:18px 16px 14px;background:#EAECE1}',
-    '.oahw-hh{font-size:19px;font-weight:600;margin:0 0 3px}',
-    '.oahw-hsub{font-size:13px;color:#5a6377;margin:0 0 14px}',
+    '.oahw-home{flex:1;overflow-y:auto;padding:20px 16px 14px}',
+    '.oahw-hh{font-family:DISPLAY;font-weight:400;font-size:22px;letter-spacing:-.01em;margin:0 0 4px}',
+    '.oahw-hsub{font-size:13.5px;color:#5a6377;margin:0 0 14px}',
     '.oahw-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}',
     '.oahw-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;',
-    ' background:#fff;border:1px solid #d8d5c8;border-radius:12px;padding:12px 12px 11px;font-family:inherit;',
-    ' font-size:13.5px;font-weight:600;line-height:1.25;color:#0A1B3E;cursor:pointer;min-height:74px}',
+    ' background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:12px 12px 11px;font-family:FONT;',
+    ' font-size:13.5px;font-weight:600;line-height:1.25;color:#0A1B3E;cursor:pointer;min-height:74px;',
+    ' box-shadow:0 1px 2px rgba(10,27,62,.04)}',
     '.oahw-tile:hover{border-color:#C54538}',
     '.oahw-tile:hover svg{color:#C54538}',
     '.oahw-tile svg{width:19px;height:19px;color:#0A1B3E;flex:none}',
     '.oahw-here{position:absolute;top:9px;right:10px;font-size:10px;font-weight:700;letter-spacing:.05em;',
     ' text-transform:uppercase;color:#C54538;background:rgba(197,69,56,.1);border-radius:9999px;padding:3px 8px}',
-    '.oahw-tlink{display:block;text-align:center;font-size:12.5px;color:#5a6377;margin:14px 0 2px}',
-    '.oahw-tlink a{color:#0A1B3E;text-decoration:underline;text-underline-offset:3px;cursor:pointer}',
-    '.oahw-tlink a:hover{color:#C54538}',
     /* the shiny intro card */
     '.oahw-intro{position:relative;overflow:hidden;border-radius:14px;padding:22px 20px 20px;color:#EAECE1;',
     ' background:radial-gradient(120% 90% at 85% -10%,rgba(197,69,56,.55),transparent 55%),',
@@ -154,7 +166,7 @@
     '.oahw-ipill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;',
     ' border:1px solid rgba(234,236,225,.45);border-radius:9999px;padding:4px 12px;margin-bottom:12px;',
     ' color:#EAECE1;position:relative;z-index:1}',
-    '.oahw-ihead{margin:0 0 8px;font-size:21px;font-weight:700;line-height:1.2;position:relative;z-index:1}',
+    '.oahw-ihead{margin:0 0 8px;font-family:DISPLAY;font-weight:400;font-size:24px;line-height:1.15;position:relative;z-index:1}',
     '.oahw-ihead span{color:#e9a89e}',
     '.oahw-ibody{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(234,236,225,.92);position:relative;z-index:1}',
     '.oahw-iask{margin:0;font-size:13.5px;font-weight:600;color:#e9a89e;position:relative;z-index:1;',
@@ -165,58 +177,107 @@
     '@keyframes oahw-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}',
     '@media (prefers-reduced-motion:reduce){.oahw-st{animation:none;opacity:.6}.oahw-iask{animation:none}',
     ' .oahw-intro{transition:none}}',
-    '.oahw-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#EAECE1}',
-    '.oahw-row{display:flex;gap:8px;align-items:flex-end}',
-    '.oahw-av{width:26px;height:26px;border-radius:50%;background:#0A1B3E;color:#EAECE1;flex:none;display:flex;',
-    ' align-items:center;justify-content:center;font-size:12px;font-weight:700}',
-    '.oahw-msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:14.5px;line-height:1.5}',
-    '.oahw-bot{background:#fff;border:1px solid #d8d5c8;border-bottom-left-radius:4px}',
-    '.oahw-bot p{margin:0 0 8px}.oahw-bot p:last-child{margin:0}',
+    '.oahw-body{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:14px}',
+    '.oahw-row{display:flex;gap:8px;align-items:flex-end;max-width:88%;align-self:flex-start;animation:oahw-rise .25s ease-out}',
+    '.oahw-av{width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid #E5E7EB;flex:none;',
+    ' display:grid;place-items:center}',
+    '.oahw-av svg{width:15px;height:13px;display:block}',
+    '.oahw-msg{max-width:88%;padding:12px 15px;border-radius:12px;font-size:15.5px;line-height:1.5;animation:oahw-rise .25s ease-out}',
+    '.oahw-row .oahw-msg{max-width:100%;animation:none}',
+    '.oahw-bot{background:#fff;border:1px solid #E5E7EB;border-bottom-left-radius:4px}',
+    '.oahw-bot p{margin:0 0 10px}.oahw-bot p:last-child{margin:0}',
     '.oahw-bot strong{font-weight:600}',
-    '.oahw-you{background:#0A1B3E;color:#EAECE1;align-self:flex-end;border-bottom-right-radius:4px}',
-    '.oahw-from{border-top:1px solid #e4e1d4;margin-top:10px;padding-top:8px}',
-    '.oahw-from p{font-size:11.5px;color:#5a6377;text-transform:uppercase;letter-spacing:.05em;margin:0 0 5px}',
-    '.oahw-from a{display:flex;align-items:center;gap:6px;font-size:13.5px;color:#0A1B3E;text-decoration:underline;',
-    ' text-underline-offset:3px;margin-bottom:4px;cursor:pointer}',
+    '.oahw-you{background:#0A1B3E;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}',
+    '.oahw-from{border-top:1px solid #E5E7EB;margin-top:11px;padding-top:10px}',
+    '.oahw-from p{font-size:12.5px;color:#5a6377;margin:0 0 5px}',
+    '.oahw-from a{display:flex;align-items:center;gap:7px;font-size:14.5px;color:#0A1B3E;text-decoration:underline;',
+    ' text-underline-offset:3px;text-decoration-thickness:1px;padding:3px 0;cursor:pointer}',
     '.oahw-from a:hover{color:#C54538}',
-    '.oahw-chips{display:flex;flex-wrap:wrap;gap:7px;align-self:flex-start;max-width:95%}',
-    '.oahw-chip{border:1px solid rgba(10,27,62,.28);background:#fff;border-radius:9999px;padding:7px 13px;',
-    ' font-family:inherit;font-size:13px;color:#0A1B3E;cursor:pointer}',
+    '.oahw-from a svg{width:13px;height:13px;flex:none;color:#C54538}',
+    '.oahw-chips{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start;max-width:95%}',
+    '.oahw-chip{border:1px solid rgba(10,27,62,.28);background:#fff;border-radius:9999px;padding:8px 14px;',
+    ' font-family:FONT;font-size:14px;color:#0A1B3E;cursor:pointer;text-align:left}',
     '.oahw-chip:hover{border-color:#C54538;color:#C54538}',
     '.oahw-chip.oahw-solid{background:#C54538;border-color:#C54538;color:#fff;font-weight:500}',
-    '.oahw-verdict{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start}',
-    '.oahw-vbtn{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(10,27,62,.18);background:#fff;',
-    ' border-radius:9999px;padding:6px 13px;font-family:inherit;font-size:13px;color:#0A1B3E;cursor:pointer}',
+    '.oahw-chip.oahw-solid:hover{background:#ab3a2f;color:#fff}',
+    '.oahw-verdict{display:flex;flex-wrap:wrap;gap:8px;align-self:flex-start;max-width:95%}',
+    '.oahw-vbtn{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(10,27,62,.18);background:#fff;',
+    ' border-radius:9999px;padding:7px 14px;font-family:FONT;font-size:13.5px;color:#0A1B3E;cursor:pointer}',
     '.oahw-vbtn:hover{border-color:rgba(10,27,62,.45)}',
-    '.oahw-vbtn svg{width:13px;height:13px;flex:none}',
+    '.oahw-vbtn svg{width:14px;height:14px;flex:none}',
     '.oahw-vyes svg{color:#4E5A31}.oahw-vno svg{color:#5a6377}',
-    '.oahw-vdone{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font-size:13px;font-weight:500}',
-    '.oahw-vdone svg{width:13px;height:13px;color:#4E5A31}',
-    '.oahw-typing{display:inline-flex;gap:4px;padding:12px 14px;background:#fff;border:1px solid #d8d5c8;border-radius:12px;border-bottom-left-radius:4px}',
-    '.oahw-typing i{width:6px;height:6px;border-radius:50%;background:#C54538;opacity:.4;animation:oahw-b 1.2s infinite ease-in-out}',
-    '.oahw-typing i:nth-child(2){animation-delay:.16s}.oahw-typing i:nth-child(3){animation-delay:.32s}',
-    '@keyframes oahw-b{0%,80%,100%{opacity:.3;transform:scale(.85)}40%{opacity:1;transform:scale(1)}}',
-    '@media (prefers-reduced-motion:reduce){.oahw-typing i{animation:none;opacity:1}}',
-    '.oahw-foot{border-top:1px solid #d8d5c8;background:#fff;padding:10px;display:flex;gap:8px}',
-    '.oahw-foot input{flex:1;font-family:inherit;font-size:14.5px;padding:10px 12px;border:1.5px solid #d8d5c8;',
-    ' border-radius:9999px;color:#0A1B3E;min-width:0}',
-    '.oahw-foot input:focus{outline:none;border-color:#0A1B3E}',
-    '.oahw-send{background:#C54538;color:#fff;border:none;border-radius:9999px;padding:0 18px;font-family:inherit;',
-    ' font-size:14.5px;font-weight:600;cursor:pointer}',
-    '.oahw-send[disabled]{opacity:.55;cursor:default}',
-    '.oahw-reader{flex:1;overflow-y:auto;padding:20px;background:#fff}',
-    '.oahw-reader h1{font-size:22px;margin:0 0 14px}',
-    '.oahw-reader img{max-width:100%;height:auto;border:1px solid #e4e1d4;border-radius:6px}',
-    '.oahw-rbar{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #d8d5c8;background:#fff}',
-    '.oahw-rbar button,.oahw-rbar a{font-family:inherit;font-size:13.5px;color:#0A1B3E;background:none;border:1px solid rgba(10,27,62,.25);',
-    ' border-radius:9999px;padding:6px 14px;cursor:pointer;text-decoration:none}',
-    '.oahw-rbar button:hover,.oahw-rbar a:hover{border-color:#C54538;color:#C54538}',
+    '.oahw-vdone{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:13.5px;font-weight:500}',
+    '.oahw-vdone svg{width:14px;height:14px;color:#4E5A31}',
+    '.oahw-typing{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #E5E7EB;',
+    ' border-radius:12px;border-bottom-left-radius:4px;padding:14px 16px}',
+    '.oahw-typing i{width:7px;height:7px;border-radius:50%;background:#9aa3b5;animation:oahw-b 1.2s infinite}',
+    '.oahw-typing i:nth-child(2){animation-delay:.2s}.oahw-typing i:nth-child(3){animation-delay:.4s}',
+    '@keyframes oahw-b{0%,80%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}',
+    '@media (prefers-reduced-motion:reduce){.oahw-typing i,.oahw-panel,.oahw-msg,.oahw-row{animation:none}}',
+    '.oahw-foot{border-top:1px solid rgba(10,27,62,.14);padding:12px 16px}',
+    '.oahw-ask{display:flex;gap:8px}',
+    '.oahw-ask input{flex:1;font-family:FONT;font-size:15.5px;padding:11px 14px;border:1px solid rgba(10,27,62,.3);',
+    ' border-radius:9999px;background:#fff;color:#0A1B3E;min-width:0}',
+    '.oahw-ask input::placeholder{color:#8a92a3}',
+    '.oahw-ask input:focus{outline:none;border-color:#0A1B3E}',
+    '.oahw-send{background:#C54538;border:none;color:#fff;border-radius:50%;width:44px;height:44px;',
+    ' cursor:pointer;flex:none;display:grid;place-items:center}',
+    '.oahw-send:hover{background:#ab3a2f}',
+    '.oahw-send[disabled]{opacity:.5;cursor:not-allowed}',
+    '.oahw-send svg{width:18px;height:18px}',
+    '.oahw-mic{background:#fff;border:1px solid rgba(10,27,62,.3);color:#0A1B3E;border-radius:50%;width:44px;height:44px;',
+    ' cursor:pointer;flex:none;display:grid;place-items:center}',
+    '.oahw-mic:hover{border-color:#0A1B3E}',
+    '.oahw-mic svg{width:18px;height:18px}',
+    '.oahw-mic.oahw-listening{background:#C54538;border-color:#C54538;color:#fff;animation:oahw-micpulse 1.2s ease-in-out infinite}',
+    '@keyframes oahw-micpulse{0%,100%{box-shadow:0 0 0 0 rgba(197,69,56,.35)}50%{box-shadow:0 0 0 9px rgba(197,69,56,0)}}',
+    '@media (prefers-reduced-motion:reduce){.oahw-mic.oahw-listening{animation:none}}',
+    /* Escalation must be unmissable without shouting: a real button, full width,
+       always in view - not a line of small print. Carried from the prototype. */
+    '.oahw-ticket{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:10px;',
+    ' padding:11px 16px;border:1.5px solid #0A1B3E;border-radius:9999px;background:#fff;color:#0A1B3E;',
+    ' font-family:FONT;font-size:15px;font-weight:500;text-decoration:none;cursor:pointer}',
+    '.oahw-ticket:hover{background:#0A1B3E;color:#fff}',
+    '.oahw-ticket svg{width:17px;height:17px;flex:none}',
+    '.oahw-reader{flex:1;overflow-y:auto;padding:22px 28px;background:#fff}',
+    '.oahw-reader h1{font-family:DISPLAY;font-weight:400;font-size:26px;line-height:1.15;margin:0 0 16px}',
+    '.oahw-reader h2{font-size:19px;font-weight:600;margin:22px 0 8px}',
+    '.oahw-reader h3{font-size:16.5px;font-weight:600;margin:18px 0 6px}',
+    '.oahw-reader p{margin:0 0 12px;font-size:15.5px}',
+    '.oahw-reader ul,.oahw-reader ol{margin:0 0 14px 22px;font-size:15.5px}',
+    '.oahw-reader li{margin-bottom:6px}',
+    '.oahw-reader img{max-width:100%;height:auto;border:1px solid #E5E7EB;border-radius:8px;margin:6px 0 14px}',
+    '.oahw-reader a{color:#C54538;text-underline-offset:3px}',
+    '.oahw-reader strong{font-weight:600}',
+    '.oahw-reader .anchor{display:none}',
+    '.oahw-rbar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #E5E7EB;background:#fff}',
+    '.oahw-rbar button{display:inline-flex;align-items:center;gap:7px;background:none;border:none;cursor:pointer;',
+    ' color:#0A1B3E;font-family:FONT;font-size:15px;font-weight:500;padding:6px 10px;border-radius:8px}',
+    '.oahw-rbar button:hover{background:rgba(10,27,62,.07)}',
+    '.oahw-rbar button svg{width:16px;height:16px;flex:none}',
+    '.oahw-rbar a{margin-left:auto;font-family:FONT;font-size:13.5px;color:#5a6377;text-decoration:underline;',
+    ' text-underline-offset:3px}',
+    '.oahw-rbar a:hover{color:#C54538}',
+    '@media (max-width:700px){.oahw-panel{right:8px;bottom:8px;left:8px;width:auto;height:calc(100vh - 16px)}}',
     '.oahw-hidden{display:none !important}'
-  ].join('\n').replace(/Z/g, String(CFG.zIndex));
+  ].join('\n').replace(/Z/g, String(CFG.zIndex))
+   .replace(/FONT/g, FONT).replace(/DISPLAY/g, DISPLAY);
 
+  /* The OA mark from the brand favicon, inlined with an explicit navy fill: the
+     favicon file itself flips white under prefers-color-scheme:dark, which on a
+     white avatar circle would vanish. Carried from the prototype. */
+  var AVATAR = '<svg viewBox="0 0 50 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+    '<path fill="#0A1B3E" d="M44.4549 11.7562L37.8931 15.5549C40.8961 17.6207 42.8754 21.0864 42.8822 25.0006C42.8822 31.2933 37.7643 36.451 31.4601 36.4442C25.4677 36.4442 20.5124 31.7757 20.0514 25.8772L13.4761 29.6827C15.5707 37.6471 22.8917 43.6339 31.4601 43.6271C41.6892 43.6203 50.0406 35.2279 49.9999 24.987C49.9796 19.7953 47.8646 15.1132 44.4617 11.7494L44.4549 11.7562Z"/>' +
+    '<path fill="#0A1B3E" d="M34.1716 6.61202L45.6005 0H31.6296L0 18.3071H13.971L14.1201 18.2187C13.2931 20.3186 12.8321 22.595 12.8254 24.9871C12.8254 25.0822 12.8254 25.1705 12.8321 25.2657L40.8961 9.01763C38.876 7.80803 36.5984 6.97898 34.1716 6.61202Z"/>' +
+    '<path fill="#0A1B3E" d="M3.77575 20.2642C1.6879 20.2642 0 21.9631 0 24.0493V27.4403H7.15834V23.6552C7.15834 21.7796 5.64668 20.2642 3.77575 20.2642Z"/></svg>';
+  var BUBBLE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>';
+  var PLANE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+  var MIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3z"/><path d="M19 10v1a7 7 0 01-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>';
+  var XICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+  var LINKOUT = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>';
   var TICK = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>';
   var CROSS = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
-  var QMARK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M9.1 9a3 3 0 015.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>';
 
   function emit(name, detail) { try { if (CFG.onEvent) CFG.onEvent(name, detail || {}); } catch (e) {} }
 
@@ -260,6 +321,21 @@
   }
 
   function build() {
+    /* The brand fonts, injected only when the page has not already loaded them -
+       the admin app's pages do not carry Gloock or Outfit. */
+    if (!document.querySelector('link[href*="family=Gloock"]')) {
+      ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'].forEach(function (h) {
+        var pc = document.createElement('link');
+        pc.rel = 'preconnect'; pc.href = h;
+        if (h.indexOf('gstatic') >= 0) pc.crossOrigin = '';
+        document.head.appendChild(pc);
+      });
+      var fl = document.createElement('link');
+      fl.rel = 'stylesheet';
+      fl.href = 'https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@300;400;500;600&display=swap';
+      document.head.appendChild(fl);
+    }
+
     var st = document.createElement('style');
     st.textContent = CSS;
     document.head.appendChild(st);
@@ -267,7 +343,7 @@
     root = el('div');
     var launch = el('button', 'oahw-launch');
     launch.type = 'button';
-    launch.innerHTML = QMARK + 'Help';
+    launch.innerHTML = BUBBLE + 'Help';
     launch.setAttribute('aria-label', 'Open help');
     launch.addEventListener('click', open);
 
@@ -284,22 +360,28 @@
     var title = el('b', null, 'Help');
     ht.appendChild(title);
     var where = el('span');
+    var pin = el('i', 'oahw-pin');
+    pin.setAttribute('aria-hidden', 'true');
+    var subText = el('span');
+    where.append(pin, subText);
     ht.appendChild(where);
     hgroup.append(backHome, ht);
-    var x = el('button', 'oahw-x', '×');
+    var x = el('button', 'oahw-x');
     x.type = 'button';
+    x.innerHTML = XICON;
     x.setAttribute('aria-label', 'Close help');
     x.addEventListener('click', close);
     head.append(hgroup, x);
-    state._title = title; state._sub = where; state._back = backHome;
+    state._title = title; state._sub = subText; state._back = backHome;
 
     home = el('div', 'oahw-home oahw-hidden');
 
     body = el('div', 'oahw-body');
 
     var rbar = el('div', 'oahw-rbar oahw-hidden');
-    var back = el('button', null, '‹ Back to the conversation');
+    var back = el('button');
     back.type = 'button';
+    back.innerHTML = ARROW + 'Back to chat';
     back.addEventListener('click', closeReader);
     readerOpen = el('a', null, 'Open in the help centre ↗');
     readerOpen.target = '_blank'; readerOpen.rel = 'noopener';
@@ -308,16 +390,36 @@
     readerBody = reader;
 
     foot = el('div', 'oahw-foot');
+    var askRow = el('div', 'oahw-ask');
     input = el('input');
     input.type = 'text';
-    input.placeholder = 'e.g. How do I email my reviewers?';
+    input.placeholder = 'Ask in your own words…';
     input.setAttribute('aria-label', 'Your question');
-    var send = el('button', 'oahw-send', 'Ask');
+    var mic = el('button', 'oahw-mic');
+    mic.type = 'button';
+    mic.innerHTML = MIC;
+    mic.setAttribute('aria-label', 'Ask by voice');
+    mic.setAttribute('aria-pressed', 'false');
+    mic.title = 'Ask by voice — the words appear in the box for you to check';
+    var send = el('button', 'oahw-send');
     send.type = 'button';
+    send.innerHTML = PLANE;
+    send.setAttribute('aria-label', 'Send');
     var go = function () { var q = input.value.trim(); if (q) { input.value = ''; ask(q); } };
     send.addEventListener('click', go);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
-    foot.append(input, send);
+    askRow.append(input, mic, send);
+
+    /* Escalation, always in view - carried from the prototype, where it was a rule:
+       a person one tap away, never buried behind a failure state. */
+    var ticket = el('a', 'oahw-ticket');
+    ticket.href = CFG.ticketUrl;
+    ticket.target = '_blank'; ticket.rel = 'noopener';
+    ticket.title = 'A person will pick it up — no question is too small';
+    ticket.innerHTML = PLANE + 'Raise a support ticket';
+    ticket.addEventListener('click', function () { emit('ticket', { from: 'footer' }); });
+    foot.append(askRow, ticket);
+    wireVoice(mic);
 
     panel.append(head, rbar, home, body, reader, foot);
     root.append(launch, panel);
@@ -353,14 +455,8 @@
     });
     home.appendChild(tiles);
 
-    var tl = el('p', 'oahw-tlink');
-    tl.appendChild(document.createTextNode('Prefer a person? '));
-    var a = el('a', null, 'Raise a support ticket ↗');
-    a.href = CFG.ticketUrl;
-    a.target = '_blank'; a.rel = 'noopener';
-    a.addEventListener('click', function () { emit('ticket', { from: 'topics' }); });
-    tl.appendChild(a);
-    home.appendChild(tl);
+    /* No "prefer a person?" line here any more: the full-width ticket button now
+       lives in the footer, in view on this screen too. One escalation, not two. */
   }
 
   function showHome() {
@@ -387,7 +483,7 @@
     state._sub.textContent = state.topic
       ? state.topic.label
       : (CFG.screen ? 'You’re on ' + CFG.screen + ' — I’ll take that into account' : 'Ask in your own words');
-    input.placeholder = 'e.g. How do I email my reviewers?';
+    input.placeholder = 'Ask in your own words…';
     scrollDown();
   }
 
@@ -457,8 +553,47 @@
 
   function botRow() {
     var row = el('div', 'oahw-row');
-    row.appendChild(el('div', 'oahw-av', 'OA'));
+    var av = el('span', 'oahw-av');
+    av.innerHTML = AVATAR;
+    row.appendChild(av);
     return row;
+  }
+
+  /* Voice input, carried from the prototype with its trust rule intact: the
+     transcript lands in the box to be read and edited, never auto-sent, because
+     acting on a silent mishearing costs more trust than two seconds of review.
+     No browser support means no button; typing always works. */
+  function wireVoice(btn) {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { btn.classList.add('oahw-hidden'); return; }
+    var rec = null, listening = false;
+    btn.addEventListener('click', function () {
+      if (listening) { try { rec.stop(); } catch (e) {} return; }
+      rec = new SR();
+      rec.lang = 'en-GB';
+      rec.interimResults = true;     // words appear as they are spoken
+      rec.continuous = false;        // one question, stops itself on silence
+      rec.onstart = function () {
+        listening = true;
+        btn.classList.add('oahw-listening');
+        btn.setAttribute('aria-pressed', 'true');
+        input.placeholder = 'Listening…';
+      };
+      rec.onresult = function (e) {
+        var t = '';
+        for (var i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+        input.value = t.trim();
+      };
+      rec.onerror = function () {};  // denied mic must never block the box
+      rec.onend = function () {
+        listening = false;
+        btn.classList.remove('oahw-listening');
+        btn.setAttribute('aria-pressed', 'false');
+        input.placeholder = 'Ask in your own words…';
+        input.focus();
+      };
+      try { rec.start(); } catch (e) {}
+    });
   }
 
   function addBot(text, sources) {
@@ -473,7 +608,9 @@
       var from = el('div', 'oahw-from');
       from.appendChild(el('p', null, 'From these guides'));
       sources.slice(0, 2).forEach(function (s) {
-        var a = el('a', null, s.title);
+        var a = el('a');
+        a.innerHTML = LINKOUT;
+        a.appendChild(document.createTextNode(s.title));
         a.href = kbUrl(s.path);
         a.addEventListener('click', function (e) {
           e.preventDefault();

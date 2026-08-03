@@ -43,10 +43,17 @@ The one thing each page must tell it is **which screen it is on**. That context
 rides on the front of the question and measurably improves answer routing, selects
 the per-screen suggested questions, and picks which door gets the badge.
 
-Test harness wired to the real script and real API — **this is the reference for
-current behaviour**: https://oa-kb-test.vercel.app/widget/test-page
-(The older mockup at /prototype/admin-help predates the topic doors and has not
-been updated; treat it as a styling reference only.)
+Live demo (fake admin app around the real widget):
+https://oa-kb-test.vercel.app/prototype/admin-help
+Test harness wired to the real script and real API:
+https://oa-kb-test.vercel.app/widget/test-page
+
+Both pages load the same `/widget/help-widget.js`, so neither can drift from the
+shipped behaviour again — the prototype used to carry its own inline copy of the
+widget, which is exactly how it fell behind once already. The widget now carries
+the prototype's visual language itself (Gloock/Outfit, cream panel, the round red
+send, the always-visible Raise-a-support-ticket button, voice input) and injects
+the Google Fonts link on pages that do not already load those fonts.
 
 ## Files
 
