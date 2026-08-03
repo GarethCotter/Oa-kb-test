@@ -29,6 +29,24 @@ purpose, and it collapses away the moment the first question is sent. The chosen
 topic rides on the front of the question as routing context, exactly as the
 screen name does.
 
+**The panel can be made bigger, two ways.** An expand button in the header (the
+diagonal-arrows icon) toggles between the default 400×600 and as large as the
+viewport allows; and the top edge, left edge and top-left corner can be dragged,
+since the panel is pinned bottom-right and growing up-and-left needs no
+repositioning. Bounds are 340×420 minimum, 900 wide maximum (past that a help
+panel stops being a panel) and height free to the viewport, because reading a long
+answer is the point.
+
+The button is not just the tidier of the two: **WCAG 2.2's Dragging Movements
+(2.5.7, AA) requires a single-pointer alternative to any drag**, so a drag-only
+resize could not ship on its own — and the button is the only path a keyboard user
+has. Both are hidden below 700px, where the panel is already full-bleed and they
+would be dead controls.
+
+A hand-dragged size survives an expand/collapse round trip. Opening a cited guide
+grows a narrow panel to 640 for reading and puts back exactly what was there on
+close — it never shrinks a panel someone has deliberately made bigger.
+
 **Suggested questions are currently out of the flow** (a deliberate call, not an
 omission — this version leads with the person's own words). The verified question
 sets remain in the file marked PARKED: every entry was checked to answer
@@ -154,6 +172,12 @@ On https://oa-kb-test.vercel.app/widget/test-page (or locally — CORS allows lo
       conversation; no door, no intro card.
 - [ ] ‹ back returns to the doors; close and reopen mid-conversation returns to
       the conversation, not the doors.
+- [ ] Expand button → panel fills the viewport up to 900 wide; press again → back
+      to 400×600. Drag the top-left corner, the top edge and the left edge → each
+      grows the panel without moving its bottom-right corner, and stops at the
+      bounds. Drag to a custom size, expand, collapse → the custom size returns.
+- [ ] Narrow the panel, open a cited guide → it widens to 640 for reading and
+      returns to the narrow size when you come back.
 - [ ] Ask "why have my submitters not received my email" → answer with bolded menu
       paths, two cited guides, verdict buttons.
 - [ ] Click a cited guide → article opens inside the panel; Back returns to the

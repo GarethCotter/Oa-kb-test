@@ -108,7 +108,8 @@
     'Conference': 'conference', 'Speaker Management': 'conference', 'Website Builder': 'conference'
   };
 
-  var state = { open: false, busy: false, history: [], started: false, topic: null, view: 'home' };
+  var state = { open: false, busy: false, history: [], started: false, topic: null, view: 'home',
+                size: null, expanded: false, preExpand: null, readerRestore: null };
 
   /* ---------- styles ----------
      The visual language is the admin-help prototype's, ported wholesale on Gareth's
@@ -128,8 +129,23 @@
     '.oahw-panel{position:fixed;right:22px;bottom:22px;z-index:Z;width:400px;max-width:calc(100vw - 24px);',
     ' height:600px;max-height:calc(100vh - 44px);background:#EAECE1;border:1px solid #0A1B3E;border-radius:14px;',
     ' box-shadow:0 24px 60px rgba(10,27,62,.35);display:flex;flex-direction:column;overflow:hidden;',
-    ' font-family:FONT;color:#0A1B3E;transform-origin:bottom right;animation:oahw-pop .22s ease-out;transition:width .2s ease}',
-    '.oahw-panel.oahw-wide{width:680px;height:calc(100vh - 44px)}',
+    ' font-family:FONT;color:#0A1B3E;transform-origin:bottom right;animation:oahw-pop .22s ease-out;',
+    ' transition:width .18s ease,height .18s ease}',
+    /* Sizing is JS-driven once the reader touches it, so the transition has to go
+       during a drag or the panel lags a frame behind the pointer. */
+    '.oahw-panel.oahw-dragging{transition:none}',
+    /* Resize grips. The panel is pinned bottom-right, so the live edges are the top
+       and the left: dragging up or left grows it and the anchored corner never moves.
+       Kept clear of the header controls (they start 20px in) and of the tiles. */
+    '.oahw-grip{position:absolute;z-index:3;touch-action:none}',
+    '.oahw-grip-n{top:0;left:16px;right:16px;height:7px;cursor:ns-resize}',
+    '.oahw-grip-w{left:0;top:16px;bottom:16px;width:7px;cursor:ew-resize}',
+    '.oahw-grip-nw{top:0;left:0;width:18px;height:18px;cursor:nwse-resize}',
+    '.oahw-grip-nw::after{content:"";position:absolute;top:6px;left:6px;width:7px;height:7px;',
+    ' border-top:2px solid rgba(10,27,62,.4);border-left:2px solid rgba(10,27,62,.4);',
+    ' border-radius:2px 0 0 0;opacity:0;transition:opacity .15s}',
+    '.oahw-panel:hover .oahw-grip-nw::after,.oahw-grip-nw:focus-visible::after{opacity:1}',
+    '.oahw-heads{display:flex;align-items:center;gap:2px;flex:none}',
     '@keyframes oahw-pop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}',
     '@keyframes oahw-rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}',
     '.oahw-head{padding:18px 20px 14px;border-bottom:1px solid rgba(10,27,62,.14);display:flex;',
@@ -266,7 +282,14 @@
     '.oahw-rbar a{margin-left:auto;font-family:FONT;font-size:13.5px;color:#5a6377;text-decoration:underline;',
     ' text-underline-offset:3px}',
     '.oahw-rbar a:hover{color:#C54538}',
-    '@media (max-width:700px){.oahw-panel{right:8px;bottom:8px;left:8px;width:auto;height:calc(100vh - 16px)}}',
+    /* On a phone the panel already fills the screen, so both resize affordances would
+       be dead controls - and the grips would quietly eat touches along the edges. */
+    '@media (max-width:700px){.oahw-panel{right:8px;bottom:8px;left:8px;width:auto;height:calc(100vh - 16px);',
+    /* The desktop max-width/max-height still applied here and beat the 8px insets,
+       leaving the panel 8px off the left and 16px off the right. Inherited from the
+       prototype; released here so full-bleed is actually full-bleed. */
+    '   max-width:none;max-height:none}',
+    ' .oahw-grip,.oahw-expandbtn{display:none}}',
     '.oahw-hidden{display:none !important}'
   ].join('\n').replace(/Z/g, String(CFG.zIndex))
    .replace(/FONT/g, FONT).replace(/DISPLAY/g, DISPLAY);
@@ -282,12 +305,114 @@
   var PLANE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
   var MIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3z"/><path d="M19 10v1a7 7 0 01-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>';
   var XICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+  var EXPAND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>';
+  var SHRINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="19" height="19"><path d="M10 4v6H4"/><path d="M14 20v-6h6"/><path d="M10 10L3 3"/><path d="M14 14l7 7"/></svg>';
   var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
   var LINKOUT = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>';
   var TICK = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>';
   var CROSS = '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
 
   function emit(name, detail) { try { if (CFG.onEvent) CFG.onEvent(name, detail || {}); } catch (e) {} }
+
+  /* ---------- panel size ----------
+     Two ways to make it bigger, and the button is not merely the tidier one: WCAG
+     2.2's Dragging Movements (2.5.7, AA) requires a single-pointer alternative to
+     any drag, so a drag-only resize would not be allowed to ship on its own. The
+     button is also the only path a keyboard user has.
+
+     Bounds: never past the viewport, never so small the topic grid breaks, and
+     capped at 900 wide - past that a help panel stops being a panel. Height is
+     free to the viewport, because reading a long answer is the whole point. */
+  var MIN_W = 340, MIN_H = 420, CAP_W = 900, GAP = 44, PHONE = 700;
+
+  function bounds() {
+    return { w: Math.min(CAP_W, window.innerWidth - GAP), h: window.innerHeight - GAP };
+  }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  function setSize(w, h) {
+    // Below the phone breakpoint the panel is full-bleed by design; an inline width
+    // would beat that media query and strand it mid-screen.
+    if (window.innerWidth <= PHONE) return;
+    var b = bounds();
+    state.size = { w: Math.round(clamp(w, MIN_W, b.w)), h: Math.round(clamp(h, MIN_H, b.h)) };
+    panel.style.width = state.size.w + 'px';
+    panel.style.height = state.size.h + 'px';
+  }
+  function clearSize() {
+    state.size = null;
+    panel.style.width = '';
+    panel.style.height = '';
+  }
+
+  function updateExpandBtn() {
+    var b = state._expand;
+    if (!b) return;
+    b.innerHTML = state.expanded ? SHRINK : EXPAND;
+    b.setAttribute('aria-label', state.expanded
+      ? 'Return the help panel to its normal size'
+      : 'Make the help panel bigger');
+    b.title = b.getAttribute('aria-label');
+  }
+
+  function toggleExpand() {
+    var b = bounds();
+    if (state.expanded) {
+      // Restore whatever it was before - a dragged size survives an expand/collapse.
+      if (state.preExpand) setSize(state.preExpand.w, state.preExpand.h); else clearSize();
+      state.expanded = false;
+    } else {
+      state.preExpand = state.size ? { w: state.size.w, h: state.size.h } : null;
+      setSize(b.w, b.h);
+      state.expanded = true;
+    }
+    updateExpandBtn();
+    emit('resize', { via: 'button', expanded: state.expanded });
+  }
+
+  /* One grip factory for all three edges; axisX/axisY say which dimensions it drives.
+     Dragging left or up increases the size because the opposite corner is anchored. */
+  function makeGrip(cls, axisX, axisY, label) {
+    var g = el('div', 'oahw-grip ' + cls);
+    g.setAttribute('role', 'separator');
+    g.setAttribute('aria-label', label);
+    g.addEventListener('pointerdown', function (e) {
+      if (window.innerWidth <= PHONE || e.button) return;
+      e.preventDefault();
+      var r = panel.getBoundingClientRect();
+      var sx = e.clientX, sy = e.clientY, sw = r.width, sh = r.height;
+      panel.classList.add('oahw-dragging');
+      document.body.style.userSelect = 'none';
+      try { g.setPointerCapture(e.pointerId); } catch (err) {}
+
+      function move(ev) {
+        setSize(axisX ? sw + (sx - ev.clientX) : sw,
+                axisY ? sh + (sy - ev.clientY) : sh);
+      }
+      function stop() {
+        g.removeEventListener('pointermove', move);
+        g.removeEventListener('pointerup', stop);
+        g.removeEventListener('pointercancel', stop);
+        panel.classList.remove('oahw-dragging');
+        document.body.style.userSelect = '';
+        // A hand-dragged size is not "expanded", so the button offers to grow next.
+        state.expanded = false;
+        updateExpandBtn();
+        emit('resize', { via: 'drag', size: state.size });
+      }
+      g.addEventListener('pointermove', move);
+      g.addEventListener('pointerup', stop);
+      g.addEventListener('pointercancel', stop);
+    });
+    return g;
+  }
+
+  /* A window that shrinks under a sized panel must not leave it off-screen. */
+  window.addEventListener('resize', function () {
+    if (!panel) return;
+    if (window.innerWidth <= PHONE) { panel.style.width = ''; panel.style.height = ''; return; }
+    if (state.size) setSize(state.size.w, state.size.h);
+  });
 
   /* Canonical URL for a KB path. The API returns paths ending .html; under the KB's
      cleanUrls those answer with a 308 redirect, and the redirect carries no CORS
@@ -374,13 +499,20 @@
     where.append(pin, subText);
     ht.appendChild(where);
     hgroup.append(backHome, ht);
+    var expand = el('button', 'oahw-x oahw-expandbtn');
+    expand.type = 'button';
+    expand.addEventListener('click', toggleExpand);
     var x = el('button', 'oahw-x');
     x.type = 'button';
     x.innerHTML = XICON;
     x.setAttribute('aria-label', 'Close help');
     x.addEventListener('click', close);
-    head.append(hgroup, x);
+    var heads = el('div', 'oahw-heads');
+    heads.append(expand, x);
+    head.append(hgroup, heads);
     state._title = title; state._sub = subText; state._back = backHome;
+    state._expand = expand;
+    updateExpandBtn();
 
     home = el('div', 'oahw-home oahw-hidden');
 
@@ -430,6 +562,11 @@
     wireVoice(mic);
 
     panel.append(head, rbar, home, body, reader, foot);
+    panel.append(
+      makeGrip('oahw-grip-n', false, true, 'Drag to make the panel taller'),
+      makeGrip('oahw-grip-w', true, false, 'Drag to make the panel wider'),
+      makeGrip('oahw-grip-nw', true, true, 'Drag to resize the panel')
+    );
     root.append(launch, panel);
     document.body.appendChild(root);
     state._launch = launch; state._rbar = rbar; state._send = send;
@@ -772,7 +909,15 @@
   /* pageUrl, not kbUrl: a parameter named kbUrl shadowed the kbUrl() helper above,
      so fetch(kbUrl(path)) called a string and threw before fetching anything. */
   function openReader(path, pageUrl) {
-    panel.classList.add('oahw-wide');
+    /* Reading a guide needs width. This used to be a CSS class, which stopped working
+       the moment the reader sized the panel by hand - an inline width beats a class.
+       So: grow only if it is currently narrow, never shrink a panel someone has
+       deliberately made bigger, and put back exactly what was there on the way out. */
+    var r = panel.getBoundingClientRect();
+    if (r.width < 640) {
+      state.readerRestore = state.size ? { w: state.size.w, h: state.size.h } : 'default';
+      setSize(640, Math.max(r.height, Math.min(window.innerHeight - GAP, 720)));
+    }
     body.classList.add('oahw-hidden');
     foot.classList.add('oahw-hidden');
     state._back.classList.add('oahw-hidden');   // the reader bar has its own Back
@@ -811,7 +956,11 @@
       });
   }
   function closeReader() {
-    panel.classList.remove('oahw-wide');
+    if (state.readerRestore) {
+      if (state.readerRestore === 'default') clearSize();
+      else setSize(state.readerRestore.w, state.readerRestore.h);
+      state.readerRestore = null;
+    }
     reader.classList.add('oahw-hidden');
     state._rbar.classList.add('oahw-hidden');
     body.classList.remove('oahw-hidden');
