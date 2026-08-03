@@ -67,7 +67,18 @@ export default async function handler(req, res) {
                    sources: '', action: 'asked' }
           })
         });
-        out.ping = { status: r.status, body: (await r.text()).slice(0, 300) };
+        /* Apps Script reports its failures as a full HTML error page, so the first
+           300 characters were the favicon link and a stylesheet - which told us
+           nothing on the one occasion this endpoint was most needed. Strip the
+           markup and return the sentence a human can act on. */
+        const raw = await r.text();
+        const readable = /^\s*</.test(raw)
+          ? raw.replace(/<(style|script)[\s\S]*?<\/\1>/gi, ' ')
+               .replace(/<[^>]+>/g, ' ')
+               .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')
+               .replace(/\s+/g, ' ').trim()
+          : raw;
+        out.ping = { status: r.status, html: /^\s*</.test(raw), body: readable.slice(0, 500) };
       } catch (e) {
         out.ping = { error: e.message };
       }
