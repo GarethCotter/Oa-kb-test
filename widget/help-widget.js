@@ -21,6 +21,15 @@
  *   - Never a dead end, never a visible error. An outage looks like "no confident
  *     answer", which offers the KB search and the support form, one tap each.
  *   - The bot never guesses: weak answers are not shown, said honestly instead.
+ *
+ * The panel now opens on a topic screen rather than straight into conversation:
+ * six doors ("What do you need a hand with?"), the one matching the current screen
+ * marked, with the ask bar still live underneath - a formed question skips the
+ * doors entirely, because nobody mid-crisis should pay a tax of two taps. A chosen
+ * topic rides on the front of the question exactly as the screen name does (no
+ * endpoint change) and swaps in that topic's suggested questions. The answering
+ * surface is titled "Instant answers" - deliberately not "AI chat": it names the
+ * outcome, not the technology.
  */
 (function () {
   'use strict';
@@ -42,7 +51,10 @@
      removed AI follow-ups. Every one returns a confident answer from the live
      corpus - checked before shipping, like the KB homepage examples. */
   var SUGGEST = CFG.suggestions || {
-    'Dashboard':           ['How do I add someone to my team?', 'Where do I find my event ID?', 'What does my package include?'],
+    /* 'Where do I find my event ID?' and 'What does my package include?' were shipped
+       here and FAIL the every-suggestion-answers-confidently rule when actually asked
+       (none and weak respectively, checked 2 Aug 2026). Replaced with checked ones. */
+    'Dashboard':           ['How do I add someone to my team?', 'How do I edit my event details?', 'What’s the difference between the free plan and paid plans?'],
     'Event setup':         ['How do I edit my event details?', 'Can I add my own colours and logo?', 'How do I add admins to my event?'],
     'Emails':              ['Why have my submitters not received my email?', 'How do I schedule an email for later?', 'Can I send from my own address?'],
     'Abstract Management': ['How do I change the submission deadline?', 'Why can’t my reviewers see their assigned reviews?', 'Why does a submission show as incomplete?'],
@@ -55,7 +67,42 @@
     '':                    ['How do I change the submission deadline?', 'What can I do with the API?', 'How do we set up the poster gallery?']
   };
 
-  var state = { open: false, busy: false, history: [], greeted: false };
+  /* The six doors. Every question verified strong against the live corpus on
+     2 Aug 2026 - same rule as SUGGEST above. `hint` is the routing phrase that
+     rides on the question; `icon` is a 24-box stroke path. Override with
+     CFG.topics if the app ever needs different doors. */
+  var TOPICS = CFG.topics || [
+    { key: 'start', label: 'Setting up', hint: 'setting up their event, their team or their account',
+      icon: '<path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/>',
+      qs: ['How do I add someone to my team?', 'How do I edit my event details?', 'What’s the difference between the free plan and paid plans?'] },
+    { key: 'submissions', label: 'Submissions', hint: 'collecting abstract submissions or the submission form',
+      icon: '<path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
+      qs: ['How do I change the submission deadline?', 'Why does a submission show as incomplete?', 'How do I make a submission on behalf of someone else?'] },
+    { key: 'reviewing', label: 'Reviewing & decisions', hint: 'reviewing, reviewers or recording decisions',
+      icon: '<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/>',
+      qs: ['How do I assign submissions to reviewers?', 'Why can’t my reviewers see their assigned reviews?', 'How do I let submitters know their outcome?'] },
+    { key: 'emails', label: 'Emails', hint: 'sending emails from the system',
+      icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+      qs: ['Why have my submitters not received my email?', 'How do I schedule an email for later?', 'Can I send from my own address?'] },
+    { key: 'registration', label: 'Registration & payments', hint: 'delegate registration, tickets, payments or invoices',
+      icon: '<path d="M3 9V7a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 000 6v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 000-6z"/><path d="M13 5v2M13 11v2M13 17v2"/>',
+      qs: ['How do I set up tickets?', 'How do I refund an attendee?', 'Can attendees pay by bank transfer or invoice?'] },
+    { key: 'conference', label: 'Conference platform', hint: 'the conference platform, programme or sessions',
+      icon: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
+      qs: ['How do I create sessions?', 'How do I publish the programme?', 'How do we set up the poster gallery?'] }
+  ];
+
+  /* Which door matches the screen the admin is standing on. Only confident matches;
+     an unmapped screen simply shows no badge. */
+  var SCREEN_TOPIC = {
+    'Dashboard': 'start', 'Event setup': 'start',
+    'Abstract Management': 'submissions', 'Symposium': 'submissions',
+    'Emails': 'emails',
+    'Registration': 'registration',
+    'Conference': 'conference', 'Speaker Management': 'conference', 'Website Builder': 'conference'
+  };
+
+  var state = { open: false, busy: false, history: [], started: false, topic: null, view: 'home' };
 
   /* ---------- styles ---------- */
   var CSS = [
@@ -73,6 +120,31 @@
     '.oahw-head b{font-size:17px;font-weight:600}',
     '.oahw-head span{display:block;font-size:12.5px;color:rgba(234,236,225,.75);margin-top:1px}',
     '.oahw-x{background:none;border:none;color:#EAECE1;font-size:22px;line-height:1;cursor:pointer;padding:4px}',
+    '.oahw-back{background:none;border:none;color:#EAECE1;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px 4px 0;flex:none}',
+    '.oahw-back:hover{color:#fff}',
+    '.oahw-hgroup{display:flex;align-items:center;min-width:0}',
+    /* the topic screen */
+    '.oahw-home{flex:1;overflow-y:auto;padding:18px 16px 14px;background:#EAECE1}',
+    '.oahw-hh{font-size:19px;font-weight:600;margin:0 0 3px}',
+    '.oahw-hsub{font-size:13px;color:#5a6377;margin:0 0 14px}',
+    '.oahw-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}',
+    '.oahw-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;',
+    ' background:#fff;border:1px solid #d8d5c8;border-radius:12px;padding:12px 12px 11px;font-family:inherit;',
+    ' font-size:13.5px;font-weight:600;line-height:1.25;color:#0A1B3E;cursor:pointer;min-height:74px}',
+    '.oahw-tile:hover{border-color:#C54538}',
+    '.oahw-tile:hover svg{color:#C54538}',
+    '.oahw-tile svg{width:19px;height:19px;color:#0A1B3E;flex:none}',
+    '.oahw-here{position:absolute;top:9px;right:10px;font-size:10px;font-weight:700;letter-spacing:.05em;',
+    ' text-transform:uppercase;color:#C54538;background:rgba(197,69,56,.1);border-radius:9999px;padding:3px 8px}',
+    '.oahw-pophead{font-size:11.5px;color:#5a6377;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 7px}',
+    '.oahw-pop{display:flex;flex-direction:column;gap:6px}',
+    '.oahw-pop button{display:flex;align-items:center;gap:8px;text-align:left;background:#fff;border:1px solid #d8d5c8;',
+    ' border-radius:10px;padding:9px 12px;font-family:inherit;font-size:13.5px;color:#0A1B3E;cursor:pointer;line-height:1.35}',
+    '.oahw-pop button:hover{border-color:#C54538}',
+    '.oahw-pop b{color:#C54538;font-weight:700;flex:none}',
+    '.oahw-tlink{display:block;text-align:center;font-size:12.5px;color:#5a6377;margin:14px 0 2px}',
+    '.oahw-tlink a{color:#0A1B3E;text-decoration:underline;text-underline-offset:3px;cursor:pointer}',
+    '.oahw-tlink a:hover{color:#C54538}',
     '.oahw-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#EAECE1}',
     '.oahw-row{display:flex;gap:8px;align-items:flex-end}',
     '.oahw-av{width:26px;height:26px;border-radius:50%;background:#0A1B3E;color:#EAECE1;flex:none;display:flex;',
@@ -143,7 +215,12 @@
         headers: { 'Content-Type': 'application/json' },
         keepalive: true,
         body: JSON.stringify({
-          surface: 'widget', screen: CFG.screen, question: question,
+          /* The chosen door rides in the screen column ("Emails · Registration &
+             payments") - no schema change, and the sheet can group by it. The
+             server caps this at 60 chars. */
+          surface: 'widget',
+          screen: CFG.screen + (state.topic ? ' · ' + state.topic.label : ''),
+          question: question,
           answered: answered, sources: (sources || []).map(function (s) { return s.path; }),
           action: action
         })
@@ -153,7 +230,7 @@
   }
 
   /* ---------- DOM ---------- */
-  var root, panel, body, foot, input, reader, readerBody, readerOpen;
+  var root, panel, home, body, foot, input, reader, readerBody, readerOpen;
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -178,16 +255,25 @@
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-label', 'Help');
     var head = el('div', 'oahw-head');
+    var hgroup = el('div', 'oahw-hgroup');
+    var backHome = el('button', 'oahw-back oahw-hidden', '‹');
+    backHome.type = 'button';
+    backHome.setAttribute('aria-label', 'Back to topics');
+    backHome.addEventListener('click', showHome);
     var ht = el('div');
-    ht.appendChild(el('b', null, 'Help'));
+    var title = el('b', null, 'Help');
+    ht.appendChild(title);
     var where = el('span');
-    where.textContent = CFG.screen ? 'You’re on ' + CFG.screen + ' — I’ll take that into account' : 'Ask in your own words';
     ht.appendChild(where);
+    hgroup.append(backHome, ht);
     var x = el('button', 'oahw-x', '×');
     x.type = 'button';
     x.setAttribute('aria-label', 'Close help');
     x.addEventListener('click', close);
-    head.append(ht, x);
+    head.append(hgroup, x);
+    state._title = title; state._sub = where; state._back = backHome;
+
+    home = el('div', 'oahw-home oahw-hidden');
 
     body = el('div', 'oahw-body');
 
@@ -213,21 +299,111 @@
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
     foot.append(input, send);
 
-    panel.append(head, rbar, body, reader, foot);
+    panel.append(head, rbar, home, body, reader, foot);
     root.append(launch, panel);
     document.body.appendChild(root);
     state._launch = launch; state._rbar = rbar; state._send = send;
+  }
+
+  /* ---------- the topic screen ---------- */
+  /* Rebuilt on every visit rather than once: in a SPA the screen name changes under
+     us, and the badge and popular questions must follow it. */
+  function renderHome() {
+    home.innerHTML = '';
+    home.appendChild(el('p', 'oahw-hh', 'What do you need a hand with?'));
+    home.appendChild(el('p', 'oahw-hsub', 'Pick a topic — or just type your question below.'));
+
+    var hereKey = SCREEN_TOPIC[CFG.screen] || null;
+    var tiles = el('div', 'oahw-tiles');
+    /* The door matching their screen leads, but the other five keep lifecycle
+       order - a fully re-sorted grid would put familiar doors somewhere new on
+       every screen. */
+    var ordered = TOPICS.slice().sort(function (a, b) {
+      return (b.key === hereKey) - (a.key === hereKey);
+    });
+    ordered.forEach(function (t) {
+      var tile = el('button', 'oahw-tile');
+      tile.type = 'button';
+      tile.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + t.icon + '</svg>';
+      tile.appendChild(el('span', null, t.label));
+      if (t.key === hereKey) tile.appendChild(el('span', 'oahw-here', 'You’re here'));
+      tile.addEventListener('click', function () { enterTopic(t); });
+      tiles.appendChild(tile);
+    });
+    home.appendChild(tiles);
+
+    var pop = (SUGGEST[CFG.screen] || SUGGEST[''] || []).slice(0, 3);
+    if (pop.length) {
+      home.appendChild(el('p', 'oahw-pophead',
+        CFG.screen ? 'Asked a lot on ' + CFG.screen : 'Asked a lot right now'));
+      var list = el('div', 'oahw-pop');
+      pop.forEach(function (q) {
+        var b = el('button');
+        b.type = 'button';
+        b.appendChild(el('b', null, '›'));
+        b.appendChild(el('span', null, q));
+        b.addEventListener('click', function () { showChat(); ask(q); });
+        list.appendChild(b);
+      });
+      home.appendChild(list);
+    }
+
+    var tl = el('p', 'oahw-tlink');
+    tl.appendChild(document.createTextNode('Prefer a person? '));
+    var a = el('a', null, 'Raise a support ticket ↗');
+    a.href = CFG.ticketUrl;
+    a.target = '_blank'; a.rel = 'noopener';
+    a.addEventListener('click', function () { emit('ticket', { from: 'topics' }); });
+    tl.appendChild(a);
+    home.appendChild(tl);
+  }
+
+  function showHome() {
+    state.view = 'home';
+    renderHome();
+    home.classList.remove('oahw-hidden');
+    body.classList.add('oahw-hidden');
+    state._back.classList.add('oahw-hidden');
+    state._title.textContent = 'Help';
+    state._sub.textContent = CFG.screen
+      ? 'You’re on ' + CFG.screen + ' — I’ll take that into account'
+      : 'Answers from the people who built it';
+    input.placeholder = 'Instant answers — ask in your own words…';
+    emit('home', { screen: CFG.screen });
+  }
+
+  function showChat() {
+    state.view = 'chat';
+    state.started = true;
+    home.classList.add('oahw-hidden');
+    body.classList.remove('oahw-hidden');
+    state._back.classList.remove('oahw-hidden');
+    state._title.textContent = 'Instant answers';
+    state._sub.textContent = state.topic
+      ? state.topic.label
+      : (CFG.screen ? 'You’re on ' + CFG.screen + ' — I’ll take that into account' : 'Ask in your own words');
+    input.placeholder = 'e.g. How do I email my reviewers?';
+    scrollDown();
+  }
+
+  function enterTopic(t) {
+    state.topic = t;
+    showChat();
+    Array.prototype.forEach.call(body.querySelectorAll('.oahw-chips'), function (c) { c.remove(); });
+    addBot(t.label + ' — ask in your own words, or start with one of these. I’ll answer and show you which guide it came from.');
+    addChips(t.qs);
+    input.focus();
+    emit('topic', { key: t.key, label: t.label });
   }
 
   function open() {
     state.open = true;
     state._launch.classList.add('oahw-hidden');
     panel.classList.remove('oahw-hidden');
-    if (!state.greeted) {
-      state.greeted = true;
-      addBot('Ask me anything about running your event — in your own words, the way you’d ask a colleague. I’ll answer and show you which guide it came from.');
-      addChips(SUGGEST[CFG.screen] || SUGGEST[''] || []);
-    }
+    /* First open lands on the topic doors. Reopening mid-conversation goes back to
+       the conversation - the doors are an entrance, not a toll booth. */
+    if (state.started) showChat(); else showHome();
     input.focus();
     emit('open', { screen: CFG.screen });
   }
@@ -353,6 +529,7 @@
   function contextualise(question) {
     var q = '';
     if (CFG.screen) q += '[The admin is on the ' + CFG.screen + ' screen of their event dashboard] ';
+    if (state.topic) q += '[Their question is about ' + state.topic.hint + '] ';
     var last = state.history[state.history.length - 1];
     if (last) q += '[Earlier they asked: "' + last.q.slice(0, 90) + '"] ';
     return (q + question).slice(0, 500);
@@ -366,6 +543,7 @@
 
   function ask(question) {
     if (state.busy || !question.trim()) return;
+    if (state.view !== 'chat') showChat();     // typing from the doors skips them
     state.busy = true;
     state._send.disabled = true;
     Array.prototype.forEach.call(body.querySelectorAll('.oahw-chips'), function (c) { c.remove(); });
@@ -413,6 +591,7 @@
     panel.classList.add('oahw-wide');
     body.classList.add('oahw-hidden');
     foot.classList.add('oahw-hidden');
+    state._back.classList.add('oahw-hidden');   // the reader bar has its own Back
     state._rbar.classList.remove('oahw-hidden');
     reader.classList.remove('oahw-hidden');
     readerOpen.href = pageUrl;
@@ -453,6 +632,7 @@
     state._rbar.classList.add('oahw-hidden');
     body.classList.remove('oahw-hidden');
     foot.classList.remove('oahw-hidden');
+    state._back.classList.remove('oahw-hidden'); // always returns to the conversation
     scrollDown();
   }
 

@@ -13,14 +13,27 @@ own words and gets a plain-English answer from the help centre's answer layer
 it drew from cited underneath. Cited guides open **inside the panel** — the live KB
 page, re-rooted — so there is no second copy of any article to drift out of date.
 
-The one thing each page must tell it is **which screen it is on**. That context
-rides on the front of the question and measurably improves answer routing, and it
-selects the per-screen suggested questions.
+**The panel opens on a topic screen, not straight into conversation.** Six doors
+under "What do you need a hand with?" — the event lifecycle, with the door matching
+the current screen listed first and badged "You're here" — and the ask bar still
+live underneath, so a formed question skips the doors entirely. A chosen door does
+three things: retitles the view, swaps in that topic's suggested questions, and
+rides on the front of the question as routing context, exactly as the screen name
+does. Reopening mid-conversation returns to the conversation — the doors are an
+entrance, not a toll booth.
 
-Live demo of the finished behaviour (fake app around it):
-https://oa-kb-test.vercel.app/prototype/admin-help
-Test harness wired to the real script and real API:
-https://oa-kb-test.vercel.app/widget/test-page
+The answering surface is titled **"Instant answers"** — deliberately not "AI chat"
+or similar. Users pre-judge "AI chat" as useless; this one is not, and the name
+sells the outcome rather than the technology.
+
+The one thing each page must tell it is **which screen it is on**. That context
+rides on the front of the question and measurably improves answer routing, selects
+the per-screen suggested questions, and picks which door gets the badge.
+
+Test harness wired to the real script and real API — **this is the reference for
+current behaviour**: https://oa-kb-test.vercel.app/widget/test-page
+(The older mockup at /prototype/admin-help predates the topic doors and has not
+been updated; treat it as a styling reference only.)
 
 ## Files
 
@@ -55,9 +68,11 @@ still helps routing). In a SPA, set `window.OA_HELP.screen` on route change; the
 next question picks it up automatically.
 
 Optional config: `ticketUrl` (default: the contact-support page), `suggestions`
-(override the per-screen question map), `zIndex`, `enabled: false` (kill switch —
-removing the script tag is the other one), `onEvent(name, detail)` (hook for your
-own analytics).
+(override the per-screen question map), `topics` (override the six doors — each is
+`{key, label, hint, icon, qs}`; every question in `qs` must return a confident
+answer from the live corpus, which is a checked rule, not a style preference),
+`zIndex`, `enabled: false` (kill switch — removing the script tag is the other
+one), `onEvent(name, detail)` (hook for your own analytics).
 
 If the app's CSP restricts `connect-src`, allow `https://oa-kb-test.vercel.app`.
 CORS is already open server-side for `app.oxfordabstracts.com`,
@@ -92,6 +107,10 @@ in its own column:
 | `opened_article` | a cited guide was opened in the panel |
 | `ticket_created` | clicked through to the support form |
 
+When a door was chosen, it rides in the screen column as
+`Emails · Registration & payments` — no schema change, and the sheet can group by
+it to show which topics people reach for against which screens they stand on.
+
 The dashboard's Widget column and answer/success rates fill in automatically.
 
 ## Known limitation (documented, not a bug)
@@ -105,7 +124,15 @@ you now.
 
 On https://oa-kb-test.vercel.app/widget/test-page (or locally — CORS allows localhost):
 
-- [ ] Open Help → greeting plus the Emails suggested questions.
+- [ ] Open Help → the topic doors, Emails first with a "You're here" badge, the
+      three Emails questions under "Asked a lot on Emails", ask bar live below.
+- [ ] Click a different door (say Registration & payments) → view retitles to
+      "Instant answers", that topic's questions appear, and asked rows log the
+      screen as `Emails · Registration & payments`.
+- [ ] Type a question on the doors screen without picking one → straight into the
+      conversation; no door required.
+- [ ] ‹ back returns to the doors; close and reopen mid-conversation returns to
+      the conversation, not the doors.
 - [ ] Ask "why have my submitters not received my email" → answer with bolded menu
       paths, two cited guides, verdict buttons.
 - [ ] Click a cited guide → article opens inside the panel; Back returns to the
