@@ -120,6 +120,19 @@ textarea{min-height:120px;resize:vertical}
 .answer h3{font-size:18px;font-weight:600;margin-bottom:12px}
 .answer .body{margin-bottom:16px}
 .answer .body strong{font-weight:600}
+/* Procedural answers arrive from /api/search as numbered steps instead of a
+   paragraph. A tight ordered list, not cards: this box interrupts someone
+   mid-ticket, so every line of height has to earn itself. */
+.answer .ans-title{font-size:17px;font-weight:600;margin-bottom:10px}
+.answer ol.steps{margin:0 0 16px;padding-left:24px}
+.answer ol.steps>li{margin-bottom:12px;line-height:1.5}
+.answer ol.steps>li>b{display:block;font-weight:600}
+.answer .step-path{display:block;font-size:15px;color:var(--ok);font-weight:600;
+  margin:2px 0 3px;overflow-wrap:break-word}
+.answer .step-det{display:block;font-size:16px}
+.answer .step-det strong{font-weight:600}
+.answer ol.steps ul{margin:4px 0 0 18px;padding:0;font-size:15.5px}
+.answer ol.steps ul li{margin:2px 0}
 .sources{border-top:1px solid var(--hair);padding-top:14px}
 .sources .cap{font-size:14px;color:#5a6377;margin-bottom:8px}
 .sources a{display:block;font-size:17px;margin-bottom:6px;text-decoration:underline;text-underline-offset:4px}
@@ -307,7 +320,8 @@ footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
         <div id="deflect" class="hidden">
           <div class="answer">
             <h3>We think this might solve your query:</h3>
-            <p class="body" id="answerText"></p>
+            <!-- a div, not a p: it holds either a paragraph or an ordered list -->
+            <div class="body" id="answerText"></div>
             <div class="sources" id="sourcesBox">
               <p class="cap">Where this came from</p>
               <div id="sources"></div>
@@ -413,12 +427,27 @@ $('#showDemo').addEventListener('click', () => {
 $('#resetBtn').addEventListener('click', () => location.reload());
 
 // ---- canned answers ------------------------------------------------------
+/* The canned strong answer carries BOTH shapes, because 'strong' is the scenario
+   this page opens on: prose alone and the default demo would still show the old
+   paragraph, making a shipped change look like nothing had happened. The steps say
+   exactly what the prose says and name no menu path the prose does not. */
 const CANNED = {
   strong: {
     answer: 'Reviewers only see submissions once three things are true: reviewing is open for ' +
             'the current stage, the submissions have actually been assigned to them, and the ' +
             'reviewer signed in with the same email address you assigned. Check **Event dashboard ' +
             '→ Reviewing → Assign** to confirm the assignments landed, then check reviewing is open.',
+    format: 'steps',
+    title: 'Check why reviewers see nothing',
+    steps: [
+      { title: 'Confirm the assignments landed',
+        path: 'Event dashboard → Reviewing → Assign',
+        detail: 'Check the submissions really are assigned to that reviewer.' },
+      { title: 'Check reviewing is open',
+        detail: 'Reviewing must be open for the current stage before anyone sees their assignments.' },
+      { title: 'Check the email address matches',
+        detail: 'The reviewer has to sign in with the same email address you assigned the work to.' }
+    ],
     sources: [
       { title: 'Assigning and unassigning a submission to a reviewer', path: '03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html' },
       { title: 'Opening and closing reviewing', path: '03-reviewing/opening-and-closing-reviewing.html' }
@@ -576,9 +605,25 @@ $('#ticket').addEventListener('submit', async e => {
   state.shown = true;
   logEvent(questionFrom(), true, state.suggested, 'asked');
   // Menu paths arrive marked **like this**; escape everything, then render only <strong>.
-  $('#answerText').innerHTML = result.answer
+  const bold = t => String(t == null ? '' : t)
     .replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+  /* A procedural answer arrives as steps; anything else stays the paragraph it
+     always was. result.answer still carries the full instructions either way, so
+     an endpoint that never sends steps renders exactly as it did before. */
+  $('#answerText').innerHTML = (result.steps && result.steps.length)
+    ? (result.title ? '<p class="ans-title">' + bold(result.title) + '</p>' : '') +
+      '<ol class="steps">' + result.steps.map(s =>
+        '<li>' +
+          (s.title  ? '<b>' + bold(s.title) + '</b>' : '') +
+          (s.path   ? '<span class="step-path">' + bold(s.path) + '</span>' : '') +
+          (s.detail ? '<span class="step-det">' + bold(s.detail) + '</span>' : '') +
+          ((s.bullets && s.bullets.length)
+            ? '<ul>' + s.bullets.map(b => '<li>' + bold(b) + '</li>').join('') + '</ul>'
+            : '') +
+        '</li>').join('') + '</ol>'
+    : '<p>' + bold(result.answer) + '</p>';
 
   const box = $('#sources');
   box.textContent = '';
