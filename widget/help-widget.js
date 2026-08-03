@@ -47,9 +47,11 @@
   window.OA_HELP = CFG;
   if (!CFG.enabled) return;
 
-  /* Per-screen suggested questions. These are the upfront prompts (kept), not the
-     removed AI follow-ups. Every one returns a confident answer from the live
-     corpus - checked before shipping, like the KB homepage examples. */
+  /* PARKED - per-screen suggested questions. Nothing reads this since suggested
+     questions came out of the flow (2 Aug 2026, Gareth's call: this version leads
+     with the person's own words). Kept, like TOPICS.qs, because every entry was
+     verified to answer confidently against the live corpus and that verification
+     is the expensive part of bringing them back. */
   var SUGGEST = CFG.suggestions || {
     /* 'Where do I find my event ID?' and 'What does my package include?' were shipped
        here and FAIL the every-suggestion-answers-confidently rule when actually asked
@@ -67,14 +69,16 @@
     '':                    ['How do I change the submission deadline?', 'What can I do with the API?', 'How do we set up the poster gallery?']
   };
 
-  /* The six doors. Every question verified strong against the live corpus on
-     2 Aug 2026 - same rule as SUGGEST above. `hint` is the routing phrase that
-     rides on the question; `icon` is a 24-box stroke path. Override with
-     CFG.topics if the app ever needs different doors. */
+  /* The six doors: five lifecycle topics and Something else, which always sits
+     last and carries no routing hint - it exists so nobody stares at five wrong
+     labels. `hint` is the routing phrase that rides on the question; `icon` is a
+     24-box stroke path. Override with CFG.topics if the app needs different doors.
+
+     `qs` is PARKED: suggested questions were taken out of the flow on 2 Aug 2026
+     (Gareth's call - this version leads with the person's own question). The data
+     stays because every entry was verified to answer strongly against the live
+     corpus, and re-verifying is the expensive part of bringing them back. */
   var TOPICS = CFG.topics || [
-    { key: 'start', label: 'Setting up', hint: 'setting up their event, their team or their account',
-      icon: '<path d="M4 21V4"/><path d="M4 4h13l-2.5 4L17 12H4"/>',
-      qs: ['How do I add someone to my team?', 'How do I edit my event details?', 'What’s the difference between the free plan and paid plans?'] },
     { key: 'submissions', label: 'Submissions', hint: 'collecting abstract submissions or the submission form',
       icon: '<path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>',
       qs: ['How do I change the submission deadline?', 'Why does a submission show as incomplete?', 'How do I make a submission on behalf of someone else?'] },
@@ -89,13 +93,15 @@
       qs: ['How do I set up tickets?', 'How do I refund an attendee?', 'Can attendees pay by bank transfer or invoice?'] },
     { key: 'conference', label: 'Conference platform', hint: 'the conference platform, programme or sessions',
       icon: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
-      qs: ['How do I create sessions?', 'How do I publish the programme?', 'How do we set up the poster gallery?'] }
+      qs: ['How do I create sessions?', 'How do I publish the programme?', 'How do we set up the poster gallery?'] },
+    { key: 'other', label: 'Something else', hint: '',
+      icon: '<circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/>',
+      qs: [] }
   ];
 
   /* Which door matches the screen the admin is standing on. Only confident matches;
-     an unmapped screen simply shows no badge. */
+     an unmapped screen (Dashboard, Event setup...) simply shows no badge. */
   var SCREEN_TOPIC = {
-    'Dashboard': 'start', 'Event setup': 'start',
     'Abstract Management': 'submissions', 'Symposium': 'submissions',
     'Emails': 'emails',
     'Registration': 'registration',
@@ -136,15 +142,29 @@
     '.oahw-tile svg{width:19px;height:19px;color:#0A1B3E;flex:none}',
     '.oahw-here{position:absolute;top:9px;right:10px;font-size:10px;font-weight:700;letter-spacing:.05em;',
     ' text-transform:uppercase;color:#C54538;background:rgba(197,69,56,.1);border-radius:9999px;padding:3px 8px}',
-    '.oahw-pophead{font-size:11.5px;color:#5a6377;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 7px}',
-    '.oahw-pop{display:flex;flex-direction:column;gap:6px}',
-    '.oahw-pop button{display:flex;align-items:center;gap:8px;text-align:left;background:#fff;border:1px solid #d8d5c8;',
-    ' border-radius:10px;padding:9px 12px;font-family:inherit;font-size:13.5px;color:#0A1B3E;cursor:pointer;line-height:1.35}',
-    '.oahw-pop button:hover{border-color:#C54538}',
-    '.oahw-pop b{color:#C54538;font-weight:700;flex:none}',
     '.oahw-tlink{display:block;text-align:center;font-size:12.5px;color:#5a6377;margin:14px 0 2px}',
     '.oahw-tlink a{color:#0A1B3E;text-decoration:underline;text-underline-offset:3px;cursor:pointer}',
     '.oahw-tlink a:hover{color:#C54538}',
+    /* the shiny intro card */
+    '.oahw-intro{position:relative;overflow:hidden;border-radius:14px;padding:22px 20px 20px;color:#EAECE1;',
+    ' background:radial-gradient(120% 90% at 85% -10%,rgba(197,69,56,.55),transparent 55%),',
+    ' radial-gradient(100% 80% at -10% 110%,rgba(78,90,49,.5),transparent 55%),linear-gradient(135deg,#0A1B3E,#1b2f63);',
+    ' box-shadow:0 10px 28px rgba(10,27,62,.35);transition:opacity .4s ease,transform .4s ease}',
+    '.oahw-intro.oahw-igone{opacity:0;transform:translateY(-12px) scale(.97)}',
+    '.oahw-ipill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;',
+    ' border:1px solid rgba(234,236,225,.45);border-radius:9999px;padding:4px 12px;margin-bottom:12px;',
+    ' color:#EAECE1;position:relative;z-index:1}',
+    '.oahw-ihead{margin:0 0 8px;font-size:21px;font-weight:700;line-height:1.2;position:relative;z-index:1}',
+    '.oahw-ihead span{color:#e9a89e}',
+    '.oahw-ibody{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(234,236,225,.92);position:relative;z-index:1}',
+    '.oahw-iask{margin:0;font-size:13.5px;font-weight:600;color:#e9a89e;position:relative;z-index:1;',
+    ' animation:oahw-nudge 2.2s ease-in-out infinite}',
+    '.oahw-st{position:absolute;font-style:normal;font-size:13px;color:rgba(234,236,225,.8);pointer-events:none;',
+    ' animation:oahw-tw 2.8s ease-in-out infinite}',
+    '@keyframes oahw-tw{0%,100%{opacity:.15;transform:scale(.7) rotate(-10deg)}50%{opacity:.95;transform:scale(1.1) rotate(12deg)}}',
+    '@keyframes oahw-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}',
+    '@media (prefers-reduced-motion:reduce){.oahw-st{animation:none;opacity:.6}.oahw-iask{animation:none}',
+    ' .oahw-intro{transition:none}}',
     '.oahw-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#EAECE1}',
     '.oahw-row{display:flex;gap:8px;align-items:flex-end}',
     '.oahw-av{width:26px;height:26px;border-radius:50%;background:#0A1B3E;color:#EAECE1;flex:none;display:flex;',
@@ -333,22 +353,6 @@
     });
     home.appendChild(tiles);
 
-    var pop = (SUGGEST[CFG.screen] || SUGGEST[''] || []).slice(0, 3);
-    if (pop.length) {
-      home.appendChild(el('p', 'oahw-pophead',
-        CFG.screen ? 'Asked a lot on ' + CFG.screen : 'Asked a lot right now'));
-      var list = el('div', 'oahw-pop');
-      pop.forEach(function (q) {
-        var b = el('button');
-        b.type = 'button';
-        b.appendChild(el('b', null, '›'));
-        b.appendChild(el('span', null, q));
-        b.addEventListener('click', function () { showChat(); ask(q); });
-        list.appendChild(b);
-      });
-      home.appendChild(list);
-    }
-
     var tl = el('p', 'oahw-tlink');
     tl.appendChild(document.createTextNode('Prefer a person? '));
     var a = el('a', null, 'Raise a support ticket ↗');
@@ -390,11 +394,40 @@
   function enterTopic(t) {
     state.topic = t;
     showChat();
-    Array.prototype.forEach.call(body.querySelectorAll('.oahw-chips'), function (c) { c.remove(); });
-    addBot(t.label + ' — ask in your own words, or start with one of these. I’ll answer and show you which guide it came from.');
-    addChips(t.qs);
+    addIntro(t);
     input.focus();
     emit('topic', { key: t.key, label: t.label });
+  }
+
+  /* The moment between choosing a door and typing: a short, deliberately shiny
+     card that says what this thing actually is. It looks nothing like the plain
+     chat that follows on purpose - the contrast is the excitement - and it
+     collapses away the instant the first question is asked. */
+  function addIntro(t) {
+    var old = body.querySelector('.oahw-intro');
+    if (old) old.remove();
+    var card = el('div', 'oahw-intro');
+    card.innerHTML =
+      '<i class="oahw-st" style="left:8%;top:14%;animation-delay:0s">✦</i>' +
+      '<i class="oahw-st" style="right:10%;top:22%;animation-delay:.7s;font-size:11px">✦</i>' +
+      '<i class="oahw-st" style="left:16%;bottom:18%;animation-delay:1.3s;font-size:10px">✦</i>' +
+      '<i class="oahw-st" style="right:7%;bottom:26%;animation-delay:.4s">✦</i>';
+    card.appendChild(el('span', 'oahw-ipill', t.label));
+    var h = el('p', 'oahw-ihead');
+    h.innerHTML = 'Instant answers <span aria-hidden="true">✦</span>';
+    card.appendChild(h);
+    card.appendChild(el('p', 'oahw-ibody',
+      'This chat searches everything we’ve ever recorded about running events and answers in seconds.'));
+    card.appendChild(el('p', 'oahw-iask', 'Ask as though you were speaking to a real person ↓'));
+    body.appendChild(card);
+    scrollDown();
+  }
+
+  function collapseIntro() {
+    var card = body.querySelector('.oahw-intro');
+    if (!card) return;
+    card.classList.add('oahw-igone');
+    setTimeout(function () { card.remove(); }, 450);
   }
 
   function open() {
@@ -529,7 +562,7 @@
   function contextualise(question) {
     var q = '';
     if (CFG.screen) q += '[The admin is on the ' + CFG.screen + ' screen of their event dashboard] ';
-    if (state.topic) q += '[Their question is about ' + state.topic.hint + '] ';
+    if (state.topic && state.topic.hint) q += '[Their question is about ' + state.topic.hint + '] ';
     var last = state.history[state.history.length - 1];
     if (last) q += '[Earlier they asked: "' + last.q.slice(0, 90) + '"] ';
     return (q + question).slice(0, 500);
@@ -544,6 +577,7 @@
   function ask(question) {
     if (state.busy || !question.trim()) return;
     if (state.view !== 'chat') showChat();     // typing from the doors skips them
+    collapseIntro();                           // the shiny card yields to the conversation
     state.busy = true;
     state._send.disabled = true;
     Array.prototype.forEach.call(body.querySelectorAll('.oahw-chips'), function (c) { c.remove(); });
