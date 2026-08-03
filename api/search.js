@@ -195,6 +195,11 @@ export default async function handler(req, res) {
       // 900, not the old 500: a steps answer carries the same instructions twice -
       // once as cards, once as the prose fallback every older surface still reads.
       max_tokens: 900,
+      // Low temperature, set when steps arrived: at the default sampling the SAME
+      // question came back as steps twice and prose the third time, so whether a
+      // reader saw cards was a coin toss. There is nothing creative to gain here -
+      // the content is pinned to the guides - and format stability to lose.
+      temperature: 0.2,
       system: ANSWER_SYSTEM,
       messages: [{ role: 'user', content: `GUIDES\n\n${guides}\n\nQUESTION\n${question}` }]
     });
