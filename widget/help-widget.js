@@ -23,7 +23,7 @@
  *   - The bot never guesses: weak answers are not shown, said honestly instead.
  *
  * The panel now opens on a topic screen rather than straight into conversation:
- * six doors ("What do you need a hand with?"), the one matching the current screen
+ * six doors ("Hello, how can we help?"), the one matching the current screen
  * marked, with the ask bar still live underneath - a formed question skips the
  * doors entirely, because nobody mid-crisis should pay a tax of two taps. A chosen
  * topic rides on the front of the question exactly as the screen name does (no
@@ -120,6 +120,10 @@
      these fonts. */
   var FONT = "'Outfit',ui-sans-serif,system-ui,sans-serif";
   var DISPLAY = "'Gloock',Georgia,serif";
+  /* One placeholder for both views. It used to differ between the topic screen and
+     the conversation; now that they read the same, a single constant stops the two
+     drifting apart - and the voice input restores this exact string after listening. */
+  var ASK_PH = 'Ask in your own words…';
   var CSS = [
     '.oahw-launch{position:fixed;right:22px;bottom:22px;z-index:Z;display:inline-flex;align-items:center;gap:9px;',
     ' background:#0A1B3E;color:#fff;border:none;border-radius:9999px;padding:13px 20px;font-family:FONT;',
@@ -533,7 +537,7 @@
     var askRow = el('div', 'oahw-ask');
     input = el('input');
     input.type = 'text';
-    input.placeholder = 'Ask in your own words…';
+    input.placeholder = ASK_PH;
     input.setAttribute('aria-label', 'Your question');
     var mic = el('button', 'oahw-mic');
     mic.type = 'button';
@@ -577,7 +581,7 @@
      us, and the badge and popular questions must follow it. */
   function renderHome() {
     home.innerHTML = '';
-    home.appendChild(el('p', 'oahw-hh', 'What do you need a hand with?'));
+    home.appendChild(el('p', 'oahw-hh', 'Hello, how can we help?'));
     home.appendChild(el('p', 'oahw-hsub', 'Pick a topic — or just type your question below.'));
 
     var hereKey = SCREEN_TOPIC[CFG.screen] || null;
@@ -614,7 +618,6 @@
     state._sub.textContent = CFG.screen
       ? 'You’re on ' + CFG.screen + ' — I’ll take that into account'
       : 'Answers from the people who built it';
-    input.placeholder = 'Instant answers — ask in your own words…';
     emit('home', { screen: CFG.screen });
   }
 
@@ -628,7 +631,6 @@
     state._sub.textContent = state.topic
       ? state.topic.label
       : (CFG.screen ? 'You’re on ' + CFG.screen + ' — I’ll take that into account' : 'Ask in your own words');
-    input.placeholder = 'Ask in your own words…';
     scrollDown();
   }
 
@@ -739,7 +741,7 @@
         listening = false;
         btn.classList.remove('oahw-listening');
         btn.setAttribute('aria-pressed', 'false');
-        input.placeholder = 'Ask in your own words…';
+        input.placeholder = ASK_PH;
         input.focus();
       };
       try { rec.start(); } catch (e) {}
