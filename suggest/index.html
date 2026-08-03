@@ -196,6 +196,75 @@ select{appearance:none;cursor:pointer;
   font-weight:600;font-size:17px;color:var(--navy);padding:11px 26px;cursor:pointer}
 .again:hover{background:var(--navy);color:var(--cream)}
 
+/* The reward: a fox-red Labrador trots in, takes the treat and trots off, on an
+   eight-second loop.
+
+   The numbers look arbitrary but are not. A head rotation alone cannot put the nose
+   on the ground - the neck joint sits at (86,58) and the nose tip only 46 units from
+   it, so even a full ninety degrees stops short. The dog also tips forward 15
+   degrees about its back feet, which is what a real one does; with that lean, 39
+   degrees of head dip lands the nose tip at (137,93), which is where the biscuit
+   sits. Change any one of the lean, the dip or the treat position and the nose
+   misses - the first draft used 54 degrees measured to the muzzle centre, and the
+   nose ended up below the ground line. Verified by scrubbing the animation to the
+   44% keyframe and measuring, not by eye. */
+.dogshow{display:block;width:100%;max-width:300px;height:auto;margin:4px auto 24px}
+.dogshow .ground{fill:rgba(16,28,56,.07)}
+.dogshow .dog-shade,.dogshow .treat-shade{fill:rgba(16,28,56,.13)}
+.dogshow .coat{fill:#B85C38}
+.dogshow .leg rect{fill:#B85C38}
+.dogshow .far rect{fill:#9C4A2A}          /* far pair darkened to fake depth */
+.dogshow .muzzle{fill:#CE7C55}
+.dogshow .ear{fill:#9C4A2A}
+.dogshow .nose,.dogshow .eye{fill:#2B1A12}
+.dogshow .tail{fill:none;stroke:#B85C38;stroke-width:7;stroke-linecap:round}
+.dogshow .treat{fill:#8A5A00}             /* the attendee amber from the audience tags */
+
+/* transform-box:view-box so every transform-origin below is read in viewBox units
+   rather than each element's own bounding box. */
+.dogshow .dog,.dogshow .lean,.dogshow .head,.dogshow .leg,.dogshow .tail,
+.dogshow .treat{transform-box:view-box}
+.dogshow .dog{animation:dogWalk 8s ease-in-out infinite}
+.dogshow .lean{transform-origin:26px 96px;animation:dogLean 8s ease-in-out infinite}
+.dogshow .head{transform-origin:86px 58px;animation:headDip 8s ease-in-out infinite}
+.dogshow .leg{transform-origin:var(--o) 62px;
+  animation:step .42s ease-in-out var(--delay,0s) infinite}
+.dogshow .tail{transform-origin:14px 50px;animation:wag .36s ease-in-out infinite}
+.dogshow .treat{transform-origin:137px 93px;animation:treatGone 8s linear infinite}
+
+/* Exit is 350px, not a rounder 250: the dog's own drawing runs to x=129, and the
+   stage is 320 wide, so anything under ~320 leaves it half on screen at the loop
+   wrap - where it would vanish and teleport back to the left mid-body. */
+@keyframes dogWalk{
+  0%,3%   {transform:translateX(-210px)}
+  36%     {transform:translateX(0)}
+  62%     {transform:translateX(0)}
+  95%,100%{transform:translateX(350px)}}
+@keyframes dogLean{
+  0%,36%  {transform:rotate(0deg)}
+  44%,58% {transform:rotate(15deg)}
+  64%,100%{transform:rotate(0deg)}}
+/* The wobble between 44% and 58% is chewing. */
+@keyframes headDip{
+  0%,36%  {transform:rotate(0deg)}
+  44%     {transform:rotate(39deg)}
+  47%     {transform:rotate(32deg)}
+  50%     {transform:rotate(39deg)}
+  53%     {transform:rotate(32deg)}
+  56%,58% {transform:rotate(39deg)}
+  64%,100%{transform:rotate(0deg)}}
+/* Gone while the head is down, back only once the dog is off-screen. */
+@keyframes treatGone{
+  0%,45%  {opacity:1;transform:scale(1)}
+  49%,95% {opacity:0;transform:scale(.2)}
+  98%,100%{opacity:1;transform:scale(1)}}
+@keyframes step{
+  0%,100%{transform:rotate(16deg)}
+  50%    {transform:rotate(-16deg)}}
+@keyframes wag{
+  0%,100%{transform:rotate(-13deg)}
+  50%    {transform:rotate(13deg)}}
+
 footer{border-top:1px solid var(--line);margin-top:26px;padding:26px 0 50px;
   font-size:15.5px;color:var(--muted)}
 footer a{color:var(--navy)}
@@ -204,6 +273,9 @@ footer a{color:var(--navy)}
    the page keeps its texture for anyone who asked the OS for less motion. */
 @media (prefers-reduced-motion:reduce){
   .sparkles i,.skyfield i{animation:none;opacity:.4}
+  /* Stopped where it is drawn, which is nose-to-biscuit: a dog about to get its
+     treat rather than an empty patch of ground. */
+  .dogshow *{animation:none}
 }
 
 @media (max-width:680px){
@@ -463,7 +535,48 @@ footer a{color:var(--navy)}
         <path d="M20 6L9 17l-5-5"/></svg>
     </div>
     <h2>Got it — thank you.</h2>
-    <p>It is in the sheet with your name on it. If Kristy needs more, she will email you.</p>
+    <p>If Kristy needs more info, she will get hold of you.</p>
+
+    <svg class="dogshow" viewBox="0 0 320 130" role="img"
+         aria-label="A fox-red Labrador trots over to a treat, eats it, and trots away again.">
+      <ellipse class="ground" cx="160" cy="100" rx="150" ry="5"/>
+
+      <g class="treat">
+        <ellipse class="treat-shade" cx="137" cy="97" rx="10" ry="2.5"/>
+        <rect x="130" y="89" width="14" height="7" rx="3.5"/>
+        <circle cx="131" cy="89" r="2.8"/><circle cx="143" cy="89" r="2.8"/>
+        <circle cx="131" cy="96" r="2.8"/><circle cx="143" cy="96" r="2.8"/>
+      </g>
+
+      <g class="dog">
+        <g class="lean">
+          <ellipse class="dog-shade" cx="56" cy="99" rx="44" ry="4"/>
+
+          <!-- Far pair, painted darker and drawn first, so the near pair reads as
+               nearer without any need for real depth. -->
+          <g class="leg far" style="--o:28px"><rect x="24" y="62" width="8" height="34" rx="4"/></g>
+          <g class="leg far" style="--o:84px;--delay:.21s"><rect x="80" y="62" width="8" height="34" rx="4"/></g>
+
+          <path class="tail" d="M14 50 q-13 -6 -17 -20"/>
+          <ellipse class="coat" cx="56" cy="60" rx="36" ry="17"/>
+          <circle class="coat" cx="26" cy="58" r="16"/>
+          <circle class="coat" cx="82" cy="58" r="16"/>
+
+          <g class="leg" style="--o:36px;--delay:.21s"><rect x="32" y="62" width="8" height="34" rx="4"/></g>
+          <g class="leg" style="--o:92px"><rect x="88" y="62" width="8" height="34" rx="4"/></g>
+
+          <g class="head">
+            <path class="coat" d="M78 58 L90 32 L104 38 L90 64 Z"/>
+            <ellipse class="coat" cx="100" cy="32" rx="15" ry="13"/>
+            <ellipse class="muzzle" cx="117" cy="36" rx="11" ry="7.5"/>
+            <circle class="nose" cx="126" cy="34" r="3"/>
+            <circle class="eye" cx="103" cy="28" r="2.3"/>
+            <ellipse class="ear" cx="93" cy="34" rx="6.5" ry="12"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+
     <button class="again" type="button" id="again">Send another</button>
   </div>
 
