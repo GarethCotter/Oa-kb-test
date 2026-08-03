@@ -14,13 +14,26 @@ it drew from cited underneath. Cited guides open **inside the panel** — the li
 page, re-rooted — so there is no second copy of any article to drift out of date.
 
 **The panel opens on a topic screen, not straight into conversation.** Six doors
-under "What do you need a hand with?" — the event lifecycle, with the door matching
-the current screen listed first and badged "You're here" — and the ask bar still
-live underneath, so a formed question skips the doors entirely. A chosen door does
-three things: retitles the view, swaps in that topic's suggested questions, and
-rides on the front of the question as routing context, exactly as the screen name
-does. Reopening mid-conversation returns to the conversation — the doors are an
-entrance, not a toll booth.
+under "What do you need a hand with?" — five lifecycle topics plus **Something
+else**, always last, which carries no routing hint and exists so nobody stares at
+five wrong labels. The door matching the current screen is listed first and badged
+"You're here", and the ask bar stays live underneath, so a formed question skips
+the doors entirely. Reopening mid-conversation returns to the conversation — the
+doors are an entrance, not a toll booth.
+
+**A chosen door opens onto an intro card, not the bare chat**: a deliberately
+shiny navy card — topic pill, twinkling stars — saying this chat searches
+everything we have ever recorded and answers in seconds, and to ask as though
+speaking to a real person. It looks nothing like the plain conversation on
+purpose, and it collapses away the moment the first question is sent. The chosen
+topic rides on the front of the question as routing context, exactly as the
+screen name does.
+
+**Suggested questions are currently out of the flow** (a deliberate call, not an
+omission — this version leads with the person's own words). The verified question
+sets remain in the file marked PARKED: every entry was checked to answer
+confidently against the live corpus, and that verification is the expensive part
+of bringing them back.
 
 The answering surface is titled **"Instant answers"** — deliberately not "AI chat"
 or similar. Users pre-judge "AI chat" as useless; this one is not, and the name
@@ -124,13 +137,14 @@ you now.
 
 On https://oa-kb-test.vercel.app/widget/test-page (or locally — CORS allows localhost):
 
-- [ ] Open Help → the topic doors, Emails first with a "You're here" badge, the
-      three Emails questions under "Asked a lot on Emails", ask bar live below.
-- [ ] Click a different door (say Registration & payments) → view retitles to
-      "Instant answers", that topic's questions appear, and asked rows log the
-      screen as `Emails · Registration & payments`.
+- [ ] Open Help → the topic doors, Emails first with a "You're here" badge,
+      Something else last, ask bar live below. No suggested questions anywhere.
+- [ ] Click a door (say Registration & payments) → the shiny intro card with the
+      topic as a pill; send a question → the card collapses and the conversation
+      begins, with asked rows logging the screen as
+      `Emails · Registration & payments`.
 - [ ] Type a question on the doors screen without picking one → straight into the
-      conversation; no door required.
+      conversation; no door, no intro card.
 - [ ] ‹ back returns to the doors; close and reopen mid-conversation returns to
       the conversation, not the doors.
 - [ ] Ask "why have my submitters not received my email" → answer with bolded menu
