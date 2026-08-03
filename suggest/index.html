@@ -23,7 +23,10 @@
    scrollbar on a narrow one. */
 body{margin:0;font-family:'Outfit',sans-serif;font-size:18px;line-height:1.65;
      color:var(--navy);background:var(--cream);-webkit-font-smoothing:antialiased;
-     overflow-x:hidden}
+     overflow-x:hidden;position:relative}
+/* Everything real sits above the decoration. Without this the sky layer would be
+   painted over the header and hero, not behind them. */
+header,main,footer{position:relative;z-index:1}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
 
@@ -79,13 +82,35 @@ legend{display:flex;align-items:center;gap:13px;width:100%;padding:26px 0 2px;
     radial-gradient(50% 24% at 50% 99%, rgba(208,67,44,.10), transparent 72%)}
 
 .sparkles{position:absolute;inset:-56px -76px;z-index:0;pointer-events:none}
-.sparkles i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);
-  background:currentColor;opacity:.5;
+.sparkles i,.skyfield i{position:absolute;left:var(--x);top:var(--y);
+  width:var(--s);height:var(--s);background:currentColor;opacity:.5;
   -webkit-mask:var(--spark) center/contain no-repeat;mask:var(--spark) center/contain no-repeat;
   animation:twinkle var(--dur,5s) ease-in-out var(--d,0s) infinite}
 @keyframes twinkle{
   0%,100%{opacity:.12;transform:scale(.6) rotate(-8deg)}
   50%     {opacity:.85;transform:scale(1) rotate(10deg)}}
+/* A dimmer twinkle for narrow screens. On a phone the text column is the full width,
+   so the sky stars end up behind the writing rather than beside it; a separate set of
+   keyframes is needed because an opacity rule cannot win against an animating one. */
+@keyframes twinkle-soft{
+  0%,100%{opacity:.07;transform:scale(.6) rotate(-8deg)}
+  50%     {opacity:.4;transform:scale(1) rotate(10deg)}}
+
+/* The same field again, but anchored to the page rather than to the form, so the
+   effect starts at the very top of the screen. Its glow is masked to fade out
+   downward, where the form's own glow is fading in - the two overlap and read as one
+   continuous sky rather than a decorated box sitting on a plain background.
+   Deliberately not given the .sparkles class: that sets `inset` on all four sides,
+   which fights the top/height used here. */
+.skyfield{position:absolute;top:0;left:0;right:0;height:880px;z-index:0;
+  pointer-events:none;overflow:hidden}
+.skyfield::before{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(46% 32% at 50% -6%, rgba(208,67,44,.15), transparent 68%),
+    radial-gradient(36% 30% at 5% 12%, rgba(91,62,142,.12), transparent 70%),
+    radial-gradient(36% 30% at 95% 20%, rgba(31,111,92,.12), transparent 70%);
+  -webkit-mask:linear-gradient(180deg,#000 50%,transparent 100%);
+  mask:linear-gradient(180deg,#000 50%,transparent 100%)}
 
 .field{margin-bottom:22px}
 .field>label,.grp>span{display:block;font-weight:600;font-size:16.5px;margin-bottom:2px}
@@ -178,7 +203,7 @@ footer a{color:var(--navy)}
 /* Twinkling is the one part of this that moves. Held still rather than removed, so
    the page keeps its texture for anyone who asked the OS for less motion. */
 @media (prefers-reduced-motion:reduce){
-  .sparkles i{animation:none;opacity:.4}
+  .sparkles i,.skyfield i{animation:none;opacity:.4}
 }
 
 @media (max-width:680px){
@@ -193,6 +218,7 @@ footer a{color:var(--navy)}
      spilling into a gutter that is not there. */
   .stage::before{inset:-26px -16px}
   .sparkles{inset:-24px -10px}
+  .skyfield i{animation-name:twinkle-soft}
   /* Nineteen faces at three across ran to seven rows and swallowed a phone screen
      whole. Smaller circles fit four across in five rows; still a comfortable tap
      target, and the point is recognising a face, not studying it. */
@@ -205,6 +231,28 @@ footer a{color:var(--navy)}
 </head>
 <body>
 <a class="skip" href="#main">Skip to the form</a>
+
+<!-- Page-level sparkle. Sits behind the header and hero, and fades down into the
+     form's own field. Weighted to the margins either side of the 760px column so it
+     frames the writing rather than sitting under it. -->
+<div class="skyfield" aria-hidden="true">
+  <i style="--x:6%;--y:4%;--s:18px;--d:.2s;--dur:5.2s;color:#D0432C"></i>
+  <i style="--x:15%;--y:11%;--s:10px;--d:2.1s;--dur:4.4s;color:#5B3E8E"></i>
+  <i style="--x:3%;--y:21%;--s:13px;--d:3.3s;--dur:6.1s;color:#1F6F5C"></i>
+  <i style="--x:11%;--y:33%;--s:9px;--d:1.2s;--dur:5.5s;color:#D0432C"></i>
+  <i style="--x:2%;--y:46%;--s:15px;--d:2.7s;--dur:4.8s;color:#5B3E8E"></i>
+  <i style="--x:13%;--y:58%;--s:11px;--d:.6s;--dur:6.3s;color:#1F6F5C"></i>
+  <i style="--x:5%;--y:71%;--s:12px;--d:3.9s;--dur:5s;color:#D0432C"></i>
+  <i style="--x:38%;--y:2%;--s:11px;--d:1.7s;--dur:5.7s;color:#1F6F5C"></i>
+  <i style="--x:61%;--y:5%;--s:9px;--d:3.1s;--dur:4.6s;color:#5B3E8E"></i>
+  <i style="--x:85%;--y:3%;--s:16px;--d:.9s;--dur:5.9s;color:#D0432C"></i>
+  <i style="--x:94%;--y:13%;--s:11px;--d:2.4s;--dur:4.2s;color:#1F6F5C"></i>
+  <i style="--x:87%;--y:26%;--s:14px;--d:1.4s;--dur:6s;color:#5B3E8E"></i>
+  <i style="--x:96%;--y:39%;--s:10px;--d:3.6s;--dur:5.3s;color:#D0432C"></i>
+  <i style="--x:89%;--y:52%;--s:12px;--d:.4s;--dur:4.9s;color:#1F6F5C"></i>
+  <i style="--x:97%;--y:65%;--s:9px;--d:2.9s;--dur:6.2s;color:#5B3E8E"></i>
+  <i style="--x:91%;--y:77%;--s:15px;--d:1.9s;--dur:5.1s;color:#D0432C"></i>
+</div>
 
 <header><div class="wrap nav">
   <a href="https://oxfordabstracts.com/" aria-label="Oxford Abstracts"><img
@@ -223,7 +271,7 @@ footer a{color:var(--navy)}
     update the relevant help files to ensure our help centre is the greatest there ever
     was.</p>
     <p class="lede">It doesn&rsquo;t matter how small or trivial the suggestion may be,
-    send it now, before it&rsquo;s too late!</p>
+    <strong>send it now, before it&rsquo;s too late!</strong></p>
   </div>
 
   <div class="msg bad" id="err" hidden role="alert"></div>
