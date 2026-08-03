@@ -30,7 +30,6 @@ const TYPES = new Set([
   "Something's wrong or out of date",
   "A question we get asked but don't answer",
   'A new or changed feature to document',
-  'A clearer way to explain something',
   'Something else'
 ]);
 

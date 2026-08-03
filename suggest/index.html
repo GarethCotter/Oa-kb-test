@@ -44,6 +44,7 @@ header{border-bottom:1px solid var(--line)}
 h1{font-family:'Gloock',serif;font-weight:400;font-size:clamp(34px,6vw,50px);
   line-height:1.1;margin:0 0 16px;letter-spacing:-.01em}
 .lede{font-size:20px;color:var(--muted);margin:0;max-width:60ch}
+.lede+.lede{margin-top:14px}
 .lede strong{color:var(--navy);font-weight:600}
 
 form{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
@@ -150,7 +151,6 @@ select{appearance:none;cursor:pointer;
   font-weight:600;font-size:18px;padding:13px 30px;border-radius:999px}
 .btn:hover{background:#b93a25}
 .btn[disabled]{opacity:.55;cursor:default}
-.reassure{font-size:15px;color:var(--muted);margin:0}
 
 .msg{border-radius:10px;padding:16px 18px;margin-bottom:22px;font-size:16.5px;
   line-height:1.5;border-left:4px solid}
@@ -218,10 +218,12 @@ footer a{color:var(--navy)}
   <div class="hero">
     <span class="eyebrow">For the Oxford Abstracts team</span>
     <h1>You know something the help centre doesn't.</h1>
-    <p class="lede">You are on calls and in tickets all day. When you spot a question we
-    answer badly, a screen that has changed, or an explanation you have had to give
-    twice this week — put it here. It goes straight to <strong>Kristy</strong>, who
-    looks after the help centre, and she decides where it lands.</p>
+    <p class="lede">When you spot a problem with the support information we are
+    providing, put it here. It goes straight to <strong>Kristy</strong>, she will then
+    update the relevant help files to ensure our help centre is the greatest there ever
+    was.</p>
+    <p class="lede">It doesn&rsquo;t matter how small or trivial the suggestion may be,
+    send it now, before it&rsquo;s too late!</p>
   </div>
 
   <div class="msg bad" id="err" hidden role="alert"></div>
@@ -255,11 +257,14 @@ footer a{color:var(--navy)}
 
   <form id="f" novalidate>
     <fieldset>
-      <legend><span class="stepno s1" aria-hidden="true">1</span>What have you got?</legend>
+      <legend><span class="stepno s1" aria-hidden="true">1</span>What have you got for me?</legend>
       <p class="legend-note">Start here. Everything after this section is optional.</p>
 
       <div class="field grp">
-        <span id="type-l">What kind of thing is it?</span>
+        <!-- Hidden rather than deleted: the radiogroup still needs a name, or a screen
+             reader announces four unexplained options. Sighted readers get the same
+             steer from the legend above. -->
+        <span id="type-l" class="vh-label">What kind of thing is it?</span>
         <div class="chips" role="radiogroup" aria-labelledby="type-l">
           <input type="radio" name="type" id="t1" value="Something's wrong or out of date" required>
             <label for="t1">Something&rsquo;s wrong or out of date</label>
@@ -267,17 +272,15 @@ footer a{color:var(--navy)}
             <label for="t2">A question we get asked but don&rsquo;t answer</label>
           <input type="radio" name="type" id="t3" value="A new or changed feature to document">
             <label for="t3">A new or changed feature</label>
-          <input type="radio" name="type" id="t4" value="A clearer way to explain something">
-            <label for="t4">A clearer way to explain something</label>
-          <input type="radio" name="type" id="t5" value="Something else">
-            <label for="t5">Something else</label>
+          <input type="radio" name="type" id="t4" value="Something else">
+            <label for="t4">Something else</label>
         </div>
       </div>
 
       <div class="field">
         <label for="text">Tell Kristy about it</label>
         <span class="help">What is wrong, or what is missing, and what someone should be
-        able to find. If a customer said it, paste what they said.</span>
+        able to find.</span>
         <textarea id="text" name="text" maxlength="4000" required
           placeholder="Third organiser this month has asked whether a coupon can be a fixed amount rather than a percentage. It can — there's a Discount type dropdown — but our coupon article only mentions percentages, so they don't believe it's possible."></textarea>
         <span class="count" id="count" aria-live="polite">0 / 4000</span>
@@ -285,7 +288,7 @@ footer a{color:var(--navy)}
     </fieldset>
 
     <fieldset>
-      <legend><span class="stepno s2" aria-hidden="true">2</span>Anything that helps place it?</legend>
+      <legend><span class="stepno s2" aria-hidden="true">2</span>Any more info about it?</legend>
       <p class="legend-note">All optional — skip anything you would have to go and look up.</p>
 
       <div class="field">
@@ -312,8 +315,7 @@ footer a{color:var(--navy)}
 
       <div class="field">
         <label for="article">Which article or screen is it about? <span class="opt">(optional)</span></label>
-        <span class="help">A help centre link, or just the name of the page — "the coupon
-        one" is enough to find it.</span>
+        <span class="help">A help centre link, or just the name of the page.</span>
         <input type="text" id="article" name="article" maxlength="300"
           placeholder="help.oxfordabstracts.com/… or the article title">
       </div>
@@ -329,8 +331,8 @@ footer a{color:var(--navy)}
     </fieldset>
 
     <fieldset>
-      <legend><span class="stepno s3" aria-hidden="true">3</span>And you are?</legend>
-      <p class="legend-note">Find your face. Kristy will know who to thank.</p>
+      <legend><span class="stepno s3" aria-hidden="true">3</span>Click on your face!</legend>
+      <p class="legend-note">Kristy will know who to thank.</p>
 
       <div class="field grp">
         <span id="who-l" class="vh-label">Who is sending this?</span>
@@ -402,8 +404,6 @@ footer a{color:var(--navy)}
 
     <div class="actions">
       <button class="btn" id="send" type="submit">Send to Kristy</button>
-      <p class="reassure">Goes to the help centre suggestions sheet. Nothing is published
-      anywhere.</p>
     </div>
   </form>
   </div>
