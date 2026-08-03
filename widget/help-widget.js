@@ -167,10 +167,18 @@
     ' border:1px solid rgba(234,236,225,.45);border-radius:9999px;padding:4px 12px;margin-bottom:12px;',
     ' color:#EAECE1;position:relative;z-index:1}',
     '.oahw-ihead{margin:0 0 8px;font-family:DISPLAY;font-weight:400;font-size:24px;line-height:1.15;position:relative;z-index:1}',
-    '.oahw-ihead span{color:#e9a89e}',
+    /* The brand red itself, not a pale tint of it. At 24px the sparkle is decorative
+       and large, so 3.5:1 against the navy is fine here - but see .oahw-iask, where
+       the same colour would not be. */
+    '.oahw-ihead span{color:#C54538}',
     '.oahw-ibody{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:rgba(234,236,225,.92);position:relative;z-index:1}',
-    '.oahw-iask{margin:0;font-size:13.5px;font-weight:600;color:#e9a89e;position:relative;z-index:1;',
+    /* Cream, not coral. This line is 13.5px bold, so it needs 4.5:1 - and on this
+       navy card the brand red manages 3.5:1 and #AB3A2F only 2.7:1. The instruction
+       has to be readable, so the coral moves to the arrow beside it, which is
+       decoration the words do not depend on. */
+    '.oahw-iask{margin:0;font-size:13.5px;font-weight:600;color:#EAECE1;position:relative;z-index:1;',
     ' animation:oahw-nudge 2.2s ease-in-out infinite}',
+    '.oahw-iask span{color:#C54538;font-size:15px}',
     '.oahw-st{position:absolute;font-style:normal;font-size:13px;color:rgba(234,236,225,.8);pointer-events:none;',
     ' animation:oahw-tw 2.8s ease-in-out infinite}',
     '@keyframes oahw-tw{0%,100%{opacity:.15;transform:scale(.7) rotate(-10deg)}50%{opacity:.95;transform:scale(1.1) rotate(12deg)}}',
@@ -513,8 +521,13 @@
     h.innerHTML = 'Instant answers <span aria-hidden="true">✦</span>';
     card.appendChild(h);
     card.appendChild(el('p', 'oahw-ibody',
-      'This chat searches everything we’ve ever recorded about running events and answers in seconds.'));
-    card.appendChild(el('p', 'oahw-iask', 'Ask as though you were speaking to a real person ↓'));
+      'This chat searches everything we’ve ever recorded about our software and how it works and answers in seconds.'));
+    var ask = el('p', 'oahw-iask');
+    ask.appendChild(document.createTextNode('Ask as though you were speaking to a real person '));
+    var arrow = el('span', null, '↓');
+    arrow.setAttribute('aria-hidden', 'true');
+    ask.appendChild(arrow);
+    card.appendChild(ask);
     body.appendChild(card);
     scrollDown();
   }
