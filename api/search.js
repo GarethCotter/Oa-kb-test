@@ -46,7 +46,28 @@ const ANSWER_SYSTEM =
   'conference organisers and their submitters, reviewers and attendees. Many are ' +
   'not confident with software.\n\n' +
   'Return JSON only, no prose outside it, no code fences:\n' +
-  '{"answer": "...", "confidence": "high" | "partial"}\n\n' +
+  '{"answer": "...", "confidence": "high" | "partial", "format": "steps" | "prose", ' +
+  '"title": "...", "steps": [{"title": "...", "path": "...", "detail": "...", ' +
+  '"bullets": ["..."]}]}\n\n' +
+  'format: "steps" when the reader asked HOW TO DO something and the guides give a ' +
+  'sequence of actions - people follow numbered steps far more easily than a ' +
+  'paragraph. "prose" for everything else: yes/no answers, explanations, what-is ' +
+  'questions, troubleshooting that is not a sequence. Never force steps onto an ' +
+  'answer that is not genuinely a procedure.\n\n' +
+  'When format is "steps":\n' +
+  '- "title": the task, imperative, under 8 words, e.g. "Assign reviewers to submissions".\n' +
+  '- 2 to 6 steps. Each step:\n' +
+  '  - "title": the action, imperative, 2-6 words, e.g. "Add your reviewers".\n' +
+  '  - "path": the exact menu path for that step with arrows, e.g. ' +
+  '"Event dashboard → Abstract Management → Reviews → By Submission", or omit it ' +
+  'when the step happens on the screen the previous step reached.\n' +
+  '  - "detail": one short sentence saying what to do there, exact button and tab ' +
+  'names in double-asterisk bold. Omit rather than pad.\n' +
+  '  - "bullets": ONLY when the guide lists choices or options at that step, each a ' +
+  'few words. Omit otherwise.\n' +
+  '- "answer" must STILL carry the complete instructions as flowing prose - some ' +
+  'places can only show text, and a reader there must lose nothing.\n\n' +
+  'When format is "prose": omit title and steps entirely.\n\n' +
   'confidence: "high" ONLY when the guides directly and fully answer the question ' +
   'asked. "partial" when you answered something adjacent, had to branch across ' +
   'readings, or the guides only partly cover it. When in doubt, "partial" - this ' +
@@ -171,16 +192,35 @@ export default async function handler(req, res) {
 
     const raw = await claude({
       model: MODEL,
-      max_tokens: 500,
+      // 900, not the old 500: a steps answer carries the same instructions twice -
+      // once as cards, once as the prose fallback every older surface still reads.
+      max_tokens: 900,
       system: ANSWER_SYSTEM,
       messages: [{ role: 'user', content: `GUIDES\n\n${guides}\n\nQUESTION\n${question}` }]
     });
 
-    let answer = null, selfReport = 'partial';
+    let answer = null, selfReport = 'partial', title = null, steps = null;
     try {
       const parsed = JSON.parse(raw.replace(/```json|```/g, '').trim());
       answer = parsed.answer || null;
       if (parsed.confidence === 'high') selfReport = 'high';
+      /* Steps are additive and never load-bearing: anything malformed and the
+         response quietly degrades to the prose in `answer`, which is complete on
+         its own. Clipped hard - the model writes them, the reader's browser
+         renders them, and nothing in between should trust either. */
+      if (parsed.format === 'steps' && Array.isArray(parsed.steps) && parsed.steps.length >= 2) {
+        const clean = parsed.steps.slice(0, 7).map(s => ({
+          title: String(s && s.title || '').slice(0, 60),
+          path: String(s && s.path || '').slice(0, 160),
+          detail: String(s && s.detail || '').slice(0, 300),
+          bullets: (Array.isArray(s && s.bullets) ? s.bullets : [])
+            .slice(0, 6).map(b => String(b).slice(0, 80)).filter(Boolean)
+        })).filter(s => s.title);
+        if (clean.length >= 2) {
+          steps = clean;
+          title = String(parsed.title || '').slice(0, 80) || null;
+        }
+      }
     } catch {
       answer = raw || null;          // model ignored the format: still usable
     }
@@ -200,6 +240,11 @@ export default async function handler(req, res) {
       answer,
       found: answer !== null,
       confidence: answer !== null ? confidence : undefined,
+      // steps ride alongside the prose, never instead of it; consumers that
+      // predate them keep working untouched
+      format: answer !== null ? (steps ? 'steps' : 'prose') : undefined,
+      title: steps ? title : undefined,
+      steps: steps || undefined,
       sources: chosen.filter(a => !a.internal).map(a => ({ title: a.title, path: a.path }))
     });
   } catch (err) {

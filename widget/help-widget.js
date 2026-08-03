@@ -216,6 +216,24 @@
     '.oahw-bot p{margin:0 0 10px}.oahw-bot p:last-child{margin:0}',
     '.oahw-bot strong{font-weight:600}',
     '.oahw-you{background:#0A1B3E;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}',
+    /* Step answers. The same white bubble, but the instructions arrive as numbered
+       cards rather than a paragraph - the mockup this came from put each action,
+       its menu path and its options where a stressed reader can scan them. */
+    '.oahw-anst{font-weight:600;font-size:16.5px;margin:0 0 2px}',
+    '.oahw-ansn{font-size:13px;color:#5a6377;margin:0 0 10px}',
+    '.oahw-step{display:flex;gap:10px;background:#FAFAF6;border:1px solid #E5E7EB;border-radius:10px;',
+    ' padding:11px 12px;margin:0 0 8px}',
+    '.oahw-step:last-of-type{margin-bottom:0}',
+    '.oahw-stepno{flex:none;width:26px;height:26px;border-radius:50%;background:#0A1B3E;color:#fff;',
+    ' display:grid;place-items:center;font-size:13px;font-weight:600;margin-top:1px}',
+    '.oahw-stepbody{min-width:0}',
+    '.oahw-stepbody b{display:block;font-size:14.5px;font-weight:600;margin:2px 0 3px}',
+    '.oahw-steppath{font-size:13px;color:#1F6F5C;font-weight:600;margin:0 0 4px;line-height:1.45;',
+    ' overflow-wrap:break-word}',
+    '.oahw-stepbody p{margin:0 0 4px;font-size:13.5px;line-height:1.5}',
+    '.oahw-stepbody p:last-child{margin:0}',
+    '.oahw-stepbody ul{margin:3px 0 0 17px;padding:0;font-size:13.5px}',
+    '.oahw-stepbody li{margin:2px 0}',
     '.oahw-from{border-top:1px solid #E5E7EB;margin-top:11px;padding-top:10px}',
     '.oahw-from p{font-size:12.5px;color:#5a6377;margin:0 0 5px}',
     '.oahw-from a{display:flex;align-items:center;gap:7px;font-size:14.5px;color:#0A1B3E;text-decoration:underline;',
@@ -748,6 +766,26 @@
     });
   }
 
+  function fromBlock(sources, label) {
+    if (!sources || !sources.length) return null;
+    var from = el('div', 'oahw-from');
+    from.appendChild(el('p', null, label || 'From these guides'));
+    sources.slice(0, 2).forEach(function (s) {
+      var a = el('a');
+      a.innerHTML = LINKOUT;
+      a.appendChild(document.createTextNode(s.title));
+      a.href = kbUrl(s.path);
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var last = state.history[state.history.length - 1];
+        logEvent(last ? last.q : s.title, true, [s], 'opened_article');
+        openReader(s.path, a.href);
+      });
+      from.appendChild(a);
+    });
+    return from;
+  }
+
   function addBot(text, sources) {
     var m = el('div', 'oahw-msg oahw-bot');
     text.split('\n').forEach(function (p) {
@@ -756,24 +794,44 @@
       para.innerHTML = boldify(p.trim());
       m.appendChild(para);
     });
-    if (sources && sources.length) {
-      var from = el('div', 'oahw-from');
-      from.appendChild(el('p', null, 'From these guides'));
-      sources.slice(0, 2).forEach(function (s) {
-        var a = el('a');
-        a.innerHTML = LINKOUT;
-        a.appendChild(document.createTextNode(s.title));
-        a.href = kbUrl(s.path);
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          var last = state.history[state.history.length - 1];
-          logEvent(last ? last.q : s.title, true, [s], 'opened_article');
-          openReader(s.path, a.href);
-        });
-        from.appendChild(a);
-      });
-      m.appendChild(from);
-    }
+    var from = fromBlock(sources);
+    if (from) m.appendChild(from);
+    var row = botRow();
+    row.appendChild(m);
+    body.appendChild(row);
+    scrollDown();
+  }
+
+  /* An answer from the endpoint. When it arrives with steps, the cards replace the
+     paragraph - the prose in r.answer is the same instructions and stays unshown
+     here, carried for the places (and the failure paths) that can only show text. */
+  function addAnswer(r) {
+    if (!(r.steps && r.steps.length)) { addBot(r.answer, r.sources); return; }
+    var m = el('div', 'oahw-msg oahw-bot');
+    if (r.title) m.appendChild(el('p', 'oahw-anst', r.title));
+    m.appendChild(el('p', 'oahw-ansn',
+      'Follow ' + (r.steps.length === 2 ? 'both' : 'these ' + r.steps.length) + ' steps.'));
+    r.steps.forEach(function (s, i) {
+      var card = el('div', 'oahw-step');
+      card.appendChild(el('span', 'oahw-stepno', String(i + 1)));
+      var b = el('div', 'oahw-stepbody');
+      if (s.title) b.appendChild(el('b', null, s.title));
+      if (s.path) b.appendChild(el('p', 'oahw-steppath', s.path));
+      if (s.detail) {
+        var d = el('p');
+        d.innerHTML = boldify(s.detail);
+        b.appendChild(d);
+      }
+      if (s.bullets && s.bullets.length) {
+        var ul = el('ul');
+        s.bullets.forEach(function (o) { ul.appendChild(el('li', null, o)); });
+        b.appendChild(ul);
+      }
+      card.appendChild(b);
+      m.appendChild(card);
+    });
+    var from = fromBlock(r.sources, 'Need more detail?');
+    if (from) m.appendChild(from);
     var row = botRow();
     row.appendChild(m);
     body.appendChild(row);
@@ -883,7 +941,7 @@
       .then(function (r) {
         removeTyping();
         if (isStrong(r)) {
-          addBot(r.answer, r.sources);
+          addAnswer(r);
           state.history.push({ q: question, a: r.answer });
           logEvent(question, true, r.sources, 'asked');
           addVerdict(question, r.sources || []);

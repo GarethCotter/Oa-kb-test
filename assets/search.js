@@ -246,17 +246,80 @@ function logEvent(question, sources, action, answered) {
   } catch (e) { /* logging never breaks the page */ }
 }
 
-function showAnswer(answer, sources, question) {
+function showAnswer(data, question) {
+  const answer = data.answer, sources = data.sources;
   // the settled line is the answer's own heading, so there is no separate label
   const el = settleInto('found', 'Found it —');
 
-  // the answer may contain short labelled branches; render each on its own line
-  answer.split(/\n+/).filter(Boolean).forEach(line => {
-    const p = document.createElement('p');
-    p.className = 'ans-in';
-    p.innerHTML = boldify(line);
+  if (data.steps && data.steps.length) {
+    // A procedural answer arrives as numbered step cards; the prose in `answer`
+    // is the same instructions and is what every fallback path still shows.
+    // Styles are inline because this block is built here, not by build.py.
+    if (data.title) {
+      const h = document.createElement('p');
+      h.className = 'ans-in';
+      h.textContent = data.title;
+      h.style.cssText = 'font-weight:600;font-size:19px;margin-bottom:2px';
+      el.appendChild(h);
+    }
+    const n = document.createElement('p');
+    n.className = 'ans-in';
+    n.textContent = 'Follow ' + (data.steps.length === 2 ? 'both' : 'these ' + data.steps.length) + ' steps.';
+    n.style.cssText = 'color:#4A5468;font-size:15px;margin-bottom:10px';
+    el.appendChild(n);
+    data.steps.forEach((s, i) => {
+      const card = document.createElement('div');
+      card.className = 'ans-in';
+      card.style.cssText = 'display:flex;gap:11px;background:#fff;border:1px solid rgba(16,28,56,.14);' +
+        'border-radius:10px;padding:13px 15px;margin:0 0 8px';
+      const no = document.createElement('span');
+      no.textContent = i + 1;
+      no.style.cssText = 'flex:none;width:27px;height:27px;border-radius:50%;background:#101C38;' +
+        'color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;margin-top:1px';
+      card.appendChild(no);
+      const bd = document.createElement('div');
+      bd.style.cssText = 'min-width:0';
+      if (s.title) {
+        const t = document.createElement('b');
+        t.textContent = s.title;
+        t.style.cssText = 'display:block;font-size:16px;margin:2px 0 3px';
+        bd.appendChild(t);
+      }
+      if (s.path) {
+        const pa = document.createElement('p');
+        pa.textContent = s.path;
+        pa.style.cssText = 'font-size:14px;color:#1F6F5C;font-weight:600;margin:0 0 4px;overflow-wrap:break-word';
+        bd.appendChild(pa);
+      }
+      if (s.detail) {
+        const d = document.createElement('p');
+        d.innerHTML = boldify(s.detail);
+        d.style.cssText = 'margin:0;font-size:15px';
+        bd.appendChild(d);
+      }
+      if (s.bullets && s.bullets.length) {
+        const ul = document.createElement('ul');
+        ul.style.cssText = 'margin:4px 0 0 18px;padding:0;font-size:15px';
+        s.bullets.forEach(o => {
+          const li = document.createElement('li');
+          li.textContent = o;
+          li.style.cssText = 'margin:2px 0';
+          ul.appendChild(li);
+        });
+        bd.appendChild(ul);
+      }
+      card.appendChild(bd);
+      el.appendChild(card);
+    });
+  } else {
+    // the answer may contain short labelled branches; render each on its own line
+    answer.split(/\n+/).filter(Boolean).forEach(line => {
+      const p = document.createElement('p');
+      p.className = 'ans-in';
+      p.innerHTML = boldify(line);
       el.appendChild(p);
-  });
+    });
+  }
 
   (sources || []).slice(0, 2).forEach(src => {
     const a = document.createElement('a');
@@ -409,7 +472,7 @@ async function fetchAnswer(question) {
     if (!res.ok) throw new Error('bad status');
     const data = await res.json();
     if (data && data.answer) {
-      showAnswer(data.answer, data.sources, question);
+      showAnswer(data, question);
       logEvent(question, data.sources, 'asked', true);
     } else if (data && data.found === false) {
       // keywords that found nothing get "ask in full", not "we haven't written this"

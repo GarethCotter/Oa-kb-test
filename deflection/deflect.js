@@ -66,6 +66,16 @@
     '.oadf-answer h3{font-size:17px;font-weight:600;margin:0 0 10px}',
     '.oadf-answer .oadf-body{font-size:16px;line-height:1.55;margin:0 0 14px}',
     '.oadf-answer .oadf-body strong{font-weight:600}',
+    /* Procedural answers arrive as numbered steps. Rendered as a tight list, not
+       cards - this box interrupts a ticket mid-send, so it earns its height. */
+    '.oadf-anst{font-size:16.5px;font-weight:600;margin:0 0 8px}',
+    '.oadf-steps{margin:0 0 14px;padding-left:22px}',
+    '.oadf-steps>li{margin:0 0 10px;font-size:15.5px;line-height:1.5}',
+    '.oadf-steps>li>b{display:block;font-weight:600}',
+    '.oadf-path{display:block;font-size:13.5px;color:#1F6F5C;font-weight:600;margin:1px 0 2px;overflow-wrap:break-word}',
+    '.oadf-det{display:block;font-size:14.5px}',
+    '.oadf-det strong{font-weight:600}',
+    '.oadf-steps ul{margin:3px 0 0 16px;padding:0;font-size:14px}',
     '.oadf-src{border-top:1px solid #E5E7EB;padding-top:12px;margin-bottom:14px}',
     '.oadf-src p{font-size:13px;color:#5a6377;margin:0 0 6px}',
     '.oadf-src a{display:block;font-size:15px;color:#0A1B3E;text-decoration:underline;text-underline-offset:3px;margin-bottom:5px}',
@@ -186,10 +196,30 @@
   function showAnswer(result, question, sendTicket) {
     state.shown = true;
     state.suggested = (result.sources || []).slice(0, 2);
+    /* Steps replace the paragraph when the endpoint provides them; boldify escapes
+       every string on the way in, so nothing from the model reaches the page raw. */
+    var instructions;
+    if (result.steps && result.steps.length) {
+      instructions =
+        (result.title ? '<p class="oadf-anst">' + boldify(result.title) + '</p>' : '') +
+        '<ol class="oadf-steps">' +
+        result.steps.map(function (s) {
+          return '<li>' +
+            (s.title ? '<b>' + boldify(s.title) + '</b>' : '') +
+            (s.path ? '<span class="oadf-path">' + boldify(s.path) + '</span>' : '') +
+            (s.detail ? '<span class="oadf-det">' + boldify(s.detail) + '</span>' : '') +
+            ((s.bullets && s.bullets.length)
+              ? '<ul>' + s.bullets.map(function (b) { return '<li>' + boldify(b) + '</li>'; }).join('') + '</ul>'
+              : '') +
+            '</li>';
+        }).join('') + '</ol>';
+    } else {
+      instructions = '<p class="oadf-body">' + boldify(result.answer) + '</p>';
+    }
     box.innerHTML =
       '<div class="oadf-answer">' +
         '<h3>This might be what you’re after —</h3>' +
-        '<p class="oadf-body">' + boldify(result.answer) + '</p>' +
+        instructions +
         (state.suggested.length
           ? '<div class="oadf-src"><p>Where this came from</p>' +
             state.suggested.map(function (s) {
