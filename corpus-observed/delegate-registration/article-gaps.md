@@ -210,16 +210,31 @@ invoice panel. `[untested]` — needs confirming inside question setup.
    with no way back — and it is the path both the refund and amendment articles
    send people to.
 
-## Must be settled before writing
+## SETTLED — 3 August 2026
 
-**Do the "Edit Order" and "Edit & Refund Order" buttons exist on a real paid
-order?** Both the amendment article (29 tickets) and the refund article (32
-tickets) hinge on them, and neither appears on this event. I could not distinguish
-"removed in v3" from "only shown for paid orders with a connected provider".
+**The buttons exist. The run missed them, and the run's conclusion was wrong.**
 
-A five-minute check on any event that has taken a payment settles it, and it
-decides whether those two articles need a light edit or a rewrite. **61 tickets a
-year depend on the answer.** Do not act on this list's assumptions here.
+Gareth checked a real order: open **Registration → Registrations**, click the
+attendee's row, then **the three dots at the top right of the panel** — the menu
+holds **"Edit or refund order"** and **"Delete attendee"**.
+
+Three corrections follow:
+
+1. **It is one menu item, not two buttons.** The amendment article called it
+   "Edit Order" and the refund article called it "Edit & Refund Order"; both names
+   are wrong and the single real one, **"Edit or refund order"**, covers both jobs.
+   Both articles are now corrected.
+2. **Nothing is gated on payment.** It appeared on an order whose total was
+   €0.00 — status "Paid", a free ticket. The "only shown for paid orders with a
+   connected provider" theory was wrong.
+3. **The articles' navigation was right all along.** Both already said "click the
+   three dots at the top right"; only the label was wrong. So this was a two-line
+   fix, not the rewrite this file predicted.
+
+**The lesson worth keeping:** an option behind a kebab menu reads as absent. The
+run recorded "neither button appears" from a screen where both were one click
+away. Where a dossier says a control is missing, check the ⋮ before concluding it
+was removed.
 
 ## Suggested internal notes
 

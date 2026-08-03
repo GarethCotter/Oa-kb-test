@@ -4,7 +4,7 @@ section: "07-delegate-registration"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-refund-attendees-delegate-registration
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # Refunding an attendee through delegate registration
@@ -23,7 +23,7 @@ Find the person you want to be refunded by searching for their name in the **sea
 
 When you have found the name, **click on it.**
 
-On the next screen, **click the three dots** to the top right of the pop up screen and **click on Edit & Refund Order** for the drop down menu.
+On the next screen, **click the three dots** at the top right of the panel and select **Edit or refund order**. The same option covers both refunding an order and amending one.
 
 ![](/assets/img/screenshot-2024-08-30-at-16-24-11-png-e68e4773.webp)
 

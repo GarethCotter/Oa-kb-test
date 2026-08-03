@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-admins-can-amend-existing-delegate-registration-orders
 merged_from: [faq-delegate-registration]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-02
 ---
 
 # How admins can amend existing delegate registration orders
@@ -44,7 +44,7 @@ When found, **click on the row of the attendee order**.
 
 A panel will appear to your right.
 
-Click **the** **three dots** at the top right of this panel and select **Edit Order.**
+Click **the three dots** at the top right of this panel and select **Edit or refund order**. The same option covers both amending an order and refunding one.
 
 ![](/assets/img/screenshot-2023-06-20-at-17-12-17-png-dbb010ae.webp)
 
