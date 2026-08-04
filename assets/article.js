@@ -37,7 +37,19 @@
   var thanks = box.querySelector('.fb-thanks');
   var row = box.querySelector('.fb-row');
 
+  /* Article feedback from the internal team is dropped rather than marked, which is
+     the opposite of what /api/log does with a staff question - and deliberately so.
+     A question carries demand ("people keep needing this"), which is worth keeping
+     even when a colleague asked it. A colleague's thumbs-down carries no demand at
+     all, and it would sit in the same "Articles voted No" list that decides what
+     gets rewritten. Staff already have a better channel for that opinion, with room
+     to say why: the suggestion form at /suggest. */
+  function isInternal() {
+    try { return localStorage.getItem('oa-internal') === '1'; } catch (e) { return false; }
+  }
+
   function send(payload) {
+    if (isInternal()) return;
     payload.path = box.getAttribute('data-path');
     payload.ts = Date.now();
     try {

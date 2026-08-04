@@ -444,6 +444,24 @@
     return CFG.kbBase + path.replace(/^\//, '').replace(/\.html$/, '');
   }
 
+  /* Internal-team marker - see the long note in assets/search.js for why this is a
+     stored flag rather than a word typed into the question.
+
+     One wrinkle specific to this surface: the widget runs on the app's origin, not
+     the KB's, and localStorage is per-origin. So a colleague has to switch it on
+     once *in the app* - app.oxfordabstracts.com/…?oa-internal=1 - separately from
+     switching it on in the help centre. Two one-off visits, not one. */
+  var OA_INTERNAL = (function () {
+    try {
+      var m = /[?&]oa-internal=([01])/.exec(location.search);
+      if (m) {
+        if (m[1] === '1') localStorage.setItem('oa-internal', '1');
+        else localStorage.removeItem('oa-internal');
+      }
+      return localStorage.getItem('oa-internal') === '1';
+    } catch (e) { return false; }
+  })();
+
   function logEvent(question, answered, sources, action) {
     try {
       fetch(CFG.endpoint + '/api/log', {
@@ -458,7 +476,8 @@
           screen: CFG.screen + (state.topic ? ' · ' + state.topic.label : ''),
           question: question,
           answered: answered, sources: (sources || []).map(function (s) { return s.path; }),
-          action: action
+          action: action,
+          internal: OA_INTERNAL
         })
       }).catch(function () {});
     } catch (e) {}

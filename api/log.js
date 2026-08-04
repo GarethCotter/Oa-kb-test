@@ -1,6 +1,6 @@
 /* POST /api/log — one row per interaction, from every surface.
  *
- * Body: { surface, screen, question, answered, sources[], action }
+ * Body: { surface, screen, question, answered, sources[], action, internal }
  *   surface   kb-search | widget | ticket-form
  *   screen    the admin screen the widget was opened on ('' elsewhere)
  *   question  the reader's own words
@@ -8,6 +8,18 @@
  *   sources   article paths shown
  *   action    asked | solved | unhelpful | ticket_created | sent_anyway |
  *             not_interrupted | opened_article | followup | none
+ *   internal  true when the browser carries the internal-team flag
+ *
+ * An internal row is stored with '-internal' appended to its surface, so it lands
+ * as 'kb-search-internal' rather than 'kb-search'. The suffix goes on here rather
+ * than in a new column on purpose: every per-surface figure in the sheet already
+ * matches its surface exactly, so those exclude staff traffic with no change at
+ * all, and the totals need only one extra wildcard guard on a column that is never
+ * empty. No schema change, no migration, and no blank cell that a COUNTIFS could
+ * read either way.
+ *
+ * Marked rather than dropped, so a flag left switched on shows up in the sheet
+ * instead of silently discarding a real reader's question.
  *
  * 'asked' is one row per completed question from any surface (answered says whether
  * an answer was shown); everything else is a subsequent event on that question.
@@ -91,9 +103,10 @@ export default async function handler(req, res) {
   let row = null;
   try {
     const b = typeof req.body === 'object' ? req.body : JSON.parse(req.body || '{}');
+    const base = ['kb-search', 'widget', 'ticket-form'].includes(b.surface) ? b.surface : 'unknown';
     row = {
       ts: new Date().toISOString(),
-      surface: ['kb-search', 'widget', 'ticket-form'].includes(b.surface) ? b.surface : 'unknown',
+      surface: base + (b.internal === true ? '-internal' : ''),
       screen: String(b.screen || '').slice(0, 60),
       question: scrub(b.question),
       answered: b.answered === true,

@@ -97,6 +97,19 @@
     try { if (CFG.onEvent) CFG.onEvent(name, detail || {}); } catch (e) {}
   }
 
+  /* Internal-team marker - see the long note in assets/search.js. Per-origin, so a
+     colleague switches it on once on whichever site hosts the support form. */
+  var OA_INTERNAL = (function () {
+    try {
+      var m = /[?&]oa-internal=([01])/.exec(location.search);
+      if (m) {
+        if (m[1] === '1') localStorage.setItem('oa-internal', '1');
+        else localStorage.removeItem('oa-internal');
+      }
+      return localStorage.getItem('oa-internal') === '1';
+    } catch (e) { return false; }
+  })();
+
   function logEvent(question, answered, sources, action) {
     try {
       fetch(CFG.endpoint + '/api/log', {
@@ -106,7 +119,8 @@
         body: JSON.stringify({
           surface: 'ticket-form', screen: '', question: question,
           answered: answered, sources: (sources || []).map(function (s) { return s.path; }),
-          action: action
+          action: action,
+          internal: OA_INTERNAL
         })
       }).catch(function () {});
     } catch (e) {}

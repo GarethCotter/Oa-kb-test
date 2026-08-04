@@ -225,6 +225,31 @@ const CROSS =
   '0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 ' +
   '1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>';
 
+/* Internal-team marker. A colleague opens any KB page once with ?oa-internal=1 and
+   this browser marks everything it logs from then on; ?oa-internal=0 clears it.
+   Set once, then forgotten about - which is the whole point.
+
+   A typed marker ("oa how do I…") was considered and rejected. It changes the
+   question, so it changes the routing and the answer, and you end up judging
+   something no reader will ever see. It also has to be remembered every single
+   time, and a forgotten prefix is unrecoverable: nothing afterwards can tell you
+   whether an unmarked row was a colleague or a customer.
+
+   Rows are MARKED, not dropped. api/log.js suffixes the surface with -internal and
+   the dashboard filters those out. Keeping them means "how much are staff using
+   this?" stays answerable, and a flag left on by accident shows up in the sheet
+   instead of silently deleting a real reader's data. */
+const OA_INTERNAL = (function () {
+  try {
+    const m = /[?&]oa-internal=([01])/.exec(location.search);
+    if (m) {
+      if (m[1] === '1') localStorage.setItem('oa-internal', '1');
+      else localStorage.removeItem('oa-internal');
+    }
+    return localStorage.getItem('oa-internal') === '1';
+  } catch (e) { return false; }   // private mode: behave exactly like a reader
+})();
+
 /* One row per event: an 'asked' row when a question completes (answered says
    whether an answer was shown), then a row per verdict or ticket click. The master
    sheet's dashboard is computed entirely from these. Fire-and-forget: logging must
@@ -240,7 +265,8 @@ function logEvent(question, sources, action, answered) {
         question: question,
         answered: answered !== false,
         sources: (sources || []).map(s => s.path),
-        action: action
+        action: action,
+        internal: OA_INTERNAL
       })
     }).catch(() => {});
   } catch (e) { /* logging never breaks the page */ }
