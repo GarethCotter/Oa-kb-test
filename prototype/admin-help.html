@@ -34,6 +34,12 @@ button{font:inherit}
   text-decoration:none;font-size:15px;border-left:3px solid transparent;cursor:pointer}
 .side a:hover{color:#fff;background:rgba(255,255,255,.05)}
 .side a.on{color:#fff;background:rgba(255,255,255,.08);border-left-color:var(--red)}
+/* Nav icons come from one inline sprite rather than ten copies of the same markup.
+   Dimmed by default so the labels stay the thing you read: an icon at full contrast
+   next to a word competes with it, and there are ten of them. */
+.side .ic{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.62}
+.side a:hover .ic,.side a.on .ic{opacity:1}
 .side .foot{margin-top:auto;padding:14px 20px;font-size:12.5px;color:#7e8aa5}
 .main{overflow:auto;padding:22px 34px 40px}
 .crumb{font-size:13px;color:var(--muted)}
@@ -83,11 +89,43 @@ button{font:inherit}
   white-space:nowrap;visibility:hidden;z-index:5}
 .tip b{font-weight:600}
 
-.prog{display:flex;flex-direction:column;gap:13px}
-.prog .p-row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;font-size:14px}
-.prog .p-val{color:var(--muted);font-size:13px}
+/* ---- reviewing progress ----
+   Leads with what is LEFT rather than what is done: "16 left" is a task with an end,
+   "82%" is a report. The overall bar carries a marker for where today falls against
+   the deadline, because a percentage means nothing without one - 67% is excellent
+   three weeks out and a crisis the night before. */
+.rev-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.rev-head h3{margin:0}
+.rev-due{font-size:12px;color:var(--muted)}
+.rev-due b{color:var(--ink);font-weight:500}
+.rev-hero{display:flex;align-items:baseline;gap:9px}
+.rev-big{font-size:38px;font-weight:600;line-height:1;letter-spacing:-.01em}
+.rev-unit{font-size:15px}
+.rev-sub{font-size:13px;color:var(--muted);margin:2px 0 12px}
+.rev-overall{position:relative;height:10px;border-radius:5px;background:#EFF0EA;margin-bottom:7px}
+.rev-overall .f{display:block;height:100%;border-radius:5px;background:var(--ok)}
+.rev-today{position:absolute;top:-4px;width:2px;height:18px;background:var(--ink);opacity:.5;border-radius:1px}
+.rev-pace{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ok);margin-bottom:16px}
+.rev-pace::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.rev-rule{border:0;border-top:1px solid var(--hair);margin:0 0 15px}
+
+.prog{display:flex;flex-direction:column;gap:14px}
+.prog .p-row{display:grid;grid-template-columns:1fr auto;gap:5px 10px;align-items:baseline;font-size:14px}
+.prog .p-val{color:var(--muted);font-size:12.5px}
+.prog .p-val b{color:var(--ink);font-weight:600;font-size:14px}
 .prog .track{grid-column:1 / -1;height:6px;border-radius:3px;background:#EFF0EA;overflow:hidden}
 .prog .fill{height:100%;border-radius:3px;background:var(--ink)}
+/* The one that has stalled. Amber, not red: red is the action colour on this site,
+   so a red bar reads as something to click. */
+.prog .p-row.stalled{background:rgba(138,90,0,.07);border-radius:8px;padding:10px 11px;margin:0 -11px}
+.prog .p-row.stalled .track{background:#EBE2CE}
+.prog .p-row.stalled .fill{background:#8A5A00}
+.prog .nudge{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:center;
+  gap:10px;margin-top:8px}
+.prog .nudge span{font-size:12.5px;color:#8A5A00;line-height:1.35}
+.prog .nudge button{font-size:12.5px;color:var(--ink);background:none;border:1px solid #DCC9A4;
+  border-radius:6px;padding:4px 10px;cursor:pointer;white-space:nowrap}
+.prog .nudge button:hover{background:#fff;border-color:#8A5A00}
 
 table.subs{width:100%;border-collapse:collapse;font-size:14.5px}
 table.subs th{font-size:12px;font-weight:600;letter-spacing:.03em;color:#8a92a3;text-align:left;
@@ -140,20 +178,37 @@ table.subs .m{color:var(--muted);font-size:13.5px}
 </head>
 <body>
 
+<!-- Nav icon sprite. One definition each, referenced by <use>, so the menu markup
+     stays readable and every icon inherits the same stroke weight. 24px grid drawn
+     at 17px. aria-hidden throughout: the label beside each one is the accessible
+     name, and a screen reader announcing "document, Abstract Management" is noise. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="8" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="11" width="7" height="10" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-setup" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2.2"/><circle cx="8" cy="17" r="2.2"/></symbol>
+  <symbol id="i-emails" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 7.6 5.4a1.6 1.6 0 0 0 1.8 0L20.5 7"/></symbol>
+  <symbol id="i-abstracts" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-symposium" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17.5" cy="9.5" r="2.2"/><path d="M15 19a4.6 4.6 0 0 1 5.9-3.4"/></symbol>
+  <symbol id="i-speakers" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/></symbol>
+  <symbol id="i-website" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.4" cy="6.5" r=".9" fill="currentColor" stroke="none"/><circle cx="9.2" cy="6.5" r=".9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-registration" viewBox="0 0 24 24"><path d="M3 8.5V7a1.5 1.5 0 0 1 1.5-1.5h15A1.5 1.5 0 0 1 21 7v1.5a2.4 2.4 0 0 0 0 4.8V17a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17v-3.7a2.4 2.4 0 0 0 0-4.8Z"/><path d="M14 6.5v11" stroke-dasharray="2.6 2.6"/></symbol>
+  <symbol id="i-conference" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-certificates" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="5.5"/><path d="m8.6 14.3-1.1 6.2L12 18l4.5 2.5-1.1-6.2"/></symbol>
+</defs></svg>
+
 <!-- simulated admin backend: greeked, so nothing about the real app is invented -->
 <div class="app">
   <nav class="side" aria-label="Event menu">
     <div class="brand"><img src="assets/oa-logo.svg" alt="Oxford Abstracts"></div>
-    <a data-page="Dashboard"    class="on">Dashboard</a>
-    <a data-page="Event setup">Event setup</a>
-    <a data-page="Emails">Emails</a>
-    <a data-page="Abstract Management">Abstract Management</a>
-    <a data-page="Symposium">Symposium</a>
-    <a data-page="Speaker Management">Speaker Management</a>
-    <a data-page="Website Builder">Website Builder</a>
-    <a data-page="Registration">Registration</a>
-    <a data-page="Conference">Conference</a>
-    <a data-page="Certificates">Certificates</a>
+    <a data-page="Dashboard" class="on"><svg class="ic" aria-hidden="true"><use href="#i-dashboard"/></svg>Dashboard</a>
+    <a data-page="Event setup"><svg class="ic" aria-hidden="true"><use href="#i-setup"/></svg>Event setup</a>
+    <a data-page="Emails"><svg class="ic" aria-hidden="true"><use href="#i-emails"/></svg>Emails</a>
+    <a data-page="Abstract Management"><svg class="ic" aria-hidden="true"><use href="#i-abstracts"/></svg>Abstract Management</a>
+    <a data-page="Symposium"><svg class="ic" aria-hidden="true"><use href="#i-symposium"/></svg>Symposium</a>
+    <a data-page="Speaker Management"><svg class="ic" aria-hidden="true"><use href="#i-speakers"/></svg>Speaker Management</a>
+    <a data-page="Website Builder"><svg class="ic" aria-hidden="true"><use href="#i-website"/></svg>Website Builder</a>
+    <a data-page="Registration"><svg class="ic" aria-hidden="true"><use href="#i-registration"/></svg>Registration</a>
+    <a data-page="Conference"><svg class="ic" aria-hidden="true"><use href="#i-conference"/></svg>Conference</a>
+    <a data-page="Certificates"><svg class="ic" aria-hidden="true"><use href="#i-certificates"/></svg>Certificates</a>
     <div class="foot">Simulated backend — the widget is the prototype, this page is scenery.</div>
   </nav>
   <div class="main">
@@ -171,7 +226,7 @@ table.subs .m{color:var(--muted);font-size:13.5px}
       <div class="kpis">
         <div class="card kpi"><div class="num">214</div><div class="lab">Submissions</div>
           <span class="delta">▲ 18 this week</span></div>
-        <div class="card kpi"><div class="num">68%</div><div class="lab">Reviews completed</div>
+        <div class="card kpi"><div class="num">67%</div><div class="lab">Reviews completed</div>
           <span class="delta">▲ 9% this week</span></div>
         <div class="card kpi"><div class="num">156</div><div class="lab">Registrations</div>
           <span class="delta">▲ 24 this week</span></div>
@@ -185,16 +240,33 @@ table.subs .m{color:var(--muted);font-size:13.5px}
           <div class="chart-wrap" id="chartWrap"><div class="tip" id="chartTip"></div></div>
         </div>
         <div class="card">
-          <h3>REVIEWING PROGRESS</h3>
+          <div class="rev-head">
+            <h3>REVIEWING PROGRESS</h3>
+            <span class="rev-due">Decisions due <b>21 Aug</b></span>
+          </div>
+          <div class="rev-hero"><span class="rev-big">70</span><span class="rev-unit">reviews to go</span></div>
+          <div class="rev-sub">144 of 214 done · 67%</div>
+          <div class="rev-overall" role="img"
+               aria-label="67 per cent of reviews complete, ahead of the 60 per cent needed by today">
+            <span class="f" style="width:67%"></span><span class="rev-today" style="left:60%"></span>
+          </div>
+          <p class="rev-pace">Ahead of where you need to be — the marker is today</p>
+          <hr class="rev-rule">
           <div class="prog">
-            <div class="p-row"><span>Clinical abstracts</span><span class="p-val">82% · 74 of 90</span>
+            <div class="p-row"><span>Clinical abstracts</span>
+              <span class="p-val"><b>16</b> left · +12 this week</span>
               <span class="track"><span class="fill" style="width:82%"></span></span></div>
-            <div class="p-row"><span>Research abstracts</span><span class="p-val">64% · 45 of 70</span>
+            <div class="p-row"><span>Research abstracts</span>
+              <span class="p-val"><b>25</b> left · +9 this week</span>
               <span class="track"><span class="fill" style="width:64%"></span></span></div>
-            <div class="p-row"><span>Posters</span><span class="p-val">51% · 19 of 37</span>
+            <div class="p-row"><span>Posters</span>
+              <span class="p-val"><b>18</b> left · +5 this week</span>
               <span class="track"><span class="fill" style="width:51%"></span></span></div>
-            <div class="p-row"><span>Workshops</span><span class="p-val">38% · 6 of 17</span>
-              <span class="track"><span class="fill" style="width:38%"></span></span></div>
+            <div class="p-row stalled"><span>Workshops</span>
+              <span class="p-val"><b>11</b> left · +1 this week</span>
+              <span class="track"><span class="fill" style="width:38%"></span></span>
+              <span class="nudge"><span>Barely moved this week — 3 reviewers haven’t started</span>
+                <button type="button">Send a nudge</button></span></div>
           </div>
         </div>
       </div>
