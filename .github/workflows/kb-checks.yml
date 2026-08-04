@@ -1,13 +1,20 @@
-# Runs on every pull request: the standing check suite, plus a guard that the
-# generated HTML in the branch actually matches the markdown.
+# The standing check suite, run on every push to main and on any pull request.
 #
-# That second part matters more than it looks. The site is served from committed
-# HTML, so a pull request that edits corpus/*.md and forgets to rebuild will merge
-# cleanly, deploy, and change nothing on the live site - which reads as "the edit
-# didn't work" rather than "somebody skipped a step".
+# Kristy edits the help centre by talking to Claude on her own machine, and Claude
+# runs build.py and checks.py there before committing - so by the time anything
+# reaches GitHub it has already been checked once. This is the second pair of eyes,
+# for the times that did not happen: a push from a machine without Python, a
+# hand-edit, a bad merge.
+#
+# On main it is an alarm rather than a gate - the change is already live by the
+# time this finishes. That is the accepted trade for letting one person publish
+# without ceremony. Everything is in git, so anything this catches can be reverted
+# in a single revert commit.
 name: KB checks
 
 on:
+  push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -30,11 +37,11 @@ jobs:
       - name: The committed HTML must match the markdown
         run: |
           if ! git diff --quiet; then
-            echo "::error::The generated files are out of date. Run 'python build.py' and commit the result."
+            echo "::error::The published pages do not match the markdown. Someone edited corpus/ without rebuilding, so the live site is not showing the change. Run 'py build.py' and commit the result."
             git diff --stat
             exit 1
           fi
-          echo "Generated files match the markdown."
+          echo "Published pages match the markdown."
 
       - name: Run the standing check suite
         run: python scripts/checks.py
