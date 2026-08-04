@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/manage-users
 merged_from: [faq-decisions, faq-getting-started]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Manage users
@@ -76,5 +76,11 @@ Should you require any further assistance, please contact our support desk via o
 
 ### How do I add committee members to the software?
 
+Go to **Event dashboard → Event Setup → Users** and open the **Committee Member** tab. Add the email addresses one per line, then choose either to add them without a message or to send them one. The full steps are under **Committee, Event admins, API users** above.
+
 ### How do I give someone admin rights to the event?
+
+Use the same screen — **Event dashboard → Event Setup → Users** — and the **Event Admin** tab. It works the same way as adding committee members, with one difference: there is no option to add an event admin without sending them a message.
+
+For the difference between an event administrator and an account administrator, see [Different types of users in the system](/01-getting-started/different-types-of-users-in-the-system).
 

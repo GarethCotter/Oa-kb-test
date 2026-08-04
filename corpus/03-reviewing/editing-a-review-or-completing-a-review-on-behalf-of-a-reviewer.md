@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer
 merged_from: [faq-reviews]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Editing a review or completing a review on behalf of a reviewer
@@ -73,4 +73,6 @@ Click **Start reviewing** to complete or view the review. When you have finished
 ## Common questions
 
 ### I need to complete a review on behalf of a reviewer. How do I do that?
+
+That is what this article covers. Go to **Event dashboard → Reviews** and follow the steps above.
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/open-and-close-submissions-/-call-for-abstracts
 merged_from: [faq-submissions]
-last_reviewed: 2026-08-02
+last_reviewed: 2026-08-04
 ---
 
 # Opening and closing submissions (deadlines)
@@ -63,4 +63,8 @@ See [Event details](/01-getting-started/event-details).
 NB - You will still need to switch off submissions manually, as described above.
 
 ### I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
+
+In the **Form Status** section of the submissions panel, untick **New** and leave **Edit Complete** and **Edit Incomplete** ticked.
+
+Nobody can then start a new submission, but everyone who has already submitted can still edit what they sent.
 

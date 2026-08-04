@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/filtered-committee-view-assigning-specific-categories-to-committee-members
 merged_from: [faq-decisions]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-04
 ---
 
 # Assigning categories to committee members
@@ -57,4 +57,6 @@ When committee members login, they will only view their assigned categories.
 ## Common questions
 
 ### I want committee members to be able to make decisions on specific categories. How do I do this?
+
+Go to **Event dashboard → Advanced → Committee filter** and assign the categories to each committee member, as described above. They will then see only the submissions in the categories you have given them.
 

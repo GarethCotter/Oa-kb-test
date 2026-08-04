@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/notifying-submitters-of-their-outcomes
 merged_from: [faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Notifying submitters of their outcomes
@@ -39,4 +39,6 @@ You can then go back and amend the email for the next acceptance type, and repea
 ## Common questions
 
 ### How do I send emails to let submitters know if they have been rejected or accepted?
+
+Go to **Event dashboard → Emails → Edit and send → Abstract Management** and use the outcome templates, following the steps above.
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/word-and-character-count
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Word and character count
@@ -80,4 +80,8 @@ To permit the submissions affected by these discrepancies, you can increase the 
 ## Common questions
 
 ### Users have reported that the abstract field in the submission form is alerting them that they are over the word limit? How can I resolve this?
+
+This is usually a counting difference rather than a genuine overrun. Word counts text containing numbers and symbols differently from the submission form — `and/or` is one word in Word and two here. There are more examples under **Discrepancies with word count** above.
+
+To let the affected submissions through, increase the word limit above the stated amount after the deadline. Every submission that had gone over the threshold is then marked as complete.
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-controlling-access
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Controlling access to the programme
@@ -88,4 +88,6 @@ You can add or delete any invited users whenever you require, by scrolling down 
 ## Common questions
 
 ### I need to give full access to some people who have not bought a ticket to the conference. How do I do that?
+
+Add them as invited users. Go to **Event dashboard → Conference → Program → Builder → Settings → Advanced Features → Set Access**, then follow **Adding invited users** above. They get full access without buying a ticket.
 

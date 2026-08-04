@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/design-the-decision-form
 merged_from: [acceptance-types, faq-decisions]
-last_reviewed: 2026-08-02
+last_reviewed: 2026-08-04
 ---
 
 # Design the decision form
@@ -160,6 +160,10 @@ You can drag and drop the questions to change their order
 ## Common questions
 
 ### I want to add another decision type - 'rework' - how do I do this?
+
+The **Decision** question itself is fixed — its options cannot be edited. Add 'rework' as an **acceptance type** instead.
+
+Go to **Event dashboard → Abstract Management → Decisions → Form & Setup** and click **Manage acceptance types**. It is then offered in the **Acceptance type** column alongside your other options.
 
 ### Acceptance types
 

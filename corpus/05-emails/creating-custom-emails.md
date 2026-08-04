@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/creating-custom-emails
 merged_from: [editing-email-signature, faq-emails]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-04
 ---
 
 # Creating custom emails
@@ -95,6 +95,8 @@ Then follow the guidance in [Amending email templates](/05-emails/editing-the-te
 See [Amending template emails](/05-emails/editing-the-template-emails.html).
 
 ### How can I create an email that's not on the list of templates?
+
+Go to **Event dashboard → Emails → Edit and send → Abstract Management**. You can either build one from scratch or start from an existing template and change it — both are described above.
 
 ### Editing email signature
 

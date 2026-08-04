@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-use-the-email-logs
 merged_from: [faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Using the email sent log
@@ -59,4 +59,6 @@ Should you need further help please get in touch with our Support team, via the 
 ## Common questions
 
 ### I'm not sure if I sent an email. How can I check?
+
+The sent log records everything the system has sent. On the left-hand menu click **Emails → Sent Logs** to see what went out, to whom and when — and to resend it if you need to.
 

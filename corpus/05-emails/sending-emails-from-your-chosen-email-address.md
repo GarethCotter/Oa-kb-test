@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/verify-sender-email-function
 merged_from: [faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Sending emails from your chosen email address
@@ -64,4 +64,8 @@ and clicking remove next to the relevant email address.
 ## Common questions
 
 ### I want the emails that are associated with the event to be from an email address of my choosing. Is this possible?
+
+Yes. By default emails come from no-reply@oxfordabstracts.com, but you can change that.
+
+Go to **Event dashboard → Emails → Verify sender** and verify the address you want to use, as described above. You can remove a verified address from the same screen at any point.
 

@@ -5,7 +5,7 @@ audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/downloading-session-books
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Downloading your program and session books
@@ -78,5 +78,9 @@ You can also include details of the contents of the sessions, see below for deta
 
 ## Common questions
 
-### How do I download information from the** **Conference Program** **to Word?
+### How do I download information from the Conference Program to Word?
+
+Go to **Event dashboard → Conference → Program → Builder** and click **Downloads** at the top right.
+
+All three session book options — all sessions, sessions with abstract titles, and sessions with full abstracts — export as Word documents.
 

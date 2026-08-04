@@ -1,92 +1,63 @@
 # "Common questions" with no answer
 
-*Found 3 August 2026, while tracing a Loom transcript back into the corpus.*
+*Found 3 August 2026. **21 of the 22 answered on 4 August 2026.** One remains.*
 
-**22 of the 61 "Common questions" headings have nothing under them.** They are not
-drafts sitting in a backlog — they are **live on the site**. A reader sees the
-question they came for, followed immediately by the next heading.
+22 of the 61 "Common questions" headings had nothing under them, and they were
+live: a reader saw the question they came for, followed immediately by the next
+heading. They came over from the HubSpot FAQ silo when it was dissolved — the
+questions survived the merge, the answers did not.
 
-Verified in the built HTML, e.g.
-`03-reviewing/assigning-and-unassigning-a-submission-to-a-reviewer.html`:
-
-```html
-<h3 id="i-need-to-assign-a-large-number-of-submissions-to-several-reviewers...">
-  I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?</h3>
-<h3 id="allowing-committee-members-to-assign-reviews">Allowing committee members to assign reviews</h3>
-```
-
-They came over from the HubSpot FAQ silo when it was dissolved: the questions
-survived the merge, the answers did not.
-
-**A question with no answer is worse than no question.** It confirms the reader's
-problem is a known one and then abandons them, on the page that was supposed to
-help. It also feeds the answer layer a heading with no content behind it.
-
-`scripts/checks.py` now pins this at 22 so the number can only fall.
+`scripts/checks.py` pins the count, now at **1**, so it can only fall.
 
 ---
 
-## The 22
+## What was done
 
-### 01 Getting started
-- `manage-users.md` — How do I add committee members to the software?
-- `manage-users.md` — How do I give someone admin rights to the event?
+Every one of the 21 was answered **from content already on its own page**. Not one
+needed new research, which is the interesting part: the answers had been sitting a
+few paragraphs above the question the whole time. The FAQ had been asking things
+the article already covered, and the merge dropped the paragraph that connected
+them.
 
-### 02 Submissions
-- `making-a-submission-on-behalf-of-someone-else.md` — How do I submit an abstract on behalf on someone else?
-- `opening-and-closing-submissions-deadlines.md` — I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
-- `word-and-character-count.md` — Users have reported that the abstract field in the submission form is alerting them that they are over the word limit? How can I resolve this?
+Most are two or three sentences with the menu path in bold. A few were worth more:
 
-### 03 Reviewing
-- `assigning-and-unassigning-a-submission-to-a-reviewer.md` — I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?
-- `editing-a-review-or-completing-a-review-on-behalf-of-a-reviewer.md` — I need to complete a review on behalf of a reviewer. How do I do that?
+- **Word and character count** — the real answer is that this is a *counting
+  difference*, not an overrun, and the fix is to raise the limit after the deadline.
+- **Design the decision form** — you cannot add a new **Decision** option, because
+  that question is fixed. You add 'rework' as an **acceptance type** instead. The
+  question as asked has a false premise, and the answer says so.
+- **Amending, deleting and copying a session** — deleting is one click, but you
+  cannot delete a session that still has abstracts attached. That caveat is now in
+  the answer rather than three paragraphs above it.
+- **Session bookings** — the clash detector matches on surname plus first initial,
+  so Jane Smith and J. Smith clash but Albert Jones and Bert Jones do not.
 
-### 04 Decisions
-- `assigning-categories-to-committee-members.md` — I want committee members to be able to make decisions on specific categories. How do I do this?
-- `design-the-decision-form.md` — I want to add another decision type - 'rework' - how do I do this?
-- `notifying-submitters-of-their-outcomes.md` — How do I send emails to let submitters know if they have been rejected or accepted?
+One malformed heading was fixed on the way past: *"How do I download information
+from the** **Conference Program** **to Word?"* had stray bold markers in the
+source.
 
-### 05 Emails
-- `creating-custom-emails.md` — How can I create an email that's not on the list of templates?
-- `emailing-presenters-and-authors-directly.md` — I want to send emails to just the presenters - how do I do this?
-- `sending-emails-from-your-chosen-email-address.md` — I want the emails that are associated with the event to be from an email address of my choosing. Is this possible?
-- `using-the-email-sent-log.md` — I'm not sure if I sent an email. How can I check?
+## The one still open
 
-### 06 Programme, exports and reports
-- `abstract-books.md` — How do I edit the fields I want to appear in the abstract book?
-- `downloading-your-program-and-session-books.md` — How do I download information from the Conference Program to Word?
-- `public-vs-full-access-programme.md` — I am unsure what can be viewed in the public and private (full access) version of the program?
+**`07-delegate-registration/how-admins-can-amend-existing-delegate-registration-orders.md`
+— "How do I delete a registration?"**
 
-### 07 Delegate registration
-- `how-admins-can-amend-existing-delegate-registration-orders.md` — How do I delete a registration?
-- `setting-up-payment-providers-for-delegate-registration.md` — How do I set up payment for delegates?
+Deliberately left. The article lists exactly what an admin can change on an order —
+change tickets, add or remove tickets and add-ons, request payment, issue a refund
+— and deleting the registration is not among them. "Remove all tickets" is not the
+same thing as deleting the order, and nothing in `corpus/` or `corpus-internal/`
+mentions deletion at all.
 
-### 08 Conference platform
-- `amending-deleting-and-copying-a-session.md` — How do I delete a session?
-- `controlling-access-to-the-programme.md` — I need to give full access to some people who have not bought a ticket to the conference. How do I do that?
-- `session-bookings.md` — How can I see if there is a clash in bookings?
+So there are three possibilities and the page cannot tell us which: deletion is
+somewhere else in the interface, deletion is not possible, or it is possible but
+undocumented. **Answering it from the page would have been a guess**, and the
+"Edit or refund order" correction — where a control was recorded as absent because
+nobody opened the kebab menu — is the standing reminder of what guessing costs
+here.
 
----
+It needs somebody signed in to the software for two minutes. It is on the
+verification list in `oa-loom-transcripts/VERIFICATION-QUEUE.md` alongside the
+other claims waiting on app access.
 
-## How to clear them
-
-Many are answerable **from the article they already sit on** — the question is a
-restatement of a procedure documented higher up the same page. Those are a
-cross-reference, not new research, and are the cheapest wins here.
-
-Others need a fact nobody has confirmed. Do not guess: an unanswered question is
-bad, a wrong answer is worse.
-
-**Deleting a question is a legitimate outcome.** If it duplicates the article's own
-standfirst, or nobody actually asks it, removing it beats leaving it hanging. The
-pinned count falls either way.
-
-## Why this list matters beyond the FAQ
-
-It is the best target list the Loom transcript project could have. Support recorded
-a video precisely where writing the answer down did not happen, and these are 22
-places, in the customer's own words, where it demonstrably did not happen.
-
-Of five sample transcripts read on 3 August, four landed on entries in this list —
-including a complete answer to the reviewer-assignment question above. That match
-rate is the metric worth tracking when the full library is pulled.
+Three outcomes are all fine: write the answer, say plainly that it is not
+possible, or delete the question. Whichever it is, drop the pin in
+`scripts/checks.py` to 0 afterwards.

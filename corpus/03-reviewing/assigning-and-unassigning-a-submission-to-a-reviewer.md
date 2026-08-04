@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/assigning-and-unassigning-a-submission-to-a-reviewer
 merged_from: [allowing-committee-members-to-assign-reviews, faq-reviews]
-last_reviewed: 2026-08-02
+last_reviewed: 2026-08-04
 ---
 
 # Assigning and unassigning a submission to a reviewer
@@ -199,6 +199,10 @@ Should you need any further assistance, please contact our Support Team via our 
 No, if you delete the reviewer, they will no longer have any assigned reviews. See [Manage users](/01-getting-started/manage-users.html).
 
 ### I need to assign a large number of submissions to several reviewers. Is there a quick way of doing this?
+
+Yes — use auto-assign rather than assigning them one at a time.
+
+Go to **Event dashboard → Abstract Management → Reviews → By Submission** and click **Assign Reviewers**. On the **Auto Assign** tab, tick **assign all** to distribute submissions randomly. You can then set the minimum and maximum number of reviewers per submission and submissions per reviewer, and click **Preview Assignment** to check the result before saving it. The full steps are under **Auto Assign Submissions To Reviewers** above.
 
 ### Allowing committee members to assign reviews
 

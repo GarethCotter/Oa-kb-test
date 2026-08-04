@@ -5,7 +5,7 @@ audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/amending-deleting-and-copying-a-session
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Amending, deleting and copying a session
@@ -57,4 +57,8 @@ To delete a session, click on the bin icon. NB - you cannot delete a session wit
 ## Common questions
 
 ### How do I delete a session?
+
+Click the bin icon — the fourth of the four icons at the top right of the session.
+
+**Please note:** you cannot delete a session that still has abstracts attached to it. Detach them first.
 

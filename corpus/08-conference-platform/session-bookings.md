@@ -5,7 +5,7 @@ audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-program-bookings
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Session bookings
@@ -57,4 +57,8 @@ Or alternatively, enter the booking ID of the scheduled conflict and amend that.
 ## Common questions
 
 ### How can I see if there is a clash in bookings?
+
+The bookings table has a **Schedule conflict count** column. Go to **Event dashboard → Conference → Program → Bookings** and enter 1 in that column's header to filter for conflicts.
+
+Click the row where a conflict occurs to open that booking in the program builder and resolve it. A clash is flagged where the surname and at least the first initial match — so Jane Smith and J. Smith, but not Albert Jones and Bert Jones.
 

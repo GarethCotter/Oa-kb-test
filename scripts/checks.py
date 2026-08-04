@@ -252,7 +252,11 @@ def check_structure():
 #     debt is visible and can only fall. Listed in project/unanswered-faq-questions.md.
 FAQ_BLOCK = re.compile(r'<div class="faq-block">(.*?)'
                        r'(?=<section class="support"|<div class="feedback"|</div>\s*</article>|\Z)', re.S)
-UNANSWERED_FAQ_PIN = 22
+# 4 August 2026: 21 of the original 22 were answered from content already on their
+# own page. The one left needs somebody to check the software: the amendments
+# article lists what an admin can change on an order and deleting one is not among
+# them, so answering it from the page would have been a guess.
+UNANSWERED_FAQ_PIN = 1
 
 
 def check_faq_answered():

@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/making-a-submission-on-behalf-of-someone-else
 merged_from: [faq-submissions]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Making a submission on behalf of someone else
@@ -38,4 +38,6 @@ NB:  When looking at the submissions table or looking at reports, the submitter
 ## Common questions
 
 ### How do I submit an abstract on behalf on someone else?
+
+That is what this article covers. Go to **Event dashboard → Submissions panel** and follow the steps above. Only an account administrator or an event administrator can do this.
 

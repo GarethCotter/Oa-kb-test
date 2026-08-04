@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/emailing-presenters-directly
 merged_from: [faq-emails]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Emailing presenters and authors directly
@@ -43,4 +43,6 @@ You can then [create your custom email.](/05-emails/creating-custom-emails)
 ## Common questions
 
 ### I want to send emails to just the presenters - how do I do this?
+
+Go to **Event dashboard → Emails → Edit and send → Abstract Management** and create a template addressed to presenters, following the steps above.
 

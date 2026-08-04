@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/abstract-books
 merged_from: [faq-reports]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-04
 ---
 
 # Abstract books
@@ -53,4 +53,6 @@ Once these have been created, they will appear in the **Custom abstract books** 
 Firstly, check all the options available here: [Creating exports, reports and abstract books](/06-programme-exports-reports/). If you can't see what you need, contact [support@oxfordabstracts.com](mailto:support@oxfordabstracts.com) and we will try our best to supply you with what you require.
 
 ### How do I edit the fields I want to appear in the abstract book?
+
+The fields are controlled by question tags rather than from the abstract book itself. See [Question tags](/02-submissions/question-setting-tags.html) to choose which questions' answers appear.
 

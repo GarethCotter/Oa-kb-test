@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-set-up-payment-providers-for-delegate-registration
 merged_from: [faq-delegate-registration]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Setting up payment providers for delegate registration
@@ -283,6 +283,8 @@ Should you require further assistance, then please get in touch with our helpdes
 ## Common questions
 
 ### How do I set up payment for delegates?
+
+Go to **Registration → Tickets → Finance** from the left-hand menu and add your chosen provider. Stripe, PayPal, payment links, Authorize.net and invoice payments are each covered above, along with adding tax and UK VAT.
 
 ### What options are currently available for payment?
 

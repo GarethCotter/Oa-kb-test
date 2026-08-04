@@ -5,7 +5,7 @@ audience: organisers
 plan: standard conference
 source_url: https://help.oxfordabstracts.com/knowledge/if-you-have-the-professional-conference-package-you-will-have-a-feature-that-allows-you-to-control-access-to-the-premium-features-of-the-platform
 merged_from: [faq-conference-program]
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Public vs full-access programme
@@ -44,4 +44,10 @@ The table below contains the features availablein each version of the program.
 ## Common questions
 
 ### I am unsure what can be viewed in the public and private (full access) version of the program?
+
+The table above lists it feature by feature.
+
+In short: the **public** version shows abstract titles, authors and affiliations, sponsors, and existing comments on sessions. The **full access** version adds the abstract content itself — including posters and presentations — live and on-demand content, the poster gallery, chat, and networking.
+
+Anyone without full access who follows a full-access link is shown the public version instead.
 
