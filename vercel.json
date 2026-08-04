@@ -14,6 +14,11 @@
   ],
   "redirects": [
     {
+      "source": "/assets/articles.json",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
       "source": "/knowledge/abstract-books",
       "destination": "/06-programme-exports-reports/abstract-books.html",
       "permanent": true

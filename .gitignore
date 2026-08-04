@@ -2,3 +2,9 @@
 # a branch merge before anyone noticed; nothing in the repo is generated from them.
 __pycache__/
 *.pyc
+
+# Local-only review surfaces. Anything committed here is served by Vercel - that is
+# how assets/articles.json came to be publicly downloadable with all 41 internal
+# notes in it. A rendered, browsable index of corpus-internal/ must never be
+# committed; generate it with scripts/internal-review.py and read it from disk.
+*.local.html

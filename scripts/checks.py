@@ -244,6 +244,76 @@ def check_structure():
     report('every section card described', not thin, thin[:3])
 
 
+# 7b. A "Common questions" heading with nothing under it. 22 of the 61 came over from
+#     the dissolved HubSpot FAQ silo with the question intact and the answer lost, and
+#     they are live: the reader sees their question and then the next heading. Worse
+#     than not asking - it confirms the problem is known, then abandons them.
+#     Pinned rather than zeroed, the way check 4 pins its legitimate matches, so the
+#     debt is visible and can only fall. Listed in project/unanswered-faq-questions.md.
+FAQ_BLOCK = re.compile(r'<div class="faq-block">(.*?)'
+                       r'(?=<section class="support"|<div class="feedback"|</div>\s*</article>|\Z)', re.S)
+UNANSWERED_FAQ_PIN = 22
+
+
+def check_faq_answered():
+    bad = []
+    for p in article_pages():
+        m = FAQ_BLOCK.search(open(p, encoding='utf-8').read())
+        if not m:
+            continue
+        parts = re.split(r'<h3\b[^>]*>(.*?)</h3>', m.group(1), flags=re.S)
+        for i in range(1, len(parts), 2):
+            body = parts[i + 1] if i + 1 < len(parts) else ''
+            # Do not stop at a following <h2>: several entries are a question whose
+            # answer sits under a standfirst h2, and truncating there reported six
+            # perfectly good answers as missing. Strip headings, keep the rest.
+            text = re.sub(r'<h\d\b[^>]*>.*?</h\d>', ' ', body, flags=re.S)
+            text = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', text)).strip()
+            if len(text) < 15 and '<img' not in body:
+                bad.append((p, re.sub(r'<[^>]+>', '', parts[i]).replace('#', '').strip()[:60]))
+    n = len(bad)
+    report('FAQ questions answered', n <= UNANSWERED_FAQ_PIN,
+           '%d unanswered (pinned %d)%s' % (n, UNANSWERED_FAQ_PIN,
+                                            '' if n <= UNANSWERED_FAQ_PIN else ' ' + str(bad[:3])))
+
+
+# 7c. Nothing customer-specific may reach corpus-internal/. Those notes are answered
+#     from for anyone who asks the right question, so a customer name or event ID in
+#     one is disclosed to strangers, not merely committed. This has not happened yet -
+#     the check exists because the Loom transcript project will feed generalised
+#     knowledge from 1:1 customer videos into exactly this folder, and every one of
+#     those names a customer and an event.
+#
+#     Emails and event IDs only. Personal names are not machine-detectable at
+#     acceptable precision, so this is a floor, not a substitute for reading the note.
+INTERNAL_PII_ALLOWED = {
+    # A real event number used illustratively to explain where the ID sits in the
+    # URL. It discloses nothing on its own, but it is a real event - genericising it
+    # would cost nothing and is worth doing next time this note is touched.
+    ('where-to-find-your-event-id.md', 'event-id', '528'),
+}
+
+
+def check_internal_privacy():
+    email = re.compile(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
+    event = re.compile(r'/events?/(\d{2,})')
+    found = []
+    for p in glob.glob('corpus-internal/*.md'):
+        fn = os.path.basename(p)
+        if fn == 'README.md':
+            continue
+        t = open(p, encoding='utf-8').read()
+        for e in set(email.findall(t)):
+            # Our own support addresses are the point of some notes, not a leak.
+            if e.lower().endswith(('oxfordabstracts.com', 'example.com')):
+                continue
+            found.append((fn, 'email', e))
+        for i in set(event.findall(t)):
+            found.append((fn, 'event-id', i))
+    leaks = [f for f in found if f not in INTERNAL_PII_ALLOWED]
+    report('no customer data in internal notes', not leaks, leaks[:3])
+
+
 # 8. Nothing under corpus/ may sit outside a section folder - build.py enforces this
 #    too, but check it here so a bad file is caught before a build is attempted.
 def check_corpus_shape():
@@ -263,6 +333,8 @@ if __name__ == '__main__':
     check_path_fragments()
     check_self_links()
     check_structure()
+    check_faq_answered()
+    check_internal_privacy()
     check_corpus_shape()
     print()
     if FAIL:
