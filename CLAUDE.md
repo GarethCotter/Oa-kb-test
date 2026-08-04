@@ -225,6 +225,32 @@ from surrounding text, so check the built output when you change the sources.
 
 ---
 
+## Who is asking, and how a content change gets published
+
+Two kinds of people work on this repo, and the difference matters.
+
+**Someone editing the content** — most often Kristy, who owns the support side —
+describes a change in plain English and expects it to happen. She is not a
+developer and should never need to think about markdown, rebuilds or git. When
+the request is a content change:
+
+1. Edit the file under `corpus/` — **never** the generated HTML, which is
+   overwritten on the next build.
+2. Show what changed, in plain terms, and wait. Do not publish unprompted.
+3. When she says publish it, run `py scripts/publish.py "what changed"`.
+
+That script rebuilds, runs every check, and only then commits and pushes. If any
+check fails it stops and publishes nothing. Use it rather than running the steps
+by hand: editing `corpus/*.md` and pushing **without** rebuilding publishes
+nothing at all, because the site is served from committed HTML — the change is in
+the repo, the site does not move, and it looks exactly like the edit failing.
+
+`main` is the live site and deploys within about a minute of a push. There is no
+staging step, which is deliberate: one person publishing without ceremony, with
+the checks as the guard and git history as the undo.
+
+**Someone working on the engineering** gets the rest of this file.
+
 ## Checks worth running after any change
 
 ```bash

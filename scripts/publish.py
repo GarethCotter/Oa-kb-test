@@ -38,8 +38,13 @@ def out(cmd):
 
 
 def main():
-    message = " ".join(sys.argv[1:]).strip()
-    if not message:
+    args = [a for a in sys.argv[1:] if a != "--dry-run"]
+    # --dry-run goes as far as the checks and stops before touching git. Added
+    # after a "let's just test the guards" run committed and pushed for real,
+    # because the working tree was not as clean as assumed.
+    dry = "--dry-run" in sys.argv[1:]
+    message = " ".join(args).strip()
+    if not message and not dry:
         sys.exit('Say what changed, in quotes:\n    py scripts/publish.py "what you changed"')
 
     if not (ROOT / "build.py").exists():
@@ -64,6 +69,9 @@ def main():
         print("Nothing has changed - there is nothing to publish.")
         return
     print(out(["git", "status", "--short"]))
+    if dry:
+        print("\n--dry-run: stopping here. Nothing committed, nothing published.")
+        return
     run(["git", "add", "-A"])
     if run(["git", "commit", "-m", message]).returncode != 0:
         sys.exit("\nThe commit failed. Nothing has been pushed.")
