@@ -1,0 +1,39 @@
+name: Knowledge base change
+description: Describe something that needs adding, correcting or removing in the help centre.
+title: "KB: "
+labels: ["kb-change"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the change in your own words. Claude will edit the relevant
+        article and open a pull request; **nothing reaches the live site until a
+        person reviews and merges it.**
+
+  - type: textarea
+    id: change
+    attributes:
+      label: What needs changing?
+      description: >-
+        Plain English is fine. The more specific you are about what the software
+        now does, the better the edit will be.
+      placeholder: >-
+        Reviewers can now be assigned by category from the review tables, not just
+        from the assign page.
+    validations:
+      required: true
+
+  - type: input
+    id: article
+    attributes:
+      label: Which article, if you know?
+      description: A title or a URL. Leave blank and it will be worked out from your description.
+      placeholder: Assigning and unassigning a submission to a reviewer
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you submit
+      options:
+        - label: This describes what the software actually does now, not what it should do.
+          required: true

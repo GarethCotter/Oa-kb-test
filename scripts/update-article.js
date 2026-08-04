@@ -30,7 +30,11 @@ if (!description) {
   process.exit(1);
 }
 
-const index = JSON.parse(fs.readFileSync('site/assets/search-index.json', 'utf8'));
+/* assets/, not site/assets/. The path was left over from an earlier layout where
+   the built site sat in its own folder; the assets were moved to the repo root by
+   .github/workflows/unzip.yml and this line was never updated, so every run of
+   this script has died on ENOENT before reaching Claude. Run from the repo root. */
+const index = JSON.parse(fs.readFileSync('assets/search-index.json', 'utf8'));
 const table = index.map(a => `${a.path} | ${a.title} | ${a.section} | ${a.summary}`).join('\n');
 
 async function claude(body) {
@@ -116,6 +120,17 @@ for (const p of plan.paths) {
 }
 
 if (!edited.length) { console.log('Nothing changed.'); process.exit(0); }
+
+/* Stop here when something else owns the commit. The automated route needs to
+   rebuild the site and commit the generated HTML alongside the markdown - a pull
+   request carrying only the .md files would merge and change nothing, because the
+   site is served from committed HTML. The list is written out so the caller knows
+   what moved. */
+if (process.env.KB_UPDATE_NO_GIT) {
+  fs.writeFileSync('kb-update-edited.txt', edited.join('\n') + '\n');
+  console.log('\nKB_UPDATE_NO_GIT set - leaving git alone. Edited files listed in kb-update-edited.txt');
+  process.exit(0);
+}
 
 // ---- 3. branch + pull request ----
 const branch = 'kb-update-' + Date.now();

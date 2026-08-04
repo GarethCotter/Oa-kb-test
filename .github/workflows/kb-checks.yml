@@ -1,0 +1,40 @@
+# Runs on every pull request: the standing check suite, plus a guard that the
+# generated HTML in the branch actually matches the markdown.
+#
+# That second part matters more than it looks. The site is served from committed
+# HTML, so a pull request that edits corpus/*.md and forgets to rebuild will merge
+# cleanly, deploy, and change nothing on the live site - which reads as "the edit
+# didn't work" rather than "somebody skipped a step".
+name: KB checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install the build dependencies
+        run: pip install markdown beautifulsoup4 lxml
+
+      - name: Rebuild the site from the markdown
+        run: python build.py
+
+      - name: The committed HTML must match the markdown
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::The generated files are out of date. Run 'python build.py' and commit the result."
+            git diff --stat
+            exit 1
+          fi
+          echo "Generated files match the markdown."
+
+      - name: Run the standing check suite
+        run: python scripts/checks.py
