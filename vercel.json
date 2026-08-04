@@ -19,6 +19,11 @@
       "permanent": false
     },
     {
+      "source": "/knowledge",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/knowledge/abstract-books",
       "destination": "/06-programme-exports-reports/abstract-books.html",
       "permanent": true

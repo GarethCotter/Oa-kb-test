@@ -1,4 +1,5 @@
 old_url,new_path
+https://help.oxfordabstracts.com/knowledge,/
 https://help.oxfordabstracts.com/knowledge/abstract-books,/06-programme-exports-reports/abstract-books
 https://help.oxfordabstracts.com/knowledge/acceptance-types,/04-decisions/design-the-decision-form
 https://help.oxfordabstracts.com/knowledge/accessing-reviews-from-previous-stages,/02-submissions/accessing-reviews-from-previous-stages
@@ -6,7 +7,6 @@ https://help.oxfordabstracts.com/knowledge/accessing-your-review,/12-for-submitt
 https://help.oxfordabstracts.com/knowledge/account-administration-dashboard,/11-account-administration/account-administration-dashboard
 https://help.oxfordabstracts.com/knowledge/adding-author-information-questions,/02-submissions/the-authors-and-affiliations-question
 https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-colour-coding,/08-conference-platform/colour-coding-your-event
-https://oa-kb-test.vercel.app/08-conference-platform/colour-coding-your-programme,/08-conference-platform/colour-coding-your-event
 https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-controlling-access,/08-conference-platform/controlling-access-to-the-programme
 https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-conference-program-program-bookings,/08-conference-platform/session-bookings
 https://help.oxfordabstracts.com/knowledge/advanced-/-virtual-program-chat-feature,/08-conference-platform/the-chat-feature
@@ -199,3 +199,4 @@ https://help.oxfordabstracts.com/knowledge/why-does-my-email-need-to-be-dkim-val
 https://help.oxfordabstracts.com/knowledge/withdrawing-or-removing-your-submission-from-a-symposium,/12-for-submitters/withdrawing-or-removing-your-submission-from-a-symposium
 https://help.oxfordabstracts.com/knowledge/word-and-character-count,/02-submissions/word-and-character-count
 https://help.oxfordabstracts.com/knowledge/your-personal-dashboard,/01-getting-started/your-personal-dashboard
+https://oa-kb-test.vercel.app/08-conference-platform/colour-coding-your-programme,/08-conference-platform/colour-coding-your-event
