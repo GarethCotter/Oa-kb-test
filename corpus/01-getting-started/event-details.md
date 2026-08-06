@@ -4,67 +4,105 @@ section: "01-getting-started"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/event-details
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-04
 ---
 
 # Event details
 
-## Clicking the Event details option in the menu on the event dashboard allows you to add/view/edit key information relating to the event, including title, venue, date(s), logo, email address, phone number etc.
+## Event details holds your event's name, dates, contact information, logo, deadlines and submission stages. It is the first page to fill in, and you can change any of it later.
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-[Skip to written instructions.](#TEX)
+Go to **Event dashboard → Event setup → Event details**.
 
-Go to **Event dashboard → Event Setup → Event details.**
+Note: Everything on this page saves as you type. There is no Save button, and closing the tab does not lose your work.
 
-Click into any field to amend/populate it.
+Three fields are required, and they are marked with an asterisk: **Event title**, **Event abbreviation** and **Conference email**. Everything else is optional and can be left until later.
 
-NB - fields marked with an asterisk are mandatory.
+## Information
 
-Enter:
+**Event title** is the full name of your event, as submitters and reviewers will see it.
 
-1)  the full event title
+**Event abbreviation** is the short form — accepts letters, numbers and spaces only, so no punctuation. It is how your event is labelled in lists when the full title is too long.
 
-2) the event abbreviation
+**Event start date** and **Event end date** are the dates of the event itself, not your submission deadline. Click **Select a date** to pick each one from the calendar. Deadlines are set further down the page.
 
-3) the notification email\*
+## Venue and contact
 
-### 
+**Venue**, **Telephone number** and **Website** are all optional. They are the details people need if they want to reach you about the event rather than about their submission, so fill them in if you have them.
 
-\*If the email address hasn't been used in the system, it will need to be verified, so click **Send verification email** if prompted.
+## Logo
 
-If you have the Standard Conference Package, you will have the option to add an additional notification email here.
+Upload an image here and it does two jobs: it is the banner across the top of what your submitters see, and it is the image shown for the event on your dashboard.
 
-  
+The recommended sizes are **600 × 200 px** for a rectangle or **400 × 400 px** for a square. Drag a file onto the upload box or click it to browse.
 
-Continue by adding venue, phone number, website and relevant dates.
+Please note: the section is headed **Logo** but the upload control is labelled **Upload banner**. They are the same thing — one image, used in both places. If you want a square logo and a wide banner, you cannot currently have both, so choose the shape that suits the more important of the two.
 
-![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-cf485b51.webp)  
+See [Recommended dimensions for picture uploads](/01-getting-started/recommended-dimensions-for-picture-uploads) for sizes elsewhere in the system.
 
-Towards the end of the form, you can add your logo. This should be letterbox or square style.
+## Set up notification emails
 
-![Screenshot 2026-04-14 at 14.31.34](/assets/img/screenshot-2026-04-14-at-14-31-34-d6458b71.png)  
-![Screenshot 2024-11-11 at 16.04.20](/assets/img/screenshot-2024-11-11-at-16-04-20-28f52122.webp)  
-  
+**Conference email** is the address notifications about this event are sent to. It is required.
 
-Clicking on **More options** will reveal the following
+This is not necessarily the address your emails are *sent from*. To send from your own address, use the **verify sender page** link beneath the field — see [Sending emails from your chosen email address](/05-emails/sending-emails-from-your-chosen-email-address).
 
-1 Enable third party software providers, (API)
+Under **Add notification emails** you can add further addresses that can be included on copies of event emails. Type an address into **Email to add** and click **Add**. Repeat for as many as you need.
 
-2: Add an optional event code
+## Configure your stages
 
-3: Toggle country list: see below.
+A stage is a round of your event. Each one gets its own submission form, its own reviewing, and its own deadlines, and abstracts can be moved between stages.
 
-![Screenshot 2026-04-14 at 14.30.34](/assets/img/screenshot-2026-04-14-at-14-30-34-77aae901.webp)  
-  
+Every event begins with one stage called **Initial stage**. You can rename it by typing over the name, and reorder stages by dragging the handle to the left of the name.
 
-**4) Toggle country list**
+NB: You cannot delete the only stage you have — the bin icon stays greyed out until there is more than one. That is deliberate: an event has to have at least one round.
 
-Clicking this allows you to deselect countries (authors and affiliations field - country), should you require.
+Running more than one stage is the separately purchased Multi-stage add-on. See [Setting up a Multi-stage event](/02-submissions/setting-up-a-multi-stage-event) for what it does and how to use it.
 
-![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-43cac136.png)
+## Custom country list
 
-All changes will save automatically.
+This controls the list of countries offered in the [authors and affiliations question](/02-submissions/the-authors-and-affiliations-question) on your submission form. It starts as the full list, alphabetically.
 
-  
-![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-d582c7ff.gif)
+Edit it like a text document — one country per line. Delete a line to remove that country, or retype the list entirely to restrict it to the countries you expect.
+
+Tip: Starting a line with a hyphen makes it a heading rather than a choice — `-Europe` appears in the list but cannot be selected. This is useful for grouping countries under region headings.
+
+## Deadlines
+
+Deadlines are set per stage, and you can set or change them at any point — including from your event dashboard, where each card has its own **Set deadline** link.
+
+**Event deadlines** applies to the whole event and currently holds one deadline:
+
+* **Reviewer recruitment** — when your call for reviewers closes.
+
+Beneath that, each stage has its own group, named after the stage. For the default single-stage event that is **Initial stage deadlines**:
+
+* **Submission** — when the submission form closes.
+* **Review grading** — when reviewers must have finished.
+* **Decision** — when decisions must be recorded.
+
+Please note: setting a submission deadline here records the date, but it does not open or close the form on its own. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines) for the switch that actually opens and closes submissions.
+
+## Advanced
+
+**API** is off by default. Turning it on lets other software read your event's data programmatically. If that does not mean anything to you, leave it alone — you almost certainly do not need it. See [Application programming interface (API)](/10-integrations-api/application-programming-interface-api).
+
+**Event code** is a free-text field for your own reference only. Oxford Abstracts does not use it for anything, so put whatever is useful to you in it — an internal reference, a cost code — or leave it empty.
+
+## Common questions
+
+### Do I need to press save?
+
+No. Everything on this page saves as you type, which is why there is no Save button. The line at the top of the page says the same thing.
+
+### Why can't I delete my stage?
+
+Because it is your only one. The bin icon is greyed out on the last remaining stage, since an event must have at least one. Add a second stage first, and then you can delete either.
+
+### Does setting a submission deadline close my form?
+
+No. The deadline here is the date; opening and closing the form is a separate switch. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines).
+
+### Can I have a square logo and a wide banner?
+
+Not at the moment — it is one image doing both jobs. Pick the shape that works better for whichever matters more to you, and use the recommended sizes above.
