@@ -267,8 +267,26 @@ header{border-bottom:1px solid var(--line);background:var(--cream);position:stic
 .toc>span{display:block;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .toc a{display:block;padding:4px 0;text-decoration:none;color:var(--navy)}
 .toc a:hover{color:var(--red)}
-.prose h2 .anchor,.prose h3 .anchor{margin-left:8px;font-family:'Outfit',sans-serif;font-size:.75em;color:rgba(16,28,56,.22);text-decoration:none;-webkit-text-stroke:0}
-.prose h2 .anchor:hover,.prose h3 .anchor:hover{color:var(--red)}
+/* Heading anchors: present for linking and for keyboard users, invisible until the
+   heading is hovered. They used to sit permanently at 22% opacity, which put a grey
+   # beside 515 headings across 179 pages. Readers read it as a typo or a broken
+   character, not as a control - nobody clicks a mark they cannot interpret.
+   h4 is in the selector because enrich_body adds anchors to h2, h3 AND h4 while the
+   old rule covered only the first two: 102 h4 anchors were matching nothing but
+   `.prose a` and rendering as full-size RED link text inside the heading.
+   font-weight is pinned because most of these headings are bold, and an inherited
+   bold # is heavier than the heading it hangs off.
+   :focus-visible is not optional - without it a keyboard user tabs onto a link that
+   is invisible. On touch there is no hover so it stays hidden, which is the right
+   trade: it is a power-user affordance, not something to hunt for. */
+.prose h2 .anchor,.prose h3 .anchor,.prose h4 .anchor{margin-left:8px;font-family:'Outfit',sans-serif;font-size:.75em;font-weight:400;color:rgba(16,28,56,.28);text-decoration:none;-webkit-text-stroke:0;opacity:0;transition:opacity .13s ease}
+.prose h2:hover .anchor,.prose h3:hover .anchor,.prose h4:hover .anchor{opacity:1}
+/* :focus as well as :focus-visible, deliberately. focus-visible is the tidier rule but
+   it depends on the browser deciding the focus was keyboard-driven, and if it decides
+   wrong the reader is tabbed onto a link they cannot see. A visible anchor after a
+   mouse click costs nothing; an invisible one under the keyboard costs everything. */
+.prose .anchor:focus,.prose .anchor:focus-visible{opacity:1}
+.prose h2 .anchor:hover,.prose h3 .anchor:hover,.prose h4 .anchor:hover{color:var(--red)}
 .prose h2,.prose h3{scroll-margin-top:90px}
 .prose ol{counter-reset:step;list-style:none;margin-left:0}
 .prose ol>li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:14px}
