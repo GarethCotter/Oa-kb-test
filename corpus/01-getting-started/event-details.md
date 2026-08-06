@@ -59,14 +59,6 @@ NB: You cannot delete the only stage you have — the bin icon stays greyed out 
 
 Running more than one stage is the separately purchased Multi-stage add-on. See [Setting up a Multi-stage event](/02-submissions/setting-up-a-multi-stage-event) for what it does and how to use it.
 
-## Custom country list
-
-This controls the list of countries offered in the [authors and affiliations question](/02-submissions/the-authors-and-affiliations-question) on your submission form. It starts as the full list, alphabetically.
-
-Edit it like a text document — one country per line. Delete a line to remove that country, or retype the list entirely to restrict it to the countries you expect.
-
-Tip: Starting a line with a hyphen makes it a heading rather than a choice — `-Europe` appears in the list but cannot be selected. This is useful for grouping countries under region headings.
-
 ## Deadlines
 
 Deadlines are set per stage, and you can set or change them at any point — including from your event dashboard, where each card has its own **Set deadline** link.
