@@ -12,6 +12,7 @@
  * stays here, server-side. It must never reach the browser.
  */
 
+import { createHash } from 'node:crypto';
 import routingIndex from '../assets/search-index.json' with { type: 'json' };
 import articles from '../assets/articles.json' with { type: 'json' };
 
@@ -99,6 +100,7 @@ const ANSWER_SYSTEM =
   'knows within a line that this is not their answer.';
 
 async function claude(body) {
+  MODEL_CALLS.push(Date.now());          // counted here so nothing can spend uncounted
   const res = await fetch(API, {
     method: 'POST',
     headers: {
@@ -132,15 +134,130 @@ export function applyCors(req, res) {
   }
 }
 
+/* ---------- cost and abuse controls ----------
+ *
+ * This endpoint is public and unauthenticated by necessity — readers cannot be made
+ * to sign in to search a help centre — and every question spends real money on two
+ * model calls. Confirmed unprotected on 4 August 2026: five rapid POSTs, five 200s.
+ *
+ * Four layers, cheapest and least fallible first:
+ *
+ *   1. An answer cache. A loop repeating one question costs one API call instead of
+ *      ten thousand, and that is the shape almost all abuse takes. Unlike a rate
+ *      limit it cannot wrongly punish anyone — nobody is ever refused by a cache hit
+ *      — and it makes common questions instant for real readers, which is the reason
+ *      to want it even with no abuse at all.
+ *   2. A burst limit, bounded by human reading speed: nobody submits a sixth search
+ *      within thirty seconds because they have not read the first answer yet. This
+ *      is the layer that actually stops a script, and the hardest to false-positive.
+ *   3. A sustained limit, deliberately loose. Readers are at universities, which are
+ *      the most heavily NAT'd networks there are — fifty people can share one address.
+ *   4. A global hourly ceiling, because per-address rules do nothing against a
+ *      thousand addresses each behaving politely.
+ *
+ * All of it is per-instance memory. Vercel runs several instances and recycles them,
+ * so the real ceiling is these numbers times the instance count, and every deploy
+ * resets it. That is a speed bump, not a lock, and it is the right size of defence
+ * here. The hard floor on the worst case is a spend cap on the Anthropic key, which
+ * lives in the console and not in this file.
+ *
+ * Every layer fails the same way on purpose: no answer, and assets/search.js drops
+ * to keyword results without showing an error (it treats any non-ok status as a
+ * transport failure). Being limited costs a reader the AI answer, never the search.
+ */
+
+/* --- 1. answer cache ---
+   Keyed on the normalised question. The TTL is generous because a deploy wipes this
+   anyway: Vercel starts fresh instances on every push, so publishing an article edit
+   clears the cache as a side effect and an answer cannot outlive the content it was
+   written from by more than a few hours. */
+// Exported only so a test can assert it stays bounded; nothing reads it in production.
+export const CACHE = new Map();
+const CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+const CACHE_MAX = 500;
+
+const cacheKey = q => q.toLowerCase().replace(/\s+/g, ' ').trim();
+
+function cacheGet(q) {
+  const k = cacheKey(q);
+  const hit = CACHE.get(k);
+  if (!hit) return null;
+  if (Date.now() - hit.at > CACHE_TTL_MS) { CACHE.delete(k); return null; }
+  return hit.body;
+}
+
+function cachePut(q, body) {
+  CACHE.set(cacheKey(q), { at: Date.now(), body });
+  if (CACHE.size > CACHE_MAX) {
+    const now = Date.now();
+    for (const [k, v] of CACHE) if (now - v.at > CACHE_TTL_MS) CACHE.delete(k);
+    // Map iterates in insertion order, so this drops the oldest first.
+    while (CACHE.size > CACHE_MAX) CACHE.delete(CACHE.keys().next().value);
+  }
+}
+
+/* --- 2 and 3. per-address limits ---
+   One timestamp list per address answers both windows. Same shape as the limiter in
+   api/suggest.js; kept separate rather than shared because the two endpoints defend
+   different things and their numbers should be free to move independently. */
+export const HITS = new Map();               // exported for the same reason as CACHE
+const BURST_MS = 30 * 1000;
+const BURST_MAX = 5;
+const SUSTAINED_MS = 10 * 60 * 1000;
+const SUSTAINED_MAX = 40;
+
+function rateLimited(ip) {
+  const now = Date.now();
+  const seen = (HITS.get(ip) || []).filter(t => now - t < SUSTAINED_MS);
+  seen.push(now);
+  HITS.set(ip, seen);
+  if (HITS.size > 500) {                       // bounded: never grow without limit
+    for (const [k, v] of HITS) if (!v.some(t => now - t < SUSTAINED_MS)) HITS.delete(k);
+  }
+  if (seen.filter(t => now - t < BURST_MS).length > BURST_MAX) return 'burst';
+  if (seen.length > SUSTAINED_MAX) return 'sustained';
+  return null;
+}
+
+/* --- 4. global hourly ceiling ---
+   Counts model calls, not requests, so nothing spends without being counted. Roughly
+   a thousand questions an hour per instance, which is far above any real traffic this
+   has seen. Raise it if the in-app widget ever pushes genuine volume near it — the
+   kb-search-budget-tripped log line below is how you will find out that it has. */
+let MODEL_CALLS = [];
+const BUDGET_MS = 60 * 60 * 1000;
+const BUDGET_MAX = 2000;
+
+function budgetExhausted() {
+  const now = Date.now();
+  MODEL_CALLS = MODEL_CALLS.filter(t => now - t < BUDGET_MS);
+  return MODEL_CALLS.length >= BUDGET_MAX;
+}
+
+/* Addresses are hashed before they reach a log. api/log.js strips emails and phone
+   numbers from reader telemetry for the same reason; there is no need to keep a
+   readable address to spot that one caller is hammering the endpoint. */
+const ipTag = ip => createHash('sha256').update(ip).digest('hex').slice(0, 8);
+
 export default async function handler(req, res) {
   applyCors(req, res);
   if (req.method === 'OPTIONS') return res.status(204).end();
+
+  const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
 
   /* GET /api/search?check=1 — is the answer layer actually able to answer?
      Asks Claude the cheapest possible question and reports what came back. A dead
      credit balance, a missing key and a working endpoint are indistinguishable from
      the outside otherwise: all three answer a reader's question with silence. */
   if (req.method === 'GET' && req.query && req.query.check) {
+    /* Rate limited like everything else, but deliberately NOT subject to the hourly
+       ceiling: it costs 4 tokens, and the one moment you most need to ask "is the key
+       alive?" is when something has gone wrong enough to trip the other guards. */
+    const limited = rateLimited(ip);
+    if (limited) {
+      console.log('kb-search-ratelimited', 'check', limited, ipTag(ip));
+      return res.status(429).json({ ok: false, reason: 'Rate limited' });
+    }
     if (!process.env.ANTHROPIC_API_KEY) {
       return res.status(200).json({ ok: false, reason: 'ANTHROPIC_API_KEY missing' });
     }
@@ -162,6 +279,29 @@ export default async function handler(req, res) {
   const question = (req.body && req.body.question || '').toString().trim().slice(0, 500);
   if (!question) return res.status(400).json({ error: 'No question given' });
 
+  /* Limit before cache, not after. Serving a cache hit is free, so letting a limited
+     caller have one would cost nothing in model spend — but the limit also protects
+     the invocation itself, and a 429 here is a soft failure: the reader still gets
+     keyword results. Flip these two if false positives on shared addresses ever turn
+     out to matter more than the invocations do. */
+  const limited = rateLimited(ip);
+  if (limited) {
+    console.log('kb-search-ratelimited', limited, ipTag(ip));
+    return res.status(429).json({ answer: null, sources: [], limited: true });
+  }
+
+  const cached = cacheGet(question);
+  if (cached) {
+    res.setHeader('x-oa-cache', 'hit');
+    return res.status(200).json(cached);
+  }
+
+  if (budgetExhausted()) {
+    console.error('kb-search-budget-tripped', MODEL_CALLS.length, 'calls in the last hour');
+    // Same shape as the catch below: the answer layer goes quiet, the site does not.
+    return res.status(200).json({ answer: null, sources: [], degraded: true });
+  }
+
   try {
     // ---- call 1: route ----
     const routed = await claude({
@@ -179,7 +319,10 @@ export default async function handler(req, res) {
     const chosen = paths.map(p => articles[p]).filter(Boolean);
     if (!chosen.length) {
       // no article matched — let the keyword links carry it
-      return res.status(200).json({ answer: null, found: false, sources: [] });
+      const body = { answer: null, found: false, sources: [] };
+      cachePut(question, body);      // a settled outcome, worth not paying for twice
+      res.setHeader('x-oa-cache', 'miss');
+      return res.status(200).json(body);
     }
 
     // ---- call 2: answer ----
@@ -240,8 +383,7 @@ export default async function handler(req, res) {
                         && answer.trim().length >= 60
                         && !HEDGES.test(answer)) ? 'strong' : 'weak';
 
-    res.setHeader('cache-control', 'public, s-maxage=86400');
-    return res.status(200).json({
+    const body = {
       answer,
       found: answer !== null,
       confidence: answer !== null ? confidence : undefined,
@@ -251,7 +393,11 @@ export default async function handler(req, res) {
       title: steps ? title : undefined,
       steps: steps || undefined,
       sources: chosen.filter(a => !a.internal).map(a => ({ title: a.title, path: a.path }))
-    });
+    };
+    cachePut(question, body);
+    res.setHeader('cache-control', 'public, s-maxage=86400');
+    res.setHeader('x-oa-cache', 'miss');
+    return res.status(200).json(body);
   } catch (err) {
     console.error('search failed:', err.message);
     /* 200 with a null answer and NO found field: the page falls back to keyword
@@ -263,7 +409,12 @@ export default async function handler(req, res) {
        Worth knowing: an exhausted Anthropic credit balance lands here. On 31 July
        2026 it took the answer layer down for half an hour and looked, from outside,
        exactly like a knowledge base with no answers. GET /api/search?check=1 exists
-       so that question can be asked directly. */
+       so that question can be asked directly.
+
+       Deliberately NOT cached, unlike the two settled outcomes above. A failure here
+       is transient — a timeout, a blip, an empty credit balance someone is about to
+       top up — and caching it would pin a half-hour outage in front of that question
+       for six hours after the cause was fixed. */
     return res.status(200).json({ answer: null, sources: [], degraded: true });
   }
 }
