@@ -31,7 +31,7 @@ The button at the top left shows whether your form is open or closed. Click it t
 
 These are independent, so you can close the form to new submissions while still letting people finish or correct what they have already sent. When all three are off, the status reads **Form closed**.
 
-NB: Setting a deadline on your event does not close the form. You have to turn these switches off yourself. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines.html).
+Note: You do not have to close the form by hand at your deadline. Submissions close automatically when the submission deadline you set on **Event details** passes. Use these switches when you want to close early, reopen the form, or keep edits open after the deadline. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines.html).
 
 ## Preview and test form
 

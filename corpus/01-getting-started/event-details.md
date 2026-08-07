@@ -4,7 +4,7 @@ section: "01-getting-started"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/event-details
-last_reviewed: 2026-08-04
+last_reviewed: 2026-08-07
 ---
 
 # Event details
@@ -69,11 +69,11 @@ Deadlines are set per stage, and you can set or change them at any point — inc
 
 Beneath that, each stage has its own group, named after the stage. For the default single-stage event that is **Initial stage deadlines**:
 
-* **Submission** — when the submission form closes.
+* **Submission** — when the submission form closes. This is the one that closes the form for you.
 * **Review grading** — when reviewers must have finished.
 * **Decision** — when decisions must be recorded.
 
-Please note: setting a submission deadline here records the date, but it does not open or close the form on its own. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines) for the switch that actually opens and closes submissions.
+Please note: the submission deadline closes the form for you when it passes, so you do not need to switch submissions off by hand. You can still open and close the form yourself at any time — to close a call early, reopen it, or keep edits open after the deadline. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines).
 
 ## Advanced
 
@@ -93,7 +93,9 @@ Because it is your only one. The bin icon is greyed out on the last remaining st
 
 ### Does setting a submission deadline close my form?
 
-No. The deadline here is the date; opening and closing the form is a separate switch. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines).
+Yes. When the submission deadline passes, the form closes to new submissions on its own — nobody needs to be at a desk at midnight to do it. A deadline of 1 April runs to 23:59 on 1 April.
+
+You can still control the form directly if you want to close a call early, reopen it, or let people keep editing after the deadline. See [Opening and closing submissions (deadlines)](/02-submissions/opening-and-closing-submissions-deadlines).
 
 ### Can I have a square logo and a wide banner?
 

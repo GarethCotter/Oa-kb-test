@@ -28,9 +28,17 @@ Click the form status button at the top of the page. This opens the **Form statu
 
 They are independent, so you can have any combination of the three.
 
-For example, if your submission deadline has passed, you can stop new submissions by switching off **Open for new submissions**, while leaving the two edit switches on so people can still finish or correct what they have already sent.
-
 When all three are off, the status reads **Form closed**.
+
+## Your deadline closes submissions for you
+
+You do not need to close the form by hand when your deadline arrives. Set the submission deadline on **Event dashboard → Event setup → Event details**, under **Deadlines**, and submissions close automatically when it passes.
+
+Deadlines are set per stage, so a multi-stage event has a submission deadline for each stage.
+
+Note: A deadline given as a date runs to the end of that day — a deadline of 1 April closes at 23:59 on 1 April, not at the start of it. The exact closing time and the timezone it uses are shown by clicking the time on your dashboard.
+
+Use the switches above when you want to do something other than that: close the call early, reopen it, or keep edits open after the deadline has closed the form to new submissions.
 
 Your **Event dashboard** also shows **Form status** on the Submissions panel, so you can see at a glance whether the form is open without coming to this page.
 
@@ -54,9 +62,7 @@ This copies the URL required to access the submission system.  This link should
 
 ### How do I change the deadline/ notification date for submissions?
 
-See [Event details](/01-getting-started/event-details).
-
-NB - You will still need to switch off submissions manually, as described above.
+See [Event details](/01-getting-started/event-details). Changing the submission deadline also changes when submissions close, because the deadline closes them for you.
 
 ### I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
 
