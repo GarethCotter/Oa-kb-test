@@ -1,215 +1,166 @@
 # Handover — next session
 
-*Written 3 August 2026. Everything below is committed and pushed to `main`.
-Working tree clean. Replaces the 1 August handover, which described a branch that
-has since been merged.*
+*Written 4 August 2026. Everything below is committed and pushed to `main`.
+Working tree clean, 14 checks passing. Replaces the 3 August handover.*
 
-Read `CLAUDE.md` first — it is the house rules and it is accurate. This file covers
-where things stand and what is open.
+Read `CLAUDE.md` first — it is the house rules and it is accurate. It now has a
+section at the top about **who is asking**, because the help centre is edited by
+talking to Claude rather than by hand.
 
 ---
 
 ## State
 
-- **On `main`, and `main` is live.** `poster-gallery-exploration` was merged on
-  3 August after a clean test-merge, a rebuild and a full check run. That branch is
-  now history; do not branch from it again.
-- `python build.py` then `python scripts/checks.py` after any change. Python is
-  `py` on this machine, not `python`. **Twelve** checks pass right now.
-- Vercel deploys from `main` automatically, about 30–60 seconds behind a push.
+- **On `main`, and `main` is live.** Vercel deploys about a minute behind a push.
+- **Publish with `py scripts/publish.py "what changed"`.** It rebuilds, runs every
+  check, and only then commits and pushes. Nothing is pushed if a check fails.
+  There is no `--force` and there should not be one. `--dry-run` stops before git.
+- **Fourteen checks** in `scripts/checks.py`, all passing.
+- Python is `py` on this machine, not `python`.
 
-## Start here on the next session
+## Do these before the engineering handover
 
-**The Loom transcript project.** Read `project/loom-transcript-mining-brief.md`
-before doing anything — it is complete and still accurate, and it names the two
-things that are easy to get wrong.
+Ordered by what blocks what. The first two have lead times and nothing else
+finishes without them.
 
-Phase 1 is about fifteen minutes of Gareth's time and it is a **decision gate, not
-a build**: sign in to Loom, open one video, watch the network traffic to see
-whether the transcript arrives as JSON from an endpoint, and pull three transcripts
-as samples. Then **read them**.
+### 1. Rate-limit `/api/search`
 
-The whole project rests on one untested assumption: that screen-narration
-transcripts are usable as prose. If they turn out to be *"click here, then this
-bit, then pop that in there"*, the project pivots to topic mining only — still
-worth doing, but a fraction of the effort and a different shape. Do not build a
-500-video scraper before reading three transcripts.
+**Confirmed unprotected on 4 August**: five rapid POSTs returned five 200s, no 429.
+It is unauthenticated, makes two paid model calls per request, and is about to sit
+on a public hostname. `api/suggest.js` already has the pattern — honeypot, per-IP
+window, 429. About an hour.
 
-Two things to check before writing any scraper at all: whether the paid workspace
-offers a **bulk export**, and whether Atlassian (who bought Loom) now exposes an
-**API**. Half an hour that could remove the need for Playwright entirely.
+### 2. Get off the personal accounts
 
-Raw transcripts live at `Desktop\Claude\oa-loom-transcripts\`, **outside the repo,
-permanently** — every one is a 1:1 customer response and will name customers,
-events and possibly payment data. Same rule as `oa-support-replies/`.
+The Vercel project, the Anthropic key, the Google account behind the sheet and the
+GitHub repo are all Gareth's personally. Each is a single point of failure attached
+to one person. Not technical work, but it has a lead time.
 
-Playwright is already proven on this machine against an authenticated app session —
-see `scripts/capture-poster-gallery.py` and
-`corpus-observed/poster-gallery/screenshots/README.md`. That work also established
-that a modern SPA may hold auth in memory and refuse to have its session saved and
-replayed, so assume one long authenticated run rather than many short ones.
+### 3. Four smaller things, all verified open
 
-## What happened on 3 August
+- **Skip-to-content link missing on 199 of 202 pages.** WCAG 2.4.1 **Level A**.
+  `/suggest` has one, the KB does not. ~6 lines in `build.py`.
+- **Confirm the interaction log is covered by the privacy policy.** It stores
+  customers' questions verbatim in a Google Sheet. `api/log.js` strips emails and
+  phone numbers by regex; nothing stops someone typing a name or an event ID.
+- **Clear the test rows from the sheet** so Kristy's first real week is not polluted.
+- **Tell staff about `?oa-internal=1`.** The message is written; it works on the KB
+  today, and needs repeating for the app and support form once those are deployed.
 
-**The staff suggestions form is finished and connected.** Live at `/suggest`,
-writing to the master sheet's **Staff suggestions** tab. Full detail in
-`suggest/HANDOVER.md`. It survived a real failure during setup that is worth
-knowing about: the Apps Script was pasted and saved, but the deployment still
-served the previous version, and the form correctly refused rather than pretending
-to save. `GET /api/log?check=ping` is the diagnostic — the new script answers
-`{"ok":true,"wrote":["row"]}`, the old one answers `{"ok":true}`.
+### 4. Half an hour signed in to the app
 
-**Every self-referential link is gone.** There were 34; the merge fixed 24 and the
-rest were judged individually. Two new standing checks stop them returning:
-`no page links to itself` and `path+fragment links resolve`. The second closed a
-blind spot between the two existing link checks that had let **13 dead HubSpot
-anchors** reach readers.
+Closes seven things at once — the six items in
+`Desktop\Claude\oa-loom-transcripts\VERIFICATION-QUEUE.md` plus the last unanswered
+FAQ. Ordered there by risk; item 1 is the one where the live site may be wrong.
 
-**Answers are now structured.** `/api/search` returns `format: "steps" | "prose"`,
-and procedural questions come back as numbered steps with a menu path per step.
-All four surfaces render them — KB search, the widget, `deflect.js`, and the
-support-deflection prototype. The prose still rides alongside, so every older
-consumer and every failure path is unchanged.
+## What happened on 4 August
 
-**The help widget was rebuilt.** It opens on six topic doors ("Hello, how can we
-help?") rather than dropping people into a chat, the answering surface is called
-**Instant answers**, a chosen door opens onto an intro card explaining what the
-chat is, and the panel can be resized by button or by dragging its top/left edges.
-It also took on the admin-help prototype's visual language wholesale. Detail in
-`widget/HANDOVER.md`.
+**The internal answer store was public and no longer is.** `assets/articles.json`
+carried all 41 `corpus-internal/` notes in full and was served as a static file —
+617KB, HTTP 200, no auth. `api/search.js` imports it from disk, so it never needed
+to be reachable over HTTP. Now 307s to `/404`. `scripts/internal-review.py` renders
+the notes as the router sees them; its output is gitignored, because **anything
+committed here is served by Vercel** and that is exactly how this happened.
 
-**`prototype/admin-help.html` no longer carries its own copy of the widget** — it
-loads the real `/widget/help-widget.js`. It had drifted a full redesign behind.
-`prototype/support-deflection.html` still has its own inline flow by necessity, but
-now renders steps too.
+**21 of the 22 empty "Common questions" are answered.** Every one from content
+already on its own page — the FAQ silo merge had carried the questions across and
+dropped the paragraph that joined them to the answer. `check_faq_answered` is
+pinned at **1**. The one left is *"How do I delete a registration?"*, deliberately
+unanswered: the article lists what an admin can change and deletion is not among
+them, so answering it would have been a guess.
 
-**Two registration articles corrected, and a dossier conclusion overturned** — see
-"Settled" below.
+**The performance dashboard is per-surface.** Knowledge base, widget and deflection
+each get their own section, because blending them hid the differences worth acting
+on. New **What people ask** tab groups questions by the article the router chose,
+so thirteen wordings of one question count as one topic asked thirteen times.
+`snapshotMonth()` keeps a monthly history. Paste `scripts/sheet-logger.gs`, Save,
+**Run → setup** — no redeploy needed, `doPost` is untouched.
 
-## Open, in the order I would do them
+**An internal-team marker.** `?oa-internal=1` once per browser; `api/log.js` then
+stores the surface as `kb-search-internal`. Marked, not dropped, so a flag left on
+shows in the sheet rather than silently deleting a reader's data.
 
-### 1. Loom Phase 1
+**Kristy edits the help centre by talking to Claude.** Claude desktop app → **Code**
+tab → the repo folder on her machine. `scripts/update-article.js` was broken — it
+read `site/assets/search-index.json`, a path from an older layout, so every run had
+died on ENOENT before reaching Claude. Fixed. `kb-checks.yml` runs the build and
+checks on every push and pull request.
 
-As above. It is the one item with a hard external dependency (Gareth's Loom
-session) and the largest potential payoff.
+**`/knowledge` was not redirected.** It returns 200 on HubSpot today and 404ed here
+— the site-wide "Visit knowledge base" link, on the home page, /about, /pricing and
+several blog posts. `check-redirects.py` could never have caught it: it verifies
+what is *in* the map. Found by crawling the marketing site for links *to* the old
+KB. Now 201/201.
 
-### 2. The suggestion list for the KB ask bar
+**Event details rewritten against the redesigned page.** Two of the old article's
+facts were wrong — the country list is now editable text, not click-to-deselect,
+and "More options" is now "Advanced" — and two whole sections were missing, Stages
+and Deadlines. The old screenshots spanned 2021–2026 and were removed rather than
+left contradicting the page. **Fresh screenshots are the one outstanding gap.**
 
-Gareth is gathering **real historic question data** — the recent interaction-log
-rows are mostly test traffic and mean nothing. The plan, agreed 3 August:
+**Heading anchors hide until hover.** 515 of them across 179 pages were rendering
+permanently, and 102 `h4` anchors matched no rule at all and rendered as full-size
+red text.
 
-- Suggestions appear as someone types in the KB search bar, matched on **words
-  anywhere**, not on prefix. Prefix matching was rejected: the code's own note
-  records that most people type two words ("incomplete submissions"), not "how do
-  I…", so a prefix mechanic would be dead weight for most visitors.
-- Every suggestion must be **verified to answer confidently** against the live API
-  before shipping — the same rule the widget already enforces. A typed question
-  answers probabilistically; a verified suggestion answers strongly every time.
-  That guarantee is the actual prize, not the saved keystrokes.
-- Log suggestion clicks **distinctly** from typed questions, or the gap log slowly
-  goes blind: every clicked suggestion is a question we wrote, not one a reader
-  volunteered.
-- Useful existing seams: `project/ticket-gaps.csv` (from 2,740 tickets), the
-  failing HubSpot search terms written up in `project/context-from-conversation.md`
-  (search-shaped input, which is what has to match), the `SYNONYMS` map in
-  `assets/search.js`, and ~20 already-verified questions parked in
-  `widget/help-widget.js`.
+**A link-target audit.** `py scripts/audit-link-targets.py` finds links that
+resolve perfectly but point at the wrong article — the failure a crawler cannot
+see. Four candidates; the strongest is verified real: a link reading *"Creating
+custom emails"* pointing at `editing-the-template-emails`.
 
-### 3. The "payments" collision — a structural call for Gareth or Kristy
+## Design work that is NOT built
 
-Three different pages answer to "payments", and the answer layer cannot reliably
-tell them apart. Demonstrated live on 3 August:
+Explored with Gareth on 4 August, agreed in principle, nothing implemented. These
+are product changes for the app team, not the help centre.
 
-- *"Where is my Oxford Abstracts invoice?"* → the new internal note (correct)
-- *"Where do I pay Oxford Abstracts?"* → `creating-and-paying-for-a-new-event.md`,
-  which describes a different route (**Payment pending** → **Pay for event**)
-- *"Where is the event payments page?"* → **Registration → Tickets → Finance**,
-  which is the *attendee* finance page. **Wrong answer.**
+- **Event details page**: move the custom country list into a collapsed **Advanced**
+  drawer with API and event code, showing each setting's current state on its row so
+  nobody has to open it to check. Auto-expand if a setting is non-default.
+- **Merge Stages into Deadlines**, with deadlines as the section and each stage a
+  card inside it. Deadlines are per-stage and the current split means adding a stage
+  silently changes a heading further down the page.
+- **Combine each deadline with its form's open/closed switch**, which is how the
+  dashboard already works. That combination is what makes "deadline passed, form
+  still open" detectable — today it is invisible.
+- **Gate "Add another stage"** behind the Multi-stage add-on as a visibly locked row
+  that opens a panel with the benefit, the price and a link to the help centre.
+  Three things need confirming first: what $650 buys (per event? per year?), whether
+  it self-serves, and whether package tier gates it too.
 
-Unresolved: whether "Pay for event" is a second valid route to the same billing
-area or stale content predating the credit-card icon. That needs someone who can
-look at the app, not a guess.
+## Settled — do not re-litigate
 
-### 4. Content from the dossiers
+**The 404 page works.** The 3 August handover said it returned an empty body on
+Vercel. Checked on 4 August across six shapes of missing path — bare slug, missing
+article in a real section, near-miss on a real slug, unmapped `/knowledge/` address,
+missing asset, deep nested path. All six: status 404, styled page, search box.
+Document 1 was still telling engineers to fix it; that has been corrected. Re-check
+after the migration, because it is easy to lose and nothing will tell you.
 
-`corpus-observed/delegate-registration/article-gaps.md` is the queue.
+## Where things live
 
-- **Priority 1 — changing what appears on an invoice after issue.** Still the
-  largest delegate theme in the ticket sample and still blocked on one untested
-  question: what is changeable *after* an invoice is issued, and by whom.
-- **Priorities 6 and 7 are unblocked and ready to write**: the registration form
-  is a questions × ticket-groups grid, and the publishing prerequisites
-  (the **Visible to the public** toggle, the payment-provider hard gate, the
-  Authorize.net USD rule, and a warning that **Preview completes real orders**).
+| What | Where |
+|---|---|
+| Engineer handover documents (4 Word files) | `Desktop\Claude\oa-handover-docs\` |
+| Loom transcripts, findings, verification queue | `Desktop\Claude\oa-loom-transcripts\` — **outside the repo, permanently** |
+| Unanswered FAQ work-list | `project/unanswered-faq-questions.md` |
+| Hosting reference for engineers | `hosting/HANDOVER.md` |
 
-### 5. Smaller, well-defined (each verified still open on 3 August)
+The four documents are: the knowledge base, the help widget, support deflection,
+and a short demo brief on why it is better. Plus a separate guide written for
+Kristy rather than for engineers.
 
-- **Skip-to-content link** — missing site-wide, WCAG 2.4.1 Level A, about six
-  lines in `build.py`. `/suggest` has one; the KB does not.
-- **2 "Event Administrator" links** in `different-types-of-users-in-the-system`
-  point those words at the dashboard article.
-- **17 rows** unresolved in `project/plan-gating-review.csv`.
-- **A Dashboard question the KB answers weakly** — *"What does my package
-  include?"*. (*"Where do I find my event ID?"* was the other and is now fixed by a
-  new internal note.) Both had been shipped as suggested questions in the widget,
-  which is how they were caught.
+## Things learned that will save time
 
-### 6. Watch, do not act yet
-
-- **Deflection latency.** Steps answers take ~8s against a 2.5s interrupt cap, so
-  they lean entirely on the prefetch; prose answers still return in 2–4s. Once the
-  support form has real traffic, the `not_interrupted` share of `ticket-form` rows
-  says whether the window is being missed. If it is, prefetch earlier — never raise
-  `maxWaitMs`.
-- **Step count varies slightly between runs** (4 vs 5 for the same question) even
-  at temperature 0.2. Content is stable; temperature 0 is the next notch if it ever
-  matters.
-
-## Settled on 3 August — do not re-litigate
-
-**"Edit or refund order" exists.** It is **one menu item, not two buttons**, behind
-the **three dots at the top right of the attendee panel** (Registration →
-Registrations → click the row). The amendment article called it "Edit Order" and
-the refund article called it "Edit & Refund Order"; both were wrong and both are
-corrected. It appears on a **€0.00 order**, so nothing is gated on payment.
-
-The dossier had recorded the buttons as absent and could not distinguish "removed
-in v3" from "only on paid orders". Neither — the exploration never opened the ⋮.
-**61 tickets a year were waiting on that.** The lesson is recorded in the dossier:
-*an option behind a kebab menu reads as absent; check the ⋮ before concluding a
-control was removed.*
-
-**Where the event ID lives.** The number after `/events/` in the URL while signed
-in — `app.oxfordabstracts.com/admin/events/528/...` is event 528. Now an internal
-note, and it answers.
-
-## Housekeeping in the master sheet
-
-Test rows from 3 August to delete: one in **Staff suggestions** ("ROUND-TRIP TEST
-from Claude"), `CONNECTION TEST` rows in **Log**, and a handful of `asked` /
-`sent_anyway` rows under surfaces `widget`, `kb-search` and `ticket-form`.
-
-Optional, one line: set `NOTIFY` at the top of `scripts/sheet-logger.gs` to
-Kristy's email and she gets a message per suggestion. Requires the same
-paste-then-**redeploy** dance as before.
-
-## Things learned that will save the next session time
-
-- **A saved Apps Script is not a deployed one.** Deploy → Manage deployments →
-  pencil → **New version** → Deploy. "New deployment" mints a *new URL* and leaves
-  the old one serving old code, which looks exactly like nothing happening.
-- **Verify a check can fail before trusting it.** The new self-link check passed
-  its first run with a fault deliberately injected — `build.py` rewrites
-  same-section links to relative form, so comparing against root-absolute paths
-  could never match. It was a check that could not fail. Both new checks now
-  resolve hrefs with `urljoin`, as `check_links` always did.
-- **The preview pane does not composite frames**, so any transitioned property
-  (width, height, background) reads frozen at its start value through
-  `getBoundingClientRect` or `getComputedStyle`. This produced three separate
-  false diagnoses in one session. Disable the transition before measuring.
-- **PowerShell hides the response body on non-2xx** and mangles non-ASCII on
-  output. `Sebastián` printed as mojibake while stored perfectly. Read error
-  bodies and accented text from a browser tab instead.
-- **Scrub an animation to the frame you care about rather than trusting the maths.**
-  A dog's nose was buried below the ground line because a rotation had been
-  computed to the muzzle's centre instead of its tip.
+- **`py` reads shebang lines.** `#!/usr/bin/env python` sends it to the Microsoft
+  Store stub and the script dies before running. `build.py`, `checks.py` and
+  `publish.py` all have no shebang, deliberately.
+- **The preview pane does not composite frames**, so any transitioned property reads
+  frozen at its start value. Disable the transition before measuring. This produced
+  a false "the fix does not work" during the anchor work.
+- **`:focus` needs the document to have focus.** In an undisplayed pane it never
+  matches, which reads as a broken rule rather than an untestable one.
+- **Do not run `publish.py` to "test the guards".** It published on a tree that was
+  not as clean as assumed. `--dry-run` exists now for that reason.
+- **Never interpolate `${{ github.event… }}` into a `run:` block.** The first draft
+  of a workflow did, which is the standard Actions script-injection hole.
+- **A passing redirect check does not mean full coverage** — it only tests what is
+  already in the map. Crawl the other direction too.
