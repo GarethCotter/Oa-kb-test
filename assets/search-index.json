@@ -549,7 +549,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # There are two ways to create custom emails. Go to Event dashboard \u2192 Emails \u2192 Edit and send \u2192 Abstract Managem"
+  "summary": "If you need a specific template that isn't included in the range of default emails, you can create your own. # There are two ways to create custom emails. Go to Event dashboard \u2192 Emails \u2192 Edit &amp; send \u2192 Abstract manag"
  },
  {
   "title": "Editing the template emails",
@@ -557,7 +557,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # Go to Event dashboard \u2192 Emails \u2192 Edit and send \u2192 Abstract Ma"
+  "summary": "Your event will be set up with a choice of email templates populated with messages for each relevant function. Read on to find out how to amend the messages. # Go to Event dashboard \u2192 Emails \u2192 Edit &amp; send \u2192 Abstract "
  },
  {
   "title": "Emailing presenters and authors directly",
@@ -581,7 +581,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Work down this list in order \u2014 the sent log answers most cases in a few seconds, and tells you whether the problem is at your end or theirs. # Start with the sent log: Event dashboard \u2192 Emails \u2192 Sent log. If the email is"
+  "summary": "Work down this list in order \u2014 the sent log answers most cases in a few seconds, and tells you whether the problem is at your end or theirs. # Start with the sent log: Event dashboard \u2192 Emails \u2192 Sent logs. If the email i"
  },
  {
   "title": "Sending and scheduling emails",
@@ -589,7 +589,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Once you have edited the template emails, or created your own custom ones, you can send or schedule your emails - send individually, in groups, or all at once. # Go to Event dashboard \u2192 Emails \u2192 Edit and send \u2192 Abstract "
+  "summary": "Once you have edited the template emails, or created your own custom ones, you can send or schedule your emails - send individually, in groups, or all at once. # Go to Event dashboard \u2192 Emails \u2192 Edit &amp; send \u2192 Abstrac"
  },
  {
   "title": "Sending emails from tables",
@@ -613,7 +613,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "You can learn how to use the email sent log, to view details, and resend emails. # To access the Email Log, on the left-hand menu click on Emails \u2192 Sent Logs. The email log allows you to: See the status of the email - if"
+  "summary": "You can learn how to use the email sent log, to view details, and resend emails. # To access the Email Log, on the left-hand menu click on Emails \u2192 Sent logs . The email log allows you to: See the status of the email - i"
  },
  {
   "title": "What domains will emails from Oxford Abstracts originate from?",
@@ -621,7 +621,7 @@
   "section": "Emails",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The below article will provide you with details of what domain Oxford Abstracts emails will originate from. # Emails will originate from the oxfordabstacts.com domain unless you choose to register a verified sender email"
+  "summary": "The below article will provide you with details of what domain Oxford Abstracts emails will originate from. # Emails will originate from the oxfordabstracts.com domain unless you choose to register a verified sender emai"
  },
  {
   "title": "Why does my email need to be DKIM validated?",
@@ -637,7 +637,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # Go to Event dashboard \u2192 Abstract Management \u2192 Reports &amp; Downloads The abstract book "
+  "summary": "You can easily create a range of abstract books, which include the responses to various fields from the abstract submission form. # Go to Event dashboard \u2192 Abstract management \u2192 Reports &amp; downloads The abstract book "
  },
  {
   "title": "Adding a session-less submission to the title listing",
@@ -645,7 +645,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Learn how to add submission titles into a session without having them included in the program builder, by following the guidance below. # From your dashboard, go to the left-hand column and click on Abstract Management \u2192"
+  "summary": "Learn how to add submission titles into a session without having them included in the program builder, by following the guidance below. # Go to Event dashboard \u2192 Abstract management \u2192 Decisions \u2192 Table Once on the Decisi"
  },
  {
   "title": "Adding chair's email addresses",
@@ -677,7 +677,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "You do not have to open submissions one at a time. Everything comes down in a single zipped folder from Reports and downloads \u2014 the trick is knowing which download gives you what. # Go to Event dashboard \u2192 Abstract Manag"
+  "summary": "You do not have to open submissions one at a time. Everything comes down in a single zipped folder from Reports &amp; downloads \u2014 the trick is knowing which download gives you what. # Go to Event dashboard \u2192 Abstract man"
  },
  {
   "title": "Downloading your program and session books",
@@ -693,7 +693,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need. # Note When clicking the Download icon, all filtered data"
+  "summary": "Every table in Oxford Abstracts exports to Excel, and you choose exactly which columns and rows come out. # Note When clicking the Download icon, all filtered data (including selected columns) will be exported for the en"
  },
  {
   "title": "Locking and change the timezone for your conference",
@@ -701,7 +701,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "In this article You can learn how to lock a timezone to their event, and Attendees can learn how to change their timezone. # Admins - Lock Timezones From your Dashboard , click on the Conference \u2192 Program \u2192 Builder.** Ne"
+  "summary": "Lock every attendee to the event's timezone, or let them set their own local time. # Admins - Lock Timezones From your Dashboard , click on the Conference \u2192 Program \u2192 Builder.** Next click on the Settings button at the t"
  },
  {
   "title": "Other reports",
@@ -709,7 +709,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "abstract management and above",
-  "summary": "In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question. # Go to E"
+  "summary": "Beyond abstract books you can download country reports, indexed reports and the files your submitters uploaded. # Go to Event dashboard \u2192 Abstract management \u2192 Reports &amp; downloads Scroll to the lower part of the page"
  },
  {
   "title": "Program sessions table",
@@ -724,7 +724,7 @@
   "path": "06-programme-exports-reports/public-vs-full-access-programme.html",
   "section": "Programme & reports",
   "audience": "organisers",
-  "plan": "standard conference",
+  "plan": "professional conference",
   "summary": "If you have the Professional Conference package, you will have a feature that allows you to control access to the premium features of the platform. # If you have set who can see your full access program, it is useful to "
  },
  {
@@ -733,7 +733,7 @@
   "section": "Programme & reports",
   "audience": "organisers",
   "plan": "standard conference",
-  "summary": "Publishing your program is simple, and any changes you make after publishing will be reflected in the live program. # When you are ready to publish your program, navigate to the top left hand of your program builder scre"
+  "summary": "Publishing your program is simple, and any changes you make after publishing will be reflected in the live program. # Go to Event dashboard \u2192 Conference \u2192 Program \u2192 Builder When you are ready to publish your program, nav"
  },
  {
   "title": "Viewing the mobile version of the program builder",
@@ -749,7 +749,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Alternatively you can read and follow the step by step instructions here. Once you have logged into your Oxford Abstracts Account, under t"
+  "summary": "In this article, attendees will learn how to add, add-ons to an existing order. # Once you have logged into your Oxford Abstracts Account, under the registration box go to the ticket box and click on Buy Add-Ons , on the"
  },
  {
   "title": "Buyers, ticket holders and who receives what",
@@ -773,7 +773,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to complete you form when attendee and the ticket has been bought on your behalf. # Firstly, you will have received an email to your email address the ticket is registered to. Open the email and click on the Co"
+  "summary": "Learn how to complete your registration form when someone else has bought your ticket. # Firstly, you will have received an email to your email address the ticket is registered to. Open the email and click on the Complet"
  },
  {
   "title": "Configuring invoices and receipts for delegate registration",
@@ -805,7 +805,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Plus You can learn how to purchase tickets on behalf of attendees."
+  "summary": "In this article, you will find instructions on creating and editing your tickets, groups and add-ons for delegate registration. Plus You can learn how to purchase tickets on behalf of attendees. # How to create a ticket "
  },
  {
   "title": "Dependency questions on the delegate registration form",
@@ -821,7 +821,7 @@
   "section": "Registration",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how attendees can download their invoices or receipts when they have purchased a ticket through delegate registration. # Alternatively you can read and follow the step by step instructions here. When an attendee is"
+  "summary": "Learn how attendees can download their invoices or receipts when they have purchased a ticket through delegate registration. # When an attendee is in the process of buying their tickets, when payment is completed, on the"
  },
  {
   "title": "Editing automated emails for delegate registration",

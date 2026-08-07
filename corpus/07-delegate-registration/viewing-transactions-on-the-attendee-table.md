@@ -27,7 +27,7 @@ You will find a breakdown of all the transactions, including payments and refund
 
 Gross = Total amount that includes tax.
 
-Net = Total amount that does no include tax.
+Net = Total amount that does not include tax.
 
 If you want to **download this information**, you can **click on the download arrow** to the **right of the screen**.
 

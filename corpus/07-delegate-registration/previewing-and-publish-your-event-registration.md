@@ -15,8 +15,6 @@ This information is for Admins ONLY.
 
 ---
 
-#### 
-
 From your main dashboard, navigate to the **column on the left**, click on **Registration** → **Publish.**
 
 ![](/assets/img/screenshot-2024-03-21-at-12-33-01-png-07d1b0f2.webp)

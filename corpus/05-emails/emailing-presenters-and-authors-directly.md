@@ -22,9 +22,8 @@ NB It's important to be able to distinguish between submitters, authors and pres
 
 **Presenter:** Presenters can also be the same as both the submitter and the author, but often only one presenter is allowed where there are multiple authors. These are [tagged in the authors and affiliations question](/02-submissions/the-authors-and-affiliations-question), and will be denoted in bold or underlined in the program and abstract books.
 
-[Skip to written instructions.](#TEX)
 
-Go to **Event dashboard → Emails →** **Edit and send → Abstract Management**
+Go to **Event dashboard → Emails → Edit & send → Abstract management**
 
 You will then see a list of template emails for the event. Click on **+EMAIL TEMPLATE** to create a new custom email.
 
@@ -44,5 +43,5 @@ You can then [create your custom email.](/05-emails/creating-custom-emails)
 
 ### I want to send emails to just the presenters - how do I do this?
 
-Go to **Event dashboard → Emails → Edit and send → Abstract Management** and create a template addressed to presenters, following the steps above.
+Go to **Event dashboard → Emails → Edit & send → Abstract management** and create a template addressed to presenters, following the steps above.
 

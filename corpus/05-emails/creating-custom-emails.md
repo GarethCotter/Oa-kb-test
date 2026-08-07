@@ -22,7 +22,7 @@ There are two ways to create custom emails.
 
 ---
 
-Go to **Event dashboard → Emails →** **Edit and send → Abstract Management**
+Go to **Event dashboard → Emails → Edit & send → Abstract management**
 
 #### Creating a custom email from scratch
 
@@ -58,7 +58,7 @@ To filter recipients by acceptance types, click on **Review and send** and then 
 
 ![](/assets/img/undefined-nov-30-2021-03-40-13-69-pm-c73bab82.webp)
 
-The recipients wll be updated
+The recipients will be updated
 
 ![](/assets/img/undefined-nov-30-2021-03-43-08-66-pm-9858b48d.webp)
 
@@ -96,7 +96,7 @@ See [Amending template emails](/05-emails/editing-the-template-emails.html).
 
 ### How can I create an email that's not on the list of templates?
 
-Go to **Event dashboard → Emails → Edit and send → Abstract Management**. You can either build one from scratch or start from an existing template and change it — both are described above.
+Go to **Event dashboard → Emails → Edit & send → Abstract management**. You can either build one from scratch or start from an existing template and change it — both are described above.
 
 ### Editing email signature
 
@@ -104,7 +104,7 @@ Go to **Event dashboard → Emails → Edit and send → Abstract Management**. 
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **Event dashboard → Emails →**Edit and send → Abstract Management**
+Go to **Event dashboard → Emails → Edit & send → Abstract management**
 
  Click on **Email Signature** to view/edit the email signature.
 

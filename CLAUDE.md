@@ -182,7 +182,15 @@ from surrounding text, so check the built output when you change the sources.
   question can answer on one run and not the next, and phrasing moves it more than
   content does. Judge a note over several runs and several phrasings.
 - **No hand-written jump links.** The generated "On this page" box does that job; 380
-  hand-made in-page links had rotted across 97 pages before they were removed.
+  hand-made in-page links had rotted across 97 pages. **They were removed from the
+  rendered pages, not from the markdown** — as of 7 August 2026 about 349 of them
+  survive in `corpus/` across 89 files, and `build.py` strips them on every build. Do
+  not read a clean live page as a clean source. This is not cosmetic: `build.py`
+  *deletes* a paragraph that consists only of fragment links, so a numbered list whose
+  later items were written as jump links loses those items entirely. "Editing the
+  template emails" shipped a list running 1, 2, 3 beside a screenshot annotated 1 to 7
+  for exactly this reason. When you touch an article, convert its jump links to plain
+  text rather than leaving them.
 
 ---
 

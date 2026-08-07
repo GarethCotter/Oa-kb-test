@@ -8,11 +8,11 @@ last_reviewed: 2026-07-29
 
 # Downloading all submissions and the files attached to them
 
-## You do not have to open submissions one at a time. Everything comes down in a single zipped folder from Reports and downloads — the trick is knowing which download gives you what.
+## You do not have to open submissions one at a time. Everything comes down in a single zipped folder from Reports & downloads — the trick is knowing which download gives you what.
 
 This guide is for event administrators. 
 
-Go to **Event dashboard → Abstract Management → Reports & Downloads**.
+Go to **Event dashboard → Abstract management → Reports & downloads**.
 
 ## Each submission as its own document
 

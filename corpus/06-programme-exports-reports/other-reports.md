@@ -10,11 +10,11 @@ last_reviewed: 2026-07-29
 
 # Other reports
 
-## In addition to abstract books, you can download other useful reports, eg. indexes and country reports. You can also bulk upload a zip folder of files if you need to bulk replace files in a file upload question.
+## Beyond abstract books you can download country reports, indexed reports and the files your submitters uploaded.
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **Event dashboard → Abstract Management → Reports & Downloads**
+Go to **Event dashboard → Abstract management → Reports & downloads**
 
 Skip to
 
@@ -28,8 +28,6 @@ Skip to
 [Custom spreadsheets and books](#CSB)
 
 Scroll to the lower part of the page.
-
-#### 
 
 #### File upload question files
 
@@ -46,7 +44,7 @@ If you download question response folders from the links above and edit the file
 
 **Country reports**
 
-Thes contain details of the submitters' or presenters' country, depending on which report is selected.  You can choose a report than contains all submissions or only accepted ones.
+These contain details of the submitters' or presenters' country, depending on which report is selected.  You can choose a report that contains all submissions or only accepted ones.
 
   
 

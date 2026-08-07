@@ -14,11 +14,9 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-[Skip to the differences between the public and full access program.](#DIFF)
+Go to **Event dashboard → Conference → Program → Builder**
 
-[Go to**Event dashboard** **→ Conference →**Builder**](#DIFF)
-
-When you are ready to publish your program, navigate to the top left hand of your program builder screen, and click on the down arrow next to **UNPUBLISHED**to reveal the options.
+When you are ready to publish your program, navigate to the top left hand of your program builder screen, and click on the down arrow next to **UNPUBLISHED** to reveal the options.
 
 ![](/assets/img/undefined-apr-13-2021-03-06-25-33-pm-4e42c61e.webp)  
   
@@ -28,7 +26,7 @@ Clicking on **Publish** will make the program live.
   
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-1d32bb1e.webp)  
 
-Once the program is published, the status will be reflected in the drop down header. You can then unpublish / take the program offline by clicking the **Unpublish**option, as and when you require.
+Once the program is published, the status will be reflected in the drop down header. You can then unpublish / take the program offline by clicking the **Unpublish** option, as and when you require.
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-9eefd9ab.webp)  
   
@@ -87,8 +85,6 @@ The table below contains the features that will be **viewed by the user** in eac
 
 
 ### How to embed the online programme to your event's website
-
-##
 
 To embed your online programme to your events website, this will need to be done through iFrame.
 

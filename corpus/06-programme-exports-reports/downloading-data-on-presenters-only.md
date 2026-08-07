@@ -21,7 +21,7 @@ After choosing all the fields you would like on display, click on the down arrow
 
   
 
-In the uppermost child row, in the **Presenting** column, filter by **Yes**. This will filter all child rows wth **Yes** in this column in the table.
+In the uppermost child row, in the **Presenting** column, filter by **Yes**. This will filter all child rows with **Yes** in this column in the table.
 
 ![](/assets/img/undefined-feb-25-2021-05-01-13-55-pm-7a5a0ace.webp)
 

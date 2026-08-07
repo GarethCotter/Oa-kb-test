@@ -16,7 +16,7 @@ This information is for Event Admins ONLY!
 
   
 
-To access the Email Log, on the left-hand menu click on **Emails → Sent Logs.**
+To access the Email Log, on the left-hand menu click on **Emails → Sent logs**.
 
 ![](/assets/img/screenshot-2024-08-23-at-15-59-36-png-f5d716fc.webp)  
 
@@ -60,5 +60,5 @@ Should you need further help please get in touch with our Support team, via the 
 
 ### I'm not sure if I sent an email. How can I check?
 
-The sent log records everything the system has sent. On the left-hand menu click **Emails → Sent Logs** to see what went out, to whom and when — and to resend it if you need to.
+The sent log records everything the system has sent. On the left-hand menu click **Emails → Sent logs** to see what went out, to whom and when — and to resend it if you need to.
 

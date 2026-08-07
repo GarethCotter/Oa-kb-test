@@ -1,7 +1,7 @@
 ---
 title: "Adding add-ons to an existing order"
 section: "07-delegate-registration"
-audience: organisers
+audience: attendees
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-to-add-add-ons
 merged_from: [faq-delegate-registration]
@@ -14,7 +14,7 @@ last_reviewed: 2026-07-28
 
 **Please note:** this information is for attendees of events only.
 
-Alternatively you can read and follow the step by step instructions [here.](#instructions)
+
 
 Once you have logged into your Oxford Abstracts Account, under the **registration box** go to the **ticket box** and **click on Buy Add-Ons**, on the relevant ticket.
 

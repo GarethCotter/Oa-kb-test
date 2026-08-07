@@ -69,4 +69,4 @@ From the **drop-down box named Marketing Campaign** you can choose whether you w
 ![Screenshot 2026-01-09 at 15.38.38](/assets/img/screenshot-2026-01-09-at-15-38-38-cb5ee7a7.webp)  
   
 
-Should you need further assistance, please contact our Support
+Should you need further assistance, please contact our Support Team via our [Contact Form](https://oxfordabstracts.com/resources/contact-support/).

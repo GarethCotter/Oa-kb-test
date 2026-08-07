@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions](#TEX)
 
-Go to **Event dashboard → Emails →** **Edit and send → Abstract Management**
+Go to **Event dashboard → Emails → Edit & send → Abstract management**
 
 You will see a list of template emails (listed under **Automatic** and **Manual**) for the event. Click on the name of the email you wish to view/amend.
 
@@ -28,7 +28,7 @@ The email template will be displayed. Within the template, you can see
 
 2) Recipient group and function
 
-3) The subject line of the recipent's message, which you can edit to your requirements.
+3) The subject line of the recipient's message, which you can edit to your requirements.
 
 4[) Body of the message](#BOD)
 

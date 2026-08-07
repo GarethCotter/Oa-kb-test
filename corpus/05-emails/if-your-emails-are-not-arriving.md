@@ -12,7 +12,7 @@ last_reviewed: 2026-07-29
 
 This guide is for event administrators. 
 
-**Start with the sent log: Event dashboard → Emails → Sent log.**
+**Start with the sent log: Event dashboard → Emails → Sent logs.**
 
 If the email is **not listed there, it never sent.** Nothing further to diagnose — go
 back and send it again. This is the single most useful check, and it separates "did

@@ -1,7 +1,7 @@
 ---
 title: "Completing registration when someone bought your ticket"
 section: "07-delegate-registration"
-audience: organisers
+audience: attendees
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-attendees-can-complete-the-registration-form-when-a-ticket-is-bought-on-their-behalf
 last_reviewed: 2026-07-28
@@ -9,7 +9,7 @@ last_reviewed: 2026-07-28
 
 # Completing registration when someone bought your ticket
 
-## Learn how to complete you form when attendee and the ticket has been bought on your behalf.
+## Learn how to complete your registration form when someone else has bought your ticket.
 
 This information is for attendees only.
 

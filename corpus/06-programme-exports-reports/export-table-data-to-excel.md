@@ -9,7 +9,7 @@ last_reviewed: 2026-07-29
 
 # Export table data to Excel
 
-## In all the tables - from submission through to decisions (as well as the tools such as delegate Registration), you can export the exact content and data you need.
+## Every table in Oxford Abstracts exports to Excel, and you choose exactly which columns and rows come out.
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 

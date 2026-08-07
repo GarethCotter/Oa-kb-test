@@ -119,7 +119,7 @@ To resend an invoice or a receipt from your dashboard, **click on Registrations*
 
 ![](/assets/img/screenshot-2024-09-18-at-12-25-15-png-3366047f.webp)
 
-Click on the attendee you are wanting to resend too, by either finding then via the search bar or scrolling through the table.
+Click on the attendee you want to resend to, by either finding then via the search bar or scrolling through the table.
 
 A screen will pop up on the right-hand side.
 

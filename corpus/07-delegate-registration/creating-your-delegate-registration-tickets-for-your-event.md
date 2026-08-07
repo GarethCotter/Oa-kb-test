@@ -9,7 +9,6 @@ last_reviewed: 2026-08-01
 
 # Creating your delegate registration tickets for your event
 
-Plus You can learn how to purchase tickets on behalf of attendees.
 
 ## In this article, you will find instructions on creating and editing your tickets, groups and add-ons for delegate registration. Plus You can learn how to purchase tickets on behalf of attendees.
 

@@ -9,7 +9,7 @@ last_reviewed: 2026-07-28
 
 # Locking and change the timezone for your conference
 
-## In this article You can learn how to lock a timezone to their event, and Attendees can learn how to change their timezone.
+## Lock every attendee to the event's timezone, or let them set their own local time.
 
 Skip to:
 

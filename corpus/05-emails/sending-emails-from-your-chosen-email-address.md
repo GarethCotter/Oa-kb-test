@@ -16,7 +16,7 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 [Skip to written instructions](#TEX)
 
-Go to **Event dashboard → **Emails → Verify sender**
+Go to **Event dashboard → Emails → Sender email**
 
 In the middle of the screen, you can enter the email address that you would like notification emails to be sent from. Please note the email needs to be from a domain that you have control over. Unfortunately @gmail.com or @yahoo.com addresses won't work because some of the large email vendors have policies disallowing third parties from sending mail from their domains.
 
@@ -49,13 +49,13 @@ You will return to the **Verify email** page and see that:
 
 1) Your email address has been verified, so emails that are sent from the event will then reflect the changes.
 
-2) Ensure your email is DKIN validated. To find out about DKIM & how to validate take a look at this [article.](/05-emails/why-does-my-email-need-to-be-dkim-validated)
+2) Ensure your email is DKIM validated. To find out about DKIM & how to validate take a look at this [article.](/05-emails/why-does-my-email-need-to-be-dkim-validated)
 
 3) Click **Set As Event Email,** only if you would like this email address to replace the notification email in [event details.](/01-getting-started/event-details)
 
 ![](/assets/img/undefined-oct-07-2021-11-22-41-16-am-3c97638a.webp)
 
-You can remove the verified email address at any point by going to **Event dashboard → **Emails →  Verify sender**
+You can remove the verified email address at any point by going to **Event dashboard → Emails → Sender email**
 
 and clicking remove next to the relevant email address.
 
@@ -67,5 +67,5 @@ and clicking remove next to the relevant email address.
 
 Yes. By default emails come from no-reply@oxfordabstracts.com, but you can change that.
 
-Go to **Event dashboard → Emails → Verify sender** and verify the address you want to use, as described above. You can remove a verified address from the same screen at any point.
+Go to **Event dashboard → Emails → Sender email** and verify the address you want to use, as described above. You can remove a verified address from the same screen at any point.
 

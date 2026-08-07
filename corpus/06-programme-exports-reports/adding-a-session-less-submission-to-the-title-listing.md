@@ -19,7 +19,7 @@ Skip to:
 
 [**How to upload In Titles in Bulk**](#upload-in-titles-in-bulk)
 
-From your dashboard, go to the left-hand column and click on Abstract Management **→** **Decisions → Table**
+Go to **Event dashboard → Abstract management → Decisions → Table**
 
 ![](/assets/img/screenshot-2024-03-27-at-15-30-28-png-565f54a5.webp)
 
@@ -69,7 +69,7 @@ On this page click on the **Titles tab** in the left-hand column.
 
 **![](/assets/img/screenshot-2022-07-07-at-10-34-13-png-e8158c65.webp)**
 
-Here you will see all theIn Titles submissions.
+Here you will see all the In Titles submissions.
 
 **![](/assets/img/blurworld-png-912964f6.webp)**
 

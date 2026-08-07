@@ -11,7 +11,7 @@ last_reviewed: 2026-07-28
 
 ## The below article will provide you with details of what domain Oxford Abstracts emails will originate from.
 
-Emails will originate from the oxfordabstacts.com domain unless you choose to register a verified sender email address.
+Emails will originate from the oxfordabstracts.com domain unless you choose to register a verified sender email address.
 
   
 

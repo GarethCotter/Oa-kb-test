@@ -190,7 +190,7 @@ From the dashboard click on the **download arrow button** at the **top right of 
 
 NB: **Change the name of a ticket holder**
 
-If a ticket has been purchased on behalf of someone else but the name of the ticket holder needs to change, then the person that has the ticket will need to create an Oxford Abstract account, and the name will automatically change on the ticket which will be visible on the attendee table.
+If a ticket has been purchased on behalf of someone else but the name of the ticket holder needs to change, then the person that has the ticket will need to create an Oxford Abstracts account, and the name will automatically change on the ticket which will be visible on the attendee table.
 
 ---
 

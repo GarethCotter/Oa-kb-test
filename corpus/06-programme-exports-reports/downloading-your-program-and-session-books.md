@@ -14,7 +14,7 @@ last_reviewed: 2026-08-04
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to**Event dashboard** **→ Conference →** **Program → Builder**
+Go to **Event dashboard → Conference → Program → Builder**
 
 Skip to **[Downloading your program](#DL)**
 
@@ -35,7 +35,7 @@ There are three versions to suit your requirements:
 ![](/assets/img/image-png-jan-12-2022-12-36-37-68-pm-39bbebb7.webp)  
   
 
-**Sessions with abstract titles:**A list of all sessions with abstract titles, exported as a Word doc
+**Sessions with abstract titles:** A list of all sessions with abstract titles, exported as a Word doc
 
   
 ![](/assets/img/image-png-jan-12-2022-12-38-28-94-pm-1733666f.webp)  

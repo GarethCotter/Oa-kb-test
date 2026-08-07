@@ -2,7 +2,7 @@
 title: "Public vs full-access programme"
 section: "06-programme-exports-reports"
 audience: organisers
-plan: standard conference
+plan: professional conference
 source_url: https://help.oxfordabstracts.com/knowledge/if-you-have-the-professional-conference-package-you-will-have-a-feature-that-allows-you-to-control-access-to-the-premium-features-of-the-platform
 merged_from: [faq-conference-program]
 last_reviewed: 2026-08-04
@@ -20,9 +20,9 @@ If you have selected anything other than **Open access**, when you go to publish
 
 ![](/assets/img/undefined-oct-13-2021-03-06-25-70-pm-04e27fca.webp)
 
-Full access uers will be able view **both versions**. Those who don't will be able to see the **public program**, and if they click on the **full access** program, will be directed to the **public** version.
+Full access users will be able to view **both versions**. Those who don't will be able to see the **public program**, and if they click on the **full access** program, will be directed to the **public** version.
 
-The table below contains the features availablein each version of the program.
+The table below contains the features available in each version of the program.
 
 |  |  |  |
 | --- | --- | --- |

@@ -37,7 +37,7 @@ From here, click the **Continue button** at the bottom left of the screen.
 
 ![](/assets/img/screenshot-2024-09-02-at-11-47-52-png-c473e287.webp)
 
-The refund itself is dependant upon they way the attendee purchased the ticket.
+The refund itself depends on the way the attendee purchased the ticket.
 
 For example: if they paid via an invoice then you'll need to refund "offline" by bank transfer and then later mark the ticket as Refunded manually.
 
@@ -61,7 +61,7 @@ Please Note:
 
 "Mark as paid" appears when an attendee has used an offline payment method.
 
-"Mark payment complete" appears when a delegate originally chose to pay with payment link but you needs to mark it as paid because the delegate actually paid offline. This option requires card details to be added.
+"Mark payment complete" appears when a delegate originally chose to pay with payment link but you need to mark it as paid because the delegate actually paid offline. This option requires card details to be added.
 
 ![](/assets/img/screenshot-2023-06-21-at-15-29-42-png-9b598b81.webp)
 
