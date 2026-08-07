@@ -14,7 +14,7 @@ last_reviewed: 2026-08-02
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-Go to **Event dashboard → Abstract Management → Submissions → Forms & Setup**
+Go to **Event dashboard → Abstract management → Submissions → Form & setup**
 
 The default abstract question is an example of a formatted text editor quesion.
 
@@ -47,6 +47,8 @@ Text boxes on forms will appear as below for each option. ![](/assets/img/undefi
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-763c80cf.webp)  
   
+
+NB: The **Description** box you write the question in has more formatting than this — underline, strikethrough, links, fonts and colours. That is for your wording of the question, not for the answer. What the submitter can use is set entirely by the text editor type you choose above, so check that rather than the toolbar in front of you.
 
 When answering long text questions, usually for abstracts, we always recommend submitters copy and paste from WORD or similar, for formatting consistency.
 

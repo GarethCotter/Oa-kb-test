@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/open-and-close-submissions-/-call-for-abstracts
 merged_from: [faq-submissions]
-last_reviewed: 2026-08-04
+last_reviewed: 2026-08-07
 ---
 
 # Opening and closing submissions (deadlines)
@@ -18,27 +18,21 @@ NB: Before you open your call for abstracts, it is advisable to complete a [test
 
 Skip to video - [How do I allow for reworking and late breaking abstracts?](#RE)
 
-Go to **Event dashboard →** **Submissions panel**
+Go to **Event dashboard →** **Abstract management → Submissions → Form & setup**
 
-To allow abstract submissions, go to the **Form Status** section on the submission panel and click on the drop-down box next to it.
+Click the form status button at the top of the page. This opens the **Form status** panel, which holds three separate switches:
 
-![](/assets/img/screenshot-2025-07-29-at-10-19-42-png-004fd867.webp)
+* **Open for new submissions** — allow all new submissions
+* **Allow edits to complete submissions** — submitters can edit abstracts they have already completed
+* **Allow edits to incomplete submissions** — submitters can go back and finish incomplete ones
 
-Next, you need to **tick the boxes** in the **drop-down menu to "open" submissions**.
+They are independent, so you can have any combination of the three.
 
-* New (allow all new submissions)
-* Edit Complete (allow submitters to edit their current submitted abstracts)
-* Edit Incomplete (allow submitters to edit their incomplete submitted abstracts)
+For example, if your submission deadline has passed, you can stop new submissions by switching off **Open for new submissions**, while leaving the two edit switches on so people can still finish or correct what they have already sent.
 
-**As you can see, you can choose which you would like to have open or closed, by either**
+When all three are off, the status reads **Form closed**.
 
-**ticking the relevant box to "open, or unticking to "close" submissions.**
-
-For example, if your submission deadline has passed, you can stop new submissions by unticking the New box, but you can still allow edits to completed or incomplete submissions to continue by keeping those boxes ticked.
-
-When you have closed all forms of submissions, the Open status will turn grey and say closed.
-
-![](/assets/img/screenshot-2025-07-29-at-10-50-58-png-aeaac646.webp)
+Your **Event dashboard** also shows **Form status** on the Submissions panel, so you can see at a glance whether the form is open without coming to this page.
 
 NB: Before you promote you call for abstracts, it is advisable to complete a test submission, by following these steps.
 
@@ -48,7 +42,9 @@ NB: Before you promote you call for abstracts, it is advisable to complete a tes
 
 **Where to find the Submission Form Link**
 
-Click on **Copy Form link** to copy the URL (link) required to access the submission system.  This link should be published on the relevant website and/or emails to invite submissions to be made.
+On the **Form & setup** page, click **Copy submission link**. On your **Event dashboard**, the same link is behind **Copy form link** on the Submissions panel.
+
+This copies the URL required to access the submission system.  This link should be published on the relevant website and/or emails to invite submissions to be made.
 
 ![](/assets/img/screenshot-2025-07-29-at-11-03-07-png-e0519e3e.webp)
 
@@ -64,7 +60,7 @@ NB - You will still need to switch off submissions manually, as described above.
 
 ### I want to close submissions, but allow those who have already submitted to edit their submissions. How do I do that?
 
-In the **Form Status** section of the submissions panel, untick **New** and leave **Edit Complete** and **Edit Incomplete** ticked.
+In the **Form status** panel, switch off **Open for new submissions** and leave **Allow edits to complete submissions** and **Allow edits to incomplete submissions** on.
 
 Nobody can then start a new submission, but everyone who has already submitted can still edit what they sent.
 

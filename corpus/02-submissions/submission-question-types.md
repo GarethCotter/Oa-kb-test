@@ -4,7 +4,7 @@ section: "02-submissions"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/question-types-1
-last_reviewed: 2026-08-02
+last_reviewed: 2026-08-07
 ---
 
 # Submission question types
@@ -13,13 +13,13 @@ last_reviewed: 2026-08-02
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-[Skip to written instructions.](#TEX)
+Go to **Event dashboard → Abstract management → Submissions → Form & setup**, then click **+ Question**.
 
-Go to **Event dashboard → Abstract Management → Submissions → Forms & Setup → +QUESTION**
+This opens the list of question types, grouped by kind.
 
-This will open up the page of question types.
+NB: Although all options are listed below, some only appear in certain packages.
 
-NB: Although all options are included, some of these will only appear in certain packages.
+NB: The **Standard questions** group only offers the standard questions your form does not already have. Each of them can appear once per form, so a form that already uses most of them shows a short list — sometimes only one. The rest are not missing; they are already on your form.
 
 Skip to:
 
@@ -37,7 +37,7 @@ Skip to:
 
 [Other questions](#OT)
 
-Click on the type of question you require, and click **Create Selected Question**
+Click the type of question you want. Its editor opens straight away with the fields for that type — fill those in and click **Create question** at the bottom. **Back to question types** returns you to the list without creating anything.
 
 **![](/assets/img/undefined-jul-28-2021-10-27-29-47-am-14e10a1e.webp)**
 

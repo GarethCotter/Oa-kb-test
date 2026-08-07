@@ -245,7 +245,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "Learn how to design the submission form so you can collect the information and data you need. # Note Not all of the features below will be available in the FREE package. To view the limitations, see The essential abstrac"
+  "summary": "Learn how to design the submission form so you can collect the information and data you need. # Note Not all of the features below are available in the free package. To see what is included, see The essential abstract ma"
  },
  {
   "title": "Editing a user's submission",
@@ -293,7 +293,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "In order to make the submission system live, you must open submissions. # Note Before you open your call for abstracts, it is advisable to complete a test submission. Go to Event dashboard \u2192 Submissions panel To allow ab"
+  "summary": "In order to make the submission system live, you must open submissions. # Note Before you open your call for abstracts, it is advisable to complete a test submission. Go to Event dashboard \u2192 Abstract management \u2192 Submiss"
  },
  {
   "title": "Question setting tags",
@@ -333,7 +333,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements # Go to Event dashboard \u2192 Abstract Management \u2192 Submissions \u2192 Forms &amp; Setup \u2192 +QUESTIO"
+  "summary": "As well as the submission forms standard questions, there is a list additional questions that you can modify to your requirements # Go to Event dashboard \u2192 Abstract management \u2192 Submissions \u2192 Form &amp; setup , then clic"
  },
  {
   "title": "Text editor types",
@@ -341,7 +341,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements. # Go to Event dashboard \u2192 Abstract Man"
+  "summary": "When creating or editing questions that require longer text responses - eg for abstracts or biographies - you can select different text editor types, depending on your requirements. # Go to Event dashboard \u2192 Abstract man"
  },
  {
   "title": "The authors and affiliations question",
@@ -349,7 +349,7 @@
   "section": "Submissions",
   "audience": "organisers",
   "plan": "all plans (including free Basic)",
-  "summary": "The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need. # Go to Event dashboard \u2192 Abstract Management"
+  "summary": "The authors and affiliations question is the most complex in the submission form, but the guidance below should help you set it up to collect the author information you need. # Go to Event dashboard \u2192 Abstract management"
  },
  {
   "title": "The submissions table (including incomplete submissions)",

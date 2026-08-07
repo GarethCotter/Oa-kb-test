@@ -19,8 +19,13 @@ question editor**, and each controls one destination:
   per-question setting, not a limitation of the free package, and not a fault.
 - **In abstract book** — whether the answer appears in the downloadable books. A book
   that comes out containing nothing but titles is this, on every other question.
-- **Program** — whether the answer, including an uploaded file, appears in the online
+- **In program** — whether the answer, including an uploaded file, appears in the online
   programme.
+- **In poster gallery** — whether the answer appears in the poster gallery. Checked in the
+  app on 7 August 2026: there are four destinations, not three. A poster or a set of
+  keywords that is missing from the gallery while showing everywhere else is this one.
+
+A question that takes no response, such as a text block, does not offer all four.
 
 Open the question in **Submission form editor** and tick the ones you need. They are
 independent of one another: a question can be visible to reviewers and absent from the

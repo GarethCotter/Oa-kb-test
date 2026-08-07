@@ -4,7 +4,7 @@ section: "02-submissions"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/adding-author-information-questions
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-07
 ---
 
 # The authors and affiliations question
@@ -13,9 +13,7 @@ last_reviewed: 2026-07-28
 
 The guidance below is for event administrators/ organisers. If you are an end user (eg. submitter, reviewer, delegate etc), please click [here](https://oxfordabstracts.com/resources/contact-support/).
 
-[Skip to written instructions.](#TEX)
-
-Go to **Event dashboard →  Abstract Management → Submission → Form & Setup**
+Go to **Event dashboard →  Abstract management → Submissions → Form & setup**
 
 **Then click on the Authors and Affiliations** question.
 
@@ -73,6 +71,8 @@ NB - if the question is hidden and these options are ticked, the profile picture
 
 The last field is to determine how many presenters are permitted for the submission. Select the option you require.
 
+This is enforced when someone submits. If the number of authors marked as presenting does not match what you have set here, the submitter is told so by name when they press **Submit** — for example *"Exactly one author must be presenting - there are currently 0"* — and the submission is marked incomplete until they fix it.
+
 ---
 
 #### Affiliation fields
@@ -83,16 +83,11 @@ The labels are also fully editable so you can amend these if required.![](/asset
 
 **Country lists** can be a contentious issue at conference and the standard list on Oxford Abstracts can be edited if you wish. It may be that you want to make a simple change from USA to United States of America or your conference may wish to include listings in the country list such as Basque Country. The choice is yours.
 
-To make changes to the country list go to **Event details** and click on **More options+**  
-![](/assets/img/image-png-apr-28-2021-09-24-20-56-am-692cd498.webp)
+To make changes to the country list go to **Event dashboard → Event setup → Event details** and find the **Custom country list** section.
 
-Then scroll down and click on **Toggle country list** from where you can edit, add or delete countries.
+The **Countries** box holds the whole list as editable text, one country per line. Edit, add or delete lines to suit your event. Changes save automatically.
 
-Just add a hyphen in front of the country to make it unselectable (it will be greyed out to the user)
-
-Adding a hyphen will also make the country editable. When you have finished, you can click the **Toggle country list** off.
-
-![](/assets/img/image-png-apr-28-2021-09-26-39-78-am-8fa64f67.webp)
+To make a line unselectable, start it with a hyphen — for example `-Europe`. The line still appears, but nobody can choose it, which is useful for grouping the countries below it under a heading.
 
 Under the **Authors and affiliation settings**, the first field can be edited if you would like to use alternative terminology - eg *Proposer*. This will then be reflected throughout the rest of the system.
 
