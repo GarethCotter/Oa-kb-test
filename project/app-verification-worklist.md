@@ -78,6 +78,28 @@ them) that costs the organiser both fees twice.
 
 **Open:** Edit or refund order — is there any amount field, or only whole line items?
 
+### ✔ 4. RESOLVED 7 August — two articles sent organisers to support for self-serve work
+
+**Confirmed in the app.** All three tools exist and work:
+
+- **Advanced → Spreadsheet builder** — pick a table and fields, "Repeat parent cells",
+  Download. Carries an on-screen notice: *"This feature is in beta and may change in the
+  future."* Say that in any article about it.
+- **Advanced → Custom abstract book** — a template editor. Sections for Colours and
+  Pages; page blocks for Cover, Table of contents and Submission set; the submission set
+  exposes Include, Sort by, Group by, Page break, categories, Authors and Layout. Renders
+  and previews **PDF and DOCX**.
+- **Advanced → Book builder** — the advanced one. A programmable template with INSERT
+  MERGE FIELD, INSERT EACH, INSERT IF, INSERT ON CHANGE, styling controls and SAVE AS.
+
+Both articles rewritten to point at the tools instead of the support inbox.
+
+*Follow-on, not yet done:* neither tool has an article of its own anywhere in the corpus.
+See the content gaps below — this is still the section's largest hole.
+
+<details>
+<summary>Original entry</summary>
+
 ### 4. Two articles send organisers to support for work the app now self-serves
 
 `06/abstract-books.md:41` — "We can create custom reports, spreadsheets and abstract
@@ -91,6 +113,7 @@ three as working self-serve tools. Same stale sentence in two articles.
 
 **Open:** Advanced → each of the three tools. Establish what an organiser can now do
 unaided.
+</details>
 
 ### 5. Do email attachments arrive as files, or as links?
 
@@ -114,14 +137,22 @@ lists default and custom emails on every plan including Free. Two of the three a
 **Open:** the pricing page, or a Free event → Emails → Edit & send → Registration auto
 emails.
 
-### 7. "Author names cannot be removed from an abstract book"
+### ✔ 7. RESOLVED 7 August — the claim was very nearly rewritten, and it was right
 
-`06/downloading-submissions-and-their-files.md:53`, stated absolutely, against
-`06/abstract-books.md:41` ("containing any fields you wish") and the Book builder tool.
-Organisers preparing blind-review material will act on the "cannot".
+**Half true, and the half that is true is the half that matters.** The Authors control in
+**Advanced → Custom abstract book** governs *how* authors appear, not *whether*: three
+formats (numbered affiliations, inline affiliations, or "Authors only" — which means an
+author line with no affiliation list, not a book of authors alone), plus how the
+presenting author is marked (underline, bold, asterisk). **There is no option to omit
+authors.**
 
-**Open:** Advanced → Custom abstract book and Book builder — check the field picker for
-authors.
+So the original absolute stands for the simple route. It is wrong only because
+**Advanced → Book builder** is template-driven — you write it with merge fields and can
+leave the author fields out. The article now says exactly that.
+
+**Worth recording as method:** the tool listing an "Authors" control looked at a glance
+like proof the claim was false, and the rewrite was drafted before the panel was opened.
+Opening it reversed the conclusion. A control's existence is not evidence of what it does.
 
 ---
 

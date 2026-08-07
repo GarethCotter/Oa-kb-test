@@ -3,7 +3,7 @@ title: "Downloading all submissions and the files attached to them"
 section: "06-programme-exports-reports"
 audience: organisers
 plan: abstract management and above
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-07
 ---
 
 # Downloading all submissions and the files attached to them
@@ -50,7 +50,7 @@ will not appear in the download. Keywords are the usual casualty.
 is not automatically ticked for your poster stage, which is why a download can contain
 a field for some submissions and not others.
 
-**Author names cannot be removed from an abstract book.** If you need submissions
+**The standard abstract book always shows author names.** **Advanced → Custom abstract book** lets you choose how they appear — with numbered affiliations, with inline affiliations, or as an author line on its own — and how the presenting author is marked, but there is no option to leave authors out. If you genuinely need a book with no author names, **Advanced → Book builder** lets you write the template yourself and leave the author fields out of it. If you need submissions
 without author details for blind reviewing, do it through the reviewing side of the
 system rather than by exporting — see
 [Controlling what the reviewer can see](/03-reviewing/controlling-what-the-reviewer-can-see.html).

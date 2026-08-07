@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/abstract-books
 merged_from: [faq-reports]
-last_reviewed: 2026-08-04
+last_reviewed: 2026-08-07
 ---
 
 # Abstract books
@@ -38,7 +38,7 @@ Below is the choice of standard abstract books, you have the option to download 
 
 Contact [Oxford Abstracts](mailto:support@oxfordabstracts.com)if you would like a customised report containing data from your event.
 
-We can create custom reports, spreadsheets and abstract books containing any fields you wish, if the standard options don't meet your requirements.
+If the standard options do not meet your requirements, you can build your own. **Advanced → Custom abstract book** is a template editor with a cover, contents and submission-set blocks, and renders to PDF or Word. **Advanced → Book builder** goes further, letting you write the template yourself with merge fields. **Advanced → Spreadsheet builder** does the same job for spreadsheets — it is currently in beta.
 
 NB: Although the options for custom abstract books are extensive, they do not cover every custom requirement.
 

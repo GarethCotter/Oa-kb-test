@@ -5,7 +5,7 @@ audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/other-reports
 merged_from: [faq-reports]
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-07
 ---
 
 # Other reports
@@ -59,7 +59,7 @@ Click on any report title to download it as an Excel document.
 
 **Custom spreadsheets and books**
 
-If you need a spreadsheet that isn't in our standard downloads, [get in touch](mailto:support@oxfordabstracts.com). Once we have created them, they will appear in this section. Note - they will update automatically with any subsequent data.
+If you need a spreadsheet that is not in the standard downloads, build it yourself at **Advanced → Spreadsheet builder** — choose the table and the fields you want. It is currently in beta, so it may change. Once we have created them, they will appear in this section. Note - they will update automatically with any subsequent data.
 
 ![](/assets/img/s3-amazonaws-comcdn-freshdesk-comdatahelpdeskattachmentsprod-93d4c031.png)![](/assets/img/oxfordabstracts-freshdesk-comsupportsolutionsarticles8000072-90c634a6.gif)
 
