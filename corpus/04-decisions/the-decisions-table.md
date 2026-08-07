@@ -4,7 +4,7 @@ section: "04-decisions"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/the-decisions-table
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-07
 ---
 
 # The decisions table
@@ -35,7 +35,14 @@ NB: The decision responses group will be the group that are editable - ie where 
 
 ![](/assets/img/undefined-mar-08-2021-03-13-19-67-pm-da8d8e87.webp)
 
-All the fields to the right hand of the table are editable, and denoted by editing icons (dropdown, checkbox or pencil icon). These can be edited by those who have access (administrators and committee members). The fields in this area are determined by the questions in the [decision form.](/04-decisions/design-the-decision-form.html)
+All the fields to the right hand of the table are editable, and denoted by editing icons (dropdown, checkbox or pencil icon). The fields in this area are determined by the questions in the [decision form.](/04-decisions/design-the-decision-form.html)
+
+Administrators can always edit them. **Whether committee members can is something you control**, and it is set in two places on **Abstract management → Decisions → Form & setup**:
+
+* **Form status → Open for committee** must be on. While it is off, committee members can read the decisions table but not enter anything.
+* Each field on the decision form is separately set to **Enabled**, **Read-Only** or **Hide**. A field set to Read-Only or Hide stays uneditable for committee members even when the form is open to them.
+
+Note: If a committee member reports that they can see decisions but not record them, it is almost always one of these two, not a fault or a permissions problem with their account.
 
   
 

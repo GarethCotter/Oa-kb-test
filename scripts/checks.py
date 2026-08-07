@@ -253,10 +253,12 @@ def check_structure():
 FAQ_BLOCK = re.compile(r'<div class="faq-block">(.*?)'
                        r'(?=<section class="support"|<div class="feedback"|</div>\s*</article>|\Z)', re.S)
 # 4 August 2026: 21 of the original 22 were answered from content already on their
-# own page. The one left needs somebody to check the software: the amendments
-# article lists what an admin can change on an order and deleting one is not among
-# them, so answering it from the page would have been a guess.
-UNANSWERED_FAQ_PIN = 1
+# own page. The last one — how to delete a registration — was answered on 7 August
+# 2026 after checking the app: deletion is on Registration -> Attendees, which is why
+# the amendments article could never answer it. That article covers orders, and the
+# control is on the attendees table. The pin is 0 now; if it needs raising again,
+# the reason belongs here.
+UNANSWERED_FAQ_PIN = 0
 
 
 def check_faq_answered():

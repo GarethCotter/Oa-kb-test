@@ -5,7 +5,7 @@ audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/how-admins-can-amend-existing-delegate-registration-orders
 merged_from: [faq-delegate-registration]
-last_reviewed: 2026-08-02
+last_reviewed: 2026-08-07
 ---
 
 # How admins can amend existing delegate registration orders
@@ -121,4 +121,8 @@ If you need further assistance, please get in touch with our Customer Support Te
 ## Common questions
 
 ### How do I delete a registration?
+
+Deleting is done from the attendees list rather than from the order. Go to **Event dashboard → Registration → Attendees**, tick the attendee or attendees you want to remove, and click **Delete attendees**.
+
+Note: This is not the same as removing the tickets from an order. Removing tickets leaves the registration in place with nothing on it; deleting removes the attendee from your list. If the person has paid, deal with the refund before you delete, because the order goes with them.
 

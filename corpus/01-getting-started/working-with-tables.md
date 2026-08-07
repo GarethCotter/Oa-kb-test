@@ -4,7 +4,7 @@ section: "01-getting-started"
 audience: organisers
 plan: all plans (including free Basic)
 source_url: https://help.oxfordabstracts.com/knowledge/an-overview-of-the-tables-function
-last_reviewed: 2026-07-28
+last_reviewed: 2026-08-07
 ---
 
 # Working with tables
@@ -114,6 +114,10 @@ On the top left hand side of the table
 ![](/assets/img/undefined-feb-24-2021-10-40-09-94-am-08b5f35d.webp)
 
 1) Check boxes to select - eg, to delete. Choose the top one if you would like to select all rows (or all filtered rows if you have filtered any - see 3. below) in the table on that page, or select individually.
+
+NB: The top checkbox selects the rows on the **page you are looking at**, not every row in the table. There is no select-everything control on the submissions table, so to act on more rows at once, raise **10 per page** to 100 first — that is the largest page size — and work through in blocks of a hundred. Filtering first is usually quicker than paging: filter down to the rows you want, then use the top checkbox.
+
+The attendees table under **Registration → Attendees** is the exception. It has a **Select all attendees** button that does cover every row, not just the page.
 
 2) Click to reveal more options.  
 3) Filter the list according to the boxes checked - ie - all those checked will remain in view.

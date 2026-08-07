@@ -51,4 +51,7 @@ page and is no longer.
 auto-closure time and its timezone are shown by clicking the time on the dashboard.
 
 **Always test as a non-admin.** Admin accounts see more and behave differently, so a
-form that works for you can be shut to everyone else.
+form that works for you can be shut to everyone else. For reviewing there is a purpose
+built control — **VIEW AS REVIEWER** on Reviews → Form & setup — which saves setting up a
+second account. There is no equivalent on the submission form, so that one still needs a
+private window and a non admin address.

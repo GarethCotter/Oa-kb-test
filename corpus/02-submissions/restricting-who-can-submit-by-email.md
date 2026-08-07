@@ -4,7 +4,7 @@ section: "02-submissions"
 audience: organisers
 plan: abstract management and above
 source_url: https://help.oxfordabstracts.com/knowledge/restricting-who-can-submit-by-email
-last_reviewed: 2026-07-29
+last_reviewed: 2026-08-07
 ---
 
 # Restricting who can submit by email
@@ -15,11 +15,19 @@ The guidance below is for event administrators/ organisers. If you are an end us
 
 NB: The instructions below show how to manually add emails to a restricted list of submitters. This process can also be done automatically through API.  If you have a list of email on a system, you can post these to a specific stage using API.
 
-[Skip to written instructions.](#TEX)
+Go to **Event dashboard → Event setup → Users → Submitters**.
 
-From your Dashboard go to **Event Setup** **→** **Users** **→** **Submitters** **tab**
+This tab controls two separate things: who may submit, and how much any one person may submit.
 
-Then select **only allow specified email addresses to submit.**
+## Limiting how many submissions one person can make
+
+**Max submissions per email** caps the number of submissions any single email address can make. It is unlimited by default, so leave it alone unless you want a cap.
+
+This is counted per email address, so somebody with two addresses can submit under each. It is a way of keeping one enthusiastic person from filling your programme, not a way of enforcing eligibility — for that, restrict who can submit at all, below.
+
+## Restricting who can submit at all
+
+Select **only allow specified email addresses to submit.**
 
 **![](/assets/img/screenshot-2024-04-17-at-11-50-38-png-6912aaa0.webp)**
 
