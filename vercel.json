@@ -1022,6 +1022,96 @@
       "source": "/knowledge/your-personal-dashboard",
       "destination": "/01-getting-started/your-personal-dashboard.html",
       "permanent": true
+    },
+    {
+      "source": "/knowledge/getting-started-and-creating-an-account",
+      "destination": "/01-getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/getting-started-with-your-event",
+      "destination": "/01-getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/introduction-to-the-oxford-abstracts-tools",
+      "destination": "/01-getting-started",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/the-submission-stage",
+      "destination": "/02-submissions",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/the-reviewing-stage",
+      "destination": "/03-reviewing",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/the-decision-stage",
+      "destination": "/04-decisions",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/emails",
+      "destination": "/05-emails",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/creating-exports-reports-and-abstract-books",
+      "destination": "/06-programme-exports-reports",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/delegate-registration",
+      "destination": "/07-delegate-registration",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/the-conference-platform",
+      "destination": "/08-conference-platform",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/symposia",
+      "destination": "/09-add-ons",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/multi-stage",
+      "destination": "/09-add-ons",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/integrations",
+      "destination": "/10-integrations-api",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/account-administrator-functions",
+      "destination": "/11-account-administration",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/guidance-for-reviewers",
+      "destination": "/13-for-reviewers-committee",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/attending-an-event",
+      "destination": "/14-for-attendees-exhibitors",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/faq",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/kb-search-results",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

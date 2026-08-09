@@ -75,11 +75,19 @@ The remaining four: `/knowledge/editing-or-changing-the-status-of-a-registration
 
 ---
 
-## What to do
+## Done, 7 August
 
-Add the eighteen category redirects plus the two functional ones to `redirects.csv` and
-`vercel.json`. That takes coverage from 200/220 to 220/220 and closes the last known way
-for an inbound link to die at the cutover.
+**Eighteen of the twenty are now redirected**, in both `redirects.csv` and `vercel.json`
+(which now holds 220 entries). Coverage of the live old site goes from 200/220 to 218/220.
+
+Two are held back deliberately, because they need a decision rather than a guess:
+
+- `/knowledge/support` — unclear from the crawl whether this is a KB page or the contact
+  route. Look at it before choosing a target.
+- `/knowledge/kb-tickets/new` — the old support ticket form. Where this points is a
+  product decision, not a redirect decision: the deflection card is meant to replace this
+  page, so the answer depends on whether it should reach the new support form, the KB
+  home, or stay pointing at whatever replaces it in the app.
 
 **Re-run this crawl before HubSpot is cancelled, not after.** It is the only check that
 looks at the old site rather than at our own map, and it costs a few minutes:
