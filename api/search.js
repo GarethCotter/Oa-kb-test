@@ -239,6 +239,44 @@ function budgetExhausted() {
    readable address to spot that one caller is hammering the endpoint. */
 const ipTag = ip => createHash('sha256').update(ip).digest('hex').slice(0, 8);
 
+/* Pull the first complete {...} out of the model's reply.
+ *
+ * The old code stripped code fences and parsed the whole remaining string. That breaks
+ * whenever the model emits its JSON and then keeps talking - a fenced block followed by
+ * a paragraph explaining itself. JSON.parse threw on the trailing prose, the catch below
+ * fell back to `answer = raw`, and the reader was shown the literal JSON:
+ *
+ *     ```json
+ *     { "answer": null, "confidence": "high" }
+ *     ```
+ *     The guides do not explain where template emails are stored...
+ *
+ * Observed live on 11 August 2026 in 3 of 47 sampled questions. Scanning for the first
+ * balanced object survives anything the model adds before or after it, and honours an
+ * explicit "answer": null instead of dumping the machinery on screen. String-aware, so a
+ * brace inside an answer cannot end the object early. */
+function firstJsonObject(raw) {
+  const s = String(raw || '');
+  const start = s.indexOf('{');
+  if (start === -1) return null;
+  let depth = 0, inStr = false, esc = false;
+  for (let i = start; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === '\\') esc = true;
+      else if (c === '"') inStr = false;
+      continue;
+    }
+    if (c === '"') inStr = true;
+    else if (c === '{') depth++;
+    else if (c === '}' && --depth === 0) {
+      try { return JSON.parse(s.slice(start, i + 1)); } catch { return null; }
+    }
+  }
+  return null;
+}
+
 export default async function handler(req, res) {
   applyCors(req, res);
   if (req.method === 'OPTIONS') return res.status(204).end();
@@ -349,7 +387,8 @@ export default async function handler(req, res) {
 
     let answer = null, selfReport = 'partial', title = null, steps = null;
     try {
-      const parsed = JSON.parse(raw.replace(/```json|```/g, '').trim());
+      const parsed = firstJsonObject(raw);
+      if (!parsed) throw new Error('no JSON object in reply');
       answer = parsed.answer || null;
       if (parsed.confidence === 'high') selfReport = 'high';
       /* Steps are additive and never load-bearing: anything malformed and the
