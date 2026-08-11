@@ -16,33 +16,62 @@ router. Every result below is what the endpoint actually returned.
 individual chat sessions. Only the question wording is reproduced here, and one payment
 message a user pasted in is described rather than quoted.
 
-## The headline
+## The headline — and why one run is not a measurement
 
-| | |
-|---|---|
-| Answered with strong confidence | **21 of 47** |
-| Answered, but low confidence | 10 |
-| No answer at all | **16** |
+The 47 were run **twice**: once on 11 August, then again after a parser fix the same day.
 
-The strong 21 are the ones the widget would genuinely deflect today. The other 26 are the
-work, and they split into two quite different problems.
+| | First run | Second run |
+|---|---|---|
+| Strong confidence | 21 | 23 |
+| Answered, low confidence | 10 | 5 |
+| No answer | 16 | 19 |
+
+Do not read the strong figure going 21 → 23 as improvement. **Nine of the 47 changed
+state between the two runs — 19% churn** on identical questions against near-identical
+content. That is the probabilistic routing CLAUDE.md warns about, measured: *"the same
+question can answer on one run and not the next, and phrasing moves it more than content
+does."*
+
+So the only figures worth quoting are the ones that held across both runs:
+
+- **20 of 47 answered strongly in both runs.** These are what the widget reliably deflects.
+- **14 of 47 missed in both runs.** Of those, 4 are not questions, so **10 durable gaps**.
+- The remaining 13 are unstable — sometimes answered, sometimes not.
+
+**This has a direct consequence for the metrics.** A strong-answer rate taken from a
+single run carries roughly ±19% noise, which is larger than any improvement a quarter of
+content work would produce. Any KPI built on it must average several runs, or use a much
+larger sample, or it will measure the dice rather than the corpus.
+
+### What the parser fix did and did not do
+
+The fix (commit `a9a979d`) was confirmed: three questions had been returning literal JSON
+to the reader, and no longer do. Two of them now correctly report *no answer* and fall
+back to keyword search, which is why "answered" went **down** while the site got better —
+those three were counted as answered when what they served was machinery.
+
+Everything else that moved is inside the churn and cannot be attributed to the fix. In
+particular, "How do I reset my password?" went weak → strong **without** the `HEDGES` list
+being touched, so that was the coin landing differently rather than anything being fixed.
 
 ---
 
-## 1. Real gaps — asked repeatedly, nothing to answer from
+## 1. Real gaps — missed in both runs, nothing to answer from
 
-Twelve of the sixteen misses are genuine questions. Ordered roughly by how cheap they
-look to fix:
+Ten durable gaps. Two items from the first pass have been removed from this list because
+the second run answered them: **"I need the attendee to select only one ticket"** came
+back strong (the *Maximum number of tickets per order* setting was found), and **"missing
+recording links"** returned a weak answer. Both were single-run misses, not gaps —
+exactly the trap this section is meant to avoid.
+
+Ordered roughly by how cheap they look to fix:
 
 - **"What is an email address in red with a circled C next to it?"** — somebody describing
   a UI indicator they cannot interpret. Nothing in the corpus explains any status icon.
   Probably the single best-value item here: whoever knows what that badge means can
   settle it in a sentence, and a reader who sees it has no other route.
-- **"Restrict ticket registrations by role"** and **"I need the attendee to select only
-  one ticket — is that possible?"** — registration limits. Note `creating-your-delegate-
-  registration-tickets-for-your-event.md` documents **Maximum number of tickets per
-  order**, so at least the second one is a *findability* failure rather than a missing
-  fact. See section 3.
+- **"Restrict ticket registrations by role"** — nothing found in either run. Distinct
+  from the per-order ticket cap, which the second run did answer.
 - **"Steps to add an additional location"** — venues or rooms in the programme. Nothing
   found.
 - **"Upload a program"** — importing an existing programme rather than building one.
@@ -96,11 +125,14 @@ confidence threshold or the article's phrasing is wrong — not the corpus.
 
 ## 3. What to do, in order
 
-1. **Re-test the ten weak ones after re-reading their cited articles.** If the fact is
-   present but buried, surfacing it as a direct sentence or a Common question is far
-   cheaper than a new article, and it converts a hidden answer into a shown one.
-2. **Write the twelve gaps**, cheapest first. Several are one-liners; the status-icon one
-   needs somebody who knows the product.
+1. **Run the set three more times before writing anything.** With 19% churn, two runs
+   cannot separate a real gap from an unlucky one. Five runs would put every question in
+   one of three honest buckets: always answered, never answered, or unstable. The
+   unstable bucket is its own finding — those are questions where the content exists but
+   the router only sometimes reaches it, which is a phrasing and synonyms problem, not a
+   writing one.
+2. **Write the ten durable gaps**, cheapest first. Several are one-liners; the status-icon
+   one needs somebody who knows the product.
 3. **Check the vocabulary drift** — delegate / attendee / registrant, programme / program.
    Several misses read like the asker's word and ours not matching, which is exactly what
    `SYNONYMS` in `assets/search.js` exists for.
