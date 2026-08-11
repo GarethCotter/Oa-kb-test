@@ -319,7 +319,7 @@ footer .base{margin-top:40px;font-size:14px;color:#a8b3a3}
 
         <div id="deflect" class="hidden">
           <div class="answer">
-            <h3>We think this might solve your query:</h3>
+            <h3>We think we might have the answer to your query below:</h3>
             <!-- a div, not a p: it holds either a paragraph or an ordered list -->
             <div class="body" id="answerText"></div>
             <div class="sources" id="sourcesBox">
@@ -673,9 +673,7 @@ function sendTicket(suggested) {
   const r = $('#result');
   r.className = 'outcome';
   r.innerHTML = '<h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A1B3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Your ticket is on its way</h3>' +
-    '<p>Someone who knows the software will pick it up. ' +
-    (state.shown ? 'We’ve attached what we suggested so they can see what you have already tried.'
-                 : 'We had nothing confident to offer, so we did not get in your way.') + '</p>' +
+    '<p>One of our expert team will pick up your query and respond very soon.</p>' +
     '<div class="payload">' + esc(JSON.stringify(payload, null, 2)) + '</div>' +
     '<p class="note">Nothing is actually sent from this prototype — the block above is what ' +
     'would reach HubSpot.</p>';
