@@ -1,143 +1,88 @@
-# AI policy — draft for review
+# How Oxford Abstracts uses AI
 
-*Drafted 11 August 2026. **Not published, and not to be published without legal review.**
-A public AI policy is a contractual commitment; several statements below need confirming
-against Anthropic's current terms and Oxford Abstracts' own privacy policy before anyone
-outside the company sees it.*
+*Last reviewed 11 August 2026*
 
-The reader this is written for is a university procurement officer or data protection
-officer deciding whether Oxford Abstracts is safe to buy. They are not reassured by
-warmth. They are reassured by specifics, and they read for weasel words. Every vague
-sentence in a document like this creates a follow-up email, so the aim is to answer the
-questions before they are asked.
+## Where we use it
 
----
+In one place: our help centre. When you ask a question in the help centre, the in-app
+help widget, or our support form, we send that question to an AI model, which writes a
+plain-English answer from our own published help articles.
 
-## The draft
+## What it cannot reach
 
-### Where we use AI, and where we do not
+**AI is not used anywhere in the conference software itself.** It does not read, score,
+summarise or make any decision about abstracts, reviews, grades, reviewer comments,
+decisions, delegate data, programmes or the emails you send through the system.
 
-Oxford Abstracts uses AI in one place: **the help centre's answer layer.** When somebody
-types a question into our help centre — or into the help widget inside the app, or the
-support form — we send that question to an AI model, which writes a plain-English answer
-from our own published help articles.
-
-That is the only use of AI in Oxford Abstracts. **It is not used anywhere in the
-conference software itself.** It does not read, score, summarise, sort or make any
-decision about:
-
-- abstracts or any other submission
-- reviews, grades or reviewer comments
-- decisions on submissions
-- delegate or registration data
-- programmes, sessions or any event content
-- emails you send through the system
-
-No submission is ever assessed by AI. No decision about a submission is ever influenced
-by AI. If that changes, this page changes first.
-
-### What is actually sent to the AI provider
-
-Two things, and nothing else:
-
-1. **The question the person typed.**
-2. **The text of our own help articles** — the same public pages anyone can read on our
-   help centre.
-
-The model has no connection to your event. It cannot query your data, and your data is
-not in the material it reads. This is not a policy promise; it is how the system is
-built — the answer layer reads a fixed file of help content and has no access to the
+No submission is ever assessed by AI, and no decision about a submission is ever
+influenced by it. This is how the system is built rather than a promise about how we use
+it: the answer feature reads a fixed file of help articles and has no connection to the
 conference database at all.
 
-### Who provides the model
+## What we send
 
-**Anthropic**, using Claude Haiku. Anthropic acts as a sub-processor for this feature and
-is named as such in our data processing documentation.
+Two things: the question you typed, and the text of our own help articles — the same
+public pages anyone can read.
 
-### Is our data used to train AI models?
+## Who provides the model, and training
 
-**No.** Questions sent through this feature are not used to train models. Anthropic's
-commercial API terms state that inputs and outputs submitted through the API are not used
-to train its models. `[LINK TO ANTHROPIC'S CURRENT TERMS — do not paraphrase, cite]`
+**Anthropic**, using Claude Haiku, acting as a sub-processor for this feature.
 
-`[REVIEW: confirm the exact current wording and retention period Anthropic applies to API
-inputs, and whether a signed DPA is in place. Do not publish this section until that is
-verified — this is the single sentence a DPO will hold us to.]`
+**Your questions are not used to train AI models.**
+`[LINK TO ANTHROPIC'S CURRENT API TERMS]`
 
-### What we keep, and for how long
+## What we keep
 
-We log the questions people ask so we can see which parts of our documentation are not
-working and fix them. That log records the question text, which articles were used to
-answer it, and whether the person said it helped.
+We log the questions asked so we can see which of our documentation is not working and
+improve it. Email addresses and telephone numbers are automatically removed before
+storage. `[RETENTION PERIOD]`
 
-**Before storage, email addresses and telephone numbers are automatically removed from
-the question text.**
+Please do not include personal data or confidential event details in a help question —
+we do not need them to answer it.
 
-We ask people not to include personal data or confidential event details in a help
-question, because a help question is not the right place for them and we do not need them
-to answer it. Automatic removal catches email addresses and phone numbers; it cannot
-catch a name typed into a sentence.
+## If you would rather not use it
 
-`[REVIEW: state the retention period. There is currently no defined one, and "we keep it
-indefinitely" is not an answer that survives procurement. Decide a period, and confirm the
-interaction log is covered by the existing privacy policy — this is an open action already
-on the engineering handover.]`
+The help centre works without it. Turn the feature off, or if it is ever unavailable, and
+search falls back to ordinary keyword results across the same articles.
+`[CONFIRM: is there an account-level opt-out, or only the fallback?]`
 
-### What happens if you would rather not use it
+## Changes
 
-The help centre works without the AI layer. If the answer feature is unavailable, or if
-you would rather not use it, the help centre falls back to ordinary keyword search across
-the same articles. Nothing is lost except the plain-English summary.
+If we introduce AI anywhere else in Oxford Abstracts, we will update this page before
+that feature ships.
 
-`[DECISION NEEDED: do we offer an opt-out at the event or account level — a switch that
-turns the answer layer off for an organisation's users? Some institutions will ask. It is
-straightforward to build and much harder to add later under time pressure.]`
-
-### Accuracy, and what we do not let it do
-
-The model answers **only** from our help articles. It is instructed not to guess: where
-our documentation does not cover something, it returns no answer rather than inventing
-one, and the reader gets ordinary search results instead.
-
-Answers cite the articles they came from, so anyone can check the source. If an answer is
-wrong, the fault is our documentation, and we would rather you told us — every answer has
-a "this didn't help" option that reaches the team who maintain the content.
-
-### Questions
-
-`[Contact route — the support address, or a named privacy contact if procurement
-requires one.]`
+`[CONTACT ROUTE]`
 
 ---
 
-## Notes on the draft, for whoever reviews it
+---
 
-**What makes this document persuasive is the second section**, and it is worth protecting.
-"The AI cannot see your event data" is an unusually strong claim, and it is true
-architecturally rather than by promise — the answer layer imports a fixed file of help
-content and has no database access. Most vendors cannot say that. It should be the first
-thing on the page and it should never be softened into "we limit access to".
+# Notes for review — not part of the policy
 
-**Do not publish the training paragraph until it is verified.** It is the sentence a data
-protection officer will quote back during a dispute. Cite Anthropic's terms with a link
-rather than paraphrasing them, so the statement stays true when their wording changes.
+**Not to be published without legal review.** A public AI policy is a contractual
+commitment.
 
-**The retention gap is real and known.** The engineering handover already carries an open
-action to confirm the interaction log is covered by the privacy policy, and notes that
-while emails and phone numbers are stripped by pattern matching, nothing stops somebody
-typing a name or an event ID into a question. The policy above says this plainly rather
-than implying the log is anonymous. Claiming more than the software does would be worse
-than saying nothing.
+**Protect the "what it cannot reach" section.** It is the strongest thing on the page and
+it is true architecturally, not by promise — `api/search.js` imports a fixed file of help
+content and has no database access. Most vendors can only say "we restrict access to". Do
+not let it get softened into that.
 
-**Three things to decide before publication:**
+**Four gaps to close before publication:**
 
-1. A retention period for the question log.
-2. Whether an opt-out exists, and at what level.
-3. Whether the widget and the support form are named separately here — they call the same
-   endpoint, but a procurement officer reading about "the help centre" may not realise the
-   in-app widget is the same feature under a different name.
+1. **Anthropic's training terms** — cite by link, do not paraphrase, so the statement stays
+   true when their wording changes. This is the sentence a data protection officer will
+   quote back during a dispute.
+2. **A retention period** for the question log. There is no defined one, and "indefinitely"
+   does not survive procurement. Related open action on the engineering handover: confirm
+   the interaction log is covered by the existing privacy policy.
+3. **Whether an opt-out exists**, and at what level. Some institutions will ask. Easy now,
+   hard to retrofit with a deal waiting.
+4. **A contact route** — support address, or a named privacy contact if procurement wants one.
 
-**Keep it on one page and keep it dated.** A short policy that is obviously current beats
-a thorough one nobody trusts to still be true. Put "last reviewed" on it, and add a line
-committing to updating it before any new use of AI ships — that commitment is worth more
-to a cautious buyer than any amount of description.
+**One honest limitation, deliberately not claimed away.** Stripping emails and phone
+numbers is pattern matching. It catches an address; it cannot catch a name typed into a
+sentence. That is why the page asks people not to include personal data rather than
+promising the log is anonymous.
+
+**Keep it dated and keep it to a page.** A short policy that is obviously current beats a
+thorough one nobody trusts to still be true.
